@@ -1,0 +1,30 @@
+select
+column_name,
+data_type,  
+data_length, 
+nullable, 
+data_default, 
+low_value, 
+high_value,
+case when 
+(select   column_name   
+from   user_constraints   c, user_cons_columns   col   
+where   c.constraint_name=col.constraint_name   and   c.constraint_type='P'  
+and   c.table_name='FAQ' 
+and b.column_name in
+(
+ select   column_name   
+ from   user_constraints   c, user_cons_columns   col   
+ where   c.constraint_name=col.constraint_name   and   c.constraint_type='P'  
+ and   c.table_name='FAQ' 
+)) = 
+(
+select   column_name   
+from   user_constraints   c, user_cons_columns   col   
+where   c.constraint_name=col.constraint_name   and   c.constraint_type='P'  
+and   c.table_name='FAQ') 
+THEN 'Y'
+ELSE 'N'
+end as key
+from all_tab_cols b
+where table_name = 'FAQ'

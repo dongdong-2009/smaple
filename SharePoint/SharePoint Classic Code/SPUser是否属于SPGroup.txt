@@ -1,0 +1,25 @@
+private bool GetGroupofUser()
+        {
+            bool flag = false;
+            using (SPSite siteCollection = SPContext.Current.Site)
+            {
+                using (SPWeb site = siteCollection.OpenWeb())
+                {
+                    string groupName = "TestGroup";
+                    //获取当前登录的用户                
+                    SPUser currentUser = site.CurrentUser;
+
+                    //获取该用户在site/web中所有的组
+                    SPGroupCollection userGroups = currentUser.Groups;
+                    //循环判断当前用户所在的组有没有给定的组                
+                    foreach (SPGroup group in userGroups)
+                    {
+                        //Checking the group                    
+                        if (group.Name.Contains(groupName))
+                            flag = true;
+                        break;
+                    }
+                }
+            }
+            return flag;
+        }

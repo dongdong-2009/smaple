@@ -1,0 +1,5 @@
+userid=dpzhoum/dpzhoum@JSZXOA.FE.COM
+fromuser=dpzhoum
+touser=dpzhoum
+ignore=Y
+feedback=1000

@@ -1,0 +1,44 @@
+function getXMLDocument()
+{
+    var xDoc=null;
+    if (document.implementation && document.implementation.createDocument)
+    {
+        xDoc=document.implementation.createDocument("","",null);
+    }
+    else
+    {
+         if (typeof ActiveXObject != "undefined")
+         {
+                var msXmlAx=null;
+                try
+                {
+                    msXmlAx=new ActiveXObject("Msxml2.DOMDocument");
+                }
+                catch(e)
+                {
+                    msXmlAx=new ActiveXObject("Msxml.DOMDocument");
+                }
+                xDoc=msXmlAx;
+         }
+    }
+    
+    if(xDoc==null || typeof xDoc.load=="undefined")
+    {
+        xDoc=null;
+    }    
+    return xDoc;
+}
+    
+    function getXMLHTTPRequest()
+    {
+        var xRequest = null;
+        if( window.XMLHttpRequest )
+        {
+            xRequest = new XMLHttpRequest(); // Mozilla and Safari
+        }
+        else if( typeof ActiveXObject != "undefined" )
+        {
+            xRequest = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        return xRequest;
+    }

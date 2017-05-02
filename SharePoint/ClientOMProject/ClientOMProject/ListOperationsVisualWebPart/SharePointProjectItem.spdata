@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProjectItem Type="Microsoft.VisualStudio.SharePoint.VisualWebPart" DefaultFile="ListOperationsVisualWebPartUserControl.ascx" SupportedTrustLevels="FullTrust" SupportedDeploymentScopes="Site" xmlns="http://schemas.microsoft.com/VisualStudio/2010/SharePointTools/SharePointProjectItemModel">
+  <Files>
+    <ProjectItemFile Source="Elements.xml" Target="ListOperationsVisualWebPart\" Type="ElementManifest" />
+    <ProjectItemFile Source="ListOperationsVisualWebPart.webpart" Target="ListOperationsVisualWebPart\" Type="ElementFile" />
+    <ProjectItemFile Source="ListOperationsVisualWebPartUserControl.ascx" Target="CONTROLTEMPLATES\ClientOMProject\ListOperationsVisualWebPart\" Type="TemplateFile" />
+    <ProjectItemFile Source="ListOperations.js" Target="ListOperationsVisualWebPart\" Type="ElementFile" />
+  </Files>
+  <SafeControls>
+    <SafeControl Name="SafeControlEntry1" Assembly="$SharePoint.Project.AssemblyFullName$" Namespace="ClientOMProject.ListOperationsVisualWebPart" TypeName="*" IsSafe="true" IsSafeAgainstScript="false" />
+  </SafeControls>
+</ProjectItem>

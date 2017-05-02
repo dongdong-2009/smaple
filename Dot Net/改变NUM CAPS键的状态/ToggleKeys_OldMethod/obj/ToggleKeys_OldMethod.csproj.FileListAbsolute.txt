@@ -1,0 +1,8 @@
+C:\Documents and Settings\Administrator.SZLANYOU-7NGZ4R\桌面\ToggleKeys_OldMethod\ToggleKeys_OldMethod\bin\Debug\ToggleKeys_OldMethod.exe
+C:\Documents and Settings\Administrator.SZLANYOU-7NGZ4R\桌面\ToggleKeys_OldMethod\ToggleKeys_OldMethod\bin\Debug\ToggleKeys_OldMethod.pdb
+C:\Documents and Settings\Administrator.SZLANYOU-7NGZ4R\桌面\ToggleKeys_OldMethod\ToggleKeys_OldMethod\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator.SZLANYOU-7NGZ4R\桌面\ToggleKeys_OldMethod\ToggleKeys_OldMethod\obj\Debug\ToggleKeys_OldMethod.Form1.resources
+C:\Documents and Settings\Administrator.SZLANYOU-7NGZ4R\桌面\ToggleKeys_OldMethod\ToggleKeys_OldMethod\obj\Debug\ToggleKeys_OldMethod.Properties.Resources.resources
+C:\Documents and Settings\Administrator.SZLANYOU-7NGZ4R\桌面\ToggleKeys_OldMethod\ToggleKeys_OldMethod\obj\Debug\ToggleKeys_OldMethod.csproj.GenerateResource.Cache
+C:\Documents and Settings\Administrator.SZLANYOU-7NGZ4R\桌面\ToggleKeys_OldMethod\ToggleKeys_OldMethod\obj\Debug\ToggleKeys_OldMethod.exe
+C:\Documents and Settings\Administrator.SZLANYOU-7NGZ4R\桌面\ToggleKeys_OldMethod\ToggleKeys_OldMethod\obj\Debug\ToggleKeys_OldMethod.pdb

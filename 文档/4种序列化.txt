@@ -1,0 +1,31 @@
+ string Serialize(DataTable dt)
+    {
+        dt.TableName = "mytable";
+        dt.RemotingFormat = SerializationFormat.Binary;        
+
+        BinaryFormatter bin = new BinaryFormatter();
+        MemoryStream ms = new MemoryStream();        
+        bin.Serialize(ms, dt);
+
+        //得到Byte数组        
+        byte[] b = ms.GetBuffer();        
+        ms.Seek(0, SeekOrigin.Begin);
+        ms.Close();
+        //将Byte数组转换成string
+        return Convert.ToBase64String(b);
+
+        //BinaryFormatter bin = new BinaryFormatter();
+        //FileStream fs = new FileStream("c:\\1114.txt", FileMode.Create);
+        //bin.Serialize(fs, dt);
+        //fs.Close();
+
+        //XmlSerializer lvserializer = new XmlSerializer(typeof(DataTable));
+        //FileStream fs = new FileStream("c:\\avbdffd1.txt", FileMode.Create);
+        //lvserializer.Serialize(fs, dt);
+        //fs.Close();
+
+        //System.Web.UI.LosFormatter los = new LosFormatter();
+        //FileStream fs = new FileStream("c:\\0000.txt", FileMode.Create);
+        //los.Serialize(fs, dt);
+        //fs.Close();
+    }

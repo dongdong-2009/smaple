@@ -1,0 +1,6 @@
+D:\04908\04908\阶段项目A\Codes\PostBackAndEvent\PostBackControls\bin\Debug\PostBackControls.dll
+D:\04908\04908\阶段项目A\Codes\PostBackAndEvent\PostBackControls\bin\Debug\PostBackControls.pdb
+D:\04908\04908\阶段项目A\Codes\PostBackAndEvent\PostBackControls\obj\Debug\ResolveAssemblyReference.cache
+D:\04908\04908\阶段项目A\Codes\PostBackAndEvent\PostBackControls\obj\Debug\PostBackControls.AutoFlexTextArea.bmp
+D:\04908\04908\阶段项目A\Codes\PostBackAndEvent\PostBackControls\obj\Debug\PostBackControls.dll
+D:\04908\04908\阶段项目A\Codes\PostBackAndEvent\PostBackControls\obj\Debug\PostBackControls.pdb

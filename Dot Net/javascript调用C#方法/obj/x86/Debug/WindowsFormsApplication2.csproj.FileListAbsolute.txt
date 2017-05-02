@@ -1,0 +1,9 @@
+C:\Users\zhouming\Documents\Visual Studio 2010\Projects\CI\WindowsFormsApplication2\bin\Debug\WindowsFormsApplication2.exe
+C:\Users\zhouming\Documents\Visual Studio 2010\Projects\CI\WindowsFormsApplication2\bin\Debug\WindowsFormsApplication2.pdb
+C:\Users\zhouming\Documents\Visual Studio 2010\Projects\CI\WindowsFormsApplication2\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\zhouming\Documents\Visual Studio 2010\Projects\CI\WindowsFormsApplication2\obj\x86\Debug\WindowsFormsApplication2.Properties.Resources.resources
+C:\Users\zhouming\Documents\Visual Studio 2010\Projects\CI\WindowsFormsApplication2\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\zhouming\Documents\Visual Studio 2010\Projects\CI\WindowsFormsApplication2\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\zhouming\Documents\Visual Studio 2010\Projects\CI\WindowsFormsApplication2\obj\x86\Debug\WindowsFormsApplication2.exe
+C:\Users\zhouming\Documents\Visual Studio 2010\Projects\CI\WindowsFormsApplication2\obj\x86\Debug\WindowsFormsApplication2.pdb
+C:\Users\zhouming\Documents\Visual Studio 2010\Projects\CI\WindowsFormsApplication2\obj\x86\Debug\WindowsFormsApplication2.Form1.resources

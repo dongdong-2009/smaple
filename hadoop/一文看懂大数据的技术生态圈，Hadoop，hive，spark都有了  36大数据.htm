@@ -1,0 +1,503 @@
+﻿<!DOCTYPE HTML>
+<!-- saved from url=(0035)http://www.36dsj.com/archives/23504 -->
+<!DOCTYPE html PUBLIC "" ""><HTML><HEAD><META content="IE=11.0000" 
+http-equiv="X-UA-Compatible">
+ 
+<META charset="UTF-8"> 
+<META http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8"> 
+<META name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"> 
+<TITLE>一文看懂大数据的技术生态圈，Hadoop，hive，spark都有了 | 36大数据</TITLE> <LINK title="36大数据 » 一文看懂大数据的技术生态圈，Hadoop，hive，spark都有了评论Feed" 
+href="http://www.36dsj.com/archives/23504/feed" rel="alternate" type="application/rss+xml"> 
+<LINK id="main-css" href="一文看懂大数据的技术生态圈，Hadoop，hive，spark都有了%20%2036大数据_files/style.css" 
+rel="stylesheet" type="text/css" media="all"> <LINK id="upw_theme_standard-css" 
+href="一文看懂大数据的技术生态圈，Hadoop，hive，spark都有了%20%2036大数据_files/upw-theme-standard.min.css" 
+rel="stylesheet" type="text/css" media="all"> <LINK title="RSD" href="http://www.36dsj.com/xmlrpc.php?rsd" 
+rel="EditURI" type="application/rsd+xml"> <LINK href="http://www.36dsj.com/wp-includes/wlwmanifest.xml" 
+rel="wlwmanifest" type="application/wlwmanifest+xml"> <LINK title="预测建模、监督机器学习和模式分类概览" 
+href="http://www.36dsj.com/archives/23483" rel="prev"> <LINK title="大数据分析在石化企业的应用探讨" 
+href="http://www.36dsj.com/archives/23519" rel="next"> <LINK href="http://www.36dsj.com/archives/23504" 
+rel="canonical"> <LINK href="http://www.36dsj.com/?p=23504" rel="shortlink"> 
+<STYLE>a:hover, a:focus,.post-like.actived,.excerpt h2 a:hover,.user-welcome strong,.article-title a:hover,#comments b,.text-muted a:hover,.relates a:hover,.archives .item:hover h3,.linkcat h2,.sticky a:hover,.article-content a:hover,.widget_links li a:hover,.d_postlist li a:hover .text, .d_newtagpost li a:hover h2,.article-meta a:hover{color:#FF6600;}.btn,.article-tags a,.search-form .btn,.widget_tags_inner a:hover:hover,.focusmo a:hover h4,.tagslist .tagname:hover,.excerpt .more a,.pagination ul > .active > a, .pagination ul > .active > span,.widget .title .more,.navbar,.nav li ul > li > a:hover{background-color:#FF6600;}.title strong, .widget .title{border-bottom-color:#FF6600;}#submit{background: #FF6600;border-right: 2px solid #FF6600;border-bottom: 2px solid #FF6600;}.nav li.current-menu-item > a, .nav li.current-menu-parent > a, .nav li.current_page_item > a, .nav li.current-post-ancestor > a,.nav li a:focus,.nav li a:hover, .nav li:hover > a,.nav li ul{background-color:#EC5F00}</STYLE>
+
+<META name="keywords" content="Hadoop, hive, Spark, 大数据, 大数据技术, 大数据技术"> 
+<META name="description" content="大数据本身是个很宽泛的概念，Hadoop生态圈（或者泛生态圈）基本上都是为了处理超过单机尺度的数据处理而诞生的。你可以把它比作一个厨房所以需要的各种工具。锅碗瓢"> 
+<LINK href="http://www.36dsj.com/favicon.ico" rel="shortcut icon"> <!--[if lt IE 9]><script src="http://www.36dsj.com/wp-content/themes/dsj0804/js/html5.js"></script><![endif]--> 
+<META name="GENERATOR" content="MSHTML 11.00.9600.18349"></HEAD> 
+<BODY class="single single-post postid-23504 single-format-standard"><SECTION 
+class="container"><HEADER class="header">
+<DIV class="topbar">
+<DIV class="pull-right"><A title="关注”dashuju36“" class="feed-wechat" href="javascript:;" 
+rel="external nofollow" data-content="<img src='http://www.36dsj.com/wp-content/uploads/2014/07/qrcode_for_gh_8efec1177972_258.png'>">关注微信</A>&nbsp; 
+| &nbsp;<A title="关注微博" href="http://weibo.com/36dsj" target="_blank" rel="external nofollow">微博</A>&nbsp; 
+| &nbsp;<A title="关注腾讯微博" href="http://t.qq.com/youx18" target="_blank" rel="external nofollow">腾讯微博</A>&nbsp; 
+| &nbsp;<A title="Feed订阅" href="http://www.36dsj.com/feed" target="_blank" rel="external nofollow">RSS订阅</A>
+		 </DIV>		商务合作QQ：849046688 ，邮箱 dashuju36@qq.com 粉丝QQ群②：190771709	</DIV>
+<DIV class="logo"><A title="36大数据 | 专注大数据技术与商业应用_干货教程最多" href="http://www.36dsj.com/">36大数据</A></DIV><A 
+class="btn pull-right btn-tougao" href="http://www.36dsj.com/tougao">我要投稿</A>	 
+<FORM class="search-form" action="http://www.36dsj.com/" 
+method="get"><INPUT name="s" class="form-control" type="text" placeholder="输入关键字" value="" x-webkit-speech=""><INPUT class="btn" type="submit" value="搜索">
+	 </FORM>
+<DIV class="navbar">
+<DIV class="container">
+<UL class="nav">
+  <LI class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-2389" 
+  id="menu-item-2389"><A href="http://www.36dsj.com/">首页</A></LI>
+  <LI class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-13809" 
+  id="menu-item-13809"><A 
+  href="http://www.36dsj.com/archives/category/ganhuo">干货教程</A></LI>
+  <LI class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-has-children menu-item-2390" 
+  id="menu-item-2390"><A 
+  href="http://www.36dsj.com/archives/category/bigdata">大数据动向</A>
+  <UL class="sub-menu">
+    <LI class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3583" 
+    id="menu-item-3583"><A href="http://www.36dsj.com/archives/category/bigdata/baike">大数据百科</A></LI>
+    <LI class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3586" 
+    id="menu-item-3586"><A href="http://www.36dsj.com/archives/category/bigdata/large-enterprise-data">大数据企业</A></LI>
+    <LI class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3587" 
+    id="menu-item-3587"><A href="http://www.36dsj.com/archives/category/bigdata/big-data-products">大数据产品</A></LI>
+    <LI class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-10510" 
+    id="menu-item-10510"><A href="http://www.36dsj.com/archives/category/large-data-tools/das">大数据存储</A></LI>
+    <LI class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-11969" 
+    id="menu-item-11969"><A href="http://www.36dsj.com/archives/category/bigdata/technology">大数据技术</A>
+    <UL class="sub-menu">
+      <LI class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-10505" 
+      id="menu-item-10505"><A href="http://www.36dsj.com/archives/category/large-data-tools/hadoop">Hadoop</A></LI>
+      <LI class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-26053" 
+      id="menu-item-26053"><A href="http://www.36dsj.com/archives/category/large-data-tools/spark">Spark</A></LI></UL></LI>
+    <LI class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-10501" 
+    id="menu-item-10501"><A href="http://www.36dsj.com/archives/category/bigdata/bi-2">商业智能</A></LI>
+    <LI class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-10502" 
+    id="menu-item-10502"><A href="http://www.36dsj.com/archives/category/bigdata/cloudcomputing">云计算</A></LI></UL></LI>
+  <LI class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-10483" 
+  id="menu-item-10483"><A href="http://www.36dsj.com/archives/category/application-area">大数据应用</A>
+  <UL class="sub-menu">
+    <LI class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-10484" 
+    id="menu-item-10484"><A href="http://www.36dsj.com/archives/category/application-area/large-medical-data">大数据医疗</A></LI>
+    <LI class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-10487" 
+    id="menu-item-10487"><A href="http://www.36dsj.com/archives/category/application-area/marketing-application-area">大数据营销</A></LI>
+    <LI class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-10489" 
+    id="menu-item-10489"><A href="http://www.36dsj.com/archives/category/application-area/application-of-case">应用案例</A></LI>
+    <LI class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-10490" 
+    id="menu-item-10490"><A href="http://www.36dsj.com/archives/category/application-area/ec">电子商务</A></LI>
+    <LI class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-10491" 
+    id="menu-item-10491"><A href="http://www.36dsj.com/archives/category/data-analysi/the-game-data">移动互联网分析</A></LI>
+    <LI class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-10500" 
+    id="menu-item-10500"><A href="http://www.36dsj.com/archives/category/the-latest-technology-products/wearable-devices">可穿戴设备</A></LI></UL></LI>
+  <LI class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-11975" 
+  id="menu-item-11975"><A href="http://www.36dsj.com/archives/category/bigdata/data-visualization">数据可视化</A>
+  <UL class="sub-menu">
+    <LI class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-11976" 
+    id="menu-item-11976"><A href="http://www.36dsj.com/archives/category/bigdata/data-visualization/infographic">信息图</A></LI>
+    <LI class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-12748" 
+    id="menu-item-12748"><A href="http://www.36dsj.com/archives/category/bigdata/data-visualization/big-data-video">视频</A></LI>
+    <LI class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-11978" 
+    id="menu-item-11978"><A href="http://www.36dsj.com/archives/category/bigdata/data-visualization/data-weekly">数据周刊</A></LI>
+    <LI class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-11979" 
+    id="menu-item-11979"><A href="http://www.36dsj.com/archives/category/data-analysi/data-interpretation">有图有真相</A></LI></UL></LI>
+  <LI class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-10495" 
+  id="menu-item-10495"><A href="http://www.36dsj.com/archives/category/data-analysi">数据分析</A>
+  <UL class="sub-menu">
+    <LI class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-10496" 
+    id="menu-item-10496"><A href="http://www.36dsj.com/archives/category/data-analysi/data-report">数据报告</A></LI>
+    <LI class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-10497" 
+    id="menu-item-10497"><A href="http://www.36dsj.com/archives/category/data-analysi/datamining">数据挖掘</A></LI>
+    <LI class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-10498" 
+    id="menu-item-10498"><A href="http://www.36dsj.com/archives/category/data-analysi/user-research">用户研究</A></LI>
+    <LI class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-10499" 
+    id="menu-item-10499"><A href="http://www.36dsj.com/archives/category/data-analysi/web-analytics">网站分析</A></LI></UL></LI>
+  <LI class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-10512" 
+  id="menu-item-10512"><A href="http://www.36dsj.com/archives/category/look/big-data-investment">投资并购</A>
+  <UL class="sub-menu">
+    <LI class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-10492" 
+    id="menu-item-10492"><A href="http://www.36dsj.com/archives/category/global-vision">全球视野</A></LI>
+    <LI class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-10493" 
+    id="menu-item-10493"><A href="http://www.36dsj.com/archives/category/analysis/foreign-media-reports">外媒报道</A></LI>
+    <LI class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-11970" 
+    id="menu-item-11970"><A href="http://www.36dsj.com/archives/category/data-analysi/trend-observation">趋势观察</A></LI></UL></LI>
+  <LI class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17278" 
+  id="menu-item-17278"><A href="http://www.36dsj.com/qiye">企业专区</A></LI></UL>
+<DIV class="navbar-r"><A href="http://www.36dsj.com/wp-login.php">注册</A>			 <A 
+class="item" href="http://www.36dsj.com/wp-login.php?action=register"><SPAN 
+class="glyphicon glyphicon-user"></SPAN> 登录</A>				 </DIV></DIV></DIV></HEADER>
+<DIV class="content-wrap">
+<DIV class="content"><HEADER class="article-header">
+<H1 class="article-title"><A 
+href="http://www.36dsj.com/archives/23504">一文看懂大数据的技术生态圈，Hadoop，hive，spark都有了</A></H1>
+<UL class="article-meta">
+  <LI><SPAN class="glyphicon glyphicon-user"></SPAN> 数控小V</LI>
+  <LI><SPAN class="glyphicon glyphicon-time"></SPAN> 2015-03-01 17:30:07</LI>
+  <LI><SPAN class="glyphicon glyphicon-list-alt"></SPAN> <A href="http://www.36dsj.com/archives/category/bigdata/technology" 
+  rel="category tag">大数据技术</A></LI>
+  <LI><SPAN class="glyphicon glyphicon-comment"></SPAN> 评论(13)</LI>
+  <LI class="bdshare">
+  <DIV class="bdsharebuttonbox"><A class="bds_more" href="http://www.36dsj.com/archives/23504#" 
+  data-cmd="more"></A><A title="分享到QQ空间" class="bds_qzone" href="http://www.36dsj.com/archives/23504#" 
+  data-cmd="qzone"></A><A title="分享到新浪微博" class="bds_tsina" href="http://www.36dsj.com/archives/23504#" 
+  data-cmd="tsina"></A><A title="分享到腾讯微博" class="bds_tqq" href="http://www.36dsj.com/archives/23504#" 
+  data-cmd="tqq"></A><A title="分享到人人网" class="bds_renren" href="http://www.36dsj.com/archives/23504#" 
+  data-cmd="renren"></A><A title="分享到微信" class="bds_weixin" href="http://www.36dsj.com/archives/23504#" 
+  data-cmd="weixin"></A><A title="分享到开心网" class="bds_kaixin001" href="http://www.36dsj.com/archives/23504#" 
+  data-cmd="kaixin001"></A><A title="分享到腾讯朋友" class="bds_tqf" href="http://www.36dsj.com/archives/23504#" 
+  data-cmd="tqf"></A><A title="分享到QQ好友" class="bds_sqq" href="http://www.36dsj.com/archives/23504#" 
+  data-cmd="sqq"></A></DIV></LI></UL></HEADER><ARTICLE class="article-content">
+<P><IMG width="600" height="384" class="aligncenter wp-image-23505 size-medium" 
+alt="大数据生态圈" src="一文看懂大数据的技术生态圈，Hadoop，hive，spark都有了%20%2036大数据_files/26-600x384.png"></P>
+<P>大数据本身是个很宽泛的概念，Hadoop生态圈（或者泛生态圈）基本上都是为了处理超过单机尺度的数据处理而诞生的。<STRONG>你可以把它比作一个厨房所以需要的各种工具。锅碗瓢盆，各有各的用处，互相之间又有重合。你可以用汤锅直接当碗吃饭喝汤，你可以用小刀或者刨子去皮。但是每个工具有自己的特性，虽然奇怪的组合也能工作，但是未必是最佳选择。</STRONG></P>
+<P><STRONG><SPAN 
+style="color: rgb(250, 58, 5);">大数据，首先你要能存的下大数据。</SPAN></STRONG></P>
+<P>传统的文件系统是单机的，不能横跨不同的机器。HDFS（Hadoop Distributed 
+FileSystem）的设计本质上是为了大量的数据能横跨成百上千台机器，但是你看到的是一个文件系统而不是很多文件系统。比如你说我要获取/hdfs/tmp/file1的数据，你引用的是一个文件路径，但是实际的数据存放在很多不同的机器上。你作为用户，不需要知道这些，就好比在单机上你不关心文件分散在什么磁道什么扇区一样。HDFS为你管理这些数据。</P>
+<P><STRONG><SPAN 
+style="color: rgb(250, 58, 5);">存的下数据之后，你就开始考虑怎么处理数据。</SPAN></STRONG>虽然HDFS可以为你整体管理不同机器上的数据，但是这些数据太大了。一台机器读取成T上P的数据（很大的数据哦，比如整个东京热有史以来所有高清电影的大小甚至更大），一台机器慢慢跑也许需要好几天甚至好几周。对于很多公司来说，单机处理是不可忍受的，比如微博要更新24小时热博，它必须在24小时之内跑完这些处理。那么我如果要用很多台机器处理，我就面临了如何分配工作，如果一台机器挂了如何重新启动相应的任务，机器之间如何互相通信交换数据以完成复杂的计算等等。这就是MapReduce 
+/ Tez / 
+Spark的功能。MapReduce是第一代计算引擎，Tez和Spark是第二代。MapReduce的设计，采用了很简化的计算模型，只有Map和Reduce两个计算过程（中间用Shuffle串联），用这个模型，已经可以处理大数据领域很大一部分问题了。</P>
+<P><STRONG><SPAN 
+style="color: rgb(250, 58, 5);">那什么是Map什么是Reduce？</SPAN></STRONG></P>
+<P>考虑如果你要统计一个巨大的文本文件存储在类似HDFS上，你想要知道这个文本里各个词的出现频率。你启动了一个MapReduce程序。Map阶段，几百台机器同时读取这个文件的各个部分，分别把各自读到的部分分别统计出词频，产生类似（hello, 
+12100次），（world，15214次）等等这样的Pair（我这里把Map和Combine放在一起说以便简化）；这几百台机器各自都产生了如上的集合，然后又有几百台机器启动Reduce处理。Reducer机器A将从Mapper机器收到所有以A开头的统计结果，机器B将收到B开头的词汇统计结果（当然实际上不会真的以字母开头做依据，而是用函数产生Hash值以避免数据串化。因为类似X开头的词肯定比其他要少得多，而你不希望数据处理各个机器的工作量相差悬殊）。然后这些Reducer将再次汇总，（hello，12100）＋（hello，12311）＋（hello，345881）= 
+（hello，370292）。每个Reducer都如上处理，你就得到了整个文件的词频结果。</P>
+<P>这看似是个很简单的模型，但很多算法都可以用这个模型描述了。</P>
+<P>Map＋Reduce的简单模型很黄很暴力，虽然好用，但是很笨重。第二代的Tez和Spark除了内存Cache之类的新feature，本质上来说，是让Map/Reduce模型更通用，让Map和Reduce之间的界限更模糊，数据交换更灵活，更少的磁盘读写，以便更方便地描述复杂算法，取得更高的吞吐量。</P>
+<P>有了MapReduce，Tez和Spark之后，程序员发现，MapReduce的程序写起来真麻烦。他们希望简化这个过程。这就好比你有了汇编语言，虽然你几乎什么都能干了，但是你还是觉得繁琐。你希望<SPAN 
+style="color: rgb(250, 58, 5);"><STRONG>有个更高层更抽象的语言层来描述算法和数据处理流程。于是就有了Pig和Hive。</STRONG></SPAN>Pig是接近脚本方式去描述MapReduce，Hive则用的是SQL。它们把脚本和SQL语言翻译成MapReduce程序，丢给计算引擎去计算，而你就从繁琐的MapReduce程序中解脱出来，用更简单更直观的语言去写程序了。</P>
+<P><STRONG>有了Hive之后，人们发现SQL对比Java有巨大的优势</STRONG>。一个是它太容易写了。刚才词频的东西，用SQL描述就只有一两行，MapReduce写起来大约要几十上百行。而更重要的是，非计算机背景的用户终于感受到了爱：我也会写SQL！于是数据分析人员终于从乞求工程师帮忙的窘境解脱出来，工程师也从写奇怪的一次性的处理程序中解脱出来。大家都开心了。Hive逐渐成长成了大数据仓库的核心组件。甚至很多公司的流水线作业集完全是用SQL描述，因为易写易改，一看就懂，容易维护。</P>
+<P>自从数据分析人员开始用Hive分析数据之后，它们发现，Hive在MapReduce上跑，真鸡巴慢！流水线作业集也许没啥关系，比如24小时更新的推荐，反正24小时内跑完就算了。但是数据分析，人们总是希望能跑更快一些。比如我希望看过去一个小时内多少人在充气娃娃页面驻足，分别停留了多久，对于一个巨型网站海量数据下，这个处理过程也许要花几十分钟甚至很多小时。而这个分析也许只是你万里长征的第一步，你还要看多少人浏览了跳蛋多少人看了拉赫曼尼诺夫的CD，以便跟老板汇报，我们的用户是猥琐男闷骚女更多还是文艺青年／少女更多。你无法忍受等待的折磨，只能跟帅帅的工程师蝈蝈说，快，快，再快一点！</P>
+<P>于是Impala，Presto，Drill诞生了（当然还有无数非著名的交互SQL引擎，就不一一列举了）。三个系统的核心理念是，MapReduce引擎太慢，因为它太通用，太强壮，太保守，我们SQL需要更轻量，更激进地获取资源，更专门地对SQL做优化，而且不需要那么多容错性保证（因为系统出错了大不了重新启动任务，如果整个处理时间更短的话，比如几分钟之内）。这些系统让用户更快速地处理SQL任务，牺牲了通用性稳定性等特性。如果说MapReduce是大砍刀，砍啥都不怕，那上面三个就是剔骨刀，灵巧锋利，但是不能搞太大太硬的东西。</P>
+<P>这些系统，说实话，一直没有达到人们期望的流行度。因为这时候又两个异类被造出来了。他们是Hive on Tez / 
+Spark和SparkSQL。它们的设计理念是，MapReduce慢，但是如果我用新一代通用计算引擎Tez或者Spark来跑SQL，那我就能跑的更快。而且用户不需要维护两套系统。这就好比如果你厨房小，人又懒，对吃的精细程度要求有限，那你可以买个电饭煲，能蒸能煲能烧，省了好多厨具。</P>
+<P>上面的介绍，基本就是一个数据仓库的构架了。<STRONG><SPAN 
+style="color: rgb(250, 58, 5);">底层HDFS，上面跑MapReduce／Tez／Spark，在上面跑Hive，Pig。或者HDFS上直接跑Impala，Drill，Presto。这解决了中低速数据处理的要求。</SPAN></STRONG></P>
+<P>那如果我要更高速的处理呢？</P>
+<P>如果我是一个类似微博的公司，我希望显示不是24小时热博，我想看一个不断变化的热播榜，更新延迟在一分钟之内，上面的手段都将无法胜任。于是又一种计算模型被开发出来，这就是Streaming（流）计算。<STRONG><SPAN 
+style="color: rgb(250, 58, 5);">Storm是最流行的流计算平台</SPAN></STRONG>。流计算的思路是，如果要达到更实时的更新，我何不在数据流进来的时候就处理了？比如还是词频统计的例子，我的数据流是一个一个的词，我就让他们一边流过我就一边开始统计了。流计算很牛逼，基本无延迟，但是它的短处是，不灵活，你想要统计的东西必须预先知道，毕竟数据流过就没了，你没算的东西就无法补算了。因此它是个很好的东西，但是无法替代上面数据仓库和批处理系统。</P>
+<P>还有一个有些独立的模块是KV Store，比如Cassandra，HBase，MongoDB以及很多很多很多很多其他的（多到无法想象）。所以KV 
+Store就是说，我有一堆键值，我能很快速滴获取与这个Key绑定的数据。比如我用身份证号，能取到你的身份数据。这个动作用MapReduce也能完成，但是很可能要扫描整个数据集。而KV 
+Store专用来处理这个操作，所有存和取都专门为此优化了。从几个P的数据中查找一个身份证号，也许只要零点几秒。这让大数据公司的一些专门操作被大大优化了。比如我网页上有个根据订单号查找订单内容的页面，而整个网站的订单数量无法单机数据库存储，我就会考虑用KV 
+Store来存。KV 
+Store的理念是，基本无法处理复杂的计算，大多没法JOIN，也许没法聚合，没有强一致性保证（不同数据分布在不同机器上，你每次读取也许会读到不同的结果，也无法处理类似银行转账那样的强一致性要求的操作）。但是丫就是快。极快。</P>
+<P>每个不同的KV Store设计都有不同取舍，有些更快，有些容量更高，有些可以支持更复杂的操作。必有一款适合你。</P>
+<P>除此之外，还有一些更特制的系统／组件，比如Mahout是分布式机器学习库，Protobuf是数据交换的编码和库，ZooKeeper是高一致性的分布存取协同系统，等等。</P>
+<P>有了这么多乱七八糟的工具，都在同一个集群上运转，大家需要互相尊重有序工作。所以另外一个重要组件是，调度系统。现在最流行的是Yarn。你可以把他看作中央管理，好比你妈在厨房监工，哎，你妹妹切菜切完了，你可以把刀拿去杀鸡了。只要大家都服从你妈分配，那大家都能愉快滴烧菜。</P>
+<P>你可以认为，<STRONG>大数据生态圈就是一个厨房工具生态圈。为了做不同的菜，中国菜，日本菜，法国菜，你需要各种不同的工具。而且客人的需求正在复杂化，你的厨具不断被发明，也没有一个万用的厨具可以处理所有情况，因此它会变的越来越复杂。</STRONG></P>
+<P><A href="http://www.zhihu.com/question/27974418" 
+target="_blank">本文来源于知乎，原文地址&gt;&gt;&gt;</A></P>
+<P>End.</P>
+<DIV class="wumii-hook"><INPUT name="wurl" type="hidden" value="http://www.36dsj.com/archives/23504"><BR><INPUT name="wtitle" type="hidden" value="一文看懂大数据的技术生态圈，Hadoop，hive，spark都有了"><BR><INPUT name="wpic" type="hidden" value="http://www.36dsj.com/wp-content/uploads/2015/03/27.jpg"> 
+</DIV>
+<P style="margin: 0px; padding: 0px; height: 1px; overflow: hidden;">
+<SCRIPT type="text/javascript"><!--
+        var wumiiSitePrefix = "http://www.36dsj.com";
+        var wumiiEnableCustomPos = false;
+        var wumiiParams = "&#038;num=8&#038;mode=3&#038;displayInFeed=1&#038;version=1.0.5.7&#038;pf=WordPress4.1.12";
+        var wumiiCategories = ["\u5927\u6570\u636e\u6280\u672f"];
+    //--></SCRIPT>
+
+<SCRIPT src="一文看懂大数据的技术生态圈，Hadoop，hive，spark都有了%20%2036大数据_files/relatedItemsWidget.js" type="text/javascript"></SCRIPT>
+<A style="border: 0px currentColor; border-image: none;" href="http://www.wumii.com/widget/relatedItems"><IMG 
+style="margin: 0px; padding: 0px; border: 0px currentColor; border-image: none;" 
+alt="无觅相关文章插件，快速提升流量" src="一文看懂大数据的技术生态圈，Hadoop，hive，spark都有了%20%2036大数据_files/pixel.png"></A></P>
+<P>转载请注明来自36大数据（36dsj.com)：<A href="http://www.36dsj.com/">36大数据</A> » <A href="http://www.36dsj.com/archives/23504">一文看懂大数据的技术生态圈，Hadoop，hive，spark都有了</A></P></ARTICLE>
+<DIV class="article-tags">标签：<A href="http://www.36dsj.com/archives/tag/hadoop" 
+rel="tag">Hadoop</A><A href="http://www.36dsj.com/archives/tag/hive" 
+rel="tag">hive</A><A href="http://www.36dsj.com/archives/tag/spark" 
+rel="tag">Spark</A><A href="http://www.36dsj.com/archives/tag/bigdata1" rel="tag">大数据</A><A 
+href="http://www.36dsj.com/archives/tag/big-data-technology" 
+rel="tag">大数据技术</A>		</DIV>
+<DIV class="postcode"><IMG width="640" height="141" class="alignnone size-full wp-image-11327" 
+alt="36大数据" src="一文看懂大数据的技术生态圈，Hadoop，hive，spark都有了%20%2036大数据_files/P3.png"> 
+&nbsp;除非特别注明，本站所有文章均不代表本站观点。报道中出现的商标属于其合法持有人。请遵守理性，宽容，换位思考的原则。 </DIV>
+<DIV class="relates">
+<H3 class="title"><STRONG>猜你喜欢</STRONG></H3>
+<UL>
+  <LI><A href="http://www.36dsj.com/archives/57411">#商机# 
+  7.29大数据、政务云采购清单，最高招标价为1481.22万（中标、招标各17起）</A>2016-08-01</LI>
+  <LI><A 
+  href="http://www.36dsj.com/archives/57402">2666人，36大数据通讯录2.0通用版本今日发布（以后仅对会员服务）</A>2016-08-01</LI>
+  <LI><A 
+  href="http://www.36dsj.com/archives/57323">互利科技CEO林坦：大数据在日志分析的应用与实践</A>2016-08-01</LI>
+  <LI><A 
+  href="http://www.36dsj.com/archives/57239">8月大数据行业跑会指南（持续更新中）</A>2016-08-01</LI>
+  <LI><A 
+  href="http://www.36dsj.com/archives/57279">聚合数据技术总监邵加佳：数据的流动带来巨额收益</A>2016-07-31</LI>
+  <LI><A href="http://www.36dsj.com/archives/57274">前端埋点你知多少</A>2016-07-30</LI>
+  <LI><A 
+  href="http://www.36dsj.com/archives/57165">数据科学家必备工具有哪些?</A>2016-07-30</LI>
+  <LI><A 
+  href="http://www.36dsj.com/archives/57256">36大数据周报：云计算成为创业新方向，甲骨文打造云生态服务（7.25-7.29）</A>2016-07-29</LI>
+  <LI><A href="http://www.36dsj.com/archives/57242">#商机# 
+  7.28大数据、政务云采购清单，最高成交价为7169.73万（中标、招标各16起）</A>2016-07-29</LI>
+  <LI><A href="http://www.36dsj.com/archives/57119">IEEE 
+  Spectrum公布编程语言最新排行：大数据是赢家</A>2016-07-28</LI></UL></DIV>
+<H3 class="title" id="comments">
+<DIV class="text-muted pull-right"></DIV><STRONG>评论 <B>13</B></STRONG> </H3>
+<DIV class="no_webshot" id="respond">
+<FORM id="commentform" action="http://www.36dsj.com/wp-comments-post.php" 
+method="post">
+<DIV class="comt-title">
+<DIV class="comt-avatar"><IMG width="50" height="50" class="avatar avatar-50 photo avatar-default" 
+alt="" data-original="http://0.gravatar.com/avatar/?d=http://www.36dsj.com/wp-content/themes/dsj0804/images/avatar-default.png&amp;s=50">			</DIV>
+<DIV class="comt-author"></DIV><A id="cancel-comment-reply-link" href="javascript:;">取消</A>
+		 </DIV>
+<DIV class="comt">
+<DIV class="comt-box"><TEXTAREA name="comment" tabindex="1" class="input-block-level comt-area" id="comment" onkeydown="if(event.ctrlKey&amp;&amp;event.keyCode==13){document.getElementById('submit').click();return false};" placeholder="骚年哟，既然都来了，为何不吐槽几句呢？((o(^_ ^)o))" rows="3" cols="100">骚年哟，既然都来了，为何不吐槽几句呢？((o(^_ ^)o))</TEXTAREA>
+				 
+<DIV class="comt-ctrl">
+<DIV class="comt-tips"><INPUT name="comment_post_ID" id="comment_post_ID" type="hidden" value="23504"> 
+<INPUT name="comment_parent" id="comment_parent" type="hidden" value="0"> 
+<P style="display: none;"><INPUT name="akismet_comment_nonce" id="akismet_comment_nonce" type="hidden" value="35ffc75082"></P><LABEL 
+class="checkbox inline hide" style="padding-top: 0px;" 
+for="comment_mail_notify"><INPUT name="comment_mail_notify" id="comment_mail_notify" 
+type="checkbox" checked="checked" value="comment_mail_notify">有人回复时邮件通知我</LABEL>
+<P style="display: none;"><INPUT name="ak_js" id="ak_js" type="hidden" value="22"></P></DIV><BUTTON 
+name="submit" tabindex="5" id="submit" type="submit"><I class="icon-ok-circle icon-white icon12"></I> 
+提交评论</BUTTON>					 <!-- <span data-type="comment-insert-smilie" class="muted comt-smilie"><i class="icon-thumbs-up icon12"></i> 表情</span> -->
+				 </DIV></DIV></DIV></FORM></DIV>
+<DIV id="postcomments">
+<OL class="commentlist">
+  <LI class="comment even thread-even depth-1" id="comment-2858">
+  <DIV class="c-avatar"><IMG width="50" height="50" class="avatar avatar-50 photo avatar-default" 
+  alt="" data-original="http://0.gravatar.com/avatar/?d=http://www.36dsj.com/wp-content/themes/dsj0804/images/avatar-default.png&amp;s=50"></DIV>
+  <DIV class="c-main" id="div-comment-2858"><SPAN 
+  class="c-author">86luo</SPAN>学习<time class="c-time">1年前 (2015-03-18)</time><A 
+  class="comment-reply-link" aria-label="回复给86luo" onclick='return addComment.moveForm( "div-comment-2858", "2858", "respond", "23504" )' 
+  href="http://www.36dsj.com/archives/23504?replytocom=2858#respond">回复</A></DIV></LI><!-- #comment-## --> 
+  <LI class="comment odd alt thread-odd thread-alt depth-1" id="comment-4268">
+  <DIV class="c-avatar"><IMG width="50" height="50" class="avatar avatar-50 photo avatar-default" 
+  alt="" data-original="http://0.gravatar.com/avatar/?d=http://www.36dsj.com/wp-content/themes/dsj0804/images/avatar-default.png&amp;s=50"></DIV>
+  <DIV class="c-main" id="div-comment-4268"><SPAN 
+  class="c-author">匿名</SPAN>吐槽<time class="c-time">10个月前 (10-07)</time><A class="comment-reply-link" 
+  aria-label="回复给" onclick='return addComment.moveForm( "div-comment-4268", "4268", "respond", "23504" )' 
+  href="http://www.36dsj.com/archives/23504?replytocom=4268#respond">回复</A></DIV></LI><!-- #comment-## --> 
+  <LI class="comment even thread-even depth-1" id="comment-4301">
+  <DIV class="c-avatar"><IMG width="50" height="50" class="avatar avatar-50 photo avatar-default" 
+  alt="" data-original="http://0.gravatar.com/avatar/?d=http://www.36dsj.com/wp-content/themes/dsj0804/images/avatar-default.png&amp;s=50"></DIV>
+  <DIV class="c-main" id="div-comment-4301"><SPAN 
+  class="c-author">匿名</SPAN>比喻生动<time class="c-time">10个月前 (10-10)</time><A 
+  class="comment-reply-link" aria-label="回复给" onclick='return addComment.moveForm( "div-comment-4301", "4301", "respond", "23504" )' 
+  href="http://www.36dsj.com/archives/23504?replytocom=4301#respond">回复</A></DIV></LI><!-- #comment-## --> 
+  <LI class="comment odd alt thread-odd thread-alt depth-1" id="comment-6404">
+  <DIV class="c-avatar"><IMG width="50" height="50" class="avatar avatar-50 photo avatar-default" 
+  alt="" data-original="http://0.gravatar.com/avatar/?d=http://www.36dsj.com/wp-content/themes/dsj0804/images/avatar-default.png&amp;s=50"></DIV>
+  <DIV class="c-main" id="div-comment-6404"><SPAN 
+  class="c-author">匿名</SPAN>生动！<time class="c-time">8个月前 (12-16)</time><A class="comment-reply-link" 
+  aria-label="回复给" onclick='return addComment.moveForm( "div-comment-6404", "6404", "respond", "23504" )' 
+  href="http://www.36dsj.com/archives/23504?replytocom=6404#respond">回复</A></DIV></LI><!-- #comment-## --> 
+  <LI class="comment even thread-even depth-1" id="comment-13815">
+  <DIV class="c-avatar"><IMG width="50" height="50" class="avatar avatar-50 photo avatar-default" 
+  alt="" data-original="http://0.gravatar.com/avatar/?d=http://www.36dsj.com/wp-content/themes/dsj0804/images/avatar-default.png&amp;s=50"></DIV>
+  <DIV class="c-main" id="div-comment-13815"><SPAN 
+  class="c-author">匿名</SPAN>不错<time class="c-time">4个月前 (04-11)</time><A class="comment-reply-link" 
+  aria-label="回复给" onclick='return addComment.moveForm( "div-comment-13815", "13815", "respond", "23504" )' 
+  href="http://www.36dsj.com/archives/23504?replytocom=13815#respond">回复</A></DIV></LI><!-- #comment-## --> 
+  <LI class="comment odd alt thread-odd thread-alt depth-1" id="comment-14199">
+  <DIV class="c-avatar"><IMG width="50" height="50" class="avatar avatar-50 photo avatar-default" 
+  alt="" data-original="http://0.gravatar.com/avatar/?d=http://www.36dsj.com/wp-content/themes/dsj0804/images/avatar-default.png&amp;s=50"></DIV>
+  <DIV class="c-main" id="div-comment-14199"><SPAN 
+  class="c-author">匿名</SPAN>写的生动直白，点赞<time class="c-time">3个月前 (04-20)</time><A 
+  class="comment-reply-link" aria-label="回复给" onclick='return addComment.moveForm( "div-comment-14199", "14199", "respond", "23504" )' 
+  href="http://www.36dsj.com/archives/23504?replytocom=14199#respond">回复</A></DIV></LI><!-- #comment-## --> 
+  <LI class="comment even thread-even depth-1" id="comment-14570">
+  <DIV class="c-avatar"><IMG width="50" height="50" class="avatar avatar-50 photo avatar-default" 
+  alt="" data-original="http://0.gravatar.com/avatar/?d=http://www.36dsj.com/wp-content/themes/dsj0804/images/avatar-default.png&amp;s=50"></DIV>
+  <DIV class="c-main" id="div-comment-14570"><SPAN 
+  class="c-author">匿名</SPAN>赞<time class="c-time">3个月前 (04-27)</time><A class="comment-reply-link" 
+  aria-label="回复给" onclick='return addComment.moveForm( "div-comment-14570", "14570", "respond", "23504" )' 
+  href="http://www.36dsj.com/archives/23504?replytocom=14570#respond">回复</A></DIV></LI><!-- #comment-## --> 
+  <LI class="comment odd alt thread-odd thread-alt depth-1" id="comment-14601">
+  <DIV class="c-avatar"><IMG width="50" height="50" class="avatar avatar-50 photo avatar-default" 
+  alt="" data-original="http://0.gravatar.com/avatar/?d=http://www.36dsj.com/wp-content/themes/dsj0804/images/avatar-default.png&amp;s=50"></DIV>
+  <DIV class="c-main" id="div-comment-14601"><SPAN 
+  class="c-author">匿名</SPAN>可以。就是比喻看不懂，那什么是热的？<time class="c-time">3个月前 
+  (04-28)</time><A class="comment-reply-link" aria-label="回复给" onclick='return addComment.moveForm( "div-comment-14601", "14601", "respond", "23504" )' 
+  href="http://www.36dsj.com/archives/23504?replytocom=14601#respond">回复</A></DIV>
+  <UL class="children">
+    <LI class="comment even depth-2" id="comment-17023">
+    <DIV class="c-avatar"><IMG width="50" height="50" class="avatar avatar-50 photo avatar-default" 
+    alt="" data-original="http://0.gravatar.com/avatar/?d=http://www.36dsj.com/wp-content/themes/dsj0804/images/avatar-default.png&amp;s=50"></DIV>
+    <DIV class="c-main" id="div-comment-17023"><SPAN 
+    class="c-author">匿名</SPAN>东京是热的<time class="c-time">2个月前 (06-16)</time><A 
+    class="comment-reply-link" aria-label="回复给" onclick='return addComment.moveForm( "div-comment-17023", "17023", "respond", "23504" )' 
+    href="http://www.36dsj.com/archives/23504?replytocom=17023#respond">回复</A></DIV></LI><!-- #comment-## --> 
+  </UL><!-- .children --> </LI><!-- #comment-## --> 
+  <LI class="comment odd alt thread-even depth-1" id="comment-15031">
+  <DIV class="c-avatar"><IMG width="50" height="50" class="avatar avatar-50 photo avatar-default" 
+  alt="" data-original="http://0.gravatar.com/avatar/?d=http://www.36dsj.com/wp-content/themes/dsj0804/images/avatar-default.png&amp;s=50"></DIV>
+  <DIV class="c-main" id="div-comment-15031"><SPAN 
+  class="c-author">匿名</SPAN>真的写的好，买菜的大妈估计都能看懂<time class="c-time">3个月前 
+  (05-06)</time><A class="comment-reply-link" aria-label="回复给" onclick='return addComment.moveForm( "div-comment-15031", "15031", "respond", "23504" )' 
+  href="http://www.36dsj.com/archives/23504?replytocom=15031#respond">回复</A></DIV></LI><!-- #comment-## --> 
+  <LI class="comment even thread-odd thread-alt depth-1" id="comment-15072">
+  <DIV class="c-avatar"><IMG width="50" height="50" class="avatar avatar-50 photo avatar-default" 
+  alt="" data-original="http://0.gravatar.com/avatar/?d=http://www.36dsj.com/wp-content/themes/dsj0804/images/avatar-default.png&amp;s=50"></DIV>
+  <DIV class="c-main" id="div-comment-15072"><SPAN 
+  class="c-author">匿名</SPAN>通俗易懂<time class="c-time">3个月前 (05-07)</time><A 
+  class="comment-reply-link" aria-label="回复给" onclick='return addComment.moveForm( "div-comment-15072", "15072", "respond", "23504" )' 
+  href="http://www.36dsj.com/archives/23504?replytocom=15072#respond">回复</A></DIV></LI><!-- #comment-## --> 
+  <LI class="comment odd alt thread-even depth-1" id="comment-15933">
+  <DIV class="c-avatar"><IMG width="50" height="50" class="avatar avatar-50 photo avatar-default" 
+  alt="" data-original="http://0.gravatar.com/avatar/?d=http://www.36dsj.com/wp-content/themes/dsj0804/images/avatar-default.png&amp;s=50"></DIV>
+  <DIV class="c-main" id="div-comment-15933"><SPAN 
+  class="c-author">匿名</SPAN>有点意思。<time class="c-time">2个月前 (05-26)</time><A 
+  class="comment-reply-link" aria-label="回复给" onclick='return addComment.moveForm( "div-comment-15933", "15933", "respond", "23504" )' 
+  href="http://www.36dsj.com/archives/23504?replytocom=15933#respond">回复</A></DIV></LI><!-- #comment-## --> 
+  <LI class="comment even thread-odd thread-alt depth-1" id="comment-17037">
+  <DIV class="c-avatar"><IMG width="50" height="50" class="avatar avatar-50 photo avatar-default" 
+  alt="" data-original="http://0.gravatar.com/avatar/?d=http://www.36dsj.com/wp-content/themes/dsj0804/images/avatar-default.png&amp;s=50"></DIV>
+  <DIV class="c-main" id="div-comment-17037"><SPAN 
+  class="c-author">匿名</SPAN>强顶<time class="c-time">2个月前 (06-16)</time><A class="comment-reply-link" 
+  aria-label="回复给" onclick='return addComment.moveForm( "div-comment-17037", "17037", "respond", "23504" )' 
+  href="http://www.36dsj.com/archives/23504?replytocom=17037#respond">回复</A></DIV></LI><!-- #comment-## -->
+	 </OL>
+<DIV class="pagenav"></DIV></DIV></DIV></DIV><ASIDE class="sidebar">
+<DIV class="widget widget_text">
+<DIV class="textwidget"><A href="一文看懂大数据的技术生态圈，Hadoop，hive，spark都有了%20%2036大数据_files/P2.png"><IMG 
+width="300" height="140" class="alignnone size-full wp-image-11326" alt="36大数据" 
+src="一文看懂大数据的技术生态圈，Hadoop，hive，spark都有了%20%2036大数据_files/P2.png"></A></DIV></DIV>
+<DIV class="widget widget_ultimate_posts">
+<H3 class="title"><STRONG><A 
+href="http://www.36dsj.com/archives/category/news">你想知道</A></STRONG></H3>
+<UL>
+  <LI>
+  <DIV class="upw-content">
+  <P class="post-title"><A title="中国开源项目哪家强？看看阿里，百度，腾讯，360，新浪，网易，小米等都开源了什么" 
+  href="http://www.36dsj.com/archives/52882">              
+  中国开源项目哪家强？看看阿里，百度，腾讯，360，新浪，网易，小米等都开源了什么            </A>           
+  </P></DIV></LI>
+  <LI>
+  <DIV class="upw-content">
+  <P class="post-title"><A title="知道Hadoop就够了？这九大技术你也必须了解！" href="http://www.36dsj.com/archives/52823"> 
+               知道Hadoop就够了？这九大技术你也必须了解！            </A>           
+</P></DIV></LI>
+  <LI>
+  <DIV class="upw-content">
+  <P class="post-title"><A title="在线数据迁移经验：如何为正在飞行的飞机更换引擎" href="http://www.36dsj.com/archives/52590"> 
+               在线数据迁移经验：如何为正在飞行的飞机更换引擎            </A>           </P></DIV></LI>
+  <LI>
+  <DIV class="upw-content">
+  <P class="post-title"><A title="如何从互联网采集海量数据？租房,二手房,薪酬…" href="http://www.36dsj.com/archives/52224"> 
+               如何从互联网采集海量数据？租房,二手房,薪酬…            </A>           </P></DIV></LI>
+  <LI>
+  <DIV class="upw-content">
+  <P class="post-title"><A title="如何简单形象又有趣地讲解神经网络是什么" href="http://www.36dsj.com/archives/52210">如何简单形象又有趣地讲解神经网络是什么 
+             </A>           </P></DIV></LI>
+  <LI>
+  <DIV class="upw-content">
+  <P class="post-title"><A title="HBase GC的前生今世 – 演进篇" href="http://www.36dsj.com/archives/52028">HBase 
+  GC的前生今世 – 演进篇            </A>           </P></DIV></LI>
+  <LI>
+  <DIV class="upw-content">
+  <P class="post-title"><A title="详解：从Greenplum、Hadoop到现在阿里大数据技术" href="http://www.36dsj.com/archives/51749"> 
+               详解：从Greenplum、Hadoop到现在阿里大数据技术            </A>           
+  </P></DIV></LI>
+  <LI>
+  <DIV class="upw-content">
+  <P class="post-title"><A title="Spark性能优化指南——高级篇" href="http://www.36dsj.com/archives/50080">Spark性能优化指南——高级篇 
+             </A>           </P></DIV></LI>
+  <LI>
+  <DIV class="upw-content">
+  <P class="post-title"><A title="Spark性能优化指南——基础篇" href="http://www.36dsj.com/archives/50033">Spark性能优化指南——基础篇 
+             </A>           </P></DIV></LI>
+  <LI>
+  <DIV class="upw-content">
+  <P class="post-title"><A title="[译]英雄联盟是如何压缩骨骼动画数据的?" href="http://www.36dsj.com/archives/48513">[译]英雄联盟是如何压缩骨骼动画数据的? 
+             </A>           </P></DIV></LI></UL></DIV>
+<DIV class="widget widget_text">
+<DIV class="textwidget"><A href="http://www.36dsj.com/archives/category/application-area/major" 
+target="_blank"><IMG width="300" height="138" class="alignnone size-full wp-image-14952" 
+alt="马云说" 
+src="一文看懂大数据的技术生态圈，Hadoop，hive，spark都有了%20%2036大数据_files/4110.jpg"></A></DIV></DIV>
+<DIV class="widget widget_recent_entries">
+<H3 class="title"><STRONG>近期文章</STRONG></H3>
+<UL>
+  <LI><A href="http://www.36dsj.com/archives/57411">#商机# 
+  7.29大数据、政务云采购清单，最高招标价为1481.22万（中标、招标各17起）</A>						 </LI>
+  <LI><A 
+  href="http://www.36dsj.com/archives/57402">2666人，36大数据通讯录2.0通用版本今日发布（以后仅对会员服务）</A>
+  						 </LI>
+  <LI><A 
+  href="http://www.36dsj.com/archives/57376">搜狗联合音悦台共同发布了《中国粉丝追星大数据报告》</A>
+  						 </LI>
+  <LI><A href="http://www.36dsj.com/archives/57373">星图数据谷熠：大数据没忽悠你，是你不会玩</A>
+  						 </LI>
+  <LI><A href="http://www.36dsj.com/archives/57365">基于用户的协同过滤是怎么推荐电影的?</A>
+  						 </LI>
+  <LI><A 
+  href="http://www.36dsj.com/archives/57358">能源行业大数据应用案例分享（枣矿集团智慧矿山、中石化升级页岩气勘探、中石油管道升级）</A>
+  						 </LI>
+  <LI><A 
+  href="http://www.36dsj.com/archives/57351">【十二年磨一剑】索信达数据挂牌上市成功，致力领航大数据时代</A>
+  						 </LI>
+  <LI><A href="http://www.36dsj.com/archives/57323">互利科技CEO林坦：大数据在日志分析的应用与实践</A>
+  						 </LI>
+  <LI><A 
+  href="http://www.36dsj.com/archives/57319">如何看待大数据创业——投资人、技术专家、创业公司全方位解读</A>
+  						 </LI>
+  <LI><A href="http://www.36dsj.com/archives/57239">8月大数据行业跑会指南（持续更新中）</A>
+  						 </LI></UL></DIV>
+<DIV class="widget d_postlist">
+<H3 class="title"><STRONG>相关文章<A class="more" 
+href="http://www.36dsj.com/">More+</A></STRONG></H3>
+<UL>
+  <LI><A href="http://www.36dsj.com/archives/10064"><SPAN class="thumbnail"><IMG 
+  class="thumb" src="一文看懂大数据的技术生态圈，Hadoop，hive，spark都有了%20%2036大数据_files/3110-220x150.jpg"></SPAN><SPAN 
+  class="text">面板数据分析中标准误的估计修正——根据Peterson (2009)的归纳</SPAN><SPAN 
+  class="muted">2014-07-21</SPAN><SPAN class="muted">1评论</SPAN></A></LI>
+  <LI><A href="http://www.36dsj.com/archives/18273"><SPAN 
+  class="thumbnail"><SPAN><IMG class="thumb" data-original="http://www.36dsj.com/wp-content/uploads/2014/12/228-220x150.jpg"></SPAN></SPAN><SPAN 
+  class="text">你的QQ暴露了你的心——QQ大数据及其应用介绍PPT</SPAN><SPAN 
+  class="muted">2014-12-11</SPAN><SPAN class="muted">1评论</SPAN></A></LI>
+  <LI><A href="http://www.36dsj.com/archives/18603"><SPAN 
+  class="thumbnail"><SPAN><IMG class="thumb" data-original="http://www.36dsj.com/wp-content/uploads/2014/12/381.jpg"></SPAN></SPAN><SPAN 
+  class="text">多源异构大数据的机器学习关键技术研究进展（PPT）</SPAN><SPAN 
+  class="muted">2014-12-17</SPAN><SPAN class="muted"></SPAN></A></LI>
+  <LI><A href="http://www.36dsj.com/archives/43600"><SPAN 
+  class="thumbnail"><SPAN><IMG class="thumb" data-original="http://www.36dsj.com/wp-content/uploads/2016/03/501-220x150.jpg"></SPAN></SPAN><SPAN 
+  class="text">【BABY夜谈大数据】决策树</SPAN><SPAN class="muted">2016-03-14</SPAN><SPAN 
+  class="muted"></SPAN></A></LI>
+  <LI><A href="http://www.36dsj.com/archives/43592"><SPAN 
+  class="thumbnail"><SPAN><IMG class="thumb" data-original="http://www.36dsj.com/wp-content/uploads/2016/03/494-220x150.jpg"></SPAN></SPAN><SPAN 
+  class="text">美图数据总监：Facebook的法宝，我们在产品中怎么用?</SPAN><SPAN 
+  class="muted">2016-03-14</SPAN><SPAN class="muted"></SPAN></A></LI>
+  <LI><A href="http://www.36dsj.com/archives/49348"><SPAN 
+  class="thumbnail"><SPAN><IMG class="thumb" data-original="http://www.36dsj.com/wp-content/uploads/2016/05/43-220x150.jpg"></SPAN></SPAN><SPAN 
+  class="text">分析1300万起案件 洛杉矶警局如何用算法预测犯罪</SPAN><SPAN 
+  class="muted">2016-05-09</SPAN><SPAN 
+class="muted"></SPAN></A></LI></UL></DIV></ASIDE></SECTION><FOOTER class="footer">
+<DIV class="container">
+<DIV class="item item-01">
+<UL>
+  <LI><A href="http://www.36dsj.com/about-us">关于我们</A></LI>
+  <LI><A href="http://www.36dsj.com/contact-us">联系我们</A></LI>
+  <LI><A href="http://www.36dsj.com/baodao">寻求报道</A></LI>
+  <LI><A href="http://www.36dsj.com/sitemap.html">网站地图</A></LI>
+  <LI><A href="http://www.36dsj.com/qiye">企业专区</A></LI>
+  <LI><A href="http://www.36dsj.com/renwu">人物专栏</A></LI>
+  <LI><A href="http://www.36dsj.com/archives/29099">企业入驻</A></LI></UL></DIV>
+<DIV class="item item-02">
+<P>36大数据是一个专注大数据创业、大数据技术与分析、大数据商业与应用的网站。分享大数据的干货教程和大数据应用案例，提供大数据分析工具和资料下载，解决大数据产业链上的创业、技术、分析、商业、应用等问题，为大数据产业链上的公司和数据行业从业人员提供支持与服务。
+<P>
+<P>商务合作 邮箱：dashuju36@qq.com / QQ:849046688 
+<P>备案号：京ICP备12012135号-2。版权所有，保留一切权利！ © 2014 <A 
+href="http://www.36dsj.com/">36大数据</A> Theme
+<P>
+<SCRIPT type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F46db1c7ab0c594c8219d3a3d68e66ff8' type='text/javascript'%3E%3C/script%3E"));
+</SCRIPT>
+	 </P></DIV>
+<DIV class="item item-03"><IMG src="一文看懂大数据的技术生态圈，Hadoop，hive，spark都有了%20%2036大数据_files/232.png">
+	 </DIV></DIV></FOOTER> 
+<SCRIPT>
+window.jui = {
+	uri: 'http://www.36dsj.com/wp-content/themes/dsj0804',
+	roll: 0}
+</SCRIPT>
+ 
+<SCRIPT src="一文看懂大数据的技术生态圈，Hadoop，hive，spark都有了%20%2036大数据_files/form.js" type="text/javascript"></SCRIPT>
+ 
+<SCRIPT src="一文看懂大数据的技术生态圈，Hadoop，hive，spark都有了%20%2036大数据_files/jquery.js" type="text/javascript"></SCRIPT>
+ 
+<SCRIPT src="一文看懂大数据的技术生态圈，Hadoop，hive，spark都有了%20%2036大数据_files/bootstrap.js" type="text/javascript"></SCRIPT>
+ 
+<SCRIPT src="一文看懂大数据的技术生态圈，Hadoop，hive，spark都有了%20%2036大数据_files/custom.js" type="text/javascript"></SCRIPT>
+ </BODY></HTML>

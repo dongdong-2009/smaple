@@ -1,0 +1,23 @@
+在客户端脚本中获取Session的方法 
+在服务器端操作Session的方法如下：
+   Session.Add("名称", 值);//添加
+   Session.Remove("名称");//删除
+   Session.Abandon();//删除所有
+在客户端脚本中获取Session的方法如下：
+   <script language=javascript>
+   var sConfirmMan = '<%= Session["名称"]%>';
+   </script> 
+
+在ASP.NET 2.0中直接得到本页面生成的HTML代码 
+ protected override void Render( HtmlTextWriter writer )
+  {
+    System.IO.StringWriter html = new System.IO.StringWriter();
+    System.Web.UI.HtmlTextWriter tw = new System.Web.UI.HtmlTextWriter(html);
+    base.Render(tw);
+    System.IO.StreamWriter sw;
+    sw = new System.IO.StreamWriter(Server.MapPath("a.htm"), false, System.Text.Encoding.Default);
+    sw.Write(html.ToString());
+    sw.Close();
+    tw.Close();
+    Response.Write(html.ToString());
+  }  

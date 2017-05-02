@@ -1,0 +1,1 @@
+<SharePoint:SPShortcutIcon runat=”server” IconUrl=”/Style Library/Waffles/favicon.ico”/>

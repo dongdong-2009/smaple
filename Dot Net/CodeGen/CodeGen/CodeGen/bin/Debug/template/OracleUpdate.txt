@@ -1,0 +1,13 @@
+
+
+--¸üĞÂ <%DateTime%>
+create or replace procedure UP_<%TableName%>_Update
+(
+ <%Param%> 
+)
+ is
+begin
+  update <%TableName%>
+     set <%UpdateColumns%>
+   where <%Tiaojian%>;
+end UP_<%TableName%>_Update;

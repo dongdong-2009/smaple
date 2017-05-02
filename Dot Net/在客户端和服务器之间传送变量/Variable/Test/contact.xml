@@ -1,0 +1,18 @@
+<?xml version="1.0" standalone="yes"?>
+<DocumentElement>
+  <Contact>
+    <Name>Tom</Name>
+    <Tel>452623</Tel>
+    <Mail>Tom@163.com</Mail>
+  </Contact>
+  <Contact>
+    <Name>John</Name>
+    <Tel>142354</Tel>
+    <Mail>John@163.com</Mail>
+  </Contact>
+  <Contact>
+    <Name>Lucy</Name>
+    <Tel>435423</Tel>
+    <Mail>Lucy@163.com</Mail>
+  </Contact>
+</DocumentElement>

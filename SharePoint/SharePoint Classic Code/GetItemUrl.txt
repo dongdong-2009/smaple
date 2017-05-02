@@ -1,0 +1,71 @@
+ //get item's full url based on the Item's parent list base type 
+    public static string GetItemUrl(SPListItem item)
+    {
+      //get a url for the item
+      string itemUrl = null;
+
+      if (SPBaseType.DocumentLibrary == item.ParentList.BaseType)
+      {
+        itemUrl = SPUrlUtility.CombineUrl(item.Web.Url, item.Url);
+      }
+      else if (SPBaseType.DiscussionBoard == item.ParentList.BaseType)
+      {
+        itemUrl = item.Web.Url + "/" + item.ParentList.Forms[PAGETYPE.PAGE_DISPLAYFORM].Url + "?id=" + item.ID.ToString();
+      }
+      else if (SPBaseType.Issue == item.ParentList.BaseType)
+      {
+        itemUrl = item.Web.Url + "/" + item.ParentList.Forms[PAGETYPE.PAGE_DISPLAYFORM].Url + "?id=" + item.ID.ToString();
+      }
+      else if (SPBaseType.Survey == item.ParentList.BaseType)
+      {
+        itemUrl = item.Web.Url + "/" + item.ParentList.Forms[PAGETYPE.PAGE_DISPLAYFORM].Url + "?id=" + item.ID.ToString();
+      }
+      else if (SPBaseType.UnspecifiedBaseType == item.ParentList.BaseType)
+      {
+        itemUrl = null;
+      }
+      else if (SPBaseType.Unused == item.ParentList.BaseType)
+      {
+        itemUrl = null;
+      }
+      else if (SPBaseType.GenericList == item.ParentList.BaseType)
+      {
+        itemUrl = item.Web.Url + "/" + item.ParentList.Forms[PAGETYPE.PAGE_DISPLAYFORM].Url + "?id=" + item.ID.ToString();
+      }
+      return itemUrl;
+    }
+
+
+
+
+
+
+
+
+
+using System;using System.Collections.Generic;using System.Linq;using System.Text;using System.Xml;using System.Net;namespace GetListItemUrl{ class Program {  static void Main(string[] args)  {   GetListItemUrl.ListWebReference.Lists listService = new GetListItemUrl.ListWebReference.Lists();   listService.Credentials = new NetworkCredential("Administrator", "12345");   string listName = "My Custom List";   XmlNode ndListItems = listService.GetListItems(listName, null, null, null, null, null, null);   XmlNode ndList = listService.GetList(listName);   string url = string.Empty;      if (ndListItems != null)   {    foreach (XmlNode node in ndListItems.ChildNodes)    {     if (node.Name == "rs:data")     {      for (int i = 0; i < node.ChildNodes.Count; i++)      {              if (node.ChildNodes[i].Name == "z:row")       {                url = ndList.Attributes["RootFolder"].Value + "/DispForm.aspx?ID=" + node.ChildNodes[i].Attributes["ows_ID"].Value;        Console.WriteLine(url);       }      }     }    }       }  } }} 
+ 
+ 
+ListWebReference is a name of Web Reference to my http://myhost/site/_vti_bin/Lists.asmx
+
+
+
+
+
+
+
+
+
+
+// Edit form full url
+string.Format("{0}{1}?ID={2}", item.Web.Url, item.ParentList.Forms[PAGETYPE.PAGE_EDITFORM].ServerRelativeUrl, item.ID);
+
+// Edit form relative url
+string.Format("{0}?ID={1}", item.ParentList.Forms[PAGETYPE.PAGE_EDITFORM].ServerRelativeUrl, item.ID);
+
+
+// Display form full url
+string.Format("{0}{1}?ID={2}", item.Web.Url, item.ParentList.Forms[PAGETYPE.PAGE_DISPLAYFORMServerRelativeUrl, item.ID);
+
+// Display form relative url
+string.Format("{0}?ID={1}", item.ParentList.Forms[PAGETYPE.PAGE_DISPLAYFORM].ServerRelativeUrl, item.ID);

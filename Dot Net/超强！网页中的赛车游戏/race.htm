@@ -1,0 +1,381 @@
+<html>
+<head>
+<title>超级赛车</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<SCRIPT Language="JavaScript" src="title.js"></SCRIPT>
+<SCRIPT Language="JavaScript" src="play.js"></SCRIPT>
+<SCRIPT Language="JavaScript" src="sub.js"></SCRIPT>
+</head>
+<body bgcolor=white onLoad="IOnL();">
+<DIV ID="SpW" style="position:absolute;width:400;height:300;background:#000000;clip:rect(0, 400, 300, 0);">
+ <DIV style="position:absolute;left:50;top:100;font-size:20pt;color:#ffffff;font-family:宋体">超级赛车</DIV>
+ <DIV ID="lmess" style="position:absolute;left:40;top:160;font-size:15pt;color:#ffffff;font-family:宋体">启动较慢...</DIV>
+</DIV>
+
+<SCRIPT Language="JavaScript">
+<!--
+
+LMessSp = SpW.document.all.lmess.style;
+SpTID = setTimeout("IntSp()", SpInt);
+
+
+function onEroor(){return true;}
+
+window.onerror = onEroor;
+
+
+// -->
+</SCRIPT>
+
+<DIV ID="TiW" style="position:absolute;width:400;height:300;background:#a6caf0;clip:rect(0, 400, 300, 0);visibility:hidden">
+
+
+<DIV style="position:absolute;left:95;top:50;font-size:28pt;color:#68160a;font-family:宋体"><b>超级赛车</b></DIV>
+
+<DIV style="position:absolute;left:97;top:51;font-size:28pt;color:#ff0000;font-family:宋体"><b>超级赛车</b></DIV>
+
+
+  <img style="position:absolute;left:25;top:30;" src="hairo.gif" width=64 height=64 alt="Hairo"> 
+  <img style="position:absolute;left:300;top:30;" src="andres.gif" width=64 height=64 alt="Andres"> 
+  <img style="position:absolute;left:130;top:150;width:48;height:16" src="goal.gif" alt="Goal"> 
+  <img style="position:absolute;left:40;top:170;width:96;height:48" src="mcar2.gif" alt="MCar"> 
+  <img ID="lcur" style="position:absolute;left:220;top:140;width:24;height:24" src="lucy.gif" alt="Lucy"> 
+  <DIV ID="play" style="position:absolute;left:250;top:145;font-size:12pt;color:#ffffff;font-family:宋体"></DIV>
+
+
+<DIV ID="htc" style="position:absolute;left:250;top:175;font-size:12pt;color:#0000ff;font-family:宋体"></DIV>
+
+<DIV ID="option" style="position:absolute;left:250;top:205;font-size:12pt;color:#0000ff;font-family:宋体"></DIV>
+
+
+
+<DIV style="position:absolute;left:55;top:250;font-size:12pt;color:#ff0000;font-family:宋体">按"Z"键开始，"Z"键为油门，方向键为方向盘<br>游戏结束后按"X"键返回</DIV>
+
+</DIV>
+
+<SCRIPT Language="JavaScript">
+
+<!--
+
+
+
+inisp = TiW.document.all;
+
+
+TMenuSp = new Array(inisp.play.style, inisp.htc.style, inisp.option.style, inisp.lcur.style);
+
+
+
+// -->
+
+
+</SCRIPT>
+
+<DIV ID="HTW" style="position:absolute;width:400;height:300;background:#a6caf0;clip:rect(0, 400, 300, 0);visibility:hidden">
+
+
+ <DIV style="position:absolute;left:142;top:20;font-size:20pt;color:#0000ff;font-family:宋体"></DIV>
+
+  <img style="position:absolute;left:118;top:80;width:24;height:24;filter:FlipH();" src="turn.gif"> 
+  <img style="position:absolute;left:148;top:80;width:96;height:48;" src="mcar1.gif"> 
+  <img style="position:absolute;left:249;top:80;width:24;height:24;" src="turn.gif"> 
+  <DIV style="position:absolute;left:20;top:80;font-size:12pt;color:#0000ff;font-family:宋体"></DIV>
+
+ <DIV style="position:absolute;left:20;top:105;font-size:12pt;color:#0000ff;font-family:宋体"></DIV>
+
+ <DIV style="position:absolute;left:290;top:80;font-size:12pt;color:#0000ff;font-family:宋体"></DIV>
+
+ <DIV style="position:absolute;left:290;top:105;font-size:12pt;color:#0000ff;font-family:宋体"></DIV>
+
+ <DIV style="position:absolute;left:140;top:150;font-size:12pt;color:#0000ff;font-family:宋体"></DIV>
+
+ <DIV style="position:absolute;left:140;top:175;font-size:12pt;color:#0000ff;font-family:宋体"></DIV>
+
+ <DIV style="position:absolute;left:5;top:210;font-size:10pt;color:#0000aa;font-family:宋体"></DIV>
+
+
+
+ <DIV style="position:absolute;left:120;top:260;font-size:12pt;color:#ff0000;font-family:宋体"></DIV>
+
+</DIV>
+
+
+
+<DIV ID="OpW" style="position:absolute;width:400;height:300;background:#a6caf0;clip:rect(0, 400, 300, 0);visibility:hidden">
+
+ <DIV style="position:absolute;left:142;top:20;font-size:20pt;color:#0000ff;font-family:宋体"></DIV>
+
+  <img ID="HA1" style="position:absolute;" src="hart.gif" width="8" height="8"> <img ID="HA2" style="position:absolute;" src="hart.gif" width="8" height="8"> 
+  <img ID="HA3" style="position:absolute;" src="hart.gif" width="8" height="8"> 
+  <DIV style="position:absolute;left:100;top:128;font-size:13pt;color:#0000ff;font-family:宋体"></DIV>
+
+ <b><DIV ID="SINT" style="position:absolute;left:260;top:128;font-size:12pt;color:#ff0000;"></DIV></b>
+
+ <DIV style="position:absolute;left:10;top:170;font-size:12pt;color:#0000ff;font-family:宋体"></DIV>
+
+ <DIV style="position:absolute;left:120;top:260;font-size:12pt;color:#ff0000;font-family:宋体"></DIV>
+
+</DIV>
+
+<SCRIPT Language="JavaScript">
+<!--
+
+
+inisp = OpW.document.all;
+
+
+HASP = new Array(inisp.HA1.style, inisp.HA2.style, inisp.HA3.style);
+
+
+pIntD = 1;
+
+IntN = new Array("< 慹偄丗60 >", "< 晛捠丗40 >", "< 妸傜偐丗20 >");
+
+IntD = new Array(60, 40, 20);
+
+SIntSP = inisp.SINT;
+
+SIntSP.innerText = IntN[pIntD];
+
+
+// -->
+</SCRIPT>
+
+
+<DIV ID="PlW" style="position:absolute;width:400;height:300;background:#62c400;clip:rect(0, 400, 300, 0);visibility:hidden">
+ <b>
+ <DIV style="z-index:10;position:absolute;left:10;top:5;font-size:20pt;color:#000000;"></DIV>
+ <DIV style="z-index:11;position:absolute;left:12;top:7;font-size:20pt;color:#00ff00;"></DIV>
+  </b> <img ID="SKY1" style="z-index:0;position:absolute;width:800;height:200;left:0;top:0" src="sky.gif" alt="SKY1"> 
+  <img ID="SKY2" style="z-index:0;position:absolute;width:800;height:200;left:-800;top:0" src="sky.gif" alt="SKY2"> 
+  <SCRIPT Language="JavaScript">
+<!--
+
+
+roadgif = new Array("road.gif", "roadl.gif");
+
+
+
+Acd = 3000;	
+
+
+
+for (i = 0; i < 33; i++){
+	RLWid[i] = 30 + i * 12;	
+
+	RLCx[i] = 184 - i * 6;	
+
+	RLCy[i] = 200 + i * 3;
+	WImgTAG("r" + (i + 1), 0, RLCx[i], RLCy[i], RLWid[i], 3, roadgif[0]);
+	WImgTAG("rl" + (i + 1), 0, RLCx[i], RLCy[i], RLWid[i], 3, roadgif[1]);
+	RLDis[i] = Math.floor((Acd / RLWid[i]) + 0.5);	
+
+}
+
+
+for (i = 0; i < 10; i++){
+	WImgTAG2("SG1_" + (i + 1), "tree1.gif");	
+
+	WImgTAG2("SG2_" + (i + 1), "rock.gif");
+
+	WImgTAG2("SG3_" + (i + 1), "tree2.gif");
+
+}
+
+
+for (i = 0; i < 3; i++){
+	WImgTAG2("NCAR" + (i + 1), "ncar.gif");
+
+	WImgTAG2("KCAR" + (i + 1), "kcar.gif");	
+
+	WImgTAG2("BUS" + (i + 1), "bus.gif");	
+
+}
+
+// -->
+</SCRIPT>
+
+
+ <DIV ID="MCAR" style="z-index:34;position:absolute;left:152;top:245">
+<SCRIPT Language="JavaScript">
+<!--
+
+for (i = 1; i < 20; i++){
+	WImgTAG2("mc" + i, "mcar" + i + ".gif");
+}
+
+// -->
+</SCRIPT>
+ </DIV>
+
+ <DIV ID="LUCY" style="z-index:35;position:absolute;">
+
+<SCRIPT Language="JavaScript">
+<!--
+
+
+
+imgf = new Array(
+
+	"lucy1.gif", "lucy2.gif", "lucy1.gif", "lucy3.gif",
+	"lucy1.gif", "lucy2.gif", "lucy1.gif", "lucy3.gif",
+
+	"lucy4.gif", "lucy5.gif", "lucy4.gif", "lucy5.gif",
+	"lucy6.gif", "lucy7.gif", "lucy6.gif", "lucy7.gif"
+
+
+);
+
+
+isfil = new Array(0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1);
+for (i = 0; i < 16; i++){
+	WImgTAG2("lu" + (i + 1), imgf[i]);
+}
+
+// -->
+</SCRIPT>
+</DIV>
+
+
+  <DIV ID="ACAR" style="position:absolute;left:60;top:245;"> <img ID="ac1" src="acar1.gif" style="position:absolute;visibility:hidden" width="96" height="48"> 
+    <img ID="ac2" src="acar2.gif" style="position:absolute;visibility:hidden" width="96" height="48"> 
+    <img ID="ac3" src="acar3.gif" style="position:absolute;visibility:hidden" width="96" height="48"> 
+    <img ID="ac4" src="acar4.gif" style="position:absolute;visibility:hidden" width="96" height="48"> 
+  </DIV>
+
+
+  <DIV ID="HART1" style="z-index:60;position:absolute;left:205;top:245;visibility:hidden"><img src="hart.gif" width="8" height="8"></DIV>
+  <DIV ID="HART2" style="z-index:60;position:absolute;left:205;top:245;visibility:hidden"><img src="hart.gif" width="8" height="8"></DIV>
+  <DIV ID="HART3" style="z-index:60;position:absolute;left:205;top:245;visibility:hidden"><img src="hart.gif" width="8" height="8"></DIV>
+
+
+ <DIV ID="CNTD" style="z-index:10;position:absolute;left:185;top:90;font-size:50pt;color:#ff0000;visibility:hidden">3</DIV>
+
+
+ <DIV ID="MESS" style="z-index:10;position:absolute;left:155;top:90;font-size:50pt;color:#ff0000;visibility:hidden">GO!</DIV>
+
+ <b>
+ <DIV ID="RTIME" style="z-index:10;position:absolute;left:260;top:15;font-size:12pt;color:#000000;">剩余时间:   0(km/h)</DIV>
+ <DIV ID="RTIME2" style="z-index:11;position:absolute;left:261;top:16;font-size:12pt;color:#ff0000;">剩余时间:   0(km/h)</DIV>
+ <DIV ID="SPEED" style="z-index:10;position:absolute;left:249;top:35;font-size:12pt;color:#000000;">时速:   0(km/h)</DIV>
+ <DIV ID="SPEED2" style="z-index:11;position:absolute;left:250;top:36;font-size:12pt;color:#ff0000;">时速:   0(km/h)</DIV>
+ <DIV ID="DISTG" style="z-index:10;position:absolute;left:230;top:55;font-size:12pt;color:#000000;">剩余路程:   0(m)</DIV>
+ <DIV ID="DISTG2" style="z-index:11;position:absolute;left:231;top:56;font-size:12pt;color:#ff0000;">剩余路程:   0(m)</DIV>
+  </b> <img ID="CHECK" style="z-index:10;position:absolute;visibility:hidden;" src="check.gif" width="192" height="96"> 
+  <img ID="GOAL" style="z-index:10;position:absolute;visibility:hidden;" src="goal.gif" width="192" height="96"> 
+  <b> 
+  <DIV ID="TOVER" style="z-index:60;position:absolute;left:115;top:90;font-size:20pt;color:#ff0000;visibility:hidden">TIME OVER!!</DIV>
+ <DIV ID="CONG" style="z-index:60;position:absolute;left:80;top:90;font-size:20pt;color:#ffff00;visibility:hidden">CONGRATURATION!</DIV>
+ <DIV ID="SCORE" style="z-index:60;position:absolute;left:100;top:130;font-size:18pt;color:#0000aa;visibility:hidden">----SCORE----</DIV>
+ <DIV ID="S1" style="z-index:60;position:absolute;left:145;top:160;font-size:14pt;color:#0000aa;visibility:hidden"> TIME:****</DIV>
+ <DIV ID="S2" style="z-index:60;position:absolute;left:125;top:180;font-size:14pt;color:#0000aa;visibility:hidden">BONUS:****</DIV>
+ <DIV ID="TS" style="z-index:60;position:absolute;left:128;top:200;font-size:14pt;color:#0000aa;visibility:hidden">TOTAL:****</DIV>
+ <DIV ID="WAIT_X" style="z-index:60;position:absolute;left:130;top:230;font-size:16pt;color:#ff0000;visibility:hidden">Push [x] key</DIV>
+ </b>
+ 
+</DIV>
+
+
+<SCRIPT Language="JavaScript">
+<!--
+
+inisp = PlW.document.all;	
+
+SkySP = new Array(inisp.SKY1.style, inisp.SKY2.style);
+
+
+RLSP = new Array(
+	inisp.r1.style, inisp.r2.style, inisp.r3.style, inisp.r4.style, inisp.r5.style,
+	inisp.r6.style, inisp.r7.style, inisp.r8.style, inisp.r9.style, inisp.r10.style,
+	inisp.r11.style, inisp.r12.style, inisp.r13.style, inisp.r14.style, inisp.r15.style,
+	inisp.r16.style, inisp.r17.style, inisp.r18.style, inisp.r19.style, inisp.r20.style,
+	inisp.r21.style, inisp.r22.style, inisp.r23.style, inisp.r24.style, inisp.r25.style,
+	inisp.r26.style, inisp.r27.style, inisp.r28.style, inisp.r29.style, inisp.r30.style,
+	inisp.r31.style, inisp.r32.style, inisp.r33.style,
+	inisp.rl1.style, inisp.rl2.style, inisp.rl3.style, inisp.rl4.style, inisp.rl5.style,
+	inisp.rl6.style, inisp.rl7.style, inisp.rl8.style, inisp.rl9.style, inisp.rl10.style,
+	inisp.rl11.style, inisp.rl12.style, inisp.rl13.style, inisp.rl14.style, inisp.rl15.style,
+	inisp.rl16.style, inisp.rl17.style, inisp.rl18.style, inisp.rl19.style, inisp.rl20.style,
+	inisp.rl21.style, inisp.rl22.style, inisp.rl23.style, inisp.rl24.style, inisp.rl25.style,
+	inisp.rl26.style, inisp.rl27.style, inisp.rl28.style, inisp.rl29.style, inisp.rl30.style,
+	inisp.rl31.style, inisp.rl32.style, inisp.rl33.style
+);
+
+
+SGSP = new Array(
+	inisp.SG1_1.style, inisp.SG1_2.style, inisp.SG1_3.style, inisp.SG1_4.style, inisp.SG1_5.style,
+	inisp.SG1_6.style, inisp.SG1_7.style, inisp.SG1_8.style, inisp.SG1_9.style, inisp.SG1_10.style,
+	inisp.SG2_1.style, inisp.SG2_2.style, inisp.SG2_3.style, inisp.SG2_4.style, inisp.SG2_5.style,
+	inisp.SG2_6.style, inisp.SG2_7.style, inisp.SG2_8.style, inisp.SG2_9.style, inisp.SG2_10.style,
+	inisp.SG3_1.style, inisp.SG3_2.style, inisp.SG3_3.style, inisp.SG3_4.style, inisp.SG3_5.style,
+	inisp.SG3_6.style, inisp.SG3_7.style, inisp.SG3_8.style, inisp.SG3_9.style, inisp.SG3_10.style
+);
+
+
+NCarSP = new Array(
+	inisp.NCAR1.style, inisp.NCAR2.style, inisp.NCAR3.style,
+	inisp.KCAR1.style, inisp.KCAR2.style, inisp.KCAR3.style,
+	inisp.BUS1.style, inisp.BUS2.style, inisp.BUS3.style
+);
+inisp = PlW.document.all.MCAR.document.all;	
+
+
+MCarSP = new Array(
+	inisp.mc1.style, inisp.mc2.style, inisp.mc3.style, inisp.mc4.style,
+	inisp.mc5.style, inisp.mc6.style, inisp.mc7.style, inisp.mc8.style,
+	inisp.mc9.style, inisp.mc10.style, inisp.mc11.style, inisp.mc12.style,
+	inisp.mc13.style, inisp.mc14.style, inisp.mc15.style, inisp.mc16.style,
+	inisp.mc17.style, inisp.mc18.style, inisp.mc19.style
+);
+
+inisp = PlW.document.all.LUCY.document.all;	
+
+
+LuSP = new Array(
+	inisp.lu1.style, inisp.lu2.style, inisp.lu3.style, inisp.lu4.style,
+	inisp.lu5.style, inisp.lu6.style, inisp.lu7.style, inisp.lu8.style,
+	inisp.lu9.style, inisp.lu10.style, inisp.lu11.style, inisp.lu12.style,
+	inisp.lu13.style, inisp.lu14.style, inisp.lu15.style, inisp.lu16.style
+);
+LUCY_SP = PlW.document.all.LUCY.style;
+for (i = 0; i < 16; i++){
+	if (isfil[i]) LuSP[i].filter = "FlipH()";
+}
+
+inisp = PlW.document.all.ACAR.document.all;
+
+
+ACarSP = new Array(
+	inisp.ac1.style, inisp.ac2.style, inisp.ac3.style, inisp.ac4.style, PlW.document.all.ACAR.style
+);
+
+inisp = PlW.document.all;
+
+
+HartSP = new Array(
+	inisp.HART1.style, inisp.HART2.style, inisp.HART3.style
+);
+CntDSP = inisp.CNTD.style;
+CNTD_SP = inisp.CNTD;
+MessSP = inisp.MESS;
+RTSP = new Array(inisp.RTIME, inisp.RTIME2);
+SpSP = new Array(inisp.SPEED, inisp.SPEED2);
+
+DGSP = new Array(inisp.DISTG, inisp.DISTG2);	
+
+CGPSP = new Array(inisp.CHECK.style, inisp.CHECK.style, inisp.GOAL.style);
+
+GOMessSP=new Array(inisp.TOVER,inisp.CONG,inisp.SCORE,inisp.S1,inisp.S2,inisp.TS,inisp.WAIT_X);
+
+
+WSp = new Array(PlW.style, HTW.style, OpW.style, TiW.style);
+
+initCData();	
+
+// -->
+</SCRIPT>
+
+<bgsound src="refreshment.mid" loop=9999>
+
+</body>
+</html>

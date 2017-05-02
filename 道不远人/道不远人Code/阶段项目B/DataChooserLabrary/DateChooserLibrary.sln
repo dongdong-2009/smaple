@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DateChooserLibrary", "DateChooserLibrary.csproj", "{CE075A53-B72E-4E38-AC8A-B14A8DF8EADE}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "E:\...\DateChooserTest\", "..\DateChooserTest\", "{83693944-E250-4673-9C4E-20FFC976DE3D}"
+	ProjectSection(WebsiteProperties) = preProject
+		ProjectReferences = "{CE075A53-B72E-4E38-AC8A-B14A8DF8EADE}|DateChooserLibrary.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/DateChooserTest"
+		Debug.AspNetCompiler.PhysicalPath = "..\DateChooserTest\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\DateChooserTest\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/DateChooserTest"
+		Release.AspNetCompiler.PhysicalPath = "..\DateChooserTest\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\DateChooserTest\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "49738"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|.NET = Debug|.NET
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Release|.NET = Release|.NET
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CE075A53-B72E-4E38-AC8A-B14A8DF8EADE}.Debug|.NET.ActiveCfg = Debug|Any CPU
+		{CE075A53-B72E-4E38-AC8A-B14A8DF8EADE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE075A53-B72E-4E38-AC8A-B14A8DF8EADE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE075A53-B72E-4E38-AC8A-B14A8DF8EADE}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{CE075A53-B72E-4E38-AC8A-B14A8DF8EADE}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{CE075A53-B72E-4E38-AC8A-B14A8DF8EADE}.Release|.NET.ActiveCfg = Release|Any CPU
+		{CE075A53-B72E-4E38-AC8A-B14A8DF8EADE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE075A53-B72E-4E38-AC8A-B14A8DF8EADE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE075A53-B72E-4E38-AC8A-B14A8DF8EADE}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{CE075A53-B72E-4E38-AC8A-B14A8DF8EADE}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{83693944-E250-4673-9C4E-20FFC976DE3D}.Debug|.NET.ActiveCfg = Debug|.NET
+		{83693944-E250-4673-9C4E-20FFC976DE3D}.Debug|.NET.Build.0 = Debug|.NET
+		{83693944-E250-4673-9C4E-20FFC976DE3D}.Debug|Any CPU.ActiveCfg = Debug|.NET
+		{83693944-E250-4673-9C4E-20FFC976DE3D}.Debug|Mixed Platforms.ActiveCfg = Debug|.NET
+		{83693944-E250-4673-9C4E-20FFC976DE3D}.Debug|Mixed Platforms.Build.0 = Debug|.NET
+		{83693944-E250-4673-9C4E-20FFC976DE3D}.Release|.NET.ActiveCfg = Debug|.NET
+		{83693944-E250-4673-9C4E-20FFC976DE3D}.Release|.NET.Build.0 = Debug|.NET
+		{83693944-E250-4673-9C4E-20FFC976DE3D}.Release|Any CPU.ActiveCfg = Debug|.NET
+		{83693944-E250-4673-9C4E-20FFC976DE3D}.Release|Mixed Platforms.ActiveCfg = Debug|.NET
+		{83693944-E250-4673-9C4E-20FFC976DE3D}.Release|Mixed Platforms.Build.0 = Debug|.NET
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

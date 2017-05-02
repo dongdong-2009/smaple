@@ -1,0 +1,30 @@
+using System;
+C# ¿‡ø‚
+using System.Collections.Generic;
+using System.Text;
+using System.Data.SqlTypes;
+
+public class HandWrittenUDF
+{
+    [Microsoft.SqlServer.Server.SqlFunction]
+    public static SqlInt32 GetNum()
+    {
+        Random r = new Random();
+        return r.Next();
+    }
+}
+
+sql:
+create assembly HandWrittenUDF
+from 
+'c:\HandWrittenUDF.dll'
+go
+
+create function GetNum()
+returns Int
+as 
+external name
+HandWrittenUDF.HandWrittenUDF.GetNum// assembly.class.func
+go
+
+select dbo.GetNum()//dbo±ÿ–Î

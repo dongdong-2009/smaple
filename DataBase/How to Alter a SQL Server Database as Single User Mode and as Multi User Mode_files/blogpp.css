@@ -1,0 +1,51 @@
+.BlogRating a:link {
+	color: rgb(102, 102, 102); text-decoration: none;
+}
+.BlogRating a:visited {
+	color: rgb(102, 102, 102); text-decoration: none;
+}
+.BlogRating a:active {
+	color: rgb(102, 102, 102); text-decoration: none;
+}
+.BlogRating a:hover {
+	color: rgb(102, 102, 102); text-decoration: none;
+}
+.BlogCalendarNextPrev a:link {
+	text-decoration: none;
+}
+.BlogCalendarNextPrev a:active {
+	text-decoration: none;
+}
+.BlogCalendarNextPrev a:visited {
+	text-decoration: none;
+}
+.BlogCalendarNextPrev a:hover {
+	text-decoration: underline;
+}
+.CommentTitle a:link {
+	color: rgb(145, 114, 63);
+}
+.CommentTitle a:active {
+	color: rgb(145, 114, 63);
+}
+.CommentTitle a:visited {
+	color: rgb(145, 114, 63);
+}
+.CommentTitle a:hover {
+	color: rgb(145, 114, 63);
+}
+.BlogCalendarDay a:link {
+	font-weight: 700;
+}
+.BlogCalendarDay a:active {
+	font-weight: 700;
+}
+.BlogCalendarDay a:visited {
+	font-weight: 700;
+}
+.BlogCalendarDay a:hover {
+	font-weight: 700;
+}
+ul.BlogLinkCategoryLinkList li a {
+	font-weight: 700;
+}

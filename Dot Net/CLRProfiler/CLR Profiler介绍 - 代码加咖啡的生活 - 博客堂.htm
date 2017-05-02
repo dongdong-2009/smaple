@@ -1,0 +1,659 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0057)http://blog.joycode.com/joe/archive/2005/04/15/48543.aspx -->
+<HTML xmlns="http://www.w3.org/1999/xhtml" xmlns:o = 
+"urn:schemas-microsoft-com:office:office"><HEAD><TITLE>CLR Profiler介绍 - 代码加咖啡的生活 - 博客堂</TITLE>
+<META http-equiv=content-type content="text/html; charset=UTF-8">
+<META content=joe name=author>
+<META content="MSHTML 6.00.3790.2993" name=GENERATOR><LINK id=ctl00_RSSLink 
+title="RSS Feed" href="http://blog.joycode.com/joe/Rss.aspx" 
+type=application/rss+xml rel=alternate><LINK id=ctl00_AtomLink title="Atom Feed" 
+href="http://blog.joycode.com/joe/Rss.aspx" type=application/rss+xml 
+rel=alternate><LINK id=ctl00_OpenSearch title=搜索{代码加咖啡的生活} 
+href="http://blog.joycode.com/joe/OpenSearch.aspx" 
+type=application/opensearchdescription+xml rel=search><LINK id=ctl00_Rsd 
+title=RSD href="http://blog.joycode.com/joe/rsd.xml.ashx" 
+type=application/rsd+xml rel=EditURI><LINK 
+href="CLR Profiler介绍 - 代码加咖啡的生活 - 博客堂_files/common.css" rel=Stylesheet>
+<SCRIPT src="CLR Profiler介绍 - 代码加咖啡的生活 - 博客堂_files/Utility.js" 
+type=text/javascript></SCRIPT>
+<LINK href="CLR Profiler介绍 - 代码加咖啡的生活 - 博客堂_files/style.css" type=text/css 
+rel=stylesheet></HEAD>
+<BODY>
+<FORM 
+onkeypress="javascript:return WebForm_FireDefaultButton(event, 'ctl00_btnSearch')" 
+id=aspnetForm name=aspnetForm onsubmit="javascript:return WebForm_OnSubmit();" 
+action=48543.aspx method=post>
+<DIV><INPUT id=__EVENTTARGET type=hidden name=__EVENTTARGET> <INPUT 
+id=__EVENTARGUMENT type=hidden name=__EVENTARGUMENT> <INPUT id=__VIEWSTATE 
+type=hidden 
+value=/wEPDwULLTIwMjgyNjAwNzgPZBYCZg9kFgQCAQ9kFgwCAg8WAh4EVGV4dAUmDQo8bWV0YSBuYW1lPSJhdXRob3IiIGNvbnRlbnQ9ImpvZSIgLz5kAgMPFgIfAAU9DQo8bWV0YSBuYW1lPSJHZW5lcmF0b3IiIGNvbnRlbnQ9IkpveWNvZGUgVmVyc2lvbiAxLjAuMC4wIiAvPmQCBQ8WAh4EaHJlZgUkaHR0cDovL2Jsb2cuam95Y29kZS5jb20vam9lL1Jzcy5hc3B4ZAIGDxYCHwEFJGh0dHA6Ly9ibG9nLmpveWNvZGUuY29tL2pvZS9Sc3MuYXNweGQCBw8WBB4FdGl0bGUFIOaQnOe0onvku6PnoIHliqDlkpbllaHnmoTnlJ/mtLt9HwEFK2h0dHA6Ly9ibG9nLmpveWNvZGUuY29tL2pvZS9PcGVuU2VhcmNoLmFzcHhkAggPFgIfAQUoaHR0cDovL2Jsb2cuam95Y29kZS5jb20vam9lL3JzZC54bWwuYXNoeGQCAw9kFiICAw8PFgQfAAUY5Luj56CB5Yqg5ZKW5ZWh55qE55Sf5rS7HgtOYXZpZ2F0ZVVybAUFL2pvZS9kZAIFDxYCHwAFJ+S4k+mXqOiuqOiuui5ORVTnm7jlhbPmioDmnK8tLeWkp+Wdj+ibi2QCBw8WAh8ABQIyOGQCCQ8WAh8ABQMyNTJkAgsPFgIfAAUCNjdkAg0PFgIfAAUBMmQCDw8PFgIfAwUXaHR0cDovL2Jsb2cuam95Y29kZS5jb21kZAIRDw8WAh8DBREvam9lL0RlZmF1bHQuYXNweGRkAhMPDxYEHwMFES9qb2UvY29udGFjdC5hc3B4HwAFBuiBlOezu2RkAhUPDxYCHgdWaXNpYmxlaGRkAhcPDxYCHwMFJGh0dHA6Ly9ibG9nLmpveWNvZGUuY29tL2pvZS9Sc3MuYXNweGRkAhsPDxYCHgdFbmFibGVkaGRkAh0PDxYCHwVoZGQCHw9kFgICAQ8WAh8ABc4CPElNRyBzcmM9Imh0dHA6Ly9ibG9nLmpveWNvZGUuY29tL2ltYWdlcy9ibG9nLmpveWNvZGUuY29tL2pvZS8xMDMzL3JfRFNDTjA1NjkuYm1wIj4NCjxCUj4NCjxJTUcgc3JjPSJodHRwOi8vYmxvZy5qb3ljb2RlLmNvbS8vaW1hZ2VzL2Jsb2cuam95Y29kZS5jb20vam9lLzEwMzQvcl9lbWFpbC5HSUYiPg0KPCEtLWVtYmVkIHNyYz0iaHR0cDovL3d3dy5jbG9ja2xpbmsuY29tL0Nsb2Nrcy8wMDAyLUJsYWNrLnN3Zj9UaW1lWm9uZT1DQ1QiIHdpZHRoPSIxNTAiIGhlaWdodD0iMTUwIiB3bW9kZT0idHJhbnNwYXJlbnQiIHR5cGU9ImFwcGxpY2F0aW9uL3gtc2hvY2t3YXZlLWZsYXNoIi0tPmQCIQ8WAh8EaGQCIw9kFgJmDxYCHgtfIUl0ZW1Db3VudAIBZAIrDxYCHwAFA2pvZWRk 
+name=__VIEWSTATE> </DIV>
+<SCRIPT type=text/javascript>
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</SCRIPT>
+
+<SCRIPT src="CLR Profiler介绍 - 代码加咖啡的生活 - 博客堂_files/WebResource.axd" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="CLR Profiler介绍 - 代码加咖啡的生活 - 博客堂_files/ScriptResource.axd" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT 
+src="C:\Documents and Settings\Administrator.SZLANYOU-7NGZ4R\桌面\CLR Profiler介绍 - 代码加咖啡的生活 - 博客堂_files\ScriptResource(1).axd" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT 
+src="C:\Documents and Settings\Administrator.SZLANYOU-7NGZ4R\桌面\CLR Profiler介绍 - 代码加咖啡的生活 - 博客堂_files\ScriptResource(2).axd" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT 
+src="C:\Documents and Settings\Administrator.SZLANYOU-7NGZ4R\桌面\CLR Profiler介绍 - 代码加咖啡的生活 - 博客堂_files\WebResource(1).axd" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+//<![CDATA[
+function WebForm_OnSubmit() {
+if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+return true;
+}
+//]]>
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManagerRoot', document.getElementById('aspnetForm'));
+Sys.WebForms.PageRequestManager.getInstance()._updateControls(['tctl00$MainContent$ViewPost1$Recommend1$UpdatePanel1'], [], [], 90);
+//]]>
+</SCRIPT>
+
+<DIV id=headerWrapper>
+<DIV id=header><SPAN id=mainTitle><A id=ctl00_HeaderTitle 
+href="http://blog.joycode.com/joe/">代码加咖啡的生活</A></SPAN> <SPAN 
+id=subTitle>专门讨论.NET相关技术--大坏蛋</SPAN> 
+<DIV id=stats>
+<UL>
+  <LI>随笔- 28 
+  <LI>评论 - 252 
+  <LI>引用 - 67 
+  <LI>文章 - 2 </LI></UL></DIV></DIV>
+<DIV id=topNav>
+<DIV id=topNavPlaceHolder></DIV>
+<UL>
+  <LI><A id=ctl00_PortalLink href="http://blog.joycode.com/">博客堂</A> </LI>
+  <LI><A id=ctl00_HomeLink 
+  href="http://blog.joycode.com/joe/Default.aspx">个人首页</A> </LI>
+  <LI><A id=ctl00_ContactLink accessKey=9 
+  href="http://blog.joycode.com/joe/contact.aspx">联系</A> </LI>
+  <LI></LI></UL></DIV></DIV>
+<DIV id=rss><A id=ctl00_XMLLink href="http://blog.joycode.com/joe/Rss.aspx"><IMG 
+style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+alt="RSS 2.0 Feed" src="CLR Profiler介绍 - 代码加咖啡的生活 - 博客堂_files/xml.gif"></A> 
+</DIV>
+<DIV class=contentWrapper>
+<DIV id=content>
+<DIV id=sidebar>
+<DIV class="Gadget SearchPanel">
+<DIV class=GadgetTitle>搜索</DIV><SPAN 
+id=ctl00_lblMessage>仅本站注册用户可用，请注册用户或者登录</SPAN><BR>&nbsp;&nbsp;&nbsp;&nbsp;<INPUT 
+class=searchterm id=ctl00_txtSearch style="WIDTH: 105px" disabled 
+name=ctl00$txtSearch> <INPUT class=searchButton id=ctl00_btnSearch disabled type=submit value=搜索 name=ctl00$btnSearch> 
+</DIV>
+<DIV class=Gadget id=ctl00_NewsPanel>
+<DIV class=GadgetTitle>公告</DIV><IMG 
+src="CLR Profiler介绍 - 代码加咖啡的生活 - 博客堂_files/r_DSCN0569.bmp"> <BR><IMG 
+src="CLR Profiler介绍 - 代码加咖啡的生活 - 博客堂_files/r_email.gif"> <!--embed src="http://www.clocklink.com/Clocks/0002-Black.swf?TimeZone=CCT" width="150" height="150" wmode="transparent" type="application/x-shockwave-flash"--></DIV>
+<DIV class=Gadget>
+<DIV class=GadgetTitle>最近访客 </DIV>
+<DIV style="DISPLAY: block; FONT-SIZE: 9pt">
+<DIV id=ctl00_LatestVisitors1_UserListRepeater_ctl01_UserInfoPanel>
+<FIELDSET><LEGEND>个人信息 </LEGEND>
+<DIV style="FLOAT: left; MARGIN: 0px 5px"><A 
+id=ctl00_LatestVisitors1_UserListRepeater_ctl01_PhotoLink 
+href="http://www.joycode.com/users/sdhjl2000/profile.aspx"><IMG 
+id=ctl00_LatestVisitors1_UserListRepeater_ctl01_PhotoID 
+style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; WIDTH: 30px; HEIGHT: 40px; BORDER-RIGHT-WIDTH: 0px" 
+alt=sdhjl2000 src="CLR Profiler介绍 - 代码加咖啡的生活 - 博客堂_files/anonymoususer.jpg"></A> 
+</DIV>　<IMG id=ctl00_LatestVisitors1_UserListRepeater_ctl01_UserStatus 
+style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+src="CLR Profiler介绍 - 代码加咖啡的生活 - 博客堂_files/offline.jpg"><A 
+id=ctl00_LatestVisitors1_UserListRepeater_ctl01_lkUsername 
+href="http://www.joycode.com/users/sdhjl2000/profile.aspx">sdhjl2000</A> 
+<BR>最新:<SPAN 
+id=ctl00_LatestVisitors1_UserListRepeater_ctl01_lblLastUpdated>2008-04-03 
+12:43</SPAN> </FIELDSET> </DIV></DIV></DIV>
+<DIV class=Gadget>
+<DIV class=GadgetTitle>Article Collection</DIV>
+<UL>
+  <LI><A id=ctl00_SingleColumn1_Categories_CatList_ctl00_LinkList_ctl01_Link 
+  title="" href="http://blog.joycode.com/joe/category/1032.aspx">技术文章</A> </LI>
+  <LI><A id=ctl00_SingleColumn1_Categories_CatList_ctl00_LinkList_ctl02_Link 
+  title="" href="http://blog.joycode.com/joe/category/1035.aspx">C#新特性系列</A> 
+  </LI></UL></DIV>
+<DIV class=Gadget>
+<DIV class=GadgetTitle>存档</DIV>
+<UL>
+  <LI><A id=ctl00_SingleColumn1_Categories_CatList_ctl01_LinkList_ctl01_Link 
+  title="" href="http://blog.joycode.com/joe/archive/2007/01.aspx">2007年1月 
+  (1)</A> </LI>
+  <LI><A id=ctl00_SingleColumn1_Categories_CatList_ctl01_LinkList_ctl02_Link 
+  title="" href="http://blog.joycode.com/joe/archive/2006/06.aspx">2006年6月 
+  (1)</A> </LI>
+  <LI><A id=ctl00_SingleColumn1_Categories_CatList_ctl01_LinkList_ctl03_Link 
+  title="" href="http://blog.joycode.com/joe/archive/2006/05.aspx">2006年5月 
+  (1)</A> </LI>
+  <LI><A id=ctl00_SingleColumn1_Categories_CatList_ctl01_LinkList_ctl04_Link 
+  title="" href="http://blog.joycode.com/joe/archive/2005/12.aspx">2005年12月 
+  (1)</A> </LI>
+  <LI><A id=ctl00_SingleColumn1_Categories_CatList_ctl01_LinkList_ctl05_Link 
+  title="" href="http://blog.joycode.com/joe/archive/2005/10.aspx">2005年10月 
+  (1)</A> </LI>
+  <LI><A id=ctl00_SingleColumn1_Categories_CatList_ctl01_LinkList_ctl06_Link 
+  title="" href="http://blog.joycode.com/joe/archive/2005/09.aspx">2005年9月 
+  (3)</A> </LI>
+  <LI><A id=ctl00_SingleColumn1_Categories_CatList_ctl01_LinkList_ctl07_Link 
+  title="" href="http://blog.joycode.com/joe/archive/2005/08.aspx">2005年8月 
+  (1)</A> </LI>
+  <LI><A id=ctl00_SingleColumn1_Categories_CatList_ctl01_LinkList_ctl08_Link 
+  title="" href="http://blog.joycode.com/joe/archive/2005/07.aspx">2005年7月 
+  (1)</A> </LI>
+  <LI><A id=ctl00_SingleColumn1_Categories_CatList_ctl01_LinkList_ctl09_Link 
+  title="" href="http://blog.joycode.com/joe/archive/2005/06.aspx">2005年6月 
+  (2)</A> </LI>
+  <LI><A id=ctl00_SingleColumn1_Categories_CatList_ctl01_LinkList_ctl10_Link 
+  title="" href="http://blog.joycode.com/joe/archive/2005/04.aspx">2005年4月 
+  (1)</A> </LI>
+  <LI><A id=ctl00_SingleColumn1_Categories_CatList_ctl01_LinkList_ctl11_Link 
+  title="" href="http://blog.joycode.com/joe/archive/2005/03.aspx">2005年3月 
+  (2)</A> </LI>
+  <LI><A id=ctl00_SingleColumn1_Categories_CatList_ctl01_LinkList_ctl12_Link 
+  title="" href="http://blog.joycode.com/joe/archive/2005/01.aspx">2005年1月 
+  (5)</A> </LI>
+  <LI><A id=ctl00_SingleColumn1_Categories_CatList_ctl01_LinkList_ctl13_Link 
+  title="" href="http://blog.joycode.com/joe/archive/2004/12.aspx">2004年12月 
+  (3)</A> </LI>
+  <LI><A id=ctl00_SingleColumn1_Categories_CatList_ctl01_LinkList_ctl14_Link 
+  title="" href="http://blog.joycode.com/joe/archive/2004/11.aspx">2004年11月 
+  (5)</A> </LI></UL></DIV>
+<DIV class=Gadget>
+<DIV class=GadgetTitle>Post Collection</DIV>
+<UL>
+  <LI><A id=ctl00_SingleColumn1_Categories_CatList_ctl02_LinkList_ctl01_Link 
+  title="" href="http://blog.joycode.com/joe/category/1029.aspx">C# 语言</A> </LI>
+  <LI><A id=ctl00_SingleColumn1_Categories_CatList_ctl02_LinkList_ctl02_Link 
+  title="" href="http://blog.joycode.com/joe/category/1030.aspx">.NET 
+  Remoting</A> </LI>
+  <LI><A id=ctl00_SingleColumn1_Categories_CatList_ctl02_LinkList_ctl03_Link 
+  title="" href="http://blog.joycode.com/joe/category/1031.aspx">Reflect</A> 
+  </LI>
+  <LI><A id=ctl00_SingleColumn1_Categories_CatList_ctl02_LinkList_ctl04_Link 
+  title="" href="http://blog.joycode.com/joe/category/1061.aspx">数据库</A> </LI>
+  <LI><A id=ctl00_SingleColumn1_Categories_CatList_ctl02_LinkList_ctl05_Link 
+  title="" href="http://blog.joycode.com/joe/category/1070.aspx">非技术类</A> </LI>
+  <LI><A id=ctl00_SingleColumn1_Categories_CatList_ctl02_LinkList_ctl06_Link 
+  title="" href="http://blog.joycode.com/joe/category/1075.aspx">设计模式</A> </LI>
+  <LI><A id=ctl00_SingleColumn1_Categories_CatList_ctl02_LinkList_ctl07_Link 
+  title="" href="http://blog.joycode.com/joe/category/1177.aspx">.NET 
+  通用软件框架开发</A> </LI>
+  <LI><A id=ctl00_SingleColumn1_Categories_CatList_ctl02_LinkList_ctl08_Link 
+  title="" href="http://blog.joycode.com/joe/category/1183.aspx">网上商店,网上商城开发</A> 
+  </LI></UL></DIV>
+<DIV class=Gadget>
+<DIV class=GadgetTitle>Galleries</DIV>
+<UL>
+  <LI><A id=ctl00_SingleColumn1_Categories_CatList_ctl03_LinkList_ctl01_Link 
+  title="" href="http://blog.joycode.com/joe/gallery/1033.aspx">私人相册</A> </LI>
+  <LI><A id=ctl00_SingleColumn1_Categories_CatList_ctl03_LinkList_ctl02_Link 
+  title="" href="http://blog.joycode.com/joe/gallery/1034.aspx">资源库</A> 
+</LI></UL></DIV>
+<DIV class=Gadget>
+<DIV class=GadgetTitle>博客站点</DIV>
+<UL>
+  <LI><A id=ctl00_SingleColumn1_Categories_CatList_ctl04_LinkList_ctl01_Link 
+  title="" 
+  href="http://www.cnblogs.com/team/DesignPattern.html">我们的Design&amp;Pattern团队</A> 
+  </LI>
+  <LI><A id=ctl00_SingleColumn1_Categories_CatList_ctl04_LinkList_ctl02_Link 
+  title="" href="http://www.cnblogs.com/dahuaidan410">我在博客园</A> </LI></UL></DIV>
+<DIV class=Gadget>
+<DIV class=GadgetTitle>数据库</DIV>
+<UL>
+  <LI><A id=ctl00_SingleColumn1_Categories_CatList_ctl05_LinkList_ctl01_Link 
+  title="" href="http://www.vckbase.com/document/viewdoc/?id=1307">SQL Server 
+  索引结构及其使用</A> </LI></UL></DIV></DIV>
+<DIV id=main>
+<DIV class=PreviousNext style="TEXT-ALIGN: center"><A 
+id=ctl00_MainContent_ViewPost1_PreviousNext_PrevLink title=上一篇 
+href="http://blog.joycode.com/joe/archive/2005/03/21/45976.aspx">&lt;&lt; 
+模仿Spy++的工具，增加修改功能</A> <SPAN class=prevNextSeparator 
+id=ctl00_MainContent_ViewPost1_PreviousNext_LeftPipe>| </SPAN><A 
+id=ctl00_MainContent_ViewPost1_PreviousNext_MainLink 
+href="http://blog.joycode.com/joe/Default.aspx">个人首页</A> <SPAN 
+class=prevNextSeparator id=ctl00_MainContent_ViewPost1_PreviousNext_RightPipe>| 
+</SPAN><A id=ctl00_MainContent_ViewPost1_PreviousNext_NextLink title=下一篇 
+href="http://blog.joycode.com/joe/archive/2005/06/10/42392.aspx">不通过ServicedComponent使用分布式事务(译) 
+&gt;&gt;</A> </DIV>
+<DIV id=searchResult>
+<DIV class=Post>&nbsp;
+<DIV class=PostTitle><A id=ctl00_MainContent_ViewPost1_TitleUrl 
+title="Title of this entry." 
+href="http://blog.joycode.com/joe/archive/2005/04/15/48543.aspx">CLR 
+Profiler介绍</A> </DIV>
+<DIV class=PostContent>
+<UL class=RecommendPanel>
+  <LI class=RecommendCount><A 
+  id=ctl00_MainContent_ViewPost1_Recommend1_hplRecommendCount 
+  href="http://blog.joycode.com/joe/archive/2005/04/15/48543.aspx">1</A> </LI>
+  <LI class=RecommendByMe>
+  <DIV id=ctl00_MainContent_ViewPost1_Recommend1_UpdatePanel1><INPUT id=ctl00_MainContent_ViewPost1_Recommend1_btnRecommendByMe type=submit value=好文! name=ctl00$MainContent$ViewPost1$Recommend1$btnRecommendByMe> 
+  </DIV></LI></UL>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US>CLR 
+rofiler</SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-hansi-font-family: 'Times New Roman'; mso-ascii-font-family: 'Times New Roman'">允许你查看进程的托管堆并且研究垃圾回收器的特性，使用该工具的不同视图，你可以得到你的应用程序有关执行，分配，已经内存消耗的情况。</SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US>CLR 
+rofiler</SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-hansi-font-family: 'Times New Roman'; mso-ascii-font-family: 'Times New Roman'">不是分析问题的起点，确切的说，它帮助你鉴别并且隔离有疑问的代码并且追踪内存泄漏。使用</SPAN><SPAN 
+lang=EN-US>CLR Profiler</SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-hansi-font-family: 'Times New Roman'; mso-ascii-font-family: 'Times New Roman'">，你可以鉴别哪些代码分配了太多的内存，导致太多次的内存回收已经占有内存时间太长。</SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-hansi-font-family: 'Times New Roman'; mso-ascii-font-family: 'Times New Roman'">注意：</SPAN><SPAN 
+lang=EN-US>CLR Profiler</SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-hansi-font-family: 'Times New Roman'; mso-ascii-font-family: 'Times New Roman'">是一个插入式的分析器，它会严重地减慢被分析的应用程序的运行速度，某些情况下会导致</SPAN><SPAN 
+lang=EN-US>10</SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-hansi-font-family: 'Times New Roman'; mso-ascii-font-family: 'Times New Roman'">－</SPAN><SPAN 
+lang=EN-US>100</SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-hansi-font-family: 'Times New Roman'; mso-ascii-font-family: 'Times New Roman'">倍的速度减缓，该工具不是设计用在产品环境中。</SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN 
+style="FONT-FAMILY: 宋体; mso-hansi-font-family: 'Times New Roman'; mso-ascii-font-family: 'Times New Roman'">你需要了解的：</SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US>The primary 
+function of CLR Profiler</SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-hansi-font-family: 'Times New Roman'; mso-ascii-font-family: 'Times New Roman'">的主要功能是允许你了解你的应用程序如何与托管的，可回收的堆交互的。更重要的是，你可以研究包括：</SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-hansi-font-family: 'Times New Roman'; mso-ascii-font-family: 'Times New Roman'">谁在托管堆上分配了什么（谁，什么）</SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-hansi-font-family: 'Times New Roman'; mso-ascii-font-family: 'Times New Roman'">谁存活在托管堆上</SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-hansi-font-family: 'Times New Roman'; mso-ascii-font-family: 'Times New Roman'">谁引用了对象</SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN></SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-hansi-font-family: 'Times New Roman'; mso-ascii-font-family: 'Times New Roman'">垃圾回收器在你的程序的生存周期内做了什么</SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN 
+style="FONT-FAMILY: 宋体; mso-hansi-font-family: 'Times New Roman'; mso-ascii-font-family: 'Times New Roman'">嗅探的结果被保存在日志文件中，你可以通过</SPAN><SPAN 
+lang=EN-US>CLR Profiler</SPAN><SPAN 
+style="FONT-FAMILY: 宋体; mso-hansi-font-family: 'Times New Roman'; mso-ascii-font-family: 'Times New Roman'">的视图菜单以不同的方式来显示相应的视图。下表描述了几个主要的视图：</SPAN></P>
+<TABLE class=MsoNormalTable 
+style="BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none; BORDER-COLLAPSE: collapse; mso-border-top-alt: solid #CCCCCC .75pt; mso-border-left-alt: solid #CCCCCC .75pt; mso-padding-alt: 3.75pt 3.75pt 3.75pt 3.75pt" 
+cellSpacing=0 cellPadding=0 border=1>
+  <TBODY>
+  <TR style="mso-yfti-irow: 0; mso-yfti-firstrow: yes">
+    <TD 
+    style="BORDER-RIGHT: #cccccc 1pt solid; PADDING-RIGHT: 3.75pt; BORDER-TOP: #cccccc 1pt solid; PADDING-LEFT: 3.75pt; BACKGROUND: #eeeeee; PADDING-BOTTOM: 3.75pt; BORDER-LEFT: #cccccc 1pt solid; WIDTH: 34%; PADDING-TOP: 3.75pt; BORDER-BOTTOM: #cccccc 1pt solid; mso-border-alt: solid #CCCCCC .75pt" 
+    vAlign=top width="34%">
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><B><SPAN 
+      style="FONT-FAMILY: 宋体; mso-hansi-font-family: 'Times New Roman'; mso-ascii-font-family: 'Times New Roman'">视图</SPAN><SPAN 
+      lang=EN-US><o:p></o:p></SPAN></B></P></TD>
+    <TD 
+    style="BORDER-RIGHT: #cccccc 1pt solid; PADDING-RIGHT: 3.75pt; BORDER-TOP: #cccccc 1pt solid; PADDING-LEFT: 3.75pt; BORDER-LEFT-COLOR: #ece9d8; BACKGROUND: #eeeeee; PADDING-BOTTOM: 3.75pt; WIDTH: 66%; PADDING-TOP: 3.75pt; BORDER-BOTTOM: #cccccc 1pt solid; mso-border-top-alt: solid #CCCCCC .75pt; mso-border-bottom-alt: solid #CCCCCC .75pt; mso-border-right-alt: solid #CCCCCC .75pt" 
+    vAlign=top width="66%">
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><B><SPAN 
+      style="FONT-FAMILY: 宋体; mso-hansi-font-family: 'Times New Roman'; mso-ascii-font-family: 'Times New Roman'">对应的描述</SPAN><SPAN 
+      lang=EN-US><o:p></o:p></SPAN></B></P></TD></TR>
+  <TR style="mso-yfti-irow: 1">
+    <TD 
+    style="BORDER-RIGHT: #cccccc 1pt solid; PADDING-RIGHT: 3.75pt; PADDING-LEFT: 3.75pt; PADDING-BOTTOM: 3.75pt; BORDER-LEFT: #cccccc 1pt solid; WIDTH: 34%; BORDER-TOP-COLOR: #ece9d8; PADDING-TOP: 3.75pt; BORDER-BOTTOM: #cccccc 1pt solid; BACKGROUND-COLOR: transparent; mso-border-left-alt: solid #CCCCCC .75pt; mso-border-bottom-alt: solid #CCCCCC .75pt; mso-border-right-alt: solid #CCCCCC .75pt" 
+    vAlign=top width="34%">
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US>Histogram 
+      Allocated Types</SPAN></P></TD>
+    <TD 
+    style="BORDER-RIGHT: #cccccc 1pt solid; PADDING-RIGHT: 3.75pt; PADDING-LEFT: 3.75pt; BORDER-LEFT-COLOR: #ece9d8; PADDING-BOTTOM: 3.75pt; WIDTH: 66%; BORDER-TOP-COLOR: #ece9d8; PADDING-TOP: 3.75pt; BORDER-BOTTOM: #cccccc 1pt solid; BACKGROUND-COLOR: transparent; mso-border-bottom-alt: solid #CCCCCC .75pt; mso-border-right-alt: solid #CCCCCC .75pt" 
+    vAlign=top width="66%">
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN 
+      style="FONT-FAMILY: 宋体; mso-hansi-font-family: 'Times New Roman'; mso-ascii-font-family: 'Times New Roman'">给你一个在你程序的生命期中哪些类型对象被分配的高级视图，该视图还显示被分配在大对象堆中的对象，</SPAN></P>
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US>Gives you 
+      a high-level view of what object types are allocated (by allocation size) 
+      during the lifetime of your application. This view also shows those 
+      objects that are allocated in the large object heap (objects larger than 
+      85 KB). </SPAN></P>
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US>This view 
+      allows you to click parts of the graph so that you can see which methods 
+      allocated which objects.</SPAN></P></TD></TR>
+  <TR style="mso-yfti-irow: 2">
+    <TD 
+    style="BORDER-RIGHT: #cccccc 1pt solid; PADDING-RIGHT: 3.75pt; PADDING-LEFT: 3.75pt; PADDING-BOTTOM: 3.75pt; BORDER-LEFT: #cccccc 1pt solid; WIDTH: 34%; BORDER-TOP-COLOR: #ece9d8; PADDING-TOP: 3.75pt; BORDER-BOTTOM: #cccccc 1pt solid; BACKGROUND-COLOR: transparent; mso-border-left-alt: solid #CCCCCC .75pt; mso-border-bottom-alt: solid #CCCCCC .75pt; mso-border-right-alt: solid #CCCCCC .75pt" 
+    vAlign=top width="34%">
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US>Histogram 
+      Relocated Types</SPAN></P></TD>
+    <TD 
+    style="BORDER-RIGHT: #cccccc 1pt solid; PADDING-RIGHT: 3.75pt; PADDING-LEFT: 3.75pt; BORDER-LEFT-COLOR: #ece9d8; PADDING-BOTTOM: 3.75pt; WIDTH: 66%; BORDER-TOP-COLOR: #ece9d8; PADDING-TOP: 3.75pt; BORDER-BOTTOM: #cccccc 1pt solid; BACKGROUND-COLOR: transparent; mso-border-bottom-alt: solid #CCCCCC .75pt; mso-border-right-alt: solid #CCCCCC .75pt" 
+    vAlign=top width="66%">
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN 
+      style="FONT-FAMILY: 宋体; mso-hansi-font-family: 'Times New Roman'; mso-ascii-font-family: 'Times New Roman'">展示被垃圾回收器迁移的对象（因为它们在垃圾回收过程中被保留）</SPAN></P></TD></TR>
+  <TR style="mso-yfti-irow: 3">
+    <TD 
+    style="BORDER-RIGHT: #cccccc 1pt solid; PADDING-RIGHT: 3.75pt; PADDING-LEFT: 3.75pt; PADDING-BOTTOM: 3.75pt; BORDER-LEFT: #cccccc 1pt solid; WIDTH: 34%; BORDER-TOP-COLOR: #ece9d8; PADDING-TOP: 3.75pt; BORDER-BOTTOM: #cccccc 1pt solid; BACKGROUND-COLOR: transparent; mso-border-left-alt: solid #CCCCCC .75pt; mso-border-bottom-alt: solid #CCCCCC .75pt; mso-border-right-alt: solid #CCCCCC .75pt" 
+    vAlign=top width="34%">
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US>Objects By 
+      Address</SPAN></P></TD>
+    <TD 
+    style="BORDER-RIGHT: #cccccc 1pt solid; PADDING-RIGHT: 3.75pt; PADDING-LEFT: 3.75pt; BORDER-LEFT-COLOR: #ece9d8; PADDING-BOTTOM: 3.75pt; WIDTH: 66%; BORDER-TOP-COLOR: #ece9d8; PADDING-TOP: 3.75pt; BORDER-BOTTOM: #cccccc 1pt solid; BACKGROUND-COLOR: transparent; mso-border-bottom-alt: solid #CCCCCC .75pt; mso-border-right-alt: solid #CCCCCC .75pt" 
+    vAlign=top width="66%">
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN 
+      style="FONT-FAMILY: 宋体; mso-hansi-font-family: 'Times New Roman'; mso-ascii-font-family: 'Times New Roman'">显示在指定的时间托管堆上都有哪些对象</SPAN></P></TD></TR>
+  <TR style="mso-yfti-irow: 4">
+    <TD 
+    style="BORDER-RIGHT: #cccccc 1pt solid; PADDING-RIGHT: 3.75pt; PADDING-LEFT: 3.75pt; PADDING-BOTTOM: 3.75pt; BORDER-LEFT: #cccccc 1pt solid; WIDTH: 34%; BORDER-TOP-COLOR: #ece9d8; PADDING-TOP: 3.75pt; BORDER-BOTTOM: #cccccc 1pt solid; BACKGROUND-COLOR: transparent; mso-border-left-alt: solid #CCCCCC .75pt; mso-border-bottom-alt: solid #CCCCCC .75pt; mso-border-right-alt: solid #CCCCCC .75pt" 
+    vAlign=top width="34%">
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US>Histogram 
+      By Age</SPAN></P></TD>
+    <TD 
+    style="BORDER-RIGHT: #cccccc 1pt solid; PADDING-RIGHT: 3.75pt; PADDING-LEFT: 3.75pt; BORDER-LEFT-COLOR: #ece9d8; PADDING-BOTTOM: 3.75pt; WIDTH: 66%; BORDER-TOP-COLOR: #ece9d8; PADDING-TOP: 3.75pt; BORDER-BOTTOM: #cccccc 1pt solid; BACKGROUND-COLOR: transparent; mso-border-bottom-alt: solid #CCCCCC .75pt; mso-border-right-alt: solid #CCCCCC .75pt" 
+    vAlign=top width="66%">
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN 
+      style="FONT-FAMILY: 宋体; mso-hansi-font-family: 'Times New Roman'; mso-ascii-font-family: 'Times New Roman'">允许你查看托管堆上对象的生命期</SPAN></P></TD></TR>
+  <TR style="mso-yfti-irow: 5">
+    <TD 
+    style="BORDER-RIGHT: #cccccc 1pt solid; PADDING-RIGHT: 3.75pt; PADDING-LEFT: 3.75pt; PADDING-BOTTOM: 3.75pt; BORDER-LEFT: #cccccc 1pt solid; WIDTH: 34%; BORDER-TOP-COLOR: #ece9d8; PADDING-TOP: 3.75pt; BORDER-BOTTOM: #cccccc 1pt solid; BACKGROUND-COLOR: transparent; mso-border-left-alt: solid #CCCCCC .75pt; mso-border-bottom-alt: solid #CCCCCC .75pt; mso-border-right-alt: solid #CCCCCC .75pt" 
+    vAlign=top width="34%">
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US>Allocation 
+      Graph</SPAN></P></TD>
+    <TD 
+    style="BORDER-RIGHT: #cccccc 1pt solid; PADDING-RIGHT: 3.75pt; PADDING-LEFT: 3.75pt; BORDER-LEFT-COLOR: #ece9d8; PADDING-BOTTOM: 3.75pt; WIDTH: 66%; BORDER-TOP-COLOR: #ece9d8; PADDING-TOP: 3.75pt; BORDER-BOTTOM: #cccccc 1pt solid; BACKGROUND-COLOR: transparent; mso-border-bottom-alt: solid #CCCCCC .75pt; mso-border-right-alt: solid #CCCCCC .75pt" 
+    vAlign=top width="66%">
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN 
+      style="FONT-FAMILY: 宋体; mso-hansi-font-family: 'Times New Roman'; mso-ascii-font-family: 'Times New Roman'">图形化显示对象分配的调用堆栈，你可以使用该视图：</SPAN></P>
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN 
+      lang=EN-US>-</SPAN><SPAN 
+      style="FONT-FAMILY: 宋体; mso-hansi-font-family: 'Times New Roman'; mso-ascii-font-family: 'Times New Roman'">查看每个方法的内存消费</SPAN></P>
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN 
+      lang=EN-US>-</SPAN><SPAN 
+      style="FONT-FAMILY: 宋体; mso-hansi-font-family: 'Times New Roman'; mso-ascii-font-family: 'Times New Roman'">找出你不期望的内存分配</SPAN></P>
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN 
+      lang=EN-US>-</SPAN><SPAN 
+      style="FONT-FAMILY: 宋体; mso-hansi-font-family: 'Times New Roman'; mso-ascii-font-family: 'Times New Roman'">找到有可能过度分配内存的方法</SPAN></P></TD></TR>
+  <TR style="mso-yfti-irow: 6">
+    <TD 
+    style="BORDER-RIGHT: #cccccc 1pt solid; PADDING-RIGHT: 3.75pt; PADDING-LEFT: 3.75pt; PADDING-BOTTOM: 3.75pt; BORDER-LEFT: #cccccc 1pt solid; WIDTH: 34%; BORDER-TOP-COLOR: #ece9d8; PADDING-TOP: 3.75pt; BORDER-BOTTOM: #cccccc 1pt solid; BACKGROUND-COLOR: transparent; mso-border-left-alt: solid #CCCCCC .75pt; mso-border-bottom-alt: solid #CCCCCC .75pt; mso-border-right-alt: solid #CCCCCC .75pt" 
+    vAlign=top width="34%">
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US>Assembly, 
+      Module, Function, and Class Graph</SPAN></P></TD>
+    <TD 
+    style="BORDER-RIGHT: #cccccc 1pt solid; PADDING-RIGHT: 3.75pt; PADDING-LEFT: 3.75pt; BORDER-LEFT-COLOR: #ece9d8; PADDING-BOTTOM: 3.75pt; WIDTH: 66%; BORDER-TOP-COLOR: #ece9d8; PADDING-TOP: 3.75pt; BORDER-BOTTOM: #cccccc 1pt solid; BACKGROUND-COLOR: transparent; mso-border-bottom-alt: solid #CCCCCC .75pt; mso-border-right-alt: solid #CCCCCC .75pt" 
+    vAlign=top width="66%">
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN 
+      style="FONT-FAMILY: 宋体; mso-hansi-font-family: 'Times New Roman'; mso-ascii-font-family: 'Times New Roman'">这四个视图很相似</SPAN><SPAN 
+      lang=EN-US>.</SPAN><SPAN 
+      style="FONT-FAMILY: 宋体; mso-hansi-font-family: 'Times New Roman'; mso-ascii-font-family: 'Times New Roman'">你可以看到某个方法涉及到哪些</SPAN><SPAN 
+      lang=EN-US>Assembly,</SPAN><SPAN 
+      style="FONT-FAMILY: 宋体; mso-hansi-font-family: 'Times New Roman'; mso-ascii-font-family: 'Times New Roman'">哪些类，哪些模块，哪些函数</SPAN></P></TD></TR>
+  <TR style="mso-yfti-irow: 7">
+    <TD 
+    style="BORDER-RIGHT: #cccccc 1pt solid; PADDING-RIGHT: 3.75pt; PADDING-LEFT: 3.75pt; PADDING-BOTTOM: 3.75pt; BORDER-LEFT: #cccccc 1pt solid; WIDTH: 34%; BORDER-TOP-COLOR: #ece9d8; PADDING-TOP: 3.75pt; BORDER-BOTTOM: #cccccc 1pt solid; BACKGROUND-COLOR: transparent; mso-border-left-alt: solid #CCCCCC .75pt; mso-border-bottom-alt: solid #CCCCCC .75pt; mso-border-right-alt: solid #CCCCCC .75pt" 
+    vAlign=top width="34%">
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US>Heap 
+      Graph</SPAN></P></TD>
+    <TD 
+    style="BORDER-RIGHT: #cccccc 1pt solid; PADDING-RIGHT: 3.75pt; PADDING-LEFT: 3.75pt; BORDER-LEFT-COLOR: #ece9d8; PADDING-BOTTOM: 3.75pt; WIDTH: 66%; BORDER-TOP-COLOR: #ece9d8; PADDING-TOP: 3.75pt; BORDER-BOTTOM: #cccccc 1pt solid; BACKGROUND-COLOR: transparent; mso-border-bottom-alt: solid #CCCCCC .75pt; mso-border-right-alt: solid #CCCCCC .75pt" 
+    vAlign=top width="66%">
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN 
+      style="FONT-FAMILY: 宋体; mso-hansi-font-family: 'Times New Roman'; mso-ascii-font-family: 'Times New Roman'">显示托管堆上的所有对象，以及它们的相关联对象</SPAN><SPAN 
+      lang=EN-US>.</SPAN></P></TD></TR>
+  <TR style="mso-yfti-irow: 8">
+    <TD 
+    style="BORDER-RIGHT: #cccccc 1pt solid; PADDING-RIGHT: 3.75pt; PADDING-LEFT: 3.75pt; PADDING-BOTTOM: 3.75pt; BORDER-LEFT: #cccccc 1pt solid; WIDTH: 34%; BORDER-TOP-COLOR: #ece9d8; PADDING-TOP: 3.75pt; BORDER-BOTTOM: #cccccc 1pt solid; BACKGROUND-COLOR: transparent; mso-border-left-alt: solid #CCCCCC .75pt; mso-border-bottom-alt: solid #CCCCCC .75pt; mso-border-right-alt: solid #CCCCCC .75pt" 
+    vAlign=top width="34%">
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US>Call 
+      Graph</SPAN></P></TD>
+    <TD 
+    style="BORDER-RIGHT: #cccccc 1pt solid; PADDING-RIGHT: 3.75pt; PADDING-LEFT: 3.75pt; BORDER-LEFT-COLOR: #ece9d8; PADDING-BOTTOM: 3.75pt; WIDTH: 66%; BORDER-TOP-COLOR: #ece9d8; PADDING-TOP: 3.75pt; BORDER-BOTTOM: #cccccc 1pt solid; BACKGROUND-COLOR: transparent; mso-border-bottom-alt: solid #CCCCCC .75pt; mso-border-right-alt: solid #CCCCCC .75pt" 
+    vAlign=top width="66%">
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US>Lets you 
+      see which methods call which other methods and how frequently. </SPAN></P>
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US>You can 
+      use this graph to get a feel for the cost of library calls and to 
+      determine how many calls are made to methods and which methods are 
+      called.</SPAN></P></TD></TR>
+  <TR style="mso-yfti-irow: 9">
+    <TD 
+    style="BORDER-RIGHT: #cccccc 1pt solid; PADDING-RIGHT: 3.75pt; PADDING-LEFT: 3.75pt; PADDING-BOTTOM: 3.75pt; BORDER-LEFT: #cccccc 1pt solid; WIDTH: 34%; BORDER-TOP-COLOR: #ece9d8; PADDING-TOP: 3.75pt; BORDER-BOTTOM: #cccccc 1pt solid; BACKGROUND-COLOR: transparent; mso-border-left-alt: solid #CCCCCC .75pt; mso-border-bottom-alt: solid #CCCCCC .75pt; mso-border-right-alt: solid #CCCCCC .75pt" 
+    vAlign=top width="34%">
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US>Time 
+      Line</SPAN></P></TD>
+    <TD 
+    style="BORDER-RIGHT: #cccccc 1pt solid; PADDING-RIGHT: 3.75pt; PADDING-LEFT: 3.75pt; BORDER-LEFT-COLOR: #ece9d8; PADDING-BOTTOM: 3.75pt; WIDTH: 66%; BORDER-TOP-COLOR: #ece9d8; PADDING-TOP: 3.75pt; BORDER-BOTTOM: #cccccc 1pt solid; BACKGROUND-COLOR: transparent; mso-border-bottom-alt: solid #CCCCCC .75pt; mso-border-right-alt: solid #CCCCCC .75pt" 
+    vAlign=top width="66%">
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US>Displays 
+      what the garbage collector does over the lifetime of the application. Use 
+      this view to: </SPAN></P>
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN 
+      lang=EN-US>-Investigate the behavior of the garbage collector.</SPAN></P>
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US>-Determine 
+      how many garbage collections occur at the three generations (Generation 0, 
+      1, and 2) and how frequently they occur.</SPAN></P>
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US>-Determine 
+      which objects survive garbage collection and are promoted to the next 
+      generation.</SPAN></P>
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US>You can 
+      select time points or intervals and right-click to show who allocated 
+      memory in the interval.</SPAN></P></TD></TR>
+  <TR style="mso-yfti-irow: 10; mso-yfti-lastrow: yes">
+    <TD 
+    style="BORDER-RIGHT: #cccccc 1pt solid; PADDING-RIGHT: 3.75pt; PADDING-LEFT: 3.75pt; PADDING-BOTTOM: 3.75pt; BORDER-LEFT: #cccccc 1pt solid; WIDTH: 34%; BORDER-TOP-COLOR: #ece9d8; PADDING-TOP: 3.75pt; BORDER-BOTTOM: #cccccc 1pt solid; BACKGROUND-COLOR: transparent; mso-border-left-alt: solid #CCCCCC .75pt; mso-border-bottom-alt: solid #CCCCCC .75pt; mso-border-right-alt: solid #CCCCCC .75pt" 
+    vAlign=top width="34%">
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US>Call Tree 
+      View </SPAN></P></TD>
+    <TD 
+    style="BORDER-RIGHT: #cccccc 1pt solid; PADDING-RIGHT: 3.75pt; PADDING-LEFT: 3.75pt; BORDER-LEFT-COLOR: #ece9d8; PADDING-BOTTOM: 3.75pt; WIDTH: 66%; BORDER-TOP-COLOR: #ece9d8; PADDING-TOP: 3.75pt; BORDER-BOTTOM: #cccccc 1pt solid; BACKGROUND-COLOR: transparent; mso-border-bottom-alt: solid #CCCCCC .75pt; mso-border-right-alt: solid #CCCCCC .75pt" 
+    vAlign=top width="66%">
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US>Provides a 
+      text-based, chronological, hierarchical view of your application's 
+      execution. Use this view to: </SPAN></P>
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US>-See what 
+      types are allocated and their size.</SPAN></P>
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US>-See which 
+      assemblies are loaded as result of method calls.</SPAN></P>
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US>-Analyze 
+      the use of finalizers, including the number of finalizers 
+      executed.</SPAN></P>
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US>-Identify 
+      methods where <B>Close</B> or <B>Dispose</B> has not been implemented or 
+      called, thereby causing a bottleneck.</SPAN></P>
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US>-Analyze 
+      allocations that you were not expecting.</SPAN></P></TD></TR></TBODY></TABLE>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN 
+lang=EN-US><o:p>&nbsp;</o:p></SPAN></P></DIV>
+<P class=PostFoot><A class=printIcon 
+href="javascript:window.print();"><SPAN>打印</SPAN></A> | posted on 2005年4月15日 
+16:19 | | 收藏本页 (<A 
+href="javascript:window.open('http://cang.baidu.com/do/add?it='+encodeURIComponent(document.title.substring(0,76))+'&amp;iu='+encodeURIComponent(location.href)+'&amp;fr=ien#nw=1','_blank','scrollbars=no,width=600,height=450,left=75,top=20,status=no,resizable=yes'); void 0">百度搜藏</A>)(<A 
+href="javascript:window.open('http://shuqian.qq.com/post?title='+encodeURIComponent(document.title)+'&amp;uri='+encodeURIComponent(document.location.href)+'&amp;jumpback=2&amp;noui=1','favit','width=960,height=600,left=50,top=50,toolbar=no,menubar=no,location=no,scrollbars=yes,status=yes,resizable=yes');void(0)">QQ书签</A>)(<A 
+href="javascript:function%20qa(){t=document.title;u=escape(location.href);var%20q='https://favorites.live.com/quickadd.aspx?marklet=1&amp;mkt=zh-cn&amp;url='+u+'&amp;title='+t+'&amp;top=0';location.href=q;}; qa();">Live收藏</A>)(<A 
+href="javascript:location.href='http://www.google.com/bookmarks/mark?op=add&amp;bkmk='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title)">Google书签</A>)(<A 
+href="javascript:location.href='http://myweb2.search.yahoo.com/myresults/bookmarklet?u='+encodeURIComponent(location.href)+'&amp;t='+encodeURIComponent(document.title)">Yahoo书签</A>)(<A 
+href="javascript:d=document;t=d.selection?(d.selection.type!='None'?d.selection.createRange().text:''):(d.getSelection?d.getSelection():'');void(vivi=window.open('http://vivi.sina.com.cn/collect/icollect.php?pid=28&amp;title='+escape(d.title)+'&amp;url='+escape(d.location.href)+'&amp;desc='+escape(t),'vivi','scrollbars=no,width=480,height=480,left=75,top=20,status=no,resizable=yes'));vivi.focus();">新浪ViVi</A>)(<A 
+href="javascript:d=document;t=d.selection?(d.selection.type!='None'?d.selection.createRange().text:''):(d.getSelection?d.getSelection():'');void(keyit=window.open('http://z.sohu.com/storeit.do?t='+escape(d.title)+'&amp;u='+escape(d.location.href)+'&amp;c='+escape(t),'keyit','scrollbars=no,width=475,height=575,left=75,top=20,status=no,resizable=yes'));keyit.focus();">搜狐网摘</A>)(<A 
+href="javascript:d=document;t=d.selection?(d.selection.type!='None'?d.selection.createRange().text:''):(d.getSelection?d.getSelection():'');void(keyit=window.open('http://www.365key.com/storeit.aspx?t='+escape(d.title)+'&amp;u='+escape(d.location.href)+'&amp;c='+escape(t),'keyit','scrollbars=no,width=475,height=575,left=75,top=20,status=no,resizable=yes'));keyit.focus();">365Key网摘</A>)(<A 
+href="javascript:d=document;t=d.selection?(d.selection.type!='None'?d.selection.createRange().text:''):(d.getSelection?d.getSelection():'');void(yesky=window.open('http://hot.yesky.com/dp.aspx?t='+escape(d.title)+'&amp;u='+escape(d.location.href)+'&amp;c='+escape(t)+'&amp;st=2','yesky','scrollbars=no,width=400,height=480,left=75,top=20,status=no,resizable=yes'));yesky.focus();">天极网摘</A>)(<A 
+href="javascript:d=document;t=d.selection?(d.selection.type!='None'?d.selection.createRange().text:''):(d.getSelection?d.getSelection():'');void(keyit=window.open('http://blogmark.bokee.com/jsp/key/quickaddkey.jsp?k='+encodeURI(d.title)+'&amp;u='+encodeURI(d.location.href)+'&amp;c='+encodeURI(t),'keyit','scrollbars=no,width=500,height=430,status=no,resizable=yes'));keyit.focus();">博采网摘</A>)(<A 
+href="javascript:t=document.title;u=location.href;e=document.selection?(document.selection.type!='None'?document.selection.createRange().text:''):(document.getSelection?document.getSelection():'');void(open('http://bookmark.hexun.com/post.aspx?title='+escape(t)+'&amp;url='+escape(u)+'&amp;excerpt='+escape(e),'HexunBookmark','scrollbars=no,width=600,height=450,left=80,top=80,status=no,resizable=yes'));">和讯网摘</A>) 
+</P></DIV></DIV><LINK href="http://blog.joycode.com/joe/Services/Pingback.aspx" 
+rel=pingback></LINK><!--
+   <rdf:RDF 
+      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+      xmlns:dc="http://purl.org/dc/elements/1.1/"
+      xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+
+      <rdf:Description
+         rdf:about="http://blog.joycode.com/joe/archive/2005/04/15/48543.aspx"
+         dc:identifier="http://blog.joycode.com/joe/archive/2005/04/15/48543.aspx"
+         dc:title="CLR Profiler介绍"
+         trackback:ping="http://blog.joycode.com/joe/services/trackbacks/48543.aspx" 
+      />
+   </rdf:RDF>
+--><A title="feedback anchor" name=feedback></A>
+<DIV id=comments>
+<H3>反馈</H3>
+<DIV class=Comment>
+<DIV style="FLOAT: left"><A 
+id=ctl00_MainContent_Comments1_CommentList_ctl00_PhotoLink 
+href="http://www.joycode.com/users/ç»èç&nbsp;´ç¢ä»ª/profile.aspx"><IMG 
+class=Avatar id=ctl00_MainContent_Comments1_CommentList_ctl00_GravatarImg 
+style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; WIDTH: 30px; HEIGHT: 40px; BORDER-RIGHT-WIDTH: 0px" 
+alt=Gravatar 
+src="C:\Documents and Settings\Administrator.SZLANYOU-7NGZ4R\桌面\CLR Profiler介绍 - 代码加咖啡的生活 - 博客堂_files\anonymoususer(1).jpg"></A></DIV>
+<DIV class=CommentTitle><A title="permalink: re:CLR Profiler介绍" 
+href="http://blog.joycode.com/joe/archive/2005/04/15/48543.aspx#50308">#</A>&nbsp;<A 
+name=50308></A>re:CLR Profiler介绍 <A 
+id=ctl00_MainContent_Comments1_CommentList_ctl00_EditLink 
+href="javascript:__doPostBack('ctl00$MainContent$Comments1$CommentList$ctl00$EditLink','')"></A></DIV>
+<DIV class=CommentContent>^_~,pretty good!csharpsseeoo</DIV>
+<DIV class=CommentFoot>2005/5/3 12:22 | <A 
+id=ctl00_MainContent_Comments1_CommentList_ctl00_NameLink 
+title=http://www.atshomogenizer.com/Category_1372_1.html 
+href="http://www.atshomogenizer.com/Category_1372_1.html" 
+target=_blank>细胞破碎仪</A> </DIV></DIV>
+<DIV class=Comment>
+<DIV style="FLOAT: left"><A 
+id=ctl00_MainContent_Comments1_CommentList_ctl01_PhotoLink 
+href="http://www.joycode.com/users/æµæ±/profile.aspx"><IMG class=Avatar 
+id=ctl00_MainContent_Comments1_CommentList_ctl01_GravatarImg 
+style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; WIDTH: 30px; HEIGHT: 40px; BORDER-RIGHT-WIDTH: 0px" 
+alt=Gravatar 
+src="C:\Documents and Settings\Administrator.SZLANYOU-7NGZ4R\桌面\CLR Profiler介绍 - 代码加咖啡的生活 - 博客堂_files\anonymoususer(2).jpg"></A></DIV>
+<DIV class=CommentTitle><A title="permalink: re:CLR Profiler介绍" 
+href="http://blog.joycode.com/joe/archive/2005/04/15/48543.aspx#54674">#</A>&nbsp;<A 
+name=54674></A>re:CLR Profiler介绍 <A 
+id=ctl00_MainContent_Comments1_CommentList_ctl01_EditLink 
+href="javascript:__doPostBack('ctl00$MainContent$Comments1$CommentList$ctl01$EditLink','')"></A></DIV>
+<DIV class=CommentContent>CLR Profiler介绍ooeess</DIV>
+<DIV class=CommentFoot>2005/6/16 21:45 | <A 
+id=ctl00_MainContent_Comments1_CommentList_ctl01_NameLink 
+title=http://www.tn17.com/Product_7319.html 
+href="http://www.tn17.com/Product_7319.html" target=_blank>测汞</A> </DIV></DIV>
+<DIV class=Comment>
+<DIV style="FLOAT: left"><A 
+id=ctl00_MainContent_Comments1_CommentList_ctl02_PhotoLink 
+href="http://www.joycode.com/users/ä¸æ°§åç¢³æµå®ä»ª/profile.aspx"><IMG 
+class=Avatar id=ctl00_MainContent_Comments1_CommentList_ctl02_GravatarImg 
+style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; WIDTH: 30px; HEIGHT: 40px; BORDER-RIGHT-WIDTH: 0px" 
+alt=Gravatar 
+src="C:\Documents and Settings\Administrator.SZLANYOU-7NGZ4R\桌面\CLR Profiler介绍 - 代码加咖啡的生活 - 博客堂_files\anonymoususer(3).jpg"></A></DIV>
+<DIV class=CommentTitle><A title="permalink: re:CLR Profiler介绍" 
+href="http://blog.joycode.com/joe/archive/2005/04/15/48543.aspx#54675">#</A>&nbsp;<A 
+name=54675></A>re:CLR Profiler介绍 <A 
+id=ctl00_MainContent_Comments1_CommentList_ctl02_EditLink 
+href="javascript:__doPostBack('ctl00$MainContent$Comments1$CommentList$ctl02$EditLink','')"></A></DIV>
+<DIV class=CommentContent>CLR Profiler介绍ooeess</DIV>
+<DIV class=CommentFoot>2005/6/16 21:45 | <A 
+id=ctl00_MainContent_Comments1_CommentList_ctl02_NameLink 
+title=http://www.tn17.com/ChiClass_1727_1.html 
+href="http://www.tn17.com/ChiClass_1727_1.html" target=_blank>一氧化碳测定仪</A> 
+</DIV></DIV></DIV><SPAN>对不起,您需要登录或者在本站注册方可发表留言</SPAN> 
+<DIV id=commentform>
+<H3>Post Comment</H3>
+<TABLE cellSpacing=1 cellPadding=1 border=0>
+  <TBODY>
+  <TR>
+    <TD colSpan=3></TD></TR>
+  <TR>
+    <TD>Title</TD>
+    <TD><INPUT class=Textbox id=ctl00_MainContent_PostComment1_tbTitle 
+      style="WIDTH: 300px" disabled maxLength=128 size=40 
+      value="re: CLR Profiler介绍" name=ctl00$MainContent$PostComment1$tbTitle></TD>
+    <TD><SPAN id=ctl00_MainContent_PostComment1_RequiredFieldValidator1 
+      style="VISIBILITY: hidden; COLOR: red">Please enter a title</SPAN></TD></TR>
+  <TR>
+    <TD colSpan=3>Comment&nbsp; <SPAN 
+      id=ctl00_MainContent_PostComment1_RequiredFieldValidator3 
+      style="VISIBILITY: hidden; COLOR: red">Please enter a comment</SPAN><BR><TEXTAREA id=ctl00_MainContent_PostComment1_tbComment style="WIDTH: 100%; HEIGHT: 193px" disabled name=ctl00$MainContent$PostComment1$tbComment rows=10 cols=50></TEXTAREA> 
+      <BR></TD></TR>
+  <TR>
+    <TD><INPUT class=Button id=ctl00_MainContent_PostComment1_btnSubmit disabled type=submit value=Submit name=ctl00$MainContent$PostComment1$btnSubmit></TD>
+    <TD colSpan=2><SPAN id=ctl00_MainContent_PostComment1_Message 
+      style="COLOR: red"></SPAN></TD></TR></TBODY></TABLE></DIV></DIV></DIV></DIV>
+<DIV id=foot>
+<P class=powererdby>Powered by: <BR><A title="Powered By ASP.NET" 
+href="http://asp.net/"><IMG title="Powered By ASP.NET" 
+style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+src="CLR Profiler介绍 - 代码加咖啡的生活 - 博客堂_files/PoweredByAsp.Net.gif"></A> </P>
+<P class=copyright>Copyright © joe </P></DIV>
+<SCRIPT type=text/javascript>
+//<![CDATA[
+var Page_Validators =  new Array(document.getElementById("ctl00_MainContent_PostComment1_RequiredFieldValidator1"), document.getElementById("ctl00_MainContent_PostComment1_RequiredFieldValidator3"));
+//]]>
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+//<![CDATA[
+var ctl00_MainContent_PostComment1_RequiredFieldValidator1 = document.all ? document.all["ctl00_MainContent_PostComment1_RequiredFieldValidator1"] : document.getElementById("ctl00_MainContent_PostComment1_RequiredFieldValidator1");
+ctl00_MainContent_PostComment1_RequiredFieldValidator1.controltovalidate = "ctl00_MainContent_PostComment1_tbTitle";
+ctl00_MainContent_PostComment1_RequiredFieldValidator1.errormessage = "Please enter a title";
+ctl00_MainContent_PostComment1_RequiredFieldValidator1.validationGroup = "JoycodeComment";
+ctl00_MainContent_PostComment1_RequiredFieldValidator1.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+ctl00_MainContent_PostComment1_RequiredFieldValidator1.initialvalue = "";
+var ctl00_MainContent_PostComment1_RequiredFieldValidator3 = document.all ? document.all["ctl00_MainContent_PostComment1_RequiredFieldValidator3"] : document.getElementById("ctl00_MainContent_PostComment1_RequiredFieldValidator3");
+ctl00_MainContent_PostComment1_RequiredFieldValidator3.controltovalidate = "ctl00_MainContent_PostComment1_tbComment";
+ctl00_MainContent_PostComment1_RequiredFieldValidator3.errormessage = "Please enter a comment";
+ctl00_MainContent_PostComment1_RequiredFieldValidator3.validationGroup = "JoycodeComment";
+ctl00_MainContent_PostComment1_RequiredFieldValidator3.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+ctl00_MainContent_PostComment1_RequiredFieldValidator3.initialvalue = "";
+//]]>
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+<!--
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+// -->
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+//<![CDATA[
+WebForm_AutoFocus('btnSearch');Sys.Application.initialize();
+
+document.getElementById('ctl00_MainContent_PostComment1_RequiredFieldValidator1').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('ctl00_MainContent_PostComment1_RequiredFieldValidator1'));
+}
+
+document.getElementById('ctl00_MainContent_PostComment1_RequiredFieldValidator3').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('ctl00_MainContent_PostComment1_RequiredFieldValidator3'));
+}
+//]]>
+</SCRIPT>
+</FORM>
+<SCRIPT type=text/javascript>
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+var pageTracker = _gat._getTracker("UA-3714165-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</SCRIPT>
+</BODY></HTML>

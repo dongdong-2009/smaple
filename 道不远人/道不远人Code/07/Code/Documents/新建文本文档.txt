@@ -1,0 +1,6 @@
+
+ValidatorCommonOnSubmit
+
+function WebForm_PostBackOptions(eventTarget, eventArgument, validation, validationGroup, actionUrl, trackFocus, clientSubmit)
+
+onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;btnRegister&quot;, &quot;&quot;, true, &quot;Register&quot;, &quot;&quot;, false, false))"

@@ -1,0 +1,342 @@
+HTML {
+	MARGIN: auto; FONT: 12px/150% black verdana
+}
+BODY {
+	MARGIN: auto; FONT: 12px/150% black verdana
+}
+DIV {
+	MARGIN: auto; FONT: 12px/150% black verdana
+}
+DIV {
+	FONT-FAMILY: verdana
+}
+TD {
+	FONT-SIZE: 12px
+}
+BODY {
+	BACKGROUND: url(images/bg_footer.gif) no-repeat right bottom
+}
+.clear {
+	CLEAR: both
+}
+A:link {
+	COLOR: #333333; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #333333; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #ff3366; TEXT-DECORATION: underline
+}
+A:active {
+	COLOR: red; TEXT-DECORATION: none
+}
+.none {
+	DISPLAY: none
+}
+.floatright {
+	FLOAT: right
+}
+#banner {
+	BACKGROUND: url(images/banner.gif) no-repeat left top; WIDTH: 100%; HEIGHT: 185px
+}
+#main {
+	CLEAR: both; BACKGROUND: none transparent scroll repeat 0% 0%
+}
+#right {
+	DISPLAY: block; BACKGROUND: none transparent scroll repeat 0% 0%; FLOAT: right; MARGIN: 0px 0px 0px -250px; WIDTH: 100%
+}
+#right_content {
+	MARGIN: 0px 0px 0px 250px
+}
+#left {
+	DISPLAY: block; BACKGROUND: none transparent scroll repeat 0% 0%; LEFT: 20px; OVERFLOW-X: hidden; WIDTH: 230px; POSITION: absolute; TOP: 200px; TEXT-ALIGN: center
+}
+#topics {
+	BORDER-RIGHT: red 0px solid; BORDER-TOP: red 0px solid; BORDER-LEFT: red 0px solid; WIDTH: 100%; BORDER-BOTTOM: red 0px solid
+}
+#footer {
+	TEXT-ALIGN: center
+}
+#left_content {
+	BORDER-RIGHT: red 0px solid; BORDER-TOP: red 0px solid; BACKGROUND: none transparent scroll repeat 0% 0%; MARGIN: 15px auto; BORDER-LEFT: red 0px solid; WIDTH: 100%; BORDER-BOTTOM: red 0px solid; TEXT-ALIGN: left
+}
+.listtitle {
+	PADDING-LEFT: 20px; FONT-SIZE: 12px; BACKGROUND: url(images/bg_list.gif) no-repeat left top; COLOR: #666666; LINE-HEIGHT: 32px; HEIGHT: 35px
+}
+.catListTitle {
+	PADDING-LEFT: 20px; FONT-SIZE: 12px; BACKGROUND: url(images/bg_list.gif) no-repeat left top; COLOR: #666666; LINE-HEIGHT: 32px; HEIGHT: 35px
+}
+LI.catListItem {
+	PADDING-LEFT: 0px; LIST-STYLE-POSITION: outside; MARGIN: 5px auto 5px 8px; LIST-STYLE-TYPE: none
+}
+UL.catListItem {
+	PADDING-LEFT: 0px; LIST-STYLE-POSITION: outside; MARGIN: 5px auto 5px 8px; LIST-STYLE-TYPE: none
+}
+.RecentComment LI {
+	PADDING-LEFT: 0px; LIST-STYLE-POSITION: outside; MARGIN: 5px auto 5px 8px; LIST-STYLE-TYPE: none
+}
+.RecentComment UL {
+	PADDING-LEFT: 0px; LIST-STYLE-POSITION: outside; MARGIN: 5px auto 5px 8px; LIST-STYLE-TYPE: none
+}
+#leftcontentcontainer UL {
+	PADDING-LEFT: 0px; LIST-STYLE-POSITION: outside; MARGIN: 5px auto 5px 8px; LIST-STYLE-TYPE: none
+}
+#leftcontentcontainer LI {
+	PADDING-LEFT: 0px; LIST-STYLE-POSITION: outside; MARGIN: 5px auto 5px 8px; LIST-STYLE-TYPE: none
+}
+.newsItem {
+	BORDER-RIGHT: red 0px solid; PADDING-RIGHT: 10px; BORDER-TOP: red 0px solid; PADDING-LEFT: 10px; OVERFLOW-X: hidden; BORDER-LEFT: red 0px solid; WIDTH: 100%; PADDING-TOP: 10px; BORDER-BOTTOM: red 0px solid
+}
+#mylinks {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 15px; PADDING-BOTTOM: 5px; MARGIN-LEFT: 30px; PADDING-TOP: 5px; BACKGROUND-COLOR: black
+}
+A.menu:link {
+	COLOR: white; TEXT-DECORATION: none
+}
+A.menu:visited {
+	COLOR: white; TEXT-DECORATION: none
+}
+A.menu:active {
+	COLOR: white; TEXT-DECORATION: none
+}
+A.menu:hover {
+	COLOR: white; TEXT-DECORATION: underline
+}
+#mystats {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; MARGIN-LEFT: 30px; COLOR: white; PADDING-TOP: 5px; BACKGROUND-COLOR: #ff5b85; TEXT-ALIGN: right
+}
+.headerText {
+	RIGHT: 30px; WIDTH: 100%; POSITION: absolute; TOP: 30px; HEIGHT: 90px; TEXT-ALIGN: right
+}
+.headermaintitle {
+	FONT: bold 18px/30px "courier new", verdana, monospace
+}
+A.headermaintitle:link {
+	COLOR: #ff3366; TEXT-DECORATION: none
+}
+A.headermaintitle:visited {
+	COLOR: #ff3366; TEXT-DECORATION: none
+}
+A.headermaintitle:hover {
+	COLOR: #ff3366; TEXT-DECORATION: underline
+}
+A.headermaintitle:active {
+	COLOR: #ff3366; TEXT-DECORATION: none
+}
+.headerDis {
+	BORDER-RIGHT: red 0px solid; BORDER-TOP: red 0px solid; FONT: 12px/22px "courier new", verdana, monospace; BORDER-LEFT: red 0px solid; COLOR: #333333; BORDER-BOTTOM: red 0px solid; TEXT-ALIGN: right
+}
+.day {
+	BACKGROUND: url(images/bg_day.gif) no-repeat right top; MARGIN: auto auto auto 30px
+}
+.dayTitle {
+	PADDING-BOTTOM: 10px; FONT: bold 14px Arial, verdana, monospace; BORDER-BOTTOM: #cecece 1px solid; POSITION: relative; HEIGHT: 49px
+}
+.dayTitle A {
+	DISPLAY: block; LEFT: 0px; BOTTOM: 10px; POSITION: absolute
+}
+.dayTitle A:link {
+	COLOR: #ff3366; TEXT-DECORATION: none
+}
+.dayTitle A:visited {
+	COLOR: #ff3366; TEXT-DECORATION: none
+}
+.dayTitle A:active {
+	COLOR: #ff3366; TEXT-DECORATION: none
+}
+.dayTitle A:hover {
+	COLOR: #333333; TEXT-DECORATION: underline
+}
+.postTitle {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 0px; FONT-WEIGHT: bold; FONT-SIZE: 14px; PADDING-BOTTOM: 10px; PADDING-TOP: 10px
+}
+.postSeparator {
+	BACKGROUND: url(images/line.gif) repeat-x left center; WIDTH: 100%; HEIGHT: 60px
+}
+.post {
+	BORDER-RIGHT: red 0px solid; PADDING-RIGHT: 30px; BORDER-TOP: red 0px solid; PADDING-LEFT: 45px; FONT-SIZE: 14px; BACKGROUND: url(images/bg_post.gif) no-repeat right top; PADDING-BOTTOM: 30px; BORDER-LEFT: red 0px solid; PADDING-TOP: 15px; BORDER-BOTTOM: red 0px solid
+}
+.post A:link {
+	COLOR: #ff3366; TEXT-DECORATION: none
+}
+.post A:visited {
+	COLOR: #ff3366; TEXT-DECORATION: none
+}
+.post A:active {
+	COLOR: #ff3366; TEXT-DECORATION: none
+}
+.post A:hover {
+	COLOR: #333333; TEXT-DECORATION: underline
+}
+.post DIV {
+	MARGIN: 0px
+}
+.postTitle2 A {
+	PADDING-RIGHT: 5px; DISPLAY: inline-block; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; MARGIN: auto auto 15px; PADDING-TOP: 5px
+}
+A.postTitle2:link {
+	COLOR: #ff3366; TEXT-DECORATION: none
+}
+A.postTitle2:visited {
+	COLOR: #ff3366; TEXT-DECORATION: none
+}
+A.postTitle2:active {
+	COLOR: #ff3366; TEXT-DECORATION: none
+}
+A.postTitle2:hover {
+	COLOR: #333333; TEXT-DECORATION: underline
+}
+.postCon {
+	BORDER-RIGHT: #efefef 0px dotted; PADDING-RIGHT: 10px; BORDER-TOP: #efefef 0px dotted; PADDING-LEFT: 10px; FONT-SIZE: 14px; PADDING-BOTTOM: 10px; BORDER-LEFT: #efefef 0px dotted; LINE-HEIGHT: 150%; PADDING-TOP: 10px; BORDER-BOTTOM: #efefef 0px dotted
+}
+.postDesc {
+	FONT-SIZE: 12px; COLOR: #333333; MARGIN-RIGHT: 10px; PADDING-TOP: 20px; FONT-FAMILY: arial; TEXT-ALIGN: right
+}
+.postDesc A:link {
+	COLOR: #ff3366; TEXT-DECORATION: none
+}
+.postDesc A:visited {
+	COLOR: #ff3366; TEXT-DECORATION: none
+}
+.postDesc A:active {
+	COLOR: #ff3366; TEXT-DECORATION: none
+}
+.postDesc A:hover {
+	COLOR: #333333; TEXT-DECORATION: underline
+}
+.entrylist {
+	PADDING-RIGHT: 30px; PADDING-LEFT: 30px; PADDING-BOTTOM: 30px; PADDING-TOP: 30px
+}
+.entrylistTitle {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; FONT-FAMILY: verdana
+}
+.entrylistDescription {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; PADDING-BOTTOM: 10px; COLOR: gray; PADDING-TOP: 10px
+}
+.entrylistItem {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; FONT-SIZE: 14px; MARGIN-BOTTOM: 10px; PADDING-BOTTOM: 10px; PADDING-TOP: 10px
+}
+.entrylistItemTitle {
+	FONT-SIZE: 14px; PADDING-BOTTOM: 10px; FONT-FAMILY: verdana
+}
+A.entrylistItemTitle:link {
+	COLOR: #ff3366; TEXT-DECORATION: none
+}
+A.entrylistItemTitle:visited {
+	COLOR: #ff3366; TEXT-DECORATION: none
+}
+A.entrylistItemTitle:active {
+	COLOR: #ff3366; TEXT-DECORATION: none
+}
+A.entrylistItemTitle:hover {
+	COLOR: #333333; TEXT-DECORATION: underline
+}
+.entrylistItemPostDesc {
+	FONT-SIZE: 12px; COLOR: gray; FONT-FAMILY: arial; TEXT-ALIGN: right
+}
+.entrylistItemPostDesc A:link {
+	COLOR: #ff3366; TEXT-DECORATION: none
+}
+.entrylistItemPostDesc A:visited {
+	COLOR: #ff3366; TEXT-DECORATION: none
+}
+.entrylistItemPostDesc A:active {
+	COLOR: #ff3366; TEXT-DECORATION: none
+}
+.entrylistItemPostDesc A:hover {
+	COLOR: #333333; TEXT-DECORATION: underline
+}
+.comment {
+	MARGIN: auto 30px
+}
+.commentform {
+	BORDER-RIGHT: red 0px solid; PADDING-RIGHT: 0px; BORDER-TOP: red 0px solid; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: auto 30px; BORDER-LEFT: red 0px solid; PADDING-TOP: 0px; BORDER-BOTTOM: red 0px solid
+}
+.feedback_area_title {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; MARGIN-BOTTOM: 10px; BORDER-BOTTOM: #ccc 1px dotted
+}
+.feedbackListSubtitle {
+	FONT-WEIGHT: bold; MARGIN-BOTTOM: 10px; COLOR: #4f4f4f; BORDER-BOTTOM: #ccc 1px dotted
+}
+.feedbackManage {
+	FONT-WEIGHT: normal; FLOAT: right
+}
+.feedbackCon {
+	MARGIN-BOTTOM: 15px
+}
+.calendar {
+	BORDER-RIGHT: black 0px solid; BORDER-TOP: black 0px solid; BORDER-LEFT: black 0px solid; BORDER-BOTTOM: black 0px solid
+}
+.Cal {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 12px; PADDING-BOTTOM: 0px; WIDTH: 100%; PADDING-TOP: 0px; FONT-FAMILY: arial
+}
+.Cal TD {
+	BORDER-RIGHT: white 1px solid; BORDER-TOP: white 1px solid; FONT-SIZE: 10px; BACKGROUND: #f5f5f5; BORDER-LEFT: white 1px solid; BORDER-BOTTOM: white 1px solid; HEIGHT: 22px
+}
+.Cal A:link {
+	COLOR: #333333; TEXT-DECORATION: none
+}
+.Cal A:visited {
+	COLOR: #333333; TEXT-DECORATION: none
+}
+.Cal A:active {
+	COLOR: #333333; TEXT-DECORATION: none
+}
+.Cal A:hover {
+	COLOR: #ff3366; TEXT-DECORATION: underline
+}
+.CalTitle {
+	WIDTH: 100%; COLOR: #ff5b85; HEIGHT: 30px; TEXT-ALIGN: center
+}
+.CalTitle TD {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; BACKGROUND: white; FONT-FAMILY: verdana
+}
+.CalDayHeader {
+	BORDER-RIGHT: red 0px solid; BORDER-TOP: red 0px solid; FONT-WEIGHT: bold; BACKGROUND: white; PADDING-BOTTOM: 5px; BORDER-LEFT: red 0px solid; BORDER-BOTTOM: red 0px solid
+}
+TD.CalTodayDay {
+	BORDER-RIGHT: red 0px solid; BORDER-TOP: red 0px solid; BACKGROUND: #ffe6ec; BORDER-LEFT: red 0px solid; BORDER-BOTTOM: red 0px solid
+}
+.CalSelector {
+	BORDER-RIGHT: red 0px solid; BORDER-TOP: red 0px solid; BACKGROUND: #efefef; BORDER-LEFT: red 0px solid; BORDER-BOTTOM: red 0px solid
+}
+TD.CalWeekendDay {
+	BACKGROUND: #e3e3e3
+}
+TD.CalOtherMonthDay {
+	COLOR: #c0c0c0
+}
+.CalNextPrev {
+	BORDER-RIGHT: red 0px solid; PADDING-RIGHT: 5px; BORDER-TOP: red 0px solid; PADDING-LEFT: 5px; FONT-WEIGHT: bold; PADDING-BOTTOM: 5px; BORDER-LEFT: red 0px solid; PADDING-TOP: 5px; BORDER-BOTTOM: red 0px solid
+}
+#profile {
+	OVERFLOW-X: hidden; MARGIN: 30px 30px auto; WIDTH: 100%
+}
+.pfl_feedback {
+	MARGIN: auto 30px
+}
+.pfl_feedback_area_title {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; BORDER-BOTTOM: #cccccc 1px dashed
+}
+.pfl_feedbackItem {
+	PADDING-RIGHT: 10px; MARGIN-TOP: 5px; PADDING-LEFT: 10px; MARGIN-BOTTOM: 10px; PADDING-BOTTOM: 10px; PADDING-TOP: 10px
+}
+.pfl_feedbacksubtitle {
+	MARGIN-BOTTOM: 8px; LINE-HEIGHT: 22px; BORDER-BOTTOM: #cccccc 1px dashed; HEIGHT: 22px
+}
+.pfl_feedbackname {
+	FONT-WEIGHT: bold; FLOAT: left; COLOR: #4f4f4f
+}
+.pfl_feedbackManage {
+	FLOAT: right
+}
+.pfl_feedbackCon {
+	PADDING-BOTTOM: 5px
+}
+.pfl_answer {
+	BORDER-RIGHT: #fafafa 1px solid; BORDER-TOP: #fafafa 1px solid; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; MARGIN-LEFT: 20px; BORDER-LEFT: #fafafa 1px solid; WIDTH: 95%; PADDING-TOP: 8px; BORDER-BOTTOM: #fafafa 1px solid
+}
+H3 {
+	PADDING-LEFT: 20px; FONT-SIZE: 12px; BACKGROUND: url(images/bg_list.gif) no-repeat left top; COLOR: #666666; LINE-HEIGHT: 32px; HEIGHT: 35px
+}

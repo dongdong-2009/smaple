@@ -1,0 +1,657 @@
+html {
+	background: url("images/webBg.gif") repeat-x left top rgb(255, 255, 255); font: 12px/18px Verdana, "Lucida Grande", Geneva, Arial, sans-serif; margin: 0px; padding: 0px; text-align: center; color: rgb(51, 51, 51); font-size-adjust: none; font-stretch: normal;
+}
+body {
+	background: url("images/webBg.gif") repeat-x left top rgb(255, 255, 255); font: 12px/18px Verdana, "Lucida Grande", Geneva, Arial, sans-serif; margin: 0px; padding: 0px; text-align: center; color: rgb(51, 51, 51); font-size-adjust: none; font-stretch: normal;
+}
+a {
+	text-decoration: none;
+}
+a:link {
+	color: rgb(102, 153, 204);
+}
+a:visited {
+	color: rgb(102, 153, 204);
+}
+a:hover {
+	color: rgb(255, 51, 102);
+}
+.floatLeft {
+	float: left;
+}
+.floatRight {
+	float: right;
+}
+.clear {
+	clear: both;
+}
+.center {
+	text-align: center;
+}
+p {
+	line-height: 20px;
+}
+ul {
+	list-style: none; margin: 0px; padding: 0px;
+}
+#invisiblePlaceHoler {
+	height: 1px; font-size: 96px; visibility: hidden;
+}
+div#container {
+	margin: 0px auto; padding: 0px 10px; width: auto; text-align: left; min-width: 960px; max-width: 1600px;
+}
+div#wrapper {
+	margin: 15px 0px; overflow: auto;
+}
+div#content {
+	margin-right: 465px; float: left;
+}
+div#sidebar {
+	width: 455px; margin-left: -455px; float: right;
+}
+a.minyx {
+	width: 130px; height: 23px; text-indent: -9000em; float: left; display: block; background-image: url("images/minyx_lite.gif"); background-repeat: no-repeat;
+}
+a.minyx:link {
+	
+}
+a.minyx:visited {
+	
+}
+a.minyx:hover {
+	background-position: 0px -23px;
+}
+ul#topMnu {
+	padding: 3px; text-align: right; font-size: 10px;
+}
+ul#topMnu li {
+	padding: 0px 10px; color: rgb(255, 255, 255); border-right-color: rgb(99, 104, 112); border-right-width: 1px; border-right-style: solid; display: inline;
+}
+ul#topMnu li a:link {
+	color: rgb(255, 255, 255); font-weight: bold;
+}
+ul#topMnu li a:visited {
+	color: rgb(255, 255, 255); font-weight: bold;
+}
+ul#topMnu li a:hover {
+	color: rgb(112, 128, 51); font-weight: bold;
+}
+div#header {
+	height: 90px;
+}
+div#header h1 {
+	margin: 0px; padding: 20px 0px 10px; letter-spacing: -2px; font-size: 36px; font-weight: normal;
+}
+div#header h1 a:link {
+	color: rgb(75, 86, 152);
+}
+div#header h1 a:visited {
+	color: rgb(75, 86, 152);
+}
+div#header h1 a:hover {
+	color: rgb(255, 51, 102);
+}
+div#header h1 small {
+	margin: 10px 0px 0px; color: rgb(102, 102, 102); text-transform: uppercase; letter-spacing: -1px; font-size: 12px; display: block;
+}
+ul#menu {
+	line-height: 20px; float: right;
+}
+ul#menu li {
+	background-position: 0px 1px; margin: 0px; padding: 28px 0px; font-size: 11px; float: left; display: inline; background-image: url("images/mnuSep.gif"); background-repeat: no-repeat;
+}
+ul#menu li a {
+	padding: 30px 15px; text-transform: uppercase; font-weight: bold;
+}
+ul#menu li a:link {
+	color: rgb(49, 54, 62);
+}
+ul#menu li a:visited {
+	color: rgb(49, 54, 62);
+}
+ul#menu li a:hover {
+	color: rgb(255, 102, 51);
+}
+ul#menu li.current a {
+	background-position: top; background-image: url("images/mnuIndicator.gif"); background-repeat: no-repeat;
+}
+ul#menu li.current a:link {
+	color: rgb(86, 94, 57); text-decoration: underline;
+}
+ul#menu li.current a:visited {
+	color: rgb(86, 94, 57); text-decoration: underline;
+}
+ul#menu li.current a:hover {
+	color: rgb(255, 51, 102);
+}
+ul#menu li ul {
+	display: none;
+}
+ul#menu li#rss {
+	margin: 0px; padding: 0px 0px 0px 30px; width: 64px; height: 42px; text-indent: -9000em; display: block;
+}
+ul#menu li#rss a {
+	margin: 35px 0px 0px; padding: 0px; width: 64px; height: 42px; display: block; position: relative; background-image: url("images/itemFeed.gif"); background-repeat: no-repeat;
+}
+ul#menu li#rss a:link {
+	background-position: right bottom;
+}
+ul#menu li#rss a:visited {
+	background-position: right bottom;
+}
+ul#menu li#rss a:hover {
+	background-position: right top;
+}
+div.post {
+	margin-bottom: 30px;
+}
+div.post h2 {
+	background-position: left bottom; margin: 0px; padding: 6px 0px; line-height: 120%; letter-spacing: -1px; font-size: 18px; font-weight: normal; background-image: url("images/dotsH.gif"); background-repeat: repeat-x;
+}
+div.post small {
+	text-align: right; color: rgb(171, 171, 171); letter-spacing: normal; font-size: 12px; display: block;
+}
+div.post small a:link {
+	color: rgb(171, 171, 171);
+}
+div.post small a:active {
+	color: rgb(171, 171, 171);
+}
+div.post small a:visited {
+	color: rgb(171, 171, 171);
+}
+div.post small a:hover {
+	color: rgb(51, 102, 153); text-decoration: underline;
+}
+div.post div.entry h1 {
+	font-size: 26px; font-weight: normal;
+}
+div.post div.entry h2 {
+	font-size: 22px; font-weight: normal; background-image: none;
+}
+div.post div.entry h3 {
+	font-size: 18px; font-weight: normal;
+}
+div.post div.entry h4 {
+	font-size: 16px; font-weight: normal;
+}
+div.post div.entry h5 {
+	font-size: 14px; font-weight: normal;
+}
+div.post div.entry h6 {
+	font-size: 12px; font-weight: normal;
+}
+div.post div.entry {
+	font: 14px/1.8 Georgia, "Times New Roman", Times, san-serif; word-break: break-all; font-size-adjust: none; font-stretch: normal;
+}
+div.post div.entry p {
+	margin: 12px auto; line-height: 1.8;
+}
+div.post div.entry p span {
+	line-height: 1.8;
+}
+div.post div.entry img {
+	
+}
+div.post div.entry a:link img {
+	border-color: rgb(221, 221, 221); background-color: rgb(255, 255, 255);
+}
+div.post div.entry a:visited img {
+	border-color: rgb(221, 221, 221); background-color: rgb(255, 255, 255);
+}
+div.post div.entry a:hover img {
+	border-color: rgb(102, 153, 204); background-color: rgb(245, 245, 245);
+}
+div.post div.entry ul {
+	margin: 10px;
+}
+div.post div.entry ul li {
+	background-position: 0px 9px; padding: 0px 0px 0px 15px; background-image: url("images/icon_miniarrow.gif"); background-repeat: no-repeat;
+}
+div.post div.entry ol {
+	
+}
+div.post div.entry ol li {
+	padding: 0px;
+}
+div.post div.entry p a {
+	border-bottom-width: 1px; border-bottom-style: dashed;
+}
+.desc_link {
+	border-bottom-width: 1px; border-bottom-style: dashed;
+}
+div.post div.entry a:link {
+	color: rgb(61, 129, 238);
+}
+div.post div.entry a:visited {
+	color: rgb(61, 129, 238);
+}
+div.post div.entry a:hover {
+	color: rgb(255, 51, 0);
+}
+div.post ul.postmetadata {
+	padding: 4px 0px; font-size: 12px; margin-bottom: 10px; border-top-color: rgb(238, 238, 238); border-bottom-color: rgb(238, 238, 238); border-top-width: 3px; border-bottom-width: 3px; border-top-style: double; border-bottom-style: double;
+}
+div.post div.entry blockquote {
+	background: url("images/bq.gif") no-repeat left top rgb(255, 255, 255); margin: 0px auto; padding: 0px 0px 0px 45px; width: 90%; color: rgb(102, 102, 102); font-size: 13px;
+}
+div.post div.entry blockquote p {
+	margin: 8px auto;
+}
+div.post div.entry blockquote blockquote {
+	padding: 0px 0px 0px 20px; margin-left: 20px; border-left-color: rgb(221, 221, 221); border-left-width: 5px; border-left-style: solid; background-image: none;
+}
+div.post div.entry pre.code {
+	padding: 8px; border: 1px solid rgb(192, 192, 192); line-height: 16px; font-family: "Consolas", "Courier New", "??", Courier, mono, serif; font-size: 12px; white-space: pre-wrap; word-wrap: break-word;
+}
+div.post ul.postmetadata li {
+	background-position: 0px -170px; padding: 2px 0px 5px 20px; background-repeat: no-repeat;
+}
+div.post ul.postmetadata li.icon_cat {
+	background-image: url("images/icon_folder.gif");
+}
+div.post ul.postmetadata li.icon_comment {
+	background-image: url("images/icon_voice.gif");
+}
+div.post ul.postmetadata li.icon_date {
+	background-image: url("images/icon_date.gif");
+}
+div.post ul.postmetadata li.icon_track {
+	background-image: url("images/icon_track.gif");
+}
+div.post ul.postmetadata li.icon_bullet {
+	background-image: url("images/icon_bullet.gif");
+}
+div.post ul.postmetadata li.icon_rss {
+	background-image: url("images/icon_rss.gif");
+}
+div.post ul.postmetadata li.icon_alert {
+	background-image: url("images/icon_alert.gif");
+}
+div.post ul.postmetadata li.icon_r {
+	padding: 0px 0px 0px 20px; font-weight: bold; float: right;
+}
+div.post ul.postmetadata li a:link {
+	color: rgb(0, 162, 0);
+}
+div.post ul.postmetadata li a:visited {
+	color: rgb(0, 162, 0);
+}
+div.post ul.postmetadata li a:hover {
+	color: rgb(51, 51, 51);
+}
+.navigation {
+	margin: 0px; width: 100%; overflow: auto; border-top-color: rgb(239, 239, 239); border-top-width: 3px; border-top-style: solid;
+}
+.navigation a {
+	padding: 10px; text-align: center; text-transform: lowercase; font-size: 11px; display: block;
+}
+.alignleft {
+	width: 50%; float: left;
+}
+.alignright {
+	width: 50%; float: right;
+}
+.navigation .alignright a {
+	font-size: 12px; font-weight: bold; background-image: url("images/icon_right.gif"); background-repeat: no-repeat;
+}
+.navigation .alignleft a {
+	font-size: 12px; font-weight: bold; background-image: url("images/icon_left.gif"); background-repeat: no-repeat;
+}
+.navigation .alignright a:link {
+	background-position: 95% 5px;
+}
+.navigation .alignright a:visited {
+	background-position: 95% 5px;
+}
+.navigation .alignleft a:link {
+	background-position: 10px 5px;
+}
+.navigation .alignleft a:visited {
+	background-position: 10px 5px;
+}
+.navigation .alignright a:hover {
+	background-position: 95% -20px;
+}
+.navigation .alignleft a:hover {
+	background-position: 10px -20px;
+}
+h3#comments {
+	background-position: left; padding: 0px 0px 0px 25px; color: rgb(85, 85, 85); letter-spacing: -1px; font-size: 14px; font-weight: normal; background-repeat: no-repeat;
+}
+h3#respond {
+	background-position: left; padding: 0px 0px 0px 25px; color: rgb(85, 85, 85); letter-spacing: -1px; font-size: 14px; font-weight: normal; background-repeat: no-repeat;
+}
+h3#comments {
+	background-image: url("images/icon_comments.gif");
+}
+h3#respond {
+	background-image: url("images/icon_addcomment.gif");
+}
+#comment_tip1 {
+	padding: 0px 0px 0px 25px; letter-spacing: -1px; background-image: url("images/icon_addcomment.gif"); background-repeat: no-repeat;
+}
+.addcomment {
+	margin: 12px 0px 0px; padding: 3px 18px 3px 0px; text-transform: uppercase; font-size: 10px; text-decoration: underline; float: right;
+}
+.closecomment {
+	margin: 12px 0px 0px; padding: 3px 18px 3px 0px; text-transform: uppercase; font-size: 10px; text-decoration: underline; float: right;
+}
+a.addcomment {
+	background-image: url("images/icon_arrowdown.gif"); background-repeat: no-repeat;
+}
+a.addcomment:link {
+	background-position: 100% 0px;
+}
+a.addcomment:visited {
+	background-position: 100% 0px;
+}
+a.addcomment:hover {
+	background-position: 100% -20px;
+}
+ol.commentlist {
+	list-style: none; margin: 0px; padding: 0px;
+}
+ol.commentlist cite {
+	font-size: 12px; font-style: normal;
+}
+ol.commentlist cite a:link {
+	padding: 3px 0px 0px 20px; color: rgb(0, 153, 51); background-image: url("images/icon_link.gif"); background-repeat: no-repeat;
+}
+ol.commentlist cite a:visited {
+	padding: 3px 0px 0px 20px; color: rgb(0, 153, 51); background-image: url("images/icon_link.gif"); background-repeat: no-repeat;
+}
+ol.commentlist cite a:hover {
+	background-position: 0px -170px; color: rgb(255, 51, 0);
+}
+ol.commentlist li {
+	padding: 10px; border-bottom-color: rgb(238, 238, 238); border-bottom-width: 1px; border-bottom-style: solid;
+}
+ol.commentlist h5 {
+	margin: 0px 0px 5px; padding: 0px; font-size: 12px;
+}
+ol.commentlist h5 small {
+	color: rgb(163, 187, 80); display: block;
+}
+ol.commentlist li {
+	background-color: rgb(253, 253, 253);
+}
+ol.commentlist li.alt {
+	background-color: rgb(255, 255, 255);
+}
+ol.commentlist li span.moderate {
+	padding: 2px 0px 2px 20px; color: rgb(255, 51, 0); background-image: url("images/icon_cursor.gif"); background-repeat: no-repeat;
+}
+form.submitForm input.author {
+	padding: 4px 4px 4px 30px; border: 1px solid rgb(204, 204, 204); width: 230px; background-image: url("images/icon_form.gif"); background-repeat: no-repeat;
+}
+form.submitForm input.email {
+	padding: 4px 4px 4px 30px; border: 1px solid rgb(204, 204, 204); width: 230px; background-image: url("images/icon_form.gif"); background-repeat: no-repeat;
+}
+form.submitForm input.url {
+	padding: 4px 4px 4px 30px; border: 1px solid rgb(204, 204, 204); width: 230px; background-image: url("images/icon_form.gif"); background-repeat: no-repeat;
+}
+div.commentform input.author {
+	padding: 4px 4px 4px 30px; border: 1px solid rgb(204, 204, 204); width: 230px; background-image: url("images/icon_form.gif"); background-repeat: no-repeat;
+}
+div.commentform input.email {
+	padding: 4px 4px 4px 30px; border: 1px solid rgb(204, 204, 204); width: 230px; background-image: url("images/icon_form.gif"); background-repeat: no-repeat;
+}
+div.commentform input.url {
+	padding: 4px 4px 4px 30px; border: 1px solid rgb(204, 204, 204); width: 230px; background-image: url("images/icon_form.gif"); background-repeat: no-repeat;
+}
+div.commentform input.author {
+	background-position: 3px -3px;
+}
+div.commentform input.email {
+	background-position: 3px -33px;
+}
+div.commentform input.url {
+	background-position: 3px -63px;
+}
+div.commentform textarea.content {
+	font: 12px/18px "Lucida Grande", Geneva, Arial, Verdana, sans-serif; border: 1px solid rgb(204, 204, 204); width: 99%; font-size-adjust: none; font-stretch: normal; background-color: rgb(255, 255, 255);
+}
+.nocomments {
+	background: url("images/icon_cross.gif") no-repeat left rgb(253, 249, 227); padding: 5px 5px 5px 30px; border: 2px solid rgb(247, 229, 144); color: rgb(159, 142, 59); font-size: 11px;
+}
+.nocommentsadd {
+	background: url("images/icon_cross.gif") no-repeat left rgb(253, 249, 227); padding: 5px 5px 5px 30px; border: 2px solid rgb(247, 229, 144); color: rgb(159, 142, 59); font-size: 11px;
+}
+.nocomments {
+	background: url("images/icon_cross.gif") no-repeat left rgb(253, 249, 227);
+}
+.nocommentsadd {
+	background-image: url("images/icon_add.gif");
+}
+div#sideContainer {
+	display: none;
+}
+div#sidebar {
+	color: rgb(102, 102, 102); font-size: 12px;
+}
+div#sidebar a:link {
+	color: rgb(0, 102, 204);
+}
+div#sidebar a:visited {
+	color: rgb(0, 102, 204);
+}
+div#sidebar a:hover {
+	color: rgb(255, 51, 0);
+}
+div#sidebar a img {
+	border: currentColor;
+}
+div#sidebar h2 {
+	text-align: center; color: rgb(51, 51, 51); font-size: 14px; border-bottom-color: rgb(221, 221, 221); border-bottom-width: 3px; border-bottom-style: solid;
+}
+div#sidebar div#sideRight {
+	width: 48%; float: right;
+}
+div#sidebar div#sideLeft {
+	width: 48%; float: left;
+}
+div#sidebar div#sideLeft h2 {
+	padding: 5px 0px; color: rgb(255, 255, 255); text-transform: uppercase; font-weight: normal; border-bottom-color: rgb(47, 53, 63); border-bottom-width: 2px; border-bottom-style: solid; background-color: rgb(71, 80, 95);
+}
+div#sidebar div#sideRight h2 {
+	padding: 5px 0px; color: rgb(255, 255, 255); text-transform: uppercase; font-weight: normal; border-bottom-color: rgb(47, 53, 63); border-bottom-width: 2px; border-bottom-style: solid; background-color: rgb(71, 80, 95);
+}
+div#sidebar div#about h2 {
+	border-color: rgb(220, 214, 179); padding: 5px 0px;
+}
+div#sidebar div#about {
+	border: 1px solid rgb(238, 238, 238); background-color: rgb(248, 248, 238);
+}
+div#sidebar div#about img.photo {
+	margin: 10px; float: left;
+}
+div#sidebar div#about a {
+	text-decoration: underline;
+}
+div#sidebar div#about a:link {
+	
+}
+div#sidebar div#about a:visited {
+	
+}
+div#sidebar div#about a:hover {
+	
+}
+div#sidebar div#about div {
+	padding: 5px;
+}
+div#sidebar div#sideLeft ul li {
+	padding: 3px 0px; border-bottom-color: rgb(238, 238, 238); border-bottom-width: 1px; border-bottom-style: solid;
+}
+div#sidebar div#sideRight ul li {
+	padding: 3px 0px; border-bottom-color: rgb(238, 238, 238); border-bottom-width: 1px; border-bottom-style: solid;
+}
+div#sidebar div ul.bullet li a {
+	padding: 3px 0px 3px 20px; background-image: url("images/icon_bullet.gif"); background-repeat: no-repeat;
+}
+div#sidebar div ul.bullet li a:hover {
+	background-position: 0px -170px;
+}
+div#sidebar div ul.folder li {
+	overflow: hidden;
+}
+div#sidebar div ul.folder li a {
+	padding: 3px 0px 3px 20px; background-image: url("images/icon_folder.gif"); background-repeat: no-repeat;
+}
+div#sidebar div ul.folder li a:hover {
+	background-position: 0px -170px;
+}
+div#sidebar div ul.track li a {
+	padding: 3px 0px 3px 20px; background-image: url("images/icon_track.gif"); background-repeat: no-repeat;
+}
+div#sidebar div ul.track li a:hover {
+	background-position: 0px -170px;
+}
+div#sidebar div ul.date li a {
+	padding: 3px 0px 3px 20px; background-image: url("images/icon_date.gif"); background-repeat: no-repeat;
+}
+div#sidebar div ul.date li a:hover {
+	background-position: 0px -170px;
+}
+div#sidebar div ul.chain li a {
+	padding: 3px 0px 3px 20px; background-image: url("images/icon_link.gif"); background-repeat: no-repeat;
+}
+div#sidebar div ul.chain li a:hover {
+	background-position: 0px -170px;
+}
+div#sidebar div ul.voice li {
+	overflow: hidden;
+}
+div#sidebar div ul.voice li a {
+	padding: 3px 0px 3px 20px; background-image: url("images/icon_voice.gif"); background-repeat: no-repeat;
+}
+div#sidebar div ul.voice li a:hover {
+	background-position: 0px -170px;
+}
+div#sidebar div ul.alert li a {
+	padding: 3px 0px 3px 20px; background-image: url("images/icon_alert.gif"); background-repeat: no-repeat;
+}
+div#sidebar div ul.alert li a:hover {
+	background-position: 0px -170px;
+}
+div#sidebar div ul li a.child {
+	padding: 3px 0px 3px 25px; color: rgb(102, 102, 102); display: block; background-image: url("images/icon_child.gif"); background-repeat: no-repeat;
+}
+div#sidebar div ul li a.child:hover {
+	background-position: 0px -170px; color: rgb(255, 51, 0);
+}
+div#sidebar div#sideMain h2 {
+	padding: 5px 0px;
+}
+div#sidebar div#sideMain div {
+	background-position: 0px 26px; background-image: url("images/recentBg.gif"); background-repeat: repeat-x;
+}
+div#sidebar div#sideMain div ul li {
+	padding: 2px 0px; border-bottom-color: rgb(238, 238, 238); border-bottom-width: 1px; border-bottom-style: solid;
+}
+div#sidebar div ul li a.mini_rss {
+	padding: 0px; width: 20px; height: 20px; text-indent: -9000em; text-decoration: none; margin-top: -2px; float: right; display: block; background-image: url("images/icon_rss.gif");
+}
+div#sidebar div ul li a.mini_rss:hover {
+	background-position: 0px -170px;
+}
+#mySearchWrapper {
+	margin: 10px auto; border: 2px solid rgb(51, 51, 51); background-color: rgb(68, 68, 68);
+}
+#mySearch {
+	padding: 5px 0px; border: 1px solid rgb(86, 86, 86); text-align: center;
+}
+.lb_search {
+	padding: 2px 0px 10px 25px; height: 14px; text-indent: -9000em; background-image: url("images/icon_search.gif"); background-repeat: no-repeat;
+}
+#mySearch input.keyword {
+	padding: 2px; width: 72%; font-size: 11px;
+}
+#mySearch img {
+	margin: 0px; padding: 0px; border: currentColor;
+}
+#mySearch .submit {
+	margin: 0px 5px 0px 0px; padding: 0px; width: 70px; height: 21px; float: right; position: relative;
+}
+#footer {
+	margin: 0px; width: 100%; text-align: center; color: rgb(255, 255, 255); position: relative; background-color: rgb(49, 54, 62);
+}
+div#footer div.footText p {
+	margin: 0px; height: 25px; overflow: hidden;
+}
+div#footer div.footText ul {
+	margin: 5px 0px; text-align: center;
+}
+div#footer div.footText ul li {
+	padding: 5px 0px; font-size: 11px; display: inline;
+}
+div#footer div.footText ul li a {
+	margin: 0px 3px; padding: 5px 10px; text-transform: uppercase; font-size: 10px;
+}
+div#footer div.footText ul li a:link {
+	color: rgb(94, 99, 106);
+}
+div#footer div.footText ul li a:visited {
+	color: rgb(94, 99, 106);
+}
+div#footer div.footText ul li a:hover {
+	color: rgb(255, 153, 0);
+}
+div#footer div.footText ul li ul {
+	display: none;
+}
+div#footer p#logoFoot {
+	padding: 0px 0px 0px 10px; width: 45px; height: 45px; float: left;
+}
+div#footer p#logoFoot a {
+	width: 45px; height: 45px; text-indent: -900em; display: block; background-image: url("images/spiga.gif"); background-repeat: no-repeat;
+}
+div#footer p#logoFoot a:link {
+	
+}
+div#footer p#logoFoot a:visited {
+	
+}
+div#footer p#logoFoot a:hover {
+	background-position: 0px -45px;
+}
+#newmsg {
+	right: 12px; color: red; padding-top: 5px; position: absolute;
+}
+.opt_comment {
+	margin-top: 5px; margin-left: -5px;
+}
+.thumbnail_td {
+	text-align: center;
+}
+.thumnail_img {
+	border: 1px solid rgb(204, 204, 204);
+}
+.Cal {
+	width: 100%; height: 200px;
+}
+#pager {
+	margin: 25px 0px; text-align: center; font-size: 12px;
+}
+#pager a {
+	padding: 2px 5px; border: 1px solid rgb(154, 175, 229); color: rgb(46, 106, 177); text-decoration: none; margin-right: 4px;
+}
+#pager span.current {
+	padding: 2px 5px; border: 1px solid navy; color: rgb(255, 255, 255); font-weight: bold; margin-right: 4px; background-color: rgb(46, 106, 177);
+}
+.panel_inline {
+	display: inline;
+}
+div#sidebar div ul.side_ing_list li a {
+	padding: 3px 0px 3px 20px; background-image: url("images/icon_voice.gif"); background-repeat: no-repeat;
+}
+div#sidebar div ul.side_ing_list li a:hover {
+	background-position: 0px -170px;
+}
+div#sidebar div ul.side_ing_list span.ing_date {
+	color: gray; font-size: 12px;
+}
+.cnblogs_code pre {
+	max-width: 600px;
+}

@@ -1,0 +1,5 @@
+bin\Debug\ControlDesignerDiagram.dll
+bin\Debug\ControlDesignerDiagram.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\ControlDesignerDiagram.dll
+obj\Debug\ControlDesignerDiagram.pdb

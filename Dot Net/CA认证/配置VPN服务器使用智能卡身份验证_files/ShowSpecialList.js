@@ -1,0 +1,1 @@
+document.write("<li><a href='/Article/Special/EXCHANGE/Index.html'>EXCHANGE邮件技术</a></li><br><li><a href='/Article/Special/LOTUS/Index.html'>LOTUS邮件技术</a></li><br><li><a href='/Article/Special/MACOS/Index.html'>苹果MAC OS</a></li><br><li><a href='/Article/Special/ITEXAM/Index.html'>IT国际认证讨论</a></li><br>");

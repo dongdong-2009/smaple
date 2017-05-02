@@ -1,0 +1,112 @@
+.RssWebPartOutContainer
+{
+    background-color:#ececec;
+    font-size:8pt;
+    margin:auto auto 5px;
+    min-width:306px;
+    min-height:106px;
+    padding:4px;
+    position:relative;
+}
+
+.RssWebPartInnerContainer
+{
+    border:solid 1px #cccccc;
+}
+
+.RssWebPartHeaderContainer
+{
+    background-image:url(<%=WebResource("WebPartLibrary.Images.flake_header.jpg")%>) ;
+    background-repeat:repeat-x;
+    border-color:#000 #000 #b3b3b3;
+    border-style:none none solid;
+    border-width:medium medium 1px;
+    height:22px;
+    overflow:hidden;
+}
+
+.RssWebPartHeaderIcon
+{
+    float:left;
+    height:16px;
+    margin:auto auto auto 5px;
+    padding:3px 0px 5px 2px;
+    width:16px;
+    vertical-align:middle;
+    
+}
+.RssWebPartHeaderIcon img
+{
+    border:none;
+}
+
+.RssWebPartHeaderTitle
+{
+    float:left;
+    height:25px;
+    line-height:16pt;
+    font-size:8pt;
+    margin:auto auto auto 5px;
+}
+
+.RssWebPartRefreshButton
+{
+    background-image:url(<%=WebResource("WebPartLibrary.Images.refresh.gif")%>);
+    background-repeat:no-repeat;
+    background-position:1px 1px;
+    height:15px;
+    text-indent:-2000px;
+    width:17px;
+    position:absolute;
+    right:20px;
+    top:6px;
+}
+
+.RssWebPartRefreshButton:hover
+{
+    background-position:-20px 1px;
+}
+
+.RssWebPartCloseButton
+{
+    background-image:url(<%=WebResource("WebPartLibrary.Images.close.gif")%>);
+    background-repeat:no-repeat;
+    background-position:1px top;
+    height:18px;
+    margin:2px 1px auto auto;
+    text-indent:-2000px;
+    width:9px;
+    position:absolute;
+    right:4px;
+    top:4px;
+}
+
+.RssWebPartCloseButton:hover
+{
+    background-position:-9px top;
+}
+
+.RssWebPartEditButton
+{
+    position:absolute;
+    right:40px;
+    top:7px;
+    text-decoration:none;
+    border:none;
+    color:#666666;
+    padding:1px;
+    background-color:Transparent;
+}
+
+.RssWebPartEditButton:hover
+{
+    border:solid 1px #cccccc;
+    background-color:White;
+    padding:0px;
+}
+
+.RssWebPartContent ul
+{
+    list-style:none;
+    margin:4px;
+}

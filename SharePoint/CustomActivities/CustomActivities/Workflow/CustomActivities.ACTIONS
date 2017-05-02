@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WorkflowInfo Language="en-us">
+  <Actions Sequential="then" Parallel="and">
+    <Action Name="Create Sub Site"
+    ClassName="CustomActivities.CreateSubSite"
+    Assembly="CustomActivities, Version=1.0.0.0, Culture=neutral,PublicKeyToken=792c395fcf9ed90a"
+    AppliesTo="all"
+    Category="Custom Actions">
+      <RuleDesigner Sentence="Create sub-site named %1
+with the URL of %2 and using the %3 site template.">
+        <FieldBind Field="SiteName" Text="name" Id="1" />
+        <FieldBind Field="SiteUrl" Text="url" Id="2" />
+        <FieldBind Field="SiteTemplate" DesignerType="Dropdown"
+        Text="template" Id="3">
+          <Option Name="Blog" Value="BLOG"/>
+          <Option Name="Meeting Workspace" Value="MPS"/>
+          <Option Name="Team Site" Value="STS"/>
+          <Option Name="Wiki" Value="WIKI"/>
+        </FieldBind>
+      </RuleDesigner>
+      <Parameters>
+        <Parameter Name="__Context"
+        Type="Microsoft.SharePoint.WorkflowActions.WorkflowContext,
+Microsoft.SharePoint.WorkflowActions" Direction="In"/>
+        <Parameter Name="SiteTemplate" Type="System.Enum, mscorlib"
+        Direction="In" />
+        <Parameter Name="SiteName" Type="System.String, mscorlib"
+        Direction="In" />
+        <Parameter Name="SiteUrl" Type="System.String, mscorlib"
+        Direction="In" />
+      </Parameters>
+    </Action>
+  </Actions>
+</WorkflowInfo>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Solution xmlns="http://schemas.microsoft.com/sharepoint/" SolutionId="32e63c7c-0c3b-4fb1-a67b-4bae5f9754ce" SharePointProductVersion="14.0">
+  <Assemblies>
+    <Assembly Location="Microsoft.Practices.ServiceLocation.dll" DeploymentTarget="GlobalAssemblyCache" />
+    <Assembly Location="Microsoft.Practices.SharePoint.Common.dll" DeploymentTarget="GlobalAssemblyCache" />
+    <Assembly Location="Microsoft.Practices.SharePoint.Common.XmlSerializers.dll" DeploymentTarget="GlobalAssemblyCache" />
+    <Assembly Location="MVC.dll" DeploymentTarget="GlobalAssemblyCache">
+      <SafeControls>
+        <SafeControl Assembly="MVC, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4a831b0677556ea4" Namespace="MVC" TypeName="*" />
+      </SafeControls>
+    </Assembly>
+  </Assemblies>
+  <FeatureManifests>
+    <FeatureManifest Location="MVC_Feature1\Feature.xml" />
+  </FeatureManifests>
+</Solution>

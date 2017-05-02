@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoginSdoDemo", "LoginSdoDemo\LoginSdoDemo.csproj", "{FFE7F1D8-6975-4233-8B7D-77A1354F8738}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FFE7F1D8-6975-4233-8B7D-77A1354F8738}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFE7F1D8-6975-4233-8B7D-77A1354F8738}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFE7F1D8-6975-4233-8B7D-77A1354F8738}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFE7F1D8-6975-4233-8B7D-77A1354F8738}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

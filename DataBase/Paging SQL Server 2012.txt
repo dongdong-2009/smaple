@@ -1,0 +1,10 @@
+﻿USE AdventureWorks
+GO
+DECLARE @NumberOfRows INT = 10 -- Number of rows you want on a page
+DECLARE @DesiredPageNumber INT = 5 -- Page number
+SELECT *
+FROM HumanResources.Employee
+ORDER BY EmployeeID
+OFFSET (@NumberOfRows * (@DesiredPageNumber - 1)) ROWS
+FETCH NEXT @NumberOfRows ROWS ONLY;
+GO

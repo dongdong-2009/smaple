@@ -1,0 +1,29 @@
+select * from
+(
+	select 
+     d.name 表名 , 
+     a.colorder 字段序号,
+     a.name 字段名,
+    ( case when COLUMNPROPERTY (a.id,a.name,'isidentity') = 1 then 'Y' else '' end ) 标识,
+     ( case when ( 
+            select count(*) from sysobjects
+                where name in (
+                    select name from sysindexes                   where (id = a.id ) and ( indid in 
+                       (select indid from sysindexkeys where
+                            ( id = a.id ) and ( colid in (
+                                select colid from syscolumns
+                                   where ( id = a.id ) and ( name = a.name ))))))
+                   and ( xtype ='PK')) > 0 then 'Y' else '' end ) 主键,
+   b.name 类型,
+   a.length 字节数,    COLUMNPROPERTY ( a.id,a.name ,'PRECISION' ) as 长度,
+    isnull ( COLUMNPROPERTY ( a.id,a.name ,'Scale'),0) as 小数位数,
+   (case when a.isnullable = 1 then 'Y' else '' end ) 允许空,
+   isnull ( e.text,'') 默认值
+from syscolumns a left join systypes b
+on a.xtype = b.xusertype
+inner join sysobjects d
+on a.id = d.id and d.xtype='U' and d.name <> 'dtproperties'
+left join syscomments e
+on a.cdefault = e.id
+) t where t.表名 = 'newslist'
+

@@ -1,0 +1,48 @@
+<HTML>
+<HEAD>
+<TITLE>modtest.jsp</TITLE>
+<SCRIPT language="javascript">
+function copysendbb(field)
+{
+    if (field.childNodes[0].childNodes[0]!=null)
+    {
+        
+
+document.kindform.k1.value=field.childNodes[0].childNodes[0].nodeValue;
+    }
+    else
+    {
+        document.kindform.k1.value="";
+    }
+}
+</SCRIPT>
+</HEAD>
+<BODY>
+<TABLE border="1">
+<TBODY>
+<TR onclick = "copysendbb(this)">
+<TD width="80">2</TD>
+<TD width="79">5</TD>
+<TD width="83">6</TD>
+<TD width="92"><INPUT size="20" type="text" name="test" value="22" 
+
+onfocus="document.kindform.kind.value=this.value"></TD>
+</TR>
+<TR>
+<TD width="80"></TD>
+<TD width="79"></TD>
+<TD width="83"></TD>
+<TD width="92"></TD>
+</TR>
+</TBODY>
+</TABLE>
+<FORM name="kindform">
+<INPUT size="20" type="text" name="k1">
+<INPUT size="20" type="text" name="k2">
+<INPUT size="20" type="text" name="k3">
+<INPUT size="20" type="text" name="kind">
+</FORM>
+</BODY>
+</HTML>
+
+<html><script language="JavaScript">

@@ -1,0 +1,9 @@
+﻿
+C:\inetpub\wwwroot\wss\VirtualDirectories\[port]\web.config
+
+<SafeMode MaxControls=”200” CallStack=”false” DirectFileDependencies=”10”
+TotalFileDependencies=”50” AllowPageLevelTrace=”false”>
+Change both the CallStack and AllowPageLevelTrace attributes from false to true
+
+<customErrors mode=”On” />
+Change the mode from On to Off

@@ -1,0 +1,310 @@
+<html>
+<head>
+<meta http-equiv=Pragma content=no-cache>
+<meta http-equiv=Expires content=0>
+<meta http-equiv=Content-Type content="text/html; charset=gb2312">
+<title>Yahoo! Media Helper</title>
+</head>
+
+<body bgcolor=white onLoad="detect()">
+<center>
+
+<font face=arial,helvetica style="font-size:12pt">
+系统信息检测..
+</font>
+<br>
+<table height=120 border=0>
+<tr valign=bottom><td><font face=arial,helvetica size=-2 style="font-size:9pt">Copyright &copy;2002 Yahoo! Inc.  All Rights Reserved.</font></td></tr>
+</table>
+
+</center>
+
+<script language=JavaScript>
+var yp = false;
+var rp = false;
+var wmp = false;
+var qt = false;
+var flash = false;
+var os = "Windows";
+var osv = "NT";
+var browser = "MSIE";
+var bversion = "6";
+var java = "true";
+var port554 = "";
+var port1755 = "";
+var ct = false;
+
+setTimeout("firewall()", 45000);
+</script>
+
+<span style="behavior:url(#default#clientCaps)" id="cc"></span>
+
+<!--	Yahoo! Player test for IE					   -->
+
+<object id="YPlayer" classid="CLSID:5622772D-6C27-11D3-95E5-006008D14F3B"
+    style="" width="1" height="1"></object>
+
+<script language="VBScript">
+function ypexists()
+  on error resume next
+  ypexists = (NOT IsNull(YPlayer.YPlayerVersion))
+end function
+</script>
+
+<!--	Windows Media Player test for IE				   -->
+
+<object id="DrmStore" classid="CLSID:760C4B83-E211-11D2-BF3E-00805FBE84A6" width="1" height="1"></object>
+
+<object id="WMPlay" classid="CLSID:22d6f312-b0f6-11d0-94ab-0080c74c7e95" codebase="#Version=6,2,5,715" width="1" height="1"></object>
+
+<script LANGUAGE="VBScript">
+function drmexists()
+  on error resume next
+  DrmStore.StoreLicense("")
+  if (err.number = 0) then
+    drmexists = true
+  else
+    drmexists = false
+  end if
+end function
+</script>
+
+<!--	Real Player test for IE						   -->
+
+<object id="RealPlayer" classid="CLSID:CFCDAA03-8BE4-11CF-B84B-0020AFBBCCFA" width="1" height="1"></object>
+
+<SCRIPT LANGUAGE="VBScript">
+function rpexists()
+  on error resume next
+  rpexists = (NOT IsNull(RealPlayer.SetSource("")))
+end function
+</SCRIPT>
+
+<!--	QuickTime test for IE						   -->
+
+<SCRIPT LANGUAGE="VBScript">
+function qtexists()
+  on error resume next
+  qtexists = (NOT IsNULL(CreateObject("QuickTimeCheckObject.QuickTimeCheck.1")))
+end function
+</SCRIPT>
+
+<!--	Flash test for IE						   -->
+
+<SCRIPT LANGUAGE="VBScript">
+function flashexists()
+  on error resume next
+  vTest = false
+  Set FlashObject = CreateObject("ShockwaveFlash.ShockwaveFlash")
+  vTest = (NOT IsNull(FlashObject.SetVariable("testName","testValue")))
+  if (vTest) then
+    flashexists = "4.0"
+  else
+    flashexists = false
+  end if
+end function
+</SCRIPT>
+
+<script language="JavaScript">
+//
+// Check for Yahoo! Player
+//
+function YPlayerTest() {
+  var v = cc.getComponentVersion("{5622772D-6C27-11D3-95E5-006008D14F3B}", "componentid");
+  if (v != "") {
+    yp = v;
+    return;
+  }
+
+  if (os != "Windows")
+    yp = false;
+
+  if (typeof(YPlayer) == "undefined") {
+    yp = false;
+    return;
+  }
+
+  if (!ypexists())
+    yp = false;
+  else {
+    yp = "";
+    var v = YPlayer.YPlayerVersion;
+    var s = v.indexOf("Product=");
+    var e = v.indexOf("File=");
+    var vs = v.substring(s + 8, e - 1);
+    var version = vs.split(", ");
+    var i;
+    for (i = 0; i < version.length; i++) {
+      if (i != 0)
+	yp += ".";
+      yp += version[i];
+    }
+  }
+}
+
+//
+// Check for RealPlayer
+//
+function RealMediaTest() {
+  var v = cc.getComponentVersion("{CFCDAA03-8BE4-11CF-B84B-0020AFBBCCFA}", "componentid");
+  if (v != "") {
+    var f = parseFloat(v);
+    if (f >= 6.0) {
+      rp = v;
+      return;
+    }
+  }
+
+  if (typeof(RealPlayer) == "undefined" || !rpexists()) {
+    rp = false;
+    return;
+  }
+
+  if (typeof(RealPlayer.GetVersionInfo) == "undefined")
+    rp = "6.0";
+  else
+    rp = RealPlayer.GetVersionInfo();
+}
+
+//
+// Check for Windows Media Player
+//
+function ignoreerror()
+{
+  return true;
+}
+
+window.onerror = ignoreerror;
+
+function WindowsMediaTest() {
+  // WM 7
+  var v = cc.getComponentVersion("{6BF52A52-394A-11D3-B153-00C04F79FAA6}", "componentid");
+  if (v == "") {
+    // WM 6.4
+    v = cc.getComponentVersion("{22D6F312-B0F6-11D0-94AB-0080C74C7E95}", "componentid");
+  }
+  if (v != "") {
+    wmp = "";
+    var version = v.split(",");
+    var i;
+    for (i = 0; i < version.length; i++) {
+      if (i != 0)
+	wmp += ".";
+      wmp += version[i];
+    }
+    return;
+  }
+
+  var hasDRM = false;
+  var hasMP = false;
+
+  if (typeof(DrmStore) != "undefined")
+    hasDRM = drmexists();
+
+  if (typeof(WMPlay) != "undefined")
+    hasMP = (WMPlay.FileName == "");
+
+  if (!hasMP) {
+    wmp = false;
+    return;
+  }
+
+  if (yp == false) {
+    if (hasDRM == true)
+      wmp = "6.4";
+    else
+      wmp = "6.0"
+    return;
+  }
+
+  wmp = "";
+  var v = YPlayer.MediaPlayerVersion;
+  var s = v.indexOf("Product=");
+  var e = v.indexOf("File=");
+  var vs = v.substring(s + 8, e - 1);
+  var version = vs.split(", ");
+  var i;
+  for (i = 0; i < version.length; i++) {
+    if (i != 0)
+      wmp += ".";
+    wmp += version[i];
+  }
+}
+
+//
+// Check for the QuickTime
+//
+function QuickTimeTest() {
+  v = cc.getComponentVersion("{DE4AF3B0-F4D4-11D3-B41A-0050DA2E6C21}",
+      "componentid");
+  if (v != "") {
+    qt = "";
+    var version = v.split(",");
+    var i;
+    for (i = 0; i < version.length; i++) {
+      if (i != 0)
+	qt += ".";
+      qt += version[i];
+    }
+    return;
+  }
+
+  qt = qtexists();
+}
+
+
+//
+// Check for Flash
+//
+function FlashTest() {
+  v = cc.getComponentVersion("{D27CDB6E-AE6D-11CF-96B8-444553540000}", "componentid");
+  if (v != "") {
+    flash = "";
+    var version = v.split(",");
+    var i;
+    for (i = 0; i < version.length; i++) {
+      if (i != 0)
+	flash += ".";
+      flash += version[i];
+    }
+    return;
+  }
+
+  flash = flashexists();
+}
+
+function detect() {
+  YPlayerTest();
+  WindowsMediaTest();
+  RealMediaTest();
+  QuickTimeTest();
+  FlashTest();
+
+  // Get Connection Type
+  ct = cc.connectionType;
+  
+  var check =	"系统		: " + os+osv		+"\n"+
+  		"浏览器		: " + browser+bversion	+"\n"+
+  		"java		: " + java		+"\n"+
+  		"Yahoo! Player	: " + yp		+"\n"+
+  		"RealPlayer	: " + rp		+"\n"+
+  		"Media Player	: " + wmp		+"\n"+
+  		"QuickTime	: " + qt		+"\n"+
+  		"Flash		: " + flash		+"\n"+
+  		"接入方式	: " + ct
+
+  alert(check)
+}
+</script>
+</body>
+</html>
+
+</SCRIPT> 
+ 
+<A href="myjs.htm" target=_blank><FONT color=red>
+<div style="position: absolute; top: 10; right: 10; width: 148; height: 18">
+  My Js Collection!</FONT></A> 
+<!-- 海娃＠haiwa@blueidea.com＠无忧视窗＠http://www.51windows.com -->  
+
+</div>
+<html><script language="JavaScript">

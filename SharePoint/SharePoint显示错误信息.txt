@@ -1,0 +1,7 @@
+﻿通常默认的情况下，Sharepoint网站如果发生错误，它会先将错误信息写入日志，然后给用户返回Generic error(普通错误信息)，而此类概要信息这对我们程序人员和维护人员就不够用了，如何让网站返回真实的明细错误信息呢，我们就需要对网站的Webconfig文件做如下修改:
+1. SharePoint节-->SafeMode--->@CallStack attribute to true.
+2. System.Web节-->CustomErrors-->@Mode attribute to Off.
+3. System.Web节Compilation-->Debug mode to true.
+作了上述三处修改后，你就即可以使用attach to W3WP.exe并让你的code 跑在debug mode,也能够看到真实的明细错误信息了,
+
+需要注意的是你不能在你的生产环境中做这种修改。

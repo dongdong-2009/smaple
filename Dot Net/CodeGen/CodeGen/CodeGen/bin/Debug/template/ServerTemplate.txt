@@ -1,0 +1,30 @@
+/*
+ * 开发者：
+ * 创建日期：<%Data%>
+ * 最后修改日期：<%Data%>
+ * 描述：
+ * */
+
+using System;
+using System.Collections.Generic;
+using System.Text;
+using DawnPro.WebArchitechture.DAL;
+using System.Data;
+using DawnProArchitechture.DataAccess.AbstractCommand;
+
+namespace DawnProArchitechture.DataAccess.Server
+{
+    public class <%TableName%>Server : EntitisGateway
+    {
+        /// <summary>
+        /// 与此类相关的数据库表的表名
+        /// </summary>
+        public override string TableName
+        {
+            get
+            {
+                return "<%TableName%>";
+            }
+        }
+    }
+}

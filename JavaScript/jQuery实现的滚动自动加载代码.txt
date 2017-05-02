@@ -1,0 +1,19 @@
+﻿1.var loading = false;  
+2.$(window).scroll(function(){  
+3.    if((($(window).scrollTop()+$(window).height())+250)>=$(document).height()){  
+4.        if(loading == false){  
+5.            loading = true;  
+6.            $('#loadingbar').css("display","block");  
+7.            $.get("load.php?start="+$('#loaded_max').val(), function(loaded){  
+8.                $('body').append(loaded);  
+9.                $('#loaded_max').val(parseInt($('#loaded_max').val())+50);  
+10.                $('#loadingbar').css("display","none");  
+11.                loading = false;  
+12.            });  
+13.        }  
+14.    }  
+15.});  
+16.  
+17.$(document).ready(function() {  
+18.    $('#loaded_max').val(50);  
+19.});  

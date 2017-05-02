@@ -1,0 +1,536 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0059)http://www.cnblogs.com/fygh/archive/2012/01/17/2324926.html -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><HTML 
+xmlns="http://www.w3.org/1999/xhtml"><HEAD>
+<META content="text/html; charset=utf-8" http-equiv="Content-Type">
+<TITLE>查看语句运行时间异常的原因（SQLServer） - 飞洋过海 - 博客园</TITLE>
+<META name="keywords" content="Lock,Wait"><LINK rel="stylesheet" type="text/css" 
+href="查看语句运行时间异常的原因（SQLServer）%20-%20飞洋过海%20-%20博客园_files/common.css"><LINK id="MainCss" 
+rel="stylesheet" type="text/css" href="查看语句运行时间异常的原因（SQLServer）%20-%20飞洋过海%20-%20博客园_files/style.css">
+<LINK rel="stylesheet" type="text/css" href="查看语句运行时间异常的原因（SQLServer）%20-%20飞洋过海%20-%20博客园_files/common2.css">
+<LINK rel="stylesheet" type="text/css" href="查看语句运行时间异常的原因（SQLServer）%20-%20飞洋过海%20-%20博客园_files/shStyle.css">
+<LINK title="RSS" rel="alternate" type="application/rss+xml" href="http://www.cnblogs.com/fygh/rss">
+<LINK title="RSD" rel="EditURI" type="application/rsd+xml" href="http://www.cnblogs.com/fygh/rsd.xml">
+<LINK rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.cnblogs.com/fygh/wlwmanifest.xml">
+<SCRIPT type="text/javascript" src="查看语句运行时间异常的原因（SQLServer）%20-%20飞洋过海%20-%20博客园_files/jquery.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="查看语句运行时间异常的原因（SQLServer）%20-%20飞洋过海%20-%20博客园_files/common.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="查看语句运行时间异常的原因（SQLServer）%20-%20飞洋过海%20-%20博客园_files/json2.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="查看语句运行时间异常的原因（SQLServer）%20-%20飞洋过海%20-%20博客园_files/syntaxHighlighter.js"></SCRIPT>
+
+<META name="GENERATOR" content="MSHTML 9.00.8112.16441"></HEAD>
+<BODY><A name="top"></A>
+<FORM id="Form1" method="post" action="2324926.html">
+<DIV class="aspNetHidden"><INPUT id="__EVENTTARGET" name="__EVENTTARGET" type="hidden">
+<INPUT id="__EVENTARGUMENT" name="__EVENTARGUMENT" type="hidden"><INPUT id="__VIEWSTATE" 
+name="__VIEWSTATE" type="hidden"></DIV>
+<SCRIPT type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['Form1'];
+if (!theForm) {
+    theForm = document.Form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</SCRIPT>
+
+<SCRIPT type="text/javascript">
+//<![CDATA[
+var currentBlogApp='fygh';
+//]]>
+</SCRIPT>
+<!--done-->
+<DIV id="home">
+<DIV id="header">
+<DIV id="blogTitle"><A id="lnkBlogLogo" href="http://www.cnblogs.com/fygh/"><IMG 
+id="blogLogo" alt="返回主页" src="查看语句运行时间异常的原因（SQLServer）%20-%20飞洋过海%20-%20博客园_files/logo.gif"></A><!--done-->
+<H1><A id="Header1_HeaderTitle" class="headermaintitle" href="http://www.cnblogs.com/fygh/">飞洋过海</A></H1>
+<H2>于学、于勤、于功、于臻</H2></DIV><!--end: blogTitle 博客的标题和副标题 --></DIV><!--end: header 头部 -->
+<DIV id="main">
+<DIV id="mainContent">
+<DIV class="forFlow">
+<DIV id="navigator"><!--done-->
+<UL id="navList">
+  <LI><A id="MyLinks1_HomeLink" class="menu" 
+  href="http://www.cnblogs.com/">博客园</A></LI>
+  <LI><A id="MyLinks1_IngLink" class="menu" 
+  href="http://home.cnblogs.com/ing/">闪存</A></LI>
+  <LI></LI>
+  <LI><A id="MyLinks1_NewPostLink" class="menu" href="http://www.cnblogs.com/fygh/admin/EditPosts.aspx?opt=1" 
+  rel="nofollow">新随笔</A></LI>
+  <LI></LI>
+  <LI><A id="MyLinks1_Admin" class="menu" href="http://www.cnblogs.com/fygh/admin/EditPosts.aspx" 
+  rel="nofollow">管理</A></LI>
+  <LI></LI></UL>
+<DIV class="blogStats"><!--done-->随笔- 36&nbsp;文章- 5&nbsp;评论- 456&nbsp;				
+			</DIV><!--end: blogStats --></DIV><!--end: navigator 博客导航栏 --><!--done-->
+<DIV id="topics">
+<DIV class="post">
+<H1 class="postTitle"><A id="cb_post_title_url" class="postTitle2" href="http://www.cnblogs.com/fygh/archive/2012/01/17/2324926.html">查看语句运行时间异常的原因（SQLServer）</A></H1>
+<DIV class="clear"></DIV>
+<DIV class="postBody">
+<DIV id="cnblogs_post_body">
+<P>&nbsp;&nbsp;&nbsp; 
+经常有开发同事反映如下情况：我有一条语句或者一个JOB昨天跑半个小时就完成了，今天怎么跑了两个小时还没有完成？</P>
+<P>是不是数据库出现问题了？</P>
+<P>&nbsp;&nbsp;&nbsp; 数据库语句运行时间异常，其实是一个比较复杂的情况，因为数据是不断变动的，今天好好的一条语句，有可能明天运行就</P>
+<P>不在预计的时间内了，这个场景是没办法完全重溯的，即便有当时的备份数据，但是当时的服务器压力是没有办法知道和营造</P>
+<P>的；但是好在现在不是要调查昨天语句跑时间异常的原因，而是要找到现在语句运行异常的原因，现在的情况还正在进行着呢，</P>
+<P>所以我们可以根据语句目前的情况，初步来排查一下；</P>
+<P>&nbsp;&nbsp;&nbsp; 其实要考虑的问题比较多：</P>
+<P>&nbsp;&nbsp;&nbsp; 1. 索引是否正常（索引是否损坏、有没有人删除索引等）；</P>
+<P>&nbsp;&nbsp;&nbsp; 2. 统计信息是否过时；</P>
+<P>&nbsp;&nbsp;&nbsp; 3.&nbsp;语句执行计划是否发生偏移（和索引、统计信息以及数据量都有关系）；</P>
+<P>&nbsp;&nbsp;&nbsp; 4. 语句是否有bug；</P>
+<P>&nbsp;&nbsp;&nbsp; 5. 是否发生的阻塞；</P>
+<P>&nbsp;&nbsp;&nbsp; 6. 系统资源是否遇到瓶颈；</P>
+<P>&nbsp;&nbsp;&nbsp; .........</P>
+<P>&nbsp;&nbsp;&nbsp; 
+这么多的情况都考虑的话我们很难下手，一般解决这个问题我们都需要采用比较快的方式来做排查，以下方法主要针对5和6两</P>
+<P>个方面进行，因为这两个方面是最常见的情况。</P>
+<P>我们来简单模拟一下排查过程:</P>
+<P>1. 创建测试表和数据</P>
+<DIV class="cnblogs_code"><PRE><SPAN style="color: rgb(0, 0, 255);">USE</SPAN> <SPAN style="color: rgb(255, 0, 0);">[</SPAN><SPAN style="color: rgb(255, 0, 0);">master</SPAN><SPAN style="color: rgb(255, 0, 0);">]</SPAN><BR><SPAN style="color: rgb(0, 0, 255);">GO</SPAN><BR><BR><SPAN style="color: rgb(0, 128, 128);">/*</SPAN><SPAN style="color: rgb(0, 128, 128);">***** Object:  Table [dbo].[a]    Script Date: 01/17/2012 16:46:34 *****</SPAN><SPAN style="color: rgb(0, 128, 128);">*/</SPAN><BR><SPAN style="color: rgb(0, 0, 255);">SET</SPAN> ANSI_NULLS <SPAN style="color: rgb(0, 0, 255);">ON</SPAN><BR><SPAN style="color: rgb(0, 0, 255);">GO</SPAN><BR><BR><SPAN style="color: rgb(0, 0, 255);">SET</SPAN> QUOTED_IDENTIFIER <SPAN style="color: rgb(0, 0, 255);">ON</SPAN><BR><SPAN style="color: rgb(0, 0, 255);">GO</SPAN><BR><BR><SPAN style="color: rgb(0, 0, 255);">SET</SPAN> ANSI_PADDING <SPAN style="color: rgb(0, 0, 255);">ON</SPAN><BR><SPAN style="color: rgb(0, 0, 255);">GO</SPAN><BR><BR><SPAN style="color: rgb(0, 0, 255);">CREATE</SPAN> <SPAN style="color: rgb(0, 0, 255);">TABLE</SPAN> <SPAN style="color: rgb(255, 0, 0);">[</SPAN><SPAN style="color: rgb(255, 0, 0);">dbo</SPAN><SPAN style="color: rgb(255, 0, 0);">]</SPAN>.<SPAN style="color: rgb(255, 0, 0);">[</SPAN><SPAN style="color: rgb(255, 0, 0);">a</SPAN><SPAN style="color: rgb(255, 0, 0);">]</SPAN>(<BR>    <SPAN style="color: rgb(255, 0, 0);">[</SPAN><SPAN style="color: rgb(255, 0, 0);">id</SPAN><SPAN style="color: rgb(255, 0, 0);">]</SPAN> <SPAN style="color: rgb(255, 0, 0);">[</SPAN><SPAN style="color: rgb(255, 0, 0);">int</SPAN><SPAN style="color: rgb(255, 0, 0);">]</SPAN> <SPAN style="color: rgb(255, 0, 255);">IDENTITY</SPAN>(<SPAN style="color: rgb(128, 0, 0); font-weight: bold;">1</SPAN>,<SPAN style="color: rgb(128, 0, 0); font-weight: bold;">1</SPAN>) <SPAN style="color: rgb(128, 128, 128);">NOT</SPAN> <SPAN style="color: rgb(0, 0, 255);">NULL</SPAN>,<BR>    <SPAN style="color: rgb(255, 0, 0);">[</SPAN><SPAN style="color: rgb(255, 0, 0);">name</SPAN><SPAN style="color: rgb(255, 0, 0);">]</SPAN> <SPAN style="color: rgb(255, 0, 0);">[</SPAN><SPAN style="color: rgb(255, 0, 0);">varchar</SPAN><SPAN style="color: rgb(255, 0, 0);">]</SPAN>(<SPAN style="color: rgb(128, 0, 0); font-weight: bold;">100</SPAN>) <SPAN style="color: rgb(0, 0, 255);">NULL</SPAN><BR>) <SPAN style="color: rgb(0, 0, 255);">ON</SPAN> <SPAN style="color: rgb(255, 0, 0);">[</SPAN><SPAN style="color: rgb(255, 0, 0);">PRIMARY</SPAN><SPAN style="color: rgb(255, 0, 0);">]</SPAN><BR><BR><SPAN style="color: rgb(0, 0, 255);">GO</SPAN><BR><BR><SPAN style="color: rgb(0, 0, 255);">SET</SPAN> ANSI_PADDING <SPAN style="color: rgb(0, 0, 255);">OFF</SPAN><BR><SPAN style="color: rgb(0, 0, 255);">GO</SPAN><BR><BR><BR><SPAN style="color: rgb(0, 0, 255);">insert</SPAN> <SPAN style="color: rgb(0, 0, 255);">into</SPAN> a <SPAN style="color: rgb(0, 0, 255);">values</SPAN>(<SPAN style="color: rgb(255, 0, 0);">'</SPAN><SPAN style="color: rgb(255, 0, 0);">aa</SPAN><SPAN style="color: rgb(255, 0, 0);">'</SPAN>),(<SPAN style="color: rgb(255, 0, 0);">'</SPAN><SPAN style="color: rgb(255, 0, 0);">bb</SPAN><SPAN style="color: rgb(255, 0, 0);">'</SPAN>),(<SPAN style="color: rgb(255, 0, 0);">'</SPAN><SPAN style="color: rgb(255, 0, 0);">cc</SPAN><SPAN style="color: rgb(255, 0, 0);">'</SPAN>)</PRE>
+</DIV>
+<P>2. 制造阻塞：开两个session，分别运行下面的语句</P>
+<DIV class="cnblogs_code"><PRE><SPAN style="color: rgb(0, 128, 128);">--</SPAN><SPAN style="color: rgb(0, 128, 128);">Session 1</SPAN><SPAN style="color: rgb(0, 128, 128);"><BR></SPAN><SPAN style="color: rgb(0, 0, 255);">use</SPAN> master<BR><SPAN style="color: rgb(0, 0, 255);">go</SPAN><BR><SPAN style="color: rgb(0, 0, 255);">begin</SPAN> <SPAN style="color: rgb(0, 0, 255);">tran</SPAN><BR><SPAN style="color: rgb(0, 0, 255);">update</SPAN> A <SPAN style="color: rgb(0, 0, 255);">set</SPAN> name<SPAN style="color: rgb(128, 128, 128);">=</SPAN><SPAN style="color: rgb(255, 0, 0);">'</SPAN><SPAN style="color: rgb(255, 0, 0);">abc</SPAN><SPAN style="color: rgb(255, 0, 0);">'</SPAN> <SPAN style="color: rgb(0, 0, 255);">where</SPAN> id<SPAN style="color: rgb(128, 128, 128);">=</SPAN><SPAN style="color: rgb(128, 0, 0); font-weight: bold;">2</SPAN><BR><BR><SPAN style="color: rgb(0, 128, 128);">--</SPAN><SPAN style="color: rgb(0, 128, 128);">rollback</SPAN></PRE><PRE><BR><BR><SPAN style="color: rgb(0, 128, 128);">--</SPAN><SPAN style="color: rgb(0, 128, 128);">Session 2</SPAN><SPAN style="color: rgb(0, 128, 128);"><BR></SPAN><SPAN style="color: rgb(0, 0, 255);">select</SPAN> <SPAN style="color: rgb(128, 128, 128);">*</SPAN> <SPAN style="color: rgb(0, 0, 255);">from</SPAN> a </PRE>
+</DIV>
+<P>因为Session1 的Update语句没有能够提交，所以此时Session2 过程会被阻塞</P>
+<P><BR>3. 分析排查：</P>
+<P>&nbsp; 我们首先需要查询下此时数据库中是否存在阻塞：</P>
+<DIV class="cnblogs_code"><PRE><SPAN style="color: rgb(0, 128, 128);">--</SPAN><SPAN style="color: rgb(0, 128, 128);">Blocked</SPAN><SPAN style="color: rgb(0, 128, 128);"><BR></SPAN><SPAN style="color: rgb(0, 0, 255);">select</SPAN> <SPAN style="color: rgb(128, 128, 128);">*</SPAN> <SPAN style="color: rgb(0, 0, 255);">from</SPAN> sys.sysprocesses <SPAN style="color: rgb(0, 0, 255);">with</SPAN>(nolock) <SPAN style="color: rgb(0, 0, 255);">where</SPAN> blocked<SPAN style="color: rgb(128, 128, 128);">&lt;&gt;</SPAN><SPAN style="color: rgb(128, 0, 0); font-weight: bold;">0</SPAN></PRE>
+</DIV>
+<P><IMG alt="" src="查看语句运行时间异常的原因（SQLServer）%20-%20飞洋过海%20-%20博客园_files/2012011716535250.png"><BR>&nbsp;我们看到了阻塞的记录，53阻塞了56，被阻塞的资源是：dbid 
+1 file 1 page 307；</P>
+<P>&nbsp;接下来我们需要知道阻塞和被阻塞的是什么语句，有两种方式：</P>
+<P>&nbsp;a. dbcc inputbuffer</P>
+<P>&nbsp;b. sys.dm_exec_sql_text</P>
+<P>&nbsp;方法一与方法二相比：</P>
+<P>&nbsp;&nbsp; 优点：方法一能显示非活动session的语句，方法二只能查活动的session（通过sp_who2 active 
+能显示是否活动）；</P>
+<P>&nbsp;&nbsp; 缺点：方法一只能一个一个查询，方法二可以多个一起查询；</P>
+<P>方法一：</P>
+<DIV class="cnblogs_code"><PRE><SPAN style="color: rgb(0, 128, 128);">--</SPAN><SPAN style="color: rgb(0, 128, 128);">No1:</SPAN><SPAN style="color: rgb(0, 128, 128);"><BR></SPAN><SPAN style="color: rgb(0, 0, 255);">dbcc</SPAN> inputbuffer(<SPAN style="color: rgb(128, 0, 0); font-weight: bold;">53</SPAN>)<BR><SPAN style="color: rgb(0, 0, 255);">go</SPAN><BR><SPAN style="color: rgb(0, 0, 255);">dbcc</SPAN> inputbuffer(<SPAN style="color: rgb(128, 0, 0); font-weight: bold;">56</SPAN>)</PRE>
+</DIV>
+<P><IMG alt="" src="查看语句运行时间异常的原因（SQLServer）%20-%20飞洋过海%20-%20博客园_files/2012011717060518.png"></P>
+<P>方法二：</P>
+<DIV class="cnblogs_code"><PRE><SPAN style="color: rgb(0, 128, 128);">--</SPAN><SPAN style="color: rgb(0, 128, 128);">No2:</SPAN><SPAN style="color: rgb(0, 128, 128);"><BR></SPAN><SPAN style="color: rgb(0, 0, 255);">SELECT</SPAN><BR>    S.session_id, R.blocking_session_id,<BR>    S.<SPAN style="color: rgb(255, 0, 255);">host_name</SPAN>, S.login_name, <BR>    databaseName<SPAN style="color: rgb(128, 128, 128);">=</SPAN><SPAN style="color: rgb(255, 0, 255);">DB_NAME</SPAN>(R.database_id),R.command, R.status,<BR>    current_execute_sql <SPAN style="color: rgb(128, 128, 128);">=</SPAN> <SPAN style="color: rgb(255, 0, 255);">SUBSTRING</SPAN>(T.<SPAN style="color: rgb(0, 0, 255);">text</SPAN>,<BR>                R.statement_start_offset <SPAN style="color: rgb(128, 128, 128);">/</SPAN> <SPAN style="color: rgb(128, 0, 0); font-weight: bold;">2</SPAN> <SPAN style="color: rgb(128, 128, 128);">+</SPAN> <SPAN style="color: rgb(128, 0, 0); font-weight: bold;">1</SPAN>,<BR>                <SPAN style="color: rgb(255, 0, 255);">CASE</SPAN><BR>                    <SPAN style="color: rgb(0, 0, 255);">WHEN</SPAN> statement_end_offset <SPAN style="color: rgb(128, 128, 128);">=</SPAN> <SPAN style="color: rgb(128, 128, 128);">-</SPAN><SPAN style="color: rgb(128, 0, 0); font-weight: bold;">1</SPAN> <SPAN style="color: rgb(0, 0, 255);">THEN</SPAN> <SPAN style="color: rgb(255, 0, 255);">LEN</SPAN>(T.<SPAN style="color: rgb(0, 0, 255);">text</SPAN>)<BR>                    <SPAN style="color: rgb(0, 0, 255);">ELSE</SPAN> (R.statement_end_offset <SPAN style="color: rgb(128, 128, 128);">-</SPAN> statement_start_offset) <SPAN style="color: rgb(128, 128, 128);">/</SPAN> <SPAN style="color: rgb(128, 0, 0); font-weight: bold;">2</SPAN><SPAN style="color: rgb(128, 128, 128);">+</SPAN><SPAN style="color: rgb(128, 0, 0); font-weight: bold;">1</SPAN><BR>                <SPAN style="color: rgb(0, 0, 255);">END</SPAN>),<BR>    S.program_name,<BR>    S.status,<BR>    S.cpu_time, memory_usage_kb <SPAN style="color: rgb(128, 128, 128);">=</SPAN> S.memory_usage <SPAN style="color: rgb(128, 128, 128);">*</SPAN> <SPAN style="color: rgb(128, 0, 0); font-weight: bold;">8</SPAN>, S.reads, S.writes,<BR>    S.transaction_isolation_level,<BR>    C.connect_time, C.last_read, C.last_write,<BR>    C.net_transport, C.client_net_address, C.client_tcp_port, C.local_tcp_port,<BR>    R.start_time, <BR>    R.wait_time, R.wait_type, R.last_wait_type, R.wait_resource,<BR>    R.open_transaction_count, R.transaction_id<BR>    <BR><SPAN style="color: rgb(0, 0, 255);">FROM</SPAN> sys.dm_exec_sessions S<BR>    <SPAN style="color: rgb(128, 128, 128);">LEFT</SPAN> <SPAN style="color: rgb(128, 128, 128);">JOIN</SPAN> sys.dm_exec_connections C<BR>        <SPAN style="color: rgb(0, 0, 255);">ON</SPAN> S.session_id <SPAN style="color: rgb(128, 128, 128);">=</SPAN> C.session_id<BR>    <SPAN style="color: rgb(128, 128, 128);">LEFT</SPAN> <SPAN style="color: rgb(128, 128, 128);">JOIN</SPAN> sys.dm_exec_requests R<BR>        <SPAN style="color: rgb(0, 0, 255);">ON</SPAN> S.session_id <SPAN style="color: rgb(128, 128, 128);">=</SPAN> R.session_id<BR>            <SPAN style="color: rgb(128, 128, 128);">AND</SPAN> C.connection_id <SPAN style="color: rgb(128, 128, 128);">=</SPAN> R.connection_id<BR>    <SPAN style="color: rgb(128, 128, 128);">OUTER</SPAN> APPLY sys.dm_exec_sql_text(R.sql_handle) T<BR><SPAN style="color: rgb(0, 0, 255);">WHERE</SPAN>  S.is_user_process <SPAN style="color: rgb(128, 128, 128);">=</SPAN> <SPAN style="color: rgb(128, 0, 0); font-weight: bold;">1</SPAN>  <SPAN style="color: rgb(0, 128, 128);">--</SPAN><SPAN style="color: rgb(0, 128, 128);"> 如果不限制此条件，则查询所有进程（系统和用户进程）</SPAN><SPAN style="color: rgb(0, 128, 128);"><BR></SPAN><SPAN style="color: rgb(128, 128, 128);">and</SPAN> s.session_id <SPAN style="color: rgb(128, 128, 128);">in</SPAN>(<SPAN style="color: rgb(128, 0, 0); font-weight: bold;">53</SPAN>,<SPAN style="color: rgb(128, 0, 0); font-weight: bold;">56</SPAN>)</PRE>
+</DIV>
+<P><IMG alt="" src="查看语句运行时间异常的原因（SQLServer）%20-%20飞洋过海%20-%20博客园_files/2012011717062153.png"></P>
+<P>我们看到方法一两条语句都能查出来，而方法二只能查出一个语句；</P>
+<P>到这里，我们已经能判断语句运行慢的原因是被阻塞了，我们再来查查阻塞的原因是什么，可以通过以下语句查看：</P>
+<DIV class="cnblogs_code"><PRE><SPAN style="color: rgb(0, 0, 255);">select</SPAN> request_session_id,resource_type,<SPAN style="color: rgb(255, 0, 255);">db_name</SPAN>(resource_database_id) <SPAN style="color: rgb(0, 0, 255);">as</SPAN> DBName,resource_description,<BR>request_mode,request_type,request_status <SPAN style="color: rgb(0, 0, 255);">from</SPAN> sys.dm_tran_locks <SPAN style="color: rgb(0, 0, 255);">where</SPAN> request_session_id <SPAN style="color: rgb(128, 128, 128);">in</SPAN>(<SPAN style="color: rgb(128, 0, 0); font-weight: bold;">56</SPAN>,<SPAN style="color: rgb(128, 0, 0); font-weight: bold;">53</SPAN>)<BR><SPAN style="color: rgb(0, 0, 255);">order</SPAN> <SPAN style="color: rgb(0, 0, 255);">by</SPAN> request_session_id</PRE>
+</DIV>
+<P><IMG alt="" src="查看语句运行时间异常的原因（SQLServer）%20-%20飞洋过海%20-%20博客园_files/2012011717163082.png"></P>
+<P>可以看到，56处于WAIT状态，它在等待获取1：307：1 上的一个共享锁，但是1：307：1上被53的一个排他锁占据了（GRANT代表</P>
+<P>已获得资源，正在运行），因此56必须等待53上的排他锁释放后才能继续运行；于是我们转而调查53排他锁没有释放的原因；可能是</P>
+<P>53需要的其他资源被其他进程占有了，在等待其他进程释放锁；也可能是因为Update语句更新的数据量过多，需要的时间比较长，不</P>
+<P>能够及时的释放锁；还有就是我们现在的情况，没有提交事物了（语句中可以直接看到）；阻塞的排查方法都是类似的。</P>
+<P>&nbsp;</P>
+<P>如果语句并没有被其他语句blocked呢？ 那我们需要再进一步查找的原因就是Wait了，前面已经有wait的相关查询，下面我们来查下</P>
+<P>更具体的信息：</P>
+<DIV class="cnblogs_code"><PRE><SPAN style="color: rgb(0, 128, 128);">--</SPAN><SPAN style="color: rgb(0, 128, 128);"> wait &amp; lock</SPAN><SPAN style="color: rgb(0, 128, 128);"><BR></SPAN><SPAN style="color: rgb(0, 0, 255);">select</SPAN> lo.request_session_id <SPAN style="color: rgb(0, 0, 255);">as</SPAN> <SPAN style="color: rgb(255, 0, 0);">[</SPAN><SPAN style="color: rgb(255, 0, 0);">Session</SPAN><SPAN style="color: rgb(255, 0, 0);">]</SPAN>,<BR><SPAN style="color: rgb(255, 0, 255);">DB_NAME</SPAN>(lo.resource_database_id) <SPAN style="color: rgb(0, 0, 255);">as</SPAN> Dbname,<BR>lo.resource_type <SPAN style="color: rgb(0, 0, 255);">as</SPAN> <SPAN style="color: rgb(255, 0, 0);">[</SPAN><SPAN style="color: rgb(255, 0, 0);">Type</SPAN><SPAN style="color: rgb(255, 0, 0);">]</SPAN>,<BR>lo.resource_description,<BR>lo.request_mode,<BR>lo.request_owner_type,<BR>lo.request_status,<BR><SPAN style="color: rgb(255, 0, 255);">case</SPAN> <SPAN style="color: rgb(0, 0, 255);">when</SPAN> lo.resource_type<SPAN style="color: rgb(128, 128, 128);">=</SPAN><SPAN style="color: rgb(255, 0, 0);">'</SPAN><SPAN style="color: rgb(255, 0, 0);">OBJECT</SPAN><SPAN style="color: rgb(255, 0, 0);">'</SPAN> <SPAN style="color: rgb(0, 0, 255);">then</SPAN> <SPAN style="color: rgb(255, 0, 255);">OBJECT_NAME</SPAN>(lo.resource_associated_entity_id)<BR>     <SPAN style="color: rgb(0, 0, 255);">when</SPAN> lo.resource_associated_entity_id <SPAN style="color: rgb(0, 0, 255);">IS</SPAN> <SPAN style="color: rgb(0, 0, 255);">NULL</SPAN> <SPAN style="color: rgb(128, 128, 128);">OR</SPAN> lo.resource_associated_entity_id<SPAN style="color: rgb(128, 128, 128);">=</SPAN><SPAN style="color: rgb(128, 0, 0); font-weight: bold;">0</SPAN><BR>     <SPAN style="color: rgb(0, 0, 255);">then</SPAN> <SPAN style="color: rgb(0, 0, 255);">NULL</SPAN><BR>     <SPAN style="color: rgb(0, 0, 255);">else</SPAN> <SPAN style="color: rgb(255, 0, 255);">OBJECT_NAME</SPAN>(p.<SPAN style="color: rgb(255, 0, 255);">object_id</SPAN>) <BR>     <SPAN style="color: rgb(0, 0, 255);">end</SPAN> <SPAN style="color: rgb(0, 0, 255);">as</SPAN> Associated_Entity,<BR>wt.blocking_session_id,wt.resource_description<BR><SPAN style="color: rgb(0, 0, 255);">from</SPAN> <BR>sys.dm_tran_locks lo <SPAN style="color: rgb(0, 0, 255);">with</SPAN>(nolock)<BR><SPAN style="color: rgb(128, 128, 128);">left</SPAN> <SPAN style="color: rgb(128, 128, 128);">join</SPAN> sys.partitions p <SPAN style="color: rgb(0, 0, 255);">with</SPAN>(nolock)<BR><SPAN style="color: rgb(0, 0, 255);">on</SPAN> lo.resource_associated_entity_id<SPAN style="color: rgb(128, 128, 128);">=</SPAN>p.partition_id<BR><SPAN style="color: rgb(128, 128, 128);">left</SPAN> <SPAN style="color: rgb(128, 128, 128);">join</SPAN> sys.dm_os_waiting_tasks wt <SPAN style="color: rgb(0, 0, 255);">with</SPAN>(nolock)<BR><SPAN style="color: rgb(0, 0, 255);">on</SPAN> lo.lock_owner_address<SPAN style="color: rgb(128, 128, 128);">=</SPAN>wt.resource_address<BR><SPAN style="color: rgb(0, 0, 255);">where</SPAN> lo.request_session_id<SPAN style="color: rgb(128, 128, 128);">&gt;</SPAN><SPAN style="color: rgb(128, 0, 0); font-weight: bold;">50</SPAN><BR><SPAN style="color: rgb(128, 128, 128);">and</SPAN> lo.request_session_id<SPAN style="color: rgb(128, 128, 128);">=</SPAN><SPAN style="color: rgb(128, 0, 0); font-weight: bold;">56</SPAN> <BR><SPAN style="color: rgb(0, 0, 255);">order</SPAN> <SPAN style="color: rgb(0, 0, 255);">by</SPAN> <SPAN style="color: rgb(255, 0, 0);">[</SPAN><SPAN style="color: rgb(255, 0, 0);">Session</SPAN><SPAN style="color: rgb(255, 0, 0);">]</SPAN> ,<SPAN style="color: rgb(255, 0, 0);">[</SPAN><SPAN style="color: rgb(255, 0, 0);">TYPE</SPAN><SPAN style="color: rgb(255, 0, 0);">]</SPAN></PRE>
+</DIV>
+<P><IMG alt="" src="查看语句运行时间异常的原因（SQLServer）%20-%20飞洋过海%20-%20博客园_files/2012011717270876.png"></P>
+<P>上面可以看到，56在获取共享资源1：307：1时，遇到了等待，当然这里的等待还是被53阻塞了，但是等待会有多种原因的等待，我们查</P>
+<P>一下当前的等待信息：</P>
+<DIV class="cnblogs_code"><PRE><SPAN style="color: rgb(0, 128, 128);">--</SPAN><SPAN style="color: rgb(0, 128, 128);">current wait info</SPAN><SPAN style="color: rgb(0, 128, 128);"><BR></SPAN><SPAN style="color: rgb(0, 0, 255);">select</SPAN> wait_type,<SPAN style="color: rgb(255, 0, 255);">COUNT</SPAN>(<SPAN style="color: rgb(128, 0, 0); font-weight: bold;">0</SPAN>) <SPAN style="color: rgb(0, 0, 255);">as</SPAN> num_waiting_tasks,<BR><SPAN style="color: rgb(255, 0, 255);">SUM</SPAN>(wait_duration_ms) <SPAN style="color: rgb(0, 0, 255);">as</SPAN> total_wait_time_ms<BR> <SPAN style="color: rgb(0, 0, 255);">from</SPAN> sys.dm_os_waiting_tasks <SPAN style="color: rgb(0, 0, 255);">with</SPAN>(nolock)<BR><SPAN style="color: rgb(0, 0, 255);">where</SPAN> session_id<SPAN style="color: rgb(128, 128, 128);">&gt;</SPAN><SPAN style="color: rgb(128, 0, 0); font-weight: bold;">50</SPAN><BR><SPAN style="color: rgb(0, 0, 255);">group</SPAN> <SPAN style="color: rgb(0, 0, 255);">by</SPAN> wait_type<BR><SPAN style="color: rgb(0, 0, 255);">order</SPAN> <SPAN style="color: rgb(0, 0, 255);">by</SPAN> wait_type</PRE></DIV>
+<P><IMG alt="" src="查看语句运行时间异常的原因（SQLServer）%20-%20飞洋过海%20-%20博客园_files/2012011717311382.png"></P>
+<P>这里可以看到是锁等待（Wait_Type），还有很多资源类型的等待，值的重点关注的有：<BR>&nbsp; Memory:CMEMTHREAD 
+,RESOURCE_SEMAPHORE<BR>&nbsp;&nbsp;&nbsp;&nbsp; CMEMTHREAD: 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+说明和原因：计划缓存出现问题的标志（大量计划加入或者移出）；<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+解决：&nbsp;&nbsp;&nbsp;&nbsp; 使用参数化的查询或者设置数据库强制参数化（forced parameterization）</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp; 
+RESOURCE_SEMAPHORE：<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+说明和原因：内存密集型查询无法获得请求的内存；其他进程消耗了太多的内存；<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+解决：&nbsp;&nbsp;&nbsp;&nbsp; 为数据库添加合适的索引或者增加内存</P>
+<P>&nbsp; IO：IO_COMPLETION,ASYNC_IO_COMPLETION,WRITELOG,PAGEIOLATCH_*</P>
+<P>&nbsp; CPU: 
+CXPACKET,SOS_SCHEDULER_YIELD<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CXPACKET: 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+说明和原因：并行处理等待类型，并行同步等待；<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+解决：&nbsp;&nbsp;&nbsp;&nbsp; 
+可以通过修改并行度的值（或者禁用）解决；<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+SOS_SCHEDULER_YIELD：<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+说明和原因：任务执行到时间片尾，让出调度器给其他任务运行；<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+解决：&nbsp;&nbsp;&nbsp;&nbsp; 需要处理能力更好的CPU<BR>&nbsp; <BR>&nbsp; 
+Network：ASYNC_NETWORK_IO,DBMIRROR_SEND<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ASYNC_NETWORK_IO: 网卡带宽饱和或者客户端不能及时把结果取走；<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+DBMIRROR_SEND：&nbsp; 网络带宽不足以支持镜像事务量或者镜像数据库超出限额；</P>
+<P>&nbsp; 锁阻塞：LCK_*&nbsp;&nbsp;&nbsp;&nbsp;</P>
+<P><BR>我们可以统计下，我们数据库最多的20种等待类型：</P>
+<DIV class="cnblogs_code"><PRE><SPAN style="color: rgb(0, 128, 128);">--</SPAN><SPAN style="color: rgb(0, 128, 128);">total wait info</SPAN><SPAN style="color: rgb(0, 128, 128);"><BR></SPAN><SPAN style="color: rgb(0, 0, 255);">select</SPAN> <SPAN style="color: rgb(0, 0, 255);">top</SPAN> <SPAN style="color: rgb(128, 0, 0); font-weight: bold;">20</SPAN> wait_type,<SPAN style="color: rgb(255, 0, 255);">SUM</SPAN>(waiting_tasks_count) waiting_tasks_count,<BR><SPAN style="color: rgb(255, 0, 255);">SUM</SPAN>(wait_time_ms)<SPAN style="color: rgb(0, 0, 255);">as</SPAN> total_wait_time_ms,<BR><SPAN style="color: rgb(255, 0, 255);">SUM</SPAN>(signal_wait_time_ms) <SPAN style="color: rgb(0, 0, 255);">as</SPAN> total_signal_wait_time_ms<BR><SPAN style="color: rgb(0, 0, 255);">from</SPAN> sys.dm_os_wait_stats <SPAN style="color: rgb(0, 0, 255);">with</SPAN>(nolock)<BR><SPAN style="color: rgb(0, 0, 255);">where</SPAN> wait_type <SPAN style="color: rgb(128, 128, 128);">not</SPAN> <SPAN style="color: rgb(128, 128, 128);">in</SPAN><BR> <SPAN style="color: rgb(0, 128, 128);">--</SPAN><SPAN style="color: rgb(0, 128, 128);">system wait type</SPAN><SPAN style="color: rgb(0, 128, 128);"><BR></SPAN>(<SPAN style="color: rgb(255, 0, 0);">'</SPAN><SPAN style="color: rgb(255, 0, 0);">LAZYWRITER_SLEEP</SPAN><SPAN style="color: rgb(255, 0, 0);">'</SPAN>,<SPAN style="color: rgb(255, 0, 0);">'</SPAN><SPAN style="color: rgb(255, 0, 0);">REQUEST_FOR_DEADLOCK_SEARCH</SPAN><SPAN style="color: rgb(255, 0, 0);">'</SPAN>,<SPAN style="color: rgb(255, 0, 0);">'</SPAN><SPAN style="color: rgb(255, 0, 0);">SQLTRACE_BUFFER_FLUSH</SPAN><SPAN style="color: rgb(255, 0, 0);">'</SPAN>,<BR> <SPAN style="color: rgb(255, 0, 0);">'</SPAN><SPAN style="color: rgb(255, 0, 0);">XE_TIMER_EVENT</SPAN><SPAN style="color: rgb(255, 0, 0);">'</SPAN>,<SPAN style="color: rgb(255, 0, 0);">'</SPAN><SPAN style="color: rgb(255, 0, 0);">FT_IFTS_SCHEDULER_IDLE_WAIT</SPAN><SPAN style="color: rgb(255, 0, 0);">'</SPAN>,<SPAN style="color: rgb(255, 0, 0);">'</SPAN><SPAN style="color: rgb(255, 0, 0);">LOGMGR_QUEUE</SPAN><SPAN style="color: rgb(255, 0, 0);">'</SPAN>,<SPAN style="color: rgb(255, 0, 0);">'</SPAN><SPAN style="color: rgb(255, 0, 0);">CHECKPOINT_QUEUE</SPAN><SPAN style="color: rgb(255, 0, 0);">'</SPAN>,<BR> <SPAN style="color: rgb(255, 0, 0);">'</SPAN><SPAN style="color: rgb(255, 0, 0);">SLEEP_TASK</SPAN><SPAN style="color: rgb(255, 0, 0);">'</SPAN>,<SPAN style="color: rgb(255, 0, 0);">'</SPAN><SPAN style="color: rgb(255, 0, 0);">BROKER_IO_FLUSH</SPAN><SPAN style="color: rgb(255, 0, 0);">'</SPAN>,<SPAN style="color: rgb(255, 0, 0);">'</SPAN><SPAN style="color: rgb(255, 0, 0);">BROKER_TASK_STOP</SPAN><SPAN style="color: rgb(255, 0, 0);">'</SPAN>,<SPAN style="color: rgb(255, 0, 0);">'</SPAN><SPAN style="color: rgb(255, 0, 0);">BROKER_TO_FLUSH</SPAN><SPAN style="color: rgb(255, 0, 0);">'</SPAN>,<SPAN style="color: rgb(255, 0, 0);">'</SPAN><SPAN style="color: rgb(255, 0, 0);">BROKER_EVENTHANDLER</SPAN><SPAN style="color: rgb(255, 0, 0);">'</SPAN>)<BR><SPAN style="color: rgb(0, 0, 255);">group</SPAN> <SPAN style="color: rgb(0, 0, 255);">by</SPAN> wait_type<BR><SPAN style="color: rgb(0, 0, 255);">order</SPAN> <SPAN style="color: rgb(0, 0, 255);">by</SPAN> total_wait_time_ms <SPAN style="color: rgb(0, 0, 255);">desc</SPAN></PRE>
+</DIV>
+<P><IMG alt="" src="查看语句运行时间异常的原因（SQLServer）%20-%20飞洋过海%20-%20博客园_files/2012011717354443.png"></P>
+<P>通过这个我们可以从中看出DB等待主要集中在哪些方面，如果是在CPU、IO、Memory、Lock等上面等待时间很长，说明我们</P>
+<P>的数据库需要做某些方面的优化了。</P>
+<P>&nbsp;&nbsp;&nbsp; 以上就是从阻塞和等待方面，对运行时间异常的语句做初步排查的过程，欢迎大家拍砖。<BR><BR></P>
+<P>&nbsp;</P></DIV>
+<SCRIPT type="text/javascript">
+if ($ != jQuery) {
+	$ = jQuery.noConflict();
+}
+var isLogined = false;
+var cb_blogId = 72480;
+var cb_entryId = 2324926;
+var cb_blogApp = "fygh";
+var cb_blogUserGuid = "bbff6b97-7482-df11-ba8f-001cf0cd104b";
+var cb_entryCreatedDate = '2012/1/17 17:53:00';
+</SCRIPT>
+
+<DIV id="blog_post_info_block">
+<DIV id="BlogPostCategory"></DIV>
+<DIV id="EntryTag">标签: <A href="http://www.cnblogs.com/fygh/tag/Lock/">Lock</A>, 
+<A href="http://www.cnblogs.com/fygh/tag/Wait/">Wait</A></DIV>
+<DIV style="display: none;" id="green_channel">绿色通道：<A id="green_channel_digg" 
+onclick="DiggIt(cb_entryId,cb_blogId,1);green_channel_success(this,'谢谢推荐！');" 
+href="javascript:void(0);">好文要顶</A><A id="green_channel_follow" onclick="c_follow();" 
+href="javascript:void(0);">关注我</A><A id="green_channel_favorite" onclick="AddToWz(2324926);return false;" 
+href="javascript:void(0);">收藏该文</A><A id="green_channel_contact" href="http://space.cnblogs.com/msg/send/%e9%a3%9e%e6%b4%8b%e8%bf%87%e6%b5%b7" 
+target="_blank">与我联系</A><A id="green_channel_weibo" title="分享至新浪微博" onclick="ShareToTsina()" 
+href="javascript:void(0);"><IMG alt="" src="查看语句运行时间异常的原因（SQLServer）%20-%20飞洋过海%20-%20博客园_files/icon_sina.gif"></A>
+</DIV>
+<DIV id="digg_block">
+<DIV id="author_profile">
+<DIV id="author_profile_info" class="author_profile_info">
+<DIV id="author_profile_detail" class="author_profile_info"></DIV></DIV>
+<DIV class="clear"></DIV>
+<DIV id="author_profile_honor"></DIV>
+<DIV id="author_profile_follow"></DIV></DIV>
+<DIV style="display: none;" id="div_digg">
+<DIV class="diggit" onclick="DiggIt(cb_entryId,cb_blogId,1)"><SPAN id="digg_count" 
+class="diggnum"></SPAN></DIV>
+<DIV class="buryit" onclick="DiggIt(cb_entryId,cb_blogId,2)"><SPAN id="bury_count" 
+class="burynum"></SPAN></DIV>
+<DIV class="clear"></DIV>
+<DIV id="digg_tips" class="diggword"></DIV></DIV></DIV>
+<DIV class="clear"></DIV>
+<DIV id="post_next_prev"></DIV></DIV>
+<SCRIPT type="text/javascript">
+LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate);
+</SCRIPT>
+</DIV>
+<DIV class="postDesc">posted @ 2012-01-17 17:53 <A href="http://www.cnblogs.com/fygh/">飞洋过海</A> 
+阅读(1239) <A href="http://www.cnblogs.com/fygh/archive/2012/01/17/2324926.html#commentform">评论(3)</A><A 
+onclick="open_link('http://www.cnblogs.com/fygh/admin/EditPosts.aspx?postid=2324926')" 
+href="http://www.cnblogs.com/fygh/archive/2012/01/17/2324926.html#" rel="nofollow">编辑</A> 
+<A onclick="AddToWz(2324926);return false;" href="http://www.cnblogs.com/fygh/archive/2012/01/17/2324926.html#">收藏</A></DIV></DIV><IMG 
+alt="" src="查看语句运行时间异常的原因（SQLServer）%20-%20飞洋过海%20-%20博客园_files/2324926.jpg" 
+width="1" height="1"></DIV><!--end: topics 文章、评论容器--><A name="pagedcomment"></A><!--done-->
+<BR>
+<DIV class="feedback_area_title">评论</DIV>
+<DIV class="feedbackNoItems"><SPAN style="display: none;" id="span_comment_maxid">2296109</SPAN></DIV>
+<DIV class="feedbackItem">
+<DIV class="feedbackListSubtitle">
+<DIV class="feedbackManage">　<A onclick='ReplyComment("良村",2295829,"oB8m/WEZgN5Mre6Wb3PTvC19F+sRN+2i6U8gT7g9huHUDOAplOv2gQ==")' 
+href="http://www.cnblogs.com/fygh/archive/2012/01/17/2324926.html#commentform">回复</A>　<A 
+onclick='QuoteComment(2295829,"oB8m/WEZgN5Mre6Wb3PTvC19F+sRN+2i6U8gT7g9huHUDOAplOv2gQ==")' 
+href="http://www.cnblogs.com/fygh/archive/2012/01/17/2324926.html#commentform">引用</A>　<A 
+title="查看该作者发表过的评论" href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e8%89%af%e6%9d%91" 
+target="_blank">查看</A>　<A id="Comments1_CommentList_DeleteLink_0" href="javascript:__doPostBack('Comments1$CommentList$ctl00$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id="Comments1_CommentList_EditLink_0" CausesValidation="False"></A></DIV><A 
+href="http://www.cnblogs.com/fygh/archive/2012/01/17/2324926.html#2295829">#1楼</A><A 
+id="comment_anchor_2295829" name="2295829"></A><SPAN 
+class="comment_date">2012-01-18 09:32</SPAN> | <A id="Comments1_CommentList_NameLink_0" 
+href="http://home.cnblogs.com/u/4069/" rel="nofllow" 
+target="_blank">良村</A>&nbsp;<A class="sendMsg2This" title="给此人发送站内短消息" href="http://space.cnblogs.com/msg/send/%e8%89%af%e6%9d%91">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A></DIV>
+<DIV class="feedbackCon"><SPAN id="comment_body_2295829" class="blog_comment_body">写得不错哈！</SPAN><BR></DIV></DIV>
+<DIV class="feedbackItem">
+<DIV class="feedbackListSubtitle">
+<DIV class="feedbackManage">					　<A onclick='ReplyComment("yesorno",2295847,"GzHFFmXP2Zbq9uiHrFCdQyr1imKQ0KwW+ccfTQRe9M3fz7gk19Bidg==")' 
+href="http://www.cnblogs.com/fygh/archive/2012/01/17/2324926.html#commentform">回复</A>　<A 
+onclick='QuoteComment(2295847,"GzHFFmXP2Zbq9uiHrFCdQyr1imKQ0KwW+ccfTQRe9M3fz7gk19Bidg==")' 
+href="http://www.cnblogs.com/fygh/archive/2012/01/17/2324926.html#commentform">引用</A>　<A 
+title="查看该作者发表过的评论" href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=yesorno" 
+target="_blank">查看</A>　<A id="Comments1_CommentList_DeleteLink_1" href="javascript:__doPostBack('Comments1$CommentList$ctl01$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id="Comments1_CommentList_EditLink_1" CausesValidation="False"></A></DIV><A 
+href="http://www.cnblogs.com/fygh/archive/2012/01/17/2324926.html#2295847">#2楼</A><A 
+id="comment_anchor_2295847" name="2295847"></A><SPAN 
+class="comment_date">2012-01-18 09:53</SPAN> | <A id="Comments1_CommentList_NameLink_1" 
+href="http://home.cnblogs.com/u/70710/" rel="nofllow" 
+target="_blank">yesorno</A>&nbsp;<A class="sendMsg2This" title="给此人发送站内短消息" 
+href="http://space.cnblogs.com/msg/send/yesorno">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A></DIV>
+<DIV class="feedbackCon"><SPAN id="comment_body_2295847" class="blog_comment_body">good..</SPAN><BR></DIV></DIV>
+<DIV class="feedbackItem">
+<DIV class="feedbackListSubtitle">
+<DIV class="feedbackManage">　<A onclick='ReplyComment("五子登科",2296109,"i5/t5MABqzYMER3FX60PodTQeu14mGqYYRlVx935LKCbfQQJguCwlw==")' 
+href="http://www.cnblogs.com/fygh/archive/2012/01/17/2324926.html#commentform">回复</A>　<A 
+onclick='QuoteComment(2296109,"i5/t5MABqzYMER3FX60PodTQeu14mGqYYRlVx935LKCbfQQJguCwlw==")' 
+href="http://www.cnblogs.com/fygh/archive/2012/01/17/2324926.html#commentform">引用</A>　<A 
+title="查看该作者发表过的评论" href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e4%ba%94%e5%ad%90%e7%99%bb%e7%a7%91" 
+target="_blank">查看</A>　<A id="Comments1_CommentList_DeleteLink_2" href="javascript:__doPostBack('Comments1$CommentList$ctl02$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id="Comments1_CommentList_EditLink_2" CausesValidation="False"></A></DIV><A 
+href="http://www.cnblogs.com/fygh/archive/2012/01/17/2324926.html#2296109">#3楼</A><A 
+id="comment_anchor_2296109" name="2296109"></A><A name="Post"></A><SPAN class="comment_date">2012-01-18 
+15:40</SPAN> | <A id="Comments1_CommentList_NameLink_2" href="http://home.cnblogs.com/u/28762/" 
+rel="nofllow" target="_blank">五子登科</A>&nbsp;<A class="sendMsg2This" title="给此人发送站内短消息" 
+href="http://space.cnblogs.com/msg/send/%e4%ba%94%e5%ad%90%e7%99%bb%e7%a7%91">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A></DIV>
+<DIV class="feedbackCon"><SPAN id="comment_body_2296109" class="blog_comment_body">相当牛逼的文章</SPAN><BR></DIV></DIV>
+<DIV id="comment_form" class="commentform">
+<DIV id="divCommentShow"></DIV>
+<DIV id="comment_nav"><SPAN id="span_refresh_tips"></SPAN><A id="lnk_RefreshComments" 
+onclick="return RefreshCommentList(cb_entryId);" href="http://www.cnblogs.com/fygh/archive/2012/01/17/2324926.html#" 
+name="commentform">刷新评论列表</A><A onclick="return RefreshPage();" href="http://www.cnblogs.com/fygh/archive/2012/01/17/2324926.html#">刷新页面</A><A 
+href="http://www.cnblogs.com/fygh/archive/2012/01/17/2324926.html#top">返回顶部</A></DIV>
+<DIV id="comment_form_container"></DIV>
+<SCRIPT type="text/javascript">commentManager.loadCommentForm();
+</SCRIPT>
+
+<DIV id="clear_read_link"></DIV>
+<SCRIPT type="text/javascript">
+    $("#clear_read_link").html('<a href="http://archive.cnblogs.com/a/' + cb_entryId + '/" target="_blank">简洁阅读版式</a>')
+</SCRIPT>
+
+<DIV id="site_nav_under"><A title="程序员的网上家园" href="http://www.cnblogs.com/" 
+target="_blank">网站首页</A><A title="程序员问答社区" href="http://q.cnblogs.com/" target="_blank">博问</A><A 
+title="IT新闻" href="http://news.cnblogs.com/" target="_blank">新闻</A><A href="http://home.cnblogs.com/ing/" 
+target="_blank">闪存</A><A href="http://job.cnblogs.com/" 
+target="_blank">程序员招聘</A><A href="http://kb.cnblogs.com/" 
+target="_blank">知识库</A>
+<DIV id="site_editor_opt"></DIV></DIV>
+<SCRIPT type="text/javascript">if (isLogined) {
+        showEditorOpt();
+    }
+</SCRIPT>
+
+<SCRIPT type="text/javascript">
+    var enableGoogleAd = true;
+    if ($("#cnblogs_post_body").text().length < 500) {
+        enableGoogleAd = false;
+    }
+</SCRIPT>
+
+<SCRIPT type="text/javascript">
+    var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+    (function () {
+        if (enableGoogleAd) {
+            var gads = document.createElement('script');
+            gads.async = true;
+            gads.type = 'text/javascript';
+            gads.src = 'http://common.cnblogs.com/script/gpt.js';
+            var node = document.getElementsByTagName('script')[0];
+            node.parentNode.insertBefore(gads, node);
+        }
+    })();
+</SCRIPT>
+
+<SCRIPT type="text/javascript">
+    if (enableGoogleAd) {
+        try {
+            googletag.cmd.push(function () {
+                googletag.defineSlot('/1090369/cnblogs_blogpost_C1', [300, 250], 'div-gpt-ad-1320933818841-0').addService(googletag.pubads());
+                googletag.defineSlot('/1090369/cnblogs_blogpost_C2', [468, 60], 'div-gpt-ad-1320933818841-1').addService(googletag.pubads());
+                googletag.pubads().enableSingleRequest();
+                googletag.enableServices();
+            });
+        } catch (e) { }
+    }
+</SCRIPT>
+
+<DIV id="google_ad_c1" class="c_ad_block"><!-- cnblogs_blogpost_C1 -->
+<DIV style="width: 300px; height: 250px;" id="div-gpt-ad-1320933818841-0">
+<SCRIPT type="text/javascript">
+    if (enableGoogleAd) {
+        try {
+            googletag.cmd.push(function () { googletag.display('div-gpt-ad-1320933818841-0'); });
+        } catch (e) { }
+    }
+</SCRIPT>
+</DIV></DIV>
+<DIV class="itnews c_ad_block"><B>最新IT新闻</B>:<BR>·  <A href="http://news.cnblogs.com/n/135296/" 
+target="_blank">RIM将为PlayBook平板电脑配置BB10操作系统</A><BR>·  <A href="http://news.cnblogs.com/n/135295/" 
+target="_blank">谁能坐上云计算的第二把交椅？</A><BR>·  <A href="http://news.cnblogs.com/n/135294/" 
+target="_blank">传美欧将调查谷歌绕过Safari隐私设置行为</A><BR>·  <A href="http://news.cnblogs.com/n/135292/" 
+target="_blank">中国第一批休学创业者今何在</A><BR>·  <A href="http://news.cnblogs.com/n/135291/" 
+target="_blank">SQL Server 2012 的12个激动人心的功能</A><BR>» <A title="IT新闻" href="http://news.cnblogs.com/" 
+target="_blank">更多新闻...</A></DIV>
+<DIV id="kb_block" class="itnews c_ad_block"><B>最新知识库文章</B>:<BR>
+<DIV id="kb_recent">·  <A href="http://kb.cnblogs.com/page/135185/" target="_blank">循序渐进学编程</A><BR>· 
+ <A href="http://kb.cnblogs.com/page/135119/" 
+target="_blank">Web开发：我希望得到的编程学习路线图</A><BR>·  <A href="http://kb.cnblogs.com/page/135083/" 
+target="_blank">Google Dart精粹：应用构建，快照和隔离体</A><BR>·  <A href="http://kb.cnblogs.com/page/134768/" 
+target="_blank">谷歌是如何做测试的</A><BR>·  <A href="http://kb.cnblogs.com/page/135029/" 
+target="_blank">URL, URI 和 URN 之间的区别</A><BR></DIV>» <A href="http://kb.cnblogs.com/" 
+target="_blank">更多知识库文章...</A></DIV>
+<DIV id="google_ad_c2" class="c_ad_block"><!-- cnblogs_blogpost_C2 -->
+<DIV style="width: 468px; height: 60px;" id="div-gpt-ad-1320933818841-1">
+<SCRIPT type="text/javascript">if (enableGoogleAd) {
+        try {
+            googletag.cmd.push(function () { googletag.display('div-gpt-ad-1320933818841-1'); });
+        } catch (e) { }
+
+    }
+</SCRIPT>
+</DIV></DIV>
+<DIV style="display: none;" id="ad_under_comment2" class="c_ad_block"><A href="http://www.china-pub.com/STATIC07/1107/2011chinapub_6810_110718/2011chinapub_6810_110718.asp" 
+rel="nofollow" target="_blank"><IMG style="border: 0px currentColor;" alt="" 
+src="查看语句运行时间异常的原因（SQLServer）%20-%20飞洋过海%20-%20博客园_files/china-pub.jpg"></A><BR>
+<A href="http://www.china-pub.com/STATIC07/1107/zh_autumntb_110725/zh_autumntb_110725.asp" 
+rel="nofollow" target="_blank">China-pub 2011秋季教材巡展</A><BR><A href="http://www.china-pub.com/static07/0901/zh_jueba_090121.asp" 
+rel="nofollow" target="_blank">China-Pub 计算机绝版图书按需印刷服务</A><BR></DIV>
+<SCRIPT type="text/javascript">if (enableGoogleAd) {
+        if (document.getElementById("ad_under_comment2")) {
+            $("#ad_under_comment2").show();
+        }
+    }
+    else {
+        $("#google_ad_c1").hide();
+        $("#google_ad_c2").hide();
+    }
+</SCRIPT>
+
+<DIV id="HistoryToday" class="c_ad_block"></DIV>
+<SCRIPT type="text/javascript">
+    $(document).ready(function () {
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    });
+</SCRIPT>
+</DIV></DIV><!--end: forFlow --></DIV><!--end: mainContent 主体内容容器-->
+<DIV id="sideBar">
+<DIV id="sideBarMain"><!--done-->
+<DIV class="newsItem">
+<H3 class="catListTitle">公告</H3>
+<DIV id="profile_block">昵称：<A 
+href="http://home.cnblogs.com/u/fygh/">飞洋过海</A><BR>园龄：<A title="入园时间：2010-06-28" 
+href="http://home.cnblogs.com/u/fygh/">1年8个月</A><BR>粉丝：<A href="http://home.cnblogs.com/u/fygh/followers/">82</A><BR>关注：<A 
+href="http://home.cnblogs.com/u/fygh/followees/">6</A>
+<DIV id="p_b_follow"></DIV>
+<SCRIPT type="text/javascript">cnblogs.UserManager.GetFollowStatus('bbff6b97-7482-df11-ba8f-001cf0cd104b')</SCRIPT>
+</DIV></DIV>
+<DIV id="calendar"></DIV>
+<DIV id="leftcontentcontainer">
+<DIV class="catListLink">
+<H3 class="catListTitle">常用链接</H3>
+<UL>
+  <LI><A id="SingleColumn1_ctl01_rptMainLinks_lnkLinkItem_0" href="http://www.cnblogs.com/fygh/MyPosts.html">我的随笔</A></LI>
+  <LI><A id="SingleColumn1_ctl01_rptMainLinks_lnkLinkItem_1" href="http://www.cnblogs.com/fygh/MyComments.html">我的评论</A></LI>
+  <LI><A id="SingleColumn1_ctl01_rptMainLinks_lnkLinkItem_2" title="我发表过评论的随笔" 
+  href="http://www.cnblogs.com/fygh/OtherPosts.html">我的参与</A></LI>
+  <LI><A id="SingleColumn1_ctl01_rptMainLinks_lnkLinkItem_3" href="http://www.cnblogs.com/fygh/RecentComments.html">最新评论</A></LI>
+  <LI><A id="SingleColumn1_ctl01_rptMainLinks_lnkLinkItem_4" href="http://www.cnblogs.com/fygh/tag/">我的标签</A></LI>
+  <LI><A id="itemListLink" onclick="this.blur();WarpClass('itemListLink', 'itemListLin_con');return false;" 
+  href="http://www.cnblogs.com/fygh/archive/2012/01/17/2324926.html#">更多链接</A></LI>
+</UL>
+<DIV style="display: none;" id="itemListLin_con">
+<UL></UL></DIV></DIV>
+<DIV class="catListTag">
+<H3 class="catListTitle">我的标签</H3>
+<UL>
+  <LI><A 
+  href="http://www.cnblogs.com/fygh/tag/Replication/">Replication(4)</A></LI>
+  <LI><A href="http://www.cnblogs.com/fygh/tag/cacti/">cacti(2)</A></LI>
+  <LI><A href="http://www.cnblogs.com/fygh/tag/DMV/">DMV(2)</A></LI>
+  <LI><A href="http://www.cnblogs.com/fygh/tag/backup/">backup(2)</A></LI>
+  <LI><A href="http://www.cnblogs.com/fygh/tag/Blocked/">Blocked(1)</A></LI>
+  <LI><A href="http://www.cnblogs.com/fygh/tag/Error/">Error(1)</A></LI>
+  <LI><A href="http://www.cnblogs.com/fygh/tag/Lock/">Lock(1)</A></LI>
+  <LI><A href="http://www.cnblogs.com/fygh/tag/Login/">Login(1)</A></LI>
+  <LI><A href="http://www.cnblogs.com/fygh/tag/Page/">Page(1)</A></LI>
+  <LI><A href="http://www.cnblogs.com/fygh/tag/Profile/">Profile(1)</A></LI>
+  <LI><A href="http://www.cnblogs.com/fygh/tag/">更多</A></LI></UL></DIV>
+<DIV class="catListPostCategory">
+<H3 class="catListTitle">随笔分类<SPAN 
+style="font-size: 11px; font-weight: normal;">(38)</SPAN></H3>
+<UL>
+  <LI><A id="SingleColumn1_Categories_CatList_LinkList_0_Link_0" href="http://www.cnblogs.com/fygh/category/252191.html">C#</A> 
+  <A id="SingleColumn1_Categories_CatList_LinkList_0_RssLink_0" onclick="return open_link('http://www.cnblogs.com/fygh/category/252191.html/rss');" 
+  href="http://www.cnblogs.com/fygh/archive/2012/01/17/2324926.html#">(rss)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_LinkList_0_Link_1" href="http://www.cnblogs.com/fygh/category/268249.html">Linux(2)</A> 
+  <A id="SingleColumn1_Categories_CatList_LinkList_0_RssLink_1" onclick="return open_link('http://www.cnblogs.com/fygh/category/268249.html/rss');" 
+  href="http://www.cnblogs.com/fygh/archive/2012/01/17/2324926.html#">(rss)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_LinkList_0_Link_2" href="http://www.cnblogs.com/fygh/category/268248.html">MYSQL(2)</A> 
+  <A id="SingleColumn1_Categories_CatList_LinkList_0_RssLink_2" onclick="return open_link('http://www.cnblogs.com/fygh/category/268248.html/rss');" 
+  href="http://www.cnblogs.com/fygh/archive/2012/01/17/2324926.html#">(rss)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_LinkList_0_Link_3" href="http://www.cnblogs.com/fygh/category/252190.html">SQLServer(26)</A> 
+  <A id="SingleColumn1_Categories_CatList_LinkList_0_RssLink_3" onclick="return open_link('http://www.cnblogs.com/fygh/category/252190.html/rss');" 
+  href="http://www.cnblogs.com/fygh/archive/2012/01/17/2324926.html#">(rss)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_LinkList_0_Link_4" href="http://www.cnblogs.com/fygh/category/252203.html">windows(5)</A> 
+  <A id="SingleColumn1_Categories_CatList_LinkList_0_RssLink_4" onclick="return open_link('http://www.cnblogs.com/fygh/category/252203.html/rss');" 
+  href="http://www.cnblogs.com/fygh/archive/2012/01/17/2324926.html#">(rss)</A></LI>
+  <LI><A id="SingleColumn1_Categories_CatList_LinkList_0_Link_5" href="http://www.cnblogs.com/fygh/category/294495.html">随笔(3)</A> 
+  <A id="SingleColumn1_Categories_CatList_LinkList_0_RssLink_5" onclick="return open_link('http://www.cnblogs.com/fygh/category/294495.html/rss');" 
+  href="http://www.cnblogs.com/fygh/archive/2012/01/17/2324926.html#">(rss)</A></LI></UL></DIV>
+<DIV class="catListPostArchive">
+<H3 class="catListTitle">随笔档案<SPAN 
+style="font-size: 11px; font-weight: normal;">(36)</SPAN></H3>
+<UL>
+  <LI><A id="SingleColumn1_Categories_CatList_LinkList_1_Link_0" href="http://www.cnblogs.com/fygh/archive/2012/03.html">2012年3月 
+  (1)</A> </LI>
+  <LI><A id="SingleColumn1_Categories_CatList_LinkList_1_Link_1" href="http://www.cnblogs.com/fygh/archive/2012/02.html">2012年2月 
+  (4)</A> </LI>
+  <LI><A id="SingleColumn1_Categories_CatList_LinkList_1_Link_2" href="http://www.cnblogs.com/fygh/archive/2012/01.html">2012年1月 
+  (1)</A> </LI>
+  <LI><A id="SingleColumn1_Categories_CatList_LinkList_1_Link_3" href="http://www.cnblogs.com/fygh/archive/2011/12.html">2011年12月 
+  (1)</A> </LI>
+  <LI><A id="SingleColumn1_Categories_CatList_LinkList_1_Link_4" href="http://www.cnblogs.com/fygh/archive/2011/11.html">2011年11月 
+  (1)</A> </LI>
+  <LI><A id="SingleColumn1_Categories_CatList_LinkList_1_Link_5" href="http://www.cnblogs.com/fygh/archive/2011/10.html">2011年10月 
+  (2)</A> </LI>
+  <LI><A id="SingleColumn1_Categories_CatList_LinkList_1_Link_6" href="http://www.cnblogs.com/fygh/archive/2011/09.html">2011年9月 
+  (2)</A> </LI>
+  <LI><A id="SingleColumn1_Categories_CatList_LinkList_1_Link_7" href="http://www.cnblogs.com/fygh/archive/2011/08.html">2011年8月 
+  (4)</A> </LI>
+  <LI><A id="SingleColumn1_Categories_CatList_LinkList_1_Link_8" href="http://www.cnblogs.com/fygh/archive/2011/07.html">2011年7月 
+  (4)</A> </LI>
+  <LI><A id="SingleColumn1_Categories_CatList_LinkList_1_Link_9" href="http://www.cnblogs.com/fygh/archive/2011/06.html">2011年6月 
+  (2)</A> </LI>
+  <LI><A id="SingleColumn1_Categories_CatList_LinkList_1_Link_10" href="http://www.cnblogs.com/fygh/archive/2011/04.html">2011年4月 
+  (5)</A> </LI>
+  <LI><A id="SingleColumn1_Categories_CatList_LinkList_1_Link_11" href="http://www.cnblogs.com/fygh/archive/2011/03.html">2011年3月 
+  (2)</A> </LI>
+  <LI><A id="SingleColumn1_Categories_CatList_LinkList_1_Link_12" href="http://www.cnblogs.com/fygh/archive/2010/12.html">2010年12月 
+  (4)</A> </LI>
+  <LI><A id="SingleColumn1_Categories_CatList_LinkList_1_Link_13" href="http://www.cnblogs.com/fygh/archive/2010/07.html">2010年7月 
+  (3)</A> </LI></UL></DIV>
+<DIV class="catListBlogRank">
+<H3 class="catListTitle">积分与排名</H3>
+<UL>
+  <LI class="liScore">		积分 -	53334	
+  <LI class="liRank">排名 -	1988	</LI></UL></DIV>
+<DIV class="catListComment">
+<H3 class="catListTitle">最新评论<A id="SingleColumn1__2561934_RSSHyperlink1" title="RSS订阅最最新评论" 
+href="http://www.cnblogs.com/fygh/CommentsRSS.aspx"><IMG title="RSS订阅最最新评论" alt="" 
+src="查看语句运行时间异常的原因（SQLServer）%20-%20飞洋过海%20-%20博客园_files/xml.gif"></A></H3>
+<DIV id="RecentCommentsBlock"></DIV></DIV>
+<DIV class="catListView">
+<H3 class="catListTitle">推荐排行榜</H3>
+<DIV id="TopDiggPostsBlock"></DIV>
+</DIV></DIV></DIV><!--end: sideBarMain --></DIV><!--end: sideBar 侧边栏容器 -->
+<DIV class="clear"></DIV></DIV><!--end: main -->
+<DIV class="clear"></DIV>
+<DIV id="footer"><!--done-->Copyright ©2012 飞洋过海	</DIV><!--end: footer --></DIV><!--end: home 自定义的最大容器 -->
+</FORM>
+<SCRIPT type="text/javascript">
+    if (!isSyntaxHighlighted) {
+        try {
+            SyntaxHighlighter.all();
+        } catch (e) { }
+    }
+</SCRIPT>
+
+<SCRIPT type="text/javascript" src="查看语句运行时间异常的原因（SQLServer）%20-%20飞洋过海%20-%20博客园_files/ShowHidden.js"></SCRIPT>
+
+<SCRIPT type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-476124-1']);
+    _gaq.push(['_setDomainName', 'cnblogs.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</SCRIPT>
+</BODY></HTML>

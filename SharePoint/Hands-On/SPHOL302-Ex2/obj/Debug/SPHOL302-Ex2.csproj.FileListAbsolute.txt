@@ -1,0 +1,5 @@
+D:\Project\smaple\SharePoint\Hands-On\SPHOL302-Ex2\bin\Debug\SPHOL302-Ex2.dll
+D:\Project\smaple\SharePoint\Hands-On\SPHOL302-Ex2\bin\Debug\SPHOL302-Ex2.pdb
+D:\Project\smaple\SharePoint\Hands-On\SPHOL302-Ex2\obj\Debug\ResolveAssemblyReference.cache
+D:\Project\smaple\SharePoint\Hands-On\SPHOL302-Ex2\obj\Debug\SPHOL302-Ex2.dll
+D:\Project\smaple\SharePoint\Hands-On\SPHOL302-Ex2\obj\Debug\SPHOL302-Ex2.pdb

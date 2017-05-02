@@ -1,0 +1,14 @@
+//没有早期绑定用户控件的方法
+using System.Reflection;
+//public void functionName(string a)
+Control c = Page.FindControl("ctrl");
+Type type = c.GetType();
+MethodInfo method = type.GetMethod("functionName");
+ParameterInfo[] p = method.GetParameters();
+Object[] parameters = new Object[p.Length];
+string a;
+...
+...
+...
+p[0] =a; 
+method.Invoke(c,parameters);

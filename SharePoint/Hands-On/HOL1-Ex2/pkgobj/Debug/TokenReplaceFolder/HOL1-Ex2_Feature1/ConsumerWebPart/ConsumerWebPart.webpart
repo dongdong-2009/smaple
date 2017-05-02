@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<webParts>
+  <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+    <metaData>
+      <type name="HOL1_Ex2.ConsumerWebPart.ConsumerWebPart, HOL1-Ex2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d272ebf2da96da96" />
+      <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+    </metaData>
+    <data>
+      <properties>
+        <property name="Title" type="string">ConsumerWebPart</property>
+        <property name="Description" type="string">My WebPart</property>
+      </properties>
+    </data>
+  </webPart>
+</webParts>

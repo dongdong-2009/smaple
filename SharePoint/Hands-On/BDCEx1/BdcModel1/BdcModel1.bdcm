@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/windows/2007/BusinessDataCatalog" Name="BdcModel1">
+  <LobSystems>
+    <LobSystem Name="BdcModel1" Type="DotNetAssembly">
+      <LobSystemInstances>
+        <LobSystemInstance Name="BdcModel1">
+          <Properties>
+            <Property Name="ShowInSearchUI" Type="System.String"></Property>
+          </Properties></LobSystemInstance>
+      </LobSystemInstances>
+      <Entities>
+        <Entity Name="Customer" Namespace="BDCEx1.BdcModel1" EstimatedInstanceCount="1000" Version="1.0.0.76">
+          <Properties>
+            <Property Name="Class" Type="System.String">BDCEx1.BdcModel1.CustomerService, BdcModel1</Property>
+          </Properties>
+          <Identifiers>
+            <Identifier Name="CustomerId" TypeName="System.Int32" />
+            <!-- TODO: Change the name of the ID and if needed the TypeName of your identifier. -->
+          </Identifiers>
+          <Methods>
+            <!-- start finder method -->
+            <Method Name="GetAllCustomers">
+              <!-- TODO: Change the name of the method if needed. -->
+              <Parameters>
+                <Parameter Direction="Return" Name="returnParameter">
+                  <TypeDescriptor TypeName="BDCEx1.BusinessDataCatalog1.Customer[], BusinessDataCatalog1LobSystem1" IsCollection="true" Name="CustomerList">
+                    <TypeDescriptors>
+                      <TypeDescriptor TypeName="BDCEx1.BdcModel1.Customer, BdcModel1" Name="Customer" IsCollection="false">
+                        <TypeDescriptors>
+                          <TypeDescriptor TypeName="System.Int32" IdentifierName="CustomerId" Name="CustomerId" IsCollection="false" />
+                          <TypeDescriptor TypeName="System.String" Name="Message" />
+                          <!-- TODO: Add TypeDescriptors when you add properties to Entity1. -->
+                          <TypeDescriptor Name="FirstName" TypeName="System.String" />
+                          <TypeDescriptor Name="LastName" TypeName="System.String" /></TypeDescriptors>
+                      </TypeDescriptor>
+                    </TypeDescriptors>
+                  </TypeDescriptor>
+                </Parameter>
+              </Parameters>
+              <MethodInstances>
+                <MethodInstance Type="Finder" ReturnParameterName="returnParameter" Default="true" Name="GetAllCustomers" DefaultDisplayName="Entity1 List" />
+              </MethodInstances>
+            </Method>
+            <!-- end finder method -->
+            <!-- start specific finder method -->
+            <Method Name="GetCustomer">
+              <Parameters>
+                <Parameter Direction="In" Name="id">
+                  <TypeDescriptor TypeName="System.Int32" IdentifierName="CustomerId" Name="CustomerId" IsCollection="false" />
+                </Parameter>
+                <Parameter Direction="Return" Name="returnParameter">
+                  <TypeDescriptor Name="Customer" TypeName="BDCEx1.BdcModel1.Customer, BdcModel1" IsCollection="false">
+                    <TypeDescriptors>
+                      <TypeDescriptor Name="CustomerId" TypeName="System.Int32" IdentifierName="CustomerId" IsCollection="false" />
+                      <TypeDescriptor Name="Message" TypeName="System.String" />
+                      <TypeDescriptor Name="FirstName" TypeName="System.String" />
+                      <TypeDescriptor Name="LastName" TypeName="System.String" /></TypeDescriptors></TypeDescriptor>
+                </Parameter>
+              </Parameters>
+              <MethodInstances>
+                <MethodInstance Type="SpecificFinder" ReturnParameterName="returnParameter" Default="true" Name="GetCustomer" DefaultDisplayName="Read Entity1" />
+              </MethodInstances>
+            </Method>
+            <Method Name="GetAllCustomersIDs">
+              <Parameters>
+                <Parameter Name="parameter" Direction="Return">
+                  <TypeDescriptor Name="customlist" TypeName="System.Collections.Generic.IEnumerable`1[System.Int16]" IsCollection="true">
+                    <TypeDescriptors>
+                      <TypeDescriptor Name="id" TypeName="System.Int16" IsCollection="false" /></TypeDescriptors>
+                    </TypeDescriptor></Parameter>
+              </Parameters>
+              <MethodInstances>
+                <MethodInstance Name="GetAllCustomersIDsInstance" Type="IdEnumerator" Default="true" ReturnParameterName="parameter" ReturnTypeDescriptorPath="customlist" />
+              </MethodInstances>
+              </Method>
+            <!-- end specific finder method -->
+          </Methods>
+        </Entity>
+      </Entities>
+    </LobSystem>
+  </LobSystems>
+</Model>

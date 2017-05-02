@@ -1,0 +1,393 @@
+body {
+	margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Arial, Helvetica; background-color: rgb(96, 96, 96);
+}
+#Common {
+	width: auto; margin-top: 0px; margin-right: 35px; margin-left: 35px; border-top-color: rgb(187, 222, 121); border-top-width: 6px; border-top-style: solid; background-color: rgb(255, 255, 255);
+}
+#CommonHeader {
+	width: 100%;
+}
+#CommonFooter {
+	border-width: 2px 0px 0px; border-style: solid; border-color: rgb(187, 187, 187); padding: 8px; text-align: center; background-color: rgb(211, 211, 211);
+}
+#CommonFooterCopyright {
+	text-align: right;
+}
+.CommonTitleBar {
+	position: relative;
+}
+.CommonTitleBarSearchArea {
+	padding: 10px 20px 10px 10px; text-align: right; color: rgb(102, 102, 102); font-family: Tahoma, Arial, Helvetica; margin-top: 5px;
+}
+.CommonSearchButton:link {
+	color: rgb(153, 153, 153); text-decoration: none;
+}
+.CommonSearchButton:visited {
+	color: rgb(153, 153, 153); text-decoration: none;
+}
+.CommonSearchButton:active {
+	color: rgb(153, 153, 153); text-decoration: none;
+}
+.CommonTitleBarDescription {
+	margin: 0px 0px -14px; padding: 0px 0px 0px 6px; top: -4px; color: rgb(153, 153, 153); font-family: Tahoma, Arial, Helvetica; position: relative;
+}
+.CommonUserArea {
+	color: rgb(0, 0, 0); padding-top: 4px; font-family: Tahoma, Arial, Helvetica; font-size: 80%; font-weight: 400;
+}
+.CommonUserArea a:link {
+	font-weight: 700;
+}
+.CommonUserArea a:visited {
+	font-weight: 700;
+}
+.CommonUserArea a:active {
+	font-weight: 700;
+}
+.CommonUserArea a:hover {
+	font-weight: 700;
+}
+.CommonTitle a:link {
+	color: rgb(145, 114, 63);
+}
+.CommonTitle a:active {
+	color: rgb(145, 114, 63);
+}
+.CommonTitle a:visited {
+	color: rgb(145, 114, 63);
+}
+.CommonTitle a:hover {
+	color: rgb(145, 114, 63);
+}
+#welcome {
+	color: rgb(0, 0, 0); padding-bottom: 10px; font-size: 10px; margin-top: -5px; margin-right: 5px;
+}
+#welcome a {
+	font-size: 10px;
+}
+#welcome a:visited {
+	font-size: 10px;
+}
+#welcome a:active {
+	font-size: 10px;
+}
+#welcome a:hover {
+	font-size: 10px;
+}
+.CommonImageTextButton:link {
+	margin: 1px; color: rgb(51, 51, 51); text-decoration: none;
+}
+.CommonListTitle a {
+	color: rgb(105, 141, 115);
+}
+.CommonListTitle a:visited {
+	color: rgb(105, 141, 115);
+}
+.CommonListTitle a:active {
+	color: rgb(105, 141, 115);
+}
+.CommonListTitle a:hover {
+	color: rgb(105, 141, 115);
+}
+.CommonSimpleTabStripTab {
+	border-width: 0px 1px 0px 0px; border-style: solid; border-color: rgb(153, 153, 153); height: 30px; color: rgb(0, 0, 0); font-family: Tahoma, Arial, Helvetica; font-size: 12px; cursor: pointer;
+}
+.CommonSimpleTabStripSelectedTab {
+	border-width: 0px 1px 0px 0px; border-style: solid; border-color: rgb(153, 153, 153); height: 30px; color: rgb(0, 0, 0); font-family: Tahoma, Arial, Helvetica; font-size: 12px; font-weight: 700; cursor: pointer; background-image: url("../images/common/top_item_selected_bg.gif"); background-repeat: repeat-x;
+}
+.CommonTabBar {
+	margin: -3px 0px 0px; height: 32px; overflow: hidden; padding-left: 24px; background-image: url("../images/common/top_group_bg.gif"); background-repeat: repeat-x; background-color: rgb(204, 204, 204);
+}
+.CommonTabBarInner {
+	border-width: 0px 0px 0px 1px; border-style: solid; border-color: rgb(153, 153, 153);
+}
+.CommonVideoDownloadButton:link {
+	color: rgb(51, 51, 51);
+}
+.CommonVideoDownloadButton:visited {
+	color: rgb(51, 51, 51);
+}
+.CommonVideoDownloadButton:hover {
+	color: rgb(51, 51, 51);
+}
+.CommonVideoDownloadButton:active {
+	color: rgb(51, 51, 51);
+}
+.CommonCollapseButton:link {
+	color: rgb(0, 0, 0);
+}
+.CommonCollapseButton:visited {
+	color: rgb(0, 0, 0);
+}
+.CommonCollapseButton:active {
+	color: rgb(0, 0, 0);
+}
+.CommonCollapseButton:hover {
+	color: rgb(0, 0, 0); background-color: rgb(238, 238, 238);
+}
+a.helpicon:hover {
+	cursor: help; background-image: url("../images/common/help_hover.gif"); background-repeat: no-repeat;
+}
+a.helpicon:active {
+	cursor: help; background-image: url("../images/common/help_hover.gif"); background-repeat: no-repeat;
+}
+#CommonLeftColumn {
+	padding-bottom: 22px; background-color: rgb(255, 255, 255);
+}
+#CommonRightColumn {
+	padding-bottom: 22px; background-color: rgb(255, 255, 255);
+}
+a:link {
+	color: rgb(165, 42, 42);
+}
+a:active {
+	color: rgb(165, 42, 42);
+}
+a:visited {
+	color: rgb(165, 42, 42);
+}
+.CommonSidebarArea a:link {
+	color: rgb(165, 42, 42);
+}
+.CommonSidebarArea a:active {
+	color: rgb(165, 42, 42);
+}
+.CommonSidebarArea a:visited {
+	color: rgb(165, 42, 42);
+}
+.CommonSidebarArea a:hover {
+	color: rgb(165, 42, 42);
+}
+.CommonSidebarContent a:link {
+	color: rgb(165, 42, 42);
+}
+.CommonSidebarContent a:active {
+	color: rgb(165, 42, 42);
+}
+.CommonSidebarContent a:visited {
+	color: rgb(165, 42, 42);
+}
+.CommonSidebarContent a:hover {
+	color: rgb(165, 42, 42);
+}
+a.insidelinks:link {
+	color: rgb(165, 42, 42);
+}
+a.insidelinks:active {
+	color: rgb(165, 42, 42);
+}
+a.insidelinks:visited {
+	color: rgb(165, 42, 42);
+}
+a.insidelinks:hover {
+	color: rgb(165, 42, 42);
+}
+a:hover {
+	text-decoration: underline;
+}
+.CommonSearchButton:hover {
+	text-decoration: underline;
+}
+select {
+	font-family: Tahoma, Arial, Helvetica; font-size: 90%;
+}
+textarea {
+	font-family: Tahoma, Arial, Helvetica; font-size: 90%;
+}
+input {
+	font-family: Tahoma, Arial, Helvetica; font-size: 90%;
+}
+button {
+	font-family: Tahoma, Arial, Helvetica; font-size: 90%;
+}
+.CommonBreadCrumbArea a:link {
+	color: rgb(102, 102, 102);
+}
+.CommonBreadCrumbArea a:visited {
+	color: rgb(102, 102, 102);
+}
+.CommonPagingArea a:link {
+	color: rgb(102, 102, 102);
+}
+.CommonPagingArea a:visited {
+	color: rgb(102, 102, 102);
+}
+.CommonInlineMessageArea a:link {
+	color: rgb(102, 102, 102);
+}
+.CommonInlineMessageArea a:visited {
+	color: rgb(102, 102, 102);
+}
+.CommonInlineMessageArea a:active {
+	color: rgb(102, 102, 102);
+}
+.CommonInlineMessageArea a:hover {
+	color: rgb(102, 102, 102);
+}
+.CommonTitleBarTitle a:link {
+	color: rgb(51, 51, 51); text-decoration: none;
+}
+.CommonTitleBarTitle a:visited {
+	color: rgb(51, 51, 51); text-decoration: none;
+}
+.CommonTitleBarTitle a:active {
+	color: rgb(51, 51, 51); text-decoration: none;
+}
+.CommonTextButton:link {
+	color: rgb(51, 51, 51); text-decoration: none; background-color: rgb(238, 238, 238);
+}
+.CommonTextButton:visited {
+	color: rgb(51, 51, 51); text-decoration: none; background-color: rgb(238, 238, 238);
+}
+.CommonTextButton:hover {
+	color: rgb(51, 51, 51); text-decoration: underline; background-color: rgb(221, 221, 221);
+}
+.CommonImageTextButton:hover {
+	color: rgb(51, 51, 51); text-decoration: underline; background-color: rgb(221, 221, 221);
+}
+.CommonTextButtonHighlight:link {
+	color: rgb(51, 51, 51); text-decoration: none; background-color: rgb(187, 187, 187);
+}
+.CommonTextButtonHighlight:visited {
+	color: rgb(51, 51, 51); text-decoration: none; background-color: rgb(187, 187, 187);
+}
+.CommonTextButtonHighlight:active {
+	color: rgb(51, 51, 51); text-decoration: none; background-color: rgb(187, 187, 187);
+}
+.CommonTextButtonHighlight:hover {
+	color: rgb(51, 51, 51); text-decoration: none; background-color: rgb(187, 187, 187);
+}
+.CommonImageTextButtonHighlight:link {
+	color: rgb(51, 51, 51); text-decoration: none; background-color: rgb(187, 187, 187);
+}
+.CommonImageTextButtonHighlight:visited {
+	color: rgb(51, 51, 51); text-decoration: none; background-color: rgb(187, 187, 187);
+}
+.CommonImageTextButtonHighlight:active {
+	color: rgb(51, 51, 51); text-decoration: none; background-color: rgb(187, 187, 187);
+}
+.CommonImageTextButtonHighlight:hover {
+	color: rgb(51, 51, 51); text-decoration: none; background-color: rgb(187, 187, 187);
+}
+.CommonSimpleTabStripTab a:link {
+	height: 22px; color: rgb(0, 0, 0); padding-top: 8px; padding-right: 16px; padding-left: 16px; text-decoration: none; display: block;
+}
+.CommonSimpleTabStripTab a:visited {
+	height: 22px; color: rgb(0, 0, 0); padding-top: 8px; padding-right: 16px; padding-left: 16px; text-decoration: none; display: block;
+}
+.CommonSimpleTabStripTab a:active {
+	height: 22px; color: rgb(0, 0, 0); padding-top: 8px; padding-right: 16px; padding-left: 16px; text-decoration: none; display: block;
+}
+.CommonSimpleTabStripTab a:hover {
+	height: 22px; color: rgb(0, 0, 0); padding-top: 8px; padding-right: 16px; padding-left: 16px; text-decoration: none; display: block;
+}
+.CommonSimpleTabStripTabHover a:link {
+	height: 22px; color: rgb(0, 0, 0); padding-top: 8px; padding-right: 16px; padding-left: 16px; text-decoration: none; display: block;
+}
+.CommonSimpleTabStripTabHover a:visited {
+	height: 22px; color: rgb(0, 0, 0); padding-top: 8px; padding-right: 16px; padding-left: 16px; text-decoration: none; display: block;
+}
+.CommonSimpleTabStripTabHover a:active {
+	height: 22px; color: rgb(0, 0, 0); padding-top: 8px; padding-right: 16px; padding-left: 16px; text-decoration: none; display: block;
+}
+.CommonSimpleTabStripTabHover a:hover {
+	height: 22px; color: rgb(0, 0, 0); padding-top: 8px; padding-right: 16px; padding-left: 16px; text-decoration: none; display: block;
+}
+.CommonSimpleTabStripSelectedTab a:link {
+	height: 22px; color: rgb(0, 0, 0); padding-top: 8px; padding-right: 16px; padding-left: 16px; text-decoration: none; display: block;
+}
+.CommonSimpleTabStripSelectedTab a:visited {
+	height: 22px; color: rgb(0, 0, 0); padding-top: 8px; padding-right: 16px; padding-left: 16px; text-decoration: none; display: block;
+}
+.CommonSimpleTabStripSelectedTab a:active {
+	height: 22px; color: rgb(0, 0, 0); padding-top: 8px; padding-right: 16px; padding-left: 16px; text-decoration: none; display: block;
+}
+.CommonSimpleTabStripSelectedTab a:hover {
+	height: 22px; color: rgb(0, 0, 0); padding-top: 8px; padding-right: 16px; padding-left: 16px; text-decoration: none; display: block;
+}
+.CommonTopLevelTab a:link {
+	color: rgb(0, 0, 0); text-decoration: none; display: block;
+}
+.CommonTopLevelTab a:visited {
+	color: rgb(0, 0, 0); text-decoration: none; display: block;
+}
+.CommonTopLevelTab a:active {
+	color: rgb(0, 0, 0); text-decoration: none; display: block;
+}
+.CommonTopLevelTab a:hover {
+	color: rgb(0, 0, 0); text-decoration: none; display: block;
+}
+.CommonTopLevelTabHover a:link {
+	color: rgb(0, 0, 0); text-decoration: none; display: block;
+}
+.CommonTopLevelTabHover a:visited {
+	color: rgb(0, 0, 0); text-decoration: none; display: block;
+}
+.CommonTopLevelTabHover a:active {
+	color: rgb(0, 0, 0); text-decoration: none; display: block;
+}
+.CommonTopLevelTabHover a:hover {
+	color: rgb(0, 0, 0); text-decoration: none; display: block;
+}
+.CommonSelectedTopLevelTab a:link {
+	color: rgb(0, 0, 0); text-decoration: none; display: block;
+}
+.CommonSelectedTopLevelTab a:visited {
+	color: rgb(0, 0, 0); text-decoration: none; display: block;
+}
+.CommonSelectedTopLevelTab a:active {
+	color: rgb(0, 0, 0); text-decoration: none; display: block;
+}
+.CommonSelectedTopLevelTab a:hover {
+	color: rgb(0, 0, 0); text-decoration: none; display: block;
+}
+.CommonVideoPlayButton:link {
+	text-decoration: none;
+}
+.CommonVideoPlayButton:hover {
+	text-decoration: none;
+}
+.CommonVideoPlayButton:visited {
+	text-decoration: none;
+}
+.CommonVideoPlayButton:active {
+	text-decoration: none;
+}
+.CommonVideoPauseButton:link {
+	text-decoration: none;
+}
+.CommonVideoPauseButton:hover {
+	text-decoration: none;
+}
+.CommonVideoPauseButton:visited {
+	text-decoration: none;
+}
+.CommonVideoPauseButton:active {
+	text-decoration: none;
+}
+.CommonVideoStopButton:link {
+	text-decoration: none;
+}
+.CommonVideoStopButton:hover {
+	text-decoration: none;
+}
+.CommonVideoStopButton:visited {
+	text-decoration: none;
+}
+.CommonVideoStopButton:active {
+	text-decoration: none;
+}
+.CommonPollMoveUpButton:hover {
+	color: rgb(51, 51, 51); text-decoration: none; background-color: rgb(221, 221, 221);
+}
+.CommonPollMoveDownButton:hover {
+	color: rgb(51, 51, 51); text-decoration: none; background-color: rgb(221, 221, 221);
+}
+.CommonPollDeleteButton:hover {
+	color: rgb(51, 51, 51); text-decoration: none; background-color: rgb(221, 221, 221);
+}
+.h1title {
+	color: maroon; font-size: 150%; background-color: white;
+}
+div.samplecode {
+	border: 1px solid green;
+}

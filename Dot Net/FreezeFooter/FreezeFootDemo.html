@@ -1,0 +1,137 @@
+<html>
+<title>Freeze Foot</title>
+<body>
+<!-- CSS style to support freeze footer -->
+<style>
+/* To provide freeze headers */
+thead th, thead th.locked	{
+	position:relative;
+	cursor: default; 
+	background-color: Silver;
+	border-right: 1px solid silver;
+}
+	
+/* To provide freeze headers */	
+thead th {
+	top: expression(parentNode.parentNode.parentNode.parentNode.scrollTop-2); /* IE5+ only */
+	z-index: 20;
+}
+
+/* To provide fixed columns in freeze headers will be display first */
+thead th.locked {z-index: 30;}
+
+/* To provide fixed columns */
+td.locked,  th.locked{
+	left: expression(parentNode.parentNode.parentNode.parentNode.scrollLeft); /* IE5+ only */
+	position: relative;
+	z-index: 10;
+	background-color: #ffeaff;
+}
+
+/* To provide fixed footer */
+tfoot tr {
+	top: expression(parentNode.parentNode.parentNode.TopOfFooter); /* IE5+ only */
+	position: relative;
+	z-index: 20;
+}
+</style>
+
+<div id="tbl-container" style="behavior:url('freezeFoot.htc'); width: 300; height: 200; overflow: auto; scrollbar-base-color:#ffeaff;">
+<table bgcolor='white'>
+<thead>
+<tr><th class='locked'>No</th>
+    <th class='locked'>Name</th>
+    <th>Math</th>
+    <th>Chinese</th>
+    <th>English</th>
+    <th>Baseball</th>
+    <th>Music</th>
+</tr>
+</thead>
+<tfoot>
+<tr bgcolor='#dddddc'><td class='locked'>&nbsp;</td>
+    <td class='locked'>Average</td>
+    <td>86</td>
+    <td>78</td>
+    <td>70</td>
+    <td>83</td>
+    <td>75</td>
+</tr>
+</tfoot>
+<tbody>
+<tr><td class='locked'>1</td>
+    <td class='locked'>Allen</td>
+    <td>90</td>
+    <td>80</td>
+    <td>70</td>
+    <td>90</td>
+    <td>80</td>
+</tr>
+<tr><td class='locked'>2</td>
+    <td class='locked'>Bob</td>
+    <td>91</td>
+    <td>81</td>
+    <td>71</td>
+    <td>91</td>
+    <td>81</td>
+</tr>
+<tr><td class='locked'>3</td>
+    <td class='locked'>Carl</td>
+    <td>92</td>
+    <td>82</td>
+    <td>72</td>
+    <td>92</td>
+    <td>82</td>
+</tr>
+<tr><td class='locked'>4</td>
+    <td class='locked'>David</td>
+    <td>93</td>
+    <td>83</td>
+    <td>73</td>
+    <td>93</td>
+    <td>83</td>
+</tr>
+<tr><td class='locked'>5</td>
+    <td class='locked'>Ejo</td>
+    <td>94</td>
+    <td>84</td>
+    <td>74</td>
+    <td>94</td>
+    <td>84</td>
+</tr>
+<tr><td class='locked'>6</td>
+    <td class='locked'>Frank</td>
+    <td>95</td>
+    <td>85</td>
+    <td>75</td>
+    <td>95</td>
+    <td>85</td>
+</tr>
+<tr><td class='locked'>7</td>
+    <td class='locked'>Guan</td>
+    <td>96</td>
+    <td>86</td>
+    <td>76</td>
+    <td>96</td>
+    <td>86</td>
+</tr>
+<tr><td class='locked'>8</td>
+    <td class='locked'>Hire</td>
+    <td>97</td>
+    <td>87</td>
+    <td>77</td>
+    <td>97</td>
+    <td>87</td>
+</tr>
+<tr><td class='locked'>9</td>
+    <td class='locked'>Iris</td>
+    <td>98</td>
+    <td>88</td>
+    <td>78</td>
+    <td>98</td>
+    <td>88</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

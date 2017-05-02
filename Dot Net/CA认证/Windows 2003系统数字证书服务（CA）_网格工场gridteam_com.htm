@@ -1,0 +1,512 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0043)http://www.gridteam.com/grid/windowsca.html -->
+<HTML><HEAD><TITLE>Windows 2003系统数字证书服务（CA）_网格工场|gridteam.com</TITLE>
+<STYLE type=text/css>@import url( ../tenpoint.css );
+</STYLE>
+
+<STYLE type=text/css>A {
+	COLOR: #999900; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: black; POSITION: relative; TOP: 1px
+}
+BODY {
+	FONT-SIZE: 10pt; FONT-FAMILY: "Verdana", "Arial", "宋体"
+}
+TD {
+	FONT-SIZE: 10pt
+}
+INPUT.buttonface {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; FONT-WEIGHT: normal; FONT-SIZE: 9pt; BACKGROUND: #ff9900; BORDER-LEFT: black 1px solid; COLOR: #ffffff; LINE-HEIGHT: normal; BORDER-BOTTOM: black 1px solid; FONT-STYLE: normal; HEIGHT: 18px; FONT-VARIANT: normal
+}
+INPUT.smallInput {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; FONT-WEIGHT: normal; FONT-SIZE: 9pt; BORDER-LEFT: black 1px solid; LINE-HEIGHT: normal; BORDER-BOTTOM: black 1px solid; FONT-STYLE: normal; HEIGHT: 18px; FONT-VARIANT: normal
+}
+.b1 {
+	FONT-SIZE: 12pt; FONT-FAMILY: "Verdana", "Arial", "宋体"
+}
+.b2 {
+	FONT-SIZE: 7pt; FONT-FAMILY: "Verdana", "Arial", "宋体"
+}
+</STYLE>
+
+<SCRIPT language=javascript>function openw(url){window.open(url,'','width=450,height=500,resizable=1,scrollbars=1,left=200');}</SCRIPT>
+
+<META http-equiv=Content-Type content="text/html; charset=gb2312">
+<STYLE type=text/css></STYLE>
+
+<STYLE type=text/css></STYLE>
+
+<STYLE type=text/css></STYLE>
+
+<STYLE type=text/css></STYLE>
+
+<STYLE type=text/css>.style2 {
+	COLOR: #666666
+}
+</STYLE>
+<LINK href="Windows 2003系统数字证书服务（CA）_网格工场gridteam_com_files/nav.css" 
+type=text/css rel=stylesheet><LINK 
+href="Windows 2003系统数字证书服务（CA）_网格工场gridteam_com_files/text.css" type=text/css 
+rel=stylesheet>
+<META content="MSHTML 6.00.3790.2541" name=GENERATOR></HEAD>
+<BODY text=#000000 vLink=#990066 bgColor=#cccccc leftMargin=0 topMargin=0 
+marginheight="0" marginwidth="0">
+<TABLE class=index height=40 cellSpacing=0 cellPadding=0 width=766 align=center 
+bgColor=#acd683 border=0>
+  <TBODY>
+  <TR class=t borderColor=#cc9900>
+    <TD vAlign=bottom width=160 bgColor=#ffffff height=40>
+      <DIV align=center><FONT color=#ffffff><A 
+      href="http://www.gridteam.com/index.html" target=_blank><IMG height=40 
+      alt=网格工场首页 src="Windows 2003系统数字证书服务（CA）_网格工场gridteam_com_files/001.gif" 
+      width=160 border=0></A></FONT> </DIV></TD>
+    <TD vAlign=bottom width=606 bgColor=#ffffff>
+      <TABLE class=text cellSpacing=0 cellPadding=0 width="100%" align=center 
+      border=0>
+        <TBODY>
+        <TR>
+          <TD width="63%" height=27>
+            <TABLE class=nav height=19 cellSpacing=0 cellPadding=0 width="98%" 
+            align=left border=0>
+              <TBODY>
+              <TR class=nav>
+                <TD width="70%" height=19>
+                  <DIV align=right><FONT color=#ffffff>
+                  <SCRIPT language=JavaScript>
+<!--
+function CalConv()
+ {
+	FIRSTYEAR = 1998;
+	LASTYEAR = 2031;
+
+	today = new Date();
+	SolarYear = today.getFullYear();
+	SolarMonth = today.getMonth() + 1;
+	SolarDate = today.getDate();
+	Weekday = today.getDay();
+	LunarCal = [
+  new tagLunarCal( 27,  5, 3, 43, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1 ),
+  new tagLunarCal( 46,  0, 4, 48, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1 ), /* 88 */
+  new tagLunarCal( 35,  0, 5, 53, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1 ), /* 89 */
+  new tagLunarCal( 23,  4, 0, 59, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 42,  0, 1,  4, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 31,  0, 2,  9, 1, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0 ),
+  new tagLunarCal( 21,  2, 3, 14, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1 ), /* 93 */
+  new tagLunarCal( 39,  0, 5, 20, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 28,  7, 6, 25, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1 ),
+  new tagLunarCal( 48,  0, 0, 30, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1 ),
+  new tagLunarCal( 37,  0, 1, 35, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1 ), /* 97 */
+  new tagLunarCal( 25,  5, 3, 41, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1 ),
+  new tagLunarCal( 44,  0, 4, 46, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1 ),
+  new tagLunarCal( 33,  0, 5, 51, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 22,  4, 6, 56, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0 ), /* 101 */
+  new tagLunarCal( 40,  0, 1,  2, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0 ),
+  new tagLunarCal( 30,  9, 2,  7, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 49,  0, 3, 12, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 38,  0, 4, 17, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0 ), /* 105 */
+  new tagLunarCal( 27,  6, 6, 23, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1 ),
+  new tagLunarCal( 46,  0, 0, 28, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0 ),
+  new tagLunarCal( 35,  0, 1, 33, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0 ),
+  new tagLunarCal( 24,  4, 2, 38, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ), /* 109 */
+  new tagLunarCal( 42,  0, 4, 44, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 31,  0, 5, 49, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0 ),
+  new tagLunarCal( 21,  2, 6, 54, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 40,  0, 0, 59, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1 ), /* 113 */
+  new tagLunarCal( 28,  6, 2,  5, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0 ),
+  new tagLunarCal( 47,  0, 3, 10, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1 ),
+  new tagLunarCal( 36,  0, 4, 15, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1 ),
+  new tagLunarCal( 25,  5, 5, 20, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0 ), /* 117 */
+  new tagLunarCal( 43,  0, 0, 26, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1 ),
+  new tagLunarCal( 32,  0, 1, 31, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0 ),
+  new tagLunarCal( 22,  3, 2, 36, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0 ) ];
+ /* 每月之日數 */
+ SolarCal = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
+
+ /* 每月之累積日數, 平年與閏年 */ 
+SolarDays = [  0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365, 396,  0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366, 397 ];
+	AnimalIdx = ["马", "羊", "猴", "鸡", "狗", "猪", "鼠", "牛", "虎", "兔", "龙", "蛇" ];
+	LocationIdx = [ "南", "东", "北", "西" ];
+	if ( SolarYear <= FIRSTYEAR || SolarYear > LASTYEAR ) return 1;
+	sm = SolarMonth - 1;
+		if ( sm < 0 || sm > 11 ) return 2;
+		leap = GetLeap( SolarYear );
+	if ( sm == 1 )
+		d = leap + 28;
+	else
+		d = SolarCal[sm];
+	if ( SolarDate < 1 || SolarDate > d ) return 3;
+	y = SolarYear - FIRSTYEAR;
+	acc = SolarDays[ leap*14 + sm ] + SolarDate;
+	kc = acc + LunarCal[y].BaseKanChih;
+	Kan = kc % 10;
+	Chih = kc % 12;
+	Location = LocationIdx[kc % 4];
+	Age = kc % 60;
+	if ( Age < 22 )
+		Age = 22 - Age;
+	else
+		Age = 82 - Age;
+	Animal = AnimalIdx[ Chih ];
+	if ( acc <= LunarCal[y].BaseDays ) {
+		y--;
+		LunarYear = SolarYear - 1;
+		leap = GetLeap( LunarYear );
+		sm += 12;
+		acc = SolarDays[leap*14 + sm] + SolarDate;
+	 }
+	else
+		LunarYear = SolarYear;
+			l1 = LunarCal[y].BaseDays;
+	for ( i=0; i<13; i++ ) {
+		l2 = l1 + LunarCal[y].MonthDays[i] + 29;
+		if ( acc <= l2 ) break;
+		l1 = l2;
+	 }
+	LunarMonth = i + 1;
+	LunarDate = acc - l1;
+	im = LunarCal[y].Intercalation;
+	if ( im != 0 && LunarMonth > im ) {
+		LunarMonth--;
+		if ( LunarMonth == im ) LunarMonth = -im;
+	 }
+	if ( LunarMonth > 12 ) LunarMonth -= 12;
+ today=new Date();
+        function initArray(){
+                         this.length=initArray.arguments.length
+                         for(var i=0;i<this.length;i++)
+                         this[i+1]=initArray.arguments[i]  }
+       var d=new initArray("星期日","星期一","星期二","星期三","星期四","星期五","星期六");
+             document.write("<span class=\"text\"> ", today.getYear(),"年",today.getMonth()+1,"月",today.getDate(),"日 ",d[today.getDay()+1],"");
+	  document.write( "<span class=\"text\"> 农历 " + LunarMonth + "月" + LunarDate + "日");
+
+                                  return 0; 
+}
+ /* 求此是否為閏年, 返回 0 為平年, 1 為閏年 */
+function GetLeap( year )
+ {
+   if ( year % 400 == 0 )
+     return 1;
+   else if ( year % 100 == 0 )
+     return 0;
+   else if ( year % 4 == 0 )
+     return 1;
+   else
+     return 0;
+ }
+function tagLunarCal( d, i, w, k, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13) {
+ this.BaseDays = d;         /* 到 1 月 1 日到農曆正月初一的累積日數 */
+ this.Intercalation = i;    /* 閏月月份. 0==此年沒有閏月 */
+ this.BaseWeekday = w;      /* 此年 1 月 1 日為星期幾再減 1 */
+ this.BaseKanChih = k;      /* 此年 1 月 1 日之干支序號減 1 */
+ this.MonthDays = [ m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13 ]; /* 此農曆年每月之大小, 0==小月(29日), 1==大月(30日) */
+}
+//-->
+
+CalConv();
+
+</SCRIPT>
+                  </FONT></DIV></TD></TR></TBODY></TABLE></TD>
+          <TD width="12%">
+            <DIV align=center><FONT color=#0033cc><A 
+            href="http://www.gridteam.com/map.html" 
+            target=_blank>·网格地图</A></FONT></DIV></TD>
+          <TD width="13%">
+            <DIV align=center><FONT color=#0033cc><A 
+            href="http://www.gridteam.com/grid/dictionary.html" 
+            target=_blank>·网格词典</A></FONT></DIV></TD>
+          <TD width="12%">
+            <DIV align=center><FONT color=#0033cc><A 
+            href="http://www.gridteam.com/en/index.html" 
+            target=_blank>·English</A></FONT></DIV></SPAN></TD></TR></TBODY></TABLE>
+      <TABLE height=22 cellSpacing=0 cellPadding=0 width="100%" align=center 
+      bgColor=#ff9900 border=0>
+        <TBODY>
+        <TR>
+          <TD>
+            <TABLE class=text height=0 cellSpacing=0 cellPadding=0 width=606 
+            align=center border=0>
+              <TBODY>
+              <TR borderColor=#ffffff>
+                <TD class=h width=66>
+                  <DIV align=center><A class=nav 
+                  href="http://www.gridteam.com/index.html" target=_blank><FONT 
+                  color=#000000>网格首页</FONT></A></DIV></TD>
+                <TD class=h width=66>
+                  <DIV align=center><A href="http://www.gridteam.com/grid.html" 
+                  target=_blank><FONT color=#000000>网格计算</FONT></A></DIV></TD>
+                <TD class=h width=66 height=17>
+                  <DIV align=center><A href="http://www.gridteam.com/team.html" 
+                  target=_blank><FONT color=#000000>网格工场</FONT></A></DIV></TD>
+                <TD class=h width=67>
+                  <DIV align=center><A href="http://www.gridteam.com/web.html" 
+                  target=_blank><FONT color=#000000>网格建设</FONT></A></DIV></TD>
+                <TD class=h width=67>
+                  <DIV align=center><A href="http://www.gridteam.com/seo.html" 
+                  target=_blank><FONT color=#000000>网格推广</FONT></A></DIV></TD>
+                <TD class=h width=67>
+                  <DIV align=center><A href="http://www.gridteam.com/ad.html" 
+                  target=_blank><FONT color=#000000>网格广告</FONT></A></DIV></TD>
+                <TD class=h width=67>
+                  <DIV align=center><A href="http://www.gridteam.com/ec.html" 
+                  target=_blank><FONT color=#000000>网格商务</FONT></A></DIV></TD>
+                <TD class=h width=67>
+                  <DIV align=center><A href="http://www.gridteam.com/gov.html" 
+                  target=_blank><FONT color=#000000>网格政务</FONT></A></DIV></TD>
+                <TD width=73>
+                  <DIV align=center><A href="http://www.gridteam.com/union.html" 
+                  target=_blank><FONT 
+              color=#000000>网格联盟</FONT></A></DIV></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<TABLE height=38 cellSpacing=0 cellPadding=0 width=766 align=center border=0>
+  <TBODY>
+  <TR>
+    <TD bgColor=#ebebeb height=18>
+      <OBJECT 
+      codeBase=http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0 
+      height=18 width=780 classid=clsid:D27CDB6E-AE6D-11cf-96B8-444553540000><PARAM NAME="movie" VALUE="../pic/clock.swf"><PARAM NAME="quality" VALUE="high">
+                        <embed src="../pic/clock.swf" quality="high" 
+      pluginspage="http://www.macromedia.com/go/getflashplayer" 
+      type="application/x-shockwave-flash" width="780" height="18"></embed>    
+      </OBJECT></TD></TR>
+  <TR>
+    <TD bgColor=#ebebeb height=8>
+      <SCRIPT type=text/javascript><!--
+google_ad_client = "pub-4554370534520901";
+google_ad_width = 728;
+google_ad_height = 15;
+google_ad_format = "728x15_0ads_al";
+google_ad_channel ="7706507260";
+google_color_border = "CCCCCC";
+google_color_bg = "FFFFFF";
+google_color_link = "000000";
+google_color_url = "666666";
+google_color_text = "333333";
+//--></SCRIPT>
+
+      <SCRIPT src="Windows 2003系统数字证书服务（CA）_网格工场gridteam_com_files/show_ads.js" 
+      type=text/javascript>
+</SCRIPT>
+    </TD></TR></TBODY></TABLE>
+<TABLE class=index height=0% cellSpacing=0 cellPadding=0 width=766 align=center 
+bgColor=#efefef border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top width=563 height="100%">
+      <TABLE 
+      style="BORDER-RIGHT: gray 1px solid; BORDER-TOP: gray 1px solid; BORDER-LEFT: gray 1px solid; BORDER-BOTTOM: gray 1px solid" 
+      height=105 cellSpacing=0 cellPadding=0 width="97%" align=center 
+        border=0><TBODY>
+        <TR>
+          <TD height=105>
+            <TABLE class=bg height=39 cellSpacing=0 cellPadding=0 width="95%" 
+            align=center border=0>
+              <TBODY>
+              <TR>
+                <TD height=39>
+                  <DIV align=center><FONT color=#336600>Windows 
+                  2003系统数字证书服务（CA）</FONT></DIV></TD></TR></TBODY></TABLE>
+            <TABLE class=sm height=17 cellSpacing=0 cellPadding=0 width="100%" 
+            align=center border=0>
+              <TBODY>
+              <TR>
+                <TD bgColor=#d5d5d5 height=17>
+                  <DIV align=center><A href="http://www.gridteam.com/index.html" 
+                  target=_blank><FONT 
+                  color=#666666>http://www.GridTeam.com&nbsp;&nbsp; 
+                  </FONT></A><FONT color=#666666><FONT 
+                  color=#666666>2005-2-26&nbsp;&nbsp; 
+来源：网格工场</FONT></FONT></DIV>
+                  <DIV align=right></DIV></TD></TR></TBODY></TABLE>
+            <TABLE class=text height=71 cellSpacing=0 cellPadding=0 width="100%" 
+            align=center border=0>
+              <TBODY>
+              <TR>
+                <TD>
+                  <TABLE cellSpacing=0 cellPadding=0>
+                    <TBODY>
+                    <TR></TR></TBODY></TABLE>
+                  <P>Windows 2003系统数字证书服务（CA）</P>
+                  <P><BR>下面就以Windows .NET为例，step by 
+                  step介绍如何为IIS开启SSL通道。<BR>　　<BR>　　1.单击"开始"，指向"程序"，指向"管理工具"，然后单击"Internet服务管理器"。<BR>　　<BR>　　2.扩展域节点。选择"缺省Web页面"，然后右击。在子菜单中单击"属性"。<BR>　　<BR>　　3.显示"缺省Web站点属性"对话框。单击"目录安全"选项卡。<BR>　　<BR>　　注意在"安全通信"下面的"编辑"按钮现在不可用。这将会持续到您请求一个Web服务器证书。<BR>　　<BR>　　4.单击"服务器证书"按钮。<BR>　　<BR>　　5.启动Web服务器证书向导。单击"下一步"。<BR>　　<BR>　　6.选择"创建一个新证书"选项，单击"下一步"。如果IIS已经有一个证书了，您将看见一个不同的对话框。<BR>　　<BR>　　7.选择"立即发送请求到在线证书机构"按纽。<BR>　　<BR>　　（假设在域中已经有一个配置成发布证书的企业CA，关于如何设置CA服务，请详细参考一下文档：<BR>　　<BR>　　在WIN2000SERVER/.NET中部署公共密钥CA中心<BR>　　<BR>　　在讨论PKI/CA之前，我想除了了解相关概念之外，有必要亲手搭建一个CA系统，实践一下，那是最好的。<BR>　　<BR>　　微软的触角真是无处不在，因为在其WIN2000SERVER中，已经提供了很好的PKI架构，其中就是包含了内置Certificate 
+                  <BR>Authority组件，而且也提供了非常完备的CryptoAPI编程接口。当然，在微软新一代服务器.NET中继续提供对PKI的完全支持。<BR>　　<BR>　　下面，我就介绍一下如何在Windows2000server/.NET中开启CA服务。<BR>　　<BR>　　1、首先请确认您的服务器已经安装配置了Active 
+                  <BR>Directory服务，这样您就可以给域中的用户颁发数字证书。当然AD服务不是安装CA服务的必要条件，如果仅仅左测试使用，您可以不安装AD服务；<BR>　　<BR>　　2、确保在您的Windows2000server/.NET中开启IIS服务，并且支持ASP，这样您的CA服务可以通过WEB在INTERNET/INTRANET发布；<BR>　　<BR>　　3、开始--&gt;设置--&gt;控制面板--&gt;添加/删除程序--&gt;添加/删除Windows组件--&gt;选中证书服务；<BR>　　<BR>　　4、然后选择合适的CA类型，这里我们选择独立的根CA；<BR>　　<BR>　　5、如果你要改变微软的默认密钥设置，你可以选中高级选项；一般，我们直接进入下一步；<BR>　　<BR>　　6、在这里输入您这个CA的详细信息；<BR>　　<BR>　　7、然后指定存储配置数据、数据库和日志的位置；<BR>　　<BR>　　8、完成安装向导，系统开始安装CA服务；<BR>　　<BR>　　然后，您可以通过如下方式访问认证服务器：<BR>　　<BR>　　http://安装认证服务器IP地址/certsrv<BR>　　<BR>　　在这里，您可以申请一张证书，查看证书请求状态还有下载根证书。<BR>　　<BR>　　当您完成证书申请之后，您可以通过打开IE--&gt;工具--&gt;INTERNET选项--&gt;内容--&gt;证书--&gt;个人查看您个人证书。<BR>　　<BR>　　当然你也可以通过把证书服务加入到MMC来进行证书服务管理，方法如下：<BR>　　<BR>　　开始--&gt;运行--&gt;mmc--&gt;文件--&gt;添加/删除插件--&gt;添加--&gt;证书）。单击"下一步"。<BR>　　<BR>　　8.在名字和安全设置对话框中，接受缺省选项。单击"下一步"。<BR>　　<BR>　　9.在下一个页面上， 
+                  输入您的信息，单击"下一步"。<BR>　　<BR>　　10.在"通用名"文本框中输入您的服务器名字。它可以是DNS名、NetBIOS名称或LOCALHOST。输入您的选择，单击"下一步"。<BR>　　<BR>　　11.在下一个页面上，输入您的信息，单击"下一步"。<BR>　　<BR>　　12.如果在域里面已经有了企业CA，并且您可以从那里申请到Web服务器证书，那么您将可以看到它列在那里。<BR>　　<BR>　　（如果没有CA，如果CA没有配置成可以发布Web服务器证书，或如果您没有权限申请一个Web服务器证书，列表将会是空的。您必须有一个CA来完成这个部分。）选择您要使用的CA，单击"下一步"。<BR>　　<BR>　　13.就会出现证书请求提交页面。单击"下一步"。<BR>　　<BR>　　14.单击"完成"。现在服务器就有了一个WEB服务器证书。<BR>　　<BR>　　15.您将注意到在"安全通信"下面的"编辑"可以使用了，单击"编辑"。<BR>　　<BR>　　16.进入安全通信对话框，在需要安全通道（SSL）前打上勾。<BR>　　<BR>　　17.如果你希望以后客户端浏览器和WEB通信的时候需要128位对称加密，那么你就在需要128位加密前打上勾。<BR>　　<BR>　　18.在客户端证书中有三种选择：忽略客户证书、接收客户证书和申请客户证书。选择第一第二种仅仅是开启SSL单向认证，选择第三种着开启SSL双向认证。<BR>　　<BR>　　19.选择"接受客户端证书"，"接受客户端证书"设置需要在客户端证书和浏览器之间进行协商。您也必须选中"申请安全通道（SSL）"选项框。如果失败了，它不允许退回到另一个验证方法。需要安全通道意味着Web站点将不能通过HTTP协议进行访问，只可以通过HTTPS协议进行访问。单击"确定"。单击"应用"并且单击"确定"。<BR>　　<BR>　　20.单击确定，好了，您的SSL通道开启了。<BR>　　<BR>　　以后你就可以通过https访问WEB服务了。</P></TD></TR></TBODY></TABLE>
+            <TABLE class=sm height=17 cellSpacing=0 cellPadding=0 width="98%" 
+            align=center border=0>
+              <TBODY>
+              <TR>
+                <TD align=right height=17><FONT color=#666666><SPAN 
+                  class=sm>作者：gridteam&nbsp;</SPAN></FONT> <BR>&nbsp; 
+              </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE height=42 cellSpacing=0 cellPadding=0 width="98%" align=center 
+      border=0>
+        <TBODY>
+        <TR>
+          <TD height=42>
+            <TABLE class=tenpoint cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD align=right height=25><IMG height=12 
+                  src="Windows 2003系统数字证书服务（CA）_网格工场gridteam_com_files/delete.gif" 
+                  width=12 align=absMiddle border=0><A 
+                  href="javascript:window.close();" 
+                  target=_self>&nbsp;关闭窗口</A>&nbsp;&nbsp;<A 
+                  href="http://www.gridteam.com/index.html" target=_blank><IMG 
+                  height=12 
+                  src="Windows 2003系统数字证书服务（CA）_网格工场gridteam_com_files/bbstitle.gif" 
+                  width=18 align=absMiddle border=0>网格工场</A>&nbsp;&nbsp;<IMG 
+                  height=14 
+                  src="Windows 2003系统数字证书服务（CA）_网格工场gridteam_com_files/print.gif" 
+                  width=18 align=absMiddle border=0><A 
+                  href="javascript:window.print()">&nbsp;打印本页</A></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE class=text cellSpacing=0 cellPadding=0 width="100%" align=center 
+      border=0>
+        <TBODY>
+        <TR>
+          <TD bgColor=#c8d5e3 height=23><FONT color=#cc9900>&nbsp;</FONT><FONT 
+            color=#cc9900><FONT 
+      color=#ff0000>相关文章</FONT></FONT></TD></TR></TBODY></TABLE>
+      <TABLE class=text 
+      style="BORDER-RIGHT: gray 1px solid; BORDER-TOP: gray 1px solid; BORDER-LEFT: gray 1px solid; BORDER-BOTTOM: gray 1px solid" 
+      cellSpacing=0 cellPadding=0 width="100%" align=center bgColor=#f3f3f3 
+      border=0>
+        <TBODY>
+        <TR>
+          <TD height=253></TD></TR></TBODY></TABLE>
+      <TABLE class=text cellSpacing=0 cellPadding=0 width="100%" align=center 
+      border=0>
+        <TBODY>
+        <TR>
+          <TD bgColor=#c8d5e3 height=23><SPAN 
+          class=style2>网格工场版权及免责声明:</SPAN></TD></TR></TBODY></TABLE>
+      <TABLE class=text 
+      style="BORDER-RIGHT: gray 1px solid; BORDER-TOP: gray 1px solid; BORDER-LEFT: gray 1px solid; BORDER-BOTTOM: gray 1px solid" 
+      cellSpacing=0 cellPadding=0 width="100%" align=center bgColor=#f3f3f3 
+      border=0>
+        <TBODY>
+        <TR>
+          <TD width="3%" height=20></TD>
+          <TD vAlign=top width="97%"><FONT color=#000000>·</FONT><FONT 
+            color=#666666>凡网格工场网注明"稿件来源：网格工场或gridteam.com"的所有文字、图片和音视频稿件，版权均属网格工场（gridteam.com）所有，任何媒体、网站或个人未经本网许可授权均不得转载、链接、转贴或以其他方式复制发表。已经本网许可授权的媒体、网站，在下载使用时必须注明"稿件来源：网格工场—gridteam.com"。</FONT><FONT 
+            color=#999999><BR><FONT color=#000000>·</FONT><FONT 
+            color=#666666>网格工场网内未注明"稿件来源：网格工场或gridteam.com"的文/图等稿件均为转载稿，网格工场转载出于传递更多信息之目的，并不意味着赞同其观点或证实其内容的真实性。如其他媒体、网站或个人从本网下载使用，必须保留网格工场注明的"稿件来源"，并自负版权等法律责任。如对网格工场稿件内容有疑议，请及时与网格工场联系。</FONT><BR><FONT 
+            color=#000000>·</FONT><FONT 
+            color=#666666>如网格工场网内容转载稿涉及版权等问题，请作者直接与</FONT><A 
+            href="mailto:teafans@gmail.com"><FONT 
+            color=#0000cc>网格工场</FONT></A><FONT color=#666666>联系。</FONT><BR><FONT 
+            color=#000000>·</FONT><FONT 
+            color=#666666>如您对网格工场网有任何意见或者建议，请</FONT><A 
+            href="http://www.gridteam.com/ly/index.asp" target=_blank><FONT 
+            color=#0000cc>在此留言</FONT></A>。</FONT></TD></TR></TBODY></TABLE>
+      <TABLE class=text cellSpacing=0 cellPadding=0 width="100%" align=center 
+      border=0>
+        <TBODY>
+        <TR>
+          <TD height=16><FONT 
+    color=#cc9900>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD>
+    <TH vAlign=top width=203>
+      <TABLE class=index cellSpacing=0 cellPadding=0 width="98%" align=center 
+      border=0>
+        <TBODY></TBODY></TABLE>
+      <DIV align=center>
+      <CENTER>
+      <TABLE height=133 cellSpacing=4 cellPadding=0 width="98%" border=0>
+        <TBODY>
+        <TR>
+          <TD align=middle height=21><!-- SiteSearch Google -->
+            <FORM action=http://www.google.com/custom method=get 
+            target=google_window>
+            <TABLE bgColor=#cccccc border=0>
+              <TBODY>
+              <TR>
+                <TD vAlign=top noWrap align=left height=32><A 
+                  href="http://www.google.com/"><IMG alt=Google 
+                  src="Windows 2003系统数字证书服务（CA）_网格工场gridteam_com_files/Logo_25gry.gif" 
+                  align=middle border=0></IMG></A> <BR><INPUT type=hidden 
+                  value=gridteam.com name=domains></INPUT> <INPUT maxLength=255 
+                  size=15 name=q></INPUT> 
+                  <INPUT type=submit value=搜索 name=sa></INPUT> </TD></TR>
+              <TR>
+                <TD noWrap>
+                  <TABLE>
+                    <TBODY>
+                    <TR>
+                      <TD><INPUT type=radio CHECKED value="" 
+                        name=sitesearch></INPUT> <FONT color=#000000 
+                        size=-1>Web</FONT> </TD>
+                      <TD><INPUT type=radio value=gridteam.com 
+                        name=sitesearch></INPUT> <FONT color=#000000 
+                        size=-1>gridteam.com</FONT> </TD></TR></TBODY></TABLE><INPUT 
+                  type=hidden value=pub-4554370534520901 name=client></INPUT> 
+                  <INPUT type=hidden value=1 name=forid></INPUT> <INPUT 
+                  type=hidden value=9526045710 name=channel></INPUT> <INPUT 
+                  type=hidden value=GB2312 name=ie></INPUT> <INPUT type=hidden 
+                  value=GB2312 name=oe></INPUT> <INPUT type=hidden 
+                  value=GALT:#9A2C06;GL:1;DIV:#33FFFF;VLC:D03500;AH:center;BGC:99CCFF;LBGC:FFFFFF;ALC:0033FF;LC:0033FF;T:336699;GFNT:223472;GIMP:223472;LH:65;LW:120;L:http://gridteam.com/pic/001.gif;S:http://gridteam.com;FORID:1; 
+                  name=cof></INPUT> <INPUT type=hidden value=zh-CN 
+                  name=hl></INPUT> </TD></TR></TBODY></TABLE></FORM><!-- SiteSearch Google --></TD></TR>
+        <TR>
+          <TD align=middle height=19>
+            <SCRIPT type=text/javascript><!--
+google_ad_client = "pub-4554370534520901";
+google_ad_width = 160;
+google_ad_height = 600;
+google_ad_format = "160x600_as";
+google_ad_type = "text_image";
+google_ad_channel ="7706507260";
+google_color_border = "CCCCCC";
+google_color_bg = "FFFFFF";
+google_color_link = "000000";
+google_color_url = "666666";
+google_color_text = "333333";
+//--></SCRIPT>
+
+            <SCRIPT 
+            src="Windows 2003系统数字证书服务（CA）_网格工场gridteam_com_files/show_ads.js" 
+            type=text/javascript>
+</SCRIPT>
+          </TD></TR></TBODY></TABLE>
+      <TABLE class=text cellSpacing=0 cellPadding=0 width="100%" align=center 
+      border=0>
+        <TBODY>
+        <TR>
+          <TD bgColor=#c8d5e3 height=23><FONT color=#cc9900></FONT><FONT 
+            color=#cc9900><FONT 
+      color=#ff0000>热门文章</FONT></FONT></TD></TR></TBODY></TABLE>
+      <TABLE class=text 
+      style="BORDER-RIGHT: gray 1px solid; BORDER-TOP: gray 1px solid; BORDER-LEFT: gray 1px solid; BORDER-BOTTOM: gray 1px solid" 
+      cellSpacing=0 cellPadding=0 width="100%" align=center bgColor=#f3f3f3 
+      border=0>
+        <TBODY>
+        <TR>
+          <TD height=21></TD></TR>
+        <TR>
+          <TD height=19></TD></TR>
+        <TR>
+          <TD height=15></TD></TR>
+        <TR>
+          <TD height=17></TD></TR>
+        <TR>
+          <TD height=15></TD></TR>
+        <TR>
+          <TD height=19></TD></TR>
+        <TR>
+          <TD height=25></TD></TR>
+        <TR>
+          <TD height=19></TD></TR>
+        <TR>
+          <TD height=17></TD></TR>
+        <TR>
+          <TD 
+  height=21></TD></TR></TBODY></TABLE></CENTER></DIV></FORM></TD></TR></TR></TBODY></TABLE>
+<TABLE class=nav height=25 cellSpacing=0 cellPadding=0 width=766 align=center 
+bgColor=#003399 border=0>
+  <TBODY>
+  <TR>
+    <TD class=nine width=766 height=25>
+      <DIV align=center>
+      <SCRIPT src=""></SCRIPT>
+      Copyright &copy;&nbsp;2005-2006, <A href="mailto:teafans@gmail.com"><FONT 
+      color=#ffff00>GridTeam.com</FONT></A>. All rights reserved. 
+    版权所有：网格工场</DIV></TD></TR></TBODY></TABLE></BODY></HTML>

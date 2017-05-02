@@ -1,0 +1,24 @@
+D:\Learn.NET\WindowsApplication13\obj\Debug\ResolveAssemblyReference.cache
+D:\Learn.NET\WindowsApplication13\obj\Debug\WindowsApplication1.Properties.Resources.resources
+D:\Learn.NET\WindowsApplication13\obj\Debug\WindowsApplication1.csproj.GenerateResource.Cache
+D:\Learn.NET\WindowsApplication13\obj\Debug\WindowsApplication1.Form1.resources
+D:\Learn.NET\WindowsApplication13\bin\Debug\WindowsApplication1.exe
+D:\Learn.NET\WindowsApplication13\bin\Debug\WindowsApplication1.pdb
+D:\Learn.NET\WindowsApplication13\obj\Debug\WindowsApplication1.exe
+D:\Learn.NET\WindowsApplication13\obj\Debug\WindowsApplication1.pdb
+D:\Learn.NET\CustomTextBox_Demo\obj\Debug\WindowsApplication1.exe
+D:\Learn.NET\CustomTextBox_Demo\obj\Debug\WindowsApplication1.pdb
+D:\Learn.NET\CustomTextBox_Demo\bin\Debug\WindowsApplication1.exe
+D:\Learn.NET\CustomTextBox_Demo\bin\Debug\WindowsApplication1.pdb
+D:\Learn.NET\CustomTextBox_Demo\obj\Debug\ResolveAssemblyReference.cache
+D:\Learn.NET\CustomTextBox_Demo\obj\Debug\WindowsApplication1.Form1.resources
+D:\Learn.NET\CustomTextBox_Demo\obj\Debug\WindowsApplication1.Properties.Resources.resources
+D:\Learn.NET\CustomTextBox_Demo\obj\Debug\WindowsApplication1.csproj.GenerateResource.Cache
+C:\Documents and Settings\Administrator.SZLANYOU-7NGZ4R\桌面\CustomTextBox_Demo\obj\Debug\WindowsApplication1.exe
+C:\Documents and Settings\Administrator.SZLANYOU-7NGZ4R\桌面\CustomTextBox_Demo\obj\Debug\WindowsApplication1.pdb
+C:\Documents and Settings\Administrator.SZLANYOU-7NGZ4R\桌面\CustomTextBox_Demo\bin\Debug\WindowsApplication1.exe
+C:\Documents and Settings\Administrator.SZLANYOU-7NGZ4R\桌面\CustomTextBox_Demo\bin\Debug\WindowsApplication1.pdb
+C:\Documents and Settings\Administrator.SZLANYOU-7NGZ4R\桌面\CustomTextBox_Demo\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator.SZLANYOU-7NGZ4R\桌面\CustomTextBox_Demo\obj\Debug\WindowsApplication1.Form1.resources
+C:\Documents and Settings\Administrator.SZLANYOU-7NGZ4R\桌面\CustomTextBox_Demo\obj\Debug\WindowsApplication1.Properties.Resources.resources
+C:\Documents and Settings\Administrator.SZLANYOU-7NGZ4R\桌面\CustomTextBox_Demo\obj\Debug\WindowsApplication1.csproj.GenerateResource.Cache

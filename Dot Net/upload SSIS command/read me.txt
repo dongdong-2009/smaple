@@ -1,0 +1,5 @@
+1.	Copy the SSIS packages to the same folder where these batch files are located
+2.	Run the All_Load.bat
+3.	Type the IP address of SQL server where you want to deploy these SSIS packages
+4.	Press any key
+5.	You can check the log file that is created automatically for each batch file

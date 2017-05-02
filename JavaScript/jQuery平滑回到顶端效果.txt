@@ -1,0 +1,13 @@
+﻿1.$(document).ready(function() {  
+2.  
+3.    $("a.topLink").click(function() {  
+4.        $("html, body").animate({  
+5.            scrollTop: $($(this).attr("href")).offset().top + "px"  
+6.        }, {  
+7.            duration: 500,  
+8.            easing: "swing"  
+9.        });  
+10.        return false;  
+11.    });  
+12.  
+13.});  

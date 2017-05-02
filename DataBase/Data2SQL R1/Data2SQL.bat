@@ -1,0 +1,1 @@
+Data2SQL.exe .\Data2SQL.d2s

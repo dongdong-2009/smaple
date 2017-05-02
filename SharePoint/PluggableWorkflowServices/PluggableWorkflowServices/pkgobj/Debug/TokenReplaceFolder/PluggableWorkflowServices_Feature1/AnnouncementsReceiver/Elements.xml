@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Receivers ListTemplateId="104">
+      <Receiver>
+        <Name>AnnouncementsReceiverItemAdding</Name>
+        <Type>ItemAdding</Type>
+        <Assembly>PluggableWorkflowServices, Version=1.0.0.0, Culture=neutral, PublicKeyToken=93476e59c6ab025d</Assembly>
+        <Class>PluggableWorkflowServices.AnnouncementsReceiver.AnnouncementsReceiver</Class>
+        <SequenceNumber>10000</SequenceNumber>
+      </Receiver>
+
+  </Receivers>
+</Elements>

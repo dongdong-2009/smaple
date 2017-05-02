@@ -1,0 +1,225 @@
+.dp-css {
+	BACKGROUND-COLOR: #e7e5dc; MARGIN: 18px 0px; WIDTH: 99%; FONT-FAMILY: "Consolas", "Courier New", Courier, mono, serif; FONT-SIZE: 12px; OVERFLOW: auto; PADDING-TOP: 1px
+}
+.Bold {
+	FONT-WEIGHT: bold
+}
+.Title {
+	COLOR: #c30; FONT-SIZE: 18px; FONT-WEIGHT: bold
+}
+.codeHead {
+	BORDER-BOTTOM: #ddd 1px solid; PADDING-BOTTOM: 5px; PADDING-LEFT: 20px; PADDING-RIGHT: 5px; FONT-SIZE: 12px; FONT-WEIGHT: bold; PADDING-TOP: 5px
+}
+.lantxt {
+	MARGIN-LEFT: 3px
+}
+.codebutton {
+	BORDER-BOTTOM: #99cc66 1px solid; BORDER-LEFT: #99cc66 1px solid; FONT-FAMILY: Verdana, Arial, Tahoma, ??; BACKGROUND: url(bg_button.png) repeat-x; COLOR: #517928; FONT-SIZE: 9pt; BORDER-TOP: #99cc66 1px solid; BORDER-RIGHT: #99cc66 1px solid
+}
+.zhedie {
+	PADDING-LEFT: 24px; BACKGROUND: url(code.gif) no-repeat left center; CURSOR: pointer
+}
+.copyCodeText {
+	FLOAT: right; CURSOR: pointer; FONT-WEIGHT: bold
+}
+.codeText {
+	BORDER-BOTTOM: #ddd 1px solid; BORDER-LEFT: #ddd 1px solid; PADDING-BOTTOM: 0px; MARGIN: 0px 0px 1.1em; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 12px "Consolas", "Courier New", Courier, mono, serif; BACKGROUND: #fff; OVERFLOW: auto; WORD-BREAK: break-all; BORDER-TOP: #ddd 1px solid; BORDER-RIGHT: #ddd 1px solid; PADDING-TOP: 0px
+}
+.codeText OL {
+	BORDER-LEFT: #6ce26c 2px solid; PADDING-BOTTOM: 5px; LINE-HEIGHT: 15px; BACKGROUND-COLOR: #ffffff; LIST-STYLE-TYPE: decimal-leading-zero; MARGIN: 0px 1px 0px 45px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; COLOR: #373737; PADDING-TOP: 5px
+}
+.codeText OL LI {
+	LINE-HEIGHT: 15px; BACKGROUND-COLOR: #f4f4f4; PADDING-LEFT: 10px
+}
+.codeText OL LI.alt {
+	BACKGROUND: #ffffff
+}
+.codeText OL LI SPAN {
+	COLOR: #000000
+}
+.codeText .comment {
+	BACKGROUND-COLOR: transparent; COLOR: #008200
+}
+.codeText .comments {
+	BACKGROUND-COLOR: transparent; COLOR: #008200
+}
+.codeText .string {
+	COLOR: blue
+}
+.codeText .keyword {
+	COLOR: #069; FONT-WEIGHT: bold
+}
+.codeText .preprocessor {
+	COLOR: gray
+}
+.dp-c .comment {
+	COLOR: #008200
+}
+.dp-c .string {
+	COLOR: blue
+}
+.dp-c .preprocessor {
+	COLOR: gray
+}
+.dp-c .keyword {
+	COLOR: #0000ff; FONT-WEIGHT: bold
+}
+.dp-c .objectkey {
+	COLOR: #2b91af; FONT-WEIGHT: bold
+}
+.dp-c .vars {
+	COLOR: #d00
+}
+.dp-vb .comment {
+	COLOR: green
+}
+.dp-vb .string {
+	COLOR: blue
+}
+.dp-vb .preprocessor {
+	COLOR: gray
+}
+.dp-vb .keyword {
+	COLOR: #0000ff; FONT-WEIGHT: bold
+}
+.dp-vb .objectkey {
+	COLOR: #2b91af; FONT-WEIGHT: bold
+}
+.dp-sql .comment {
+	COLOR: green
+}
+.dp-sql .string {
+	COLOR: red
+}
+.dp-sql .keyword {
+	COLOR: #7f0055
+}
+.dp-sql .func {
+	COLOR: #ff1493
+}
+.dp-sql .op {
+	COLOR: blue
+}
+.dp-xml .cdata {
+	COLOR: #ff1493
+}
+.dp-xml .comments {
+	COLOR: green
+}
+.dp-xml .tag {
+	COLOR: blue; FONT-WEIGHT: bold
+}
+.dp-xml .tag-name {
+	COLOR: #069; FONT-WEIGHT: bold
+}
+.dp-xml .attribute {
+	COLOR: red
+}
+.dp-xml .attribute-value {
+	COLOR: blue
+}
+.dp-delphi .comment {
+	FONT-STYLE: italic; COLOR: #008200
+}
+.dp-delphi .string {
+	COLOR: blue
+}
+.dp-delphi .number {
+	COLOR: blue
+}
+.dp-delphi .directive {
+	COLOR: #008284
+}
+.dp-delphi .keyword {
+	COLOR: navy; FONT-WEIGHT: bold
+}
+.dp-delphi .vars {
+	COLOR: #000
+}
+.dp-py .comment {
+	COLOR: green
+}
+.dp-py .string {
+	COLOR: red
+}
+.dp-py .docstring {
+	COLOR: green
+}
+.dp-py .keyword {
+	COLOR: blue; FONT-WEIGHT: bold
+}
+.dp-py .builtins {
+	COLOR: #ff1493
+}
+.dp-py .magicmethods {
+	COLOR: #808080
+}
+.dp-py .exceptions {
+	COLOR: brown
+}
+.dp-py .types {
+	FONT-STYLE: italic; COLOR: brown
+}
+.dp-py .commonlibs {
+	FONT-STYLE: italic; COLOR: #8a2be2
+}
+.dp-rb .comment {
+	COLOR: #c00
+}
+.dp-rb .string {
+	COLOR: #f0c
+}
+.dp-rb .symbol {
+	COLOR: #02b902
+}
+.dp-rb .keyword {
+	COLOR: #069
+}
+.dp-rb .variable {
+	COLOR: #6cf
+}
+.dp-css .comment {
+	COLOR: green
+}
+.dp-css .string {
+	COLOR: red
+}
+.dp-css .keyword {
+	COLOR: blue
+}
+.dp-css .colors {
+	COLOR: darkred
+}
+.dp-css .vars {
+	COLOR: #d00
+}
+.dp-j .comment {
+	COLOR: #3f7f5f
+}
+.dp-j .string {
+	COLOR: #2a00ff
+}
+.dp-j .keyword {
+	COLOR: #7f0055; FONT-WEIGHT: bold
+}
+.dp-j .annotation {
+	COLOR: #646464
+}
+.dp-j .number {
+	COLOR: #c00000
+}
+.dp-cpp .comment {
+	COLOR: #e00
+}
+.dp-cpp .string {
+	COLOR: red
+}
+.dp-cpp .preprocessor {
+	COLOR: #cd00cd; FONT-WEIGHT: bold
+}
+.dp-cpp .keyword {
+	COLOR: #5697d9; FONT-WEIGHT: bold
+}
+.dp-cpp .datatypes {
+	COLOR: #2e8b57; FONT-WEIGHT: bold
+}

@@ -1,0 +1,1 @@
+exp log=D:\数据库\test.log file=D:\数据库\test.dmp parfile=D:\数据库\exp.txt

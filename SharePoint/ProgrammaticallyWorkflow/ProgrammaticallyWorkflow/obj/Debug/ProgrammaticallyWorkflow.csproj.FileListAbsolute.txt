@@ -1,0 +1,5 @@
+D:\Project\smaple\SharePoint\ProgrammaticallyWorkflow\ProgrammaticallyWorkflow\obj\Debug\ResolveAssemblyReference.cache
+D:\Project\smaple\SharePoint\ProgrammaticallyWorkflow\ProgrammaticallyWorkflow\bin\Debug\ProgrammaticallyWorkflow.dll
+D:\Project\smaple\SharePoint\ProgrammaticallyWorkflow\ProgrammaticallyWorkflow\bin\Debug\ProgrammaticallyWorkflow.pdb
+D:\Project\smaple\SharePoint\ProgrammaticallyWorkflow\ProgrammaticallyWorkflow\obj\Debug\ProgrammaticallyWorkflow.dll
+D:\Project\smaple\SharePoint\ProgrammaticallyWorkflow\ProgrammaticallyWorkflow\obj\Debug\ProgrammaticallyWorkflow.pdb

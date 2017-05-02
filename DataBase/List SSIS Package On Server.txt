@@ -1,0 +1,74 @@
+If you are refering to packages deployed to the msdb then: 
+select * from msdb.dbo.sysssispackages
+
+
+If you are talking about a SQL 2012 catalog then: 
+select * from ssisdb.catalog.packages 
+
+
+
+/*
+This Transact-SQL statements lists all SSIS packages stored in the msdb system database with detailed information.
+It gives a brief overview which packages exists, who created them and which is the actual version of it.
+
+Works with SQL Server 2005 and higher versions in all editions.
+Requires SELECT permissions on the tables of the msdb database.
+
+Link:
+  sysdtspackages90 http://msdn.microsoft.com/en-us/library/ms181582(v=SQL.90).aspx
+*/
+
+-- List all SSIS packages stored in msdb database.
+SELECT PCK.name AS PackageName
+      ,PCK.[description] AS [Description]
+      ,FLD.foldername AS FolderName
+      ,CASE PCK.packagetype
+            WHEN 0 THEN 'Default client'
+            WHEN 1 THEN 'I/O Wizard'
+            WHEN 2 THEN 'DTS Designer'
+            WHEN 3 THEN 'Replication'
+            WHEN 5 THEN 'SSIS Designer'
+            WHEN 6 THEN 'Maintenance Plan'
+            ELSE 'Unknown' END AS PackageTye
+      ,LG.name AS OwnerName
+      ,PCK.isencrypted AS IsEncrypted
+      ,PCK.createdate AS CreateDate
+      ,CONVERT(varchar(10), vermajor)
+       + '.' + CONVERT(varchar(10), verminor)
+       + '.' + CONVERT(varchar(10), verbuild) AS Version
+      ,PCK.vercomments AS VersionComment
+      ,DATALENGTH(PCK.packagedata) AS PackageSize
+FROM msdb.dbo.sysdtspackages90 AS PCK
+     INNER JOIN msdb.dbo.sysdtspackagefolders90 AS FLD
+         ON PCK.folderid = FLD.folderid
+     INNER JOIN sys.syslogins AS LG
+         ON PCK.ownersid = LG.sid
+ORDER BY PCK.name;
+
+
+-- List all SSIS packages stored in msdb database. 
+SELECT PCK.name AS PackageName 
+      ,PCK.[description] AS [Description] 
+      ,FLD.foldername AS FolderName 
+      ,CASE PCK.packagetype 
+            WHEN 0 THEN 'Default client' 
+            WHEN 1 THEN 'I/O Wizard' 
+            WHEN 2 THEN 'DTS Designer' 
+            WHEN 3 THEN 'Replication' 
+            WHEN 5 THEN 'SSIS Designer' 
+            WHEN 6 THEN 'Maintenance Plan' 
+            ELSE 'Unknown' END AS PackageTye 
+      ,LG.name AS OwnerName 
+      ,PCK.isencrypted AS IsEncrypted 
+      ,PCK.createdate AS CreateDate 
+      ,CONVERT(varchar(10), vermajor) 
+       + '.' + CONVERT(varchar(10), verminor) 
+       + '.' + CONVERT(varchar(10), verbuild) AS Version 
+      ,PCK.vercomments AS VersionComment 
+      ,DATALENGTH(PCK.packagedata) AS PackageSize 
+FROM msdb.dbo.sysdtspackages90 AS PCK 
+     INNER JOIN msdb.dbo.sysdtspackagefolders90 AS FLD 
+         ON PCK.folderid = FLD.folderid 
+     INNER JOIN sys.syslogins AS LG 
+         ON PCK.ownersid = LG.sid 
+ORDER BY PCK.name;

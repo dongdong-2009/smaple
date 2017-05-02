@@ -1,0 +1,15 @@
+<html>
+<body>
+<script>
+function aaa(ctrl)
+{
+	ctrl.style.height=ctrl.scrollHeight;
+// onpropertychange for ie
+// oninput for ff
+	
+}
+</script>
+<textarea rows=1 cols=27 onpropertychange="aaa(this)" oninput="aaa(this)">
+</textarea>
+</body>
+</html>

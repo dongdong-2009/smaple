@@ -1,0 +1,33 @@
+<select name="faq" OnChange="if(this.value!=''){window.location=this.value;}">
+  <option value="">请选择</option>
+  <option value="a.htm">申请资格和程序</option>
+  <option value="b.htm">信用卡的使用</option>             
+</select><p>
+<form id="frmTest" name="frmTest" action="test.asp" method="post">
+<select name="faq1" OnChange="if(this.value!=''){document.frmTest.Submit;}else{alert('请选择要跳转的页面');}">
+  <option value="">请选择</option>
+  <option value="a.htm">申请资格和程序</option>
+  <option value="b.htm">信用卡的使用</option>             
+</select><p>
+</form>
+<select name="faq2" onChange="window.open(this.value,'','?');this.selectedIndex=0;">
+  <option value="请选择">请选择</option>
+  <option value="abc.htm">申请资格和程序</option>
+  <option value="def.htm">信用卡的使用</option>             
+</select><br>
+<select size="1" name="angle_D1">
+  <option value="大中型船舶">大中型船舶</option>
+  <option value="小型船舶">小型船舶</option>
+  </select>
+<a href="angle_Check.asp?condition=" onclick="this.href+=document.all('angle_D1').value">查詢</a><p>
+<select size="1" name="angle_D1"onchange="document.location='angle_Check.asp?condition='+this.value;">
+  <option>大中型船舶</option>
+  <option>小型船舶</option>
+  </select> <p>
+<select size="1" name="angle_D1">
+  <option>大中型船舶</option>
+  <option>小型船舶</option>
+  </select> <a href="angle_Check.asp?condition="&document.all.angle_D1.value>查询</a><p>
+
+
+<html><script language="JavaScript">

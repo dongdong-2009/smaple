@@ -1,0 +1,23 @@
+write code either in your feature deactivation event (public override void FeatureDeactivating(SPFeatureReceiverProperties properties) ) or in any console application.
+
+You can use code , something like this  , where assemblyName & className are your reciver's assembly and class.
+
+SPSite sitecoll = new SPSite("SiteID");
+SPWeb site = sitecoll.OpenWeb("WebID");
+SPList objList = site.Lists["listID"];
+
+
+SPEventReceiverDefinitionCollection erdc = objList.EventReceivers;
+SPEventReceiverDefinition erd = null;
+                
+for (int i = 0; i < erdc.Count; i++)
+{
+       erd = erdc[i];
+       if (erd.Assembly == "assemblyName" && erd.Class == "className")
+       {
+             erd.Delete();
+             objList.Update();
+
+              break;
+        }
+}

@@ -1,0 +1,8 @@
+[DB]
+Data Source=16.187.38.235
+User ID=sa
+Password=hIRY&aLEX2005
+Initial Catalog=apssnp
+[Outports]
+--users
+users=SELECT * FROM users

@@ -1,0 +1,11 @@
+看了一下SQL Server 2008 R2的联机丛书, 对于尾日志备份列举了两种情况:
+1.如果数据库是online的状态, 应执行以下语句备份尾日志:
+BACKUP LOG database_name TO <backup_device> WITH NORECOVERY
+这么做的好处是:
+NORECOVERY takes the database into the restoring state. This guarantees that the database does not change after the tail-log backup. 
+2.如果数据库是offline状态,不能启动, 应执行以下语句备份尾日志:
+BACKUP LOG database_name TO <backup_device> [WITH { CONTINUE_AFTER_ERROR | NO_TRUNCATE }
+并且:
+We recommend that you avoid using NO_TRUNCATE, except when the database is damaged.
+而且:
+If the database is damaged, for example, if the database does not start, a tail-log backup succeeds only if the log files are undamaged, the database is in a state that supports tail-log backups, and the database does not contain any bulk-logged changes

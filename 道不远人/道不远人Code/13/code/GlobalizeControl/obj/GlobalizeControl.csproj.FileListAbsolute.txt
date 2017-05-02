@@ -1,0 +1,17 @@
+E:\Documents\深入浅出ASP.NET2.0控件与组件开发\chapter14\code\GlobalizeControl\bin\Debug\GlobalizeControl.dll
+E:\Documents\深入浅出ASP.NET2.0控件与组件开发\chapter14\code\GlobalizeControl\bin\Debug\GlobalizeControl.pdb
+E:\Documents\深入浅出ASP.NET2.0控件与组件开发\chapter14\code\GlobalizeControl\obj\Debug\ResolveAssemblyReference.cache
+E:\Documents\深入浅出ASP.NET2.0控件与组件开发\chapter14\code\GlobalizeControl\obj\Debug\GlobalizeControl.csproj.GenerateResource.Cache
+E:\Documents\深入浅出ASP.NET2.0控件与组件开发\chapter14\code\GlobalizeControl\obj\Debug\GlobalizeControl.dll
+E:\Documents\深入浅出ASP.NET2.0控件与组件开发\chapter14\code\GlobalizeControl\obj\Debug\GlobalizeControl.pdb
+E:\Documents\深入浅出ASP.NET2.0控件与组件开发\chapter14\code\GlobalizeControl\obj\Debug\GlobalizeControl.PropertyResource.resources
+E:\Documents\深入浅出ASP.NET2.0控件与组件开发\chapter14\code\GlobalizeControl\obj\Debug\GlobalizeControl.DescriptionResource.resources
+E:\Documents\深入浅出ASP.NET2.0控件与组件开发\chapter14\code\GlobalizeControl\obj\Debug\GlobalizeControl.ExceptionResource.resources
+E:\Documents\深入浅出ASP.NET2.0控件与组件开发\chapter14\code\GlobalizeControl\bin\Debug\zh-CN\GlobalizeControl.resources.dll
+E:\Documents\深入浅出ASP.NET2.0控件与组件开发\chapter14\code\GlobalizeControl\obj\Debug\GlobalizeControl.PropertyResource.zh-CN.resources
+E:\Documents\深入浅出ASP.NET2.0控件与组件开发\chapter14\code\GlobalizeControl\obj\Debug\zh-CN\GlobalizeControl.resources.dll
+E:\Documents\深入浅出ASP.NET2.0控件与组件开发\chapter14\code\GlobalizeControl\obj\Debug\GlobalizeControl.GlobalizedHello.js
+E:\Documents\深入浅出ASP.NET2.0控件与组件开发\chapter14\code\GlobalizeControl\obj\Debug\GlobalizeControl.GlobalizedHello_zh-CN.js
+E:\Documents\深入浅出ASP.NET2.0控件与组件开发\chapter14\code\GlobalizeControl\obj\Debug\GlobalizeControl.Properties.Resources.resources
+E:\Documents\深入浅出ASP.NET2.0控件与组件开发\chapter14\code\GlobalizeControl\obj\Debug\GlobalizeControl.ExceptionResource.zh-CN.resources
+E:\Documents\深入浅出ASP.NET2.0控件与组件开发\chapter14\code\GlobalizeControl\obj\Debug\GlobalizeControl.DescriptionResource.zh-CN.resources

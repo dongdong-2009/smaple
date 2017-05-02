@@ -1,0 +1,15 @@
+aspnet_regsql -S localhost -E -d MSPetShop4 -ed
+
+以下是该工具的命令参数说明：
+-?  显示该工具的帮助功能；
+-S  后接的参数为数据库服务器的名称或者IP地址；
+-U  后接的参数为数据库的登陆用户名；
+-P  后接的参数为数据库的登陆密码；
+-E  当使用windows集成验证时，使用该功能；
+-d  后接参数为对哪一个数据库采用SqlCacheDependency功能；
+-t  后接参数为对哪一个表采用SqlCacheDependency功能；
+-ed  允许对数据库使用SqlCacheDependency功能；
+-dd  禁止对数据库采用SqlCacheDependency功能；
+-et  允许对数据表采用SqlCacheDependency功能；
+-dt  禁止对数据表采用SqlCacheDependency功能；
+-lt  列出当前数据库中有哪些表已经采用sqlcachedependency功能

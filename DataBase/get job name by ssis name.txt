@@ -1,0 +1,26 @@
+USE MSDB 
+GO 
+SELECT  
+   
+sj.job_id as JobId, 
+    
+sj.name as JobName, 
+   
+sjs.step_name as StepName, 
+    
+sjs.Command as Command 
+FROM sysjobs sj  
+INNER JOIN sysjobsteps sjs 
+    
+ON(sj.job_id = sjs.job_id) 
+    
+WHERE sjs.subsystem = 'SSIS' 
+
+
+select * from msdb.dbo.sysjobs where msdb.dbo.sysjobs.name like 'allyswlm%'  
+
+select msdb.dbo.sysjobs.name, msdb.dbo.sysjobsteps.step_id, msdb.dbo.sysjobsteps.step_name, msdb.dbo.sysjobsteps.subsystem, msdb.dbo.sysjobsteps.command, 
+msdb.dbo.sysjobsteps.retry_attempts, msdb.dbo.sysjobsteps.retry_interval, msdb.dbo.sysjobsteps.output_file_name  
+from msdb.dbo.sysjobsteps join msdb.dbo.sysjobs on msdb.dbo.sysjobsteps.job_id = msdb.dbo.sysjobs.job_id  
+where step_name like '%sp_LoadBackUpData_AH%' 
+order by msdb.dbo.sysjobs.name, msdb.dbo.sysjobsteps.step_id 

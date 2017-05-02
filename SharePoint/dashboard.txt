@@ -1,0 +1,39 @@
+stsadm.exe -o setproperty -pn developer-dashboard -pv on
+stsadm.exe -o setproperty -pn developer-dashboard -pv off
+stsadm.exe -o setproperty -pn developer-dashboard -pv ondemand
+
+
+
+SPDeveloperDashboardSettings settings =
+SPWebService.ContentService.DeveloperDashboardSettings;
+settings.DisplayLevel = SPDeveloperDashboardLevel.OnDemand;
+settings.RequiredPermissions = SPBasePermissions.FullMask;
+settings.Update();
+
+
+If you’d like to have a web interface for configuring all different parameters
+in the Developer Dashboard, you can download a solution package
+that adds configuration options for the Developer Dashboard in Central
+Administration. Download it from my blog at http://www.wictorwilen.se/
+Post/SharePoint-2010-Developer-Dashboard-configuration-feature.aspx
+
+
+$dash = [Microsoft.SharePoint.Administration.SPWebService]::ContentService.DeveloperDashboardSettings; 
+$dash.DisplayLevel = 'OnDemand'; 
+$dash.TraceEnabled = $true; 
+$dash.Update() 
+
+
+
+SPWebService cs = SPWebService.ContentService; 
+cs.DeveloperDashboardSettings.DisplayLevel = SPDeveloperDashboardLevel.On; 
+cs.DeveloperDashboardSettings.Update();
+
+
+Using the Developer Dashboard 
+http://msdn.microsoft.com/en-us/library/ff512745.aspx 
+Using the Developer Dashboard in SharePoint 2010 
+http://blogs.technet.com/b/speschka/archive/2009/10/28/using-the-developer-dashboard-in-sharepoint-2010.aspx 
+How to use Windows PowerShell to configure the Developer Dashboard 
+http://www.toddklindt.com/blog/Lists/Posts/Post.aspx?ID=189
+

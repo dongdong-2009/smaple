@@ -1,0 +1,1248 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0062)http://www.cnblogs.com/yuanbao/archive/2008/05/29/1209758.html -->
+<HTML><HEAD id=Head><TITLE>[推荐].net环境下分析程序调用关系图工具 - 元宝家园 --- 坚持理想，脚踏实地，不断学习 - 博客园</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META id=metaKeywords content=[推荐].net环境下分析程序调用关系图工具 name=keywords><LINK 
+id=CommondCss 
+href="[推荐]_net环境下分析程序调用关系图工具 - 元宝家园 --- 坚持理想，脚踏实地，不断学习 - 博客园_files/common.css" 
+type=text/css rel=stylesheet><LINK id=MainCss 
+href="[推荐]_net环境下分析程序调用关系图工具 - 元宝家园 --- 坚持理想，脚踏实地，不断学习 - 博客园_files/style.css" 
+type=text/css rel=stylesheet><LINK id=RSSLink title=RSS 
+href="http://www.cnblogs.com/yuanbao/rss.aspx" type=application/rss+xml 
+rel=alternate>
+<SCRIPT 
+src="[推荐]_net环境下分析程序调用关系图工具 - 元宝家园 --- 坚持理想，脚踏实地，不断学习 - 博客园_files/common.js" 
+type=text/javascript></SCRIPT>
+
+<META content="MSHTML 6.00.3790.2993" name=GENERATOR></HEAD>
+<BODY>
+<FORM id=Form1 name=Form1 onsubmit="javascript:return WebForm_OnSubmit();" 
+action=1209758.html method=post>
+<DIV><INPUT id=__EVENTTARGET type=hidden name=__EVENTTARGET> <INPUT 
+id=__EVENTARGUMENT type=hidden name=__EVENTARGUMENT> <INPUT 
+id="&#13;&#10;__VIEWSTATE" type=hidden name=__VIEWSTATE> </DIV>
+<SCRIPT type=text/javascript>
+//<![CDATA[
+var theForm = document.forms['Form1'];
+if (!theForm) {
+    theForm = document.Form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</SCRIPT>
+
+<SCRIPT 
+src="[推荐]_net环境下分析程序调用关系图工具 - 元宝家园 --- 坚持理想，脚踏实地，不断学习 - 博客园_files/WebResource.axd" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT language=JavaScript>
+									function ctlent(evt,id)
+											{
+												if(evt.ctrlKey && evt.keyCode == 13)
+												{	
+													try
+													{
+														TempSave(id);
+													}
+													catch(ex)
+													{
+													}
+													finally
+													{
+													    __doPostBack('AjaxHolder$PostComment$btnSubmit','')
+													}
+												}
+		
+												}</SCRIPT>
+
+<SCRIPT language=JavaScript>function SetReplyAuhor(author){document.getElementById('AjaxHolder_PostComment_tbComment').value+="@"+author+"\n";document.getElementById('AjaxHolder_PostComment_tbComment').focus();return false}</SCRIPT>
+
+<SCRIPT 
+src="[推荐]_net环境下分析程序调用关系图工具 - 元宝家园 --- 坚持理想，脚踏实地，不断学习 - 博客园_files/ScriptResource.axd" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT 
+src="C:\Documents and Settings\Administrator.SZLANYOU-7NGZ4R\桌面\[推荐]_net环境下分析程序调用关系图工具 - 元宝家园 --- 坚持理想，脚踏实地，不断学习 - 博客园_files\ScriptResource(1).axd" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT 
+src="C:\Documents and Settings\Administrator.SZLANYOU-7NGZ4R\桌面\[推荐]_net环境下分析程序调用关系图工具 - 元宝家园 --- 坚持理想，脚踏实地，不断学习 - 博客园_files\ScriptResource(2).axd" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="[推荐]_net环境下分析程序调用关系图工具 - 元宝家园 --- 坚持理想，脚踏实地，不断学习 - 博客园_files/js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+//<![CDATA[
+function WebForm_OnSubmit() {
+if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+return true;
+}
+//]]>
+</SCRIPT>
+
+<DIV id=top>
+<DIV>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD class=HeaderTitles>
+      <H1 class=HeaderTitle><A class=HeaderMainTitle id=Header1_HeaderTitle 
+      href="http://www.cnblogs.com/yuanbao/"><FONT size=5>元宝家园</FONT> --- 
+      坚持理想，脚踏实地，不断学习</A></H1>
+      <P id=tagline>
+      <SCRIPT type=text/JavaScript> 
+alimama_pid="mm_10942693_1022802_2220369"; 
+alimama_titlecolor="0000FF"; 
+alimama_descolor ="000000"; 
+alimama_bgcolor="FFFFFF"; 
+alimama_bordercolor="E6E6E6"; 
+alimama_linkcolor="008000"; 
+alimama_bottomcolor="FFFFFF"; 
+alimama_anglesize="0"; 
+alimama_bgpic="0"; 
+alimama_icon="0"; 
+alimama_sizecode="14"; 
+alimama_width=728; 
+alimama_height=90; 
+alimama_type=2; 
+</SCRIPT>
+
+      <SCRIPT 
+      src="[推荐]_net环境下分析程序调用关系图工具 - 元宝家园 --- 坚持理想，脚踏实地，不断学习 - 博客园_files/inf.js" 
+      type=text/javascript> 
+</SCRIPT>
+      </P></TD></TR></TBODY></TABLE></DIV>
+<DIV class=HeaderBar>
+<TABLE class=HeaderBar id=HeaderBar>
+  <TBODY>
+  <TR>
+    <TD class=HeaderBarTab noWrap><IMG id=Header1_StartButton 
+      style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+      src="[推荐]_net环境下分析程序调用关系图工具 - 元宝家园 --- 坚持理想，脚踏实地，不断学习 - 博客园_files/BlueTabRight.gif" 
+      align=absMiddle> <A id=Header1_MyLinks1_HomeLink 
+      href="http://www.cnblogs.com/">博客园</A><IMG id=Header1_MyLinks1_Divider1 
+      style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+      src="[推荐]_net环境下分析程序调用关系图工具 - 元宝家园 --- 坚持理想，脚踏实地，不断学习 - 博客园_files/divider.gif" 
+      align=absMiddle> <A id=Header1_MyLinks1_MyHomeLink 
+      href="http://yuanbao.cnblogs.com/">首页</A><IMG id=Header1_MyLinks1_Image1 
+      style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+      src="[推荐]_net环境下分析程序调用关系图工具 - 元宝家园 --- 坚持理想，脚踏实地，不断学习 - 博客园_files/divider.gif" 
+      align=absMiddle> <A id=Header1_MyLinks1_NewPostLink 
+      href="http://www.cnblogs.com/yuanbao/admin/EditPosts.aspx?opt=1">新随笔</A><IMG 
+      id=Header1_MyLinks1_Image2 
+      style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+      src="[推荐]_net环境下分析程序调用关系图工具 - 元宝家园 --- 坚持理想，脚踏实地，不断学习 - 博客园_files/divider.gif" 
+      align=absMiddle> <A id=Header1_MyLinks1_ContactLink accessKey=9 
+      href="http://www.cnblogs.com/yuanbao/contact.aspx?id=1">联系</A><IMG 
+      id=Header1_MyLinks1_Divider2 
+      style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+      src="[推荐]_net环境下分析程序调用关系图工具 - 元宝家园 --- 坚持理想，脚踏实地，不断学习 - 博客园_files/divider.gif" 
+      align=absMiddle> <A id=Header1_MyLinks1_Syndication 
+      href="http://www.cnblogs.com/yuanbao/rss" target=_blank>订阅</A><IMG 
+      id=Header1_MyLinks1_Divider3 
+      style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+      src="[推荐]_net环境下分析程序调用关系图工具 - 元宝家园 --- 坚持理想，脚踏实地，不断学习 - 博客园_files/divider.gif" 
+      align=absMiddle> <!--<a id="Header1_MyLinks1_Syndication2" href="../../../../../Atom.aspx" target="_blank">Syndicate this Site (Atom)</a><img id="Header1_MyLinks1_Divider6" src="../../../../../Skins/WinXPBlue/Images/divider.gif" align="absmiddle" style="border-width:0px;" />
+<a id="Header1_MyLinks1_XMLLink" class="XMLLink" href="http://www.cnblogs.com/yuanbao/rss" target="_blank"><img src="http://www.cnblogs.com/images/xml.gif" alt="订阅" style="border-width:0px;" /></a>--><A 
+      id=Header1_MyLinks1_Admin 
+      href="http://www.cnblogs.com/yuanbao/admin/EditPosts.aspx">管理</A><IMG 
+      id=Header1_MyLinks1_Divider5 
+      style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+      src="[推荐]_net环境下分析程序调用关系图工具 - 元宝家园 --- 坚持理想，脚踏实地，不断学习 - 博客园_files/divider.gif" 
+      align=absMiddle> </TD>
+    <TD class=HeaderBarTabBack noWrap 
+width="100%"></TD></TR></TBODY></TABLE></DIV></DIV>
+<DIV id=leftmenu style="DISPLAY: none">
+<H3>公告</H3>
+<DIV class=News>
+<P>热衷于编程技术，转载请注明出处。<BR>本站发布的程序，如不特别注明，都是用.NET开发。<BR>联系方式：509912397（QQ)</P>
+<P>EMail：509912397@qq.com </P></DIV>
+<DIV class=catListInteraction>
+<H3 class=catListTitle>与我互动</H3>
+<UL>
+  <LI><A class=sendMsg id=SingleColumn1_ctl00_lnkSendMsg 
+  href="http://space.cnblogs.com/msg/send/åå®">给我发短消息</A> </LI></UL></DIV>
+<DIV id=SingleColumn1__228e84f30b0_panelMyAttendGroups>
+<DIV class=catListMyTeams>
+<H3 class=catListTitle>我参加的小组</H3>
+<UL>
+  <LI><A href="http://space.cnblogs.com/group/GISUnion/">GIS.DeveloperUnion</A> 
+  </LI></UL></DIV></DIV>
+<H3>我参与的团队</H3>
+<DIV class=RecentComment>
+<UL style="WORD-BREAK: break-all">
+  <LI><A id=SingleColumn1_ctl02_TeamList_ctl01_lnkTeam 
+  href="http://webgis.cnblogs.com/">WebGIS(1/821)</A> 
+  <LI><A id=SingleColumn1_ctl02_TeamList_ctl02_lnkTeam 
+  href="http://www.cnblogs.com/team/DotNetControls.html">.NET 
+  控件与组件开发(1/1294)</A> 
+  <LI><A id=SingleColumn1_ctl02_TeamList_ctl03_lnkTeam 
+  href="http://gisunion.cnblogs.com/">GIS.DeveloperUnion(开发者联盟)(1/691)</A> 
+  <LI><A id=SingleColumn1_ctl02_TeamList_ctl04_lnkTeam 
+  href="http://opensourcegis.cnblogs.com/">开源GIS学习(1/200)</A> 
+  <LI><A id=SingleColumn1_ctl02_TeamList_ctl05_lnkTeam 
+  href="http://debug.cnblogs.com/">Debug 探索团队(1/33)</A> </LI></UL></DIV>
+<H3>随笔分类<SPAN style="FONT-WEIGHT: normal; FONT-SIZE: 11px">(143)</SPAN></H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl01_RssLink 
+  title="Subscribe to GIS(5)" 
+  href="http://www.cnblogs.com/yuanbao/category/113507.html/rss"><IMG 
+  src="[推荐]_net环境下分析程序调用关系图工具 - 元宝家园 --- 坚持理想，脚踏实地，不断学习 - 博客园_files/xml.gif" 
+  align=center border=0></A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl01_Link 
+  href="http://www.cnblogs.com/yuanbao/category/113507.html">GIS(5)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl02_RssLink 
+  title="Subscribe to SmartPhone(4)" 
+  href="http://www.cnblogs.com/yuanbao/category/128298.html/rss"><IMG 
+  src="[推荐]_net环境下分析程序调用关系图工具 - 元宝家园 --- 坚持理想，脚踏实地，不断学习 - 博客园_files/xml.gif" 
+  align=center border=0></A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl02_Link 
+  href="http://www.cnblogs.com/yuanbao/category/128298.html">SmartPhone(4)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl03_RssLink 
+  title="Subscribe to 逆向工程(9)" 
+  href="http://www.cnblogs.com/yuanbao/category/126293.html/rss"><IMG 
+  src="[推荐]_net环境下分析程序调用关系图工具 - 元宝家园 --- 坚持理想，脚踏实地，不断学习 - 博客园_files/xml.gif" 
+  align=center border=0></A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl03_Link 
+  href="http://www.cnblogs.com/yuanbao/category/126293.html">逆向工程(9)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl04_RssLink 
+  title="Subscribe to 汶川地震(3)" 
+  href="http://www.cnblogs.com/yuanbao/category/136071.html/rss"><IMG 
+  src="[推荐]_net环境下分析程序调用关系图工具 - 元宝家园 --- 坚持理想，脚踏实地，不断学习 - 博客园_files/xml.gif" 
+  align=center border=0></A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl04_Link 
+  href="http://www.cnblogs.com/yuanbao/category/136071.html">汶川地震(3)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl05_RssLink 
+  title="Subscribe to 我的程序(23)" 
+  href="http://www.cnblogs.com/yuanbao/category/110149.html/rss"><IMG 
+  src="[推荐]_net环境下分析程序调用关系图工具 - 元宝家园 --- 坚持理想，脚踏实地，不断学习 - 博客园_files/xml.gif" 
+  align=center border=0></A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl05_Link 
+  href="http://www.cnblogs.com/yuanbao/category/110149.html">我的程序(23)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl06_RssLink 
+  title="Subscribe to 我的飞信(3)" 
+  href="http://www.cnblogs.com/yuanbao/category/128005.html/rss"><IMG 
+  src="[推荐]_net环境下分析程序调用关系图工具 - 元宝家园 --- 坚持理想，脚踏实地，不断学习 - 博客园_files/xml.gif" 
+  align=center border=0></A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl06_Link 
+  href="http://www.cnblogs.com/yuanbao/category/128005.html">我的飞信(3)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl07_RssLink 
+  title="Subscribe to 学习资料(77)" 
+  href="http://www.cnblogs.com/yuanbao/category/110151.html/rss"><IMG 
+  src="[推荐]_net环境下分析程序调用关系图工具 - 元宝家园 --- 坚持理想，脚踏实地，不断学习 - 博客园_files/xml.gif" 
+  align=center border=0></A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl07_Link 
+  href="http://www.cnblogs.com/yuanbao/category/110151.html">学习资料(77)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl08_RssLink 
+  title="Subscribe to 自动登录(19)" 
+  href="http://www.cnblogs.com/yuanbao/category/110150.html/rss"><IMG 
+  src="[推荐]_net环境下分析程序调用关系图工具 - 元宝家园 --- 坚持理想，脚踏实地，不断学习 - 博客园_files/xml.gif" 
+  align=center border=0></A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl08_Link 
+  href="http://www.cnblogs.com/yuanbao/category/110150.html">自动登录(19)</A> 
+</LI></UL>
+<H3>友情连接</H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl01_RssLink 
+  title="Subscribe to 3echo(gis)" href="http://www.cnblogs.com/3echo/rss"><IMG 
+  src="[推荐]_net环境下分析程序调用关系图工具 - 元宝家园 --- 坚持理想，脚踏实地，不断学习 - 博客园_files/xml.gif" 
+  align=center border=0></A> <A 
+  id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl01_Link 
+  href="http://3echo.cnblogs.com/">3echo(gis)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl02_RssLink 
+  title="Subscribe to overred" href="http://www.cnblogs.com/overred/rss"><IMG 
+  src="[推荐]_net环境下分析程序调用关系图工具 - 元宝家园 --- 坚持理想，脚踏实地，不断学习 - 博客园_files/xml.gif" 
+  align=center border=0></A> <A 
+  id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl02_Link 
+  href="http://overred.cnblogs.com/">overred</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl03_RssLink 
+  title="Subscribe to Yonsm" href="http://www.yonsm.net/feed.php"><IMG 
+  src="[推荐]_net环境下分析程序调用关系图工具 - 元宝家园 --- 坚持理想，脚踏实地，不断学习 - 博客园_files/xml.gif" 
+  align=center border=0></A> <A 
+  id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl03_Link 
+  href="http://www.yonsm.net/">Yonsm</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl04_RssLink 
+  title="Subscribe to 阿不" href="http://hjf1223.cnblogs.com/RSS"><IMG 
+  src="[推荐]_net环境下分析程序调用关系图工具 - 元宝家园 --- 坚持理想，脚踏实地，不断学习 - 博客园_files/xml.gif" 
+  align=center border=0></A> <A 
+  id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl04_Link 
+  href="http://hjf1223.cnblogs.com/">阿不</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl05_RssLink 
+  title="Subscribe to 程序人生" href="http://www.cnblogs.com/lzppcc/rss"><IMG 
+  src="[推荐]_net环境下分析程序调用关系图工具 - 元宝家园 --- 坚持理想，脚踏实地，不断学习 - 博客园_files/xml.gif" 
+  align=center border=0></A> <A 
+  id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl05_Link 
+  href="http://lzppcc.cnblogs.com/">程序人生</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl06_RssLink 
+  title="Subscribe to 龙骑将" href="http://blog.csdn.net/fogdragon/Rss.aspx"><IMG 
+  src="[推荐]_net环境下分析程序调用关系图工具 - 元宝家园 --- 坚持理想，脚踏实地，不断学习 - 博客园_files/xml.gif" 
+  align=center border=0></A> <A 
+  id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl06_Link 
+  href="http://blog.csdn.net/fogdragon">龙骑将</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl07_RssLink 
+  title="Subscribe to 梦想天空" href="http://hesicong.cnblogs.com/RSS/"><IMG 
+  src="[推荐]_net环境下分析程序调用关系图工具 - 元宝家园 --- 坚持理想，脚踏实地，不断学习 - 博客园_files/xml.gif" 
+  align=center border=0></A> <A 
+  id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl07_Link 
+  href="http://hesicong.cnblogs.com/">梦想天空</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl08_Link 
+  href="http://blog.sina.com.cn/forstudy2008">梦想英语</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl09_RssLink 
+  title="Subscribe to 柠檬" href="http://www.cnblogs.com/lemony/rss"><IMG 
+  src="[推荐]_net环境下分析程序调用关系图工具 - 元宝家园 --- 坚持理想，脚踏实地，不断学习 - 博客园_files/xml.gif" 
+  align=center border=0></A> <A 
+  id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl09_Link 
+  href="http://www.cnblogs.com/lemony/rss">柠檬</A> </LI></UL>
+<SCRIPT language=JavaScript>
+function SearchGoogle(key,evt,site)
+		{
+			if(evt.keyCode==13 || evt.keyCode==0 || evt.type =='click')
+			{
+				key.focus();
+				var keystr = encodeURIComponent(key.value);
+				url = "http://www.google.com/search?q=";
+				url = url+keystr;
+				url += "&ie=UTF-8&oe=GB2312&hl=zh-CN&domains="+site+"&sitesearch="+site;
+				window.location=url;
+				return false;
+			}
+		}
+</SCRIPT>
+
+<H3>搜索</H3>
+<UL>
+  <LI>
+  <LI><INPUT id=q 
+  onkeydown="return SearchGoogle(document.getElementById('q'),event,'http://www.cnblogs.com/yuanbao/')" 
+  style="WIDTH: 130px" name=q>&nbsp;<INPUT onclick="SearchGoogle(document.getElementById('q'),event,'http://www.cnblogs.com/yuanbao/')" type=button value=搜索 name=sa> 
+  </LI></UL>
+<H3>积分与排名</H3>
+<UL>
+  <LI>积分 - 89807 
+  <LI>排名 - 376 </LI></UL>
+<H3>最新评论 <A id=SingleColumn1__3c7d3b2_RSSHyperlink1 
+href="http://www.cnblogs.com/yuanbao/CommentsRSS.aspx"><IMG 
+style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+src="C:\Documents and Settings\Administrator.SZLANYOU-7NGZ4R\桌面\[推荐]_net环境下分析程序调用关系图工具 - 元宝家园 --- 坚持理想，脚踏实地，不断学习 - 博客园_files\xml(1).gif"></A></H3>
+<DIV class=RecentComment id=RecentComments>
+<UL>
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__3c7d3b2_CommentList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/yuanbao/archive/2008/05/29/1209758.html#1212822">1.&nbsp;re: 
+  [推荐].net环境下分析程序调用关系图工具</A> 
+  <LI style="WORD-BREAK: break-all">相当失望,不能看DLL的. 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--斧头帮少帮主 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__3c7d3b2_CommentList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/yuanbao/archive/2008/05/29/1209758.html#1212815">2.&nbsp;re: 
+  [推荐].net环境下分析程序调用关系图工具</A> 
+  <LI style="WORD-BREAK: break-all">ctrl+d 后走人 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--xrainfir 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__3c7d3b2_CommentList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/yuanbao/archive/2008/05/29/1209758.html#1212719">3.&nbsp;re: 
+  [推荐].net环境下分析程序调用关系图工具</A> 
+  <LI style="WORD-BREAK: break-all">楼主谢谢啦！！！！ <BR><BR>一直我在找这个，还想着自己用反射做出来算了。谢谢！ 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--pixysoft 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__3c7d3b2_CommentList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/yuanbao/archive/2008/05/29/1209758.html#1212689">4.&nbsp;re: 
+  [推荐].net环境下分析程序调用关系图工具</A> 
+  <LI style="WORD-BREAK: break-all">我记得reflector有插件可以看这些的 
+  但个人觉得图形化未必有什么直观和帮助还是relectore里的analyse和vs ide的find references很有用... 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--progame 
+  <LI style="WORD-BREAK: break-all"><A 
+  id=SingleColumn1__3c7d3b2_CommentList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/yuanbao/archive/2008/05/29/1209758.html#1212671">5.&nbsp;re: 
+  [推荐].net环境下分析程序调用关系图工具</A> 
+  <LI style="WORD-BREAK: break-all">好像不错，<BR>试试 
+  <LI style="MARGIN-RIGHT: 4px; TEXT-ALIGN: right">--top10 </LI></UL></DIV>
+<H3>阅读排行榜</H3>
+<DIV class=RecentComment id=TopViewPosts>
+<UL style="WORD-BREAK: break-all">
+  <LI><A id=SingleColumn1__262ae1b_TopList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/yuanbao/archive/2008/05/15/1197575.html">1.&nbsp;[非常感人] 
+  转：我还能再救一个！(4718)</A> 
+  <LI><A id=SingleColumn1__262ae1b_TopList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/yuanbao/archive/2007/09/25/905322.html">2.&nbsp;用于验证码图片识别的类（C#源码）(3576)</A> 
+
+  <LI><A id=SingleColumn1__262ae1b_TopList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/yuanbao/archive/2008/05/15/1197662.html">3.&nbsp;不要埋怨空降兵了(3337)</A> 
+
+  <LI><A id=SingleColumn1__262ae1b_TopList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/yuanbao/archive/2007/08/31/865108.html">4.&nbsp;C#网页自动登录和提交POST信息的多种方法(2783)</A> 
+
+  <LI><A id=SingleColumn1__262ae1b_TopList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/yuanbao/archive/2007/08/21/864191.html">5.&nbsp;发布自己写的NewsBar挂机程序，对挂机感兴趣的朋友一起研究(2779)</A> 
+  </LI></UL></DIV>
+<H3>评论排行榜</H3>
+<DIV class=RecentComment id=TopCommentsPosts>
+<UL style="WORD-BREAK: break-all">
+  <LI><A id=SingleColumn1__38ee631_TopList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/yuanbao/archive/2008/05/15/1197575.html">1.&nbsp;[非常感人] 
+  转：我还能再救一个！(61)</A> 
+  <LI><A id=SingleColumn1__38ee631_TopList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/yuanbao/archive/2008/05/15/1197662.html">2.&nbsp;不要埋怨空降兵了(35)</A> 
+
+  <LI><A id=SingleColumn1__38ee631_TopList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/yuanbao/archive/2008/05/13/1194483.html">3.&nbsp;向汶川地震中死难者致哀(30)</A> 
+
+  <LI><A id=SingleColumn1__38ee631_TopList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/yuanbao/archive/2007/09/03/880537.html">4.&nbsp;发布“点我网”的挂机小程序(20)</A> 
+
+  <LI><A id=SingleColumn1__38ee631_TopList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/yuanbao/archive/2008/02/19/1073093.html">5.&nbsp;元宝Bux.to挂机程序到 
+  V1.3.0(C#源码）(15)</A> </LI></UL></DIV>
+<H3>60天内阅读排行</H3>
+<DIV class=RecentComment>
+<UL>
+  <LI><A id=SingleColumn1__1e59ff2_TopList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/yuanbao/archive/2008/05/15/1197575.html">1.&nbsp;[非常感人] 
+  转：我还能再救一个！(4718)</A> 
+  <LI><A id=SingleColumn1__1e59ff2_TopList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/yuanbao/archive/2008/05/15/1197662.html">2.&nbsp;不要埋怨空降兵了(3337)</A> 
+
+  <LI><A id=SingleColumn1__1e59ff2_TopList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/yuanbao/archive/2008/05/13/1194483.html">3.&nbsp;向汶川地震中死难者致哀(1789)</A> 
+
+  <LI><A id=SingleColumn1__1e59ff2_TopList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/yuanbao/archive/2008/04/12/1149923.html">4.&nbsp;灰度图像的腐蚀算法和细化算法（C#代码）(1740)</A> 
+
+  <LI><A id=SingleColumn1__1e59ff2_TopList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/yuanbao/archive/2008/04/17/1158750.html">5.&nbsp;通过反编译飞信总结的代码除错技巧(1132)</A> 
+  </LI></UL></DIV><!--
+	<br><br>
+	<p align="center">
+	<a href="http://www.WebHost4Life.com/default.asp?refid=MarkHWagner">
+	<img src="http://www.WebHost4Life.com/images/banner3.gif" width="120"
+	height="60" border="0" alt="Join WebHost4Life.com"></a>
+	</p>
+--></DIV>
+<DIV id=main>
+<SCRIPT type=text/javascript>
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('AjaxHolder$scriptmanager1', document.getElementById('Form1'));
+Sys.WebForms.PageRequestManager.getInstance()._updateControls(['tAjaxHolder$UpdatePanel1'], [], [], 90);
+//]]>
+</SCRIPT>
+
+<DIV class=post>
+<DIV class=postTitle><A id=AjaxHolder_ctl01_TitleUrl 
+href="http://www.cnblogs.com/yuanbao/archive/2008/05/29/1209758.html">[推荐].net环境下分析程序调用关系图工具</A> 
+</DIV>
+<DIV class=postText>
+<DIV class=PostTitle>一直想找个能画出软件中<STRONG><SPAN id=topicSubject 
+csdnid="topicSubject">函数关系调用图</SPAN></STRONG>的工具软件，网上找了很久，找到的大都是C++或Java的，能在.net环境下用的很少！今天，元宝向大家推荐一款软件：<STRONG>CLR 
+Profiler</STRONG><STRONG></STRONG>，这个软件本来是.NET程序分析优化软件，用来看函数关系调用图，真是”牛刀小试“了！<BR>以下是是微软件msdn.com上的原文<BR>
+<H4 class=BlogPostHeader>Use CLR Profiler for C# Call Graphs and Optimization 
+<SPAN class=CommonRateControlReadOnly 
+id=ctl00___ctl00___ctl00_ctl00_bcr_ctl00___Entry___Ratings 
+title="Rated Excellent [5 out of 5 / rated 1 time(s)]."><IMG alt="" 
+src="[推荐]_net环境下分析程序调用关系图工具 - 元宝家园 --- 坚持理想，脚踏实地，不断学习 - 博客园_files/star-left-on.gif" 
+align=absMiddle border=0><IMG alt="" 
+src="[推荐]_net环境下分析程序调用关系图工具 - 元宝家园 --- 坚持理想，脚踏实地，不断学习 - 博客园_files/star-right-on.gif" 
+align=absMiddle border=0><IMG alt="" 
+src="[推荐]_net环境下分析程序调用关系图工具 - 元宝家园 --- 坚持理想，脚踏实地，不断学习 - 博客园_files/star-left-on.gif" 
+align=absMiddle border=0><IMG alt="" 
+src="[推荐]_net环境下分析程序调用关系图工具 - 元宝家园 --- 坚持理想，脚踏实地，不断学习 - 博客园_files/star-right-on.gif" 
+align=absMiddle border=0><IMG alt="" 
+src="[推荐]_net环境下分析程序调用关系图工具 - 元宝家园 --- 坚持理想，脚踏实地，不断学习 - 博客园_files/star-left-on.gif" 
+align=absMiddle border=0><IMG alt="" 
+src="[推荐]_net环境下分析程序调用关系图工具 - 元宝家园 --- 坚持理想，脚踏实地，不断学习 - 博客园_files/star-right-on.gif" 
+align=absMiddle border=0><IMG alt="" 
+src="[推荐]_net环境下分析程序调用关系图工具 - 元宝家园 --- 坚持理想，脚踏实地，不断学习 - 博客园_files/star-left-on.gif" 
+align=absMiddle border=0><IMG alt="" 
+src="[推荐]_net环境下分析程序调用关系图工具 - 元宝家园 --- 坚持理想，脚踏实地，不断学习 - 博客园_files/star-right-on.gif" 
+align=absMiddle border=0><IMG alt="" 
+src="[推荐]_net环境下分析程序调用关系图工具 - 元宝家园 --- 坚持理想，脚踏实地，不断学习 - 博客园_files/star-left-on.gif" 
+align=absMiddle border=0><IMG alt="" 
+src="[推荐]_net环境下分析程序调用关系图工具 - 元宝家园 --- 坚持理想，脚踏实地，不断学习 - 博客园_files/star-right-on.gif" 
+align=absMiddle border=0></SPAN><INPUT 
+id=ctl00___ctl00___ctl00_ctl00_bcr_ctl00___Entry___Ratings_Value type=hidden 
+value=5></H4>
+<DIV class=BlogPostContent>
+<P>I recently had the need to debug some code and was looking for an easy way to 
+generate the call graph of the application. For a given function I wanted to see 
+who its callers were and who the callers of the callers were, etc. Turns out 
+Microsoft has a free tool called the CLR Profiler that does precisely 
+this.&nbsp; Here is how to use it:</P>
+<OL>
+  <LI>Download and run the executable from <A 
+  href="http://www.microsoft.com/downloads/details.aspx?FamilyId=86CE6052-D7F4-4AEB-9B7A-94635BEEBDDA&amp;displaylang=en">this 
+  URL</A>. 
+  <LI>Click on "Start" and select "Run". 
+  <LI>Type C:\CLR Profiler\Binaries and click "OK". 
+  <LI>Click on ClrProfiler.exe. 
+  <LI>Click on "Start Application". 
+  <LI>Select the application you want to analyze. 
+  <LI>Then click on "Kill Application". 
+  <LI>To view the call graph click on View and select "Call Graph". </LI></OL>
+<P>This can also be used to profile the program and to improve and optimize its 
+performance. Also it works with ASP.NET applications. Overall, an extremely cool 
+application.</P></DIV><IMG alt="" 
+src="[推荐]_net环境下分析程序调用关系图工具 - 元宝家园 --- 坚持理想，脚踏实地，不断学习 - 博客园_files/CLR.Profile.jpg"><BR>CLRProfiler 
+for .net 2.0下载：<BR>&nbsp;&nbsp; <A 
+href="http://www.microsoft.com/downloads/details.aspx?FamilyId=A362781C-3870-43BE-8926-862B40AA0CD0&amp;displaylang=en">官方下载</A><BR>
+<SCRIPT type=text/JavaScript>
+alimama_pid="mm_10942693_1022802_2220469";
+alimama_titlecolor="0000FF";
+alimama_descolor ="000000";
+alimama_bgcolor="FFFFFF";
+alimama_bordercolor="E6E6E6";
+alimama_linkcolor="008000";
+alimama_bottomcolor="FFFFFF";
+alimama_anglesize="0";
+alimama_bgpic="0";
+alimama_icon="0";
+alimama_sizecode="12";
+alimama_width=468;
+alimama_height=60;
+alimama_type=2;
+</SCRIPT>
+
+<SCRIPT 
+src="[推荐]_net环境下分析程序调用关系图工具 - 元宝家园 --- 坚持理想，脚踏实地，不断学习 - 博客园_files/inf.js" 
+type=text/javascript>
+</SCRIPT>
+<BR>附：<BR><A id=ctl00_MainContent_ViewPost1_TitleUrl 
+title="Title of this entry." 
+href="http://blog.joycode.com/joe/archive/2005/04/15/48543.aspx"><FONT 
+style="COLOR: blue; BACKGROUND-COLOR: yellow">CLR</FONT> <FONT 
+style="COLOR: blue; BACKGROUND-COLOR: yellow">Profiler</FONT>介绍</A> 
+<BR><BR><SPAN lang=EN-US><FONT 
+style="COLOR: blue; BACKGROUND-COLOR: yellow">CLR</FONT> rofiler</SPAN><SPAN 
+style="FONT-FAMILY: 宋体">允许你查看进程的托管堆并且研究垃圾回收器的特性，使用该工具的不同视图，你可以得到你的应用程序有关执行，分配，已经内存消耗的情况。</SPAN></DIV>
+<DIV class=PostContent>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US><FONT 
+style="COLOR: blue; BACKGROUND-COLOR: yellow">CLR</FONT> rofiler</SPAN><SPAN 
+style="FONT-FAMILY: 宋体">不是分析问题的起点，确切的说，它帮助你鉴别并且隔离有疑问的代码并且追踪内存泄漏。使用</SPAN><SPAN 
+lang=EN-US><FONT style="COLOR: blue; BACKGROUND-COLOR: yellow">CLR</FONT> <FONT 
+style="COLOR: blue; BACKGROUND-COLOR: yellow">Profiler</FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体">，你可以鉴别哪些代码分配了太多的内存，导致太多次的内存回收已经占有内存时间太长。</SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN 
+lang=EN-US><SPAN>&nbsp;&nbsp;&nbsp; </SPAN></SPAN><SPAN 
+style="FONT-FAMILY: 宋体">注意：</SPAN><SPAN lang=EN-US><FONT 
+style="COLOR: blue; BACKGROUND-COLOR: yellow">CLR</FONT> <FONT 
+style="COLOR: blue; BACKGROUND-COLOR: yellow">Profiler</FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体">是一个插入式的分析器，它会严重地减慢被分析的应用程序的运行速度，某些情况下会导致</SPAN><SPAN 
+lang=EN-US>10</SPAN><SPAN style="FONT-FAMILY: 宋体">－</SPAN><SPAN 
+lang=EN-US>100</SPAN><SPAN 
+style="FONT-FAMILY: 宋体">倍的速度减缓，该工具不是设计用在产品环境中。</SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN 
+style="FONT-FAMILY: 宋体">你需要了解的：</SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US>The primary 
+function of <FONT style="COLOR: blue; BACKGROUND-COLOR: yellow">CLR</FONT> <FONT 
+style="COLOR: blue; BACKGROUND-COLOR: yellow">Profiler</FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体">的主要功能是允许你了解你的应用程序如何与托管的，可回收的堆交互的。更重要的是，你可以研究包括：</SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN 
+lang=EN-US><SPAN>&nbsp;&nbsp;&nbsp; </SPAN></SPAN><SPAN 
+style="FONT-FAMILY: 宋体">谁在托管堆上分配了什么（谁，什么）</SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN 
+lang=EN-US><SPAN>&nbsp;&nbsp;&nbsp; </SPAN></SPAN><SPAN 
+style="FONT-FAMILY: 宋体">谁存活在托管堆上</SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN 
+lang=EN-US><SPAN>&nbsp;&nbsp;&nbsp; </SPAN></SPAN><SPAN 
+style="FONT-FAMILY: 宋体">谁引用了对象</SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN 
+lang=EN-US><SPAN>&nbsp;&nbsp;&nbsp; </SPAN></SPAN><SPAN 
+style="FONT-FAMILY: 宋体">垃圾回收器在你的程序的生存周期内做了什么</SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN 
+style="FONT-FAMILY: 宋体">嗅探的结果被保存在日志文件中，你可以通过</SPAN><SPAN lang=EN-US><FONT 
+style="COLOR: blue; BACKGROUND-COLOR: yellow">CLR</FONT> <FONT 
+style="COLOR: blue; BACKGROUND-COLOR: yellow">Profiler</FONT></SPAN><SPAN 
+style="FONT-FAMILY: 宋体">的视图菜单以不同的方式来显示相应的视图。下表描述了几个主要的视图：</SPAN></P>
+<TABLE class=MsoNormalTable 
+style="BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none; BORDER-COLLAPSE: collapse" 
+cellSpacing=0 cellPadding=0 border=1>
+  <TBODY>
+  <TR>
+    <TD 
+    style="PADDING-RIGHT: 3.75pt; PADDING-LEFT: 3.75pt; BACKGROUND: #eeeeee 0% 50%; PADDING-BOTTOM: 3.75pt; WIDTH: 34%; PADDING-TOP: 3.75pt; moz-background-clip: -moz-initial; moz-background-origin: -moz-initial; moz-background-inline-policy: -moz-initial" 
+    vAlign=top width="34%">
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><STRONG><SPAN 
+      style="FONT-FAMILY: 宋体">视图</SPAN><SPAN 
+      lang=EN-US><O:P></O:P></SPAN></STRONG></P></TD>
+    <TD 
+    style="PADDING-RIGHT: 3.75pt; PADDING-LEFT: 3.75pt; BACKGROUND: #eeeeee 0% 50%; PADDING-BOTTOM: 3.75pt; WIDTH: 66%; PADDING-TOP: 3.75pt; moz-background-clip: -moz-initial; moz-background-origin: -moz-initial; moz-background-inline-policy: -moz-initial" 
+    vAlign=top width="66%">
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><STRONG><SPAN 
+      style="FONT-FAMILY: 宋体">对应的描述</SPAN><SPAN 
+      lang=EN-US><O:P></O:P></SPAN></STRONG></P></TD></TR>
+  <TR>
+    <TD 
+    style="PADDING-RIGHT: 3.75pt; PADDING-LEFT: 3.75pt; PADDING-BOTTOM: 3.75pt; WIDTH: 34%; PADDING-TOP: 3.75pt; BACKGROUND-COLOR: transparent" 
+    vAlign=top width="34%">
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US>Histogram 
+      Allocated Types</SPAN></P></TD>
+    <TD 
+    style="PADDING-RIGHT: 3.75pt; PADDING-LEFT: 3.75pt; PADDING-BOTTOM: 3.75pt; WIDTH: 66%; PADDING-TOP: 3.75pt; BACKGROUND-COLOR: transparent" 
+    vAlign=top width="66%">
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN 
+      style="FONT-FAMILY: 宋体">给你一个在你程序的生命期中哪些类型对象被分配的高级视图，该视图还显示被分配在大对象堆中的对象，</SPAN></P>
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US>Gives you 
+      a high-level view of what object types are allocated (by allocation size) 
+      during the lifetime of your application. This view also shows those 
+      objects that are allocated in the large object heap (objects larger than 
+      85 KB). </SPAN></P>
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US>This view 
+      allows you to click parts of the graph so that you can see which methods 
+      allocated which objects.</SPAN></P></TD></TR>
+  <TR>
+    <TD 
+    style="PADDING-RIGHT: 3.75pt; PADDING-LEFT: 3.75pt; PADDING-BOTTOM: 3.75pt; WIDTH: 34%; PADDING-TOP: 3.75pt; BACKGROUND-COLOR: transparent" 
+    vAlign=top width="34%">
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US>Histogram 
+      Relocated Types</SPAN></P></TD>
+    <TD 
+    style="PADDING-RIGHT: 3.75pt; PADDING-LEFT: 3.75pt; PADDING-BOTTOM: 3.75pt; WIDTH: 66%; PADDING-TOP: 3.75pt; BACKGROUND-COLOR: transparent" 
+    vAlign=top width="66%">
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN 
+      style="FONT-FAMILY: 宋体">展示被垃圾回收器迁移的对象（因为它们在垃圾回收过程中被保留）</SPAN></P></TD></TR>
+  <TR>
+    <TD 
+    style="PADDING-RIGHT: 3.75pt; PADDING-LEFT: 3.75pt; PADDING-BOTTOM: 3.75pt; WIDTH: 34%; PADDING-TOP: 3.75pt; BACKGROUND-COLOR: transparent" 
+    vAlign=top width="34%">
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US>Objects By 
+      Address</SPAN></P></TD>
+    <TD 
+    style="PADDING-RIGHT: 3.75pt; PADDING-LEFT: 3.75pt; PADDING-BOTTOM: 3.75pt; WIDTH: 66%; PADDING-TOP: 3.75pt; BACKGROUND-COLOR: transparent" 
+    vAlign=top width="66%">
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN 
+      style="FONT-FAMILY: 宋体">显示在指定的时间托管堆上都有哪些对象</SPAN></P></TD></TR>
+  <TR>
+    <TD 
+    style="PADDING-RIGHT: 3.75pt; PADDING-LEFT: 3.75pt; PADDING-BOTTOM: 3.75pt; WIDTH: 34%; PADDING-TOP: 3.75pt; BACKGROUND-COLOR: transparent" 
+    vAlign=top width="34%">
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US>Histogram 
+      By Age</SPAN></P></TD>
+    <TD 
+    style="PADDING-RIGHT: 3.75pt; PADDING-LEFT: 3.75pt; PADDING-BOTTOM: 3.75pt; WIDTH: 66%; PADDING-TOP: 3.75pt; BACKGROUND-COLOR: transparent" 
+    vAlign=top width="66%">
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN 
+      style="FONT-FAMILY: 宋体">允许你查看托管堆上对象的生命期</SPAN></P></TD></TR>
+  <TR>
+    <TD 
+    style="PADDING-RIGHT: 3.75pt; PADDING-LEFT: 3.75pt; PADDING-BOTTOM: 3.75pt; WIDTH: 34%; PADDING-TOP: 3.75pt; BACKGROUND-COLOR: transparent" 
+    vAlign=top width="34%">
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US>Allocation 
+      Graph</SPAN></P></TD>
+    <TD 
+    style="PADDING-RIGHT: 3.75pt; PADDING-LEFT: 3.75pt; PADDING-BOTTOM: 3.75pt; WIDTH: 66%; PADDING-TOP: 3.75pt; BACKGROUND-COLOR: transparent" 
+    vAlign=top width="66%">
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN 
+      style="FONT-FAMILY: 宋体">图形化显示对象分配的调用堆栈，你可以使用该视图：</SPAN></P>
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN 
+      lang=EN-US>-</SPAN><SPAN style="FONT-FAMILY: 宋体">查看每个方法的内存消费</SPAN></P>
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN 
+      lang=EN-US>-</SPAN><SPAN style="FONT-FAMILY: 宋体">找出你不期望的内存分配</SPAN></P>
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN 
+      lang=EN-US>-</SPAN><SPAN 
+    style="FONT-FAMILY: 宋体">找到有可能过度分配内存的方法</SPAN></P></TD></TR>
+  <TR>
+    <TD 
+    style="PADDING-RIGHT: 3.75pt; PADDING-LEFT: 3.75pt; PADDING-BOTTOM: 3.75pt; WIDTH: 34%; PADDING-TOP: 3.75pt; BACKGROUND-COLOR: transparent" 
+    vAlign=top width="34%">
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US>Assembly, 
+      Module, Function, and Class Graph</SPAN></P></TD>
+    <TD 
+    style="PADDING-RIGHT: 3.75pt; PADDING-LEFT: 3.75pt; PADDING-BOTTOM: 3.75pt; WIDTH: 66%; PADDING-TOP: 3.75pt; BACKGROUND-COLOR: transparent" 
+    vAlign=top width="66%">
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN 
+      style="FONT-FAMILY: 宋体">这四个视图很相似</SPAN><SPAN lang=EN-US>.</SPAN><SPAN 
+      style="FONT-FAMILY: 宋体">你可以看到某个方法涉及到哪些</SPAN><SPAN 
+      lang=EN-US>Assembly,</SPAN><SPAN 
+      style="FONT-FAMILY: 宋体">哪些类，哪些模块，哪些函数</SPAN></P></TD></TR>
+  <TR>
+    <TD 
+    style="PADDING-RIGHT: 3.75pt; PADDING-LEFT: 3.75pt; PADDING-BOTTOM: 3.75pt; WIDTH: 34%; PADDING-TOP: 3.75pt; BACKGROUND-COLOR: transparent" 
+    vAlign=top width="34%">
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US>Heap 
+      Graph</SPAN></P></TD>
+    <TD 
+    style="PADDING-RIGHT: 3.75pt; PADDING-LEFT: 3.75pt; PADDING-BOTTOM: 3.75pt; WIDTH: 66%; PADDING-TOP: 3.75pt; BACKGROUND-COLOR: transparent" 
+    vAlign=top width="66%">
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN 
+      style="FONT-FAMILY: 宋体">显示托管堆上的所有对象，以及它们的相关联对象</SPAN><SPAN 
+      lang=EN-US>.</SPAN></P></TD></TR>
+  <TR>
+    <TD 
+    style="PADDING-RIGHT: 3.75pt; PADDING-LEFT: 3.75pt; PADDING-BOTTOM: 3.75pt; WIDTH: 34%; PADDING-TOP: 3.75pt; BACKGROUND-COLOR: transparent" 
+    vAlign=top width="34%">
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US>Call 
+      Graph</SPAN></P></TD>
+    <TD 
+    style="PADDING-RIGHT: 3.75pt; PADDING-LEFT: 3.75pt; PADDING-BOTTOM: 3.75pt; WIDTH: 66%; PADDING-TOP: 3.75pt; BACKGROUND-COLOR: transparent" 
+    vAlign=top width="66%">
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US>Lets you 
+      see which methods call which other methods and how frequently. </SPAN></P>
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US>You can 
+      use this graph to get a feel for the cost of library calls and to 
+      determine how many calls are made to methods and which methods are 
+      called.</SPAN></P></TD></TR>
+  <TR>
+    <TD 
+    style="PADDING-RIGHT: 3.75pt; PADDING-LEFT: 3.75pt; PADDING-BOTTOM: 3.75pt; WIDTH: 34%; PADDING-TOP: 3.75pt; BACKGROUND-COLOR: transparent" 
+    vAlign=top width="34%">
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US>Time 
+      Line</SPAN></P></TD>
+    <TD 
+    style="PADDING-RIGHT: 3.75pt; PADDING-LEFT: 3.75pt; PADDING-BOTTOM: 3.75pt; WIDTH: 66%; PADDING-TOP: 3.75pt; BACKGROUND-COLOR: transparent" 
+    vAlign=top width="66%">
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US>Displays 
+      what the garbage collector does over the lifetime of the application. Use 
+      this view to: </SPAN></P>
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN 
+      lang=EN-US>-Investigate the behavior of the garbage collector.</SPAN></P>
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US>-Determine 
+      how many garbage collections occur at the three generations (Generation 0, 
+      1, and 2) and how frequently they occur.</SPAN></P>
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US>-Determine 
+      which objects survive garbage collection and are promoted to the next 
+      generation.</SPAN></P>
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US>You can 
+      select time points or intervals and right-click to show who allocated 
+      memory in the interval.</SPAN></P></TD></TR>
+  <TR>
+    <TD 
+    style="PADDING-RIGHT: 3.75pt; PADDING-LEFT: 3.75pt; PADDING-BOTTOM: 3.75pt; WIDTH: 34%; PADDING-TOP: 3.75pt; BACKGROUND-COLOR: transparent" 
+    vAlign=top width="34%">
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US>Call Tree 
+      View </SPAN></P></TD>
+    <TD 
+    style="PADDING-RIGHT: 3.75pt; PADDING-LEFT: 3.75pt; PADDING-BOTTOM: 3.75pt; WIDTH: 66%; PADDING-TOP: 3.75pt; BACKGROUND-COLOR: transparent" 
+    vAlign=top width="66%">
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US>Provides a 
+      text-based, chronological, hierarchical view of your application's 
+      execution. Use this view to: </SPAN></P>
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US>-See what 
+      types are allocated and their size.</SPAN></P>
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US>-See which 
+      assemblies are loaded as result of method calls.</SPAN></P>
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US>-Analyze 
+      the use of finalizers, including the number of finalizers 
+      executed.</SPAN></P>
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US>-Identify 
+      methods where <STRONG>Close</STRONG> or <STRONG>Dispose</STRONG> has not 
+      been implemented or called, thereby causing a bottleneck.</SPAN></P>
+      <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN lang=EN-US>-Analyze 
+      allocations that you were not expecting.</SPAN></P></TD></TR></TBODY></TABLE>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN 
+lang=EN-US><O:P></O:P></SPAN></P></DIV>
+<DIV id=MySignature>
+<SCRIPT type=text/JavaScript> 
+alimama_pid="mm_10942693_1022802_2220469"; 
+alimama_titlecolor="0000FF"; 
+alimama_descolor ="000000"; 
+alimama_bgcolor="FFFFFF"; 
+alimama_bordercolor="E6E6E6"; 
+alimama_linkcolor="008000"; 
+alimama_bottomcolor="FFFFFF"; 
+alimama_anglesize="0"; 
+alimama_bgpic="0"; 
+alimama_icon="0"; 
+alimama_sizecode="12"; 
+alimama_width=468; 
+alimama_height=60; 
+alimama_type=2; 
+</SCRIPT>
+
+<SCRIPT 
+src="[推荐]_net环境下分析程序调用关系图工具 - 元宝家园 --- 坚持理想，脚踏实地，不断学习 - 博客园_files/inf.js" 
+type=text/javascript> 
+</SCRIPT>
+</DIV>
+<DIV id=EntryTag>Tag标签: <A 
+href="http://www.cnblogs.com/yuanbao/tag/ï¿¥net/">.net</A>,<A 
+href="http://www.cnblogs.com/yuanbao/tag/è°ç¨å³ç³»å¾/">调用关系图</A>,<A 
+href="http://www.cnblogs.com/yuanbao/tag/å·¥å·/">工具</A>,<A 
+href="http://www.cnblogs.com/yuanbao/tag/CLR+Profiler/">CLR 
+Profiler</A></DIV></DIV>
+<DIV class=postfoot>posted on 2008-05-29 11:06 <A 
+href="http://yuanbao.cnblogs.com/">元宝</A> 阅读(940) <A 
+href="http://www.cnblogs.com/yuanbao/archive/2008/05/29/1209758.html#Post">评论(6)</A> 
+&nbsp;<A 
+href="http://www.cnblogs.com/yuanbao/admin/EditPosts.aspx?postid=1209758">编辑</A> 
+<A href="http://www.cnblogs.com/yuanbao/AddToFavorite.aspx?id=1209758">收藏</A> 
+所属分类: <A href="http://www.cnblogs.com/yuanbao/category/110151.html">学习资料</A> 
+</DIV></DIV><IMG height=1 
+src="[推荐]_net环境下分析程序调用关系图工具 - 元宝家园 --- 坚持理想，脚踏实地，不断学习 - 博客园_files/1209758.jpg" 
+width=1> <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+rdf:about="http://www.cnblogs.com/yuanbao/archive/2008/05/29/1209758.html"
+dc:identifier="http://www.cnblogs.com/yuanbao/archive/2008/05/29/1209758.html"
+dc:title="[推荐].net环境下分析程序调用关系图工具"
+trackback:ping="http://www.cnblogs.com/yuanbao/services/trackbacks/1209758.aspx" />
+</rdf:RDF>
+-->
+<DIV id=AjaxHolder_UpdatePanel1><A name=pagedcomment></A><A name=feedback><BR>
+<DIV id=comments>
+<H3>Feedback</H3>
+<DIV class=post>
+<DIV class=postTitle><A title="permalink: re: [推荐].net环境下分析程序调用关系图工具" 
+href="http://www.cnblogs.com/yuanbao/archive/2008/05/29/1209758.html#1212646">#1楼</A>&nbsp;<A 
+name=1212646></A> <SPAN>2008-05-29 12:16 </SPAN><A 
+id=AjaxHolder_Comments_CommentList_ctl00_NameLink 
+href="http://winzheng.cnblogs.com/" target=_blank>winzheng</A>&nbsp;<A 
+class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/winzheng">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=postText>这个工具不错，以前常用到 <BR>&nbsp;&nbsp;<A 
+onclick='return SetReplyAuhor("winzheng")' 
+href="http://www.cnblogs.com/yuanbao/archive/2008/05/29/1209758.html#post">回复</A>&nbsp;&nbsp;<A 
+onclick="GetQuote(1212646);return false" 
+href="http://www.cnblogs.com/yuanbao/archive/2008/05/29/1209758.html#post">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=winzheng" 
+target=_blank>查看</A>&nbsp;&nbsp;<A 
+id=AjaxHolder_Comments_CommentList_ctl00_DeleteLink 
+href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl00$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=AjaxHolder_Comments_CommentList_ctl00_EditLink></A> </DIV></DIV><BR>
+<DIV class=post>
+<DIV class=postTitle><A title="permalink: re: [推荐].net环境下分析程序调用关系图工具" 
+href="http://www.cnblogs.com/yuanbao/archive/2008/05/29/1209758.html#1212671">#2楼</A>&nbsp;<A 
+name=1212671></A>118.26.231.* <SPAN>2008-05-29 12:51 </SPAN><A 
+id=AjaxHolder_Comments_CommentList_ctl01_NameLink 
+href="http://www.the10top.com/" target=_blank>top10 [未注册用户]</A> </DIV>
+<DIV class=postText>好像不错，<BR>试试 <BR>&nbsp;&nbsp;<A 
+onclick='return SetReplyAuhor("top10")' 
+href="http://www.cnblogs.com/yuanbao/archive/2008/05/29/1209758.html#post">回复</A>&nbsp;&nbsp;<A 
+onclick="GetQuote(1212671);return false" 
+href="http://www.cnblogs.com/yuanbao/archive/2008/05/29/1209758.html#post">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=top10+%5b%e6%9c%aa%e6%b3%a8%e5%86%8c%e7%94%a8%e6%88%b7%5d" 
+target=_blank>查看</A>&nbsp;&nbsp;<A 
+id=AjaxHolder_Comments_CommentList_ctl01_DeleteLink 
+href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl01$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=AjaxHolder_Comments_CommentList_ctl01_EditLink></A> </DIV></DIV><BR>
+<DIV class=post>
+<DIV class=postTitle><A title="permalink: re: [推荐].net环境下分析程序调用关系图工具" 
+href="http://www.cnblogs.com/yuanbao/archive/2008/05/29/1209758.html#1212689">#3楼</A>&nbsp;<A 
+name=1212689></A> <SPAN>2008-05-29 13:16 </SPAN><A 
+id=AjaxHolder_Comments_CommentList_ctl02_NameLink 
+href="http://progame.cnblogs.com/" target=_blank>progame</A>&nbsp;<A 
+class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/progame">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=postText>我记得reflector有插件可以看这些的 <BR><BR>但个人觉得图形化未必有什么直观和帮助 
+<BR>还是relectore里的analyse和vs ide的find references很有用 <BR>&nbsp;&nbsp;<A 
+onclick='return SetReplyAuhor("progame")' 
+href="http://www.cnblogs.com/yuanbao/archive/2008/05/29/1209758.html#post">回复</A>&nbsp;&nbsp;<A 
+onclick="GetQuote(1212689);return false" 
+href="http://www.cnblogs.com/yuanbao/archive/2008/05/29/1209758.html#post">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=progame" 
+target=_blank>查看</A>&nbsp;&nbsp;<A 
+id=AjaxHolder_Comments_CommentList_ctl02_DeleteLink 
+href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl02$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=AjaxHolder_Comments_CommentList_ctl02_EditLink></A> </DIV></DIV><BR>
+<DIV class=post>
+<DIV class=postTitle><A title="permalink: re: [推荐].net环境下分析程序调用关系图工具" 
+href="http://www.cnblogs.com/yuanbao/archive/2008/05/29/1209758.html#1212719">#4楼</A>&nbsp;<A 
+name=1212719></A>59.46.56.* <SPAN>2008-05-29 13:52 </SPAN><A 
+id=AjaxHolder_Comments_CommentList_ctl03_NameLink target=_blank>pixysoft 
+[未注册用户]</A> </DIV>
+<DIV class=postText>楼主谢谢啦！！！！ <BR><BR>一直我在找这个，还想着自己用反射做出来算了。谢谢！ 
+<BR>&nbsp;&nbsp;<A onclick='return SetReplyAuhor("pixysoft")' 
+href="http://www.cnblogs.com/yuanbao/archive/2008/05/29/1209758.html#post">回复</A>&nbsp;&nbsp;<A 
+onclick="GetQuote(1212719);return false" 
+href="http://www.cnblogs.com/yuanbao/archive/2008/05/29/1209758.html#post">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=pixysoft+%5b%e6%9c%aa%e6%b3%a8%e5%86%8c%e7%94%a8%e6%88%b7%5d" 
+target=_blank>查看</A>&nbsp;&nbsp;<A 
+id=AjaxHolder_Comments_CommentList_ctl03_DeleteLink 
+href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl03$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=AjaxHolder_Comments_CommentList_ctl03_EditLink></A> </DIV></DIV><BR>
+<DIV class=post>
+<DIV class=postTitle><A title="permalink: re: [推荐].net环境下分析程序调用关系图工具" 
+href="http://www.cnblogs.com/yuanbao/archive/2008/05/29/1209758.html#1212815">#5楼</A>&nbsp;<A 
+name=1212815></A> <SPAN>2008-05-29 15:21 </SPAN><A 
+id=AjaxHolder_Comments_CommentList_ctl04_NameLink 
+href="http://xrainfir.cnblogs.com/" target=_blank>xrainfir</A>&nbsp;<A 
+class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/xrainfir">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=postText>ctrl+d 后走人 <BR>&nbsp;&nbsp;<A 
+onclick='return SetReplyAuhor("xrainfir")' 
+href="http://www.cnblogs.com/yuanbao/archive/2008/05/29/1209758.html#post">回复</A>&nbsp;&nbsp;<A 
+onclick="GetQuote(1212815);return false" 
+href="http://www.cnblogs.com/yuanbao/archive/2008/05/29/1209758.html#post">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=xrainfir" 
+target=_blank>查看</A>&nbsp;&nbsp;<A 
+id=AjaxHolder_Comments_CommentList_ctl04_DeleteLink 
+href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl04$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=AjaxHolder_Comments_CommentList_ctl04_EditLink></A> </DIV></DIV><BR>
+<DIV class=post>
+<DIV class=postTitle><A title="permalink: re: [推荐].net环境下分析程序调用关系图工具" 
+href="http://www.cnblogs.com/yuanbao/archive/2008/05/29/1209758.html#1212822">#6楼</A>&nbsp;<A 
+name=1212822></A><A name=Post></A> <SPAN>2008-05-29 15:25 </SPAN><A 
+id=AjaxHolder_Comments_CommentList_ctl05_NameLink 
+href="http://axzhz.cnblogs.com/" target=_blank>斧头帮少帮主</A>&nbsp;<A 
+class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/æ§å¤´å¸®å°å¸®ä¸»">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=postText>相当失望,不能看DLL的. <BR>&nbsp;&nbsp;<A 
+onclick='return SetReplyAuhor("斧头帮少帮主")' 
+href="http://www.cnblogs.com/yuanbao/archive/2008/05/29/1209758.html#post">回复</A>&nbsp;&nbsp;<A 
+onclick="GetQuote(1212822);return false" 
+href="http://www.cnblogs.com/yuanbao/archive/2008/05/29/1209758.html#post">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e6%96%a7%e5%a4%b4%e5%b8%ae%e5%b0%91%e5%b8%ae%e4%b8%bb" 
+target=_blank>查看</A>&nbsp;&nbsp;<A 
+id=AjaxHolder_Comments_CommentList_ctl05_DeleteLink 
+href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl05$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=AjaxHolder_Comments_CommentList_ctl05_EditLink></A> </DIV></DIV><BR></DIV>
+<STYLE>TD {
+	FONT-SIZE: 12px
+}
+.commentTextBox {
+	FONT-SIZE: 13px; FONT-FAMILY: Verdana
+}
+A.blue:visited {
+	COLOR: blue
+}
+A.blue:active {
+	COLOR: blue
+}
+A.blue:link {
+	COLOR: blue
+}
+A.blue:hover {
+	COLOR: blue
+}
+</STYLE>
+<!--Beging Temp Save-->
+<STYLE>.userData {
+	BEHAVIOR: url(#default#userdata)
+}
+</STYLE>
+
+<DIV class=userData id=CommentsPersistDiv></DIV>
+<SCRIPT type=text/javascript>
+function pageLoad()
+{
+    Sys.WebForms.PageRequestManager.getInstance().add_initializeRequest(handleInitializeRequest);
+    //Sys.WebForms.PageRequestManager.getInstance().add_endRequest(handleEndRequest);
+}
+
+function handleInitializeRequest(sender, args)
+{
+    var prm = Sys.WebForms.PageRequestManager.getInstance();
+    var eid = args.get_postBackElement().id;
+    if (eid.indexOf("DeleteLink")>0) 
+    {
+       args.get_postBackElement().innerHTML = "<font color='red'>正在删除...</font>";         
+    }    
+    else if (eid.indexOf("btnSubmit")>0) 
+    {
+       document.getElementById("AjaxHolder_PostComment_ltSubmitMsg").innerHTML="正在提交...";
+       document.getElementById("AjaxHolder_PostComment_btnSubmit").disabled = true;       
+    }   
+    else if(eid.indexOf("refreshList")>0)
+    {
+        document.getElementById("AjaxHolder_PostComment_refreshList").innerHTML="<font color='red'>正在刷新...</font>";
+    }
+   
+}	
+
+function TempSave(ElementID)
+{
+	try
+	{
+	CommentsPersistDiv.setAttribute("CommentContent",document.getElementById(ElementID).value);
+	CommentsPersistDiv.save("CommentXMLStore");
+	}
+	catch(ex)
+	{
+	}
+	
+}
+function Restore(ElementID)
+{
+	CommentsPersistDiv.load("CommentXMLStore");
+	document.getElementById(ElementID).value=CommentsPersistDiv.getAttribute("CommentContent");
+}	
+			
+			
+</SCRIPT>
+<!--Ene TempSave-->
+<DIV id=divRefreshComments 
+style="FONT-SIZE: 12px; MARGIN-BOTTOM: 5px; MARGIN-RIGHT: 10px; TEXT-ALIGN: right"><A 
+href="http://www.cnblogs.com/RequireRegister.aspx">新用户注册</A>&nbsp;&nbsp;<A 
+id=AjaxHolder_PostComment_refreshList 
+href="javascript:__doPostBack('AjaxHolder$PostComment$refreshList','')">刷新评论列表</A>&nbsp;&nbsp;</DIV>
+<DIV class=commentform><SPAN id=AjaxHolder_PostComment_ltSubmitMsg 
+style="COLOR: red"></SPAN><BR><A name=Feedback></A>
+<TABLE cellSpacing=1 cellPadding=1 border=0>
+  <TBODY>
+  <TR>
+    <TD width=75></TD>
+    <TD></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD width=55>标题</TD>
+    <TD><INPUT class=commenttb id=AjaxHolder_PostComment_tbTitle 
+      value="re: [推荐].net环境下分析程序调用关系图工具" name=AjaxHolder$PostComment$tbTitle></TD>
+    <TD><SPAN id=AjaxHolder_PostComment_RequiredFieldValidator1 
+      style="VISIBILITY: hidden; COLOR: red">请输入标题</SPAN></TD></TR>
+  <TR>
+    <TD>姓名</TD>
+    <TD><INPUT class=commenttb id=AjaxHolder_PostComment_tbName readOnly 
+      value=amingo name=AjaxHolder$PostComment$tbName></TD>
+    <TD><SPAN id=AjaxHolder_PostComment_RequiredFieldValidator2 
+      style="VISIBILITY: hidden; COLOR: red">请输入你的姓名</SPAN></TD></TR>
+  <TR>
+    <TD>主页</TD>
+    <TD><INPUT class=commenttb id=AjaxHolder_PostComment_tbUrl readOnly 
+      value=http://amingo.cnblogs.com/ name=AjaxHolder$PostComment$tbUrl></TD>
+    <TD><FONT face=宋体></FONT></TD></TR>
+  <TR id=AjaxHolder_PostComment_trEmail>
+    <TD>Email</TD>
+    <TD><INPUT class=commenttb id=AjaxHolder_PostComment_tbEmail 
+      name=AjaxHolder$PostComment$tbEmail>(只有博主才能看到)<SPAN 
+      id=AjaxHolder_PostComment_revContactMail 
+      style="VISIBILITY: hidden; COLOR: red">邮件地址无效</SPAN></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD align=left colSpan=3></TD></TR>
+  <TR>
+    <TD colSpan=3>内容(请不要发表任何与政治相关的内容) <SPAN 
+      id=AjaxHolder_PostComment_RequiredFieldValidator3 
+      style="VISIBILITY: hidden; COLOR: red">请输入评论内容</SPAN><BR><TEXTAREA class=commentTextBox id=AjaxHolder_PostComment_tbComment onkeydown="ctlent(event,'AjaxHolder_PostComment_tbComment')" name=AjaxHolder$PostComment$tbComment></TEXTAREA></TD></TR>
+  <TR>
+    <TD colSpan=3><SPAN id=AjaxHolder_PostComment_Message 
+      style="COLOR: red"></SPAN></TD>
+  <TR>
+    <TD colSpan=3><INPUT id=AjaxHolder_PostComment_chkIsNotify tabIndex=-1 
+      type=checkbox name=AjaxHolder$PostComment$chkIsNotify><LABEL 
+      for=AjaxHolder_PostComment_chkIsNotify>有回复时邮件通知我</LABEL></TD></TR>
+  <TR>
+    <TD height=23><INPUT class=commentButton id=AjaxHolder_PostComment_btnSubmit onclick="TempSave('AjaxHolder_PostComment_tbComment');WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;AjaxHolder$PostComment$btnSubmit&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" type=submit value=提交 name=AjaxHolder$PostComment$btnSubmit> 
+    </TD>
+    <TD colSpan=2 height=23>&nbsp; <A id=AjaxHolder_PostComment_lnkLogin 
+      href="http://www.cnblogs.com/logout.aspx?ReturnURL=http://www.cnblogs.com/yuanbao/archive/2008/05/29/1209758.html">注销</A>&nbsp;&nbsp;<A 
+      id=AjaxHolder_PostComment_linkLoginComment 
+      onclick="if(document.getElementById('AjaxHolder_PostComment_tbComment').value != '') return confirm('未提交的评论内容将会丢失, 你真的要进入高级评论吗?');" 
+      href="http://www.cnblogs.com/yuanbao/archive/2008/05/29/1209758.html?login=1#Post">使用高级评论</A>&nbsp;&nbsp;<A 
+      href="http://www.cnblogs.com/RequireRegister.aspx">新用户注册</A>&nbsp;&nbsp;<A 
+      href="http://www.cnblogs.com/yuanbao/archive/2008/05/29/1209758.html#Top">返回页首</A>&nbsp;&nbsp;<A 
+      id=AjaxHolder_PostComment_lbRestore 
+      onclick="Restore('AjaxHolder_PostComment_tbComment'); return false;" 
+      href="http://www.cnblogs.com/yuanbao/archive/2008/05/29/1209758.html#Post">恢复上次提交</A>&nbsp;&nbsp;&nbsp;&nbsp;<A 
+      id=AjaxHolder_PostComment_btnSubscibe 
+      href="javascript:__doPostBack('AjaxHolder$PostComment$btnSubscibe','')">订阅回复</A>&nbsp;&nbsp; 
+    </TD></TR>
+  <TR>
+    <TD colSpan=3><LABEL class=CtrlEnter>[使用Ctrl+Enter键可以直接提交]</LABEL></TD></TR>
+  <TR>
+    <TD colSpan=3>该文被作者在 2008-05-29 11:10 编辑过</TD></TR>
+  <TR>
+    <TD colSpan=3 height=3>&nbsp;</TD></TR>
+  <TR>
+    <TD colSpan=3></TD></TR>
+  <TR>
+    <TD colSpan=3><A id=AjaxHolder_PostComment_lbViewReaders 
+      href="javascript:__doPostBack('AjaxHolder$PostComment$lbViewReaders','')">看看谁阅读了该文章</A></TD></TR>
+  <TR>
+    <TD colSpan=3>
+      <DIV id=AjaxHolder_PostComment_RelativePosts1_divRelativePosts 
+      style="MARGIN-TOP: 2px">所属分类的其他文章:<BR><SPAN 
+      style="DISPLAY: none; LIST-STYLE-TYPE: none">· <A 
+      id=AjaxHolder_PostComment_RelativePosts1_RelativePostsList_ctl00_Hyperlink1 
+      href="http://www.cnblogs.com/yuanbao/archive/2008/05/29/1209758.html">[推荐].net环境下分析程序调用关系图工具</A><BR></SPAN><SPAN 
+      style="LIST-STYLE-TYPE: none">· <A 
+      id=AjaxHolder_PostComment_RelativePosts1_RelativePostsList_ctl01_Hyperlink1 
+      href="http://www.cnblogs.com/yuanbao/archive/2008/05/26/1205627.html">[转]计算机端口大全</A><BR></SPAN><SPAN 
+      style="LIST-STYLE-TYPE: none">· <A 
+      id=AjaxHolder_PostComment_RelativePosts1_RelativePostsList_ctl02_Hyperlink1 
+      href="http://www.cnblogs.com/yuanbao/archive/2008/05/26/1207905.html">转：手机居然有这种用处!!还满管用的!</A><BR></SPAN><SPAN 
+      style="LIST-STYLE-TYPE: none">· <A 
+      id=AjaxHolder_PostComment_RelativePosts1_RelativePostsList_ctl03_Hyperlink1 
+      href="http://www.cnblogs.com/yuanbao/archive/2008/05/26/1207830.html">[转]关于delphi 
+      Com+调用C# DLL的一点说明 </A><BR></SPAN><SPAN style="LIST-STYLE-TYPE: none">· <A 
+      id=AjaxHolder_PostComment_RelativePosts1_RelativePostsList_ctl04_Hyperlink1 
+      href="http://www.cnblogs.com/yuanbao/archive/2008/05/21/1204107.html">转：控制‘控制台应用程序’的关闭操作 
+      </A><BR></SPAN><SPAN style="LIST-STYLE-TYPE: none">· <A 
+      id=AjaxHolder_PostComment_RelativePosts1_RelativePostsList_ctl05_Hyperlink1 
+      href="http://www.cnblogs.com/yuanbao/archive/2008/05/12/1193939.html">[转]语音和视频聊天全源代码C#</A><BR></SPAN><SPAN 
+      style="LIST-STYLE-TYPE: none">· <A 
+      id=AjaxHolder_PostComment_RelativePosts1_RelativePostsList_ctl06_Hyperlink1 
+      href="http://www.cnblogs.com/yuanbao/archive/2008/04/29/1176558.html">再转发些关于dotNet加密工具的文章</A><BR></SPAN><SPAN 
+      style="LIST-STYLE-TYPE: none">· <A 
+      id=AjaxHolder_PostComment_RelativePosts1_RelativePostsList_ctl07_Hyperlink1 
+      href="http://www.cnblogs.com/yuanbao/archive/2008/04/29/1176365.html">[转]不注册使用 
+      .NET Reactor</A><BR></SPAN><SPAN style="LIST-STYLE-TYPE: none">· <A 
+      id=AjaxHolder_PostComment_RelativePosts1_RelativePostsList_ctl08_Hyperlink1 
+      href="http://www.cnblogs.com/yuanbao/archive/2008/04/28/1174338.html">转发一篇关于bp神经网格识别验证码的文档</A><BR></SPAN><SPAN 
+      style="LIST-STYLE-TYPE: none">· <A 
+      id=AjaxHolder_PostComment_RelativePosts1_RelativePostsList_ctl09_Hyperlink1 
+      href="http://www.cnblogs.com/yuanbao/archive/2008/04/28/1174248.html">图像分割与描述</A><BR></SPAN></DIV>
+      <DIV style="MARGIN-TOP: 3px"><A 
+      href="http://www.cnblogs.com/">博客园首页</A>&nbsp;&nbsp;<A 
+      href="http://space.cnblogs.com/">社区</A> </DIV></TD></TR>
+  <TR>
+    <TD colSpan=3 height=5>&nbsp;</TD></TR>
+  <TR>
+    <TD colSpan=3>
+      <SCRIPT type=text/javascript><!--
+google_ad_client = "pub-4210569241504288";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "text";
+google_ad_channel ="";
+google_color_link = "6699CC";
+//--></SCRIPT>
+
+      <SCRIPT 
+      src="[推荐]_net环境下分析程序调用关系图工具 - 元宝家园 --- 坚持理想，脚踏实地，不断学习 - 博客园_files/show_ads.js" 
+      type=text/javascript>
+</SCRIPT>
+    </TD></TR></TBODY></TABLE></DIV>
+<DIV id=AjaxHolder_PostComment_ValidationSummary1 
+style="DISPLAY: none; COLOR: red"></DIV></DIV>
+<SCRIPT language=javascript>
+
+function GetQuote(id)
+{
+    //www.cnblogs.com.ICommentService.GetCommentText(id,SetQuote);
+    BlogServer.WebService.AjaxWS.GetComment(id,SetQuote);
+}
+
+ function SetQuote(result)
+{
+    document.getElementById('AjaxHolder_PostComment_tbComment').value += ("--引用--------------------------------------------------\n"+result+"\n--------------------------------------------------------\n");
+    document.getElementById('AjaxHolder_PostComment_tbComment').focus(); 
+}
+
+function Favorite(entryID,title,url,element)
+{
+    document.getElementById(element.id).innerHTML = "<span style='color:red'>正在收藏...</span>";
+    BlogServer.WebService.AjaxWS.AddToFavorites(entryID,title,url,OnFavoriteSuccess);
+    document.getElementById(element.id).removeAttribute("href");
+    document.getElementById(element.id).removeAttribute("onclick");
+}
+
+function OnFavoriteSuccess(result)
+{
+    if(result == "请先登录")
+    {
+        window.location.href = "../../../../../login.aspx?ReturnUrl=" + window.location.href;
+    }
+    else
+    {
+        var returnstr = result.split(",");
+        var id = "lnkFavorite"+returnstr[0];
+        document.getElementById(id).innerHTML = "<span style='color:red'>" + returnstr[1] + "</span>";
+    }
+}
+</SCRIPT>
+</DIV>
+<P id=footer>Powered by: <BR><A id=Footer1_Hyperlink3 
+style="FONT-SIZE: 12px; FONT-FAMILY: Verdana" href="http://www.cnblogs.com/" 
+name=Hyperlink1>博客园</A> <BR>Copyright © 元宝 </P>
+<TABLE width="100%">
+  <TBODY>
+  <TR>
+    <TD width="20%">
+      <SCRIPT language=javascript 
+      src="[推荐]_net环境下分析程序调用关系图工具 - 元宝家园 --- 坚持理想，脚踏实地，不断学习 - 博客园_files/click.htm"></SCRIPT>
+    </TD>
+    <TD align=middle width="80%"></TD></TR></TBODY></TABLE>
+<SCRIPT type=text/javascript>
+//<![CDATA[
+var Page_ValidationSummaries =  new Array(document.getElementById("AjaxHolder_PostComment_ValidationSummary1"));
+var Page_Validators =  new Array(document.getElementById("AjaxHolder_PostComment_RequiredFieldValidator1"), document.getElementById("AjaxHolder_PostComment_RequiredFieldValidator2"), document.getElementById("AjaxHolder_PostComment_revContactMail"), document.getElementById("AjaxHolder_PostComment_RequiredFieldValidator3"));
+//]]>
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+//<![CDATA[
+var AjaxHolder_PostComment_RequiredFieldValidator1 = document.all ? document.all["AjaxHolder_PostComment_RequiredFieldValidator1"] : document.getElementById("AjaxHolder_PostComment_RequiredFieldValidator1");
+AjaxHolder_PostComment_RequiredFieldValidator1.controltovalidate = "AjaxHolder_PostComment_tbTitle";
+AjaxHolder_PostComment_RequiredFieldValidator1.errormessage = "请输入标题";
+AjaxHolder_PostComment_RequiredFieldValidator1.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+AjaxHolder_PostComment_RequiredFieldValidator1.initialvalue = "";
+var AjaxHolder_PostComment_RequiredFieldValidator2 = document.all ? document.all["AjaxHolder_PostComment_RequiredFieldValidator2"] : document.getElementById("AjaxHolder_PostComment_RequiredFieldValidator2");
+AjaxHolder_PostComment_RequiredFieldValidator2.controltovalidate = "AjaxHolder_PostComment_tbName";
+AjaxHolder_PostComment_RequiredFieldValidator2.errormessage = "请输入你的姓名";
+AjaxHolder_PostComment_RequiredFieldValidator2.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+AjaxHolder_PostComment_RequiredFieldValidator2.initialvalue = "";
+var AjaxHolder_PostComment_revContactMail = document.all ? document.all["AjaxHolder_PostComment_revContactMail"] : document.getElementById("AjaxHolder_PostComment_revContactMail");
+AjaxHolder_PostComment_revContactMail.controltovalidate = "AjaxHolder_PostComment_tbEmail";
+AjaxHolder_PostComment_revContactMail.errormessage = "邮件地址无效";
+AjaxHolder_PostComment_revContactMail.evaluationfunction = "RegularExpressionValidatorEvaluateIsValid";
+AjaxHolder_PostComment_revContactMail.validationexpression = "^([0-9a-zA-Z+-._]([+-._\\w]*[0-9a-zA-Z+-._])*@([0-9a-zA-Z][-\\w]*\\.)+[a-zA-Z]{2,9})$";
+var AjaxHolder_PostComment_RequiredFieldValidator3 = document.all ? document.all["AjaxHolder_PostComment_RequiredFieldValidator3"] : document.getElementById("AjaxHolder_PostComment_RequiredFieldValidator3");
+AjaxHolder_PostComment_RequiredFieldValidator3.controltovalidate = "AjaxHolder_PostComment_tbComment";
+AjaxHolder_PostComment_RequiredFieldValidator3.errormessage = "请输入评论内容";
+AjaxHolder_PostComment_RequiredFieldValidator3.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+AjaxHolder_PostComment_RequiredFieldValidator3.initialvalue = "";
+var AjaxHolder_PostComment_ValidationSummary1 = document.all ? document.all["AjaxHolder_PostComment_ValidationSummary1"] : document.getElementById("AjaxHolder_PostComment_ValidationSummary1");
+AjaxHolder_PostComment_ValidationSummary1.showmessagebox = "True";
+AjaxHolder_PostComment_ValidationSummary1.showsummary = "False";
+//]]>
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+<!--
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+// -->
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+//<![CDATA[
+
+document.getElementById('AjaxHolder_PostComment_ValidationSummary1').dispose = function() {
+    Array.remove(Page_ValidationSummaries, document.getElementById('AjaxHolder_PostComment_ValidationSummary1'));
+}
+Sys.Application.initialize();
+
+document.getElementById('AjaxHolder_PostComment_RequiredFieldValidator1').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('AjaxHolder_PostComment_RequiredFieldValidator1'));
+}
+
+document.getElementById('AjaxHolder_PostComment_RequiredFieldValidator2').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('AjaxHolder_PostComment_RequiredFieldValidator2'));
+}
+
+document.getElementById('AjaxHolder_PostComment_revContactMail').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('AjaxHolder_PostComment_revContactMail'));
+}
+
+document.getElementById('AjaxHolder_PostComment_RequiredFieldValidator3').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('AjaxHolder_PostComment_RequiredFieldValidator3'));
+}
+//]]>
+</SCRIPT>
+</FORM>
+<SCRIPT 
+src="[推荐]_net环境下分析程序调用关系图工具 - 元宝家园 --- 坚持理想，脚踏实地，不断学习 - 博客园_files/ShowHidden.js" 
+type=text/javascript></SCRIPT>
+
+<DIV style="DISPLAY: none">
+<SCRIPT language=javascript 
+src="C:\Documents and Settings\Administrator.SZLANYOU-7NGZ4R\桌面\[推荐]_net环境下分析程序调用关系图工具 - 元宝家园 --- 坚持理想，脚踏实地，不断学习 - 博客园_files\click(1).htm"></SCRIPT>
+</DIV></BODY></HTML>

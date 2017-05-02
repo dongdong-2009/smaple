@@ -1,0 +1,1 @@
+exp dpzhoum/dpzhoum@JSZXOA.FE.COM file=d:daochu.dmp full=y owner=(system,sys)

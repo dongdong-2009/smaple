@@ -1,0 +1,43 @@
+/*
+ * 开发者：
+ * 创建日期：<%Data%>
+ * 最后修改日期：<%Data%>
+ * 描述：
+ * */
+
+using System;
+using System.Collections.Generic;
+using System.Text;
+using DawnPro.WebArchitechture.DAL;
+using DawnProArchitechture.DataAccess.Server;
+
+namespace DawnProArchitechture.DataAccess.Entity
+{
+    public class <%TableName%>Entity:EntityGateway
+    {
+        public <%TableName%>Entity() { }
+
+        public <%TableName%>Entity(int id)
+        {
+            this.ConstructByID(id, null);
+        }
+
+	public <%TableName%>Entity(string id)
+        {
+            this.ConstructByID(int.Parse(id), null);
+        }
+
+	/// <summary>
+        /// 与此类相关的服务类的类型
+        /// </summary>
+        protected override Type RelationEntities
+        {
+            get 
+            {
+                return typeof(<%TableName%>Server);
+            }
+        }
+
+	<%Fields%>
+    }
+}

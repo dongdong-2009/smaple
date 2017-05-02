@@ -1,0 +1,49 @@
+<div id="divTag">
+    <ul id="ulTag">
+        <li id="liTag">
+            点击此处
+        </li>
+    </ul>
+</div>
+
+<script type="text/javascript">
+
+function stopDefault(e) {
+    if (e && e.preventDefault)
+        e.preventDefault();
+    else
+        window.event.returnValue = false;
+    return false;
+}
+
+
+function stopBubble(e) {
+    // 如果传入了事件对象，那么就是非IE浏览器
+    if (e && e.stopPropagation)
+        // 支持W3C的stopPropation()方法
+        e.stopPropagation();
+    else
+        // 否则，我们得使用IE的方式来取消事件冒泡
+        window.event.cancelBubble = true;
+}
+
+// 分别获取三个元素
+l = document.getElementById('liTag');
+u = document.getElementById('ulTag');
+d = document.getElementById('divTag');
+
+// 为三个元素注册点击响应函数
+l.onclick = function (e) {
+
+    alert('li tag');
+}
+u.onclick = function (e) {
+
+    alert('ul tag');
+    //阻止冒泡
+stopBubble(e);
+}
+d.onclick = function (e) {
+    alert('div tag');
+}
+</script>

@@ -1,0 +1,46 @@
+1.      get the a data view from the SQL data source 
+
+public DataView dataView;
+
+dataView = (DataView)SqlDataSource1.Select(DataSourceSelectArguments.Empty);
+
+2.      check if the data view is not null 
+
+if (ChartDataView != null) {}
+
+3.      Set the structure of the table from the SQL data source 
+
+DataTable dt;
+
+dt = ChartDataView.Table.Clone();
+
+4. Copy the GridViewRows to an array
+
+      GridViewRow[] Chartarr = new ridViewRow[GridViewData.Rows.Count];
+
+GridViewData.Rows.CopyTo(Chartarr, 0);
+
+5. Add the values to the new data table:
+
+             foreach (GridViewRow row in Chartarr)
+
+             {
+
+                 DataRow datarw;
+
+                 datarw = dt.NewRow();
+
+                 for (int i = 0; i < row.Cells.Count; i++)
+
+                 {
+
+                     datarw[i] = row.Cells[i].Text;
+
+                 }
+
+ 
+
+                 dt.Rows.Add(datarw);
+
+         }
+

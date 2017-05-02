@@ -1,0 +1,1018 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0099)http://www.markzhou.com/blog/post/2010/11/09/The-Asynchronous-Programming-Models-(C-50-Series).aspx -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><HTML 
+lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><HEAD profile="http://gmpg.org/xfn/11">
+<SCRIPT type="text/javascript" src="Mark's%20Tech%20Blog%20%20The%20Asynchronous%20Programming%20Models%20(C%23%205_0%20Series)_files/js.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Mark's%20Tech%20Blog%20%20The%20Asynchronous%20Programming%20Models%20(C%23%205_0%20Series)_files/js(1).js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Mark's%20Tech%20Blog%20%20The%20Asynchronous%20Programming%20Models%20(C%23%205_0%20Series)_files/js(2).js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Mark's%20Tech%20Blog%20%20The%20Asynchronous%20Programming%20Models%20(C%23%205_0%20Series)_files/js(3).js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Mark's%20Tech%20Blog%20%20The%20Asynchronous%20Programming%20Models%20(C%23%205_0%20Series)_files/js(4).js"></SCRIPT>
+<LINK rel="stylesheet" type="text/css" href="Mark's%20Tech%20Blog%20%20The%20Asynchronous%20Programming%20Models%20(C%23%205_0%20Series)_files/css.css"><LINK 
+rel="stylesheet" type="text/css" href="Mark's%20Tech%20Blog%20%20The%20Asynchronous%20Programming%20Models%20(C%23%205_0%20Series)_files/css(1).css"><LINK 
+rel="shortcut icon" type="image/x-icon" href="../../../../pics/blogengine.ico">
+<META name="keywords" content="c#,c# 5,clr">
+<META name="author" content="Mark Zhou"><LINK title="Microsoft Visual Studio LightSwitch 2011 Released" 
+rel="last" href="/blog/post/2011/07/26/Microsoft-Visual-Studio-LightSwitch-2011-Released.aspx"><LINK 
+title="Welcome to my brand new Tech Blog!" rel="first" href="/blog/post/2009/12/23/Welcome-to-my-brand-new-Tech-Blog!.aspx"><LINK 
+title="Ad-hoc pagination support with SQL Server codenamed “Denali”" rel="next" 
+href="/blog/post/2010/11/10/Ad-hoc-pagination-support-with-SQL-Server-codenamed-e2809cDenalie2809d.aspx"><LINK 
+title="The features of the C# (Tech Talk)" rel="prev" href="/blog/post/2010/11/08/The-features-of-the-C-(Tech-Talk).aspx"><LINK 
+title="The Asynchronous Programming Models (C# 5.0 Series) (RSS)" rel="alternate" 
+type="application/rss+xml" href="/blog/post/feed/2010/11/09/The-Asynchronous-Programming-Models-(C-50-Series).aspx?format=ATOM"><LINK 
+title="The Asynchronous Programming Models (C# 5.0 Series) (ATOM)" rel="alternate" 
+type="application/rss+xml" href="/blog/post/feed/2010/11/09/The-Asynchronous-Programming-Models-(C-50-Series).aspx?format=ATOM"><LINK 
+title="Archive" rel="contents" href="/blog/archive.aspx"><LINK title="Mark's Tech Blog" 
+rel="start" href="/blog/"><LINK title="SIOC" rel="meta" type="application/rdf+xml" 
+href="http://www.markzhou.com/blog/sioc.axd"><LINK title="APML" rel="meta" type="application/apml+xml" 
+href="http://www.markzhou.com/blog/apml.axd"><LINK title="FOAF" rel="meta" type="application/rdf+xml" 
+href="http://www.markzhou.com/blog/foaf.axd"><LINK title="Mark's Tech Blog (RSS)" 
+rel="alternate" type="application/rss+xml" href="http://www.markzhou.com/blog/syndication.axd?format=rss"><LINK 
+title="Mark's Tech Blog (ATOM)" rel="alternate" type="application/atom+xml" 
+href="http://www.markzhou.com/blog/syndication.axd?format=atom"><LINK title="RSD" 
+rel="edituri" type="application/rsd+xml" href="http://www.markzhou.com/blog/rsd.axd">
+<META content="text/html; charset=utf-8" http-equiv="content-type"><LINK title="Mark's Tech Blog" 
+rel="search" type="application/opensearchdescription+xml" href="http://www.markzhou.com/blog/opensearch.axd"><LINK 
+rel="stylesheet" type="text/css" href="Mark's%20Tech%20Blog%20%20The%20Asynchronous%20Programming%20Models%20(C%23%205_0%20Series)_files/shCore.css"><LINK 
+rel="stylesheet" type="text/css" href="Mark's%20Tech%20Blog%20%20The%20Asynchronous%20Programming%20Models%20(C%23%205_0%20Series)_files/shThemeDefault.css">
+<SCRIPT type="text/javascript" src="Mark's%20Tech%20Blog%20%20The%20Asynchronous%20Programming%20Models%20(C%23%205_0%20Series)_files/shCore.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Mark's%20Tech%20Blog%20%20The%20Asynchronous%20Programming%20Models%20(C%23%205_0%20Series)_files/shBrushCSharp.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Mark's%20Tech%20Blog%20%20The%20Asynchronous%20Programming%20Models%20(C%23%205_0%20Series)_files/shBrushCss.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Mark's%20Tech%20Blog%20%20The%20Asynchronous%20Programming%20Models%20(C%23%205_0%20Series)_files/shBrushJScript.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Mark's%20Tech%20Blog%20%20The%20Asynchronous%20Programming%20Models%20(C%23%205_0%20Series)_files/shBrushPlain.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Mark's%20Tech%20Blog%20%20The%20Asynchronous%20Programming%20Models%20(C%23%205_0%20Series)_files/shBrushSql.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Mark's%20Tech%20Blog%20%20The%20Asynchronous%20Programming%20Models%20(C%23%205_0%20Series)_files/shBrushVb.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Mark's%20Tech%20Blog%20%20The%20Asynchronous%20Programming%20Models%20(C%23%205_0%20Series)_files/shBrushXml.js"></SCRIPT>
+<TITLE>	Mark's Tech Blog | The Asynchronous Programming Models (C# 5.0 Series)
+</TITLE>
+<META name="GENERATOR" content="MSHTML 9.00.8112.16443"></HEAD>
+<BODY>
+<DIV id="header">
+<P><A href="http://www.markzhou.com/blog/">                Mark's Tech 
+Blog</A></P><SPAN>            The developer who works for 
+developers</SPAN></DIV><BR><BR>
+<DIV id="menu">
+<DIV class="login"><SPAN id="ctl00_aUser"></SPAN><A id="ctl00_aLogin" href="http://www.markzhou.com/blog/Account/login.aspx">Log 
+in</A></DIV>
+<UL>
+  <LI><A href="http://www.markzhou.com/blog/" rel="home">                
+  Home</A></LI>
+  <LI><A href="http://www.markzhou.com/blog/archive.aspx">                
+  Archive</A></LI>
+  <LI><A href="http://www.markzhou.com/blog/contact.aspx">                
+  Contact</A></LI>
+  <LI><A class="feed" href="http://www.markzhou.com/blog/syndication.axd"><IMG 
+  alt="Feed" src="Mark's%20Tech%20Blog%20%20The%20Asynchronous%20Programming%20Models%20(C%23%205_0%20Series)_files/rssButton.png">Subscribe</A></LI>
+  <LI><A class="apmlfilter" href="javascript:void(BlogEngine.filterByAPML())">   
+               Filter by APML</A></LI></UL></DIV>
+<FORM id="aspnetForm" class="body" onsubmit="javascript:return WebForm_OnSubmit();" 
+method="post" name="aspnetForm" action="/blog/post/2010/11/09/The-Asynchronous-Programming-Models-(C-50-Series).aspx">
+<DIV><INPUT id="__EVENTTARGET" name="__EVENTTARGET" type="hidden"><INPUT id="__EVENTARGUMENT" 
+name="__EVENTARGUMENT" type="hidden"><INPUT id="__VIEWSTATE" name="__VIEWSTATE" 
+value="/wEPDwULLTIwODUxOTQ5OTMPZBYCZg9kFgQCAg8WBB4EaHJlZgUYL2Jsb2cvQWNjb3VudC9sb2dpbi5hc3B4Hglpbm5lcmh0bWwFBkxvZyBpbmQCAw9kFgQCAQ9kFggCAw8WAh4HVmlzaWJsZWcWBAIBDw8WBh4LTmF2aWdhdGVVcmwFPC9ibG9nL3Bvc3QvMjAxMC8xMS8wOC9UaGUtZmVhdHVyZXMtb2YtdGhlLUMtKFRlY2gtVGFsaykuYXNweB4EVGV4dAUrJmx0OyZsdDsgVGhlIGZlYXR1cmVzIG9mIHRoZSBDIyAoVGVjaCBUYWxrKR4HVG9vbFRpcAUNUHJldmlvdXMgcG9zdGRkAgMPDxYGHwMFYS9ibG9nL3Bvc3QvMjAxMC8xMS8xMC9BZC1ob2MtcGFnaW5hdGlvbi1zdXBwb3J0LXdpdGgtU1FMLVNlcnZlci1jb2RlbmFtZWQtZTI4MDljRGVuYWxpZTI4MDlkLmFzcHgfBAVJQWQtaG9jIHBhZ2luYXRpb24gc3VwcG9ydCB3aXRoIFNRTCBTZXJ2ZXIgY29kZW5hbWVkIOKAnERlbmFsaeKAnSAmZ3Q7Jmd0Ox8FBQlOZXh0IHBvc3RkZAIJDxYCHwJnZAILD2QWAgICD2QWAgINDw8WAh8CaGRkAg0PFgIfAmhkAgIPZBYCAgMPDxYCHwJoZGRkjb7crwzTxQjrDNTSZXsi8tB5Lv4=" 
+type="hidden"></DIV>
+<SCRIPT type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</SCRIPT>
+
+<SCRIPT type="text/javascript" src="Mark's%20Tech%20Blog%20%20The%20Asynchronous%20Programming%20Models%20(C%23%205_0%20Series)_files/js(5).js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Mark's%20Tech%20Blog%20%20The%20Asynchronous%20Programming%20Models%20(C%23%205_0%20Series)_files/js(6).js"></SCRIPT>
+
+<SCRIPT type="text/javascript">
+//<![CDATA[
+function WebForm_OnSubmit() {
+if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+return true;
+}
+//]]>
+</SCRIPT>
+
+<DIV id="content">
+<DIV id="postnavigation"><A id="ctl00_cphBody_hlPrev" title="Previous post" 
+href="http://www.markzhou.com/blog/post/2010/11/08/The-features-of-the-C-(Tech-Talk).aspx">&lt;&lt; 
+The features of the C# (Tech Talk)</A> |       <A id="ctl00_cphBody_hlNext" 
+title="Next post" href="http://www.markzhou.com/blog/post/2010/11/10/Ad-hoc-pagination-support-with-SQL-Server-codenamed-e2809cDenalie2809d.aspx">Ad-hoc 
+pagination support with SQL Server codenamed “Denali” &gt;&gt;</A></DIV>
+<DIV id="post0" class="post xfolkentry">
+<H1><A class="taggedlink" href="http://www.markzhou.com/blog/post/2010/11/09/The-Asynchronous-Programming-Models-(C-50-Series).aspx">The 
+Asynchronous Programming Models (C# 5.0 Series)</A></H1><SPAN class="author">by 
+<A href="http://www.markzhou.com/blog/author/mazhou.aspx">Mark 
+Zhou</A></SPAN><SPAN class="pubDate">9. November 2010 00:35</SPAN>
+<DIV class="text">
+<P>In <A href="http://www.markzhou.com/blog/post/Introduce-to-Asyncrhonous-Programming-Model-(C-50-Series).aspx">previous 
+article</A>, I mentioned a new feature of C# 5.0 – the <FONT 
+face="Consolas">async</FONT> and the <FONT face="consolas">await</FONT> 
+keywords. They are syntactical sugars that simplifies the construction of 
+asynchronous operations code. When the C# compiler sees an <FONT 
+face="consolas">await</FONT> expression, it generates code that automatically 
+invokes the expression asynchronously, then immediately return the control flow 
+to the caller so the caller code can continue executing without block; after the 
+asynchronous operation finished, the control flow will be forwarded to the code 
+below the <FONT face="consolas">await</FONT> expression and execute the code 
+sequentially till an exit criteria is reached (the exit criteria may be: the end 
+of a method, or an iteration of a loop, etc). I emphasize that the <FONT face="consolas">await</FONT> 
+keyword is only a&nbsp; syntactical sugar, it is therefore an alternative that 
+compiler generates the equivalent code rather than you manually write it. Before 
+you can understand what the C# 5.0 does for you for <FONT 
+face="consolas">async</FONT> and <FONT face="consolas">await</FONT> keywords, 
+you should first understand how the Microsoft .NET Framework provides the 
+asynchronous programming models (APM).</P>
+<P>In .NET Framework, there are many ways to implement an asynchronous 
+operation: by using thread, thread pool, <STRONG><FONT 
+face="consolas">BeginXxx</FONT></STRONG> and <STRONG><FONT 
+face="consolas">EndXxx</FONT></STRONG> methods, event based APM, or Task based 
+APM. The first way, using thread is not recommended because creating a thread is 
+very expensive*, and it requires many manual controls to work well, so I will 
+skip this discussion; the second way, using thread pool, is the easiest and the 
+most commonly used way to go; the <STRONG><FONT 
+face="consolas">BeginXxx</FONT></STRONG> and <STRONG><FONT 
+face="consolas">EndXxx</FONT></STRONG> methods declared in specified types 
+provide the standard way to perform an asynchronous operation; the event based 
+asynchronous programming model is less popular than <STRONG><FONT face="consolas">BeginXxx</FONT></STRONG> 
+and <STRONG><FONT face="consolas">EndXxx</FONT></STRONG> methods, .NET Framework 
+just provides a very small set of the types that support event based APM; the 
+last one, Task based APM, is introduced in .NET Framework 4 and is a part of 
+Task Parallel Library (TPL), it dispatches asynchronous operations based on a 
+task scheduler, it also offers many features to extend the task parallelism. The 
+default task scheduler is implemented by using thread pool, .NET Framework also 
+provides task schedulers implemented by <STRONG>Synchronization 
+Contexts</STRONG>, in addition, you can implement your own task schedulers and 
+use it to work with tasks.</P>
+<P><EM><FONT color="#0080c0">* Creating a thread needs about 1.5 MB memory 
+space, Windows will also create many additional data structures to work with 
+this thread, such as a Thread Environment Block (TEB), a user mode stack, and a 
+kernel mode stack. Bringing new thread may also need thread context switching, 
+which also hurts performance. So avoid creating additional threads as much as 
+possible.</FONT></EM></P>
+<P>In this article, I will go through the different ways to perform asynchronous 
+operation, and show examples to guide you to use both of them.</P>
+<H1>The Thread Pool APM</H1>
+<P>When you want to perform an asynchronous operation, it is easy to use thread 
+pool to do so, by calling <STRONG><FONT 
+face="consolas">System.Threading.ThreadPool</FONT></STRONG>’s 
+<STRONG>QueueUserWorkItem</STRONG> static method, passing an instance of 
+<STRONG><FONT face="consolas">WaitCallback</FONT></STRONG> delegate and 
+optionally an instance of <STRONG><FONT face="consolas">Object</FONT></STRONG> 
+that represents the additional parameter to associate with the instance of 
+<STRONG><FONT face="consolas">WaitCallback</FONT></STRONG>. The following 
+example shows how to use thread pool to queue asynchronous operations.</P><PRE style="font-family: consolas;"><SPAN style="color: blue;">using</SPAN> System;<BR><SPAN style="color: blue;">using</SPAN> System.Collections.Generic;<BR><SPAN style="color: blue;">using</SPAN> System.Linq;<BR><SPAN style="color: blue;">using</SPAN> System.Text;<BR><SPAN style="color: blue;">using</SPAN> System.Threading;<BR> <BR><SPAN style="color: blue;">namespace</SPAN> ApmDemo<BR>{<BR>&nbsp;&nbsp;&nbsp; <SPAN style="color: blue;">class</SPAN>&nbsp;<SPAN style="color: rgb(43, 145, 175);">Program</SPAN><BR>&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: blue;">static</SPAN>&nbsp;<SPAN style="color: blue;">void</SPAN> Main(<SPAN style="color: blue;">string</SPAN>[] args)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: green;">// Define a WaitCallback instance.</SPAN><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WaitCallback writeCallback = state =&gt; <SPAN style="color: rgb(43, 145, 175);">Console</SPAN>.WriteLine(state);<BR> <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: green;">// Queue user work items with ThreadPool.</SPAN><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: rgb(43, 145, 175);">ThreadPool</SPAN>.QueueUserWorkItem(writeCallback, <SPAN style="color: rgb(163, 21, 21);">"This is the first line"</SPAN>);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: rgb(43, 145, 175);">ThreadPool</SPAN>.QueueUserWorkItem(writeCallback, <SPAN style="color: rgb(163, 21, 21);">"This is the second line"</SPAN>);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: rgb(43, 145, 175);">ThreadPool</SPAN>.QueueUserWorkItem(writeCallback, <SPAN style="color: rgb(163, 21, 21);">"This is the third line"</SPAN>);<BR> <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: rgb(43, 145, 175);">Console</SPAN>.ReadKey();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<BR>&nbsp;&nbsp;&nbsp; }<BR>}<BR></PRE>
+<P>In the above example, I initialized an instance of a <STRONG><FONT face="consolas">WaitCallback</FONT></STRONG> 
+instance by assigning a lambda expression as the delegate body, then called 
+<STRONG><FONT face="consolas">ThreadPool</FONT></STRONG>’s static method 
+<STRONG><FONT face="consolas">QueueUserWorkItem</FONT></STRONG>, passed this 
+instance as the first parameter, and a string as its second parameter. When 
+calling this method, the thread pool seeks for a free thread in the pool, 
+associates the instance of the <STRONG><FONT 
+face="consolas">WaitCallback</FONT></STRONG> delegate to that thread, and 
+dispatches this thread to execute the delegate at some time; if there is no free 
+thread in the pool, the thread pool creates a new thread, associates the 
+delegate instance, and then dispatches to execute at some time. I queued three 
+user work items to the thread pool, by calling <STRONG><FONT 
+face="consolas">QueueUserWorkItem</FONT></STRONG> method for three times.</P>
+<P>When I try to run this program, I may get the following output:</P>
+<P><FONT face="consolas">This is the first line     <BR>This is the second line  
+   <BR>This is the third line</FONT></P>
+<P>But sometimes I also get the following output:</P>
+<P><FONT face="consolas">This is the second line     <BR>This is the first line  
+   <BR>This is the third line</FONT></P>
+<P>Please note that the executing order of the queued user work items is 
+unpredictable because there is no way to know when a thread in the thread pool 
+is scheduled to execute the code. As shown above, the work items may complete in 
+sequential, and it is also possible that the work items complete in reverse 
+order. Therefore, do not write asynchronous code that relies on the execution 
+order.</P>
+<P>I highly recommended that you use the thread pool APM as much as possible, 
+here are some reasons:</P>
+<OL>
+  <LI>Thread pool is managed automatically by the CLR. When you queue a user 
+  item to the thread pool, you never care which thread it will be associated and 
+  when it will be executed; the CLR handles everything for you – this pattern 
+  enables you to write easy-to-read,. straightforward and less buggy code. </LI>
+  <LI>Thread pool manages threads wisely. When perform an asynchronous 
+  operation, CLR requires additional thread to perform this operation so the 
+  operation can take without blocking the current thread, but however, creating 
+  new thread is expensive, introducing new thread every time to serve a user 
+  work item is heavy and waste of resources. Thread pool manages a set of 
+  threads initially, when a user work item is queued, the thread pool adds this 
+  work item to a global work item list, then a CLR thread will check this global 
+  work item list, if it is not empty, this thread picks up a work item, and 
+  dedicates it to a free thread in the pool; if there is no free thread, the 
+  thread pool will then create a new thread, and dedicate it to this newly 
+  created thread. The thread pool always chooses to use as less thread as 
+  possible to serve all queued user work items. Hence, by using thread pool, CLR 
+  uses less system resources, makes the asynchronous operations scheduling 
+  effective and efficient. </LI>
+  <LI>Thread pool has better performance. Thread pool mechanism guarantees that 
+  it can use maximum or configured CPU resources to server user work items. If 
+  you are running your program in a multi-core CPU environment, the thread pool 
+  initially creates threads which number is equal to the number of the installed 
+  CPUs in that environment; when scheduling a user work item, thread pool 
+  automatically balances the threads, and makes sure that every logical CPU core 
+  is used to serve the work items. This brings a flexibility to dispatch CPU 
+  resources and also helps to improve the whole system performance. </LI></OL>
+<P>Though there are a lot of benefits using thread pool, there are also 
+limits:</P>
+<OL>
+  <LI>Thread pool queues a user work item, and executes it at an uncertain time, 
+  when it finished processing a user item, there is no way for the caller code 
+  to know when it will complete, thus it is very difficult to write continuation 
+  code after this work item is completed. Specially, some operations, like read 
+  a number of bytes from a file stream, must get an notification when the 
+  operation is completed asynchronously, then the caller code can determine how 
+  many bytes it read from the file stream, and use these bytes to do other 
+  things. </LI>
+  <LI>The <STRONG><FONT face="consolas">ThreadPool</FONT></STRONG>’s 
+  <STRONG><FONT face="consolas">QueueUserWorkItem</FONT></STRONG> method only 
+  takes a delegate that receives one parameter, if you code is designed to 
+  process more than one parameter, it is impossible to directly pass all the 
+  parameters to this method; instead, you may create additional data structure 
+  to wrap those parameter, then alternatively pass the wrapper type instance to 
+  the method. This reduces the readability and maintainability of your code. 
+  </LI></OL>
+<P>To solve these problems, you may use the following standard way to perform 
+asynchronous operations.</P>
+<H1>The Standard APM</H1>
+<P>The Framework Class Library (FCL) ships various types that have <STRONG><FONT 
+face="consolas">BeginXxx</FONT></STRONG> and <STRONG><FONT 
+face="consolas">EndXxx</FONT></STRONG> methods, these methods are designed to 
+perform asynchronous operations. For example, the <STRONG><FONT 
+face="consolas">System.IO.FileStream</FONT></STRONG> type defines <STRONG><FONT 
+face="consolas">Read</FONT></STRONG>, <STRONG><FONT 
+face="consolas">BeginRead</FONT></STRONG> and <STRONG><FONT 
+face="consolas">EndRead</FONT></STRONG> methods, <STRONG><FONT 
+face="consolas">Read</FONT></STRONG> method is a synchronous method, it reads a 
+number of bytes from a file stream synchronously; in other word, it won’t return 
+until the read operation from the file stream is completed. The <STRONG><FONT 
+face="consolas">BeginRead</FONT></STRONG> and <FONT 
+face="consolas"><STRONG>EndRead</STRONG></FONT> methods are pair, when calling 
+<STRONG><FONT face="consolas">BeginRead</FONT></STRONG> method, CLR queues this 
+operation to the hardware device (in this case, the hard disk), and immediately 
+return the control flow to the next line of code and then continue to execute; 
+when the asynchronous read operation is completed by the hardware device, the 
+device notifies the Windows kernel that the operation is completed, then the 
+Windows kernel notifies CLR to execute a delegate which is specified as a 
+parameter by calling <STRONG><FONT face="consolas">BeginRead</FONT></STRONG> 
+method, in this delegate, the code must call <STRONG><FONT 
+face="consolas">EndRead</FONT></STRONG> method so that the CLR can transit the 
+number of bytes read from the buffer to the calling delegate, then the code can 
+access the bytes read from the file stream.</P>
+<P>here is what the <STRONG><FONT face="consolas">Read</FONT></STRONG>, 
+<STRONG><FONT face="consolas">BeginRead</FONT></STRONG> and <FONT face="consolas"><STRONG>EndRead</STRONG></FONT> 
+method signatures are defined.</P><PRE style="font-family: consolas;"><SPAN style="color: blue;">public</SPAN>&nbsp;<SPAN style="color: blue;">override</SPAN>&nbsp;<SPAN style="color: rgb(43, 145, 175);">IAsyncResult</SPAN> BeginRead(<SPAN style="color: blue;">byte</SPAN>[] array, <SPAN style="color: blue;">int</SPAN> offset, <BR>    <SPAN style="color: blue;">int</SPAN> numBytes, AsyncCallback userCallback, <SPAN style="color: blue;">object</SPAN> stateObject);<BR></PRE><PRE style="font-family: consolas;"><SPAN style="color: blue;">public</SPAN>&nbsp;<SPAN style="color: blue;">override</SPAN>&nbsp;<SPAN style="color: blue;">int</SPAN> EndRead(<SPAN style="color: rgb(43, 145, 175);">IAsyncResult</SPAN> asyncResult);<BR></PRE><PRE style="font-family: consolas;"><SPAN style="color: blue;">public</SPAN>&nbsp;<SPAN style="color: blue;">override</SPAN>&nbsp;<SPAN style="color: blue;">int</SPAN> Read(<SPAN style="color: blue;">byte</SPAN>[] array, <SPAN style="color: blue;">int</SPAN> offset, <SPAN style="color: blue;">int</SPAN> count);<BR></PRE>
+<P>Usually, The <STRONG><FONT face="consolas">BeginXxx</FONT></STRONG> method 
+have the same parameters with the <STRONG><FONT 
+face="consolas">Xxx</FONT></STRONG> method and two additional parameters: 
+<EM>userCallback</EM> and <EM>stateObject</EM>. The <EM>userCallback</EM> is of 
+type <STRONG><FONT face="consolas">AsyncCallback</FONT></STRONG>, which takes 
+one parameter of type <STRONG><FONT face="consolas">IAsyncResult</FONT></STRONG> 
+which brings additional information to this asynchronous operation; the 
+<EM>stateObject</EM> parameter is the instance that you want to pass to the 
+<EM>userCallback</EM> delegate, which can be accessed by <STRONG><FONT face="consolas">AsyncState 
+</FONT></STRONG>property defined on this delegate’s <EM>asyncResult</EM> 
+argument.</P>
+<P>The following code demonstrates how to use <STRONG><FONT 
+face="consolas">BeginXxx</FONT></STRONG> and <STRONG><FONT 
+face="consolas">EndXxx</FONT></STRONG> methods to perform asynchronous 
+operations.</P><PRE style="font-family: consolas;"><SPAN style="color: blue;">using</SPAN> System;<BR><SPAN style="color: blue;">using</SPAN> System.Collections.Generic;<BR><SPAN style="color: blue;">using</SPAN> System.Linq;<BR><SPAN style="color: blue;">using</SPAN> System.Text;<BR><SPAN style="color: blue;">using</SPAN> System.Threading;<BR><SPAN style="color: blue;">using</SPAN> System.IO;<BR> <BR><SPAN style="color: blue;">namespace</SPAN> ApmDemo<BR>{<BR>&nbsp;&nbsp;&nbsp; <SPAN style="color: blue;">internal</SPAN>&nbsp;<SPAN style="color: blue;">class</SPAN>&nbsp;<SPAN style="color: rgb(43, 145, 175);">Program</SPAN><BR>&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: blue;">private</SPAN>&nbsp;<SPAN style="color: blue;">const</SPAN>&nbsp;<SPAN style="color: blue;">string</SPAN> FilePath = <SPAN style="color: rgb(163, 21, 21);">@"c:\demo.dat"</SPAN>;<BR> <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: blue;">private</SPAN>&nbsp;<SPAN style="color: blue;">static</SPAN>&nbsp;<SPAN style="color: blue;">void</SPAN> Main(<SPAN style="color: blue;">string</SPAN>[] args)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: green;">// Test async write bytes to the file stream.</SPAN><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: rgb(43, 145, 175);">Program</SPAN>.TestWrite();<BR> <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: green;">// Wait operations to complete.</SPAN><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: rgb(43, 145, 175);">Thread</SPAN>.Sleep(60000);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<BR> <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: blue;">private</SPAN>&nbsp;<SPAN style="color: blue;">static</SPAN>&nbsp;<SPAN style="color: blue;">void</SPAN> TestWrite()<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: green;">// Must specify FileOptions.Asynchronous otherwise the BeginXxx/EndXxx methods are</SPAN><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: green;">// handled synchronously.</SPAN><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: rgb(43, 145, 175);">FileStream</SPAN> fs = <SPAN style="color: blue;">new</SPAN>&nbsp;<SPAN style="color: rgb(43, 145, 175);">FileStream</SPAN>(<SPAN style="color: rgb(43, 145, 175);">Program</SPAN>.FilePath, <SPAN style="color: rgb(43, 145, 175);">FileMode</SPAN>.OpenOrCreate,<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: rgb(43, 145, 175);">FileAccess</SPAN>.Write, <SPAN style="color: rgb(43, 145, 175);">FileShare</SPAN>.None, 8, <SPAN style="color: rgb(43, 145, 175);">FileOptions</SPAN>.Asynchronous);<BR> <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: blue;">string</SPAN> content = <SPAN style="color: rgb(163, 21, 21);">"A quick brown fox jumps over the lazy dog"</SPAN>;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: blue;">byte</SPAN>[] data = <SPAN style="color: rgb(43, 145, 175);">Encoding</SPAN>.Unicode.GetBytes(content);<BR> <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: green;">// Begins to write content to the file stream.</SPAN><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: rgb(43, 145, 175);">Console</SPAN>.WriteLine(<SPAN style="color: rgb(163, 21, 21);">"Begin to write"</SPAN>);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fs.BeginWrite(data, 0, data.Length, <SPAN style="color: rgb(43, 145, 175);">Program</SPAN>.OnWriteCompleted, fs);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: rgb(43, 145, 175);">Console</SPAN>.WriteLine(<SPAN style="color: rgb(163, 21, 21);">"Write queued"</SPAN>);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<BR> <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: blue;">private</SPAN>&nbsp;<SPAN style="color: blue;">static</SPAN>&nbsp;<SPAN style="color: blue;">void</SPAN> OnWriteCompleted(<SPAN style="color: rgb(43, 145, 175);">IAsyncResult</SPAN> asyncResult)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: green;">// End the async operation.</SPAN><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: rgb(43, 145, 175);">FileStream</SPAN> fs = (<SPAN style="color: rgb(43, 145, 175);">FileStream</SPAN>)asyncResult.AsyncState;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fs.EndWrite(asyncResult);<BR> <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: green;">// Close the file stream.</SPAN><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fs.Close();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: rgb(43, 145, 175);">Console</SPAN>.WriteLine(<SPAN style="color: rgb(163, 21, 21);">"Write completed"</SPAN>);<BR> <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: green;">// Test async read bytes from the file stream.</SPAN><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: rgb(43, 145, 175);">Program</SPAN>.TestRead();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<BR> <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: blue;">private</SPAN>&nbsp;<SPAN style="color: blue;">static</SPAN>&nbsp;<SPAN style="color: blue;">void</SPAN> TestRead()<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: green;">// Must specify FileOptions.Asynchronous otherwise the BeginXxx/EndXxx methods are</SPAN><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: green;">// handled synchronously.</SPAN><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: rgb(43, 145, 175);">FileStream</SPAN> fs = <SPAN style="color: blue;">new</SPAN>&nbsp;<SPAN style="color: rgb(43, 145, 175);">FileStream</SPAN>(<SPAN style="color: rgb(43, 145, 175);">Program</SPAN>.FilePath, <SPAN style="color: rgb(43, 145, 175);">FileMode</SPAN>.OpenOrCreate,<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: rgb(43, 145, 175);">FileAccess</SPAN>.Read, <SPAN style="color: rgb(43, 145, 175);">FileShare</SPAN>.None, 8, <SPAN style="color: rgb(43, 145, 175);">FileOptions</SPAN>.Asynchronous);<BR> <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: blue;">byte</SPAN>[] data = <SPAN style="color: blue;">new</SPAN>&nbsp;<SPAN style="color: blue;">byte</SPAN>[1024];<BR> <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: green;">// Begins to read content to the file stream.</SPAN><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: rgb(43, 145, 175);">Console</SPAN>.WriteLine(<SPAN style="color: rgb(163, 21, 21);">"Begin to read"</SPAN>);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: green;">// Pass both Fs and data as async state object.</SPAN><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fs.BeginRead(data, 0, data.Length, <SPAN style="color: rgb(43, 145, 175);">Program</SPAN>.OnReadCompleted, <SPAN style="color: blue;">new</SPAN> { Stream = fs, Data = data });<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: rgb(43, 145, 175);">Console</SPAN>.WriteLine(<SPAN style="color: rgb(163, 21, 21);">"Read queued"</SPAN>);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<BR> <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: blue;">private</SPAN>&nbsp;<SPAN style="color: blue;">static</SPAN>&nbsp;<SPAN style="color: blue;">void</SPAN> OnReadCompleted(<SPAN style="color: rgb(43, 145, 175);">IAsyncResult</SPAN> asyncResult)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: blue;">dynamic</SPAN> state = asyncResult.AsyncState;<BR> <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: green;">// End read.</SPAN><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: blue;">int</SPAN> bytesRead = state.Stream.EndRead(asyncResult);<BR> <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: green;">// Get content.</SPAN><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: blue;">byte</SPAN>[] data = state.Data;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: blue;">string</SPAN> content = <SPAN style="color: rgb(43, 145, 175);">Encoding</SPAN>.Unicode.GetString(data, 0, bytesRead);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: green;">// Display content and close stream.</SPAN><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: rgb(43, 145, 175);">Console</SPAN>.WriteLine(<SPAN style="color: rgb(163, 21, 21);">"Read completed. Content is: {0}"</SPAN>, content);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; state.Stream.Close();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: rgb(43, 145, 175);">Console</SPAN>.ReadKey();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<BR>&nbsp;&nbsp;&nbsp; }<BR>}<BR></PRE>
+<P>This program tests asynchronous read/write operations from/to a specified 
+file stream, by using <STRONG><FONT face="consolas">BeginRead</FONT></STRONG>, 
+<STRONG><FONT face="consolas">EndRead</FONT></STRONG>, <STRONG><FONT face="consolas">BeginWrite</FONT></STRONG> 
+and <STRONG><FONT face="consolas">EndWrite</FONT></STRONG> methods defined on 
+<FONT face="consolas"><STRONG>System.IO.FileStream</STRONG></FONT> class. When I 
+try to run this program, I get the following output:</P>
+<P><A href="http://www.markzhou.com/blog/image.axd?picture=image_50.png"><IMG 
+style="border-width: 0px; display: inline;" title="image" border="0" alt="image" 
+src="Mark's%20Tech%20Blog%20%20The%20Asynchronous%20Programming%20Models%20(C%23%205_0%20Series)_files/image.png" 
+width="696" height="125"></A> </P>
+<P>Now you may already know how to use the standard way to perform an 
+asynchronous operation by calling <STRONG><FONT 
+face="consolas">BeginXxx</FONT></STRONG> and <STRONG><FONT 
+face="consolas">EndXxx</FONT></STRONG> methods. In fact, this standard way 
+supports many more features as I demonstrated here, such as cancellation, which 
+I will discuss in later articles, and supporting cancellation is really a big 
+plus of this pattern. By using this pattern, you can solve some problems I 
+listed for the thread pool APM, and you can also have additional benefits which 
+I summarize below.</P>
+<OL>
+  <LI>Supports continuation. When an asynchronous operation is completed, the 
+  <EM>userCallback</EM> delegate is invoked, so the caller code can perform 
+  other operations based on the result of this asynchronous operation. </LI>
+  <LI>Supports I/O based asynchronous operations. The standard APM works with 
+  kernel objects to perform I/O based asynchronous operations. When an I/O based 
+  asynchronous operation is requested by calling the <STRONG><FONT face="Consolas">BeginXxx</FONT></STRONG> 
+  method, the CLR doesn’t introduce new thread pool thread to dedicate this 
+  task, instead, it uses a Windows kernel object to wait for the hardware I/O 
+  device to return (through its driver software) when it finishes the task. CLR 
+  just uses the hardware device drivers and kernel objects to perform I/O based 
+  asynchronous operations, no more managed resources are used to handle this 
+  case. hence, it actually improves the system performance by releasing CPU time 
+  slices and threads usage. </LI>
+  <LI>Supports cancellation. When an asynchronous operation is triggered, user 
+  may cancel this operation by calling <STRONG><FONT 
+  face="consolas">System.Threading.CancellationTokenSource</FONT></STRONG>’s 
+  <STRONG><FONT face="consolas">Cancel</FONT></STRONG> method, I will introduce 
+  this class in the later articles. </LI></OL>
+<P>But however, by using standard APM, your code becomes more complicated. 
+That’s because all the task continuation happen outside of the calling context, 
+for example, in the above read/write file stream example, the <STRONG><FONT 
+face="consolas">OnReadCompleted</FONT></STRONG> and the <STRONG><FONT face="consolas">OnWriteCompleted</FONT></STRONG> 
+are separate methods and invoked by a different thread than the current calling 
+thread, this behavior may confuse developers, and therefore make your code logic 
+not clear to understand.</P>
+<P>Note: The <FONT face="consolas">async</FONT> method and the <FONT face="consolas">await</FONT> 
+expressions bring a clear, logical and organized code structure to the 
+asynchronous programming. </P>
+<H1>The Event-based APM</H1>
+<P>The Framework Class Library (FCL) also ships with some types that support 
+event-based APM. For example, the <STRONG><FONT 
+face="consolas">System.Net.WebClient</FONT></STRONG> class defines a 
+<STRONG><FONT face="consolas">DownloadDataAsync</FONT></STRONG> method, and a 
+<STRONG><FONT face="consolas">DownloadDataCompleted</FONT></STRONG> event, by 
+calling <STRONG><FONT face="consolas">DownloadDataAsync</FONT></STRONG> method, 
+CLR begins an asynchronous operation for downloading the data from a specified 
+URL, when it is completed, the <STRONG><FONT 
+face="consolas">DownloadDataCompleted</FONT></STRONG> event will be fired, the 
+argument <EM>e</EM> of type <STRONG><FONT 
+face="consolas">System.Net.DownloadDataCompletedEventArgs</FONT></STRONG> 
+contains results and additional information of this operation. Here is the code 
+demonstrates how to use event based APM to perform asynchronous operation.</P><PRE style="font-family: consolas;"><SPAN style="color: blue;">using</SPAN> System;<BR><SPAN style="color: blue;">using</SPAN> System.Collections.Generic;<BR><SPAN style="color: blue;">using</SPAN> System.Linq;<BR><SPAN style="color: blue;">using</SPAN> System.Text;<BR><SPAN style="color: blue;">using</SPAN> System.Threading;<BR><SPAN style="color: blue;">using</SPAN> System.IO;<BR><SPAN style="color: blue;">using</SPAN> System.Net;<BR> <BR><SPAN style="color: blue;">namespace</SPAN> ApmDemo<BR>{<BR>&nbsp;&nbsp;&nbsp; <SPAN style="color: blue;">internal</SPAN>&nbsp;<SPAN style="color: blue;">class</SPAN>&nbsp;<SPAN style="color: rgb(43, 145, 175);">Program</SPAN><BR>&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: blue;">private</SPAN>&nbsp;<SPAN style="color: blue;">static</SPAN>&nbsp;<SPAN style="color: blue;">void</SPAN> Main(<SPAN style="color: blue;">string</SPAN>[] args)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: rgb(43, 145, 175);">WebClient</SPAN> wc = <SPAN style="color: blue;">new</SPAN>&nbsp;<SPAN style="color: rgb(43, 145, 175);">WebClient</SPAN>();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wc.DownloadDataAsync(<SPAN style="color: blue;">new</SPAN>&nbsp;<SPAN style="color: rgb(43, 145, 175);">Uri</SPAN>(<SPAN style="color: rgb(163, 21, 21);">"http://www.markzhou.com"</SPAN>));<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wc.DownloadDataCompleted += (s, e) =&gt; <SPAN style="color: rgb(43, 145, 175);">Console</SPAN>.WriteLine(<SPAN style="color: rgb(43, 145, 175);">Encoding</SPAN>.UTF8.GetString(e.Result));<BR> <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: rgb(43, 145, 175);">Console</SPAN>.ReadKey();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<BR>&nbsp;&nbsp;&nbsp; }<BR>}</PRE>
+<P>Actually it acts with the same effect as using <STRONG><FONT 
+face="consolas">BeginXxx</FONT></STRONG> and <STRONG><FONT 
+face="consolas">EndXxx</FONT></STRONG> methods, the difference is event-based 
+APM is more close to the object model layer, you can ever use a designer and a 
+property window to drag-drop the component to the user interface and then set 
+the event handler through the property window, as opposed, standard APM doesn’t 
+provide events to subscribe, this helps to improve the system performance 
+because implementing events may require additional system resources.</P>
+<P>There are very small set of types in FCL support event-based APM, personally, 
+I suggest not use this pattern as much as possible, the event-based APM may suit 
+for the application developers because they are component consumers,. not the 
+component designers, and the designer supportability is not mandatory for the 
+component designers (library developers).</P>
+<H1>The Task-based APM</H1>
+<P>Microsoft .NET Framework 4.0 introduces new Task Parallel Library (TPL) for 
+parallel computing and asynchronous programming. The mainly used <STRONG><FONT 
+face="consolas">Task</FONT></STRONG> class, which defined in <STRONG><FONT face="consolas">System.Threading.Tasks</FONT></STRONG> 
+namespace, represents a user work item to complete, to use task based APM, you 
+have to create a new instance of <STRONG><FONT 
+face="consolas">Task</FONT></STRONG>, or <STRONG><FONT 
+face="consolas">Task&lt;T&gt;</FONT></STRONG> class, passing an instance of 
+<STRONG><FONT face="consolas">Action</FONT></STRONG>&nbsp; or <STRONG><FONT 
+face="consolas">Action&lt;T&gt;</FONT></STRONG> delegate as the first parameter 
+of the constructor of <STRONG><FONT face="consolas">Task</FONT></STRONG> or 
+<STRONG><FONT face="consolas">Task&lt;T&gt;</FONT></STRONG>, then, call the 
+<STRONG><FONT face="consolas">Task</FONT></STRONG>’s instance method 
+<STRONG><FONT face="consolas">Start</FONT></STRONG>, notifies the task scheduler 
+to schedule this task as soon as possible.</P>
+<P>The following code shows how to use task based APM to perform a compute-bound 
+asynchronous operation.</P><PRE style="font-family: consolas;"><SPAN style="color: blue;">using</SPAN> System;<BR><SPAN style="color: blue;">using</SPAN> System.Collections.Generic;<BR><SPAN style="color: blue;">using</SPAN> System.Linq;<BR><SPAN style="color: blue;">using</SPAN> System.Text;<BR><SPAN style="color: blue;">using</SPAN> System.Threading.Tasks;<BR> <BR><SPAN style="color: blue;">namespace</SPAN> Demo<BR>{<BR>&nbsp;&nbsp;&nbsp; <SPAN style="color: blue;">class</SPAN>&nbsp;<SPAN style="color: rgb(43, 145, 175);">Program</SPAN><BR>&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: blue;">static</SPAN>&nbsp;<SPAN style="color: blue;">void</SPAN> Main(<SPAN style="color: blue;">string</SPAN>[] args)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: rgb(43, 145, 175);">Console</SPAN>.WriteLine(<SPAN style="color: rgb(163, 21, 21);">"Task based APM demo"</SPAN>);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: rgb(43, 145, 175);">Task</SPAN> t = <SPAN style="color: blue;">new</SPAN>&nbsp;<SPAN style="color: rgb(43, 145, 175);">Task</SPAN>(() =&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: rgb(43, 145, 175);">Console</SPAN>.WriteLine(<SPAN style="color: rgb(163, 21, 21);">"This test is output asynchronously"</SPAN>);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; });<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; t.Start();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: rgb(43, 145, 175);">Console</SPAN>.WriteLine(<SPAN style="color: rgb(163, 21, 21);">"Task started"</SPAN>);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: green;">// Wait task(s) to complete.</SPAN><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: rgb(43, 145, 175);">Task</SPAN>.WaitAll(t);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<BR>&nbsp;&nbsp;&nbsp; }<BR>}<BR></PRE>
+<P>If I run this program, I will get the following output:</P>
+<P><A href="http://www.markzhou.com/blog/image.axd?picture=image_51.png"><IMG 
+style="border-width: 0px; display: inline;" title="image" border="0" alt="image" 
+src="Mark's%20Tech%20Blog%20%20The%20Asynchronous%20Programming%20Models%20(C%23%205_0%20Series)_files/image(1).png" 
+width="653" height="85"></A> </P>
+<P>Alternatively, if the task delegate returns a value, you can use 
+<STRONG><FONT face="consolas">Task&lt;T&gt;</FONT></STRONG> instead of <FONT 
+face="consolas">Task</FONT>, after the task is complete, you can query the 
+result by <STRONG><FONT face="consolas">Task&lt;T&gt;</FONT></STRONG>’s 
+<STRONG><FONT face="consolas">Result</FONT></STRONG> property. The following 
+code shows how to use <STRONG><FONT 
+face="consolas">Task&lt;T&gt;</FONT></STRONG> to calculate the nth exponent to 2 
+(<EM>n</EM> is positive only).</P><PRE style="font-family: consolas;"><SPAN style="color: blue;">using</SPAN> System;<BR><SPAN style="color: blue;">using</SPAN> System.Collections.Generic;<BR><SPAN style="color: blue;">using</SPAN> System.Linq;<BR><SPAN style="color: blue;">using</SPAN> System.Text;<BR><SPAN style="color: blue;">using</SPAN> System.Threading.Tasks;<BR> <BR><SPAN style="color: blue;">namespace</SPAN> Demo<BR>{<BR>&nbsp;&nbsp;&nbsp; <SPAN style="color: blue;">class</SPAN>&nbsp;<SPAN style="color: rgb(43, 145, 175);">Program</SPAN><BR>&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: blue;">static</SPAN>&nbsp;<SPAN style="color: blue;">void</SPAN> Main(<SPAN style="color: blue;">string</SPAN>[] args)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: rgb(43, 145, 175);">Console</SPAN>.WriteLine(<SPAN style="color: rgb(163, 21, 21);">"Task based APM demo"</SPAN>);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Func&lt;<SPAN style="color: blue;">int</SPAN>, <SPAN style="color: blue;">int</SPAN>&gt; calc = (n) =&gt; { <SPAN style="color: blue;">return</SPAN> 2 &lt;&lt; (n - 1); };<BR> <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: rgb(43, 145, 175);">Task</SPAN>&lt;<SPAN style="color: blue;">int</SPAN>&gt; t = <SPAN style="color: blue;">new</SPAN>&nbsp;<SPAN style="color: rgb(43, 145, 175);">Task</SPAN>&lt;<SPAN style="color: blue;">int</SPAN>&gt;(() =&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: blue;">return</SPAN> calc(10);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; });<BR> <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; t.Start();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: rgb(43, 145, 175);">Console</SPAN>.WriteLine(<SPAN style="color: rgb(163, 21, 21);">"Task started"</SPAN>);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: green;">// Wait task(s) to complete.</SPAN><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: green;">// After t is complete, get the result.</SPAN><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: rgb(43, 145, 175);">Task</SPAN>.WaitAll(t);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: rgb(43, 145, 175);">Console</SPAN>.WriteLine(t.Result);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<BR>&nbsp;&nbsp;&nbsp; }<BR>}<BR></PRE>
+<P>When I run this program, I get the following output:</P>
+<P><A href="http://www.markzhou.com/blog/image.axd?picture=image_52.png"><IMG 
+style="border-width: 0px; display: inline;" title="image" border="0" alt="image" 
+src="Mark's%20Tech%20Blog%20%20The%20Asynchronous%20Programming%20Models%20(C%23%205_0%20Series)_files/image(2).png" 
+width="656" height="83"></A> </P>
+<P></P>
+<P></P>
+<P>The <STRONG><FONT face="consolas">Task</FONT></STRONG>’s static method <FONT 
+face="consolas"><STRONG>WaitAll</STRONG></FONT> waits all tasks specified in the 
+parameter array synchronously, meaning that the current thread will be blocked 
+till all the specified tasks are complete. If you don’t want to block the 
+current thread, and you intend to do something after a certain task is complete, 
+you may use the <FONT face="consolas"><STRONG>Task</STRONG></FONT>’s instance 
+method <STRONG><FONT face="consolas">ContinueWith</FONT></STRONG>, Here shows 
+how to do continuation tasks in the following code.</P><PRE style="font-family: consolas;"><SPAN style="color: blue;">using</SPAN> System;<BR><SPAN style="color: blue;">using</SPAN> System.Collections.Generic;<BR><SPAN style="color: blue;">using</SPAN> System.Linq;<BR><SPAN style="color: blue;">using</SPAN> System.Text;<BR><SPAN style="color: blue;">using</SPAN> System.Threading.Tasks;<BR> <BR><SPAN style="color: blue;">namespace</SPAN> Demo<BR>{<BR>&nbsp;&nbsp;&nbsp; <SPAN style="color: blue;">class</SPAN>&nbsp;<SPAN style="color: rgb(43, 145, 175);">Program</SPAN><BR>&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: blue;">static</SPAN>&nbsp;<SPAN style="color: blue;">void</SPAN> Main(<SPAN style="color: blue;">string</SPAN>[] args)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: rgb(43, 145, 175);">Console</SPAN>.WriteLine(<SPAN style="color: rgb(163, 21, 21);">"Task based APM demo"</SPAN>);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Func&lt;<SPAN style="color: blue;">int</SPAN>, <SPAN style="color: blue;">int</SPAN>&gt; calc = (n) =&gt; { <SPAN style="color: blue;">return</SPAN> 2 &lt;&lt; (n - 1); };<BR> <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: rgb(43, 145, 175);">Task</SPAN>&lt;<SPAN style="color: blue;">int</SPAN>&gt; t = <SPAN style="color: blue;">new</SPAN>&nbsp;<SPAN style="color: rgb(43, 145, 175);">Task</SPAN>&lt;<SPAN style="color: blue;">int</SPAN>&gt;(() =&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: blue;">return</SPAN> calc(10);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; });<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: green;">// Set a continuation operation.</SPAN><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; t.ContinueWith(task =&gt; { <SPAN style="color: rgb(43, 145, 175);">Console</SPAN>.WriteLine(task.Result); <SPAN style="color: blue;">return</SPAN> task.Result; });<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; t.Start();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: rgb(43, 145, 175);">Console</SPAN>.WriteLine(<SPAN style="color: rgb(163, 21, 21);">"Task started"</SPAN>);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: green;">// Wait for a user input to exit the program.</SPAN><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: rgb(43, 145, 175);">Console</SPAN>.ReadKey();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<BR>&nbsp;&nbsp;&nbsp; }<BR>}<BR></PRE>
+<P>The task based APM has many features, I list some of the important features 
+below:</P>
+<OL>
+  <LI>You can specify <STRONG><FONT 
+  face="consolas">TaskCreationOptions</FONT></STRONG> when creating a task, 
+  indicating how the task scheduler will schedule the task. </LI>
+  <LI>You can specify a <STRONG><FONT 
+  face="consolas">CancellationTokenSource</FONT></STRONG> when creating a task, 
+  indicating the associated cancellation token used to cancel a task. </LI>
+  <LI>You can use <STRONG><FONT face="consolas">ContinueWith</FONT></STRONG>, or 
+  <STRONG><FONT face="consolas">ContinueWith&lt;T&gt;</FONT></STRONG> method to 
+  perform continuation tasks. </LI>
+  <LI>You can wait all specified tasks to complete synchronously by calling 
+  <STRONG><FONT face="consolas">Task</FONT></STRONG>’s static <STRONG><FONT 
+  face="consolas">WaitAll</FONT></STRONG> method, or wait any of the tasks to 
+  complete synchronously by calling <STRONG><FONT 
+  face="consolas">Task</FONT></STRONG>’s static <STRONG><FONT 
+  face="consolas">WaitAny</FONT></STRONG> method. </LI>
+  <LI>If you want to create a bunch of tasks with the same creation/continuation 
+  settings, you can use <STRONG><FONT 
+  face="consolas">TaskFactory</FONT></STRONG>’s instance <FONT 
+  face="consolas"><STRONG>StartNew</STRONG></FONT> method. </LI>
+  <LI>The task based APM requires a task scheduler to work, the default task 
+  scheduler is implemented on top of the thread pool, however, you may change 
+  the task scheduler associated with a task to a synchronization context task 
+  scheduler, or a customized task scheduler. </LI>
+  <LI>You can easily convert a <STRONG><FONT 
+  face="consolas">BeginXxx</FONT></STRONG> and <STRONG><FONT 
+  face="consolas">EndXxx</FONT></STRONG> pattern asynchronous operation into a 
+  task based APM by calling <STRONG><FONT 
+  face="consolas">TaskFactory</FONT></STRONG>’s instance <STRONG><FONT face="consolas">FromAsync</FONT></STRONG> 
+  or <STRONG><FONT face="consolas">FromAsync&lt;T&gt;</FONT></STRONG> method. 
+  </LI></OL>
+<H1>Task, async method and await expression</H1>
+<P>I would like to point out that the <FONT face="consolas">async</FONT> method 
+and the <FONT face="consolas">await</FONT> expression/statement in C# 5.0 are 
+implemented in the compiler level by building on top of the task based APM. An 
+<FONT face="consolas">async</FONT> method must have either a return type of 
+<FONT face="consolas">void</FONT>, or a return type of <STRONG><FONT face="consolas">Task</FONT></STRONG> 
+or <STRONG><FONT face="consolas">Task&lt;T&gt;</FONT></STRONG>, this limitation 
+is obvious because if there is no <FONT face="consolas">await</FONT> expression 
+in the <FONT face="consolas">async</FONT> method, this method will be invoked 
+synchronously; thus this method can be treated as a normal method, making a 
+<FONT face="consolas">void</FONT> return value is clear; otherwise, if the <FONT 
+face="consolas">async</FONT> method contains at least one <FONT 
+face="consolas">await</FONT> expression, this method will be invoked 
+asynchronously and because of <FONT face="consolas">await</FONT> expressions 
+based on the task based APM, a <STRONG><FONT 
+face="consolas">Task</FONT></STRONG> or a <STRONG><FONT 
+face="consolas">Task&lt;T&gt;</FONT></STRONG> instance must be returned from 
+this method to enable another <FONT face="consolas">await</FONT> expression to 
+perform on this method. </P>
+<P>To make this clear, I modify the code to calculate the nth exponent to 2 by 
+using <FONT face="consolas">async</FONT> and <FONT face="consolas">await</FONT>, 
+see the following:</P><PRE style="font-family: consolas;"><SPAN style="color: blue;">using</SPAN> System;<BR><SPAN style="color: blue;">using</SPAN> System.Collections.Generic;<BR><SPAN style="color: blue;">using</SPAN> System.Linq;<BR><SPAN style="color: blue;">using</SPAN> System.Text;<BR><SPAN style="color: blue;">using</SPAN> System.Threading;<BR><SPAN style="color: blue;">using</SPAN> System.Threading.Tasks;<BR> <BR><SPAN style="color: blue;">namespace</SPAN> Demo<BR>{<BR>&nbsp;&nbsp;&nbsp; <SPAN style="color: blue;">class</SPAN>&nbsp;<SPAN style="color: rgb(43, 145, 175);">Program</SPAN><BR>&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: blue;">static</SPAN>&nbsp;<SPAN style="color: blue;">void</SPAN> Main(<SPAN style="color: blue;">string</SPAN>[] args)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: rgb(43, 145, 175);">Console</SPAN>.WriteLine(<SPAN style="color: rgb(163, 21, 21);">"Task based APM demo"</SPAN>);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: green;">// Call Exponnent() asynchronously.</SPAN><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: green;">// And immediately return the control flow.</SPAN><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: green;">// If I don't put a Task here, the program will sometimes</SPAN><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: green;">// terminate immediately.</SPAN><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: rgb(43, 145, 175);">Task</SPAN> t = <SPAN style="color: blue;">new</SPAN>&nbsp;<SPAN style="color: rgb(43, 145, 175);">Task</SPAN>(<SPAN style="color: blue;">async</SPAN> () =&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: blue;">int</SPAN> result = <SPAN style="color: blue;">await</SPAN>&nbsp;<SPAN style="color: rgb(43, 145, 175);">Program</SPAN>.Exponent(10);<BR> <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: green;">// After the operation is completed, the control flow will go here.</SPAN><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: rgb(43, 145, 175);">Console</SPAN>.WriteLine(result);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; });<BR> <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; t.Start();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: rgb(43, 145, 175);">Console</SPAN>.ReadKey();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<BR> <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: blue;">static</SPAN>&nbsp;<SPAN style="color: blue;">async</SPAN>&nbsp;<SPAN style="color: rgb(43, 145, 175);">Task</SPAN>&lt;<SPAN style="color: blue;">int</SPAN>&gt; Exponent(<SPAN style="color: blue;">int</SPAN> n)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: rgb(43, 145, 175);">Console</SPAN>.WriteLine(<SPAN style="color: rgb(163, 21, 21);">"Task started"</SPAN>);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style="color: blue;">return</SPAN>&nbsp;<SPAN style="color: blue;">await</SPAN>&nbsp;<SPAN style="color: rgb(43, 145, 175);">TaskEx</SPAN>.Run&lt;<SPAN style="color: blue;">int</SPAN>&gt;(() =&gt; 2 &lt;&lt; (n - 1));<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<BR>&nbsp;&nbsp;&nbsp; }<BR>}<BR></PRE>
+<P>When I try to run this program, I get the exact same result as the example 
+showed in the Task based APM section.</P>
+<P>You may still confuse the above code, concern how it works and what the 
+exactly control flow to run this code. In the coming articles, I will discuss it 
+in details.</P>
+<H1>Conclusion</H1>
+<P>The Microsoft .NET Framework provides many ways to perform asynchronous 
+operations, you may choose one or some of them by investigating your case; 
+though there are various ways, some of them are not recommended, such as using 
+<STRONG><FONT face="consolas">System.Threading.Thread</FONT></STRONG> class to 
+implement asynchronous operations, or event-based APM. The most popular ways are 
+using thread pool or task based APM. In addition, task based APM is used to 
+implement <FONT face="consolas">async</FONT> method and <FONT 
+face="consolas">await</FONT> expression/statement in C# 5.0.</P>
+<P>At last, I summarize the different asynchronous models in the following table 
+for reference.</P>
+<TABLE border="1" cellSpacing="0" cellPadding="2" width="853">
+  <TBODY>
+  <TR>
+    <TD vAlign="top" width="190"><STRONG>Pattern</STRONG></TD>
+    <TD vAlign="top" width="291"><STRONG>Description</STRONG></TD>
+    <TD vAlign="top" width="143"><STRONG>Based On</STRONG></TD>
+    <TD vAlign="top" width="227"><STRONG>Notes</STRONG></TD></TR>
+  <TR>
+    <TD vAlign="top" width="190">Thread based</TD>
+    <TD vAlign="top" width="291">By creating <STRONG><FONT 
+      face="consolas">System.Threading.Thread</FONT></STRONG> instance</TD>
+    <TD vAlign="top" width="143">Managed Thread</TD>
+    <TD vAlign="top" width="227">Expensive, not recommended</TD></TR>
+  <TR>
+    <TD vAlign="top" width="190">Standard <STRONG><FONT 
+      face="consolas">BeginXxx</FONT></STRONG> and <STRONG><FONT 
+      face="consolas">EndXxx</FONT></STRONG> methods</TD>
+    <TD vAlign="top" width="291">By calling <STRONG><FONT 
+      face="consolas">BeginXxx</FONT></STRONG> method with a user callback; 
+      calling <STRONG><FONT face="consolas">EndXxx</FONT></STRONG> inside that 
+      user callback</TD>
+    <TD vAlign="top" width="143">Thread pool</TD>
+    <TD vAlign="top" width="227">Widely used, standard, recommended, support 
+      cancellation and continuation</TD></TR>
+  <TR>
+    <TD vAlign="top" width="190">ThreadPool</TD>
+    <TD vAlign="top" width="291">By calling <STRONG><FONT 
+      face="consolas">ThreadPool</FONT></STRONG>’s static <STRONG><FONT face="consolas">QueueUserWorkItem</FONT></STRONG> 
+      method</TD>
+    <TD vAlign="top" width="143">Thread pool</TD>
+    <TD vAlign="top" width="227">Widely used, recommended use as much as 
+      possible</TD></TR>
+  <TR>
+    <TD vAlign="top" width="190">Delegate</TD>
+    <TD vAlign="top" width="291">By calling Delegate’s <STRONG><FONT face="consolas">BeginInvoke</FONT></STRONG> 
+      and <STRONG><FONT face="consolas">EndInvoke</FONT></STRONG> instance 
+      methods</TD>
+    <TD vAlign="top" width="143">Thread pool</TD>
+    <TD vAlign="top" width="227">Less used</TD></TR>
+  <TR>
+    <TD vAlign="top" width="190">Event based</TD>
+    <TD vAlign="top" width="291">By subscribe appropriate event and calling 
+      appropriate method</TD>
+    <TD vAlign="top" width="143">Thread pool</TD>
+    <TD vAlign="top" width="227">Avoid use as much as possible, not 
+    recommended</TD></TR>
+  <TR>
+    <TD vAlign="top" width="190">Task based</TD>
+    <TD vAlign="top" width="291">By creating <STRONG><FONT 
+      face="consolas">System.Threading.Tasks.Task</FONT></STRONG> instance</TD>
+    <TD vAlign="top" width="143">A specified task scheduler</TD>
+    <TD vAlign="top" width="227">Recommended, supports all features of a 
+      thread pool pattern, and has many other features</TD></TR>
+  <TR>
+    <TD vAlign="top" width="190"><FONT face="consolas">async</FONT> method and 
+      <FONT face="consolas">await</FONT> expression</TD>
+    <TD vAlign="top" width="291">By using <FONT face="consolas">async</FONT> 
+      and <FONT face="consolas">await</FONT> keywords</TD>
+    <TD vAlign="top" width="143">Task based pattern</TD>
+    <TD vAlign="top" width="227">The new C# 5.0 asynchronous 
+  pattern</TD></TR></TBODY></TABLE><A style="display: none;" href="http://anyurl.com/" 
+rel="tag">CodeProject</A></DIV>
+<DIV class="bottom">
+<DIV style="visibility: hidden;" 
+class="ratingcontainer">b16693a4-55dc-4b1b-a4bf-b5ad30b620aa|2|5.0</DIV>
+<P class="tags">Tags: <A href="http://www.markzhou.com/blog/?tag=/c%23" rel="tag">c#</A>, 
+<A href="http://www.markzhou.com/blog/?tag=/c%23+5" rel="tag">c# 5</A>, <A href="http://www.markzhou.com/blog/?tag=/clr" 
+rel="tag">clr</A></P>
+<P class="categories"></P></DIV>
+<DIV class="footer">
+<DIV class="bookmarks"><A title="Index 0" href="http://www.dotnetkicks.com/submit?url=http%3a%2f%2fwww.markzhou.com%2fblog%2fpost%2f2010%2f11%2f09%2fThe-Asynchronous-Programming-Models-(C-50-Series).aspx&amp;title=The+Asynchronous+Programming+Models+(C%23+5.0+Series)" 
+rel="nofollow" target="_blank">Submit to DotNetKicks...</A></DIV><A title="The Asynchronous Programming Models (C# 5.0 Series)" 
+href="http://www.markzhou.com/blog/post.aspx?id=b16693a4-55dc-4b1b-a4bf-b5ad30b620aa" 
+rel="bookmark">Permalink</A> |    <A href="http://www.markzhou.com/blog/post/2010/11/09/The-Asynchronous-Programming-Models-(C-50-Series).aspx#comment" 
+rel="nofollow">Comments (0)</A></DIV></DIV><!-- 
+    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+      <rdf:Description rdf:about="http://www.markzhou.com/blog/post/2010/11/09/The-Asynchronous-Programming-Models-(C-50-Series).aspx" dc:identifier="http://www.markzhou.com/blog/post/2010/11/09/The-Asynchronous-Programming-Models-(C-50-Series).aspx" dc:title="The Asynchronous Programming Models (C# 5.0 Series)" trackback:ping="http://www.markzhou.com/blog/trackback.axd?id=b16693a4-55dc-4b1b-a4bf-b5ad30b620aa" />
+    </rdf:RDF>
+    -->
+<DIV id="relatedPosts">
+<P>Related posts</P>
+<DIV><A href="http://www.markzhou.com/blog/post/2010/10/30/Introduce-to-Asynchronous-Programming-Model-(C-50-Series).aspx">Introduce 
+to Asynchronous Programming Model (C# 5.0 Series)</A><SPAN>Synchronous and 
+Asynchronous Operations  As of today, many programs made by the software 
+developers ...</SPAN><A href="http://www.markzhou.com/blog/post/2010/11/15/What-are-actually-synchronousasynchronous-operations-(C-50-Series).aspx">What 
+are actually synchronous/asynchronous operations (C# 5.0 Series)</A><SPAN>I have 
+blogged two C# 5.0 articles, both are regarding the new Asynchronous Programming 
+Model (APM);...</SPAN><A href="http://www.markzhou.com/blog/page/The-C-50-Series.aspx">The 
+C# 5.0 Series</A><SPAN>Last night from PDC 10, Microsoft announced a few things 
+implementing in the coming C# 5.0 language....</SPAN></DIV></DIV>
+<DIV style="display: block;" id="commentlist"></DIV>
+<H3 id="trackbackheader">Pingbacks and trackbacks (1)<A style="border: 1px solid rgb(204, 204, 204); width: 20px; height: 20px; text-align: center; text-decoration: none; float: right;" 
+id="trackbacktoggle" href="javascript:toggle_visibility('trackbacks','trackbacktoggle');">+</A></H3>
+<DIV style="display: none;" id="trackbacks">
+<DIV id="id_56da7eb1-e023-48de-a767-970087b3b49f" class="vcard comment">
+<DIV class="comment_header"><SPAN class="gravatar"><IMG class="thumb" alt="trackback" 
+src="Mark's%20Tech%20Blog%20%20The%20Asynchronous%20Programming%20Models%20(C%23%205_0%20Series)_files/images_websnapr_com.jpg"></SPAN>
+<DIV class="visitor"><A class="url fn" href="http://www.markzhou.com/blog/page/The-C-50-Series.aspx" 
+rel="nofollow">Mark's Tech Blog</A>
+<DIV style="padding-right: 10px; float: right;">11/9/2010 12:51:03 AM <A href="http://www.markzhou.com/blog/post/2010/11/09/The-Asynchronous-Programming-Models-(C-50-Series).aspx#id_56da7eb1-e023-48de-a767-970087b3b49f">#</A></DIV></DIV></DIV>
+<P class="content">The C# 5.0 Series<BR><BR>The C# 5.0 Series</P>
+<P class="author"><SPAN style="float: right;"><A class="reply-to-comment" 
+onclick="BlogEngine.replyToComment('56da7eb1-e023-48de-a767-970087b3b49f');" 
+href="javascript:void(0);">Reply</A></SPAN></P>
+<DIV style="display: none;" id="replies_56da7eb1-e023-48de-a767-970087b3b49f" 
+class="comment-replies"></DIV></DIV></DIV>
+<DIV id="comment-form"><IMG style="display: none;" id="ajaxLoader" alt="Saving the comment" 
+src="Mark's%20Tech%20Blog%20%20The%20Asynchronous%20Programming%20Models%20(C%23%205_0%20Series)_files/ajax-loader.gif"><SPAN 
+id="status"></SPAN>
+<DIV class="commentForm">
+<P id="addcomment">Add comment</P><INPUT id="ctl00_cphBody_CommentView1_hiddenReplyTo" 
+name="ctl00$cphBody$CommentView1$hiddenReplyTo" type="hidden">
+<P style="display: none;" id="cancelReply"><A onclick="BlogEngine.cancelReply();" 
+href="javascript:void(0);">Cancel reply to comment</A></P><LABEL for="txtName634913827559312300">Name*</LABEL><INPUT 
+id="txtName634913827559312300" tabIndex="2" name="txtName634913827559312300" 
+type="text"><SPAN style="color: red; display: none;" id="spnNameRequired"> 
+Required</SPAN><SPAN style="color: red; display: none;" id="spnChooseOtherName"> 
+Please choose another name</SPAN><BR><LABEL for="ctl00_cphBody_CommentView1_txtEmail">E-mail*</LABEL><INPUT 
+id="ctl00_cphBody_CommentView1_txtEmail" tabIndex="3" name="ctl00$cphBody$CommentView1$txtEmail" 
+type="text"><SPAN id="gravatarmsg"></SPAN><SPAN style="color: red; display: none;" 
+id="ctl00_cphBody_CommentView1_RequiredFieldValidator2">Required</SPAN><SPAN 
+style="color: red; display: none;" id="ctl00_cphBody_CommentView1_RegularExpressionValidator1">Please 
+enter a valid e-mail</SPAN><BR><LABEL for="ctl00_cphBody_CommentView1_txtWebsite">Website</LABEL><INPUT 
+id="ctl00_cphBody_CommentView1_txtWebsite" tabIndex="4" name="ctl00$cphBody$CommentView1$txtWebsite" 
+type="text"><SPAN style="color: red; display: none;" id="ctl00_cphBody_CommentView1_RegularExpressionValidator2">Please 
+enter a valid URL</SPAN><BR><LABEL 
+for="ctl00_cphBody_CommentView1_ddlCountry">Country</LABEL><SELECT id="ctl00_cphBody_CommentView1_ddlCountry" 
+onchange="BlogEngine.setFlag(this.value)" tabIndex="5" name="ctl00$cphBody$CommentView1$ddlCountry"><OPTION 
+  value="">[Not specified]</OPTION><OPTION 
+  value="af">Afghanistan</OPTION><OPTION value="al">Albania</OPTION><OPTION 
+  value="dz">Algeria</OPTION><OPTION value="ar">Argentina</OPTION><OPTION value="am">Armenia</OPTION><OPTION 
+  value="au">Australia</OPTION><OPTION value="at">Austria</OPTION><OPTION value="az">Azerbaijan</OPTION><OPTION 
+  value="bh">Bahrain</OPTION><OPTION value="bd">Bangladesh</OPTION><OPTION 
+  value="by">Belarus</OPTION><OPTION value="be">Belgium</OPTION><OPTION value="bz">Belize</OPTION><OPTION 
+  value="ve">Bolivarian Republic of Venezuela</OPTION><OPTION 
+  value="bo">Bolivia</OPTION><OPTION value="ba">Bosnia and 
+  Herzegovina</OPTION><OPTION value="br">Brazil</OPTION><OPTION 
+  value="bn">Brunei Darussalam</OPTION><OPTION 
+  value="bg">Bulgaria</OPTION><OPTION value="kh">Cambodia</OPTION><OPTION value="ca">Canada</OPTION><OPTION 
+  value="029">Caribbean</OPTION><OPTION value="cl">Chile</OPTION><OPTION value="co">Colombia</OPTION><OPTION 
+  value="cr">Costa Rica</OPTION><OPTION value="hr">Croatia</OPTION><OPTION 
+  value="cz">Czech Republic</OPTION><OPTION value="dk">Denmark</OPTION><OPTION 
+  value="do">Dominican Republic</OPTION><OPTION 
+  value="ec">Ecuador</OPTION><OPTION value="eg">Egypt</OPTION><OPTION 
+  value="sv">El Salvador</OPTION><OPTION value="ee">Estonia</OPTION><OPTION 
+  value="et">Ethiopia</OPTION><OPTION value="fo">Faroe Islands</OPTION><OPTION 
+  value="fi">Finland</OPTION><OPTION value="fr">France</OPTION><OPTION value="ge">Georgia</OPTION><OPTION 
+  value="de">Germany</OPTION><OPTION value="gr">Greece</OPTION><OPTION value="gl">Greenland</OPTION><OPTION 
+  value="gt">Guatemala</OPTION><OPTION value="hn">Honduras</OPTION><OPTION 
+  value="hk">Hong Kong S.A.R.</OPTION><OPTION value="hu">Hungary</OPTION><OPTION 
+  value="is">Iceland</OPTION><OPTION value="in">India</OPTION><OPTION 
+  value="id">Indonesia</OPTION><OPTION value="ir">Iran</OPTION><OPTION value="iq">Iraq</OPTION><OPTION 
+  value="ie">Ireland</OPTION><OPTION value="pk">Islamic Republic of 
+  Pakistan</OPTION><OPTION value="il">Israel</OPTION><OPTION 
+  value="it">Italy</OPTION><OPTION value="jm">Jamaica</OPTION><OPTION 
+  value="jp">Japan</OPTION><OPTION value="jo">Jordan</OPTION><OPTION 
+  value="kz">Kazakhstan</OPTION><OPTION value="ke">Kenya</OPTION><OPTION value="kr">Korea</OPTION><OPTION 
+  value="kw">Kuwait</OPTION><OPTION value="kg">Kyrgyzstan</OPTION><OPTION value="la">Lao 
+  P.D.R.</OPTION><OPTION value="lv">Latvia</OPTION><OPTION 
+  value="lb">Lebanon</OPTION><OPTION value="ly">Libya</OPTION><OPTION 
+  value="li">Liechtenstein</OPTION><OPTION value="lt">Lithuania</OPTION><OPTION 
+  value="lu">Luxembourg</OPTION><OPTION value="mo">Macao S.A.R.</OPTION><OPTION 
+  value="mk">Macedonia (FYROM)</OPTION><OPTION 
+  value="my">Malaysia</OPTION><OPTION value="mv">Maldives</OPTION><OPTION value="mt">Malta</OPTION><OPTION 
+  value="mx">Mexico</OPTION><OPTION value="mn">Mongolia</OPTION><OPTION value="me">Montenegro</OPTION><OPTION 
+  value="ma">Morocco</OPTION><OPTION value="np">Nepal</OPTION><OPTION 
+  value="nl">Netherlands</OPTION><OPTION value="nz">New Zealand</OPTION><OPTION 
+  value="ni">Nicaragua</OPTION><OPTION value="ng">Nigeria</OPTION><OPTION value="no">Norway</OPTION><OPTION 
+  value="om">Oman</OPTION><OPTION value="pa">Panama</OPTION><OPTION 
+  value="py">Paraguay</OPTION><OPTION value="cn">People's Republic of 
+  China</OPTION><OPTION value="pe">Peru</OPTION><OPTION 
+  value="ph">Philippines</OPTION><OPTION value="pl">Poland</OPTION><OPTION 
+  value="pt">Portugal</OPTION><OPTION value="mc">Principality of 
+  Monaco</OPTION><OPTION value="pr">Puerto Rico</OPTION><OPTION 
+  value="qa">Qatar</OPTION><OPTION value="ph">Republic of the 
+  Philippines</OPTION><OPTION value="ro">Romania</OPTION><OPTION 
+  value="ru">Russia</OPTION><OPTION value="rw">Rwanda</OPTION><OPTION 
+  value="sa">Saudi Arabia</OPTION><OPTION value="sn">Senegal</OPTION><OPTION 
+  value="rs">Serbia</OPTION><OPTION value="cs">Serbia and Montenegro 
+  (Former)</OPTION><OPTION value="sg">Singapore</OPTION><OPTION 
+  value="sk">Slovakia</OPTION><OPTION value="si">Slovenia</OPTION><OPTION value="za">South 
+  Africa</OPTION><OPTION value="es">Spain</OPTION><OPTION value="lk">Sri 
+  Lanka</OPTION><OPTION value="se">Sweden</OPTION><OPTION 
+  value="ch">Switzerland</OPTION><OPTION value="sy">Syria</OPTION><OPTION value="tw">Taiwan</OPTION><OPTION 
+  value="tj">Tajikistan</OPTION><OPTION value="th">Thailand</OPTION><OPTION 
+  value="tt">Trinidad and Tobago</OPTION><OPTION 
+  value="tn">Tunisia</OPTION><OPTION value="tr">Turkey</OPTION><OPTION value="tm">Turkmenistan</OPTION><OPTION 
+  value="ae">U.A.E.</OPTION><OPTION value="ua">Ukraine</OPTION><OPTION value="gb">United 
+  Kingdom</OPTION><OPTION selected="selected" value="us">United 
+  States</OPTION><OPTION value="uy">Uruguay</OPTION><OPTION 
+  value="uz">Uzbekistan</OPTION><OPTION value="vn">Vietnam</OPTION><OPTION 
+  value="ye">Yemen</OPTION><OPTION value="zw">Zimbabwe</OPTION></SELECT>&nbsp;	  
+<SPAN class="CommentFlag"><IMG style="border-width: 0px; width: 16px; height: 11px;" 
+id="ctl00_cphBody_CommentView1_imgFlag" alt="Country flag" src="Mark's%20Tech%20Blog%20%20The%20Asynchronous%20Programming%20Models%20(C%23%205_0%20Series)_files/us.png"></SPAN><BR><SPAN 
+class="bbcode" title="BBCode tags"><A title="[b][/b]" href="javascript:void(BlogEngine.addBbCode('b'))">b</A><A 
+title="[i][/i]" href="javascript:void(BlogEngine.addBbCode('i'))">i</A><A title="[u][/u]" 
+href="javascript:void(BlogEngine.addBbCode('u'))">u</A><A title="[quote][/quote]" 
+href="javascript:void(BlogEngine.addBbCode('quote'))">quote</A></SPAN><SPAN 
+style="color: red; display: none;" id="ctl00_cphBody_CommentView1_RequiredFieldValidator3">Required</SPAN><BR>
+<UL id="commentMenu">
+  <LI id="compose" class="selected" 
+  onclick="BlogEngine.composeComment()">Comment</LI>
+  <LI id="preview" onclick="BlogEngine.showCommentPreview()">Preview</LI></UL>
+<DIV id="commentCompose"><LABEL style="display: none;" for="ctl00_cphBody_CommentView1_txtContent">Comment</LABEL><TEXTAREA id="ctl00_cphBody_CommentView1_txtContent" tabIndex="6" cols="50" rows="10" name="ctl00$cphBody$CommentView1$txtContent"></TEXTAREA></DIV>
+<DIV id="commentPreview"><IMG style="display: none;" alt="Loading" src="Mark's%20Tech%20Blog%20%20The%20Asynchronous%20Programming%20Models%20(C%23%205_0%20Series)_files/ajax-loader.gif"></DIV><BR><INPUT 
+style="width: auto;" id="cbNotify" tabIndex="7" type="checkbox"><LABEL style="width: auto; padding-left: 5px; float: none; display: inline;" 
+for="cbNotify">Notify me when new comments are added</LABEL><BR>
+<SCRIPT type="text/javascript" src="Mark's%20Tech%20Blog%20%20The%20Asynchronous%20Programming%20Models%20(C%23%205_0%20Series)_files/recaptcha_ajax.js"></SCRIPT>
+<SPAN style="color: red; display: none;" id="spnCaptchaIncorrect">The captcha 
+text was not valid. Please try again.</SPAN>
+<DIV id="recaptcha_placeholder"></DIV>
+<SCRIPT type="text/javascript">
+	function showRecaptcha() {
+	Recaptcha.create('6LcFT74SAAAAABxs_cpLWgnrvxaL3C3-pJzGmHIQ ', 'recaptcha_placeholder', {
+	theme: 'white',
+	lang: 'en',
+	tabindex: 8
+	})
+	}
+	var rc_oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+	window.onload = showRecaptcha;
+	}
+	else {
+	window.onload = function() {
+	rc_oldonload();
+	showRecaptcha();
+	}
+	}
+
+</SCRIPT>
+<INPUT style="margin-top: 10px;" id="btnSaveAjax" tabIndex="9" onclick="return BlogEngine.validateAndSubmitCommentForm()" value="Save comment" type="button"><!--<input type="button" id="btnSaveAjax" value="Save comment" onclick="return validateWithRecaptcha()" tabindex="9" />--><INPUT 
+id="ctl00_cphBody_CommentView1_hfCaptcha" name="ctl00$cphBody$CommentView1$hfCaptcha" 
+value="b190d666-f0a7-42df-8b3b-2f166a3078e7" type="hidden"></DIV></DIV>
+<SCRIPT type="text/javascript">
+<!--//
+function registerCommentBox(){
+	BlogEngine.comments.flagImage = BlogEngine.$("ctl00_cphBody_CommentView1_imgFlag");
+	BlogEngine.comments.contentBox = BlogEngine.$("ctl00_cphBody_CommentView1_txtContent");
+	BlogEngine.comments.moderation = true;
+	BlogEngine.comments.checkName = true;
+	BlogEngine.comments.postAuthor = "mazhou";
+	BlogEngine.comments.nameBox = BlogEngine.$("txtName634913827559312300");
+	BlogEngine.comments.emailBox = BlogEngine.$("ctl00_cphBody_CommentView1_txtEmail");
+	BlogEngine.comments.websiteBox = BlogEngine.$("ctl00_cphBody_CommentView1_txtWebsite");
+	BlogEngine.comments.countryDropDown = BlogEngine.$("ctl00_cphBody_CommentView1_ddlCountry"); 
+	BlogEngine.comments.captchaField = BlogEngine.$('ctl00_cphBody_CommentView1_hfCaptcha');
+	BlogEngine.comments.controlId = 'ctl00$cphBody$CommentView1';
+	BlogEngine.comments.replyToId = BlogEngine.$("ctl00_cphBody_CommentView1_hiddenReplyTo"); 
+}
+//-->
+</SCRIPT>
+
+<SCRIPT type="text/javascript">
+    function toggle_visibility(id, id2) {
+        var e = document.getElementById(id);
+        var h = document.getElementById(id2);
+        if (e.style.display == 'block') {
+            e.style.display = 'none';
+            h.innerHTML = "+";
+        }
+        else {
+            e.style.display = 'block';
+            h.innerHTML = "-";
+        }
+    }
+</SCRIPT>
+
+<DIV id="footer">
+<P>Powered by <A href="http://www.dotnetblogengine.net/" 
+target="_blank">BlogEngine.NET</A> 2.0.0.36 |         Original Design by <A 
+href="http://livesino.net/theme-codename-h">Livesino</A>, Adapted by <A href="http://midnightprogrammer.net/">Prashant 
+Khandelwal</A></P></DIV></DIV>
+<DIV id="sidepanel">
+<DIV id="widgetzone_be_WIDGET_ZONE" class="widgetzone">
+<DIV id="widget710fa7ac-78a2-4d6f-b1ef-f1031eeb2ccb" class="widget textbox">
+<H4>        Translate This Page</H4>
+<DIV class="content">
+<DIV style="border-color: rgb(64, 64, 64); width: 250px; min-height: 83px; background-color: rgb(160, 160, 160);" 
+id="MicrosoftTranslatorWidget"><NOSCRIPT>&lt;a 
+href="http://www.microsofttranslator.com/bv.aspx?a=http%3a%2f%2fwww.markzhou.com%2f"&gt;Translate 
+this page&lt;/a&gt;&lt;br /&gt;Powered by &lt;a 
+href="http://www.microsofttranslator.com"&gt;Microsoft® 
+Translator&lt;/a&gt;</NOSCRIPT></DIV>
+<SCRIPT type="text/javascript">// <![CDATA[
+ /* <![CDATA[ */ setTimeout(function() { var s = document.createElement("script"); s.type = "text/javascript"; s.charset = "UTF-8"; s.src = ((location && location.href && location.href.indexOf('https') == 0) ? "https://ssl.microsofttranslator.com" : "http://www.microsofttranslator.com" ) + "/ajax/v2/widget.aspx?siteData=ct2O5MD3Ho1IebIO20HEwi_Nwdf1C1ohH8c8RuHhRVLyRMJ-_3Qpiz4HX58JkixCXdLsT-Yen0sM8wBC5gOieT3IqVNhKnPzLbwa1UHWPwCfij4e8_ODOAmpOjF5J2zT&mode=manual&from=en&layout=ts"; var p = document.getElementsByTagName('head')[0] || document.documentElement; p.insertBefore(s, p.firstChild); }, 0); /*  */
+// ]]></SCRIPT>
+</DIV></DIV>
+<DIV id="widget1ef27b78-0218-420c-bfda-038163510def" class="widget textbox">
+<H4>        About Mark</H4>
+<DIV class="content">
+<P>Mark is a developer who works for building base class libraries and tools 
+for&nbsp;developers.</P></DIV></DIV>
+<DIV id="widget9dd1c7b4-bd9e-443e-8487-8c7223bc1930" class="widget textbox">
+<H4>        Mark's Awards</H4>
+<DIV class="content">
+<DIV style="text-align: center;"><IMG title="Microsoft Community Contributor Award 2011" 
+alt="Microsoft Community Contributor" src="Mark's%20Tech%20Blog%20%20The%20Asynchronous%20Programming%20Models%20(C%23%205_0%20Series)_files/mcc.png" 
+width="246" height="92"></DIV></DIV></DIV>
+<DIV id="widget63ca648d-1087-4716-807f-56c28e574775" class="widget tagcloud">
+<H4>        Tag cloud</H4>
+<DIV class="content">
+<UL id="ctl00_widgetContainer63ca648d10874716807f56c28e574775_63ca648d10874716807f56c28e574775_ulTags">
+  <LI><A class="smallest" title="Tag: asp.net" href="http://www.markzhou.com/blog/?tag=/aspnet">asp.net</A> 
+  </LI>
+  <LI><A class="smallest" title="Tag: azure" href="http://www.markzhou.com/blog/?tag=/azure">azure</A> 
+  </LI>
+  <LI><A class="biggest" title="Tag: c#" href="http://www.markzhou.com/blog/?tag=/c">c#</A> 
+  </LI>
+  <LI><A class="small" title="Tag: c# 5" href="http://www.markzhou.com/blog/?tag=/c-5">c# 
+  5</A> </LI>
+  <LI><A class="small" title="Tag: clr" href="http://www.markzhou.com/blog/?tag=/clr">clr</A> 
+  </LI>
+  <LI><A class="medium" title="Tag: codeanalysis" href="http://www.markzhou.com/blog/?tag=/codeanalysis">codeanalysis</A> 
+  </LI>
+  <LI><A class="big" title="Tag: codingguidelines" href="http://www.markzhou.com/blog/?tag=/codingguidelines">codingguidelines</A> 
+  </LI>
+  <LI><A class="smallest" title="Tag: comments" href="http://www.markzhou.com/blog/?tag=/comments">comments</A> 
+  </LI>
+  <LI><A class="smallest" title="Tag: entityframework" href="http://www.markzhou.com/blog/?tag=/entityframework">entityframework</A> 
+  </LI>
+  <LI><A class="medium" title="Tag: fxcop" href="http://www.markzhou.com/blog/?tag=/fxcop">fxcop</A> 
+  </LI>
+  <LI><A class="smallest" title="Tag: ie9" href="http://www.markzhou.com/blog/?tag=/ie9">ie9</A> 
+  </LI>
+  <LI><A class="smallest" title="Tag: javascript" href="http://www.markzhou.com/blog/?tag=/javascript">javascript</A> 
+  </LI>
+  <LI><A class="smallest" title="Tag: mvc" href="http://www.markzhou.com/blog/?tag=/mvc">mvc</A> 
+  </LI>
+  <LI><A class="smallest" title="Tag: Singapore" href="http://www.markzhou.com/blog/?tag=/Singapore">Singapore</A> 
+  </LI>
+  <LI><A class="smallest" title="Tag: sql server" href="http://www.markzhou.com/blog/?tag=/sql-server">sql 
+  server</A> </LI>
+  <LI><A class="small" title="Tag: techtalk" href="http://www.markzhou.com/blog/?tag=/techtalk">techtalk</A> 
+  </LI>
+  <LI><A class="smallest" title="Tag: tools" href="http://www.markzhou.com/blog/?tag=/tools">tools</A> 
+  </LI>
+  <LI><A class="smallest" title="Tag: t-sql" href="http://www.markzhou.com/blog/?tag=/t-sql">t-sql</A> 
+  </LI>
+  <LI><A class="small" title="Tag: visualstudio" href="http://www.markzhou.com/blog/?tag=/visualstudio">visualstudio</A> 
+  </LI>
+  <LI><A class="small" title="Tag: web" href="http://www.markzhou.com/blog/?tag=/web">web</A> 
+  </LI>
+  <LI><A class="smallest" title="Tag: windows" href="http://www.markzhou.com/blog/?tag=/windows">windows</A> 
+  </LI>
+  <LI><A class="smallest" title="Tag: windowslive" href="http://www.markzhou.com/blog/?tag=/windowslive">windowslive</A> 
+  </LI>
+  <LI><A class="smallest" title="Tag: workaround" href="http://www.markzhou.com/blog/?tag=/workaround">workaround</A> 
+  </LI></UL></DIV></DIV>
+<DIV id="widgetab2b8c27-02c4-46ab-a78f-28939c2a1a09" class="widget monthlist">
+<H4>        Month List</H4>
+<DIV class="content">
+<UL id="monthList">
+  <LI class="year" onclick="BlogEngine.toggleMonth('year2009')">2009
+  <UL id="year2009">
+    <LI><A href="http://www.markzhou.com/blog/2009/12/default.aspx">December</A> 
+    (4)</LI></UL></LI>
+  <LI class="year" onclick="BlogEngine.toggleMonth('year2010')">2010
+  <UL id="year2010">
+    <LI><A href="http://www.markzhou.com/blog/2010/01/default.aspx">January</A> 
+    (3)</LI>
+    <LI><A href="http://www.markzhou.com/blog/2010/02/default.aspx">February</A> 
+    (1)</LI>
+    <LI><A href="http://www.markzhou.com/blog/2010/03/default.aspx">March</A> 
+    (4)</LI>
+    <LI><A href="http://www.markzhou.com/blog/2010/04/default.aspx">April</A> 
+    (3)</LI>
+    <LI><A href="http://www.markzhou.com/blog/2010/05/default.aspx">May</A> 
+    (2)</LI>
+    <LI><A href="http://www.markzhou.com/blog/2010/06/default.aspx">June</A> 
+    (1)</LI>
+    <LI><A href="http://www.markzhou.com/blog/2010/07/default.aspx">July</A> 
+    (1)</LI>
+    <LI><A href="http://www.markzhou.com/blog/2010/10/default.aspx">October</A> 
+    (13)</LI>
+    <LI><A href="http://www.markzhou.com/blog/2010/11/default.aspx">November</A> 
+    (8)</LI>
+    <LI><A href="http://www.markzhou.com/blog/2010/12/default.aspx">December</A> 
+    (1)</LI></UL></LI>
+  <LI class="year" onclick="BlogEngine.toggleMonth('year2011')">2011
+  <UL id="year2011">
+    <LI><A href="http://www.markzhou.com/blog/2011/04/default.aspx">April</A> 
+    (1)</LI>
+    <LI><A href="http://www.markzhou.com/blog/2011/06/default.aspx">June</A> 
+    (1)</LI>
+    <LI><A href="http://www.markzhou.com/blog/2011/07/default.aspx">July</A> 
+    (1)</LI></UL></LI></UL></DIV></DIV>
+<DIV id="widgetdc246169-0320-459f-a181-0f7f423dfbb5" class="widget pagelist">
+<H4>        Page List</H4>
+<DIV class="content">
+<UL id="pagelist" class="pagelist">
+  <LI><A href="http://www.markzhou.com/blog/page/Code-Analysis-Series.aspx">Code 
+  Analysis Series</A></LI>
+  <LI><A href="http://www.markzhou.com/blog/page/Tech-Talk.aspx">Tech 
+  Talk</A></LI>
+  <LI><A href="http://www.markzhou.com/blog/page/The-C-50-Series.aspx">The C# 
+  5.0 Series</A></LI></UL></DIV></DIV>
+<DIV id="widget0f9765f5-e864-4379-b980-c14a7c50b0a7" class="widget textbox">
+<H4>        Who visit this site</H4>
+<DIV class="content">
+<DIV style="text-align: center;"><A title="free world map tracker" href="http://d1.24counter.com/vmap/1303983790/"><IMG 
+title="free world map counter" border="1" alt="world map hits counter" src="Mark's%20Tech%20Blog%20%20The%20Asynchronous%20Programming%20Models%20(C%23%205_0%20Series)_files/view.jpg"></A><BR><A 
+href="http://24counter.com/map/">map counter</A></DIV></DIV></DIV>
+<DIV id="widget482eb9cc-f85b-4560-9f36-3588d4d804cb" class="widget recentcomments">
+<H4>        Recent Comments</H4>
+<DIV class="content">
+<UL id="recentComments" class="recentComments">
+  <LI><A class="postTitle" href="http://www.markzhou.com/blog/post/2010/11/10/Ad-hoc-pagination-support-with-SQL-Server-codenamed-e2809cDenalie2809d.aspx">Ad-hoc 
+  pagination support with SQL Server codenamed “Denali”</A> (4)<BR><A href="http://www.freewaregadget.com/" 
+  rel="nofollow">	download flash video recorder</A> wrote: Terrific stuff! This 
+  is the type of info that shou... <A class="moreLink" href="http://www.markzhou.com/blog/post/2010/11/10/Ad-hoc-pagination-support-with-SQL-Server-codenamed-e2809cDenalie2809d.aspx#id_2d60851c-6e47-466f-b8e3-a3a68526df9a">[More]</A></LI>
+  <LI><A class="postTitle" href="http://www.markzhou.com/blog/post/2010/11/10/Ad-hoc-pagination-support-with-SQL-Server-codenamed-e2809cDenalie2809d.aspx">Ad-hoc 
+  pagination support with SQL Server codenamed “Denali”</A> (4)<BR><A href="http://www.freewaregadget.com/" 
+  rel="nofollow">	download flash video recorder</A> wrote: Thanks for this great 
+  article! It has been very us... <A class="moreLink" href="http://www.markzhou.com/blog/post/2010/11/10/Ad-hoc-pagination-support-with-SQL-Server-codenamed-e2809cDenalie2809d.aspx#id_172f863d-f590-4153-b84d-0e78b34d68d5">[More]</A></LI>
+  <LI><A class="postTitle" href="http://www.markzhou.com/blog/post/2010/03/18/How-do-I-Add-virtual-user-licenses-to-Visual-Studio-Test-Controller-2010-RC.aspx">How 
+  do I: Add virtual user licenses to Visual Studio Test Controller 2010 RC</A> 
+  (2)<BR><A href="http://www.markzhou.com/" rel="nofollow">mazhou</A> wrote: 
+  This is only working for VS 2010 RC. for RTM build... <A class="moreLink" 
+  href="http://www.markzhou.com/blog/post/2010/03/18/How-do-I-Add-virtual-user-licenses-to-Visual-Studio-Test-Controller-2010-RC.aspx#id_ef35f7db-ca0d-40f2-a806-3308c182318b">[More]</A></LI>
+  <LI><A class="postTitle" href="http://www.markzhou.com/blog/post/2010/11/28/Do-not-prefix-enum-values-with-type-name-(CA1712-MicrosoftNaming).aspx">Do 
+  not prefix enum values with type name (CA1712, Microsoft.Naming)</A> (1)<BR><A 
+  href="http://programacionamartillazos.blogspot.com/" 
+  rel="nofollow">Yelinna</A> wrote: It is true, Enums are self described, this 
+  helped ... <A class="moreLink" href="http://www.markzhou.com/blog/post/2010/11/28/Do-not-prefix-enum-values-with-type-name-(CA1712-MicrosoftNaming).aspx#id_c49578d6-c570-489b-b588-eae05f4cd45a">[More]</A></LI>
+  <LI><A class="postTitle" href="http://www.markzhou.com/blog/post/2010/10/15/What-does-e2809cj-3d-03b-j-3d-j2b2be2809d-evaluate-to.aspx">What 
+  does “j = 0; j = j++” evaluate to?</A> (4)<BR>Elizabeth wrote: It's because of 
+  how post-fixed incrementation ... <A class="moreLink" href="http://www.markzhou.com/blog/post/2010/10/15/What-does-e2809cj-3d-03b-j-3d-j2b2be2809d-evaluate-to.aspx#id_b7b7a4a7-b04a-48fa-a72a-538493859a35">[More]</A></LI>
+  <LI><A class="postTitle" href="http://www.markzhou.com/blog/post/2010/10/29/The-C-50-Series.aspx">The 
+  C# 5.0 Series</A> (3)<BR><A href="http://www.actualexams.me/" 
+  rel="nofollow">ActualExams</A> wrote: I am beginner in C# and learning this. 
+  It is great... <A class="moreLink" href="http://www.markzhou.com/blog/post/2010/10/29/The-C-50-Series.aspx#id_88823f2f-64cf-4def-adbf-52af682679da">[More]</A></LI>
+  <LI><A class="postTitle" href="http://www.markzhou.com/blog/post/2010/03/18/How-do-I-Add-virtual-user-licenses-to-Visual-Studio-Test-Controller-2010-RC.aspx">How 
+  do I: Add virtual user licenses to Visual Studio Test Controller 2010 RC</A> 
+  (2)<BR>aralele wrote: when i am trying to do : TestControllerConfig.exe... <A 
+  class="moreLink" href="http://www.markzhou.com/blog/post/2010/03/18/How-do-I-Add-virtual-user-licenses-to-Visual-Studio-Test-Controller-2010-RC.aspx#id_6f10c30a-4e5a-443c-96e7-43afa7ad96d7">[More]</A></LI>
+  <LI><A class="postTitle" href="http://www.markzhou.com/blog/post/2010/10/15/What-does-e2809cj-3d-03b-j-3d-j2b2be2809d-evaluate-to.aspx">What 
+  does “j = 0; j = j++” evaluate to?</A> (4)<BR>tom wrote: this's why we should 
+  avoid using ++  <A class="moreLink" href="http://www.markzhou.com/blog/post/2010/10/15/What-does-e2809cj-3d-03b-j-3d-j2b2be2809d-evaluate-to.aspx#id_4ebeed8f-796d-4839-86ef-e7064a1efd21">[More]</A></LI>
+  <LI><A class="postTitle" href="http://www.markzhou.com/blog/post/2011/07/26/Microsoft-Visual-Studio-LightSwitch-2011-Released.aspx">Microsoft 
+  Visual Studio LightSwitch 2011 Released</A> (1)<BR><A href="http://google.com/" 
+  rel="nofollow">Curtis</A> wrote: Did you know that this page loads up kind of 
+  weird... <A class="moreLink" href="http://www.markzhou.com/blog/post/2011/07/26/Microsoft-Visual-Studio-LightSwitch-2011-Released.aspx#id_a60e9bc1-1888-46aa-aac3-8a3fdefbbeb6">[More]</A></LI>
+  <LI><A class="postTitle" href="http://www.markzhou.com/blog/post/2010/10/15/What-does-e2809cj-3d-03b-j-3d-j2b2be2809d-evaluate-to.aspx">What 
+  does “j = 0; j = j++” evaluate to?</A> (4)<BR><A href="http://wayneye.com/" 
+  rel="nofollow">Wayne Ye</A> wrote: Just verified, JavaScript will print 0.... 
+  <A class="moreLink" href="http://www.markzhou.com/blog/post/2010/10/15/What-does-e2809cj-3d-03b-j-3d-j2b2be2809d-evaluate-to.aspx#id_eb7f0c6c-496e-4898-a4c7-d4005d93f065">[More]</A></LI></UL><A 
+href="http://www.markzhou.com/blog/syndication.axd?comments=true">Comment RSS 
+<IMG alt="" src="Mark's%20Tech%20Blog%20%20The%20Asynchronous%20Programming%20Models%20(C%23%205_0%20Series)_files/rssButton.png"></A></DIV>
+</DIV></DIV></DIV>
+<SCRIPT type="text/javascript">
+//<![CDATA[
+var Page_Validators =  new Array(document.getElementById("ctl00_cphBody_CommentView1_RequiredFieldValidator2"), document.getElementById("ctl00_cphBody_CommentView1_RegularExpressionValidator1"), document.getElementById("ctl00_cphBody_CommentView1_RegularExpressionValidator2"), document.getElementById("ctl00_cphBody_CommentView1_RequiredFieldValidator3"));
+//]]>
+</SCRIPT>
+
+<SCRIPT type="text/javascript">
+//<![CDATA[
+var ctl00_cphBody_CommentView1_RequiredFieldValidator2 = document.all ? document.all["ctl00_cphBody_CommentView1_RequiredFieldValidator2"] : document.getElementById("ctl00_cphBody_CommentView1_RequiredFieldValidator2");
+ctl00_cphBody_CommentView1_RequiredFieldValidator2.controltovalidate = "ctl00_cphBody_CommentView1_txtEmail";
+ctl00_cphBody_CommentView1_RequiredFieldValidator2.errormessage = "Required";
+ctl00_cphBody_CommentView1_RequiredFieldValidator2.display = "Dynamic";
+ctl00_cphBody_CommentView1_RequiredFieldValidator2.validationGroup = "AddComment";
+ctl00_cphBody_CommentView1_RequiredFieldValidator2.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+ctl00_cphBody_CommentView1_RequiredFieldValidator2.initialvalue = "";
+var ctl00_cphBody_CommentView1_RegularExpressionValidator1 = document.all ? document.all["ctl00_cphBody_CommentView1_RegularExpressionValidator1"] : document.getElementById("ctl00_cphBody_CommentView1_RegularExpressionValidator1");
+ctl00_cphBody_CommentView1_RegularExpressionValidator1.controltovalidate = "ctl00_cphBody_CommentView1_txtEmail";
+ctl00_cphBody_CommentView1_RegularExpressionValidator1.errormessage = "Please enter a valid e-mail";
+ctl00_cphBody_CommentView1_RegularExpressionValidator1.display = "Dynamic";
+ctl00_cphBody_CommentView1_RegularExpressionValidator1.validationGroup = "AddComment";
+ctl00_cphBody_CommentView1_RegularExpressionValidator1.evaluationfunction = "RegularExpressionValidatorEvaluateIsValid";
+ctl00_cphBody_CommentView1_RegularExpressionValidator1.validationexpression = "\\w+([-+.\']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+var ctl00_cphBody_CommentView1_RegularExpressionValidator2 = document.all ? document.all["ctl00_cphBody_CommentView1_RegularExpressionValidator2"] : document.getElementById("ctl00_cphBody_CommentView1_RegularExpressionValidator2");
+ctl00_cphBody_CommentView1_RegularExpressionValidator2.controltovalidate = "ctl00_cphBody_CommentView1_txtWebsite";
+ctl00_cphBody_CommentView1_RegularExpressionValidator2.errormessage = "Please enter a valid URL";
+ctl00_cphBody_CommentView1_RegularExpressionValidator2.display = "Dynamic";
+ctl00_cphBody_CommentView1_RegularExpressionValidator2.validationGroup = "AddComment";
+ctl00_cphBody_CommentView1_RegularExpressionValidator2.evaluationfunction = "RegularExpressionValidatorEvaluateIsValid";
+ctl00_cphBody_CommentView1_RegularExpressionValidator2.validationexpression = "(http://|https://|)([\\w-]+\\.)+[\\w-]+(/[\\w- ./?%&=;~]*)?";
+var ctl00_cphBody_CommentView1_RequiredFieldValidator3 = document.all ? document.all["ctl00_cphBody_CommentView1_RequiredFieldValidator3"] : document.getElementById("ctl00_cphBody_CommentView1_RequiredFieldValidator3");
+ctl00_cphBody_CommentView1_RequiredFieldValidator3.controltovalidate = "ctl00_cphBody_CommentView1_txtContent";
+ctl00_cphBody_CommentView1_RequiredFieldValidator3.errormessage = "Required";
+ctl00_cphBody_CommentView1_RequiredFieldValidator3.display = "Dynamic";
+ctl00_cphBody_CommentView1_RequiredFieldValidator3.validationGroup = "AddComment";
+ctl00_cphBody_CommentView1_RequiredFieldValidator3.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+ctl00_cphBody_CommentView1_RequiredFieldValidator3.initialvalue = "";
+//]]>
+</SCRIPT>
+
+<DIV><INPUT id="__EVENTVALIDATION" name="__EVENTVALIDATION" value="/wEWhwECpvWx5gQC4KmHjg4C1eX3owwCruLkxgwC/ubfrwUCwYnNwAkCwYnlwAkCwond3wkCwYm9wAkCwYnpwAkCwYmJwAkCwYmFwAkCwYnd3wkCwImVwAkCwInFwAkCwInZ3wkCwInJwAkCwInd3wkCtInJwAkCwInxwAkCwIn5wAkCwIm9wAkCwIntwAkCwInRwAkCu4mVwAkCw4n5wAkCk6vrigECw4nlwAkCw4nxwAkCw4m9wAkCtom9wAkCw4nd3wkCwonhwAkCwonxwAkCxYnBwAkCxYnRwAkCs4mNwAkCxYnJwAkCxYmFwAkCxInxwAkCxImZwAkCxIm9wAkCx4nJwAkCwonJwAkCx4m9wAkCx4nlwAkCx4mFwAkCtontwAkCtonhwAkCtomJwAkCuYmBwAkCuYntwAkCuYnFwAkCuYm9wAkCuYm5wAkCuYnJwAkCronhwAkCuYnlwAkCuYmFwAkCuInpwAkCuIm1wAkCuInxwAkCu4nd3wkCu4nJwAkCu4m9wAkCu4mRwAkCu4nRwAkCuon5wAkCuomNwAkCuon9wAkCuonZ3wkCuomZwAkCuomFwAkCuomJwAkCvYnxwAkCvYnhwAkCvYnZ3wkCvYmNwAkCvYmFwAkCvYnV3wkCvYntwAkCvYnJwAkCvYn5wAkCvIm1wAkCvInlwAkCvInd3wkCvImZwAkCvInRwAkCvInxwAkCv4npwAkCron5wAkCronZ3wkCw4ntwAkCronJwAkCromVwAkCronlwAkCromFwAkCvYnBwAkCrom9wAkCsYn5wAkCromVwAkCsInxwAkCsImJwAkCsImRwAkCs4n5wAkCs4ntwAkCsImBwAkCw4mBwAkCs4nRwAkCs4nhwAkCs4mZwAkCqIn5wAkCxYmBwAkCuonhwAkCs4nJwAkCw4mVwAkCs4nZ3wkCsomRwAkCsomdwAkCsomVwAkCsomFwAkCsontwAkCsom9wAkCsonpwAkCwYnJwAkCtYn5wAkCx4n9wAkCtYmBwAkCtYnZ3wkCtYnd3wkCtIntwAkCqYnJwAkCqImRwAkCubT85wMC76m9yAxK+gGpbnnKlksJ+vMxA1Q8S4AKgQ==" 
+type="hidden"></DIV>
+<SCRIPT type="text/javascript" src="Mark's%20Tech%20Blog%20%20The%20Asynchronous%20Programming%20Models%20(C%23%205_0%20Series)_files/js(7).js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="Mark's%20Tech%20Blog%20%20The%20Asynchronous%20Programming%20Models%20(C%23%205_0%20Series)_files/res.js"></SCRIPT>
+
+<SCRIPT type="text/javascript">
+	SyntaxHighlighter.config.clipboardSwf='/blog/Scripts/syntaxhighlighter/clipboard.swf';
+	SyntaxHighlighter.defaults['gutter'] = true;
+	SyntaxHighlighter.defaults['smart-tabs'] = true;
+	SyntaxHighlighter.defaults['auto-links'] = true;
+	SyntaxHighlighter.defaults['collapse'] = false;
+	SyntaxHighlighter.defaults['light'] = false;
+	SyntaxHighlighter.defaults['tab-size'] = 4;
+	SyntaxHighlighter.defaults['toolbar'] = true;
+	SyntaxHighlighter.defaults['wrap-lines'] = true;
+	SyntaxHighlighter.all();
+</SCRIPT>
+
+<SCRIPT type="text/javascript">
+//<![CDATA[
+
+WebForm_InitCallback();
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+        //]]>
+</SCRIPT>
+</FORM></BODY></HTML>

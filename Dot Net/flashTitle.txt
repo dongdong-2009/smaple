@@ -1,0 +1,15 @@
+<script language=javascript >
+step=0
+
+function flash_title()
+    {
+      step++
+      if (step==5) {step=1}
+      if (step==1) {document.title='¡î¡ã £®¡ï¡¤'+title_new+'£®¡ï¡¤¡î¡ã '}
+      if (step==2) {document.title='¡¤¡î¡ã £®¡ï'+title_new+'¡ï¡¤¡î¡ã £®'}
+      if (step==3) {document.title='¡ï¡¤¡î¡ã £®'+title_new+'¡¤¡î¡ã £®¡ï'}
+      if (step==4) {document.title='£®¡ï¡¤¡î¡ã '+title_new+'¡î¡ã £®¡ï¡¤'}
+      setTimeout("flash_title()",180);
+    }
+flash_title()
+</script>

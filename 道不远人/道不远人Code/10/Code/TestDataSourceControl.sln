@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "E:\...\TestDataSourceControl\", "..\..\..\深入浅出ASP.NET2.0控件与组件开发\chapter11\Code\TestDataSourceControl\", "{C9229F56-33F8-402F-AF1C-F740C4FB1796}"
+	ProjectSection(WebsiteProperties) = preProject
+		ProjectReferences = "{E5A6427D-A011-4E39-80A9-0BA524ECBBF1}|DataSourceControls.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/TestDataSourceControl"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\..\深入浅出ASP.NET2.0控件与组件开发\chapter11\Code\TestDataSourceControl\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\TestDataSourceControl\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/TestDataSourceControl"
+		Release.AspNetCompiler.PhysicalPath = "..\..\..\深入浅出ASP.NET2.0控件与组件开发\chapter11\Code\TestDataSourceControl\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\TestDataSourceControl\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "49244"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataSourceControls", "DataSourceControls\DataSourceControls.csproj", "{E5A6427D-A011-4E39-80A9-0BA524ECBBF1}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|.NET = Debug|.NET
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Release|.NET = Release|.NET
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C9229F56-33F8-402F-AF1C-F740C4FB1796}.Debug|.NET.ActiveCfg = Debug|.NET
+		{C9229F56-33F8-402F-AF1C-F740C4FB1796}.Debug|.NET.Build.0 = Debug|.NET
+		{C9229F56-33F8-402F-AF1C-F740C4FB1796}.Debug|Any CPU.ActiveCfg = Debug|.NET
+		{C9229F56-33F8-402F-AF1C-F740C4FB1796}.Debug|Mixed Platforms.ActiveCfg = Debug|.NET
+		{C9229F56-33F8-402F-AF1C-F740C4FB1796}.Debug|Mixed Platforms.Build.0 = Debug|.NET
+		{C9229F56-33F8-402F-AF1C-F740C4FB1796}.Release|.NET.ActiveCfg = Debug|.NET
+		{C9229F56-33F8-402F-AF1C-F740C4FB1796}.Release|.NET.Build.0 = Debug|.NET
+		{C9229F56-33F8-402F-AF1C-F740C4FB1796}.Release|Any CPU.ActiveCfg = Debug|.NET
+		{C9229F56-33F8-402F-AF1C-F740C4FB1796}.Release|Mixed Platforms.ActiveCfg = Debug|.NET
+		{C9229F56-33F8-402F-AF1C-F740C4FB1796}.Release|Mixed Platforms.Build.0 = Debug|.NET
+		{E5A6427D-A011-4E39-80A9-0BA524ECBBF1}.Debug|.NET.ActiveCfg = Debug|Any CPU
+		{E5A6427D-A011-4E39-80A9-0BA524ECBBF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5A6427D-A011-4E39-80A9-0BA524ECBBF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5A6427D-A011-4E39-80A9-0BA524ECBBF1}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{E5A6427D-A011-4E39-80A9-0BA524ECBBF1}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{E5A6427D-A011-4E39-80A9-0BA524ECBBF1}.Release|.NET.ActiveCfg = Release|Any CPU
+		{E5A6427D-A011-4E39-80A9-0BA524ECBBF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5A6427D-A011-4E39-80A9-0BA524ECBBF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5A6427D-A011-4E39-80A9-0BA524ECBBF1}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{E5A6427D-A011-4E39-80A9-0BA524ECBBF1}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,39 @@
+// TODO: Add your code here
+            string pkg = @"E:\360тфел\Project\ABM\Light House\LightHouse\LightHouse\ALH_Load_ITOAA_AC_Assets_ssis.dtsx";
+            Microsoft.SqlServer.Dts.Runtime.Application app = new Microsoft.SqlServer.Dts.Runtime.Application();
+            Package p = app.LoadPackage(pkg, null);
+            Executables pExecs = p.Executables;
+            Executable pExec = default(Executable);
+            string s = string.Empty;
+            for (int i = 0; i < pExecs.Count; i++)
+			{
+			     pExec = pExecs[i];
+                 if (pExec.ToString() == "Microsoft.SqlServer.Dts.Runtime.ForEachLoop")
+                 {
+                     continue;
+                 }
+                TaskHost taskHost = (TaskHost)pExec;
+                 int m = taskHost.InnerObject.ToString().LastIndexOf(".");
+                 string temp = taskHost.InnerObject.ToString().Substring(m + 1, taskHost.InnerObject.ToString().Length -m-1);
+                s += "Task "+(i+1).ToString() + " " + temp + " \"" + taskHost.Name +  " \"" + System.Environment.NewLine;
+			}
+
+            Dts.Log(s, 0, null);
+
+
+
+SELECT executable_id,executable_name
+FROM SSISDB.catalog.executables
+WHERE package_name = your package name here
+ORDER BY executable_id
+
+
+
+
+--store the order of task
+    For i As Integer = 0 To p.PrecedenceConstraints.Count - 1
+            'MsgBox(p.PrecedenceConstraints.Item(i).Name)
+            Dim taskHost1 As TaskHost = CType(p.PrecedenceConstraints.Item(i).ConstrainedExecutable, TaskHost)
+            Dim taskHost2 As TaskHost = CType(p.PrecedenceConstraints.Item(i).PrecedenceExecutable, TaskHost)
+            MsgBox("Start Task: " & taskHost2.Name & " -- End Task: " & taskHost1.Name)
+        Next

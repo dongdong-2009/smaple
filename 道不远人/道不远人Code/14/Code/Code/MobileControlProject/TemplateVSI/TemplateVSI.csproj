@@ -1,0 +1,48 @@
+﻿<Project DefaultTargets="BuildTemplates" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <UsingTask TaskName="BuildVsi" AssemblyFile="$(MSBuildProjectDirectory)\Binaries\BuildVsi.dll" />
+  <ItemGroup>
+    <Content Include="ItemTemplateCS\Default.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="TemplateVSI.vscontent" />
+    <Content Include="TemplateVSI.xml" />
+    <Content Include="CommonFiles\__TemplateIcon.ico" />
+    <Content Include="ItemTemplateCS\MyTemplate.vstemplate" />
+    <Content Include="WebsiteTemplate\Readme.txt" />
+    <Content Include="WebsiteTemplate\WebsiteTemplateCS\Default.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="WebsiteTemplate\WebsiteTemplateCS\WapWebsiteCS.vstemplate" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="WebsiteTemplate\WebsiteTemplateCS\WapWebsiteCS.webproj" />
+    <None Include="WebsiteTemplate\web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <OutputPath>$(MSBuildProjectDirectory)\bin</OutputPath>
+    <ProjectGuid>{26CF4C3F-A35C-4122-91FA-D536DD56BDA8}</ProjectGuid>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VsiFile>$(OutputPath)\AjaxControlExtender.vsi</VsiFile>
+  </PropertyGroup>
+  <Target Name="BuildTemplates" Inputs="@(Content)" Outputs="$(VsiFile)">
+    <BuildVsi ContentProject="$(MSBuildProjectDirectory)\TemplateVSI.xml" ContentRootDirectory="$(MSBuildProjectDirectory)\.." DestinationDirectory="$(OutputPath)" />
+  </Target>
+  <Target Name="Clean">
+    <RemoveDir Directories="$(OutputPath)" />
+  </Target>
+  <Target Name="Rebuild">
+    <CallTarget Targets="Clean;BuildTemplates" />
+  </Target>
+</Project>

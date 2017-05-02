@@ -1,0 +1,28 @@
+WITH Task_Details_CTE (ID,Source,SourceID,ExecutionID,StartTime,EndTime)
+AS --provides the task exec. detail
+(
+SELECT sys1.ID, sys1.Source, sys1.SourceID, sys1.ExecutionID
+, sys1.StartTime, sys2.EndTime
+FROM dbo.sysssislog sys1
+INNER JOIN dbo.sysssislog sys2
+ON sys1.Event = ¡®OnPreExecute¡¯ --gets only the start time
+AND sys2.Event = ¡®OnPostExecute¡¯ --gets only the completed time
+AND sys1.ExecutionID = sys2.ExecutionID --groups package execution
+AND sys2.SourceID = sys1.SourceID --associates identical tasks
+)
+SELECT --identifies the ¡°package¡± tasks
+CASE WHEN sys.SourceID = CTE.SourceID
+THEN CTE.Source + ¡® (¡® + convert(varchar(30),sys.starttime,100) + ¡®)¡¯
+ELSE ¡® TASK: ¡® + CTE.Source
+END AS [Package|Task] --indents tasks to package execs
+, CTE.StartTime
+, CTE.EndTime
+, RIGHT(¡®00¡¯ + CAST(DATEDIFF(SECOND,CTE.StartTime, CTE.EndTime)/60
+AS VARCHAR(20)),3) + ¡® min.¡¯ +
+RIGHT(¡®0¡¯ + CAST(DATEDIFF(SECOND,CTE.StartTime, CTE.EndTime)%60
+AS VARCHAR(20)),2) + ¡® sec.¡¯ AS TaskDuration
+FROM dbo.sysssislog sys
+INNER JOIN Task_Details_CTE CTE
+ON sys.Event = ¡®PackageStart¡¯ --lists single row pkg exec.
+AND sys.ExecutionID = CTE.ExecutionID
+ORDER BY SYS.ID, CTE.ID, CTE.StartTime --orders by package, task

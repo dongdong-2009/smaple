@@ -1,0 +1,38 @@
+﻿appGrid有三种分页模式：
+
+1、NOT IN分页模式：这是默认的分页模式，所有MAP版本都可用。 其实现的语法如下：
+
+--获取第2页的记录 
+SELECT TOP 20 xxxx 
+FROM e_myApplication 
+WHERE e_myApplication.ApplicationGUID NOT IN 
+     (SELECT TOP 40 e_myApplication.ApplicationGUID FROM e_myApplication 
+     WHERE xxxx
+     ORDER BY HierarchyCode,e_myApplication.ApplicationGUID) 
+ORDER BY HierarchyCode,e_myApplication.ApplicationGUID 
+2、二次反转分页模式： 这是从MAP2.0.11115.0版本开始新增的分页模式。
+
+从这个版本开始， 同时新增了pagemode属性。如果pagemode值配置为“1”，表示分页采用二次反转排序方式分页。默认（即不配置此属性，或属性值为1以外的值）使用原来的“NOT IN”方式分页。 其实现的语法如下：
+
+--获取第2页的记录
+SELECT * FROM 
+(select top 20 * from 
+(select top 40 xxxx from e_myApplication 
+where xxxx
+order by HierarchyCode,e_myApplication.ApplicationGUID) a 
+order by orderstr0 DESC,orderstr1 DESC) b 
+ORDER BY orderstr0 ASC,orderstr1 ASC
+
+3、RowNumber分页模式：这是从MAP2.0.0.30531版本开始新增的分页模式，仅支持SQL Server 2005。
+
+从这个版本开始，如果配置pagemode="1"，则判断数据库版本，如果是SQLServer2005，则使用rownumber分页模式，如果是SQLServer2000则使用二次反转分页模式。
+默认（即不配置此属性，或属性值为1以外的值）使用原来的“NOT IN”方式分页。其实现的语法如下：
+
+--获取第2页的记录
+WITH _t AS 
+(SELECT ROW_NUMBER() OVER(ORDER BY HierarchyCode,e_myApplication.ApplicationGUID) AS _RowNumber, xxxx
+FROM e_myApplication 
+WHERE xxxx
+) 
+SELECT * FROM _t WHERE _RowNumber BETWEEN 21 AND 40 ORDER BY _RowNumber
+

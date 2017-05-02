@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+Child
+</title>
+</head>
+<body>
+<div id='messages' style='width:400px; height:250px'></div>
+
+<script type='text/javascript'>
+    
+function loader(e)
+{
+    document.getElementById('messages').innerHTML = e.data;
+}
+
+window.addEventListener('message', loader,false);
+
+</script>
+</body>
+</html>

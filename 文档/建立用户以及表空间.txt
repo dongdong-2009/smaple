@@ -1,0 +1,53 @@
+--DROP USER dpzhoum CASCADE;
+
+--CREATE USER zhouming IDENTIFIED BY zhouming
+--DEFAULT TABLESPACE system
+--QUOTA UNLIMITED ON system;
+
+--Grant connect,resource zhouming;
+--Grant dba to zhouming;
+
+--以下样本脚本创建固定大小的表空间。它执行以下操作：
+--创建名为 DFL49_mainspace 和 DFL49_tempspace 的表空间。假设 Oracle 安装目录为 \data\home\oracle\dbs。
+--创建名为 dpzhoum 的表空间用户，其密码为 dpzhoum。
+create tablespace DFL49_mainspace 
+datafile 'F:\ORACLE\ORADATA\JSZXOA\dfl49_main.dbf' size 500M
+default storage (
+initial 4M
+next 4M
+minextents 2
+maxextents unlimited
+pctincrease 0)
+offline;
+commit;
+--create TEMPORARY TABLESPACE DFL49_tempspace
+--TEMPFILE 'F:\ORACLE\ORADATA\JSZXOA\dfl49_temp.dbf' SIZE 5M EXTENT MANAGEMENT 
+--LOCAL UNIFORM SIZE 1M
+--offline;
+--commit;
+alter tablespace DFL49_mainspace online;
+commit;
+--alter tablespace DFL49_tempspase online;
+--commit;
+create profile dfl49_profile limit
+sessions_per_user 50
+cpu_per_session unlimited
+cpu_per_call 6000
+logical_reads_per_session unlimited
+logical_reads_per_call 100
+idle_time 30
+connect_time 480;
+commit;
+create user dpzhoum
+identified by dpzhoum
+default tablespace DFL49_mainspace
+temporary tablespace temp
+quota unlimited on DFL49_mainspace
+profile dfl49_profile;
+commit;
+GRANT CONNECT,RESOURCE,DBA,UNLIMITED TABLESPACE TO
+dpzhoum identified by dpzhoum;
+commit;
+
+
+

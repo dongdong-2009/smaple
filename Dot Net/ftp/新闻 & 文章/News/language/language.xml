@@ -1,0 +1,1123 @@
+<?xml version="1.0" encoding="GB2312"?>
+<languagePack>
+
+	<base>
+		<add_favorite>加入收藏</add_favorite>
+		<contact_us>联系我们</contact_us>
+		<login_admin>管理登陆</login_admin>
+		<alt_img_news>图片新闻</alt_img_news>
+		<alt_headline>头条新闻</alt_headline>
+		<alt_member_only>限会员</alt_member_only>
+		<alt_added_1_hours>1小时内更新</alt_added_1_hours>
+		<alt_added_12_hours>12小时内更新</alt_added_12_hours>
+		<alt_added_24_hours>24小时内更新</alt_added_24_hours>
+		<no_news_match>&amp;nbsp; 暂时没有相应新闻</no_news_match>
+		<search_title>标题</search_title>
+		<read_detail>[查看全文]</read_detail>
+		<news_search>新闻搜索：</news_search>
+		<news_search_title>标题</news_search_title>
+		<news_search_content>内容</news_search_content>
+		<news_search_author>作者</news_search_author>
+		<news_search_class>选择分类</news_search_class>
+		<news_search_submit>搜索</news_search_submit>
+		<pager_prev>前页</pager_prev>
+		<pager_next>后页</pager_next>
+		<pager_first>首页</pager_first>
+		<pager_last>尾页</pager_last>
+		<pager_pages>分页</pager_pages>
+	</base>
+	
+	<admin_top.aspx>
+		<open_left_menu>打开左边管理菜单</open_left_menu>
+		<close_left_menu>关闭左边管理菜单</close_left_menu>
+		<modify>修改资料</modify>
+		<send_mail>发送邮件</send_mail>
+	</admin_top.aspx>
+	
+	<admin_left.aspx>
+		<relogin>重登陆</relogin>
+		<logout>退出登陆</logout>
+		<title_admin_news>新闻管理</title_admin_news>
+		<news_add>添加新闻</news_add>
+		<news_modify_short>管理</news_modify_short>
+		<news_modify>新闻管理</news_modify>
+		<news_check>审核</news_check>
+		<manage_remark>管理评论</manage_remark>
+		<news_move>新闻转移</news_move>
+		<key_add>添加站内关健字</key_add>
+		<key_modify>管理</key_modify>
+		<title_admin_class>管理分类</title_admin_class>
+		<class_add>添加分类</class_add>
+		<class_modify>管理</class_modify>
+		<topic_add>添加专题</topic_add>
+		<topic_modify>管理</topic_modify>
+		<title_admin_member>会员管理</title_admin_member>
+		<member_add>添加会员</member_add>
+		<member_modify>管理</member_modify>
+		<member_check>审核</member_check>
+		<member_group_add>添加会员组</member_group_add>
+		<member_group_modify>管理</member_group_modify>
+		<title_admin_user>用户管理</title_admin_user>
+		<user_add>添加管理员</user_add>
+		<user_modify>管理</user_modify>
+		<title_admin_system>系统管理</title_admin_system>
+		<system_modify>系统设置</system_modify>
+		<system_backup>备份</system_backup>
+		<style_modify>风格</style_modify>
+		<template_add>添加模板</template_add>
+		<template_modify>管理模板</template_modify>
+		<reset_num>统计数据</reset_num>
+		<manage_upload>上传管理</manage_upload>
+		<get_js>获取调用脚本</get_js>
+		<title_copyright>版权信息</title_copyright>
+		<official_site>官方网站：&lt;a href=http://www.aspsky.net/ target=_blank&gt;动网先锋&lt;/a&gt;</official_site>
+		<author>程序制作：&lt;a href=mailto:wbird@aspsky.net&gt;木鸟&lt;/a&gt;</author>
+	</admin_left.aspx>
+	
+	<admin_login.aspx>
+		<title_login>管理登陆</title_login>
+		<login_timeout>验证码已过期，请重登陆</login_timeout>
+		<login_wrong_code>验证码错误，请重登陆</login_wrong_code>
+		<login_fail>用户名或密码错误</login_fail>
+		<user_name>用户名：</user_name>
+		<user_password>密　码：</user_password>
+		<login_code>验证码：</login_code>
+		<code_is>验证码为：</code_is>
+		<submit_text> 登 陆 </submit_text>
+	</admin_login.aspx>
+	
+	<admin_main.aspx>
+		<welcome>动网新闻.Net 管理页面!!!!</welcome>
+		<info>系统信息：</info>
+		<news_num>发布新闻总数</news_num>
+		<img_news_num>图片新闻总数</img_news_num>
+		<uncheck_news_num>未审核新闻数</uncheck_news_num>
+		<member_num>会员数</member_num>
+		<uncheck_member_num>待审核会员数</uncheck_member_num>
+		<licensed_to>授权用户：</licensed_to>
+		<power>你的权限：</power>
+		<power_admin>你的系统管理员，拥有所有权限</power_admin>
+		<power_none>您是新闻管理员，没有任何权限</power_none>
+		<power_have>您是新闻管理员，拥有权限: </power_have>
+		<power_add_news>添加新闻</power_add_news>
+		<power_not_check>添加新闻不审核</power_not_check>
+		<power_check_news>审核新闻</power_check_news>
+		<power_modify_news>修改新闻</power_modify_news>
+		<power_delete_remark>管理评论</power_delete_remark>
+		<power_modify_nc>修改未审核新闻</power_modify_nc>
+		<howto_use>使用说明：请先添加分类然后才能添加新闻</howto_use>
+		<admin_chart>管理员工作排行</admin_chart>
+		<news_unit>篇</news_unit>
+	</admin_main.aspx>
+	
+	
+	<admin_article.aspx>
+		<title_admin_news>管理新闻</title_admin_news>
+		<no_right_delete>你无权删除该新闻</no_right_delete>
+		<delete_success>删除成功</delete_success>
+		<have_error>发生错误</have_error>
+		<header_news_title>新闻标题(点击修改)</header_news_title>
+		<header_class>分类</header_class>
+		<search_result>搜索结果</search_result>
+		<delete_text>删除</delete_text>
+		<remark_text>评论</remark_text>
+		<note>注：</note>
+		<have_right_icon>为有权管理新闻</have_right_icon>
+		<no_right_icon>为无权管理新闻</no_right_icon>
+		<news_search>新闻搜索：</news_search>
+		<search_title>标题</search_title>
+		<search_content>内容</search_content>
+		<search_submit>搜索</search_submit>
+		<all_class>所有分类</all_class>
+	</admin_article.aspx>
+	
+	<admin_config.aspx>
+		<cant_write_file>无法更改设置，系统目录没有写权限。\\n请用记事本更改config.cs和style.css后上传。</cant_write_file>
+		<title_config>系统设置</title_config>
+		<site_name>网站名称：</site_name>
+		<site_url>网站网址：</site_url>
+		<site_email>网站信箱：</site_email>
+		<site_logo>网站Logo(html)：</site_logo>
+		<site_style>网站风格：</site_style>
+		<page_size>分页大小：</page_size>
+		<open_news_in>新闻打开方式：</open_news_in>
+		<open_news_blank>新窗口</open_news_blank>
+		<open_news_self>本窗口</open_news_self>
+		<pic_align>图片新闻图片位置：</pic_align>
+		<pic_align_left>居左</pic_align_left>
+		<pic_align_right>居右</pic_align_right>
+		<titleimg_width>标题图片最大宽度：</titleimg_width>
+		<titleimg_width_note>(大于这个宽度显示时自动缩小)</titleimg_width_note>
+		<show_hits>list页是否显示点击数：</show_hits>
+		<list_page_style>list页显示方式：</list_page_style>
+		<down_image>自动下载新闻内图片：</down_image>
+		<local_domains>不下载图片的服务器：</local_domains>
+		<class_bind_news_num>分类最新新闻显示数：</class_bind_news_num>
+		<show_icon_new>新闻是否显示new图标：</show_icon_new>
+		<date_format>新闻日期显示格式：</date_format>
+		<date_format_note> (不填则为默认格式,格式为yyyy-MM-dd,MM/dd等)</date_format_note>
+		<remark_member_only>限会员发表评论：</remark_member_only>
+		<remark_interval>发表评论间隔时间：</remark_interval>
+		<remark_interval_minute>分钟</remark_interval_minute>
+		<remark_filter>评论过滤词：</remark_filter>
+		<remark_filter_note>多个用","分隔</remark_filter_note>
+		<template_index>首页模板：</template_index>
+		<template_class>分类列表页模板：</template_class>
+		<template_news>新闻显示页模板：</template_news>
+		<member_reg_stop>是否暂停会员注册：</member_reg_stop>
+		<member_reg_stop_words>暂停会员注册说明：</member_reg_stop_words>
+		<member_reg_verify_mail>会员注册验证信箱：</member_reg_verify_mail>
+		<member_reg_check>会员注册是否审核：</member_reg_check>
+		<member_reg_statement>会员注册声明(html)：</member_reg_statement>
+		<anyone_can_add>非会员是否可推荐新闻：</anyone_can_add>
+		<upload_directory>上传目录：</upload_directory>
+		<upload_file_type>可上传文件类型：</upload_file_type>
+		<upload_file_size>上传文件大小限制：</upload_file_size>
+		<smtp_server>smtp服务器：</smtp_server>
+		<smtp_server_note>（格式 &lt;u&gt;user:pass@&lt;/u&gt;www.server.com&lt;u&gt;:25&lt;/u&gt;，下划线为可选项）</smtp_server_note>
+		<sql_connection_string>Sql连接字符串：</sql_connection_string>
+		<site_ad>网站广告(html)：</site_ad>
+		<news_ad>新闻内广告(html)：</news_ad>
+		<site_footer>网站底部版权(html)：</site_footer>
+		<modify_text>修改</modify_text>
+		<clear_cache_text>清除缓存</clear_cache_text>
+		<clear_cache_note>如果您更换了数据库请点击清除缓存（更新分类显示等）</clear_cache_note>
+	</admin_config.aspx>
+	
+	<admin_articleadd.aspx>
+		<need_url_or_content>添加失败，请填写新闻内容或外部链接</need_url_or_content>
+		<class_not_exist>分类已不存在</class_not_exist>
+		<add_success>添加新闻成功!</add_success>
+		<add_fail>发生错误</add_fail>
+		<title_add_news>添加新闻</title_add_news>
+		<news_class>新闻类型：</news_class>
+		<news_title>新闻标题：</news_title>
+		<news_topics>[话题],[推荐],[图文],[图片],[多图],[注意]</news_topics>
+		<news_title_img>标题图片：</news_title_img>
+		<news_title_img_note>（填此项后成为图片新闻，可以为图片或flash，建议大小120×90）</news_title_img_note>
+		<news_topic>所属专题：</news_topic>
+		<select_topic>选择专题</select_topic>
+		<no_topic>无专题</no_topic>
+		<news_property>新闻属性：</news_property>
+		<news_headline>头条新闻</news_headline>
+		<news_highlight>标题醒目</news_highlight>
+		<news_url>外部链接：</news_url>
+		<news_url_note>(如填写此项则打开新闻为该链接)</news_url_note>
+		<news_content>新闻内容：</news_content>
+		<news_summary>新闻简介：</news_summary>
+		<news_related>相关新闻：</news_related>
+		<news_author>　　作者：</news_author>
+		<unknown_author>未知,佚名</unknown_author>
+		<news_source>　　来源：</news_source>
+		<permit_member_groups> 有阅读权限的会员组：（一个都不选择则所有人可阅读）</permit_member_groups>
+		<check_all>全选</check_all>
+		<submit_text> 添 加 </submit_text>
+	</admin_articleadd.aspx>
+	
+	<admin_articleedit.aspx>
+		<wrong_parameter>错误的参数</wrong_parameter>
+		<news_not_exist>新闻不存在</news_not_exist>
+		<user_add_member>(会员)</user_add_member>
+		<user_add_unknown>未知</user_add_unknown>
+		<need_url_or_content>请填写新闻内容或外部链接</need_url_or_content>
+		<modify_success>修改新闻成功</modify_success>
+		<modify_fail>发生错误</modify_fail>
+		<title_news_modify>新闻修改</title_news_modify>
+		<news_class>新闻类型： </news_class>
+		<news_title>新闻标题：</news_title>
+		<news_title_img>标题图片：</news_title_img>
+		<news_title_img_note>（填此项后成为图片新闻，可以为图片或flash，建议大小120×90）</news_title_img_note>
+		<news_topic>所属专题：</news_topic>
+		<select_topic>选择专题</select_topic>
+		<no_topic>无专题</no_topic>
+		<news_property>新闻属性：</news_property>
+		<news_headline>头条新闻</news_headline>
+		<news_highlight>标题醒目</news_highlight>
+		<news_url>外部链接：</news_url>
+		<news_content>新闻内容：</news_content>
+		<news_summary>新闻简介：</news_summary>
+		<news_related>相关新闻：</news_related>
+		<news_author>　　作者：</news_author>
+		<unknown_author>未知,佚名</unknown_author>
+		<news_source>　　来源：</news_source>
+		<news_permit_groups>有阅读权限的会员组：（一个都不选择则所有人可阅读）</news_permit_groups>
+		<check_all>全选</check_all>
+		<news_add_user>　添加者：</news_add_user>
+		<submit_text> 修 改 </submit_text>
+	</admin_articleedit.aspx>
+	
+	<admin_backup.aspx>
+		<backup_success>数据库备份成功</backup_success>
+		<backup_fail>备份失败</backup_fail>
+		<title_backup>系统备份</title_backup>
+		<backup_database>数据库备份</backup_database>
+		<backup_database_name>备份数据库名：</backup_database_name>
+		<submit_text>备份</submit_text>
+		<backup_note>（请使用cs或vb后缀，以免数据库被下载）</backup_note>
+		<backup_upload>上传文件备份</backup_upload>
+		<backup_upload_directory>备份到目录： </backup_upload_directory>
+	</admin_backup.aspx>
+	
+	<admin_change.aspx>
+		<name_used>用户名已经有人使用</name_used>
+		<wrong_password>旧密码错误</wrong_password>
+		<modify_success>修改成功</modify_success>
+		<title_modify>账号修改</title_modify>
+		<username>用户名：</username>
+		<email>信　箱：</email>
+		<new_password>新密码：</new_password>
+		<old_password>旧密码：</old_password>
+		<submit_text> 修 改 </submit_text>
+	</admin_change.aspx>
+	
+	<admin_check.aspx>
+		<no_power_delete>您无权删除新闻！</no_power_delete>
+		<delete_success>删除成功！</delete_success>
+		<news_not_exist>您要删除的新闻不存在！</news_not_exist>
+		<no_power_check>您无权审核该新闻！</no_power_check>
+		<check_success>新闻审核成功！</check_success>
+		<search_result>搜索结果</search_result>
+		<news_search>新闻搜索：</news_search>
+		<search_title>标题</search_title>
+		<search_content>内容</search_content>
+		<search_submit>搜索</search_submit>
+		<title_check>新闻审核</title_check>
+		<header_title>新闻标题(点击修改)</header_title>
+		<header_class>分类</header_class>
+		<delete_text>删除</delete_text>
+		<header_check>审核</header_check>
+		<pass_text>通过</pass_text>
+		<note>注：</note>
+		<have_right_icon>有权管理新闻</have_right_icon>
+		<no_right_icon>无权管理新闻</no_right_icon>
+	</admin_check.aspx>
+	
+	<admin_class.aspx>
+		<cant_delete_class>不可以删除有子类的分类</cant_delete_class>
+		<delete_success>删除成功！</delete_success>
+		<delete_fail>发生错误请重试</delete_fail>
+		<delete_confirm>删除分类将同时删除其下新闻,确定?</delete_confirm>
+		<title_class_manage>分类管理</title_class_manage>
+		<modify_text>更改</modify_text>
+		<header_class>分类名</header_class>
+		<header_up>上升</header_up>
+		<header_id>分类ID</header_id>
+		<header_down>下降</header_down>
+		<header_news_num>新闻数</header_news_num>
+		<header_img_news_num>图片新闻数</header_img_news_num>
+		<delete_text>删除</delete_text>
+	</admin_class.aspx>
+	
+	<admin_classadd.aspx>
+		<inherit_style>继承风格</inherit_style>
+		<inherit_list_style>继承方式</inherit_list_style>
+		<as_first_class>作为一级分类</as_first_class>
+		<inherit_class_template>继承分类模板</inherit_class_template>
+		<inherit_news_template>继承新闻模板</inherit_news_template>
+		<modify_text>修改</modify_text>
+		<add_text>添加</add_text>
+		<class_not_exist>要修改的分类不存在</class_not_exist>
+		<add_success>添加分类成功!</add_success>
+		<cant_be_self_child>不可以把分类设为其子类或自己的下级</cant_be_self_child>
+		<modify_success>修改分类成功!</modify_success>
+		<save_fail>发生错误</save_fail>
+		<title_class>分类</title_class>
+		<class_name>分类名： </class_name>
+		<class_father>父级分类：</class_father>
+		<class_url>站外链接：</class_url>
+		<class_child_bind_num>子类最新新闻显示数：</class_child_bind_num>
+		<class_list_style>显示方式：</class_list_style>
+		<class_style>网站风格：</class_style>
+		<class_template>分类模板：</class_template>
+		<news_template>新闻模板：</news_template>
+		<allow_add_news>可以添加新闻</allow_add_news>
+		<show_in_bar>显示在分类栏</show_in_bar>
+		<show_in_nav>显示在导航栏</show_in_nav>
+		<class_bind>分类显示新闻时显示该类新闻</class_bind>
+		<class_logo>网站logo(html)：</class_logo>
+		<news_ad>新闻内广告(html)：</news_ad>
+		<class_ad>网站广告(html)：</class_ad>
+		<submit_text>添加</submit_text>
+	</admin_classadd.aspx>
+	
+	<admin_fileedit.aspx>
+		<file_not_exist>文件不存在</file_not_exist>
+		<wrong_parameter>非法的参数</wrong_parameter>
+		<edit_file>编辑文件</edit_file>
+		<modify_success>修改成功</modify_success>
+		<submit_text> 修 改 </submit_text>
+	</admin_fileedit.aspx>
+	
+	<admin_template.aspx>
+		<cant_edit_default_template>默认模板不可以删除</cant_edit_default_template>
+		<delete_success>删除成功！</delete_success>
+		<delete_fail>发生错误</delete_fail>
+		<template_index>首页</template_index>
+		<template_class>分类新闻列表页</template_class>
+		<template_news>新闻显示页</template_news>
+		<title_template>模板管理</title_template>
+		<modify_text>修改</modify_text>
+		<header_name>模板名</header_name>
+		<header_class>分类</header_class>
+		<header_file>文件地址</header_file>
+		<header_pic>样图</header_pic>
+		<header_default>默认</header_default>
+		<edit_text>编辑</edit_text>
+		<delete_text>删除</delete_text>
+	</admin_template.aspx>
+	
+	<admin_getjs.aspx>
+		<all_class>全部分类</all_class>
+		<title_getjs>获取调用脚本</title_getjs>
+		<get_type>调用类型：</get_type>
+		<type_new>最新添加</type_new>
+		<type_hot>热门新闻</type_hot>
+		<type_week_hot>本周热门</type_week_hot>
+		<type_day_hot>今日热门</type_day_hot>
+		<type_admin_chart>管理员排名</type_admin_chart>
+		<img_news>调用图片新闻</img_news>
+		<get_class>调用分类：</get_class>
+		<get_topic>调用专题：</get_topic>
+		<num>调用数量：</num>
+		<max_title_length>标题长度：</max_title_length>
+		<show_what>显示内容：</show_what>
+		<show_class>显示类名</show_class>
+		<show_date>显示日期</show_date>
+		<show_hits>显示点击数</show_hits>
+		<show_new_icon>显示New图标</show_new_icon>
+		<generate_text>生成脚本</generate_text>
+		<copy_text>拷贝脚本</copy_text>
+		<note>注：把生成的脚本粘贴到html文件内即可以显示指定的内容</note>
+	</admin_getjs.aspx>
+	
+	<admin_group.aspx>
+		<name_exist>会员组名已经存在！</name_exist>
+		<modify_success>修改成功！</modify_success>
+		<modify_fail>发生错误</modify_fail>
+		<delete_success>删除成功！</delete_success>
+		<delete_fail>发生错误</delete_fail>
+		<cancel_text>取消</cancel_text>
+		<edit_text>修改</edit_text>
+		<update_text>更改</update_text>
+		<header_name>会员组名</header_name>
+		<header_remark>备注</header_remark>
+		<header_member_num>会员数</header_member_num>
+		<delete_text>删除</delete_text>
+		<title_admin_group>管理会员组</title_admin_group>
+	</admin_group.aspx>
+	
+	<admin_groupadd.aspx>
+		<group_exist>用户组已经存在</group_exist>
+		<add_success>添加成功!</add_success>
+		<add_fail>发生错误</add_fail>
+		<title_add_group>添加会员组</title_add_group>
+		<group_name>会员组名： </group_name>
+		<group_remarks>备注：</group_remarks>
+		<submit_text> 添 加 </submit_text>
+	</admin_groupadd.aspx>
+	
+	<admin_member.aspx>
+		<member_not_exist>本会员已不存在</member_not_exist>
+		<delete_success>删除成功！</delete_success>
+		<delete_fail>发生错误</delete_fail>
+		<member_search>会员搜索：</member_search>
+		<search_name>会员名</search_name>
+		<search_submit_text>搜索</search_submit_text>
+		<title_manage_member>管理会员</title_manage_member>
+		<modify_text>修改</modify_text>
+		<header_name>会员名</header_name>
+		<header_password>密码</header_password>
+		<header_email>email</header_email>
+		<header_group>会员组</header_group>
+		<header_remarks>备注</header_remarks>
+		<header_add_num>推荐数</header_add_num>
+		<header_date>添加日期</header_date>
+		<delete_text>删除</delete_text>
+	</admin_member.aspx>
+	
+	<admin_member_check.aspx>
+		<delete_success>删除成功！</delete_success>
+		<delete_fail>发生错误</delete_fail>
+		<resend_code>重发</resend_code>
+		<check_pass>通过</check_pass>
+		<member_exist>要审核用户已经不存在</member_exist>
+		<member_checked>该用户已经审核过，你可以重发激活码，</member_checked>
+		<member_not_exist>用户不存在</member_not_exist>
+		<check_success_mail>审核成功，已经发邮件通知会员</check_success_mail>
+		<check_success_not_mail>审核成功，但无法发邮件通知会员</check_success_not_mail>
+		<check_success_code_mail>审核成功，激活码已经发到注册会员信箱！</check_success_code_mail>
+		<check_success_code_not_mail>审核成功，但激活码无法发到会员信箱，请人工发送激活码给用户</check_success_code_not_mail>
+		<mail_address>信箱：</mail_address>
+		<mail_code>激活码：</mail_code>
+		<member_not_check>该用户还未审核</member_not_check>
+		<code_resend_success>激活码重发成功！</code_resend_success>
+		<code_resend_fail>激活码重发失败，请人工发送</code_resend_fail>
+		<email_subject>您在[sitename]的注册成功</email_subject>
+		<email_text_body>
+			您在[sitename]的注册已通过审核。
+			用户名：[username]
+			请访问网站：[siteurl]
+		</email_text_body>
+		<email_html_body>
+			您在[sitename]的注册已通过审核。&lt;br&gt;用户名：[username]&lt;br&gt;请访问网站：&lt;a href=[siteurl]&gt;[siteurl]&lt;/a&gt;
+		</email_html_body>
+		<email_code_subject>您在[sitename]的注册成功</email_code_subject>
+		<email_code_text_body>
+			您在[sitename]的注册已通过审核。
+			用户名：[username]
+			激活码：[activecode]
+			请访问网站激活您的账号：[siteurl]
+		</email_code_text_body>
+		<email_code_html_body>
+			您在[sitename]的注册已通过审核。&lt;br&gt;用户名：[username]&lt;br&gt;激活码：[activecode]&lt;br&gt;请访问网站激活您的账号：&lt;a href=[siteurl]&gt;[siteurl]&lt;/a&gt;
+		</email_code_html_body>
+		<member_search>会员搜索：</member_search>
+		<search_name>会员名</search_name>
+		<search_submit_text>搜索</search_submit_text>
+		<title_check_member>审核会员</title_check_member>
+		<header_name>会员名</header_name>
+		<header_email>email</header_email>
+		<header_real_name>姓名</header_real_name>
+		<header_sex>性别</header_sex>
+		<header_qq>QQ</header_qq>
+		<header_city>城市</header_city>
+		<header_reg_date>注册日期</header_reg_date>
+		<header_active_code>激活码</header_active_code>
+		<header_check>审核</header_check>
+		<delete_text>删除</delete_text>
+		<member_name>审核用户：</member_name>
+		<member_remarks>备　　注：</member_remarks>
+		<member_group>用 户 组：</member_group>
+		<pass_text>审核通过</pass_text>
+	</admin_member_check.aspx>
+	
+	<admin_member_ncview.aspx>
+		<wrong_parameter>非法参数！</wrong_parameter>
+		<sex_male>男</sex_male>
+		<sex_female>女</sex_female>
+		<title_uncheck_member>待审核会员资料</title_uncheck_member>
+		<member_name>用户名：</member_name>
+		<member_email>e-mail：</member_email>
+		<member_qq>QQ：</member_qq>
+		<member_icq>Icq：</member_icq>
+		<member_msn>MSN：</member_msn>
+		<member_detail>个人资料</member_detail>
+		<member_sex>性别：</member_sex>
+		<member_birthday>生日：</member_birthday>
+		<member_blood_type>血型：</member_blood_type>
+		<member_real_name>姓名：</member_real_name>
+		<member_country>国家：</member_country>
+		<member_province>省/自治区：</member_province>
+		<member_city>市：</member_city>
+		<member_phone>电话：</member_phone>
+		<member_address>联系地址：</member_address>
+		<member_postcode>邮编：</member_postcode>
+		<member_job>职业：</member_job>
+		<member_credential>学历：</member_credential>
+		<member_school>毕业学校：</member_school>
+	</admin_member_ncview.aspx>
+	
+	<admin_memberadd.aspx>
+		<member_not_exist>该用户不存在</member_not_exist>
+		<modify_text>修改</modify_text>
+		<add_text>添加</add_text>
+		<member_exist>会员名已经存在</member_exist>
+		<member_not_active>会员名已经被申请，但还没审核并激活</member_not_active>
+		<add_success>添加会员成功!</add_success>
+		<modify_success>会员资料修改成功!</modify_success>
+		<save_fail>发生错误</save_fail>
+		<title_member>会员</title_member>
+		<member_name>用户名：</member_name>
+		<member_password>密　码：</member_password>
+		<member_email>e-mail：</member_email>
+		<member_question>找回密码问题：</member_question>
+		<member_answer>找回密码答案：</member_answer>
+		<member_qq>QQ：</member_qq>
+		<member_icq>Icq：</member_icq>
+		<member_msn>MSN：</member_msn>
+		<member_detail>个人资料</member_detail>
+		<member_sex>性别：</member_sex>
+		<sex_male>男</sex_male>
+		<sex_female>女</sex_female>
+		<member_birthday>生日：</member_birthday>
+		<year_text>年</year_text>
+		<month_text>月</month_text>
+		<day_text>日</day_text>
+		<member_blood_type>血型：</member_blood_type>
+		<member_real_name>姓名：</member_real_name>
+		<member_country>国家：</member_country>
+		<member_province>省/自治区：</member_province>
+		<member_city>市：</member_city>
+		<member_phone>电话：</member_phone>
+		<member_address>联系地址：</member_address>
+		<member_postcode>邮编：</member_postcode>
+		<member_job>职业：</member_job>
+		<job_types> ,财会/金融,工程师,顾问,计算机相关行业,家庭主妇,教育/培训,客户服务/支持,零售商/手工工人,退休,无职业,销售/市场/广告,学生,研究和开发,一般管理/监督,政府/军队,执行官/高级管理,制造/生产/操作,专业人员,自雇/业主,其他</job_types>
+		<member_credential>学历：</member_credential>
+		<credential_types> ,小学,初中,高中,大学,硕士,博士</credential_types>
+		<member_school>毕业学校：</member_school>
+		<member_remarks>备注：</member_remarks>
+		<member_group>会员组：</member_group>
+	</admin_memberadd.aspx>
+	
+	<admin_move.aspx>
+		<cant_move>只能转移到不同的分类中</cant_move>
+		<move_success>新闻转换成功!</move_success>
+		<title_news_move>新闻转移</title_news_move>
+		<class_from>从分类： </class_from>
+		<class_to>转移到：</class_to>
+		<submit_text>转移</submit_text>
+	</admin_move.aspx>
+	
+	<admin_power.aspx>
+		<wrong_parameter>非法的参数</wrong_parameter>
+		<title_power>的权限</title_power>
+		<member_not_exist>用户不存在</member_not_exist>
+		<power_add_news>添加新闻</power_add_news>
+		<power_add_without_check>添加新闻不需审核</power_add_without_check>
+		<power_modify_news>修改新闻</power_modify_news>
+		<power_manage_remarks>管理评论</power_manage_remarks>
+		<power_check_news>审核新闻</power_check_news>
+		<power_delete_not_check>修改未审核新闻 (请从下边选择这些权限的适用范围)</power_delete_not_check>
+		<check_reverse>反选</check_reverse>
+		<modify_text>修改</modify_text>
+		<reset_text>重来</reset_text>
+		<power_set_success>用户权限设置成功！</power_set_success>
+	</admin_power.aspx>
+	
+	<admin_user.aspx>
+		<username_exist>用户名已经有人使用！</username_exist>
+		<modify_success>修改成功！</modify_success>
+		<modify_fail>发生错误</modify_fail>
+		<delete_success>删除成功！</delete_success>
+		<delete_fail>发生错误</delete_fail>
+		<user_class_1>系统管理员</user_class_1>
+		<user_class_2>新闻管理员</user_class_2>
+		<title_manage_user>用户管理</title_manage_user>
+		<cancel_text>取消</cancel_text>
+		<edit_text>修改</edit_text>
+		<update_text>更改</update_text>
+		<header_name>用户名</header_name>
+		<header_password>密码</header_password>
+		<header_email>email</header_email>
+		<header_class>等级&lt;br&gt;(点击改权限)</header_class>
+		<header_remarks>备注</header_remarks>
+		<header_add_num>添加新闻数</header_add_num>
+		<delete_text>删除</delete_text>
+	</admin_user.aspx>
+	
+	<admin_remark.aspx>
+		<no_power>您无权管理评论！</no_power>
+		<delete_success>删除成功！</delete_success>
+		<search_result>搜索结果</search_result>
+		<remark_search>评论搜索：</remark_search>
+		<search_content>内容</search_content>
+		<search_author>作者</search_author>
+		<search_submit_text>搜索</search_submit_text>
+		<title_manage_remark>管理评论</title_manage_remark>
+		<header_content>评论内容</header_content>
+		<header_author>作者</header_author>
+		<header_ip>IP</header_ip>
+		<header_news>新闻</header_news>
+		<delete_text>删除</delete_text>
+	</admin_remark.aspx>
+	
+	<admin_resetnum.aspx>
+		<reset_news_num_success>更新新闻数成功!</reset_news_num_success>
+		<reset_fail>发生错误</reset_fail>
+		<reset_member_num_success>更新会员数成功!</reset_member_num_success>
+		<title_reset_num>重新统计新闻数</title_reset_num>
+		<explanation_reset_news_num>显示新闻数与实际的新闻数不符时请重新统计新闻数</explanation_reset_news_num>
+		<submit_reset_news>统计新闻数</submit_reset_news>
+		<explanation_reset_member_num>显示会员数与实际的会员数不符时请重新统计会员数</explanation_reset_member_num>
+		<submit_reset_member>统计会员数</submit_reset_member>
+	</admin_resetnum.aspx>
+	
+	<admin_seltopic.aspx>
+		<title_select_topic>选择专题</title_select_topic>
+		<header_name>专题名</header_name>
+		<header_news_num>新闻数</header_news_num>
+		<header_select>选择</header_select>
+	</admin_seltopic.aspx>
+	
+	<admin_sendmail.aspx>
+		<send_success>邮件发送成功！</send_success>
+		<send_fail>发生错误</send_fail>
+		<title_send_mail>发送邮件</title_send_mail>
+		<mail_sender>发件人：</mail_sender>
+		<mail_receiver>收件人：</mail_receiver>
+		<mail_cc>抄　送：</mail_cc>
+		<mail_subject>标　题：</mail_subject>
+		<mail_body>内　容：</mail_body>
+		<send_text> 发 送 </send_text>
+	</admin_sendmail.aspx>
+	
+	<admin_style.aspx>
+		<cant_save_css>无法保存样式表</cant_save_css>
+		<cant_delete_default_style>删除失败，可能你要删除的风格为默认风格</cant_delete_default_style>
+		<delete_success>删除成功</delete_success>
+		<title_manage_style>设置风格</title_manage_style>
+		<style_name>风格名称：</style_name>
+		<css_location>样式表位置：</css_location>
+		<css_file>样式表内容：</css_file>
+		<new_icon_1_hour>一小时内更新new图标：</new_icon_1_hour>
+		<new_icon_12_hours>12小时内更新new图标：</new_icon_12_hours>
+		<new_icon_24_hours>24小时内更新new图标：</new_icon_24_hours>
+		<pic_bullet>新闻标题前图标：</pic_bullet>
+		<pic_nav_bullet>分类导航一级分类前图标：</pic_nav_bullet>
+		<pic_folder_close>关闭的文件夹图标：</pic_folder_close>
+		<pic_folder_open>打开的文件夹图标：</pic_folder_open>
+		<pic_lock>会员新闻前图标：</pic_lock>
+		<pic_img_news>图片新闻图标：</pic_img_news>
+		<pic_headline>头条新闻图标：</pic_headline>
+		<pic_more>更多新闻图标：</pic_more>
+		<pic_class_separator>一级分类间分隔图片：</pic_class_separator>
+		<save_new_style>添加为新风格</save_new_style>
+		<modify_text>修 改</modify_text>
+		<delete_text>删 除</delete_text>
+		<note>注意：部分风格修改自其它网站，如果涉及版权问题，请您不要使用。</note>
+	</admin_style.aspx>
+	
+	<admin_templateadd.aspx>
+		<modify_text>修改</modify_text>
+		<add_text>添加</add_text>
+		<template_not_exist>模板不存在</template_not_exist>
+		<template_file_not_exist>模板文件不存在</template_file_not_exist>
+		<add_success>添加模板成功!</add_success>
+		<modify_success>修改模板成功!</modify_success>
+		<title_manage_template>模板管理</title_manage_template>
+		<template_name>模板名： </template_name>
+		<template_sort>分类：</template_sort>
+		<template_sort_index>首页</template_sort_index>
+		<template_sort_list>分类新闻列表页</template_sort_list>
+		<template_sort_show>新闻显示页</template_sort_show>
+		<template_file>文件地址(相对)：</template_file>
+		<template_pic>样图：</template_pic>
+	</admin_templateadd.aspx>
+	
+	<admin_topic.aspx>
+		<delete_success>删除成功！</delete_success>
+		<delete_fail>发生错误</delete_fail>
+		<modify_success>修改专题成功!</modify_success>
+		<modify_fail>修改专题发生错误</modify_fail>
+		<title_manage_topic>管理专题</title_manage_topic>
+		<edit_text>修改</edit_text>
+		<cancel_text>取消</cancel_text>
+		<update_text>更改</update_text>
+		<header_name>专题名</header_name>
+		<header_id>专题ID</header_id>
+		<header_news_num>新闻数</header_news_num>
+		<delete_text>删除</delete_text>
+	</admin_topic.aspx>
+	
+	<admin_topicadd.aspx>
+		<add_success>添加专题成功!</add_success>
+		<add_fail>发生错误</add_fail>
+		<title_add_topic>添加专题</title_add_topic>
+		<topic_name>专题名： </topic_name>
+		<submit_text> 添 加 </submit_text>
+	</admin_topicadd.aspx>
+	
+	<admin_upfiles.aspx>
+		<delete_text>删除</delete_text>
+		<delete_num>删除无用上传文件</delete_num>
+		<delete_useless_1>清理</delete_useless_1>
+		<delete_useless_2>天前上传无用文件</delete_useless_2>
+		<delete_useless_submit>清理</delete_useless_submit>
+		<title_manage_upload>管理上传文件</title_manage_upload>
+		<header_filename>文件名(点击查看)</header_filename>
+		<header_size>大小</header_size>
+		<header_lastvisit>最后访问</header_lastvisit>
+		<header_manage>管理</header_manage>
+	</admin_upfiles.aspx>
+	
+	<admin_upload.aspx>
+		<no_file_upload>请选择上传文件！</no_file_upload>
+		<file_size_limit>文件大小应小于</file_size_limit>
+		<file_type_limit>上传文件类型只能为:</file_type_limit>
+		<upload_success>文件上传成功！</upload_success>
+		<file_location>文件地址：</file_location>
+		<addto_form_success>上传文件已按您的选择添加到表单中</addto_form_success>
+		<addto_form_fail>文件无法自动添加到表单中，请手动添加</addto_form_fail>
+		<thumbnail_location>缩略图地址：</thumbnail_location>
+		<title_file_upload>文件上传</title_file_upload>
+		<select_upload_file>选择上传文件：</select_upload_file>
+		<type_image>显示图片</type_image>
+		<type_titleimg>标题图片</type_titleimg>
+		<type_thumbnail>生成缩略图</type_thumbnail>
+		<type_small>生成小图</type_small>
+		<submit_text>上 传</submit_text>
+	</admin_upload.aspx>
+	
+	<admin_useradd.aspx>
+		<username_exist>用户名已经有人使用</username_exist>
+		<add_success>添加用户成功!</add_success>
+		<click_set_power>请点击这里设置该用户权限</click_set_power>
+		<error_occur>发生错误</error_occur>
+		<title_add_admin>添加管理员</title_add_admin>
+		<user_name>用 户 名： </user_name>
+		<user_email>信　　箱： </user_email>
+		<user_password>密　　码： </user_password>
+		<user_password_retype>密码确认： </user_password_retype>
+		<user_class>管理等级：</user_class>
+		<user_class_1>系统管理员</user_class_1>
+		<user_class_2>新闻管理员</user_class_2>
+		<user_remarks>备注：</user_remarks>
+		<submit_text>添加</submit_text>
+		<note>注：新添加的新闻管理员无任何权限，请在&lt;a href=admin_user.aspx&gt;管理员管理&lt;/a&gt;中设置其权限</note>
+	</admin_useradd.aspx>
+	
+	<admin_keyadd.aspx>
+		<title_key>站内关键字</title_key>
+		<key_name>关键字</key_name>
+		<key_url>链接</key_url>
+		<key_alt>说明</key_alt>
+		<modify_text>修改</modify_text>
+		<add_text>添加</add_text>
+		<key_not_exist>关健字不存在</key_not_exist>
+		<add_success>添加关健字成功</add_success>
+		<modify_success>修改关健字成功</modify_success>
+		<save_fail>操作失败</save_fail>
+		<note>注：新闻里的站内关健字将被替换为超链接</note>
+	</admin_keyadd.aspx>
+	
+	<admin_key.aspx>
+		<title_key_manage>管理关键字</title_key_manage>
+		<modify_text>修改</modify_text>
+		<header_key>关键字</header_key>
+		<header_url>链接</header_url>
+		<header_alt>说明</header_alt>
+		<delete_text>删除</delete_text>
+		<delete_success>删除成功</delete_success>
+		<delete_fail>删除失败</delete_fail>
+		<delete_confirm>确定删除？</delete_confirm>
+	</admin_key.aspx>
+	
+	<default.aspx>
+		<headline_news>头条新闻</headline_news>
+		<title_member_login>会员登陆</title_member_login>
+		<member_hello>您好，</member_hello>
+		<member_add_news>我要推荐新闻</member_add_news>
+		<member_add_news_num>推荐新闻数：</member_add_news_num>
+		<member_profile>更改资料</member_profile>
+		<member_logout>退出登陆</member_logout>
+		<login_need_name>请填写会员名</login_need_name>
+		<login_need_password>请填写密码</login_need_password>
+		<login_name>会员名：</login_name>
+		<login_password>密　码：</login_password>
+		<login_keep>登陆保留：</login_keep>
+		<login_keep_not>不保留</login_keep_not>
+		<login_keep_day>保留一天</login_keep_day>
+		<login_keep_week>保留一周</login_keep_week>
+		<login_keep_month>保留一月</login_keep_month>
+		<login_keep_year>保留一年</login_keep_year>
+		<login_submit>登陆</login_submit>
+		<register_submit>注册</register_submit>
+		<member_activate>激活账号</member_activate>
+		<member_get_password>忘记密码</member_get_password>
+		<title_hot_news>热门新闻</title_hot_news>
+		<title_hot_news_week>本周热门新闻</title_hot_news_week>
+		<title_hot_news_day>本日热门新闻</title_hot_news_day>
+		<title_headline>头条新闻</title_headline>
+		<title_new_img_news>最新图片新闻</title_new_img_news>
+		<title_site_map>新闻分类导航</title_site_map>
+		<title_site_state>网站信息</title_site_state>
+		<state_news_num>新闻总数：</state_news_num>
+		<state_uncheck_news_num>待审新闻：</state_uncheck_news_num>
+		<state_img_news_num>图片新闻：</state_img_news_num>
+		<state_member_num>注册会员：</state_member_num>
+		<state_uncheck_member_num>待审会员：</state_uncheck_member_num>
+		<state_topic_num>专题总数：</state_topic_num>
+	</default.aspx>
+	
+	<hot.aspx>
+		<remark_num_1>(共有评论</remark_num_1>
+		<remark_num_2>个)</remark_num_2>
+		<title_hot_news>热门新闻</title_hot_news>
+		<title_hot_news_day>今日热门新闻</title_hot_news_day>
+		<title_focus_news>热点新闻</title_focus_news>
+	</hot.aspx>
+	
+	<imgindex.aspx>
+		<more>更多</more>
+		<img_news>图片新闻...</img_news>
+	</imgindex.aspx>
+	
+	<imglist.aspx>
+		<title_img_news>图片新闻</title_img_news>
+	</imglist.aspx>
+	
+	<js.aspx>
+		<news_unit>篇</news_unit>
+	</js.aspx>
+	
+	<list.aspx>
+		<title_topic> 专题新闻</title_topic>
+		<title_class>分类</title_class>
+		<title_news_hot_day>今日热门新闻</title_news_hot_day>
+	</list.aspx>
+	
+	<login.aspx>
+		<title_login_success>登陆成功</title_login_success>
+		<msg_success>您已经成功登陆！</msg_success>
+		<msg_auto_back>3秒种后自动返回</msg_auto_back>
+		<back_text>返回</back_text>
+		<title_login_fail>登陆失败</title_login_fail>
+		<msg_fail>登陆失败，请检查您的用户名和密码！</msg_fail>
+		<msg_admin_login>点击进入管理登陆</msg_admin_login>
+	</login.aspx>
+	
+	<mail.aspx>
+		<mail_subject>[sender]推荐一篇新闻给您！</mail_subject>
+		<mail_body_text>
+			您的朋友[sender]给您推荐一篇新闻，请点击下边的链接查看：
+			[url]
+		</mail_body_text>
+		<mail_body_html>
+			您的朋友[sender]给您推荐一篇新闻，请点击下边的链接查看：&lt;br&gt;&lt;br&gt;
+			&lt;a href='[url]'&gt;[url]&lt;/a&gt;
+		</mail_body_html>
+		<send_success>邮件发送成功！</send_success>
+		<send_fail>邮件发送失败！</send_fail>
+		<title_recommend>推荐新闻给好友</title_recommend>
+		<sender_name>您的姓名：</sender_name>
+		<sender_email>您的信箱：</sender_email>
+		<mail_receiver>好友信箱：</mail_receiver>
+		<mail_cc>抄送好友：</mail_cc>
+		<mail_cc_note>（多个抄送好友请信箱请用英文逗号“,”分隔）</mail_cc_note>
+		<submit_text>发送</submit_text>
+	</mail.aspx>
+	
+	<show.aspx>
+		<news_not_exist>您选择的新闻不存在！</news_not_exist>
+		<no_right_read>你没有权限阅读该新闻！</no_right_read>
+		<next_page>下一页</next_page>
+		<prev_page>上一页</prev_page>
+		<author>作者：</author>
+		<source>来源：</source>
+		<read_times>阅读：</read_times>
+		<date>日期：</date>
+		<remark>评论</remark>
+		<recommendation>推荐</recommendation>
+		<print>打印</print>
+		<font_size>字体：</font_size>
+		<font_size_big>大</font_size_big>
+		<font_size_normal>中</font_size_normal>
+		<font_size_small>小</font_size_small>
+		<next_news>上一篇：</next_news>
+		<prev_news>下一篇：</prev_news>
+		<title_related_news>相关新闻</title_related_news>
+		<all_related_news>全部相关新闻</all_related_news>
+		<title_remark_list>本文评论</title_remark_list>
+		<title_post_remark>发表评论</title_post_remark>
+		<remark_member_only>(限会员登陆后发表评论)</remark_member_only>
+		<remark_write_content>请填写评论内容</remark_write_content>
+		<remark_write_name>请填写姓名</remark_write_name>
+		<remark_max_200_letters>评论内容不可以超过200字</remark_max_200_letters>
+		<remark_name_max_10_letters>姓名不可以超过10个字</remark_name_max_10_letters>
+		<remark_content>点评：</remark_content>
+		<remark_name>姓名：</remark_name>
+		<remark_submit> 发 表 </remark_submit>
+		<remark_letters>字数</remark_letters>
+		<remark_statement>尊重网上道德，遵守中华人民共和国的各项有关法律法规
+			承担一切因您的行为而直接或间接导致的民事或刑事法律责任
+			本站管理人员有权保留或删除其管辖留言中的任意内容
+			本站有权在网站内转载或引用您的评论
+			参与本评论即表明您已经阅读并接受上述条款</remark_statement>
+		<login_write_name>请填写会员名</login_write_name>
+		<login_write_password>请填写密码</login_write_password>
+		<title_no_right_read>本文限会员阅读，你还没登陆！</title_no_right_read>
+		<login_name>会员名：</login_name>
+		<login_password>密　码：</login_password>
+		<login_keep>登陆保留：</login_keep>
+		<login_keep_no>不保留</login_keep_no>
+		<login_keep_day>保留一天</login_keep_day>
+		<login_keep_week>保留一周</login_keep_week>
+		<login_keep_month>保留一月</login_keep_month>
+		<login_keep_year>保留一年</login_keep_year>
+		<login_submit>登陆</login_submit>
+		<login_reset>重填</login_reset>
+		<title_search>新闻查询</title_search>
+	</show.aspx>
+	
+	<memberactive.aspx>
+		<name_not_exist>用户名不存在，请检查！</name_not_exist>
+		<wrong_code>激活码不符，请检查！</wrong_code>
+		<activate_success>账号激活成功，请返回&lt;a href='default.aspx'&gt;首页&lt;/a&gt;登陆</activate_success>
+		<activate_fail>注册失败</activate_fail>
+		<title_member_activate>激活账号</title_member_activate>
+		<activate_name>会员名：</activate_name>
+		<activate_code>激活码：</activate_code>
+		<submit_text>激 活</submit_text>
+	</memberactive.aspx>
+	
+	<memberlostpass.aspx>
+		<member_not_exist>会员不存在，请检查！</member_not_exist>
+		<no_question>您没有设置找回密码问题，无法使用本功能</no_question>
+		<wrong_answer>找回密码问题不符！</wrong_answer>
+		<set_password_success>密码修改成功，请回&lt;a href='default.aspx'&gt;首页&lt;/a&gt;登陆。</set_password_success>
+		<title_find_password>找回密码</title_find_password>
+		<question>问题：</question>
+		<answer>答案：</answer>
+		<next_step>下一步</next_step>
+		<submit_text>确定</submit_text>
+		<member_name>会员名：</member_name>
+		<new_password>新密码：</new_password>
+	</memberlostpass.aspx>
+	
+	<membermodify.aspx>
+		<not_login>你还没有登陆，请回首页登陆</not_login>
+		<wrong_password>旧密码不对！</wrong_password>
+		<modify_success>修改成功</modify_success>
+		<title_profile>会员资料修改</title_profile>
+		<member_name>会员名：</member_name>
+		<member_password>密　码：</member_password>
+		<new_password>新密码：</new_password>
+		<new_password_retype>新密码(确认)：</new_password_retype>
+		<member_email>e-mail：</member_email>
+		<member_question>找回密码问题：</member_question>
+		<member_answer>找回密码答案：</member_answer>
+		<member_qq>QQ：</member_qq>
+		<member_icq>Icq：</member_icq>
+		<member_msn>MSN：</member_msn>
+		<member_detail>个人资料</member_detail>
+		<member_sex>性别：</member_sex>
+		<member_sex_male>男</member_sex_male>
+		<member_sex_female>女</member_sex_female>
+		<member_birthday>生日：</member_birthday>
+		<birth_year>年</birth_year>
+		<birth_month>月</birth_month>
+		<birth_day>日</birth_day>
+		<blood_type>血型：</blood_type>
+		<real_name>姓名：</real_name>
+		<country>国家：</country>
+		<province>省/自治区：</province>
+		<city>市：</city>
+		<phone>电话：</phone>
+		<address>联系地址：</address>
+		<postcode>邮编：</postcode>
+		<job>职业：</job>
+		<job_types> ,财会/金融,工程师,顾问,计算机相关行业,家庭主妇,教育/培训,客户服务/支持,零售商/手工工人,退休,无职业,销售/市场/广告,学生,研究和开发,一般管理/监督,政府/军队,执行官/高级管理,制造/生产/操作,专业人员,自雇/业主,其他</job_types>
+		<credential>学历：</credential>
+		<credential_types> ,小学,初中,高中,大学,硕士,博士</credential_types>
+		<school>毕业学校：</school>
+		<submit_text>修改</submit_text>
+	</membermodify.aspx>
+	
+	<membernewsadd.aspx>
+		<not_login>未登陆会员不能推荐新闻</not_login>
+		<add_success>添加新闻成功!</add_success>
+		<add_fail>发生错误</add_fail>
+		<title_add_news>推荐新闻</title_add_news>
+		<news_class>新闻类型： </news_class>
+		<news_title>新闻标题：</news_title>
+		<news_topics>[话题],[推荐],[图文],[图片],[多图],[注意]</news_topics>
+		<news_title_img>标题图片：</news_title_img>
+		<news_title_img_note>（填此项后成为图片新闻，可以为图片或flash，建议大小120×90）</news_title_img_note>
+		<news_topic>所属专题：</news_topic>
+		<select_topic>选择专题</select_topic>
+		<no_topic>无专题</no_topic>
+		<news_url>外部链接：</news_url>
+		<news_url_note> (填写此项后访问新闻将转到该链接)</news_url_note>
+		<news_content>新闻内容：</news_content>
+		<news_summary>新闻简介：</news_summary>
+		<news_related>相关新闻：</news_related>
+		<news_author>　　作者：</news_author>
+		<unknown_author>未知,佚名</unknown_author>
+		<news_source>　　来源：</news_source>
+		<submit_text>添加</submit_text>
+	</membernewsadd.aspx>
+	
+	<memberreg.aspx>
+		<agree_text>同意</agree_text>
+		<disagree_text>不同意</disagree_text>
+		<register_text>注册</register_text>
+		<member_exist>用户名已经有人使用，请更改！</member_exist>
+		<email_exist>已经有人使用该email注册，请更改！</email_exist>
+		<reg_success_need_check>注册成功，请等待审核通知</reg_success_need_check>
+		<reg_success_need_activate>注册成功，请注意查看您的信箱以激活账号</reg_success_need_activate>
+		<reg_success>注册成功，请&lt;a href=default.aspx&gt;返回首页&lt;/a&gt;登陆</reg_success>
+		<reg_fail>注册失败</reg_fail>
+		<email_subject>您在[sitename]的注册成功</email_subject>
+		<email_text_body>
+			您在[sitename]的注册已通过审核。
+			用户名：[username]
+			激活码：[activecode]
+			请访问网站激活您的账号：[siteurl]
+		</email_text_body>
+		<email_html_body>
+			您在[sitename]的注册已通过审核。&lt;br&gt;用户名：[username]&lt;br&gt;激活码：[activecode]&lt;br&gt;请访问网站激活您的账号：&lt;a href=[siteurl]&gt;[siteurl]&lt;/a&gt;
+		</email_html_body>
+		<title_member_reg>会员注册</title_member_reg>
+		<statement>服务条款和声明</statement>
+		<member_name>用户名：</member_name>
+		<member_password>密　码：</member_password>
+		<member_password_retype>密　码(确认)：</member_password_retype>
+		<member_email>e-mail：</member_email>
+		<member_question>找回密码问题：</member_question>
+		<member_answer>找回密码答案：</member_answer>
+		<member_qq>QQ：</member_qq>
+		<member_icq>Icq：</member_icq>
+		<member_msn>MSN：</member_msn>
+		<member_detail>个人资料</member_detail>
+		<member_sex>性别：</member_sex>
+		<male>男</male>
+		<female>女</female>
+		<member_birthday>生日：</member_birthday>
+		<year>年</year>
+		<month>月</month>
+		<day>日</day>
+		<blood_type>血型：</blood_type>
+		<real_name>姓名：</real_name>
+		<country>国家：</country>
+		<province>省/自治区：</province>
+		<city>市：</city>
+		<phone>电话：</phone>
+		<address>联系地址：</address>
+		<postcode>邮编：</postcode>
+		<job>职业：</job>
+		<job_types> ,财会/金融,工程师,顾问,计算机相关行业,家庭主妇,教育/培训,客户服务/支持,零售商/手工工人,退休,无职业,销售/市场/广告,学生,研究和开发,一般管理/监督,政府/军队,执行官/高级管理,制造/生产/操作,专业人员,自雇/业主,其他</job_types>
+		<credential>学历：</credential>
+		<credential_types> ,小学,初中,高中,大学,硕士,博士</credential_types>
+		<school>毕业学校：</school>
+	</memberreg.aspx>
+	
+	<remark.aspx>
+		<post_later>评论发布失败，请不要灌水！</post_later>
+		<post_success>评论发表成功！</post_success>
+		<post_fail>评论发表失败!</post_fail>
+		<title_remark>的评论</title_remark>
+		<member_only>(限会员登陆后发表评论)</member_only>
+		<write_content>请填写评论内容</write_content>
+		<write_name>请填写姓名</write_name>
+		<content_limit_200>评论内容不可以超过200字</content_limit_200>
+		<name_limit_10>姓名不可以超过10个字</name_limit_10>
+		<remark_content>点评：</remark_content>
+		<letter_num>字数</letter_num>
+		<remark_name>姓名：</remark_name>
+		<submit_text> 发 表 </submit_text>
+		<statement>尊重网上道德，遵守中华人民共和国的各项有关法律法规
+			承担一切因您的行为而直接或间接导致的民事或刑事法律责任
+			本站管理人员有权保留或删除其管辖留言中的任意内容
+			本站有权在网站内转载或引用您的评论
+			参与本评论即表明您已经阅读并接受上述条款</statement>
+		<title_remark_list>新闻点评</title_remark_list>
+		<writer_1>网友</writer_1>
+		<writer_2>于</writer_2>
+		<writer_3>发表评论</writer_3>
+		<title_post_result>评论发表结果</title_post_result>
+	</remark.aspx>
+	
+	<search.aspx>
+		<no_keyword>您没有填写搜索关健字，请重新搜索！</no_keyword>
+		<title_new_news>最新更新新闻</title_new_news>
+		<title_search_result>的搜索结果</title_search_result>
+		<wrong_parameter>非法的搜索参数！</wrong_parameter>
+	</search.aspx>
+	
+	<topiclist.aspx>
+		<title_hot_news_week>本周热门新闻</title_hot_news_week>
+		<title_special_topic>新闻专题</title_special_topic>
+		
+	</topiclist.aspx>
+</languagePack>

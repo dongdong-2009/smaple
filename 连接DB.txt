@@ -1,0 +1,47 @@
+using System.Data.SqlClient;    
+private DataTable databind()
+    {
+        SqlConnection con = new SqlConnection("server=.;uid = sa; pwd = sa; database= pubs");
+        SqlCommand cmd = new SqlCommand("select top 10 * from titles", con);
+        SqlDataAdapter da = new SqlDataAdapter(cmd);
+        DataTable dt = new DataTable();
+        da.Fill(dt);
+        return dt;
+    }
+
+
+///
+ ICollection CreateDataSource()
+  {
+    System.Data.DataTable dt = new System.Data.DataTable();
+    System.Data.DataRow dr;
+    dt.Columns.Add(new System.Data.DataColumn("A", typeof(System.String)));
+    dt.Columns.Add(new System.Data.DataColumn("100", typeof(System.Decimal)));
+    dt.Columns.Add(new System.Data.DataColumn("90", typeof(System.Decimal)));
+    dt.Columns.Add(new System.Data.DataColumn("88", typeof(System.Decimal)));
+    for (int i = 0; i < 8; i++)
+    {
+      System.Random rd = new System.Random(Environment.TickCount * i); ;
+      dr = dt.NewRow();
+      dr[0] = "Ñ§Éú" + i.ToString();
+      dr[1] = System.Math.Round(rd.NextDouble() * 100, 2);
+      dr[2] = System.Math.Round(rd.NextDouble() * 100, 2);
+      dr[3] = System.Math.Round(rd.NextDouble() * 100, 2);
+      dt.Rows.Add(dr);
+    }
+    System.Data.DataView dv = new System.Data.DataView(dt);
+    return dv;
+  }
+
+
+////
+  protected void Page_Load(object sender, EventArgs e)
+  {
+    if (!IsPostBack)
+    {
+
+      GridView1.BorderColor = System.Drawing.Color.DarkOrange;
+      GridView1.DataSource = CreateDataSource();
+      GridView1.DataBind();
+    }
+  }

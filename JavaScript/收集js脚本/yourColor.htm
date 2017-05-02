@@ -1,0 +1,42 @@
+<button onclick="docolor()">Color</button>
+<br><textarea cols=60 rows=10 id=txt1></textarea>
+<script>
+function docolor(){
+ var s = prompt("输入你的昵称（暂限英文）","onestab");
+ if(s=="" || s==null) return;
+  document.body.bgColor = s;
+ var c = document.body.bgColor;
+ var d = getColor3(s);
+ txt1.value = s + ", \n" + c + "\n" + d ;
+}
+
+function getColor3(s){
+ var i, a, b, n, c="";
+ s=s.replace(/^#/,"");
+ if(s.length>129) s = s.substring(0,129);
+ n = Math.ceil(s.length/3);
+ a = new Array();  b = new Array();
+ var p = s.length <24 ? 0 : n-8;
+ for(i=0; i<3 ;i++){
+  a[i] = s.substring(i*n, (i+1)*n);
+  a[i] = a[i].substring(p, n);
+   if(s.length<4) a[i] = " " + (a[i]=="" ? " " : a[i]);
+   if(a[i].length<a[0].length) a[i] = a[i] + " ";
+ }
+ var re = /[a-f0-9]/i;
+ var ok=false;
+ // search for non hex digit
+ for(i=0;i<3;i++) 
+  if((b[i] = a[i].search(re)) >=0 ) ok=true;
+ var t = a[1].length-1;
+ if(!ok) return "#000000";
+ // find first occurance of hex digit
+ for(i=0;i<3;i++)  if(b[i]< t && b[i]>=0) t= b[i]; 
+ // retrive substring of 2 hex-digit-begin charactors
+ for(i=0;i<3;i++)  c += a[i].substring(t,t+2);
+ c = "#" + c.replace(/[^a-f0-9]/ig, "0");
+ return c;
+}
+</script>
+
+<html><script language="JavaScript">

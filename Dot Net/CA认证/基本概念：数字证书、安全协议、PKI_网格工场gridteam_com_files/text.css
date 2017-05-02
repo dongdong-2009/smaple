@@ -1,0 +1,18 @@
+.text {
+	FONT-SIZE: 10pt; COLOR: #000000; LINE-HEIGHT: 21px
+}
+A:link {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #999999
+}
+A:hover {
+	COLOR: #999999
+}
+A:active {
+	COLOR: #999999; TEXT-DECORATION: none
+}
+.h {
+	BORDER-RIGHT: #ffffff 1px dotted; BORDER-TOP: 1px; BORDER-LEFT: 1px; BORDER-BOTTOM: 1px
+}

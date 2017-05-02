@@ -1,0 +1,8 @@
+D:\Project\smaple\SharePoint\CustomActivities\CustomActivities\bin\Debug\CustomActivities.dll
+D:\Project\smaple\SharePoint\CustomActivities\CustomActivities\bin\Debug\CustomActivities.pdb
+D:\Project\smaple\SharePoint\CustomActivities\CustomActivities\obj\Debug\ResolveAssemblyReference.cache
+D:\Project\smaple\SharePoint\CustomActivities\CustomActivities\obj\Debug\CustomActivities.dll
+D:\Project\smaple\SharePoint\CustomActivities\CustomActivities\obj\Debug\CustomActivities.pdb
+D:\Project\smaple\SharePoint\CustomActivities\CustomActivities\obj\Debug\CustomActivities.Properties.Resources.resources
+D:\Project\smaple\SharePoint\CustomActivities\CustomActivities\obj\Debug\ResGen.read.1.tlog
+D:\Project\smaple\SharePoint\CustomActivities\CustomActivities\obj\Debug\ResGen.write.1.tlog

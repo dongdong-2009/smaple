@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Solution xmlns="http://schemas.microsoft.com/sharepoint/" SolutionId="2a83bd8b-832d-4612-8dda-cc8fcf8949bd" SharePointProductVersion="14.0">
+  <Assemblies>
+    <Assembly Location="ClientOMProject.dll" DeploymentTarget="GlobalAssemblyCache">
+      <SafeControls>
+        <SafeControl Assembly="ClientOMProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4e0ab71974853750" Namespace="ClientOMProject.ChangeTitleWebPart" TypeName="*" />
+        <SafeControl Assembly="ClientOMProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4e0ab71974853750" Namespace="ClientOMProject.ListOperationsVisualWebPart" TypeName="*" />
+      </SafeControls>
+    </Assembly>
+  </Assemblies>
+  <TemplateFiles>
+    <TemplateFile Location="CONTROLTEMPLATES\ClientOMProject\ChangeTitleWebPart\ChangeTitleWebPartUserControl.ascx" />
+    <TemplateFile Location="CONTROLTEMPLATES\ClientOMProject\ListOperationsVisualWebPart\ListOperationsVisualWebPartUserControl.ascx" />
+  </TemplateFiles>
+  <FeatureManifests>
+    <FeatureManifest Location="ClientOMProject_Feature1\Feature.xml" />
+  </FeatureManifests>
+</Solution>

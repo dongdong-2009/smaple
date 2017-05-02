@@ -1,0 +1,5 @@
+obj\Debug\ResolveAssemblyReference.cache
+bin\Debug\Ravs.Factory.dll
+bin\Debug\Ravs.Factory.pdb
+obj\Debug\Ravs.Factory.dll
+obj\Debug\Ravs.Factory.pdb

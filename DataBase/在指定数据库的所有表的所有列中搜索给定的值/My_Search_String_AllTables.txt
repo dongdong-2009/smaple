@@ -1,0 +1,44 @@
+﻿View Code 
+
+
+USE [NORTHWIND]
+GO
+/****** Object:  StoredProcedure [dbo].[My_Search_String_AllTables]    Script Date: 09/25/2011 15:41:58 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+CREATE PROC [dbo].[My_Search_String_AllTables]
+(
+    @SearchString NVARCHAR(MAX)
+)
+AS
+BEGIN
+
+CREATE TABLE #RESULT ([PK COLUMN] NVARCHAR(MAX), [COLUMN VALUE] NVARCHAR(MAX), [COLUMN Name] sysname, 
+             [TABLE SCHEMA] sysname, [TABLE Name] sysname)
+DECLARE @Table_Name sysname, @Table_Schema sysname
+
+DECLARE curAllTables CURSOR LOCAL FORWARD_ONLY STATIC READ_ONLY
+    FOR
+    SELECT   Table_Schema, Table_Name
+    FROM     INFORMATION_SCHEMA.Tables    
+    WHERE TABLE_TYPE = 'BASE TABLE'
+    ORDER BY Table_Schema, Table_Name
+    
+    OPEN curAllTables
+    FETCH  curAllTables
+    INTO @Table_Schema, @Table_Name    
+    WHILE (@@FETCH_STATUS = 0) -- Loop through all tables in the database
+      BEGIN
+        INSERT #RESULT 
+        EXECUTE My_Search_StringInGivenTable @SearchString, @Table_Schema, @Table_Name
+    
+        FETCH  curAllTables
+        INTO @Table_Schema, @Table_Name
+      END -- while
+    CLOSE curAllTables
+    DEALLOCATE curAllTables
+  -- Return results 
+  SELECT * FROM #RESULT ORDER BY [Table Name] 
+END

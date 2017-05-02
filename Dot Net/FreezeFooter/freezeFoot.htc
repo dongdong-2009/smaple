@@ -1,0 +1,41 @@
+<PUBLIC:COMPONENT>
+<PUBLIC:property NAME="TopOfFooter" value="20" GET="getTopOfFooter" />
+' -----------------------------------------------------------------------------
+' Ejo writeen in 2005/7/30
+'	support freeze footer
+'  mailto: ejo_lin@gocyberlink.com
+' -----------------------------------------------------------------------------
+<script language="VBScript">
+option explicit
+dim heightOfScrollBar
+heightOfScrollBar = 20
+
+function getTopOfFooter()
+	'   parentNode.parentNode.parentNode.scrollTop
+	' + parentNode.parentNode.parentNode.offsetHeight
+	' - parentNode.parentNode.parentNode.scrollHeight
+	' - Height of scroll bar
+	dim HeightBar
+	' check whether horizontal scroll bar exists
+	if element.scrollWidth > element.offsetWidth then
+		HeightBar = heightOfScrollBar
+	else
+		HeightBar = 0
+	end if
+	
+	' check, if height of table (plus height of horizontal scroll bar) is samller than outdise object,
+	' change top of footer row, or do NOT change it (keep it as 0)
+	if element.offsetHeight + HeightBar <= element.scrollHeight then
+		getTopOfFooter = element.scrollTop + element.offsetHeight - element.scrollHeight - HeightBar
+	else
+		getTopOfFooter = 0
+	end if
+	'MsgBox "getTopOfFooter=" & getTopOfFooter
+
+	'added by zhouming
+ 	if getTopOfFooter > 0 then
+		getTopOfFooter = 0 
+	end if
+end function
+</script>
+</PUBLIC:COMPONENT>

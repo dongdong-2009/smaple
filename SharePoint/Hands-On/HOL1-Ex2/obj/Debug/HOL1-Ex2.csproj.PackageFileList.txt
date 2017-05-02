@@ -1,0 +1,1 @@
+bin\Debug\HOL1_Ex2.wsp

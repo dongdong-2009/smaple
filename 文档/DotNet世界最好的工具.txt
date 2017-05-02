@@ -1,0 +1,78 @@
+最佳 .NET 图书暨培训软件
+大奖获得者: Advanced .NET Remoting, Apress (www.apress.com)
+亚军: Applied Microsoft .NET Framework Programming, Microsoft Press (www.microsoft.com) 购买
+季军: Programming Windows with C#, Microsoft Press (www.microsoft.com) 购买
+第四名: Programming ASP.NET, O'Reilly & Associates (www.oreilly.com) 
+
+最佳 .NET 构建与安装工具
+大奖获得者: InstallShield Developer, InstallShield Software (www.installshield.com)
+亚军: Wise for Visual Studio .NET, Wise Solutions (www.wise.com)
+季军: AllFusion Harvest Change Manager Option for Openmake, Computer Associates (www.ca.com)
+第四名: DotGNU Portable.NET, DotGNU/Southern Storm Software (www.southern-storm.com.au) 
+
+最佳 .NET CLI
+大奖获得者: Microsoft .NET Framework, Microsoft (www.microsoft.com)
+亚军: The Mono Project, Ximian/Novell (www.go-mono.org)
+季军: DotGNU Portable.NET, DotGNU/Southern Storm Software (www.southern-storm.com.au)
+第四名: S#.NET and S#.AOS, SmallScript (www.smallscript.org) 
+
+最佳 .NET 文档和帮助写作工具
+大奖获得者: RoboHelp Office Pro for .NET, eHelp (www.ehelp.com)
+亚军: ASP.NET Documentation Tool, 大奖获得者sh Triangle (www.大奖获得者shtriangle.com) 
+季军: Doc-O-Matic, ToolsFactory Software (www.toolsfactory.com)
+第四名: Document! X, Innovasys (www.innovasys.net) 
+
+最佳 .NET 编辑器与 IDE
+大奖获得者: Visual Studio .NET, Microsoft (www.microsoft.com)
+亚军: CodeWright for Microsoft Visual Studio .NET, Borland (www.codewright.com)
+季军: CodeRush for Visual Studio .NET, Developer Express (www.devexpress.com)
+第四名: XMLSPY, Altova (www.altova.com) 
+
+.NET 最佳人物
+大奖获得者: Anders Hejlsberg, Microsoft (www.microsoft.com)
+亚军: Don Box, Microsoft (www.microsoft.com)
+季军: Miguel de Icaza, Ximian/Novell (www.ximian.com)
+第四名: Jim Miller, Microsoft (www.microsoft.com) 
+
+最佳 .NET 库与控件
+大奖获得者: Developer Express ASPxGrid Suite, Developer Express (www.devexpress.com)
+亚军: Developer Express XtraGrid Suite, Developer Express (www.devexpress.com)
+季军: r.a.d.editor, Telerik (www.telerik.com)
+第四名: Dundas Chart for .NET, Dundas Software (www.dundas.com) 
+
+最佳 .NET 提供程序、数据库和工具
+大奖获得者: True VPS Windows Web Hosting, Invotion (www.invotion.com)
+亚军: DataDirect Connect for .NET, DataDirect Technologies (www.datadirect-technologies.com)
+季军: Express .NET Web Hosting, Via NET Works (www.vianetworks.net)
+Third Runner Up: WinFormsToWeb Conversion Assistant, ArtinSoft (www.artinsoft.com) 
+
+最佳 .NET 建模、优化和分析工具
+大奖获得者: DeKlarit, ARTech (www.deklarit.com)
+亚军: XMLSPY, Altova (www.altova.com)
+季军: IBM Rational XDE Professional: .NET Edition, IBM Rational (www.rational.com)
+第四名: DevPartner Studio Professional Edition, Compuware (www.compuware.com) 
+
+最佳 .NET 性能分析器、优化器、反编译器和混淆器
+大奖获得者: AQtime .NET Edition, AutomatedQA (www.automatedqa.com)
+亚军: Dotfuscator, PreEmptive Solutions (www.preemptive.com)
+季军: DevPartner Profiler Community Edition, Compuware (www.compuware.com)
+第四名: Optimizeit Profiler for the Microsoft .NET Framework, Borland (www.borland.com) 
+
+最佳 .NET 源代码控制与小组辅助工具
+大奖获得者: Microsoft Visual SourceSafe, Microsoft (www.microsoft.com)
+亚军: Borland StarTeam, Borland (www.borland.com)
+季军: DevPartner Studio Enterprise Edition, Compuware (www.compuware.com)
+第四名: AllFusion Harvest Change Manager, Computer Associates (www.ca.com) 
+
+最佳 .NET 测试, Q/A, 和调试工具
+大奖获得者: NUnit v2.0 Open Source (www.nunit.org)
+亚军: Microsoft Application Center Test, Microsoft (www.microsoft.com)
+季军: VMware Workstation, VMware (www.vmware.com)
+第四名: TestComplete, AutomatedQA (www.automatedqa.com) 
+
+最佳 .NET 网站
+大奖获得者: CodeProject.com, The Code Project (www.codeproject.com)
+亚军: DotNetJunkies.com, DotNetJunkies (www.dotnetjunkies.com)
+季军: ASPAlliance Community Site, ASPAlliance (www.aspalliance.com)
+第四名: DevCity.NET Community, vbCity.com (www.devcity.net)  
+

@@ -1,0 +1,6 @@
+bin\Debug\ServerControl.dll
+bin\Debug\ServerControl.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\ServerControl.dll
+obj\Debug\ServerControl.pdb
+obj\Debug\ServerControl.EmailInputWithTable.bmp

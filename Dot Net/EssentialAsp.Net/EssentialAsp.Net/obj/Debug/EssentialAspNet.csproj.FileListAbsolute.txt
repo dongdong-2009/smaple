@@ -1,0 +1,5 @@
+D:\Project\smaple\Dot Net\EssentialAsp.Net\EssentialAsp.Net\obj\Debug\ResolveAssemblyReference.cache
+D:\Project\smaple\Dot Net\EssentialAsp.Net\EssentialAsp.Net\bin\Debug\EssentialAspNet.dll
+D:\Project\smaple\Dot Net\EssentialAsp.Net\EssentialAsp.Net\bin\Debug\EssentialAspNet.pdb
+D:\Project\smaple\Dot Net\EssentialAsp.Net\EssentialAsp.Net\obj\Debug\EssentialAspNet.dll
+D:\Project\smaple\Dot Net\EssentialAsp.Net\EssentialAsp.Net\obj\Debug\EssentialAspNet.pdb

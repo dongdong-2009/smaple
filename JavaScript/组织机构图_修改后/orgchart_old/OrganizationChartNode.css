@@ -1,0 +1,98 @@
+/*******************************************************************************
+	
+    CSS classes to create web page organization charts.
+    Please refer to the html sample file
+    
+    created by Roland Bouman
+    Copyright (C) 2006  
+    R_P_Bouman@hotmail.com
+    http://rpbouman.blogspot.com/
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+
+*******************************************************************************/
+.CSS_VSTICKS{
+	height:0.75cm;
+}
+
+.CSS_VSTICKR{
+	border-right-style:solid;
+	border-right-width:1px;
+	border-right-color:black;
+}
+
+.CSS_VSTICKL{
+	border-left-style:solid;
+	border-left-width:1px;
+	border-left-color:black;
+}
+
+.CSS_HSTICK{
+	border-top-style:solid;
+	border-top-width:2px;
+	border-top-color:black;
+}
+
+.CSS_FLANK{
+	width:50%;
+}
+
+.CSS_NODE_BODY{
+	border-style:solid;
+	border-width:1px;
+	border-color:black;
+	width:3cm;
+	height:1.5cm;
+	font-family:Verdana;
+	font-size:8pt;
+	background-color:rgb(220,220,220);
+	margin-left:0.1cm;
+	margin-right:0.1cm;
+}
+
+.CSS_NODE_BODY_LABEL{
+	text-align:center;
+	vertical-align:middle;
+}
+
+tr.CSS_NODE_BODY_CHILDREN{
+	background-color:rgb(134,7,81);
+	color:rgb(255,255,255);
+	height:1em;
+}
+
+td.CSS_NODE_BODY_CHILDREN{
+	border-top-style:solid;
+	border-top-width:1px;
+	border-top-color:black;
+}
+
+.CSS_NODE_BODY_CHILDREN_SWITCH{
+	cursor:pointer;
+	font-family:Courier;
+	width:0%;
+}
+
+.CSS_NODE_BODY_CHILDREN_COUNT{
+	width:100%;
+}
+
+.CSS_NODE_CHILDREN{
+	width:100%;
+}
+
+.CSS_NODE_CHILD{
+	vertical-align:top;
+}

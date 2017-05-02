@@ -1,0 +1,557 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0038)http://www.jm47.com/document/1193.aspx -->
+<HTML><HEAD><TITLE>C#调用powershell　相互操作</TITLE>
+<META content="text/html; charset=utf-8" http-equiv=Content-Type><LINK 
+rel="Shortcut Icon" type=image/x-icon href="../favicon.ico">
+<META name=keywords 
+content="vb C#,asp.net,Silverlight,WPF 教程 WCF .net 开源项目 编程 社区">
+<META name=description 
+content="C# CSharp 开源资源 技术文档 源码下载 visual basic .net  web service  vs2003 vs2005 vs2008 Open source software engineering visual studio"><LINK 
+rel=stylesheet type=text/css href="C%23调用powershell相互操作_files/master.css"><LINK 
+rel=stylesheet type=text/css href="C%23调用powershell相互操作_files/jm.min.css">
+<META name=GENERATOR content="MSHTML 9.00.8112.16434"></HEAD>
+<BODY><!--[if lt IE 8]>
+<DIV 
+style="POSITION: relative; PADDING-BOTTOM: 0px; PADDING-LEFT: 15px; PADDING-RIGHT: 0px; HEIGHT: 59px; CLEAR: both; PADDING-TOP: 0px"><A 
+href="http://windows.microsoft.com/zh-CN/internet-explorer/downloads/ie?ocid=ie6_countdown_bannercode"><IMG 
+border=0 alt=使用IE不是你的错，但用这么底的版本就有问题了！ 
+src="C%23调用powershell相互操作_files/warning_bar_0027_Simplified%2520Chinese.jpg" 
+width=820 height=42></A></DIV><![endif]-->
+<DIV id=jmtop><A href="http://www.jm47.com/">
+<DIV id=logLink></DIV></A>
+<DIV>
+<DIV id=jmtop_spt></DIV>
+<FORM id=cse-search-box action=http://www.google.com.hk/cse target=_blank>
+<DIV id=jmsearch><INPUT name=cx value=partner-pub-3743207625515973:0680091732 
+type=hidden> <INPUT name=ie value=UTF-8 type=hidden> <INPUT name=q size=55 
+placeholder="站内搜索"> <INPUT name=sa value=搜索 type=submit> 
+</DIV></FORM></DIV></DIV>
+<DIV id=jmbody class="box-shadow border-radius">
+<DIV id=_jmcontent>
+<DIV class=JmContentTitleMark></DIV><SPAN 
+class=JmContentTitle>C#调用powershell　相互操作</SPAN> 
+<DIV class=JmContentKey>发表人：<SPAN class=jmcontentkeychar>jiamao</SPAN> 
+&nbsp;&nbsp;发表于：<SPAN class=jmcontentkeychar>2010年7月22日</SPAN> 
+&nbsp;&nbsp;标签：<SPAN class=jmcontentkeychar>c# powershell</SPAN> <SPAN 
+id=sharearea></SPAN></DIV>
+<DIV class=JmContentCss>
+<DIV>&nbsp;</DIV>
+<DIV><SPAN style="FONT-SIZE: medium"><SPAN 
+style="COLOR: #800000"><STRONG>首先我们来写一个C#调用powershell的公共方法</STRONG></SPAN></SPAN></DIV>
+<DIV>&nbsp;</DIV>
+<DIV><SPAN style="FONT-SIZE: medium"><SPAN 
+style="COLOR: #800000"><STRONG>需要引用：</STRONG><SPAN 
+style="COLOR: #0000ff"><STRONG>System.Management.Automation.dll</STRONG></SPAN></SPAN></SPAN></DIV>
+<DIV>&nbsp;</DIV>
+<DIV><SPAN style="COLOR: #800080"><SPAN 
+style="FONT-SIZE: medium"><STRONG>此dll一般装上powershell 
+的sdk就可以找到</STRONG></SPAN></SPAN></DIV>
+<DIV>&nbsp;</DIV>
+<DIV><SPAN style="COLOR: #800000"><SPAN 
+style="FONT-SIZE: medium"><STRONG>我这里直接放到源码里了。。</STRONG></SPAN></SPAN></DIV>
+<DIV>&nbsp;</DIV>
+<DIV class=codeText>
+<DIV class=codeHead><SPAN style="CURSOR: pointer" id=hit_8332 class=zhedie 
+onclick="javascript:$(code_8332).slideToggle(450);hit2_8332.style.display='';hit_8332.style.display='none';">折叠</SPAN><SPAN 
+style="DISPLAY: none; CURSOR: pointer" id=hit2_8332 class=zhedie 
+onclick="javascript:$(code_8332).slideToggle(450);hit_8332.style.display='';hit2_8332.style.display='none';">展开</SPAN><SPAN 
+class=lantxt>C# 代码</SPAN></DIV>
+<DIV id=code_8332>
+<OL 
+style="BORDER-RIGHT-WIDTH: 0px; LIST-STYLE-TYPE: none; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; MARGIN-LEFT: 5px; BORDER-LEFT-WIDTH: 0px" 
+class=dp-c>
+  <LI class=alt><SPAN><SPAN 
+  class=keyword>using</SPAN><SPAN>&nbsp;System.Management; 
+  &nbsp;&nbsp;</SPAN></SPAN> 
+  <LI><SPAN class=keyword>using</SPAN><SPAN>&nbsp;System.Management.Automation; 
+  &nbsp;&nbsp;</SPAN> 
+  <LI class=alt><SPAN 
+  class=keyword>using</SPAN><SPAN>&nbsp;System.Management.Automation.Runspaces;&nbsp;&nbsp;</SPAN> 
+  </LI></OL></DIV><LINK rel=stylesheet type=text/css 
+href="C%23调用powershell相互操作_files/insertcode.css">
+<SCRIPT type=text/javascript 
+src="C%23调用powershell相互操作_files/excute.js"></SCRIPT>
+
+<SCRIPT language=javascript type=text/javascript 
+src="C%23调用powershell相互操作_files/jquery.min.js"></SCRIPT>
+</DIV>
+<DIV><SPAN style="COLOR: #800000"><SPAN 
+style="FONT-SIZE: medium"><STRONG>执行脚本代码如下：</STRONG></SPAN></SPAN></DIV>
+<DIV>&nbsp;</DIV>
+<DIV class=codeText>
+<DIV class=codeHead><SPAN style="CURSOR: pointer" id=hit_3459 class=zhedie 
+onclick="javascript:$(code_3459).slideToggle(450);hit2_3459.style.display='';hit_3459.style.display='none';">折叠</SPAN><SPAN 
+style="DISPLAY: none; CURSOR: pointer" id=hit2_3459 class=zhedie 
+onclick="javascript:$(code_3459).slideToggle(450);hit_3459.style.display='';hit2_3459.style.display='none';">展开</SPAN><SPAN 
+class=lantxt>C# 代码</SPAN></DIV>
+<DIV id=code_3459>
+<OL class=dp-c>
+  <LI class=alt><SPAN><SPAN class=comment>///&nbsp;&lt;summary&gt; 
+  </SPAN><SPAN>&nbsp;&nbsp;</SPAN></SPAN> 
+  <LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+  class=comment>///&nbsp;PowerShell脚本基础 </SPAN><SPAN>&nbsp;&nbsp;</SPAN> 
+  <LI class=alt><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+  class=comment>///&nbsp;&lt;/summary&gt; </SPAN><SPAN>&nbsp;&nbsp;</SPAN> 
+  <LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+  class=keyword>public</SPAN><SPAN>&nbsp;</SPAN><SPAN 
+  class=keyword>static</SPAN><SPAN>&nbsp;</SPAN><SPAN 
+  class=keyword>class</SPAN><SPAN>&nbsp;PowerShell &nbsp;&nbsp;</SPAN> 
+  <LI class=alt><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;{ &nbsp;&nbsp;</SPAN> 
+  <LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+  class=comment>///&nbsp;&lt;summary&gt; </SPAN><SPAN>&nbsp;&nbsp;</SPAN> 
+  <LI 
+  class=alt><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+  class=comment>///&nbsp;运行脚本信息,返回脚本输出 </SPAN><SPAN>&nbsp;&nbsp;</SPAN> 
+  <LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+  class=comment>///&nbsp;&lt;/summary&gt; </SPAN><SPAN>&nbsp;&nbsp;</SPAN> 
+  <LI 
+  class=alt><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+  class=comment>///&nbsp;&lt;param&nbsp;name="scriptText"&gt;需要运行的脚本&lt;/param&gt; 
+  </SPAN><SPAN>&nbsp;&nbsp;</SPAN> 
+  <LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+  class=comment>///&nbsp;&lt;returns&gt;output&nbsp;of&nbsp;the&nbsp;script&lt;/returns&gt; 
+  </SPAN><SPAN>&nbsp;&nbsp;</SPAN> 
+  <LI 
+  class=alt><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+  class=keyword>public</SPAN><SPAN>&nbsp;</SPAN><SPAN 
+  class=keyword>static</SPAN><SPAN>&nbsp;</SPAN><SPAN 
+  class=keyword>string</SPAN><SPAN>&nbsp;RunScript(</SPAN><SPAN 
+  class=objectkey>List</SPAN><SPAN>&lt;</SPAN><SPAN 
+  class=keyword>string</SPAN><SPAN>&gt;&nbsp;scripts,</SPAN><SPAN 
+  class=objectkey>List</SPAN><SPAN>&lt;PSParam&gt;&nbsp;pars) 
+  &nbsp;&nbsp;</SPAN> 
+  <LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ 
+  &nbsp;&nbsp;</SPAN> 
+  <LI 
+  class=alt><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Runspace&nbsp;runspace&nbsp;=&nbsp;RunspaceFactory.CreateRunspace(); 
+  &nbsp;&nbsp;</SPAN> 
+  <LI><SPAN>&nbsp;&nbsp;</SPAN> 
+  <LI 
+  class=alt><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;runspace.Open(); 
+  &nbsp;&nbsp;</SPAN> 
+  <LI><SPAN>&nbsp;&nbsp;</SPAN> 
+  <LI 
+  class=alt><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pipeline&nbsp;pipeline&nbsp;=&nbsp;runspace.CreatePipeline(); 
+  &nbsp;&nbsp;</SPAN> 
+  <LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+  class=keyword>foreach</SPAN><SPAN>&nbsp;(var&nbsp;scr&nbsp;</SPAN><SPAN 
+  class=keyword>in</SPAN><SPAN>&nbsp;scripts) &nbsp;&nbsp;</SPAN> 
+  <LI 
+  class=alt><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ 
+  &nbsp;&nbsp;</SPAN> 
+  <LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pipeline.Commands.AddScript(scr); 
+  &nbsp;&nbsp;</SPAN> 
+  <LI 
+  class=alt><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} 
+  &nbsp;&nbsp;</SPAN> 
+  <LI><SPAN>&nbsp;&nbsp;</SPAN> 
+  <LI 
+  class=alt><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+  class=comment>//注入参数 </SPAN><SPAN>&nbsp;&nbsp;</SPAN> 
+  <LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+  class=keyword>if</SPAN><SPAN>&nbsp;(pars&nbsp;!=&nbsp;</SPAN><SPAN 
+  class=keyword>null</SPAN><SPAN>) &nbsp;&nbsp;</SPAN> 
+  <LI 
+  class=alt><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ 
+  &nbsp;&nbsp;</SPAN> 
+  <LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+  class=keyword>foreach</SPAN><SPAN>&nbsp;(var&nbsp;par&nbsp;</SPAN><SPAN 
+  class=keyword>in</SPAN><SPAN>&nbsp;pars) &nbsp;&nbsp;</SPAN> 
+  <LI 
+  class=alt><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ 
+  &nbsp;&nbsp;</SPAN> 
+  <LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;runspace.SessionStateProxy.SetVariable(par.Key,par.Value); 
+  &nbsp;&nbsp;</SPAN> 
+  <LI 
+  class=alt><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} 
+  &nbsp;&nbsp;</SPAN> 
+  <LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} 
+  &nbsp;&nbsp;</SPAN> 
+  <LI class=alt><SPAN>&nbsp;&nbsp;</SPAN> 
+  <LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+  class=comment>//返回结果 </SPAN><SPAN>&nbsp;&nbsp;</SPAN> 
+  <LI 
+  class=alt><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;results&nbsp;=&nbsp;pipeline.Invoke(); 
+  &nbsp;&nbsp;</SPAN> 
+  <LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;runspace.Close(); 
+  &nbsp;&nbsp;</SPAN> 
+  <LI 
+  class=alt><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+  class=objectkey>StringBuilder</SPAN><SPAN>&nbsp;stringBuilder&nbsp;=&nbsp;</SPAN><SPAN 
+  class=keyword>new</SPAN><SPAN>&nbsp;</SPAN><SPAN 
+  class=objectkey>StringBuilder</SPAN><SPAN>(); &nbsp;&nbsp;</SPAN> 
+  <LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+  class=keyword>foreach</SPAN><SPAN>&nbsp;(PSObject&nbsp;obj&nbsp;</SPAN><SPAN 
+  class=keyword>in</SPAN><SPAN>&nbsp;results) &nbsp;&nbsp;</SPAN> 
+  <LI 
+  class=alt><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ 
+  &nbsp;&nbsp;</SPAN> 
+  <LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stringBuilder.AppendLine(obj.ToString()); 
+  &nbsp;&nbsp;</SPAN> 
+  <LI 
+  class=alt><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} 
+  &nbsp;&nbsp;</SPAN> 
+  <LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+  class=keyword>return</SPAN><SPAN>&nbsp;stringBuilder.ToString(); 
+  &nbsp;&nbsp;</SPAN> 
+  <LI class=alt><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} 
+  &nbsp;&nbsp;</SPAN> 
+  <LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;} &nbsp;&nbsp;</SPAN> 
+  <LI class=alt><SPAN>&nbsp;&nbsp;</SPAN> 
+  <LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+  class=comment>///&nbsp;&lt;summary&gt; </SPAN><SPAN>&nbsp;&nbsp;</SPAN> 
+  <LI class=alt><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+  class=comment>///&nbsp;脚本参数 </SPAN><SPAN>&nbsp;&nbsp;</SPAN> 
+  <LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+  class=comment>///&nbsp;&lt;/summary&gt; </SPAN><SPAN>&nbsp;&nbsp;</SPAN> 
+  <LI class=alt><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+  class=keyword>public</SPAN><SPAN>&nbsp;</SPAN><SPAN 
+  class=keyword>class</SPAN><SPAN>&nbsp;PSParam &nbsp;&nbsp;</SPAN> 
+  <LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;{ &nbsp;&nbsp;</SPAN> 
+  <LI 
+  class=alt><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+  class=keyword>public</SPAN><SPAN>&nbsp;</SPAN><SPAN 
+  class=keyword>string</SPAN><SPAN>&nbsp;Key &nbsp;&nbsp;</SPAN> 
+  <LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ 
+  &nbsp;&nbsp;</SPAN> 
+  <LI 
+  class=alt><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+  class=keyword>get</SPAN><SPAN>; &nbsp;&nbsp;</SPAN> 
+  <LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+  class=keyword>set</SPAN><SPAN>; &nbsp;&nbsp;</SPAN> 
+  <LI class=alt><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} 
+  &nbsp;&nbsp;</SPAN> 
+  <LI><SPAN>&nbsp;&nbsp;</SPAN> 
+  <LI 
+  class=alt><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+  class=keyword>public</SPAN><SPAN>&nbsp;</SPAN><SPAN 
+  class=keyword>object</SPAN><SPAN>&nbsp;Value &nbsp;&nbsp;</SPAN> 
+  <LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ 
+  &nbsp;&nbsp;</SPAN> 
+  <LI 
+  class=alt><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+  class=keyword>get</SPAN><SPAN>; &nbsp;&nbsp;</SPAN> 
+  <LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+  class=keyword>set</SPAN><SPAN>; &nbsp;&nbsp;</SPAN> 
+  <LI class=alt><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} 
+  &nbsp;&nbsp;</SPAN> 
+  <LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</SPAN> </LI></OL></DIV><LINK 
+rel=stylesheet type=text/css href="C%23调用powershell相互操作_files/insertcode.css">
+<SCRIPT type=text/javascript 
+src="C%23调用powershell相互操作_files/excute.js"></SCRIPT>
+
+<SCRIPT language=javascript type=text/javascript 
+src="C%23调用powershell相互操作_files/jquery.min.js"></SCRIPT>
+</DIV>
+<DIV>&nbsp;</DIV>
+<DIV><SPAN style="COLOR: #800000"><SPAN 
+style="FONT-SIZE: medium"><STRONG>这句为注入脚本一个.net对象：</STRONG><SPAN 
+style="COLOR: #ff00ff"><FONT 
+size=2>runspace.SessionStateProxy.SetVariable(par.Key,par.Value);&nbsp;&nbsp;&nbsp;</FONT></SPAN></SPAN></SPAN></DIV>
+<DIV>&nbsp;</DIV>
+<DIV><SPAN style="COLOR: #008080"><SPAN 
+style="FONT-SIZE: medium">这样在powershell脚本中就可以直接通过$key访问和操作这个对象</SPAN></SPAN></DIV>
+<DIV>&nbsp;</DIV>
+<DIV><SPAN style="COLOR: #800080"><SPAN 
+style="FONT-SIZE: medium">下面来看调用实例:</SPAN></SPAN></DIV>
+<DIV>&nbsp;</DIV>
+<DIV><SPAN style="COLOR: #800080"><SPAN 
+style="FONT-SIZE: medium">定义一个.net对象，以便powershell中调用：</SPAN></SPAN></DIV>
+<DIV class=codeText>
+<DIV class=codeHead><SPAN style="CURSOR: pointer" id=hit_5486 class=zhedie 
+onclick="javascript:$(code_5486).slideToggle(450);hit2_5486.style.display='';hit_5486.style.display='none';">折叠</SPAN><SPAN 
+style="DISPLAY: none; CURSOR: pointer" id=hit2_5486 class=zhedie 
+onclick="javascript:$(code_5486).slideToggle(450);hit_5486.style.display='';hit2_5486.style.display='none';">展开</SPAN><SPAN 
+class=lantxt>C# 代码</SPAN></DIV>
+<DIV id=code_5486>
+<OL 
+style="BORDER-RIGHT-WIDTH: 0px; LIST-STYLE-TYPE: none; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; MARGIN-LEFT: 5px; BORDER-LEFT-WIDTH: 0px" 
+class=dp-c>
+  <LI class=alt><SPAN><SPAN class=keyword>class</SPAN><SPAN>&nbsp;info 
+  &nbsp;&nbsp;</SPAN></SPAN> 
+  <LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;{ &nbsp;&nbsp;</SPAN> 
+  <LI 
+  class=alt><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+  class=keyword>public</SPAN><SPAN>&nbsp;</SPAN><SPAN 
+  class=keyword>int</SPAN><SPAN>&nbsp;x&nbsp;{&nbsp;</SPAN><SPAN 
+  class=keyword>get</SPAN><SPAN>;&nbsp;</SPAN><SPAN 
+  class=keyword>set</SPAN><SPAN>;&nbsp;} &nbsp;&nbsp;</SPAN> 
+  <LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+  class=keyword>public</SPAN><SPAN>&nbsp;</SPAN><SPAN 
+  class=keyword>int</SPAN><SPAN>&nbsp;y&nbsp;{&nbsp;</SPAN><SPAN 
+  class=keyword>get</SPAN><SPAN>;&nbsp;</SPAN><SPAN 
+  class=keyword>set</SPAN><SPAN>;&nbsp;} &nbsp;&nbsp;</SPAN> 
+  <LI 
+  class=alt><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+  class=keyword>public</SPAN><SPAN>&nbsp;</SPAN><SPAN 
+  class=keyword>int</SPAN><SPAN>&nbsp;z&nbsp;{&nbsp;</SPAN><SPAN 
+  class=keyword>get</SPAN><SPAN>;&nbsp;</SPAN><SPAN 
+  class=keyword>set</SPAN><SPAN>;&nbsp;} &nbsp;&nbsp;</SPAN> 
+  <LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</SPAN> </LI></OL></DIV><LINK 
+rel=stylesheet type=text/css href="C%23调用powershell相互操作_files/insertcode.css">
+<SCRIPT type=text/javascript 
+src="C%23调用powershell相互操作_files/excute.js"></SCRIPT>
+
+<SCRIPT language=javascript type=text/javascript 
+src="C%23调用powershell相互操作_files/jquery.min.js"></SCRIPT>
+</DIV>
+<DIV><SPAN style="COLOR: #800080"><SPAN 
+style="FONT-SIZE: medium">实例化一个对象psobj。。就是上面定义的info</SPAN></SPAN></DIV>
+<DIV>&nbsp;</DIV>
+<DIV><SPAN style="COLOR: #800080"><SPAN 
+style="FONT-SIZE: medium">给x,y赋值</SPAN></SPAN></DIV>
+<DIV><SPAN style="COLOR: #800080"><SPAN 
+style="FONT-SIZE: medium">然后把此对象传给powershell脚本，，参数标识写做arg</SPAN></SPAN></DIV>
+<DIV>&nbsp;</DIV>
+<DIV class=codeText>
+<DIV class=codeHead><SPAN style="CURSOR: pointer" id=hit_7975 class=zhedie 
+onclick="javascript:$(code_7975).slideToggle(450);hit2_7975.style.display='';hit_7975.style.display='none';">折叠</SPAN><SPAN 
+style="DISPLAY: none; CURSOR: pointer" id=hit2_7975 class=zhedie 
+onclick="javascript:$(code_7975).slideToggle(450);hit_7975.style.display='';hit2_7975.style.display='none';">展开</SPAN><SPAN 
+class=lantxt>C# 代码</SPAN></DIV>
+<DIV id=code_7975>
+<OL 
+style="BORDER-RIGHT-WIDTH: 0px; LIST-STYLE-TYPE: none; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; MARGIN-LEFT: 5px; BORDER-LEFT-WIDTH: 0px" 
+class=dp-c>
+  <LI class=alt><SPAN><SPAN class=keyword>static</SPAN><SPAN>&nbsp;</SPAN><SPAN 
+  class=keyword>void</SPAN><SPAN>&nbsp;Main(</SPAN><SPAN 
+  class=keyword>string</SPAN><SPAN>[]&nbsp;args) &nbsp;&nbsp;</SPAN></SPAN> 
+  <LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ 
+  &nbsp;&nbsp;</SPAN> 
+  <LI 
+  class=alt><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+  class=objectkey>List</SPAN><SPAN>&lt;</SPAN><SPAN 
+  class=keyword>string</SPAN><SPAN>&gt;&nbsp;ps&nbsp;=&nbsp;</SPAN><SPAN 
+  class=keyword>new</SPAN><SPAN>&nbsp;</SPAN><SPAN 
+  class=objectkey>List</SPAN><SPAN>&lt;</SPAN><SPAN 
+  class=keyword>string</SPAN><SPAN>&gt;(); &nbsp;&nbsp;</SPAN> 
+  <LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ps.Add(</SPAN><SPAN 
+  class=string>"Set-ExecutionPolicy&nbsp;RemoteSigned"</SPAN><SPAN>);</SPAN><SPAN 
+  class=comment>//先执行启动安全策略，，使系统可以执行powershell脚本文件 
+  </SPAN><SPAN>&nbsp;&nbsp;</SPAN> 
+  <LI class=alt><SPAN>&nbsp;&nbsp;</SPAN> 
+  <LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+  class=keyword>string</SPAN><SPAN>&nbsp;pspath&nbsp;=&nbsp;System.IO.</SPAN><SPAN 
+  class=objectkey>Path</SPAN><SPAN>.Combine(Environment.CurrentDirectory,</SPAN><SPAN 
+  class=string>"ps.ps1"</SPAN><SPAN>); &nbsp;&nbsp;</SPAN> 
+  <LI class=alt><SPAN>&nbsp;&nbsp;</SPAN> 
+  <LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ps.Add(pspath);</SPAN><SPAN 
+  class=comment>//执行脚本文件 </SPAN><SPAN>&nbsp;&nbsp;</SPAN> 
+  <LI class=alt><SPAN>&nbsp;&nbsp;</SPAN> 
+  <LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;info&nbsp;psobj&nbsp;=&nbsp;</SPAN><SPAN 
+  class=keyword>new</SPAN><SPAN>&nbsp;info(); &nbsp;&nbsp;</SPAN> 
+  <LI 
+  class=alt><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;psobj.x&nbsp;=&nbsp;20; 
+  &nbsp;&nbsp;</SPAN> 
+  <LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;psobj.y&nbsp;=&nbsp;10; 
+  &nbsp;&nbsp;</SPAN> 
+  <LI class=alt><SPAN>&nbsp;&nbsp;</SPAN> 
+  <LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BaseCommon.PSParam&nbsp;par=</SPAN><SPAN 
+  class=keyword>new</SPAN><SPAN>&nbsp;BaseCommon.PSParam(); &nbsp;&nbsp;</SPAN> 
+  <LI 
+  class=alt><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;par.Key=</SPAN><SPAN 
+  class=string>"arg"</SPAN><SPAN>; &nbsp;&nbsp;</SPAN> 
+  <LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;par.Value=psobj; 
+  &nbsp;&nbsp;</SPAN> 
+  <LI class=alt><SPAN>&nbsp;&nbsp;</SPAN> 
+  <LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BaseCommon.PowerShell.RunScript(ps,&nbsp;</SPAN><SPAN 
+  class=keyword>new</SPAN><SPAN>&nbsp;</SPAN><SPAN 
+  class=objectkey>List</SPAN><SPAN>&lt;BaseCommon.PSParam&gt;()&nbsp;{&nbsp;par&nbsp;}); 
+  &nbsp;&nbsp;</SPAN> 
+  <LI class=alt><SPAN>&nbsp;&nbsp;</SPAN> 
+  <LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+  class=objectkey>Console</SPAN><SPAN>.WriteLine(psobj.x&nbsp;+&nbsp;</SPAN><SPAN 
+  class=string>"&nbsp;+&nbsp;"</SPAN><SPAN>&nbsp;+&nbsp;psobj.y&nbsp;+&nbsp;</SPAN><SPAN 
+  class=string>"&nbsp;=&nbsp;"</SPAN><SPAN>&nbsp;+&nbsp;psobj.z); 
+  &nbsp;&nbsp;</SPAN> 
+  <LI class=alt><SPAN>&nbsp;&nbsp;</SPAN> 
+  <LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+  class=objectkey>Console</SPAN><SPAN>.ReadLine(); &nbsp;&nbsp;</SPAN> 
+  <LI 
+  class=alt><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</SPAN> 
+  </LI></OL></DIV><LINK rel=stylesheet type=text/css 
+href="C%23调用powershell相互操作_files/insertcode.css">
+<SCRIPT type=text/javascript 
+src="C%23调用powershell相互操作_files/excute.js"></SCRIPT>
+
+<SCRIPT language=javascript type=text/javascript 
+src="C%23调用powershell相互操作_files/jquery.min.js"></SCRIPT>
+</DIV>
+<DIV>&nbsp;</DIV>
+<DIV><SPAN style="COLOR: #800000"><SPAN style="FONT-SIZE: medium"><SPAN 
+style="COLOR: #ff00ff"><FONT 
+size=2>接下来就看写一个简单的powershell脚本来操作.net实例了</FONT></SPAN></SPAN></SPAN></DIV>
+<DIV class=codeText>
+<DIV class=codeHead>&nbsp;</DIV>
+<DIV id=code_3828>
+<OL 
+style="BORDER-RIGHT-WIDTH: 0px; LIST-STYLE-TYPE: none; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; MARGIN-LEFT: 5px; BORDER-LEFT-WIDTH: 0px" 
+class=dp-rb>
+  <LI class=alt><SPAN><SPAN class=variable>$a</SPAN><SPAN>=</SPAN><SPAN 
+  class=variable>$arg</SPAN><SPAN>.x &nbsp;&nbsp;</SPAN></SPAN> 
+  <LI><SPAN class=variable>$b</SPAN><SPAN>=</SPAN><SPAN 
+  class=variable>$arg</SPAN><SPAN>.y &nbsp;&nbsp;</SPAN> 
+  <LI class=alt><SPAN class=variable>$arg</SPAN><SPAN>.z=</SPAN><SPAN 
+  class=variable>$a</SPAN><SPAN>+</SPAN><SPAN 
+  class=variable>$b</SPAN><SPAN>&nbsp;&nbsp;</SPAN> </LI></OL></DIV><LINK 
+rel=stylesheet type=text/css href="C%23调用powershell相互操作_files/insertcode.css">
+<SCRIPT type=text/javascript 
+src="C%23调用powershell相互操作_files/excute.js"></SCRIPT>
+
+<SCRIPT language=javascript type=text/javascript 
+src="C%23调用powershell相互操作_files/jquery.min.js"></SCRIPT>
+</DIV>
+<DIV class=codeText></DIV>
+<DIV><SPAN style="COLOR: #800000"><SPAN style="FONT-SIZE: medium"><SPAN 
+style="COLOR: #ff00ff"><FONT 
+size=2>其中$arg就表示上面注入的psobj对象。。标识为arg</FONT></SPAN></SPAN></SPAN></DIV>
+<DIV>&nbsp;</DIV>
+<DIV><SPAN style="COLOR: #800000"><SPAN style="FONT-SIZE: medium"><SPAN 
+style="COLOR: #ff00ff"><FONT size=2>把此脚本存在此程序的bin\debug目录下。文件名为：<FONT 
+color=#000000>ps.ps1</FONT>，，就可以执行程　序看结果：</FONT></SPAN></SPAN></SPAN></DIV>
+<DIV>&nbsp;</DIV>
+<DIV><IMG style="MAX-WIDTH: 800px" alt="" 
+src="C%23调用powershell相互操作_files/pscmd.jpg"></DIV>
+<DIV>&nbsp;</DIV>
+<DIV>此结果由powershell脚本返回</DIV>
+<DIV>&nbsp;</DIV>
+<DIV>本实例源码下载：<A title=本地下载 href="http://www.jm47.com/Att/1207.shtml" 
+target=_blank><SPAN style="FONT-SIZE: medium">本地下载</SPAN></A></DIV></DIV>
+<SCRIPT type=text/javascript><!--
+            google_ad_client = "pub-3743207625515973";
+            google_ad_slot = "9934633881";
+            google_ad_width = 728;
+            google_ad_height = 90;
+//-->
+        </SCRIPT>
+
+<SCRIPT type=text/javascript 
+src="C%23调用powershell相互操作_files/show_ads.js"></SCRIPT>
+
+<DIV class=reContent>
+<SCRIPT id=comment_tmpl type=text/html>
+                <# for ( var i = 0; i < obj.length; i++ ) { var d = $jm.parseDate(obj[i].ReDate);#>
+                <div class="reContentItem">
+                    <ul class="ReContentTitleDiv">
+                        <li><#=obj[i].Account#></li>
+                        <li><#=(obj[i].Address ? obj[i].Address : content.reContent.splitIp(obj[i].ReIp))#></li>
+                        <li><#=d.getFullYear() + '/' + (d.getMonth() + 1) + '/' + d.getDate() + ' ' + d.getHours()
+                            + ':' + d.getMinutes() #></li>
+                    </ul>
+                </div>
+                <div class="content">
+                    <#=obj[i].ReContent#></div>
+                <# } #>
+            </SCRIPT>
+
+<DIV id=reContentList>
+<CENTER><IMG alt="" src="C%23调用powershell相互操作_files/waitinfo.gif" width=32 
+height=32>
+<H4>加载评论中...</H4></CENTER></DIV>
+<DIV id=reArea>
+<DIV><TEXTAREA id=txtReContent></TEXTAREA> </DIV>随机码:<SPAN class=nes>*</SPAN> 
+<INPUT id=txtRnd maxLength=4> <IMG style="DISPLAY: none" id=imgRnd title=双击变换随机码 
+alt=加载随机码中... src="C%23调用powershell相互操作_files/document.htm"><BUTTON 
+id=btnReContent>回复</BUTTON> </DIV></DIV></DIV></DIV>
+<SCRIPT type=text/javascript 
+src="C%23调用powershell相互操作_files/jquery.min(1).js"></SCRIPT>
+
+<SCRIPT type=text/javascript 
+src="C%23调用powershell相互操作_files/jm.min.js"></SCRIPT>
+
+<SCRIPT type=text/javascript 
+src="C%23调用powershell相互操作_files/master.js"></SCRIPT>
+
+<SCRIPT type=text/javascript>
+        //根路径
+        $jm.rootUrl = "http://www.jm47.com";
+        //初始化查询框
+        var initSearch = function () {           
+            var sput = $('#jmsearch input[type=text]');           
+            sput.bind('focus', function () {
+                var pu = $(this);               
+                pu.animate({ width: 160 });
+            });
+            sput.bind('blur', function () {
+                var v = this.value.replace(/\s+/ig, '');
+                if (v == '' || v.length == 0) {
+                    var pu = $(this);                 
+                    pu.animate({ width: 80 });
+                }
+            });
+        };        
+        initSearch();
+    </SCRIPT>
+
+<SCRIPT type=text/javascript 
+src="C%23调用powershell相互操作_files/content.js"></SCRIPT>
+
+<SCRIPT type=text/javascript 
+src="C%23调用powershell相互操作_files/kindeditor-min.js"></SCRIPT>
+
+<SCRIPT language=javascript type=text/javascript>        
+        content.projectId = '1193';//当前id        
+        //类型
+        content.reType = 1;
+        //加载后初始化页面        
+        content.init(); //初始化  
+        content.reContent.load();//加载评论
+        content.createEditor();//加载编辑器
+
+        $('#btnReContent').bind('click',function(){
+            content.reContent.insert();//添加回复
+        });
+        $('#imgRnd').bind('click',function(){content.loadRnd();});
+        $('#txtRnd').bind('click',function(){
+            if($('#imgRnd').attr('src').length == 0)
+                content.loadRnd();//单击输入框加载随机码
+        });
+    </SCRIPT>
+
+<DIV id=footer>
+<UL>
+  <LI><A href="http://www.jm47.com/">首页</A> <A 
+  href="http://www.jm47.com/project.aspx">开源项目</A> <A 
+  href="http://www.jm47.com/document.aspx">技术资料</A> <A 
+  href="http://www.jm47.com/it.aspx">关注IT</A> 
+  <LI><A href="http://www.jm47.com/tools/IpSearch">IP归属查询</A> <A 
+  href="http://www.jm47.com/tools/py">拼音翻译</A> <A 
+  href="http://www.jm47.com/tools/jscompress">js压缩工具</A> 
+  <LI><A href="http://creativecommons.org/licenses/by-nc-sa/2.5/cn/" 
+  target=_blank>隐私政策</A> <A href="http://www.jm47.com/tools/links">友情链接</A> 
+  <LI><A href="mailto:haofefe@163.com">反馈</A> <A 
+  href="http://www.jm47.com/Config/Faq.aspx">常见问题</A> <A 
+  href="http://www.jm47.com/Config/CallMe.aspx">联系站长</A> 
+  <LI><A href="http://www.jm47.com/JmRss">RSS订阅</A> <A 
+  href="http://www.feedsky.com/msub_wr.html?burl=jm47" target=_blank>邮件订阅</A> 
+  </LI></UL>
+<DIV class=friend><A href="http://hi.baidu.com/haofefe" target=_blank>家猫博客</A> 
+<A href="http://topming.com/" target=_blank>TOPMING</A> <A 
+href="http://www.youguanbumen.net/" target=_blank>Tiu'Zone</A> <A 
+href="http://www.cpbcw.com/" target=_blank>C#编程网</A> <A 
+href="http://www.frontdig.com/" target=_blank>前端发掘</A> </DIV>
+<P>© 2010 
+jiamao.All&nbsp;Rights&nbsp;Reserved.。<BR>家猫编程网&nbsp;粤ICP备10065165号&nbsp;</P>
+<SCRIPT type=text/javascript>            
+            //统计代码
+            document.write(unescape('%3Cscript src="http://s13.cnzz.com/stat.php?id=2035589&amp;web_id=2035589&amp;show=pic1" type="text/javascript"%3E%3C/script%3E'));
+            var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+            document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fb9b2be098b7246ef95cc906bb4f2a731' type='text/javascript'%3E%3C/script%3E"));
+            //翻译代码
+            //document.write(unescape("%3Cscript%3Efunction googleTranslateElementInit() {  new google.translate.TranslateElement({pageLanguage: 'zh-CN'});}%3C/script%3E"));
+            //document.write(unescape('%3Cscript src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"%3E%3C/script%3E'));            
+        </SCRIPT>
+</DIV>
+<DIV id=jmmasterad>
+<SCRIPT type=text/javascript><!--
+            google_ad_client = "ca-pub-3743207625515973";
+            /* 项部468x60, 创建于 10-8-13 */
+            google_ad_slot = "6577349375";
+            google_ad_width = 468;
+            google_ad_height = 60;            
+//-->
+        </SCRIPT>
+
+<SCRIPT type=text/javascript src="C%23调用powershell相互操作_files/show_ads.js">
+        </SCRIPT>
+</DIV></BODY></HTML>

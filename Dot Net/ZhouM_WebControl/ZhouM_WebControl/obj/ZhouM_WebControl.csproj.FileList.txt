@@ -1,0 +1,5 @@
+bin\Debug\ZhouM_WebControl.dll
+bin\Debug\ZhouM_WebControl.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\ZhouM_WebControl.dll
+obj\Debug\ZhouM_WebControl.pdb

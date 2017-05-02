@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 被2012 () 使用XMLSpy v编辑的 (http://www.altova.com) by -->
+<InterfaceConfig>
+  <WebService>
+	  <Item Name="WIP" URL="http://10.202.16.225/sfc_data_interface/sfc_data_interface.asmx"/>
+	  <Item Name="PDCS" URL="http://10.202.86.223:81/WebService1.asmx"/>
+  </WebService>
+  <Sap>
+    <Item Name="PRD_000">
+      <Server>
+        <!--正式环境-->
+        <Ip>10.134.28.99</Ip>
+        <SystemNumber>00</SystemNumber>
+        <!--<Ip>10.134.28.56</Ip>
+        <SystemNumber>01</SystemNumber>-->
+        <!--测试环境-->
+        <!--<Ip>10.134.28.112</Ip>
+        <SystemNumber>00</SystemNumber>-->
+        <User>SFC_USER</User>
+        <PassWord>yhpwd</PassWord>
+        <Client>801</Client>
+        <Language>M</Language>
+        <PoolSize>5</PoolSize>
+        <MaxPoolSize>10</MaxPoolSize>
+        <TimeOut>3000000</TimeOut>
+        <Times>2</Times>
+        <DBConnString>Data Source=10.202.16.160,3000;User Id =sa;Password=8ik,9ol.;Initial Catalog=FoxconnDB</DBConnString>
+      </Server>
+      <Functions>
+        <Function MESName="UpdatedMaterial" SFCName="ZRFC_MM_SIM_0001" Des="Get PartInfo from SAP" >
+          <ParIn>
+            <WERKS>WHPA</WERKS>
+            <MATNR></MATNR>
+            <SPRAS>EN</SPRAS>
+            <FROM_DATE></FROM_DATE>
+            <TO_DATE></TO_DATE>
+          </ParIn>
+          <ParOut>
+          </ParOut>
+          <TablesIn>
+          </TablesIn>
+          <TablesOut>
+            <TableOut SFCName="ITAB">
+            </TableOut>
+          </TablesOut>
+          <StructuresOut>
+          </StructuresOut>
+        </Function>
+        <Function MESName="BOMDetail" SFCName="ZRFC_PP_SIM_0003" Des="Get BOM from SAP" >
+          <ParIn>
+            <P_WERKS>WHPA</P_WERKS>
+            <P_MATNR></P_MATNR>
+            <P_STLAN>1</P_STLAN>
+            <P_STALT>01</P_STALT>
+            <P_Date></P_Date>
+          </ParIn>
+          <ParOut>
+          </ParOut>
+          <TablesIn>
+          </TablesIn>
+          <TablesOut>
+            <TableOut SFCName="BOMH"></TableOut>
+            <TableOut SFCName="BOMD"></TableOut>
+          </TablesOut>
+          <StructuresOut>
+          </StructuresOut>
+        </Function>
+        <Function MESName="MO" SFCName="ZRFC_PP_SIM_0004" Des="Get MO from SAP" >
+          <ParIn>
+            <P_WERKS></P_WERKS>
+            <P_AUFNR></P_AUFNR>
+            <P_ERDAT></P_ERDAT>
+            <P_AEDAT></P_AEDAT>
+            <P_AUART/>
+            <P_LGORT/>
+          </ParIn>
+          <ParOut>
+          </ParOut>
+          <TablesIn>
+          </TablesIn>
+          <TablesOut>
+            <TableOut SFCName="MOH"></TableOut>
+            <TableOut SFCName="MOD"></TableOut>
+          </TablesOut>
+          <StructuresOut>
+          </StructuresOut>
+        </Function>
+        <Function MESName="MOUpdate" SFCName="ZRFC_PP_SIM_0005" Des="Get MO Update from SAP" >
+          <ParIn>
+            <P_AUFNR></P_AUFNR>
+            <P_WERKS></P_WERKS>
+            <P_MATNR></P_MATNR>
+            <P_ERDAT></P_ERDAT>
+            <P_GLTRP></P_GLTRP>
+            <P_GSTRP></P_GSTRP>
+            <P_GAMNG></P_GAMNG>
+          </ParIn>
+          <ParOut>
+            <P_STATUS></P_STATUS>
+            <P_STXT></P_STXT>
+          </ParOut>
+          <TablesIn>
+          </TablesIn>
+          <TablesOut>
+          </TablesOut>
+          <StructuresOut>
+          </StructuresOut>
+        </Function>
+        <Function MESName="MOConfirmation" SFCName="ZRFC_PRODORDCONF_CREATE_TT" Des="Get MO Confirmation from SAP" >
+          <ParIn>
+          </ParIn>
+          <ParOut>
+          </ParOut>
+          <TablesIn>
+            <TableIn SFCName="TIMETICKETS">
+              <ORDERID></ORDERID>
+              <PLANT></PLANT>
+              <YIELD></YIELD>
+              <OPERATION></OPERATION>
+            </TableIn>
+            <TableIn SFCName="GOODSMOVEMENTS">
+              <MATERIAL/>
+              <PLANT/>
+              <STGE_LOC/>
+              <BATCH/>
+              <MOVE_TYPE/>
+              <ENTRY_QNT/>
+              <ENTRY_UOM/>
+            </TableIn>
+            <TableIn SFCName="LINK_CONF_GOODSMOV">
+              <INDEX_CONFIRM></INDEX_CONFIRM>
+              <INDEX_GOODSMOV></INDEX_GOODSMOV>
+            </TableIn>
+          </TablesIn>
+          <TablesOut>
+            <TableOut SFCName="TIMETICKETS"></TableOut>
+            <TableOut SFCName="GOODSMOVEMENTS"></TableOut>
+            <TableOut SFCName="LINK_CONF_GOODSMOV"></TableOut>
+            <TableOut SFCName="DETAIL_RETURN"></TableOut>
+          </TablesOut>
+          <StructuresOut>
+            <StructureOut SFCName="RETURN"></StructureOut>
+          </StructuresOut>
+        </Function>
+        <Function MESName="CancelConfirmation" SFCName="ZRFC_PP_SIM_0007" Des="Get Cancel Confirmation from SAP" >
+          <ParIn>
+          </ParIn>
+          <ParOut>
+            <O_MSG/>
+          </ParOut>
+          <TablesIn>
+            <TableIn SFCName="I_ITAB">
+              <AUFNR></AUFNR>
+              <CONF_NO></CONF_NO>
+              <CONF_CNT></CONF_CNT>
+              <CONF_TEXT></CONF_TEXT>
+            </TableIn>
+          </TablesIn>
+          <TablesOut>
+            <TableOut SFCName="I_ITAB"></TableOut>
+          </TablesOut>
+          <StructuresOut>
+          </StructuresOut>
+        </Function>
+        <Function MESName="GoodsIssueForOrder" SFCName="ZRFC_MM_SIM_0002" Des="Get Goods Issue For Order from SAP" >
+          <ParIn>
+          </ParIn>
+          <ParOut>
+          </ParOut>
+          <TablesIn>
+            <TableIn SFCName="ITABIN">
+              <MATNR/>
+              <WERKS_D/>
+              <LGORT_D/>
+              <BWART/>
+              <ERFMG/>
+              <ERFME/>
+              <AUFNR/>
+              <RSNUM/>
+              <RSPOS/>
+              <CHARG/>
+            </TableIn>
+          </TablesIn>
+          <TablesOut>
+            <TableOut SFCName="ITABOUT"></TableOut>
+          </TablesOut>
+          <StructuresOut>
+          </StructuresOut>
+        </Function>
+        <Function MESName="CancelMaterialDoc" SFCName="ZRFC_MM_SIM_0003" Des="Cancel Material Document from SAP" >
+          <ParIn>
+            <MBLNR></MBLNR>
+            <MJAHR></MJAHR>
+          </ParIn>
+          <ParOut>
+            <MBLNR_OUT></MBLNR_OUT>
+            <MSG></MSG>
+          </ParOut>
+          <TablesIn>
+          </TablesIn>
+          <TablesOut>
+          </TablesOut>
+          <StructuresOut>
+          </StructuresOut>
+        </Function>
+        <Function MESName="DisplayStock" SFCName="ZRFC_MM_SIM_0004" Des="Get Stock from SAP" >
+          <ParIn>
+          </ParIn>
+          <ParOut>
+          </ParOut>
+          <TablesIn>
+            <TableIn SFCName="ITABIN">
+              <WERKS/>
+              <MATNR/>
+              <LGORT/>
+            </TableIn>
+          </TablesIn>
+          <TablesOut>
+            <TableOut SFCName="ITABOUT"></TableOut>
+          </TablesOut>
+          <StructuresOut>
+          </StructuresOut>
+        </Function>
+        <Function MESName="GoodsIssueForL6 " SFCName="ZRFC_MM_CES_0019" Des="Get Goods Issue For L6 from SAP" >
+          <ParIn>
+          </ParIn>
+          <ParOut>
+            <DOC/>
+            <MBLNR261/>
+            <MBLNR311/>
+            <MESS/>
+          </ParOut>
+          <TablesIn>
+            <TableIn SFCName="IT_IN">
+              <WERKS/>
+              <DOCNUMBER/>
+              <DOCITEM/>
+              <PKGID/>
+              <ERFMG/>
+              <MATNR/>
+              <LGORT/>
+            </TableIn>
+          </TablesIn>
+          <TablesOut>
+          </TablesOut>
+          <StructuresOut>
+          </StructuresOut>
+        </Function>
+        <Function MESName="VMIGR " SFCName="ZRFC_MM_CES_0007" Des="Get VMI GR from SAP" >
+          <ParIn>
+          </ParIn>
+          <ParOut>
+          </ParOut>
+          <TablesIn>
+            <TableIn SFCName="IT_109">
+              <PLANT/>
+              <CUSTOMER/>
+              <ASNNO/>
+              <VENDOR/>
+              <MATNR/>
+              <TYPE/>
+              <MANUFACTURER/>
+              <ASNQTY/>
+              <DNNO/>
+            </TableIn>
+          </TablesIn>
+          <TablesOut>
+            <TableOut SFCName="RETURN"></TableOut>
+          </TablesOut>
+          <StructuresOut>
+          </StructuresOut>
+        </Function>
+        <Function MESName="FDGR " SFCName="ZRFC_PP_PCE_0069" Des="Get FD GR from SAP" >
+          <ParIn>
+          </ParIn>
+          <ParOut>
+          </ParOut>
+          <TablesIn>
+            <TableIn SFCName="ZPP43A">
+              <PALLET_ID/>
+              <AUFNR/>
+              <MATNR/>
+              <PGMNG/>
+              <LGORT/>
+            </TableIn>
+          </TablesIn>
+          <TablesOut>
+            <TableOut SFCName="ZPP43A"></TableOut>
+          </TablesOut>
+          <StructuresOut>
+          </StructuresOut>
+        </Function>
+       </Functions>
+    </Item>
+  </Sap>
+</InterfaceConfig>

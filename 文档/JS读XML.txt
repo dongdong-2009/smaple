@@ -1,0 +1,30 @@
+    function a()
+    { 
+       var filePath = location.href.substring(0,location.href.lastIndexOf('/')) + "/a/z.xml";
+       var doc = new ActiveXObject("Microsoft.XMLDOM"); 
+       doc.async = false;
+       doc.load(filePath);
+       var a = doc.getElementsByTagName("studnet");   
+       i = a.length;
+       alert(i);         
+    }
+
+
+JS treeview
+<script language="javascript">
+        function CheckNode()
+         { 
+         var choose;
+         var indexid;
+         indexid=TreeView1.clickedNodeIndex;
+        
+         choose=TreeView1.getTreeNode(indexid).getAttribute('Checked');
+         var NodeArray=new Array();
+          NodeArray=TreeView1.getTreeNode(indexid).getChildren();
+         for(i=0;i<NodeArray.length;i++)
+        {
+         var tempindex=indexid+"."+i;
+          NodeArray[i].setAttribute('Checked',choose);
+        }
+        }
+        </script>

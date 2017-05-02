@@ -1,0 +1,5 @@
+D:\Project\smaple\SharePoint\SequentialWorkflow\SequentialWorkflow\obj\Debug\ResolveAssemblyReference.cache
+D:\Project\smaple\SharePoint\SequentialWorkflow\SequentialWorkflow\bin\Debug\SequentialWorkflow.dll
+D:\Project\smaple\SharePoint\SequentialWorkflow\SequentialWorkflow\bin\Debug\SequentialWorkflow.pdb
+D:\Project\smaple\SharePoint\SequentialWorkflow\SequentialWorkflow\obj\Debug\SequentialWorkflow.dll
+D:\Project\smaple\SharePoint\SequentialWorkflow\SequentialWorkflow\obj\Debug\SequentialWorkflow.pdb

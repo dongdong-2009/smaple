@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Solution xmlns="http://schemas.microsoft.com/sharepoint/" SolutionId="f567307d-b05b-4704-b797-e9a4812df3c3" SharePointProductVersion="14.0">
+  <Assemblies>
+    <Assembly Location="PluggableWorkflowServices.dll" DeploymentTarget="GlobalAssemblyCache" />
+  </Assemblies>
+  <FeatureManifests>
+    <FeatureManifest Location="PluggableWorkflowServices_Feature1\Feature.xml" />
+  </FeatureManifests>
+</Solution>

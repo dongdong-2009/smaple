@@ -1,0 +1,7 @@
+<input type="text" id="ZhoumIp1" maxlength="3" class="ZhoumIPOnly"  onbeforepaste="mask_c();" oncopy="return false;" oncut="return false;"  />.
+
+
+function mask_c(obj)
+{    
+    clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))
+}

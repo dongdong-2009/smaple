@@ -1,0 +1,17 @@
+// 一个任意数目Integer求和的简单例子
+var add = function(){
+    var sum = 0; 
+    for each (var item in arguments){
+            sum += item;
+    }
+    document.write(sum);
+}
+//求一个数的阶乘
+function factorial(n){
+      return function(n){
+         if(n == 1) return 1 ;
+        else return n * arguments.callee(n-1); //上面的callee引用了匿名的阶乘函数本身。 使用factorial()(8)调用求8的阶乘，返回40320
+       };
+    }
+需要说明的是arguments并不是一个数组，可用instanceof测试。
+alert(arguments instanceof Array) //false

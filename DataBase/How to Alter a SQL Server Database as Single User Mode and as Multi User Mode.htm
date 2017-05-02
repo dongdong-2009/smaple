@@ -1,0 +1,324 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0069)http://www.kodyaz.com/articles/alter-single-user-multi-user-mode.aspx -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><HTML 
+lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><HEAD><TITLE>How to 
+Alter a SQL Server Database as Single User Mode and as Multi User Mode</TITLE>
+<META name="description" content="How to Alter a SQL Server Database as Single User Mode and as Multi User Mode">
+<META name="keywords" content="sql server 2005, sql database, sql server database, sp_dboption, single-user mode, multi-user mode, sysprocesses, alter database"><LINK 
+rel="shortcut icon" type="image/ico" href="/favicon.ico">
+<META content="text/html; charset=utf-8" http-equiv="Content-Type">
+<STYLE type="text/css"> body { font-size: 84%; } </STYLE>
+<LINK rel="stylesheet" type="text/css" href="How%20to%20Alter%20a%20SQL%20Server%20Database%20as%20Single%20User%20Mode%20and%20as%20Multi%20User%20Mode_files/commonpp.css" 
+media="screen"><LINK rel="stylesheet" type="text/css" href="How%20to%20Alter%20a%20SQL%20Server%20Database%20as%20Single%20User%20Mode%20and%20as%20Multi%20User%20Mode_files/blogpp.css" 
+media="screen">
+<SCRIPT type="text/javascript" src="How%20to%20Alter%20a%20SQL%20Server%20Database%20as%20Single%20User%20Mode%20and%20as%20Multi%20User%20Mode_files/global.js"></SCRIPT>
+
+<META name="GENERATOR" content="MSHTML 9.00.8112.16443"></HEAD>
+<BODY>
+<FORM id="aspnetForm" method="post" name="aspnetForm" action="alter-single-user-multi-user-mode.aspx">
+<DIV><INPUT id="__VIEWSTATE" name="__VIEWSTATE" value="/wEPDwUJMTYxNzkxODkzZGRmqFTgFpgIIJqWAdKdWU4CtFQ6BQ==" 
+type="hidden"></DIV>
+<DIV id="Common">
+<DIV id="CommonHeader">
+<DIV class="CommonTitleBar">
+<DIV class="CommonTitleBarImage">
+<TABLE border="0" cellSpacing="0" cellPadding="0">
+  <TBODY>
+  <TR>
+    <TD class="CommonTitleBarImage"><A href="http://www.kodyaz.com/"><IMG 
+      border="0" alt="SQL Server administration and T-SQL development, Web Programming with ASP.NET and Javascript, SAP Smartforms and ABAP Programming, Windows 7, Visual Studio and MS Office software" 
+      src="How%20to%20Alter%20a%20SQL%20Server%20Database%20as%20Single%20User%20Mode%20and%20as%20Multi%20User%20Mode_files/kodyaz.png" 
+      width="98" height="121"></A></TD>
+    <TD class="CommonTitleBarTitleArea" width="100%" noWrap="nowrap"><FONT 
+      style="margin: 0px 0px -5px; padding: 0px 0px 0px 4px; height: 50px; color: rgb(85, 85, 85); font-family: Tahoma,Arial,Helvetica; font-size: 250%; font-weight: bolder;">Kodyaz 
+      Development Resources</FONT>
+      <DIV class="CommonTitleBarDescription">Development resources, articles, 
+      tutorials, samples, codes and tools for .Net, SQL Server, Vista, 
+      etc.</DIV></TD>
+    <TD class="CommonTitleBarSearchArea" noWrap="nowrap">
+      <DIV class="CommonUserArea">
+      <DIV id="welcome"><A id="ctl00_ctl01_bhcr_t___Displayuserwelcome1___ctl03___Login" 
+      href="http://www.kodyaz.com/login.aspx?ReturnUrl=/articles/alter-single-user-multi-user-mode.aspx" 
+      rel="nofollow">Sign in</A> | <A id="ctl00_ctl01_bhcr_t___Displayuserwelcome1___ctl03___Register" 
+      href="http://www.kodyaz.com/user/CreateUser.aspx?ReturnUrl=/articles/alter-single-user-multi-user-mode.aspx" 
+      rel="nofollow">Join</A>			 |  </DIV></DIV></TD></TR></TBODY></TABLE></DIV></DIV>
+<DIV class="CommonTabBar">
+<SCRIPT language="javascript" type="text/javascript">
+function tabOver(e)
+{
+	if (e.className!='CommonSimpleTabStripSelectedTab')
+		e.className='CommonSimpleTabStripTabHover';
+}
+function tabOut(e)
+{
+	if (e.className!='CommonSimpleTabStripSelectedTab')
+		e.className='CommonSimpleTabStripTab';
+}
+</SCRIPT>
+
+<DIV class="CommonTabBarInner">
+<TABLE border="0" cellSpacing="0" cellPadding="0">
+  <TBODY>
+  <TR vAlign="middle">
+    <TD class="CommonSimpleTabStripTab" onmouseover="tabOver(this);" onmouseout="tabOut(this);"><A 
+      href="http://www.kodyaz.com/">Home</A></TD>
+    <TD class="CommonSimpleTabStripSelectedTab" onmouseover="tabOver(this);" 
+    onmouseout="tabOut(this);"><A href="http://www.kodyaz.com/articles/default.aspx">Articles</A></TD>
+    <TD class="CommonSimpleTabStripTab" onmouseover="tabOver(this);" onmouseout="tabOut(this);"><A 
+      href="http://www.kodyaz.com/news/default.aspx">News</A></TD>
+    <TD class="CommonSimpleTabStripTab" onmouseover="tabOver(this);" onmouseout="tabOut(this);"><A 
+      href="http://www.kodyaz.com/jobs/default.aspx"><FONT color="red"><B>IT 
+      Jobs</B></FONT></A></TD>
+    <TD class="CommonSimpleTabStripTab" onmouseover="tabOver(this);" onmouseout="tabOut(this);"><A 
+      href="http://www.kodyaz.com/tools/default.aspx">Tools</A></TD>
+    <TD class="CommonSimpleTabStripTab" onmouseover="tabOver(this);" onmouseout="tabOut(this);"><A 
+      href="http://www.kodyaz.com/samplechapters/default.aspx">Sample 
+      Chapters</A></TD>
+    <TD class="CommonSimpleTabStripTab" onmouseover="tabOver(this);" onmouseout="tabOut(this);"><A 
+      href="http://www.kodyaz.com/trainers/default.aspx">Trainers</A></TD>
+    <TD class="CommonSimpleTabStripTab" onmouseover="tabOver(this);" onmouseout="tabOut(this);"><A 
+      href="http://www.kodyaz.com/blogs/default.aspx">Blogs</A></TD>
+    <TD class="CommonSimpleTabStripTab" onmouseover="tabOver(this);" onmouseout="tabOut(this);"><A 
+      href="http://www.kodyaz.com/forums/default.aspx">Forums</A></TD>
+    <TD class="CommonSimpleTabStripTab" onmouseover="tabOver(this);" onmouseout="tabOut(this);"><A 
+      href="http://www.kodyaz.com/photos/default.aspx">Photos</A></TD>
+    <TD class="CommonSimpleTabStripTab" onmouseover="tabOver(this);" onmouseout="tabOut(this);"><A 
+      href="http://www.kodyaz.com/files/default.aspx">Files</A></TD></TR></TBODY></TABLE></DIV></DIV>
+</DIV>
+<DIV id="CommonBody">
+<TABLE id="CommonBodyTable" border="0" cellSpacing="0" cellPadding="0" width="100%">
+  <TBODY>
+  <TR>
+    <TD id="CommonLeftColumn" vAlign="top"></TD>
+    <TD id="CommonBodyColumn" vAlign="top" width="100%"><BR><BR><!-- google_ad_section_start -->
+      <TABLE id="table1" border="0" cellSpacing="0" cellPadding="0" width="950" 
+      align="center">
+        <TBODY>
+        <TR>
+          <TD style="width: 950px;" colSpan="3" align="center">
+<SCRIPT type="text/javascript"><!--
+google_ad_client = "pub-5941999004341432";
+/* k-sql-article-top-leader */
+google_ad_slot = "0639984037";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</SCRIPT>
+            
+<SCRIPT type="text/javascript" src="How%20to%20Alter%20a%20SQL%20Server%20Database%20as%20Single%20User%20Mode%20and%20as%20Multi%20User%20Mode_files/show_ads.js"></SCRIPT>
+          </TD></TR>
+        <TR>
+          <TD style="width: 175px;" vAlign="top"></TD>
+          <TD style="width: 600px;" vAlign="top"><BR><BR>
+            <H1 class="h1title">How to Alter a SQL Server Database as Single 
+            User Mode and as Multi User Mode</H1><BR>
+            <P>SQL Server database administrators can use SQL Server Enterprise 
+            Manager for SQL Server 2000 to set a database to a single user mode 
+            or to multi user mode. Similarly, SQL Server Management Studio can 
+            be used for SQL Server 2005 for changing a database to single user 
+            mode or to multi user mode. Also you can alter the database access 
+            mode by using sql commands like : <B>ALTER DATABASE</B> and 
+            <B>sp_dboption</B>.<BR></P>
+            <P><B>ALTER DATABASE [Works] SET MULTI_USER WITH NO_WAIT</B></P>
+            <P><B>ALTER DATABASE [Works] SET SINGLE_USER WITH NO_WAIT</B></P>
+            <P>or</P>
+            <P><B>EXEC sp_dboption 'Works', 'single user', 'false'</B></P>
+            <P><B>EXEC sp_dboption 'Works', 'single user', 'true'</B></P>
+            <BR><BR>
+            <P>
+<SCRIPT type="text/javascript"><!--
+google_ad_client = "pub-5941999004341432";
+/* k-sql-article-middle-square */
+google_ad_slot = "6559082590";
+google_ad_width = 336;
+google_ad_height = 280;
+//-->
+</SCRIPT>
+            
+<SCRIPT type="text/javascript" src="How%20to%20Alter%20a%20SQL%20Server%20Database%20as%20Single%20User%20Mode%20and%20as%20Multi%20User%20Mode_files/show_ads.js"></SCRIPT>
+            </P><BR><BR>
+            <P>To alter the database state to restrict the access to the single 
+            user mode, first open the Microsoft SQL Server Management Studio, 
+            and connect to a SQL Server instance. Open the list of available 
+            databases belonging to the related instance in the Object Explorer 
+            window. Right click on the SQL Server database that you want to set 
+            its mode to single user and select Properties in the context menu.
+            </P>
+            <P>When you click properties menu item, the following Database 
+            Properties screen will be displayed for the selected database. I 
+            used database named Works for samples used for the article.</P>
+            <P><IMG border="0" alt="SQL Server restrict access" src="How%20to%20Alter%20a%20SQL%20Server%20Database%20as%20Single%20User%20Mode%20and%20as%20Multi%20User%20Mode_files/alter-database-state.jpg" 
+            width="590" height="532"></P>
+            <P>Select the Options page from the list in the left side of the 
+            screen. If you scroll down the options list for State options, you 
+            will see Restrict Access database options with three options listed 
+            in the combo box.</P>
+            <P>Restrict Access modes : <B>Multiple, Single and Restricted 
+            modes</B>.<BR></P>
+            <P>If you select Single mode and click the OK button, you can either 
+            alter the database access mode to single user successfully or you 
+            will fail to change the access mode because of existence of active 
+            open connections to the Works database. The Management Studio IDE 
+            will prompt you to close all other connections to the related 
+            database for a successful alter database option process.</P>
+            <P><IMG border="0" alt="SQL Server open connections" src="How%20to%20Alter%20a%20SQL%20Server%20Database%20as%20Single%20User%20Mode%20and%20as%20Multi%20User%20Mode_files/open-connections.jpg" 
+            width="590" height="118"></P>
+            <P>To change the database properties, SQL Server must close all 
+            other connections to the database. Are you sure you want to change 
+            the properties and close all other connections?<BR></P>
+            <P>After the alter command runs successfully, the database Works 
+            will be displayed as shown in the Object Explorer window.<BR><IMG 
+            border="0" alt="SQL Server database single-user mode" src="How%20to%20Alter%20a%20SQL%20Server%20Database%20as%20Single%20User%20Mode%20and%20as%20Multi%20User%20Mode_files/single-user.jpg" 
+            width="140" height="18"><BR></P>
+            <P>If an active connection exists other than the Management Studio, 
+            and you click the database Works within the SQL Server Management 
+            Studio, the following warning message will be displayed:<BR></P>
+            <P><IMG border="0" alt="database is not accessible warning message" 
+            src="How%20to%20Alter%20a%20SQL%20Server%20Database%20as%20Single%20User%20Mode%20and%20as%20Multi%20User%20Mode_files/database-is-not-accessible.jpg" 
+            width="590" height="121"></P>
+            <P>The database Works is not accessible. (ObjectExplorer)<BR></P>
+            <P>If you right click on the database Works, the following error 
+            message will be displayed.</P>
+            <P><IMG border="0" alt="database is already open" src="How%20to%20Alter%20a%20SQL%20Server%20Database%20as%20Single%20User%20Mode%20and%20as%20Multi%20User%20Mode_files/database-is-already-open.jpg" 
+            width="590" height="209"></P>
+            <P>Database 'Works' is already open and can only have one user at a 
+            time. (Microsoft SQL Server, Error: 924)<BR><BR></P>
+            <P>After a database is altered as single user mode, it can be 
+            altered again back to multi user mode by running the below sql 
+            command.</P>
+            <P><B>ALTER DATABASE [Works] SET MULTI_USER WITH NO_WAIT</B></P>
+            <P>But if this command is run from a connection that is not the only 
+            active connection to the related database, the command will fail 
+            with the following message:</P>
+            <P>Msg 5064, Level 16, State 1, Line 1<BR>Changes to the state or 
+            options of database 'Works' cannot be made at this time.  The 
+            database is in single-user mode, and a user is currently connected 
+            to it.<BR>Msg 5069, Level 16, State 1, Line 1<BR>ALTER DATABASE 
+            statement failed.<BR></P>
+            <P>&nbsp;</P>
+            <P>In a case that you want to alter the database access mode from 
+            single user mode to multi user mode or from multi user mode to 
+            single user mode, you may have to kill all the active open 
+            connections to the database.</P>
+            <P>In such a case, you have to find all the open connections and run 
+            "<B>Kill @spid</B>" command to close all the connections.</P>
+            <P>For a list of open connections for a specific database you can 
+            run a similar command as below :</P>
+            <P><B>select spid from master..sysprocesses where dbid = 
+            db_id('Works') and spid &lt;&gt; @@spid</B></P>
+            <P>The second part of the task will be closing the open connections 
+            with the Kill command. This can be achieved by running kill commands 
+            within a cursor or creating a dynamic sql command which kills the 
+            active connections to the related database.</P>
+            <P>Let's code the closing open connections using a <A href="http://www.kodyaz.com/articles/cursor.aspx" 
+            target="_blank">T-SQL cursor</A>:</P>
+            <DIV style="border: 1px solid green;" id="divSQLCursor"><CODE>
+            DECLARE @DatabaseName nvarchar(50)<BR>DECLARE @SPId int<BR><BR>SET 
+            @DatabaseName = N'Works'<BR><BR>DECLARE my_cursor CURSOR 
+            FAST_FORWARD FOR<BR>SELECT SPId FROM MASTER..SysProcesses WHERE DBId 
+            = DB_ID(@DatabaseName) AND SPId &lt;&gt; @@SPId<BR><BR>OPEN 
+            my_cursor <BR><BR>FETCH NEXT FROM my_cursor INTO @SPId<BR><BR>WHILE 
+            @@FETCH_STATUS = 0<BR>BEGIN<BR><SPAN class="indented">KILL 
+            @SPId</SPAN><BR><BR><SPAN class="indented">FETCH NEXT FROM my_cursor 
+            INTO @SPId</SPAN><BR>END<BR><BR>CLOSE my_cursor <BR>DEALLOCATE 
+            my_cursor <BR></CODE></DIV><BR>
+            <P>After all connections are closed except the currently running 
+            process (@@spid)  if we are trying to alter the access mode of the 
+            database that we're in from  multi user mode to single user mode, we 
+            can now run the ALTER DATABASE command  for single user mode or 
+            multi user mode.</P>
+            <P><B>ALTER DATABASE [Works] SET MULTI_USER WITH NO_WAIT</B></P>
+            <P>or</P>
+            <P><B>ALTER DATABASE [Works] SET SINGLE_USER WITH NO_WAIT</B></P>
+            <P>&nbsp;</P>
+            <P>You can also use the following <B>sp_dboption</B> sql commands to 
+            alter the  database option for single user. If you set the 
+            "<B>single user</B>" database  option to "<B>true</B>", this is same 
+            as altering the database as "<B>SINGLE_USER</B>"  with <B>ALTER 
+            DATABASE</B> statement.</P>
+            <P><BR>USE master<BR>GO<BR><B>EXEC sp_dboption 'Works', 'single 
+            user', 'false';</B><BR><BR><BR>If you run the below 
+            <B>sp_dboption</B> command which sets the "<B>single user</B>"  to 
+            "<B>false</B>", this is same as altering the database as 
+            "<B>MULTI_USER</B>"  with <B>ALTER DATABASE</B> statement.<BR><BR>
+            <BR>USE master<BR>GO<BR><B>EXEC sp_dboption 'Works', 'single user', 
+            'true';</B><BR></P>
+            <P>The main difference between <B>sp_dboption</B> and <B>ALTER 
+            DATABASE</B> commands is that, sp_dboption will not be supported 
+            with further releases of SQL SERVER after SQL SERVER 2005.</P></TD>
+          <TD style="width: 175px;" vAlign="top"><BR><BR>
+            <DIV id="gp1" class="g-plusone"></DIV>
+<SCRIPT type="text/javascript">
+    var ValidMe = document.getElementById("gp1");
+    ValidMe.setAttribute("data-size", "small");
+    ValidMe.setAttribute("data-count", "true");
+</SCRIPT>
+            <BR><A href="http://twitter.com/#!/kodyaz" rel="nofollow" target="_blank"><IMG 
+            title="Follow Kodyaz on Twitter" border="0" alt="Follow Kodyaz on Twitter" 
+            src="How%20to%20Alter%20a%20SQL%20Server%20Database%20as%20Single%20User%20Mode%20and%20as%20Multi%20User%20Mode_files/twitter.png" 
+            width="32" height="32"></A><BR>
+            <P style="text-align: left;"><B>Related SQL Resources</B></P>
+            <P><A class="insidelinks" href="http://www.kodyaz.com/content/SQLServerArticles.aspx">SQL 
+            Server Articles</A></P>
+            <P><A class="insidelinks" href="http://www.kodyaz.com/sql-server-2012/microsoft-sql-server-2012-download-links-and-sql-news.aspx">SQL 
+            Server 2012</A></P>
+            <P><A class="insidelinks" href="http://www.kodyaz.com/articles/tools-sql-server-tool-list.aspx">SQL 
+            Server Tools</A></P>
+            <P><A class="insidelinks" href="http://www.kodyaz.com/blogs/software_development_blog/archive/category/1005.aspx">SQL 
+            Blog</A></P>
+            <P><A class="insidelinks" href="http://www.kodyaz.com/blogs/software_development_blog/archive/category/1011.aspx">SQL 
+            Server 2008 Blog</A></P>
+            <P><A class="insidelinks" href="http://www.kodyaz.com/blogs/software_development_blog/archive/category/1010.aspx">Certification 
+            Exams Blog</A></P>
+            <P><A class="insidelinks" href="http://www.kodyaz.com/blogs/software_development_blog/archive/category/1000.aspx">Reporting 
+            Services Blog</A></P>
+            <P><A class="insidelinks" href="http://www.kodyaz.com/blogs/software_development_blog/archive/category/1004.aspx">Analysis 
+            Services Blog</A></P>
+            <P><A class="insidelinks" href="http://www.kodyaz.com/forums/default.aspx?GroupID=1">MS 
+            SQL Server Forums</A></P><BR><BR>
+            <P><A class="insidelinks" href="http://www.kodyaz.com/blogs/software_development_blog/archive/2010/04/21/20947.aspx"><B>Free 
+            Exam Vouchers</B></A></P><BR><BR></TD></TR>
+        <TR>
+          <TD colSpan="3" align="center"><BR><BR>
+<SCRIPT type="text/javascript"><!--
+google_ad_client = "pub-5941999004341432";
+/* k-sql-article-bottom */
+google_ad_slot = "6988777526";
+google_ad_width = 336;
+google_ad_height = 280;
+//-->
+</SCRIPT>
+            
+<SCRIPT type="text/javascript" src="How%20to%20Alter%20a%20SQL%20Server%20Database%20as%20Single%20User%20Mode%20and%20as%20Multi%20User%20Mode_files/show_ads.js"></SCRIPT>
+          </TD></TR>
+        <TR>
+          <TD colSpan="3" align="center"><!-- 
+http://www.kodyaz.com/articles/alter-single-user-multi-user-mode.aspx
+--></TD></TR>
+        <TR>
+          <TD></TD>
+          <TD align="center"><BR><BR><BR>
+            <P><!-- AddThis Bookmark Button BEGIN -->
+<SCRIPT type="text/javascript">
+  addthis_url    = location.href;   
+  addthis_title  = document.title;  
+  addthis_pub    = 'eralper';     
+</SCRIPT>
+
+<SCRIPT type="text/javascript" src="How%20to%20Alter%20a%20SQL%20Server%20Database%20as%20Single%20User%20Mode%20and%20as%20Multi%20User%20Mode_files/addthis_widget.txt"></SCRIPT>
+            <!-- AddThis Bookmark Button END --></P><BR></TD>
+          <TD></TD></TR></TBODY></TABLE><!-- google_ad_section_end --></TD>
+    <TD id="CommonRightColumn" vAlign="top"></TD></TR></TBODY></TABLE></DIV>
+<DIV id="CommonFooter">
+<DIV id="CommonFooterCopyright">Copyright © 2004 - 2012 Eralper Yilmaz. All 
+rights reserved.</DIV><IMG alt="Community Server, by Telligent Systems" src="How%20to%20Alter%20a%20SQL%20Server%20Database%20as%20Single%20User%20Mode%20and%20as%20Multi%20User%20Mode_files/eula.png" 
+width="171" height="60"></DIV></DIV></FORM>
+<SCRIPT language="javascript" type="text/javascript">
+var _gaq = [['_setAccount', 'UA-1917617-1'], ['_trackPageview']];
+(function (d, t) {
+    var g = d.createElement(t), s = d.getElementsByTagName(t)[0]; g.async = 1;
+    g.src = ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g, s)
+} (document, 'script'));
+</SCRIPT>
+</BODY></HTML>

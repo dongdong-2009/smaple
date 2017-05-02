@@ -1,0 +1,1 @@
+﻿ClientContext client = new ClientContext("Site Url");client.Credentials = new System.Net.NetworkCredential(ConfigurationManager.AppSettings["POWERUSERNAME"],　　ConfigurationManager.AppSettings["POWERUSERPWD"], ConfigurationManager.AppSettings["POWERUSERDOMAIN"]);  ///do everything with full control

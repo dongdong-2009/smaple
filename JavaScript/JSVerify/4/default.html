@@ -1,0 +1,100 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>JS Verify 4</title>
+<script type="text/javascript" src="json.js"></script>
+<script type="text/javascript">
+function SubmitInfo()
+{
+    if(!Verify(document.getElementById("txtName"))) return false;
+    if(!Verify(document.getElementById("txtAge"))) return false;
+    if(!Verify(document.getElementById("txtIntro"))) return false;
+    
+    alert("提交成功!");
+    return true;
+}
+
+
+function Verify(obj)
+{
+    if(obj.attributes["verifyOptions"] == undefined)
+    {
+        alert("请定义verifyOptions!")
+        return false;
+    }
+    var options = obj.attributes["verifyOptions"].nodeValue;
+    if(!options.isEmpty("检测参数不正确!"))
+        return false;
+    
+    options = options.parseJSON();
+    
+    if(options.Empty != undefined && options.Empty.Flag == false)
+    {
+        if(!obj.value.isEmpty(options.Empty.Message))
+            return false;
+    }
+    if(options.Int != undefined)
+    {
+        if(!obj.value.isInt(options.Int.Message))
+            return false;
+    }
+    if(options.SafeString != undefined)
+    {
+        if(!obj.value.isSafeString(options.SafeString.Message))
+            return false;
+    }
+    return true;
+}
+
+
+var validateStatus;
+var validateMessage;
+
+
+String.prototype.isEmpty = function(msg)
+{
+    if(this == null || this == "")
+    {
+        alert(msg);
+        return false;
+    }
+    return true;
+}
+
+String.prototype.isInt = function(msg)
+{
+    if(!/^[1-9]\d$/.test(this))
+    {
+        alert(msg);
+        return false;
+    }
+    return true;
+}
+
+String.prototype.isSafeString = function(msg)
+{
+    if(!/^[\u4E00-\u9FA5a-z0-9_]*$/gi.test(this))
+    {
+        alert(msg);
+        return false;
+    }
+    return true;
+}
+
+</script>
+</head>
+<body>
+    <div>
+        <span>请输入用户名,年龄和自我介绍:</span>
+        <br />
+        <span>用户名:<input type="text" id="txtName" size="20" verifyOptions='{"Empty":{"Flag":false,"Message":"请输入用户名!"},"SafeString":{"Message":"用户名只能由中文,英文,数字及下划线组成!"}}' /></span>
+        <br />
+        <span>年龄:<input type="text" id="txtAge" size="5" verifyOptions='{"Empty":{"Flag":false,"Message":"请输入年龄!"},"Int":{"Message":"年龄必须为正整数!"}}' />岁</span>
+        <br />
+        <span>自我介绍:</span>
+        <br />
+        <span><textarea id="txtIntro" rows="10" cols="50" verifyOptions='{"Empty":{"Flag":false,"Message":"请输入自我介绍!"}}' ></textarea></span>
+        <br />
+        <span><input type="button" onclick="return SubmitInfo();" value="提交信息" /></span>
+    </div>
+</body>
+</html>

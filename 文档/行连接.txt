@@ -1,0 +1,43 @@
+CREATE TABLE VertToHorzSample(
+Column1 int,
+Column2 varchar(100)
+)
+GO
+
+
+INSERT INTO VertToHorzSample(Column1, Column2)
+SELECT 1, 'A'
+UNION ALL
+SELECT 1, 'B'
+UNION ALL
+SELECT 2, 'C'
+UNION ALL
+SELECT 2, 'D'
+UNION ALL
+SELECT 2, 'E'
+UNION ALL
+SELECT 3, 'F'
+GO
+
+
+
+
+-- 建立辅助函数
+CREATE FUNCTION ConvertVertToHorz(@Col1Val int)
+RETURNS VARCHAR(8000)
+AS
+BEGIN
+-- 实际项目中，应该考虑 @RetVal 是否会超过 8000 个字符
+DECLARE @RetVal varchar(8000)
+SET @RetVal = ''
+-- 通过递归 SELECT 连接指定列存储到临时变量中
+SELECT @RetVal = Column2 + ',' + @RetVal FROM VertToHorzSample WHERE Column1 = @Col1Val
+-- 连接多列
+-- SELECT @RetVal = Column2 + ',' + Column3 + ',' + Column4 + ',' + @RetVal FROM VertToHorzSample WHERE Column1 = @Col1Val
+-- 去掉尾巴的 , (逗号)
+IF LEN(@RetVal) > 0
+SET @RetVal = LEFT(@RetVal,LEN(@RetVal) - 1)
+return @RetVal
+end
+--PRINT @RetVal 
+select  dbo.ConvertVertToHorz(1)

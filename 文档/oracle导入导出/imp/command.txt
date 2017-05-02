@@ -1,0 +1,1 @@
+imp log=D:\数据库\jzoa20070815.log file=D:\数据库\DFL49.dmp parfile=D:\数据库\imp\imp.txt

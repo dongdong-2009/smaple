@@ -1,0 +1,3619 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0060)http://www.cnblogs.com/ghd258/archive/2005/12/07/292664.html -->
+<HTML><HEAD 
+id=Head><TITLE>ASP.NET 安全认证----如何运用 Form 表单认证详解 - 海东的技术资料 - 博客园</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META content="博客 博客园 .NET技术 Blog .NET" name=keywords><LINK id=MainCss 
+href="ASP_NET 安全认证----如何运用 Form 表单认证详解 - 海东的技术资料 - 博客园_files/style.css" 
+type=text/css rel=stylesheet><LINK id=SecondaryCss 
+href="http://www.cnblogs.com/ghd258/customcss.aspx" type=text/css 
+rel=stylesheet><LINK id=RSSLink title=RSS 
+href="http://www.cnblogs.com/ghd258/rss.aspx" type=application/rss+xml 
+rel=alternate>
+<META content="MSHTML 6.00.3790.2541" name=GENERATOR></HEAD>
+<BODY>
+<FORM id=Form1 name=Form1 onsubmit="javascript:return WebForm_OnSubmit();" 
+action=292664.html method=post>
+<DIV><INPUT id=__EVENTTARGET type=hidden name=__EVENTTARGET> <INPUT 
+id=__EVENTARGUMENT type=hidden name=__EVENTARGUMENT> <INPUT 
+id="&#13;&#10;__VIEWSTATE" type=hidden name=__VIEWSTATE> </DIV>
+<SCRIPT type=text/javascript>
+<!--
+var theForm = document.forms['Form1'];
+if (!theForm) {
+    theForm = document.Form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+// -->
+</SCRIPT>
+
+<SCRIPT 
+src="ASP_NET 安全认证----如何运用 Form 表单认证详解 - 海东的技术资料 - 博客园_files/WebResource.axd" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT language=JavaScript>
+									function ctlent(evt,id)
+											{
+												if(evt.ctrlKey && evt.keyCode == 13)
+												{	
+													try
+													{
+														TempSave(id);
+													}
+													catch(ex)
+													{
+													}
+													finally
+													{
+													    __doPostBack('AjaxHolder$PostComment$btnSubmit','')
+													}
+												}
+		
+												}</SCRIPT>
+
+<SCRIPT language=JavaScript>function SetReplyAuhor(author){document.getElementById('AjaxHolder_PostComment_tbComment').value+="@"+author+"\n";document.getElementById('AjaxHolder_PostComment_tbComment').focus();return false}</SCRIPT>
+
+<SCRIPT 
+src="ASP_NET 安全认证----如何运用 Form 表单认证详解 - 海东的技术资料 - 博客园_files/ScriptResource.axd" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT 
+src="D:\DFL-IISP\MS资料\如何运用 Form 表单认证\ASP_NET 安全认证----如何运用 Form 表单认证详解 - 海东的技术资料 - 博客园_files\ScriptResource(1).axd" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT 
+src="D:\DFL-IISP\MS资料\如何运用 Form 表单认证\ASP_NET 安全认证----如何运用 Form 表单认证详解 - 海东的技术资料 - 博客园_files\WebResource(1).axd" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+<!--
+function WebForm_OnSubmit() {
+if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+return true;
+}
+// -->
+</SCRIPT>
+
+<DIV id=top>
+<DIV>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD class=HeaderTitles>
+      <H1 class=HeaderTitle><A class=HeaderMainTitle id=Header1_HeaderTitle 
+      href="http://www.cnblogs.com/ghd258/">海东的技术资料</A></H1>
+      <P id=tagline></P></TD></TR></TBODY></TABLE></DIV>
+<DIV class=HeaderBar>
+<TABLE class=HeaderBar id=HeaderBar cellSpacing=0 cellPadding=0>
+  <TBODY>
+  <TR>
+    <TD class=HeaderBarTab noWrap>&nbsp; <A id=Header1_MyLinks1_HomeLink 
+      href="http://www.cnblogs.com/">博客园</A>&nbsp;:: <A 
+      id=Header1_MyLinks1_MyHomeLink 
+      href="http://ghd258.cnblogs.com/">首页</A>&nbsp;:: &nbsp;:: <A 
+      id=Header1_MyLinks1_ContactLink accessKey=9 
+      href="http://www.cnblogs.com/ghd258/contact.aspx">联系</A>&nbsp;:: <A 
+      id=Header1_MyLinks1_Syndication 
+      href="http://www.cnblogs.com/ghd258/Rss.aspx">聚合</A> <A class=XMLLink 
+      id=Header1_MyLinks1_XMLLink 
+      href="http://www.cnblogs.com/ghd258/Rss.aspx"><IMG 
+      style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+      src="ASP_NET 安全认证----如何运用 Form 表单认证详解 - 海东的技术资料 - 博客园_files/xml.gif"></A>&nbsp;:: 
+      <A id=Header1_MyLinks1_Admin 
+      href="http://www.cnblogs.com/ghd258/admin/EditPosts.aspx">管理</A>&nbsp;:: 
+    </TD>
+    <TD><IMG id=Header1_BlueTab 
+      style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+      src="ASP_NET 安全认证----如何运用 Form 表单认证详解 - 海东的技术资料 - 博客园_files/BlueTabRight.gif" 
+      align=absMiddle></TD>
+    <TD class=HeaderBarTabBack noWrap width="100%">
+      <DIV class=BlogStatsBar>
+      <TABLE class=BlogStatsBar>
+        <TBODY>
+        <TR>
+          <TD width="100%"></TD>
+          <TD class=BlogStatsBar noWrap>&nbsp; 184 随笔&nbsp;:: 22 文章 :: 300 评论 
+            :: 3 Trackbacks 
+</TD></TR></TBODY></TABLE></DIV></TD></TR></TBODY></TABLE></DIV></DIV>
+<DIV id=leftmenu style="DISPLAY: none">
+<TABLE class=Cal id=Calendar1_entryCal title=Calendar 
+style="BORDER-RIGHT: 1px solid; BORDER-TOP: 1px solid; BORDER-LEFT: 1px solid; BORDER-BOTTOM: 1px solid; BORDER-COLLAPSE: collapse" 
+cellSpacing=0 cellPadding=0 border=0>
+  <TBODY>
+  <TR>
+    <TD style="BACKGROUND-COLOR: silver" colSpan=7>
+      <TABLE class=CalTitle style="WIDTH: 100%; BORDER-COLLAPSE: collapse" 
+      cellSpacing=0 border=0>
+        <TBODY>
+        <TR>
+          <TD class=CalNextPrev style="WIDTH: 15%"><A 
+            title="Go to the previous month" style="COLOR: black" 
+            href="javascript:__doPostBack('Calendar1$entryCal','V2131')">&lt;</A></TD>
+          <TD style="WIDTH: 70%" align=middle>2005年12月</TD>
+          <TD class=CalNextPrev style="WIDTH: 15%" align=right><A 
+            title="Go to the next month" style="COLOR: black" 
+            href="javascript:__doPostBack('Calendar1$entryCal','V2192')">&gt;</A></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TH class=CalDayHeader scope=col align=middle abbr=日>日</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=一>一</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=二>二</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=三>三</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=四>四</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=五>五</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=六>六</TH></TR>
+  <TR>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>27</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>28</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>29</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>30</TD>
+    <TD style="WIDTH: 14%" align=middle><A 
+      href="http://www.cnblogs.com/ghd258/archive/2005/12/01.html"><U>1</U></A></TD>
+    <TD style="WIDTH: 14%" align=middle><A 
+      href="http://www.cnblogs.com/ghd258/archive/2005/12/02.html"><U>2</U></A></TD>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle><A 
+      href="http://www.cnblogs.com/ghd258/archive/2005/12/03.html"><U>3</U></A></TD></TR>
+  <TR>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle><A 
+      href="http://www.cnblogs.com/ghd258/archive/2005/12/04.html"><U>4</U></A></TD>
+    <TD style="WIDTH: 14%" align=middle>5</TD>
+    <TD style="WIDTH: 14%" align=middle><A 
+      href="http://www.cnblogs.com/ghd258/archive/2005/12/06.html"><U>6</U></A></TD>
+    <TD style="WIDTH: 14%" align=middle><A 
+      href="http://www.cnblogs.com/ghd258/archive/2005/12/07.html"><U>7</U></A></TD>
+    <TD style="WIDTH: 14%" align=middle><A 
+      href="http://www.cnblogs.com/ghd258/archive/2005/12/08.html"><U>8</U></A></TD>
+    <TD style="WIDTH: 14%" align=middle>9</TD>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle><A 
+      href="http://www.cnblogs.com/ghd258/archive/2005/12/10.html"><U>10</U></A></TD></TR>
+  <TR>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>11</TD>
+    <TD style="WIDTH: 14%" align=middle>12</TD>
+    <TD style="WIDTH: 14%" align=middle>13</TD>
+    <TD style="WIDTH: 14%" align=middle>14</TD>
+    <TD style="WIDTH: 14%" align=middle>15</TD>
+    <TD style="WIDTH: 14%" align=middle>16</TD>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>17</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle><A 
+      href="http://www.cnblogs.com/ghd258/archive/2005/12/18.html"><U>18</U></A></TD>
+    <TD style="WIDTH: 14%" align=middle>19</TD>
+    <TD style="WIDTH: 14%" align=middle>20</TD>
+    <TD style="WIDTH: 14%" align=middle>21</TD>
+    <TD style="WIDTH: 14%" align=middle>22</TD>
+    <TD style="WIDTH: 14%" align=middle>23</TD>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>24</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle>25</TD>
+    <TD style="WIDTH: 14%" align=middle>26</TD>
+    <TD style="WIDTH: 14%" align=middle>27</TD>
+    <TD style="WIDTH: 14%" align=middle>28</TD>
+    <TD style="WIDTH: 14%" align=middle><A 
+      href="http://www.cnblogs.com/ghd258/archive/2005/12/29.html"><U>29</U></A></TD>
+    <TD style="WIDTH: 14%" align=middle>30</TD>
+    <TD class=CalWeekendDay style="WIDTH: 14%" align=middle><A 
+      href="http://www.cnblogs.com/ghd258/archive/2005/12/31.html"><U>31</U></A></TD></TR>
+  <TR>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>1</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>2</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>3</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>4</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>5</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" align=middle>6</TD>
+    <TD class=CalOtherMonthDay style="WIDTH: 14%" 
+align=middle>7</TD></TR></TBODY></TABLE>
+<H3>公告</H3>
+<DIV class=News>电子邮箱：ghd258@gmail.com MSN：ghd258@hotmail.com </DIV>
+<H3>我参与的团队</H3>
+<DIV class=RecentComment>
+<UL style="WORD-BREAK: break-all">
+  <LI><A id=SingleColumn1_ctl00_TeamList_ctl01_lnkTeam 
+  href="http://www.cnblogs.com/team/DotNetControls.html">.NET 控件与组件开发(0/596)</A> 
+
+  <LI><A id=SingleColumn1_ctl00_TeamList_ctl02_lnkTeam 
+  href="http://guangzhou.cnblogs.com/">广州.NET俱乐部(0/1038)</A> 
+  <LI><A id=SingleColumn1_ctl00_TeamList_ctl03_lnkTeam 
+  href="http://www.cnblogs.com/team/AjaxAndAtlas%20.html">Ajax&amp;Atlas技术团队(2/572)</A> 
+
+  <LI><A id=SingleColumn1_ctl00_TeamList_ctl04_lnkTeam 
+  href="http://xian.cnblogs.com/">西安.NET俱乐部(2/60)</A> </LI></UL></DIV>
+<H3>随笔分类<SPAN style="FONT-WEIGHT: normal; FONT-SIZE: 11px">(195)</SPAN></H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl01_Link 
+  href="http://www.cnblogs.com/ghd258/category/38037.html">.Net Remoting</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl01_RssLink 
+  title="Subscribe to .Net Remoting" 
+  href="http://www.cnblogs.com/ghd258/category/38037.html/rss">(rss)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl02_Link 
+  href="http://www.cnblogs.com/ghd258/category/38850.html">ADO.NET 2.0(4)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl02_RssLink 
+  title="Subscribe to ADO.NET 2.0(4)" 
+  href="http://www.cnblogs.com/ghd258/category/38850.html/rss">(rss)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl03_Link 
+  href="http://www.cnblogs.com/ghd258/category/42815.html">AJAX(1)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl03_RssLink 
+  title="Subscribe to AJAX(1)" 
+  href="http://www.cnblogs.com/ghd258/category/42815.html/rss">(rss)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl04_Link 
+  href="http://www.cnblogs.com/ghd258/category/37446.html">ASP.NET(56)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl04_RssLink 
+  title="Subscribe to ASP.NET(56)" 
+  href="http://www.cnblogs.com/ghd258/category/37446.html/rss">(rss)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl05_Link 
+  href="http://www.cnblogs.com/ghd258/category/29038.html">ASP.NET 2.0(34)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl05_RssLink 
+  title="Subscribe to ASP.NET 2.0(34)" 
+  href="http://www.cnblogs.com/ghd258/category/29038.html/rss">(rss)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl06_Link 
+  href="http://www.cnblogs.com/ghd258/category/29035.html">C#(14)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl06_RssLink 
+  title="Subscribe to C#(14)" 
+  href="http://www.cnblogs.com/ghd258/category/29035.html/rss">(rss)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl07_Link 
+  href="http://www.cnblogs.com/ghd258/category/37447.html">CSS(4)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl07_RssLink 
+  title="Subscribe to CSS(4)" 
+  href="http://www.cnblogs.com/ghd258/category/37447.html/rss">(rss)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl08_Link 
+  href="http://www.cnblogs.com/ghd258/category/38459.html">Enterprise Library 
+  (2)</A> <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl08_RssLink 
+  title="Subscribe to Enterprise Library (2)" 
+  href="http://www.cnblogs.com/ghd258/category/38459.html/rss">(rss)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl09_Link 
+  href="http://www.cnblogs.com/ghd258/category/29036.html">JS(18)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl09_RssLink 
+  title="Subscribe to JS(18)" 
+  href="http://www.cnblogs.com/ghd258/category/29036.html/rss">(rss)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl10_Link 
+  href="http://www.cnblogs.com/ghd258/category/29037.html">NUnit(1)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl10_RssLink 
+  title="Subscribe to NUnit(1)" 
+  href="http://www.cnblogs.com/ghd258/category/29037.html/rss">(rss)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl11_Link 
+  href="http://www.cnblogs.com/ghd258/category/38305.html">Oracle(5)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl11_RssLink 
+  title="Subscribe to Oracle(5)" 
+  href="http://www.cnblogs.com/ghd258/category/38305.html/rss">(rss)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl12_Link 
+  href="http://www.cnblogs.com/ghd258/category/36899.html">SQL SERVER 
+  2000(21)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl12_RssLink 
+  title="Subscribe to SQL SERVER 2000(21)" 
+  href="http://www.cnblogs.com/ghd258/category/36899.html/rss">(rss)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl13_Link 
+  href="http://www.cnblogs.com/ghd258/category/36900.html">SQL SERVER 
+  2005(9)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl13_RssLink 
+  title="Subscribe to SQL SERVER 2005(9)" 
+  href="http://www.cnblogs.com/ghd258/category/36900.html/rss">(rss)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl14_Link 
+  href="http://www.cnblogs.com/ghd258/category/36901.html">WEB SERVICE(1)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl14_RssLink 
+  title="Subscribe to WEB SERVICE(1)" 
+  href="http://www.cnblogs.com/ghd258/category/36901.html/rss">(rss)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl15_Link 
+  href="http://www.cnblogs.com/ghd258/category/44195.html">Windows Workflow 
+  Foundation (5)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl15_RssLink 
+  title="Subscribe to Windows Workflow Foundation (5)" 
+  href="http://www.cnblogs.com/ghd258/category/44195.html/rss">(rss)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl16_Link 
+  href="http://www.cnblogs.com/ghd258/category/38858.html">WINFORM</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl16_RssLink 
+  title="Subscribe to WINFORM" 
+  href="http://www.cnblogs.com/ghd258/category/38858.html/rss">(rss)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl17_Link 
+  href="http://www.cnblogs.com/ghd258/category/37468.html">XML(5)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl17_RssLink 
+  title="Subscribe to XML(5)" 
+  href="http://www.cnblogs.com/ghd258/category/37468.html/rss">(rss)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl18_Link 
+  href="http://www.cnblogs.com/ghd258/category/37448.html">功能函数(5)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl18_RssLink 
+  title="Subscribe to 功能函数(5)" 
+  href="http://www.cnblogs.com/ghd258/category/37448.html/rss">(rss)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl19_Link 
+  href="http://www.cnblogs.com/ghd258/category/38849.html">软件工程(3)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl19_RssLink 
+  title="Subscribe to 软件工程(3)" 
+  href="http://www.cnblogs.com/ghd258/category/38849.html/rss">(rss)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl20_Link 
+  href="http://www.cnblogs.com/ghd258/category/38394.html">水晶报表(3)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl20_RssLink 
+  title="Subscribe to 水晶报表(3)" 
+  href="http://www.cnblogs.com/ghd258/category/38394.html/rss">(rss)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl21_Link 
+  href="http://www.cnblogs.com/ghd258/category/37807.html">图片(3)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl21_RssLink 
+  title="Subscribe to 图片(3)" 
+  href="http://www.cnblogs.com/ghd258/category/37807.html/rss">(rss)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl22_Link 
+  href="http://www.cnblogs.com/ghd258/category/63990.html">项目管理</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl22_RssLink 
+  title="Subscribe to 项目管理" 
+  href="http://www.cnblogs.com/ghd258/category/63990.html/rss">(rss)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl23_Link 
+  href="http://www.cnblogs.com/ghd258/category/39848.html">正则表达式(1)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl23_RssLink 
+  title="Subscribe to 正则表达式(1)" 
+  href="http://www.cnblogs.com/ghd258/category/39848.html/rss">(rss)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl24_Link 
+  href="http://www.cnblogs.com/ghd258/category/37449.html">智能客户端技术</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl24_RssLink 
+  title="Subscribe to 智能客户端技术" 
+  href="http://www.cnblogs.com/ghd258/category/37449.html/rss">(rss)</A> 
+</LI></UL>
+<H3>文章分类<SPAN style="FONT-WEIGHT: normal; FONT-SIZE: 11px">(23)</SPAN></H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl01_Link 
+  href="http://www.cnblogs.com/ghd258/category/38038.html">.Net Remoting </A><A 
+  id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl01_RssLink 
+  title="Subscribe to .Net Remoting " 
+  href="http://www.cnblogs.com/ghd258/category/38038.html/rss">(rss)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl02_Link 
+  href="http://www.cnblogs.com/ghd258/category/37511.html">ADO.NET</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl02_RssLink 
+  title="Subscribe to ADO.NET" 
+  href="http://www.cnblogs.com/ghd258/category/37511.html/rss">(rss)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl03_Link 
+  href="http://www.cnblogs.com/ghd258/category/37508.html">ASP.NET(10)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl03_RssLink 
+  title="Subscribe to ASP.NET(10)" 
+  href="http://www.cnblogs.com/ghd258/category/37508.html/rss">(rss)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl04_Link 
+  href="http://www.cnblogs.com/ghd258/category/36811.html">ASP.NET2.0</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl04_RssLink 
+  title="Subscribe to ASP.NET2.0" 
+  href="http://www.cnblogs.com/ghd258/category/36811.html/rss">(rss)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl05_Link 
+  href="http://www.cnblogs.com/ghd258/category/37509.html">C＃(2)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl05_RssLink 
+  title="Subscribe to C＃(2)" 
+  href="http://www.cnblogs.com/ghd258/category/37509.html/rss">(rss)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl06_Link 
+  href="http://www.cnblogs.com/ghd258/category/37510.html">CSS</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl06_RssLink 
+  title="Subscribe to CSS" 
+  href="http://www.cnblogs.com/ghd258/category/37510.html/rss">(rss)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl07_Link 
+  href="http://www.cnblogs.com/ghd258/category/29039.html">js(5)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl07_RssLink 
+  title="Subscribe to js(5)" 
+  href="http://www.cnblogs.com/ghd258/category/29039.html/rss">(rss)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl08_Link 
+  href="http://www.cnblogs.com/ghd258/category/38851.html">Oracle</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl08_RssLink 
+  title="Subscribe to Oracle" 
+  href="http://www.cnblogs.com/ghd258/category/38851.html/rss">(rss)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl09_Link 
+  href="http://www.cnblogs.com/ghd258/category/38295.html">SQL SERVER 
+  2000(5)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl09_RssLink 
+  title="Subscribe to SQL SERVER 2000(5)" 
+  href="http://www.cnblogs.com/ghd258/category/38295.html/rss">(rss)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl10_Link 
+  href="http://www.cnblogs.com/ghd258/category/36813.html">SQL SERVER 2005</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl10_RssLink 
+  title="Subscribe to SQL SERVER 2005" 
+  href="http://www.cnblogs.com/ghd258/category/36813.html/rss">(rss)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl11_Link 
+  href="http://www.cnblogs.com/ghd258/category/36814.html">WEB SERVICE 技术</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl11_RssLink 
+  title="Subscribe to WEB SERVICE 技术" 
+  href="http://www.cnblogs.com/ghd258/category/36814.html/rss">(rss)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl12_Link 
+  href="http://www.cnblogs.com/ghd258/category/38853.html">XML</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl12_RssLink 
+  title="Subscribe to XML" 
+  href="http://www.cnblogs.com/ghd258/category/38853.html/rss">(rss)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl13_Link 
+  href="http://www.cnblogs.com/ghd258/category/63989.html">项目管理(1)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl13_RssLink 
+  title="Subscribe to 项目管理(1)" 
+  href="http://www.cnblogs.com/ghd258/category/63989.html/rss">(rss)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl14_Link 
+  href="http://www.cnblogs.com/ghd258/category/36812.html">智能客户端技术</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl14_RssLink 
+  title="Subscribe to 智能客户端技术" 
+  href="http://www.cnblogs.com/ghd258/category/36812.html/rss">(rss)</A> 
+</LI></UL>
+<H3>相册</H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl02_LinkList_ctl01_Link 
+  href="http://www.cnblogs.com/ghd258/gallery/36902.html">我的家园</A> </LI></UL>
+<H3>收藏夹<SPAN style="FONT-WEIGHT: normal; FONT-SIZE: 11px">(323)</SPAN></H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl03_LinkList_ctl01_Link 
+  href="http://www.cnblogs.com/ghd258/favorite/36898.html">ADO.NET(21)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl03_LinkList_ctl01_RssLink 
+  title="Subscribe to ADO.NET(21)" 
+  href="http://www.cnblogs.com/ghd258/favorite/36898.html/rss">(rss)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl03_LinkList_ctl02_Link 
+  href="http://www.cnblogs.com/ghd258/favorite/38852.html">ADO.NET 2.0</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl03_LinkList_ctl02_RssLink 
+  title="Subscribe to ADO.NET 2.0" 
+  href="http://www.cnblogs.com/ghd258/favorite/38852.html/rss">(rss)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl03_LinkList_ctl03_Link 
+  href="http://www.cnblogs.com/ghd258/favorite/38230.html">ASP.NET(95)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl03_LinkList_ctl03_RssLink 
+  title="Subscribe to ASP.NET(95)" 
+  href="http://www.cnblogs.com/ghd258/favorite/38230.html/rss">(rss)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl03_LinkList_ctl04_Link 
+  href="http://www.cnblogs.com/ghd258/favorite/36892.html">ASP.NET 2.0(114)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl03_LinkList_ctl04_RssLink 
+  title="Subscribe to ASP.NET 2.0(114)" 
+  href="http://www.cnblogs.com/ghd258/favorite/36892.html/rss">(rss)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl03_LinkList_ctl05_Link 
+  href="http://www.cnblogs.com/ghd258/favorite/36896.html">C#(15)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl03_LinkList_ctl05_RssLink 
+  title="Subscribe to C#(15)" 
+  href="http://www.cnblogs.com/ghd258/favorite/36896.html/rss">(rss)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl03_LinkList_ctl06_Link 
+  href="http://www.cnblogs.com/ghd258/favorite/36893.html">JS(23)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl03_LinkList_ctl06_RssLink 
+  title="Subscribe to JS(23)" 
+  href="http://www.cnblogs.com/ghd258/favorite/36893.html/rss">(rss)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl03_LinkList_ctl07_Link 
+  href="http://www.cnblogs.com/ghd258/favorite/48837.html">NUnit(5)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl03_LinkList_ctl07_RssLink 
+  title="Subscribe to NUnit(5)" 
+  href="http://www.cnblogs.com/ghd258/favorite/48837.html/rss">(rss)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl03_LinkList_ctl08_Link 
+  href="http://www.cnblogs.com/ghd258/favorite/36895.html">SQL SERVER 
+  2000(12)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl03_LinkList_ctl08_RssLink 
+  title="Subscribe to SQL SERVER 2000(12)" 
+  href="http://www.cnblogs.com/ghd258/favorite/36895.html/rss">(rss)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl03_LinkList_ctl09_Link 
+  href="http://www.cnblogs.com/ghd258/favorite/36894.html">SQL SERVER 
+  2005(20)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl03_LinkList_ctl09_RssLink 
+  title="Subscribe to SQL SERVER 2005(20)" 
+  href="http://www.cnblogs.com/ghd258/favorite/36894.html/rss">(rss)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl03_LinkList_ctl10_Link 
+  href="http://www.cnblogs.com/ghd258/favorite/36897.html">WEB SERVICE(14)</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl03_LinkList_ctl10_RssLink 
+  title="Subscribe to WEB SERVICE(14)" 
+  href="http://www.cnblogs.com/ghd258/favorite/36897.html/rss">(rss)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl03_LinkList_ctl11_Link 
+  href="http://www.cnblogs.com/ghd258/favorite/38855.html">XML(3)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl03_LinkList_ctl11_RssLink 
+  title="Subscribe to XML(3)" 
+  href="http://www.cnblogs.com/ghd258/favorite/38855.html/rss">(rss)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl03_LinkList_ctl12_Link 
+  href="http://www.cnblogs.com/ghd258/favorite/38856.html">智能客户端技术(1)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl03_LinkList_ctl12_RssLink 
+  title="Subscribe to 智能客户端技术(1)" 
+  href="http://www.cnblogs.com/ghd258/favorite/38856.html/rss">(rss)</A> 
+</LI></UL>
+<H3>连接</H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl04_LinkList_ctl01_Link 
+  href="http://cqumsegao.cnblogs.com/" target=_blank>BizTalk学习笔记系列</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl04_LinkList_ctl02_Link 
+  href="http://www.cnblogs.com/ttyp/" target=_blank>DooIT（ttyp）</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl04_LinkList_ctl03_Link 
+  href="http://mail.google.com/mail/">Gmail - 收件箱 </A>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl04_LinkList_ctl04_Link 
+  href="http://www.microsoft.com/china/msdn/events/webcasts/shared/Webcast/MSDNWebCast.aspx">MSDN 
+  Webcast 中心</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl04_LinkList_ctl05_Link 
+  href="http://blog.csdn.net/moneystar/" target=_blank>NFramework开源AOP框架</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl04_LinkList_ctl06_Link 
+  href="http://rickie.cnblogs.com/category/5082.html" target=_blank>Rickie Lee's 
+  blog</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl04_LinkList_ctl07_Link 
+  href="http://blog.csdn.net/zlz_212/" target=_blank>zlz_212的专栏(Dundas Chart 
+  )</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl04_LinkList_ctl08_Link 
+  href="http://wintle.cnblogs.com/archive/2005/11/20/280785.html">代码生成工具CodePlusV2.0</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_ctl04_LinkList_ctl09_Link 
+  href="http://jeffreyzhao.cnblogs.com/" target=_blank>老赵点滴“深入Atlas系列”</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl04_LinkList_ctl10_Link 
+  href="http://shenzhen.cnblogs.com/">深圳.NET 俱乐部</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl04_LinkList_ctl11_Link 
+  href="http://blog.csdn.net/gaohaidong/">我CSDN的BLOG</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl04_LinkList_ctl12_Link 
+  href="http://blog.csdn.net/downmoon/" target=_blank>邀月的博客日记</A> </LI></UL>
+<SCRIPT language=JavaScript>
+function SearchGoogle(key,evt,site)
+		{
+			if(evt.keyCode==13 || evt.keyCode==0 || evt.type =='click')
+			{
+				key.focus();
+				var keystr = encodeURIComponent(key.value);
+				url = "http://www.google.com/search?q=";
+				url = url+keystr;
+				url += "&ie=UTF-8&oe=GB2312&hl=zh-CN&domains="+site+"&sitesearch="+site;
+				window.location=url;
+				return false;
+			}
+		}
+</SCRIPT>
+
+<H3>搜索</H3>
+<UL>
+  <LI>
+  <LI><INPUT id=q 
+  onkeydown="return SearchGoogle(document.getElementById('q'),event,'http://www.cnblogs.com/ghd258/')" 
+  style="WIDTH: 130px" name=q>&nbsp;<INPUT onclick="SearchGoogle(document.getElementById('q'),event,'http://www.cnblogs.com/ghd258/')" type=button value=搜索 name=sa> 
+  </LI></UL>
+<H3>积分与排名</H3>
+<UL>
+  <LI>积分 - 170783 
+  <LI>排名 - 76 </LI></UL>
+<H3>最新随笔</H3>
+<DIV class=RecentComment>
+<UL style="WORD-BREAK: break-all">
+  <LI><A id=SingleColumn1_ctl03_RecentPostsList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/ghd258/archive/2006/12/11/589274.aspx">1.&nbsp;深入理解JavaScript中的函数</A> 
+
+  <LI><A id=SingleColumn1_ctl03_RecentPostsList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/ghd258/archive/2006/11/21/567609.aspx">2.&nbsp;庆祝"西安.NET俱乐部"成立，请申请加入的朋友在这里报到</A> 
+
+  <LI><A id=SingleColumn1_ctl03_RecentPostsList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/ghd258/archive/2006/11/17/563218.aspx">3.&nbsp;在SQL 
+  Server 2005中用存储过程实现搜索功能</A> 
+  <LI><A id=SingleColumn1_ctl03_RecentPostsList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/ghd258/archive/2006/11/03/549179.aspx">4.&nbsp;55种网页常用小技巧(javascript)</A> 
+
+  <LI><A id=SingleColumn1_ctl03_RecentPostsList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/ghd258/archive/2006/10/28/542831.aspx">5.&nbsp;精妙的SQL和SQL 
+  SERVER 与ACCESS、EXCEL的数据导入导出转换</A> 
+  <LI><A id=SingleColumn1_ctl03_RecentPostsList_ctl06_Hyperlink1 
+  href="http://www.cnblogs.com/ghd258/archive/2006/10/18/532611.aspx">6.&nbsp;基于RBAC模型的通用权限管理系统的设计(数据模型)的扩展</A> 
+
+  <LI><A id=SingleColumn1_ctl03_RecentPostsList_ctl07_Hyperlink1 
+  href="http://www.cnblogs.com/ghd258/archive/2006/10/18/532047.aspx">7.&nbsp;ASP.NET 
+  中处理页面“回退”的方法 </A>
+  <LI><A id=SingleColumn1_ctl03_RecentPostsList_ctl08_Hyperlink1 
+  href="http://www.cnblogs.com/ghd258/archive/2006/10/12/527741.aspx">8.&nbsp;在 
+  ASP.NET 上实现锁定表头、支持滚动的表格的做法 </A>
+  <LI><A id=SingleColumn1_ctl03_RecentPostsList_ctl09_Hyperlink1 
+  href="http://www.cnblogs.com/ghd258/archive/2006/08/19/481320.aspx">9.&nbsp;事半功倍系列之javascript 
+  (转载)</A> 
+  <LI><A id=SingleColumn1_ctl03_RecentPostsList_ctl10_Hyperlink1 
+  href="http://www.cnblogs.com/ghd258/archive/2006/07/29/462720.aspx">10.&nbsp;利用键盘上的上下左右（回车）键模拟出tab 
+  键的功能上下左右移动焦点</A> 
+  <LI><A id=SingleColumn1_ctl03_RecentPostsList_ctl11_Hyperlink1 
+  href="http://www.cnblogs.com/ghd258/archive/2006/07/15/451386.aspx">11.&nbsp;通过避免下列 
+  10 个常见 ASP.NET 缺陷使网站平稳运行（转载）</A> 
+  <LI><A id=SingleColumn1_ctl03_RecentPostsList_ctl12_Hyperlink1 
+  href="http://www.cnblogs.com/ghd258/archive/2006/07/14/450585.aspx">12.&nbsp;整理的一些T-sql（二）</A> 
+
+  <LI><A id=SingleColumn1_ctl03_RecentPostsList_ctl13_Hyperlink1 
+  href="http://www.cnblogs.com/ghd258/archive/2006/05/16/401907.aspx">13.&nbsp;怎样检测网络中的电脑是否有安装SQL 
+  2000</A> 
+  <LI><A id=SingleColumn1_ctl03_RecentPostsList_ctl14_Hyperlink1 
+  href="http://www.cnblogs.com/ghd258/archive/2006/03/25/358818.aspx">14.&nbsp;ASP.NET调用oracle存储过程实现快速分页 
+  </A>
+  <LI><A id=SingleColumn1_ctl03_RecentPostsList_ctl15_Hyperlink1 
+  href="http://www.cnblogs.com/ghd258/archive/2006/03/21/354970.aspx">15.&nbsp;危险字符过滤的类</A> 
+
+  <LI><A id=SingleColumn1_ctl03_RecentPostsList_ctl16_Hyperlink1 
+  href="http://www.cnblogs.com/ghd258/archive/2006/03/21/354569.aspx">16.&nbsp;利用HttpModuler实现WEB程序同一时间只让一个用户实例登陆 
+  </A>
+  <LI><A id=SingleColumn1_ctl03_RecentPostsList_ctl17_Hyperlink1 
+  href="http://www.cnblogs.com/ghd258/archive/2006/03/20/354147.aspx">17.&nbsp;整理了一些t-sql技巧</A> 
+
+  <LI><A id=SingleColumn1_ctl03_RecentPostsList_ctl18_Hyperlink1 
+  href="http://www.cnblogs.com/ghd258/archive/2006/03/17/352310.aspx">18.&nbsp;javascript技巧参考 
+  </A>
+  <LI><A id=SingleColumn1_ctl03_RecentPostsList_ctl19_Hyperlink1 
+  href="http://www.cnblogs.com/ghd258/archive/2006/03/15/350804.aspx">19.&nbsp;SQLServer和Oracle常用函数对比 
+  </A>
+  <LI><A id=SingleColumn1_ctl03_RecentPostsList_ctl20_Hyperlink1 
+  href="http://www.cnblogs.com/ghd258/archive/2006/03/01/340305.aspx">20.&nbsp;子窗口和父窗口交互</A> 
+
+  <LI><A id=SingleColumn1_ctl03_RecentPostsList_ctl21_Hyperlink1 
+  href="http://www.cnblogs.com/ghd258/archive/2006/02/28/339891.aspx">21.&nbsp;javascript控制页面控件隐藏显示的两种方法</A> 
+
+  <LI><A id=SingleColumn1_ctl03_RecentPostsList_ctl22_Hyperlink1 
+  href="http://www.cnblogs.com/ghd258/archive/2006/02/28/339536.aspx">22.&nbsp;从...中检测到有潜在危险的 
+  Request.Form 值的解决办法 和嵌入页面代码 </A>
+  <LI><A id=SingleColumn1_ctl03_RecentPostsList_ctl23_Hyperlink1 
+  href="http://www.cnblogs.com/ghd258/archive/2006/02/28/339458.aspx">23.&nbsp;用asp.net还原与恢复sqlserver数据库(转) 
+  </A>
+  <LI><A id=SingleColumn1_ctl03_RecentPostsList_ctl24_Hyperlink1 
+  href="http://www.cnblogs.com/ghd258/archive/2006/02/28/339443.aspx">24.&nbsp;Session登陆后丢失的解决办法。 
+  </A>
+  <LI><A id=SingleColumn1_ctl03_RecentPostsList_ctl25_Hyperlink1 
+  href="http://www.cnblogs.com/ghd258/archive/2006/02/28/339438.aspx">25.&nbsp;自适应图片大小的弹出窗口(3 
+  中方法)</A> </LI></UL></DIV>
+<H3>阅读排行榜</H3>
+<DIV class=RecentComment>
+<UL style="WORD-BREAK: break-all">
+  <LI><A id=SingleColumn1__127cc2c_TopList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/ghd258/archive/2005/11/23/283136.aspx">1.&nbsp;ASP.NET 
+  2.0构建动态导航的Web应用程序（TreeView和Menu ）(4396)</A> 
+  <LI><A id=SingleColumn1__127cc2c_TopList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/ghd258/archive/2005/11/20/280828.aspx">2.&nbsp;常用CSS(3662)</A> 
+
+  <LI><A id=SingleColumn1__127cc2c_TopList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/ghd258/archive/2005/11/17/278567.aspx">3.&nbsp;ASP.NET 
+  2.0 绑定高级技巧(3018)</A> 
+  <LI><A id=SingleColumn1__127cc2c_TopList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/ghd258/archive/2006/02/20/333777.aspx">4.&nbsp;同时安装vs2005团队开发版和sql 
+  2005企业版(转载) (2987)</A> 
+  <LI><A id=SingleColumn1__127cc2c_TopList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/ghd258/archive/2005/10/29/264308.aspx">5.&nbsp;在ASP.NET中实现AJAX 
+  (2851)</A> </LI></UL></DIV>
+<H3>60天内阅读排行</H3>
+<DIV class=RecentComment>
+<UL>
+  <LI><A id=SingleColumn1__3950e21_TopList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/ghd258/archive/2006/11/21/567609.aspx">1.&nbsp;庆祝"西安.NET俱乐部"成立，请申请加入的朋友在这里报到(875)</A> 
+
+  <LI><A id=SingleColumn1__3950e21_TopList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/ghd258/archive/2006/10/28/542831.aspx">2.&nbsp;精妙的SQL和SQL 
+  SERVER 与ACCESS、EXCEL的数据导入导出转换(843)</A> 
+  <LI><A id=SingleColumn1__3950e21_TopList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/ghd258/archive/2006/11/03/549179.aspx">3.&nbsp;55种网页常用小技巧(javascript)(358)</A> 
+
+  <LI><A id=SingleColumn1__3950e21_TopList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/ghd258/archive/2006/11/17/563218.aspx">4.&nbsp;在SQL 
+  Server 2005中用存储过程实现搜索功能(75)</A> 
+  <LI><A id=SingleColumn1__3950e21_TopList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/ghd258/archive/2006/12/11/589274.aspx">5.&nbsp;深入理解JavaScript中的函数(26)</A> 
+  </LI></UL></DIV><!--
+	<br><br>
+	<p align="center">
+	<a href="http://www.WebHost4Life.com/default.asp?refid=MarkHWagner">
+	<img src="http://www.WebHost4Life.com/images/banner3.gif" width="120"
+	height="60" border="0" alt="Join WebHost4Life.com"></a>
+	</p>
+--></DIV>
+<DIV id=main>
+<DIV class=post>
+<DIV class=postTitle><A id=viewpost1_TitleUrl 
+href="http://www.cnblogs.com/ghd258/archive/2005/12/07/292664.html">ASP.NET 
+安全认证----如何运用 Form 表单认证详解</A> </DIV>
+<DIV class=postText>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt; TEXT-ALIGN: center" 
+align=center><B style="mso-bidi-font-weight: normal"><SPAN 
+style="FONT-SIZE: 16pt; COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">第一部分</SPAN></B><B 
+style="mso-bidi-font-weight: normal"><SPAN 
+style="FONT-SIZE: 16pt; COLOR: navy"><FONT face="Times New Roman"> 
+</FONT></SPAN></B><B style="mso-bidi-font-weight: normal"><SPAN 
+style="FONT-SIZE: 16pt; COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">如何运用</SPAN></B><B 
+style="mso-bidi-font-weight: normal"><SPAN lang=EN-US 
+style="FONT-SIZE: 16pt; COLOR: navy"><FONT face="Times New Roman"> Form 
+</FONT></SPAN></B><B style="mso-bidi-font-weight: normal"><SPAN 
+style="FONT-SIZE: 16pt; COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">表单认证</SPAN></B><B 
+style="mso-bidi-font-weight: normal"><SPAN lang=EN-US 
+style="FONT-SIZE: 16pt; COLOR: navy"> 
+<P></P></SPAN></B>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: -21pt; mso-list: l0 level1 lfo1; tab-stops: list 21.0pt"><B 
+style="mso-bidi-font-weight: normal"><SPAN lang=EN-US 
+style="FONT-SIZE: 14pt; COLOR: navy; mso-bidi-font-family: 宋体"><SPAN 
+style="mso-list: Ignore"><FONT 
+face="Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 一、<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></FONT></SPAN></SPAN></B><B style="mso-bidi-font-weight: normal"><SPAN 
+style="FONT-SIZE: 14pt; COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">新建一个测试项目</SPAN></B><B 
+style="mso-bidi-font-weight: normal"><SPAN lang=EN-US 
+style="FONT-SIZE: 14pt; COLOR: navy"> <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></B><FONT size=3><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">为了更好说明，有必要新建一个测试项目（暂且为“</SPAN><SPAN 
+lang=EN-US style="COLOR: red"><FONT 
+face="Times New Roman">FormTest</FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">”吧），包含三张页面足矣（</SPAN><SPAN 
+lang=EN-US style="COLOR: red"><FONT 
+face="Times New Roman">Default.aspx</FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">、</SPAN><SPAN 
+lang=EN-US style="COLOR: red"><FONT 
+face="Times New Roman">Login.aspx</FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">、</SPAN><SPAN 
+lang=EN-US style="COLOR: red"><FONT 
+face="Times New Roman">UserInfo.aspx</FONT></SPAN><SPAN 
+style="COLOR: red; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">）</SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">。<BR></SPAN></FONT><B 
+style="mso-bidi-font-weight: normal"><SPAN lang=EN-US 
+style="FONT-SIZE: 14pt; COLOR: navy; mso-bidi-font-family: 宋体"><SPAN 
+style="mso-list: Ignore"><FONT face="Times New Roman">二、<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></FONT></SPAN></SPAN></B><B style="mso-bidi-font-weight: normal"><SPAN 
+style="FONT-SIZE: 14pt; COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">修改</SPAN></B><B 
+style="mso-bidi-font-weight: normal"><SPAN lang=EN-US 
+style="FONT-SIZE: 14pt; COLOR: navy"><FONT face="Times New Roman"> Web.config 
+<BR></FONT></SPAN></B><SPAN lang=EN-US 
+style="COLOR: navy; mso-fareast-font-family: 'Times New Roman'; mso-bidi-font-size: 10.5pt"><SPAN 
+style="mso-list: Ignore"><FONT face="Times New Roman"><FONT 
+size=3>1、</FONT><SPAN style="FONT: 7pt 'Times New Roman'">&nbsp; 
+</SPAN></FONT></SPAN></SPAN><FONT size=3><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">双击项目中的</SPAN><SPAN 
+lang=EN-US style="COLOR: red"><FONT 
+face="Times New Roman">Web.config</FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">（不会的、找不到的打</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"><FONT face="Times New Roman"> 
+PP</FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">）</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"> <BR></SPAN></FONT><SPAN lang=EN-US 
+style="COLOR: navy; mso-fareast-font-family: 'Times New Roman'; mso-bidi-font-size: 10.5pt"><SPAN 
+style="mso-list: Ignore"><FONT face="Times New Roman"><FONT 
+size=3>2、</FONT><SPAN style="FONT: 7pt 'Times New Roman'">&nbsp; 
+</SPAN></FONT></SPAN></SPAN><FONT size=3><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">找到下列文字</SPAN><FONT 
+face="Times New Roman"> </FONT></FONT><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&lt;</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">authentication</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: fuchsia; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"> 
+</SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: red; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">mode</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">="Windows"</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: fuchsia; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"> 
+</SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">/&gt; 
+</SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'"><FONT 
+size=3>把它改成：</FONT></SPAN> 
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 18pt"><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&lt;</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">authentication</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: fuchsia; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"> 
+</SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: red; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">mode</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">="Forms"&gt;</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"> 
+
+<P></P></SPAN>
+<P></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt 42pt; TEXT-INDENT: 21pt"><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&lt;</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">forms</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: fuchsia; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"> 
+</SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: red; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">loginUrl</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">="Login.aspx"</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: fuchsia; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"> 
+</SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: red; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">name</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">=".ASPXAUTH"&gt;&lt;/</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">forms</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&gt; 
+
+<P></P></SPAN>
+<P></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt 18pt; TEXT-INDENT: 21pt"><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&lt;/</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">authentication</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&gt;</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"> 
+<BR></SPAN><SPAN lang=EN-US 
+style="COLOR: navy; mso-fareast-font-family: 'Times New Roman'; mso-bidi-font-size: 10.5pt"><SPAN 
+style="mso-list: Ignore"><FONT face="Times New Roman"><FONT 
+size=3>3、</FONT><SPAN style="FONT: 7pt 'Times New Roman'">&nbsp; 
+</SPAN></FONT></SPAN></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'"><FONT 
+size=3>找到</FONT></SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&lt;</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">authorization</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&gt;</SPAN><SPAN 
+lang=EN-US><FONT face="Times New Roman" size=3> </FONT></SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&lt;</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">allow</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: fuchsia; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"> 
+</SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: red; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">users</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">="*"</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: fuchsia; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"> 
+</SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">/&gt;&lt;/</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">authorization</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&gt;</SPAN><FONT 
+size=3><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">换成</SPAN><FONT 
+face="Times New Roman"> </FONT></FONT>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 18pt"><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&lt;</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">authorization</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&gt;&lt;</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">deny</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: fuchsia; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"> 
+</SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: red; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">users</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">="?"&gt;&lt;/</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">deny</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&gt;&lt;/</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">authorization</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&gt;<BR></SPAN><B 
+style="mso-bidi-font-weight: normal"><SPAN lang=EN-US 
+style="FONT-SIZE: 14pt; COLOR: navy; mso-bidi-font-family: 宋体"><SPAN 
+style="mso-list: Ignore"><FONT face="Times New Roman">三、<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></FONT></SPAN></SPAN></B><B style="mso-bidi-font-weight: normal"><SPAN 
+style="FONT-SIZE: 14pt; COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">编写</SPAN></B><B 
+style="mso-bidi-font-weight: normal"><SPAN lang=EN-US 
+style="FONT-SIZE: 14pt; COLOR: navy"><FONT face="Times New Roman"> .cs 
+</FONT></SPAN></B><B style="mso-bidi-font-weight: normal"><SPAN 
+style="FONT-SIZE: 14pt; COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">代码——登录与退出</SPAN></B><B 
+style="mso-bidi-font-weight: normal"><SPAN lang=EN-US 
+style="FONT-SIZE: 14pt; COLOR: navy"> <BR></SPAN></B><SPAN lang=EN-US 
+style="COLOR: navy; mso-fareast-font-family: 'Times New Roman'"><SPAN 
+style="mso-list: Ignore"><FONT face="Times New Roman"><FONT 
+size=3>1、</FONT><SPAN style="FONT: 7pt 'Times New Roman'">&nbsp; 
+</SPAN></FONT></SPAN></SPAN><FONT size=3><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">登录代码：</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"> <BR></SPAN></FONT><SPAN lang=EN-US 
+style="COLOR: navy; mso-fareast-font-family: 'Times New Roman'"><SPAN 
+style="mso-list: Ignore"><FONT face="Times New Roman"><FONT 
+size=3>a、</FONT><SPAN style="FONT: 7pt 'Times New Roman'">&nbsp; 
+</SPAN></FONT></SPAN></SPAN><FONT size=3><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">书本上介绍的</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"> </P>
+<P></P></SPAN></FONT>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN style="COLOR: blue">private</SPAN> <SPAN 
+style="COLOR: blue">void</SPAN> Btn_Login_Click(<SPAN 
+style="COLOR: blue">object</SPAN> sender, System.EventArgs e) 
+<P></P></SPAN>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>{ 
+<P></P></SPAN>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"><SPAN 
+style="mso-tab-count: 3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN style="COLOR: blue">if</SPAN>(<SPAN 
+style="COLOR: blue">this</SPAN>.Txt_UserName.Text=="Admin" &amp;&amp; <SPAN 
+style="COLOR: blue">this</SPAN>.Txt_Password.Text=="123456") 
+<P></P></SPAN>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"><SPAN 
+style="mso-tab-count: 3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>{ 
+<P></P></SPAN>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 63pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>System.Web.Security.FormsAuthentication.RedirectFromLoginPage(<SPAN 
+style="COLOR: blue">this</SPAN>.Txt_UserName.Text,<SPAN 
+style="COLOR: blue">false</SPAN>); 
+<P></P></SPAN>
+<P></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt 42pt"><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>} 
+<P></P></SPAN>
+<P></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt 42pt"><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">}</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"> <BR></SPAN><SPAN lang=EN-US 
+style="COLOR: navy; mso-fareast-font-family: 'Times New Roman'"><SPAN 
+style="mso-list: Ignore"><FONT face="Times New Roman"><FONT 
+size=3>b、</FONT><SPAN style="FONT: 7pt 'Times New Roman'">&nbsp; 
+</SPAN></FONT></SPAN></SPAN><FONT size=3><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">偶找了</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"><FONT face="Times New Roman"> N 
+</FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">久才找到的</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"> 
+<P></P></SPAN></FONT>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">private</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"> 
+<SPAN style="COLOR: blue">void</SPAN> Btn_Login_Click(<SPAN 
+style="COLOR: blue">object</SPAN> sender, System.EventArgs e) 
+<P></P></SPAN>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>{ 
+<P></P></SPAN>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"><SPAN 
+style="mso-tab-count: 3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN style="COLOR: blue">if</SPAN>(<SPAN 
+style="COLOR: blue">this</SPAN>.Txt_UserName.Text=="Admin" &amp;&amp; <SPAN 
+style="COLOR: blue">this</SPAN>.Txt_Password.Text=="123456") 
+<P></P></SPAN>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"><SPAN 
+style="mso-tab-count: 3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>{ 
+<P></P></SPAN>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 63pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">System.Web.Security.FormsAuthentication.SetAuthCookie(<SPAN 
+style="COLOR: blue">this</SPAN>.Txt_UserName.Text,<SPAN 
+style="COLOR: blue">false</SPAN>); 
+<P></P></SPAN>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 63pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>Response.Redirect("Default.aspx"); 
+<P></P></SPAN>
+<P></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt 42pt"><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>} 
+<P></P></SPAN>
+<P></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt 42pt"><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">}</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"> 
+<P></P></SPAN>
+<P></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt 42pt"><FONT size=3><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">以上两种都可发放验证后的</SPAN><FONT 
+face="Times New Roman"><SPAN style="COLOR: navy"> </SPAN><SPAN lang=EN-US 
+style="COLOR: red">Cookie</SPAN><SPAN lang=EN-US style="COLOR: navy"> 
+</SPAN></FONT><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">，即通过验证，区别：</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"> 
+<P></P></SPAN></FONT>
+<P></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt 42pt; TEXT-INDENT: 21pt"><FONT 
+size=3><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">方法</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"><FONT face="Times New Roman"> a) 
+</FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">指验证后返回请求页面，俗称“从哪来就打哪去”。比如：用户没登录前直接在</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"><FONT face="Times New Roman"> IE 
+</FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">地址栏输入</SPAN><FONT 
+face="Times New Roman"><SPAN style="COLOR: navy"> </SPAN><SPAN lang=EN-US 
+style="COLOR: red">http://localhost/FormTest/UserInfo.aspx</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"> </SPAN></FONT><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">，那么该用户将看到的是</SPAN><FONT 
+face="Times New Roman"><SPAN style="COLOR: navy"> </SPAN><SPAN lang=EN-US 
+style="COLOR: red">Login.aspx?ReturnUrl=UserInfo.aspx</SPAN></FONT><SPAN 
+lang=EN-US style="COLOR: navy"><FONT face="Times New Roman"> </FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">，输入用户名与密码登录成功后，系统将根据“</SPAN><SPAN 
+lang=EN-US style="COLOR: red"><FONT 
+face="Times New Roman">ReturnUrl</FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">”的值，返回相应的页面</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"> 
+<P></P></SPAN></FONT>
+<P></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt 42pt; TEXT-INDENT: 21pt"><FONT 
+size=3><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">方法</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"><FONT face="Times New Roman"> b) 
+</FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">则是分两步走：通过验证后就直接发放</SPAN><FONT 
+face="Times New Roman"><SPAN style="COLOR: navy"> </SPAN><SPAN lang=EN-US 
+style="COLOR: red">Cookie</SPAN><SPAN lang=EN-US style="COLOR: navy"> 
+</SPAN></FONT><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">，跳转页面将由程序员自行指定，此方法多用于</SPAN><FONT 
+face="Times New Roman"><SPAN style="COLOR: navy"> </SPAN><SPAN lang=EN-US 
+style="COLOR: red">Default.aspx </SPAN></FONT><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">使用框架结构的系统。</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"> 
+<P></P></SPAN></FONT>
+<P></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt 42pt; TEXT-INDENT: 21pt"><SPAN 
+lang=EN-US style="COLOR: navy">
+<P><FONT face="Times New Roman" size=3></FONT>&nbsp;</P></SPAN>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 39pt; TEXT-INDENT: -18pt; mso-list: l2 level1 lfo3; tab-stops: list 39.0pt"><SPAN 
+lang=EN-US style="COLOR: navy; mso-fareast-font-family: 'Times New Roman'"><SPAN 
+style="mso-list: Ignore"><FONT face="Times New Roman"><FONT 
+size=3>2、</FONT><SPAN style="FONT: 7pt 'Times New Roman'">&nbsp; 
+</SPAN></FONT></SPAN></SPAN><FONT size=3><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">退出代码：</SPAN><SPAN 
+style="COLOR: navy"><FONT face="Times New Roman"> <SPAN lang=EN-US>
+<P></P></SPAN></FONT></SPAN></FONT>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">private</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"> 
+<SPAN style="COLOR: blue">void</SPAN> Btn_LogOut_Click(<SPAN 
+style="COLOR: blue">object</SPAN> sender, System.EventArgs e) 
+<P></P></SPAN>
+<P></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt 21pt"><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>{</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"> 
+<P></P></SPAN>
+<P></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt 60pt; TEXT-INDENT: 3pt"><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">System.Web.Security.FormsAuthentication.SignOut(); 
+
+<P></P></SPAN>
+<P></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt"><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">}</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"> 
+<P></P></SPAN>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: -21pt; mso-list: l0 level1 lfo1; tab-stops: list 21.0pt"><B 
+style="mso-bidi-font-weight: normal"><SPAN lang=EN-US 
+style="FONT-SIZE: 14pt; COLOR: navy; mso-bidi-font-family: 宋体"><SPAN 
+style="mso-list: Ignore"><FONT face="Times New Roman">四、<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></FONT></SPAN></SPAN></B><B style="mso-bidi-font-weight: normal"><SPAN 
+style="FONT-SIZE: 14pt; COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">如何判断验证与否及获取验证后的用户信息</SPAN></B><B 
+style="mso-bidi-font-weight: normal"><SPAN lang=EN-US 
+style="FONT-SIZE: 14pt; COLOR: navy"> <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></B><FONT size=3><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">有的时候，在同一张页面需要判断用户是否已经登录，然后再呈现不同的布局。有人喜欢用</SPAN><FONT 
+face="Times New Roman"><SPAN style="COLOR: navy"> </SPAN><SPAN lang=EN-US 
+style="COLOR: red">Session</SPAN><SPAN lang=EN-US style="COLOR: navy"> 
+</SPAN></FONT><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">来判断，我不反对此类做法，在此我只是想告诉大家还有一种方法，且看下面代码：</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"> 
+<P></P></SPAN></FONT>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">if</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">(User.Identity.IsAuthenticated)&nbsp;<BR>&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"><SPAN 
+style="mso-tab-count: 2">&nbsp;</SPAN>{&nbsp;<BR></SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"><SPAN 
+style="mso-tab-count: 3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;</SPAN><SPAN style="COLOR: green">//</SPAN></SPAN><SPAN 
+style="FONT-SIZE: 9pt; COLOR: green; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">你已通过验证，知道该怎么做了吧？</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&nbsp;<BR></SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} 
+<BR></SPAN><SPAN lang=EN-US style="COLOR: red"><FONT face="Times New Roman" 
+size=3>User.Identity</FONT></SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"> 
+</SPAN><FONT size=3><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">还有两个属性</SPAN><SPAN 
+lang=EN-US style="COLOR: red"><FONT 
+face="Times New Roman">AuthenticationType</FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">（验证类型）与</SPAN><FONT 
+face="Times New Roman"><SPAN style="COLOR: navy"> </SPAN><SPAN lang=EN-US 
+style="COLOR: red">Name</SPAN></FONT><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">（用户名称）</SPAN><SPAN 
+style="COLOR: navy"><FONT face="Times New Roman"> </FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">，大家要注意的是</SPAN><FONT 
+face="Times New Roman"><SPAN style="COLOR: navy"> </SPAN><SPAN lang=EN-US 
+style="COLOR: red">Name</SPAN><SPAN lang=EN-US style="COLOR: navy"> 
+</SPAN></FONT><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">属性，此处的</SPAN></FONT><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">User.Identity.Name</SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'"><FONT 
+size=3>将得到，验证通过（</FONT></SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">RedirectFromLoginPage</SPAN><FONT 
+size=3><SPAN lang=EN-US style="COLOR: navy"><FONT face="Times New Roman"> 
+</FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">或</SPAN></FONT><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">SetAuthCookie</SPAN><FONT 
+size=3><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">）时，我们带入的第一个参数</SPAN><SPAN 
+style="COLOR: navy"><FONT face="Times New Roman"> </FONT></SPAN></FONT><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">this</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">.Txt_UserName.Text 
+</SPAN><FONT size=3><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">。<BR></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt; TEXT-ALIGN: center" 
+align=center><B style="mso-bidi-font-weight: normal"><SPAN 
+style="FONT-SIZE: 16pt; COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">第二部分</SPAN></B><B 
+style="mso-bidi-font-weight: normal"><SPAN 
+style="FONT-SIZE: 16pt; COLOR: navy"><FONT face="Times New Roman"> <SPAN 
+lang=EN-US>Form </SPAN></FONT></SPAN></B><B 
+style="mso-bidi-font-weight: normal"><SPAN 
+style="FONT-SIZE: 16pt; COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">认证的实战运用</SPAN></B><SPAN 
+lang=EN-US style="COLOR: navy"><FONT face="Times New Roman" 
+size=3>&nbsp;</FONT></SPAN><FONT size=3><SPAN lang=EN-US 
+style="COLOR: navy"></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></FONT></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: -21pt; mso-list: l2 level1 lfo1; tab-stops: list 21.0pt"><FONT 
+face="Times New Roman"><B style="mso-bidi-font-weight: normal"><SPAN lang=EN-US 
+style="FONT-SIZE: 14pt; COLOR: navy; mso-bidi-font-family: 宋体"><SPAN 
+style="mso-list: Ignore">五、<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN></B><B style="mso-bidi-font-weight: normal"><SPAN 
+lang=EN-US style="FONT-SIZE: 14pt; COLOR: navy">Web.config </SPAN></B></FONT><B 
+style="mso-bidi-font-weight: normal"><SPAN 
+style="FONT-SIZE: 14pt; COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">的作用范围</SPAN></B><B 
+style="mso-bidi-font-weight: normal"><SPAN lang=EN-US 
+style="FONT-SIZE: 14pt; COLOR: navy"> 
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></B></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt"><FONT 
+size=3><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">新建项目时，</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"><FONT face="Times New Roman"> VS.Net 
+</FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">会在项目根目录建立一个内容固定的</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"><FONT face="Times New Roman"> 
+Web.config</FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">。除了在项目根目录，你还可以在任一目录下建立</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"><FONT face="Times New Roman"> Web.config 
+</FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">，条件就是应用程序级别的节点只能在根目录的</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"><FONT face="Times New Roman"> Web.config 
+</FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">中出现。</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"> 
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></FONT></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P><FONT size=3><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">关于</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"><FONT face="Times New Roman"> Web.config 
+</FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">设置的作用范围，记住以下两点：</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"> 
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></FONT></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 81pt; TEXT-INDENT: -18pt; mso-list: l1 level1 lfo2; tab-stops: list 81.0pt"><FONT 
+face="Times New Roman"><SPAN lang=EN-US 
+style="COLOR: navy; mso-fareast-font-family: 'Times New Roman'"><SPAN 
+style="mso-list: Ignore"><FONT size=3>1、</FONT><SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp; </SPAN></SPAN></SPAN><SPAN lang=EN-US 
+style="COLOR: navy"><FONT size=3>Web.config </FONT></SPAN></FONT><FONT 
+size=3><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">的设置将作用于所在目录的所有文件及其子目录下的所有东东（继承：子随父姓）</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"> 
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></FONT></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 81pt; TEXT-INDENT: -18pt; mso-list: l1 level1 lfo2; tab-stops: list 81.0pt"><SPAN 
+lang=EN-US style="COLOR: navy; mso-fareast-font-family: 'Times New Roman'"><SPAN 
+style="mso-list: Ignore"><FONT face="Times New Roman"><FONT 
+size=3>2、</FONT><SPAN style="FONT: 7pt 'Times New Roman'">&nbsp; 
+</SPAN></FONT></SPAN></SPAN><FONT size=3><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">子目录下的</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"><FONT face="Times New Roman"> Web.config 
+</FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">设置将覆盖由父目录继承下来的设置（覆盖：县官不如现管）</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"> 
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></FONT></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P><FONT size=3><SPAN lang=EN-US style="COLOR: navy">
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></FONT></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: -21pt; mso-list: l2 level1 lfo1; tab-stops: list 21.0pt"><B 
+style="mso-bidi-font-weight: normal"><SPAN lang=EN-US 
+style="FONT-SIZE: 14pt; COLOR: navy; mso-bidi-font-family: 宋体"><SPAN 
+style="mso-list: Ignore"><FONT face="Times New Roman">六、<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></FONT></SPAN></SPAN></B><B style="mso-bidi-font-weight: normal"><SPAN 
+style="FONT-SIZE: 14pt; COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">学会拒绝与巧用允许</SPAN></B><B 
+style="mso-bidi-font-weight: normal"><SPAN lang=EN-US 
+style="FONT-SIZE: 14pt; COLOR: navy"> 
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></B></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt"><FONT 
+size=3><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">回到我们在第一回合新建的测试项目“</SPAN><SPAN 
+lang=EN-US style="COLOR: red"><FONT 
+face="Times New Roman">FormTest</FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">”</SPAN><SPAN 
+style="COLOR: navy"><FONT face="Times New Roman"> </FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">，既然要进行验证，按国际惯例，就得有用户名与密码。那，这些用户是管理员自己在数据库建好呢，还是用户注册、管理员审核好呢。只要不是一般的笨蛋，都知道选择后者。你们还别说，我公司还真有个别项目是管理员连到数据库去建帐号的，属于比较特殊的笨蛋，咱们不学他也罢，还是老老实实添加两个页面吧——注册页面（</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"><FONT face="Times New Roman" 
+color=#ff0000>Register.aspx</FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">）与审核页面（</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"><FONT face="Times New Roman" 
+color=#ff0000>Auditing.aspx</FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">）。</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"> 
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></FONT></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt"><FONT 
+size=3><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">问题终于就要浮出水面啦，当你做好 
+</SPAN><SPAN lang=EN-US style="COLOR: navy"><FONT face="Times New Roman"><FONT 
+color=#ff0000>Register.aspx</FONT> </FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">时，想访问它的时候突然觉得不对劲，怎么又回到了登录页面？你仔细瞧瞧网址，是不是成了：</SPAN><SPAN 
+lang=EN-US style="COLOR: red"><FONT 
+face="Times New Roman">Login.aspx?ReturnUrl=Register.aspx</FONT></SPAN><SPAN 
+lang=EN-US style="COLOR: navy"><FONT face="Times New Roman"> </FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">。怎么办，用户就是因为没有帐号才去访问注册页面的呀？（这句纯属废话，有帐号谁还跑去注册。）</SPAN><SPAN 
+style="COLOR: navy"><FONT face="Times New Roman"><SPAN lang=EN-US> 
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></FONT></SPAN></FONT></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P><SPAN lang=EN-US 
+style="COLOR: navy; mso-fareast-font-family: 'Times New Roman'"><SPAN 
+style="mso-list: Ignore"><FONT face="Times New Roman"><FONT 
+size=3>1、</FONT><SPAN style="FONT: 7pt 'Times New Roman'">&nbsp; 
+</SPAN></FONT></SPAN></SPAN><FONT size=3><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">新建一个目录</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"><FONT face="Times New Roman"> <FONT 
+color=#ff0000>Public </FONT></FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">，用于存放一些公用的文件，如万年历、脚本呀……</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"> 
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></FONT></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 60pt; TEXT-INDENT: -18pt; mso-list: l3 level1 lfo3; tab-stops: list 60.0pt"><SPAN 
+lang=EN-US style="COLOR: navy; mso-fareast-font-family: 'Times New Roman'"><SPAN 
+style="mso-list: Ignore"><FONT face="Times New Roman"><FONT 
+size=3>2、</FONT><SPAN style="FONT: 7pt 'Times New Roman'">&nbsp; 
+</SPAN></FONT></SPAN></SPAN><FONT size=3><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">在“解决方案资源管理器”中右击点击目录</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"><FONT face="Times New Roman"><FONT color=#ff0000> 
+Public</FONT> </FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">，新增一个</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"><FONT face="Times New Roman"> Web.config 
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></FONT></SPAN></FONT></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 60pt; TEXT-INDENT: -18pt; mso-list: l3 level1 lfo3; tab-stops: list 60.0pt"><SPAN 
+lang=EN-US style="COLOR: navy; mso-fareast-font-family: 'Times New Roman'"><SPAN 
+style="mso-list: Ignore"><FONT face="Times New Roman"><FONT 
+size=3>3、</FONT><SPAN style="FONT: 7pt 'Times New Roman'">&nbsp; 
+</SPAN></FONT></SPAN></SPAN><FONT size=3><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">把上述</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"><FONT face="Times New Roman"> Web.config 
+</FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">的内容统统删除，仅留以下即可：</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"> 
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></FONT></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 73.5pt; TEXT-ALIGN: left; mso-layout-grid-align: none; mso-para-margin-left: 7.0gd" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&lt;?</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">xml</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: fuchsia; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"> 
+</SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: red; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">version</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">="1.0"</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: fuchsia; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"> 
+</SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: red; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">encoding</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">="utf-8"?&gt; 
+
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 73.5pt; TEXT-ALIGN: left; mso-layout-grid-align: none; mso-para-margin-left: 7.0gd" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&lt;</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">configuration</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&gt; 
+
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 73.5pt; TEXT-ALIGN: left; mso-layout-grid-align: none; mso-para-margin-left: 7.0gd" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"><SPAN 
+style="mso-spacerun: yes">&nbsp; </SPAN><SPAN 
+style="COLOR: blue">&lt;</SPAN><SPAN 
+style="COLOR: maroon">system.web</SPAN><SPAN style="COLOR: blue">&gt; 
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></SPAN></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 73.5pt; TEXT-ALIGN: left; mso-layout-grid-align: none; mso-para-margin-left: 7.0gd" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN><SPAN 
+style="COLOR: blue">&lt;</SPAN><SPAN 
+style="COLOR: maroon">authorization</SPAN><SPAN 
+style="COLOR: blue">&gt;&lt;</SPAN><SPAN style="COLOR: maroon">allow</SPAN><SPAN 
+style="COLOR: fuchsia"> </SPAN><SPAN style="COLOR: red">users</SPAN><SPAN 
+style="COLOR: blue">="*"/&gt;&lt;/</SPAN><SPAN 
+style="COLOR: maroon">authorization</SPAN><SPAN style="COLOR: blue">&gt;</SPAN> 
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 73.5pt; TEXT-ALIGN: left; mso-layout-grid-align: none; mso-para-margin-left: 7.0gd" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"><SPAN 
+style="mso-spacerun: yes">&nbsp;</SPAN><SPAN 
+style="COLOR: blue">&lt;/</SPAN><SPAN 
+style="COLOR: maroon">system.web</SPAN><SPAN style="COLOR: blue">&gt; 
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></SPAN></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 73.5pt; mso-para-margin-left: 7.0gd"><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&lt;/</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">configuration</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&gt; 
+
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt"><FONT 
+size=3><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">终于切入正题了，不容易呀。根据“覆盖”原则，我们知道上述</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"><FONT face="Times New Roman"> Web.config 
+</FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">将替代根目录</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"><FONT face="Times New Roman"> Web.config 
+</FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">中的</SPAN><SPAN 
+style="COLOR: navy"><FONT face="Times New Roman"> </FONT></SPAN></FONT><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&lt;</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">authorization</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&gt; 
+</SPAN><FONT size=3><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">节点设置，即：</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"> 
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></FONT></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt"><SPAN 
+lang=EN-US style="COLOR: navy"><SPAN style="mso-tab-count: 1"><FONT 
+face="Times New Roman" size=3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</FONT></SPAN></SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&lt;</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">allow</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: fuchsia; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"> 
+</SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: red; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">users</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">="*"/&gt; 
+</SPAN><FONT size=3><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">替换</SPAN><SPAN 
+style="COLOR: navy"><FONT face="Times New Roman"> </FONT></SPAN></FONT><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&lt;</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">deny</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: fuchsia; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"> 
+</SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: red; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">users</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">="?"&gt;&lt;/</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">deny</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&gt; 
+
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt"><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'"><FONT 
+size=3>注解：“</FONT></SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">allow</SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'"><FONT 
+size=3>”允许的意思；“</FONT></SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">*</SPAN><FONT 
+size=3><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">”表示所有用户；</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"> 
+
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></FONT></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt"><FONT 
+size=3><SPAN lang=EN-US style="COLOR: navy"><FONT face="Times New Roman"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-spacerun: yes">&nbsp;</SPAN></FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">“</SPAN></FONT><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">deny</SPAN><FONT 
+size=3><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">”</SPAN><SPAN 
+style="COLOR: navy"><FONT face="Times New Roman"> </FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">拒绝的意思；“</SPAN></FONT><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">?</SPAN><FONT 
+size=3><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">”表示匿名用户；</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"> 
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></FONT></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt"><FONT 
+size=3><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">因此，处于</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"><FONT face="Times New Roman"><FONT color=#ff0000> 
+Public</FONT> </FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">目录下的文件，允许所有人浏览，包括未验证的用户。把 
+</SPAN><SPAN lang=EN-US style="COLOR: navy"><FONT face="Times New Roman" 
+color=#ff0000>Register.aspx </FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'"><FONT 
+color=#ff0000>拖</FONT>进来吧，再也不会有人阻止你浏览啦。</SPAN><SPAN lang=EN-US 
+style="COLOR: navy"> 
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></FONT></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt"><FONT 
+size=3><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">除了注册页面，我们还提到一个审核页面（</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"><FONT face="Times New Roman" 
+color=#ff0000>Auditing.aspx</FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">），审核权限一般都在管理员或主管手里，并不想让其他人浏览此页面（真理往往掌握在少数人的手里，这也是没法子的事），怎么办？“办法是人想出来滴”呵呵……新建一个管理员的目录</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"><FONT face="Times New Roman"> <FONT 
+color=#ff0000>ManageSys </FONT></FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">，在此目录下再新增一个</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"><FONT face="Times New Roman"> 
+Web.config</FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">。内容如下：</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"> 
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></FONT></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 73.5pt; TEXT-ALIGN: left; mso-layout-grid-align: none; mso-para-margin-left: 7.0gd" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&lt;?</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">xml</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: fuchsia; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"> 
+</SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: red; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">version</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">="1.0"</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: fuchsia; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"> 
+</SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: red; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">encoding</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">="utf-8"?&gt; 
+
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 73.5pt; TEXT-ALIGN: left; mso-layout-grid-align: none; mso-para-margin-left: 7.0gd" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&lt;</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">configuration</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&gt; 
+
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 73.5pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none; mso-para-margin-left: 7.0gd" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&lt;</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">system.web</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&gt; 
+
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 94.5pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none; mso-para-margin-left: 9.0gd" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&lt;</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">authorization</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&gt; 
+
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 115.5pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none; mso-para-margin-left: 11.0gd" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&lt;</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">allow</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: fuchsia; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"> 
+</SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: red; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">users</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">="Admin"/&gt; 
+
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 115.5pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none; mso-para-margin-left: 11.0gd" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&lt;</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">deny</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: fuchsia; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"> 
+</SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: red; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">users</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">="*"/&gt; 
+
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 94.5pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none; mso-para-margin-left: 9.0gd" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&lt;/</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">authorization</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&gt;</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"> 
+
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 73.5pt; TEXT-ALIGN: left; mso-layout-grid-align: none; mso-para-margin-left: 7.0gd" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"><SPAN 
+style="mso-spacerun: yes">&nbsp;</SPAN><SPAN style="mso-tab-count: 1"> 
+</SPAN><SPAN style="COLOR: blue">&lt;/</SPAN><SPAN 
+style="COLOR: maroon">system.web</SPAN><SPAN style="COLOR: blue">&gt; 
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></SPAN></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 73.5pt; mso-para-margin-left: 7.0gd"><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&lt;/</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">configuration</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&gt; 
+
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt"><FONT 
+size=3><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">现在的问题就是怎么才能知道谁是“</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"><FONT face="Times New Roman" 
+color=#ff0000>Admin</FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">”呢，这个问题就有点象“我的鞋底有个洞”——</SPAN><SPAN 
+style="COLOR: navy"><FONT face="Times New Roman"> </FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">天不知地知，你不知我知。</SPAN></FONT><FONT 
+size=3><SPAN lang=EN-US style="COLOR: navy"> 
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></FONT></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">System.Web.Security.FormsAuthentication.SetAuthCookie(<SPAN 
+style="COLOR: blue">this</SPAN>.Txt_UserName.Text,<SPAN 
+style="COLOR: blue">false</SPAN>);<SPAN style="COLOR: green"> 
+//</SPAN></SPAN><SPAN 
+style="FONT-SIZE: 9pt; COLOR: green; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">通过验证，发放<SPAN 
+lang=EN-US> Cookie </SPAN></SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt"><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'"><FONT 
+size=3>之前我曾强调，要注意，第一个参数很重要，重要到什么程度？说到这，恐怕地球人都知道了——它就是</FONT></SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">allow</SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'"><FONT 
+size=3>与</FONT></SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">deny</SPAN><FONT 
+size=3><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">的依据。假如此处用户填写的是“</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"><FONT face="Times New Roman" 
+color=#ff0000>Admin</FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">”即</SPAN><SPAN 
+style="COLOR: navy"><FONT face="Times New Roman"> </FONT></SPAN></FONT><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">this</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">.Txt_UserName.Text 
+= "Admin"; </SPAN><FONT size=3><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">那么进入系统后，他就能访问</SPAN><SPAN 
+style="COLOR: navy"><FONT face="Times New Roman"> <SPAN lang=EN-US>ManageSys 
+</SPAN></FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">目录下的网页了，其它闲杂人等一律拒之门外。</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"> </SPAN></FONT><FONT size=3><SPAN lang=EN-US 
+style="COLOR: navy">
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></FONT></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P><B style="mso-bidi-font-weight: normal"><SPAN lang=EN-US 
+style="FONT-SIZE: 14pt; COLOR: navy; mso-bidi-font-family: 宋体"><SPAN 
+style="mso-list: Ignore"><FONT face="Times New Roman">七、<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></FONT></SPAN></SPAN></B><B style="mso-bidi-font-weight: normal"><SPAN 
+style="FONT-SIZE: 14pt; COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">分散与集中</SPAN></B><B 
+style="mso-bidi-font-weight: normal"><SPAN lang=EN-US 
+style="FONT-SIZE: 14pt; COLOR: navy"> 
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></B></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P><FONT size=3><SPAN lang=EN-US style="COLOR: navy">
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></FONT></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt"><FONT 
+size=3><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">到目前为此，我们的测试项目“</SPAN><SPAN 
+lang=EN-US style="COLOR: red"><FONT 
+face="Times New Roman">FormTest</FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">”已经拥有两个目录三个</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"><FONT face="Times New Roman"> Web.config 
+</FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">，伴随用户需求的多样化，</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"><FONT face="Times New Roman">Web.config 
+</FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">也会越来越多，比如常用的文件上传功能等等。众多的</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"><FONT face="Times New Roman"> Web.config 
+</FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">分布在不同的目录里面，维护起来肯定比较烦人。能不能集中起来管理呢，应该咋办哩？“</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"> 
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></FONT></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P><FONT size=3><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">要想集中管理，不得不用到</SPAN><SPAN 
+style="COLOR: navy"><FONT face="Times New Roman"> </FONT></SPAN></FONT><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&lt;</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">location</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&gt; 
+</SPAN><FONT size=3><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">节点与</SPAN><SPAN 
+style="COLOR: navy"><FONT face="Times New Roman"> </FONT></SPAN></FONT><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: red; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">path</SPAN><FONT 
+size=3><SPAN lang=EN-US style="COLOR: navy"><FONT face="Times New Roman"> 
+</FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">属性。在本项目中，我们将目录</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"><FONT face="Times New Roman"> Public 
+</FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">与</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"><FONT face="Times New Roman"> ManageSys 
+</FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">下的设置放在根目录下的</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"><FONT face="Times New Roman"> Web.config 
+</FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">里面，如下：</SPAN></FONT> 
+
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 73.5pt; TEXT-ALIGN: left; mso-layout-grid-align: none; mso-para-margin-left: 7.0gd" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&lt;?</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">xml</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: fuchsia; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"> 
+</SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: red; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">version</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">="1.0"</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: fuchsia; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"> 
+</SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: red; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">encoding</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">="utf-8"?&gt; 
+
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 73.5pt; TEXT-ALIGN: left; mso-layout-grid-align: none; mso-para-margin-left: 7.0gd" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&lt;</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">configuration</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&gt; 
+
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 94.5pt; TEXT-INDENT: 10.5pt; TEXT-ALIGN: left; mso-layout-grid-align: none; mso-para-margin-left: 9.0gd" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&lt;</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">location 
+</SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: red; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">path</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"><FONT face="Times New Roman" size=3> 
+</FONT></SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">="Public"&gt; 
+
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 73.5pt; TEXT-ALIGN: left; mso-layout-grid-align: none; mso-para-margin-left: 7.0gd" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"><SPAN 
+style="mso-spacerun: yes">&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN style="COLOR: blue">&lt;</SPAN><SPAN 
+style="COLOR: maroon">system.web</SPAN><SPAN style="COLOR: blue">&gt; 
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></SPAN></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 73.5pt; TEXT-ALIGN: left; mso-layout-grid-align: none; mso-para-margin-left: 7.0gd" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN style="COLOR: blue">&lt;</SPAN><SPAN 
+style="COLOR: maroon">authorization</SPAN><SPAN style="COLOR: blue">&gt; 
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></SPAN></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 157.5pt; TEXT-INDENT: 10.5pt; TEXT-ALIGN: left; mso-layout-grid-align: none; mso-para-margin-left: 15.0gd" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&lt;</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">allow</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: fuchsia; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"> 
+</SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: red; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">users</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">="*"/&gt; 
+
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 126pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&lt;/</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">authorization</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&gt;</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"> 
+
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 73.5pt; TEXT-ALIGN: left; mso-layout-grid-align: none; mso-para-margin-left: 7.0gd" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"><SPAN 
+style="mso-spacerun: yes">&nbsp;</SPAN><SPAN 
+style="mso-tab-count: 3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN style="COLOR: blue">&lt;/</SPAN><SPAN 
+style="COLOR: maroon">system.web</SPAN><SPAN style="COLOR: blue">&gt; 
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></SPAN></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 73.5pt; TEXT-ALIGN: left; mso-layout-grid-align: none; mso-para-margin-left: 7.0gd" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;/</SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">location</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&gt; 
+
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 94.5pt; TEXT-INDENT: 10.5pt; TEXT-ALIGN: left; mso-layout-grid-align: none; mso-para-margin-left: 9.0gd" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&lt;</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">location 
+</SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: red; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">path</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"><FONT face="Times New Roman" size=3> 
+</FONT></SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">="ManageSys"&gt; 
+
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 73.5pt; TEXT-ALIGN: left; mso-layout-grid-align: none; mso-para-margin-left: 7.0gd" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"><SPAN 
+style="mso-spacerun: yes">&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN style="COLOR: blue">&lt;</SPAN><SPAN 
+style="COLOR: maroon">system.web</SPAN><SPAN style="COLOR: blue">&gt; 
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></SPAN></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 94.5pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none; mso-para-margin-left: 9.0gd" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="COLOR: blue">&lt;</SPAN><SPAN 
+style="COLOR: maroon">authorization</SPAN><SPAN style="COLOR: blue">&gt; 
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></SPAN></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 147pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none; mso-para-margin-left: 14.0gd" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&lt;</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">allow</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: fuchsia; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"> 
+</SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: red; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">users</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">="Admin"/&gt; 
+
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 147pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none; mso-para-margin-left: 14.0gd" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&lt;</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">deny</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: fuchsia; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"> 
+</SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: red; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">users</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">="*"/&gt; 
+
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 136.5pt; TEXT-INDENT: 10.5pt; TEXT-ALIGN: left; mso-layout-grid-align: none; mso-para-margin-left: 13.0gd" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&lt;/</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">authorization</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&gt;</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"> 
+
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 73.5pt; TEXT-ALIGN: left; mso-layout-grid-align: none; mso-para-margin-left: 7.0gd" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"><SPAN 
+style="mso-spacerun: yes">&nbsp;</SPAN><SPAN 
+style="mso-tab-count: 3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN style="COLOR: blue">&lt;/</SPAN><SPAN 
+style="COLOR: maroon">system.web</SPAN><SPAN style="COLOR: blue">&gt; 
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></SPAN></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 73.5pt; TEXT-ALIGN: left; mso-layout-grid-align: none; mso-para-margin-left: 7.0gd" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;/</SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">location</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&gt; 
+
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 73.5pt; TEXT-ALIGN: left; mso-layout-grid-align: none; mso-para-margin-left: 7.0gd" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;</SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">system.web</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&gt;</SPAN></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 73.5pt; TEXT-ALIGN: left; mso-layout-grid-align: none; mso-para-margin-left: 7.0gd" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"><SPAN 
+style="mso-tab-count: 6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: green; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&lt;!-- 
+</SPAN><SPAN 
+style="FONT-SIZE: 9pt; COLOR: green; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">这里放置原来根目录<SPAN 
+lang=EN-US> Web.config </SPAN>的内容，就不列出来了 <SPAN 
+lang=EN-US>--&gt;</SPAN></SPAN></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left><SPAN 
+style="FONT-SIZE: 9pt; COLOR: green; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"><SPAN 
+lang=EN-US><FONT face=宋体 color=#eeeeee size=3>（本文出自寒羽枫 cityhunter172 
+的博客：</FONT><A href="http://blog.csdn.net/cityhunter172"><FONT face=宋体 
+color=#eeeeee size=3>http://blog.csdn.net/cityhunter172</FONT></A><FONT face=宋体 
+color=#eeeeee size=3>&nbsp;个人站点：</FONT><A href="http://172.meibu.com/"><FONT 
+face=宋体 color=#eeeeee size=3>http://172.meibu.com</FONT></A><FONT face=宋体 
+color=#eeeeee size=3>）</FONT></SPAN></SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"> 
+
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 73.5pt; TEXT-ALIGN: left; mso-layout-grid-align: none; mso-para-margin-left: 7.0gd" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;/</SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">system.web</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&gt; 
+
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 73.5pt; mso-para-margin-left: 7.0gd"><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&lt;/</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">configuration</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&gt; 
+
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt"><FONT 
+size=3><SPAN lang=EN-US style="COLOR: navy"><SPAN style="mso-tab-count: 1"><FONT 
+face="Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</FONT></SPAN></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">需要提醒的是</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"> 
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></FONT></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 60pt; TEXT-INDENT: -18pt; mso-list: l0 level1 lfo4; tab-stops: list 60.0pt"><SPAN 
+lang=EN-US style="COLOR: navy; mso-fareast-font-family: 'Times New Roman'"><SPAN 
+style="mso-list: Ignore"><FONT face="Times New Roman"><FONT 
+size=3>1、</FONT><SPAN style="FONT: 7pt 'Times New Roman'">&nbsp; 
+</SPAN></FONT></SPAN></SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&lt;</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">location</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&gt; 
+</SPAN><FONT size=3><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">节点的位置是在</SPAN><SPAN 
+style="COLOR: navy"><FONT face="Times New Roman"> </FONT></SPAN></FONT><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&lt;</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">configuration</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&gt; 
+</SPAN><FONT size=3><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">的一个子节点，它与原有的</SPAN><SPAN 
+style="COLOR: navy"><FONT face="Times New Roman"> </FONT></SPAN></FONT><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&lt;</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">system.web</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&gt; 
+</SPAN><FONT size=3><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">属于并列关系</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"> 
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></FONT></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 60pt; TEXT-INDENT: -18pt; mso-list: l0 level1 lfo4; tab-stops: list 60.0pt"><SPAN 
+lang=EN-US style="COLOR: navy; mso-fareast-font-family: 'Times New Roman'"><SPAN 
+style="mso-list: Ignore"><FONT face="Times New Roman"><FONT 
+size=3>2、</FONT><SPAN style="FONT: 7pt 'Times New Roman'">&nbsp; 
+</SPAN></FONT></SPAN></SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&lt;</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">location</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&gt; 
+</SPAN><FONT size=3><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">节点只需要放入对应子目录</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"><FONT face="Times New Roman"> Web.config 
+</FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">中的</SPAN><SPAN 
+style="COLOR: navy"><FONT face="Times New Roman"> </FONT></SPAN></FONT><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&lt;</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">system.web</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&gt; 
+</SPAN><FONT size=3><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">的节点内容</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"> 
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></FONT></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: -21pt; mso-list: l2 level1 lfo1; tab-stops: list 21.0pt"><B 
+style="mso-bidi-font-weight: normal"><SPAN lang=EN-US 
+style="FONT-SIZE: 14pt; COLOR: navy; mso-bidi-font-family: 宋体"><SPAN 
+style="mso-list: Ignore"><FONT face="Times New Roman">八、<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></FONT></SPAN></SPAN></B><B style="mso-bidi-font-weight: normal"><SPAN 
+style="FONT-SIZE: 14pt; COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">额外的保护</SPAN></B><B 
+style="mso-bidi-font-weight: normal"><SPAN lang=EN-US 
+style="FONT-SIZE: 14pt; COLOR: navy"> 
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></B></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P><FONT size=3><SPAN lang=EN-US style="COLOR: navy">
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></FONT></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt 42pt; TEXT-INDENT: 21pt"><FONT 
+size=3><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">细心的人可能早就发现</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"><FONT face="Times New Roman"> ASP.NET 
+</FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">的安全认证只针对</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"><FONT face="Times New Roman"> 
+.aspx</FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">、</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"><FONT face="Times New Roman">.ascx 
+</FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">……</SPAN><SPAN 
+style="COLOR: navy"><FONT face="Times New Roman"> </FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">等</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"><FONT face="Times New Roman"> ASP.NET 
+</FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">文件起作用，而对普通页面与文件却“视而不见”，如</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"><FONT face="Times New Roman"> 
+.htm</FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">、</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"><FONT face="Times New Roman">.js 
+</FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">、</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"><FONT face="Times New Roman">.jpg 
+</FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">等。通过以下步骤你就可以保护你想保护的文件类型。</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"> 
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></FONT></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 60pt; TEXT-INDENT: -18pt; mso-list: l4 level1 lfo5; tab-stops: list 60.0pt"><SPAN 
+lang=EN-US style="COLOR: navy; mso-fareast-font-family: 'Times New Roman'"><SPAN 
+style="mso-list: Ignore"><FONT face="Times New Roman"><FONT 
+size=3>1、</FONT><SPAN style="FONT: 7pt 'Times New Roman'">&nbsp; 
+</SPAN></FONT></SPAN></SPAN><FONT size=3><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">打开</SPAN><SPAN 
+style="COLOR: navy"><FONT face="Times New Roman"> <SPAN lang=EN-US>Internet 
+</SPAN></FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">信息服务</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"><FONT 
+face="Times New Roman">(IIS)</FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">管理器</SPAN><SPAN 
+style="COLOR: navy"><FONT face="Times New Roman"> </FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">→</SPAN><SPAN 
+style="COLOR: navy"><FONT face="Times New Roman"> </FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">右击本项目虚拟</SPAN><SPAN 
+style="COLOR: navy"><FONT face="Times New Roman"> </FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">→</SPAN><SPAN 
+style="COLOR: navy"><FONT face="Times New Roman"> </FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">属性，如下图</SPAN></FONT></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 60pt; TEXT-INDENT: -18pt; mso-list: l4 level1 lfo5; tab-stops: list 60.0pt"><FONT 
+size=3><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'"></SPAN><SPAN 
+lang=EN-US style="COLOR: navy">
+<P><IMG alt="" 
+src="ASP_NET 安全认证----如何运用 Form 表单认证详解 - 海东的技术资料 - 博客园_files/r_aspxForm01.jpg"></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></FONT></P>
+<P></P>
+<P><IMG alt="" 
+src="ASP_NET 安全认证----如何运用 Form 表单认证详解 - 海东的技术资料 - 博客园_files/r_aspxForm01.jpg"></P>
+<P></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt 42pt"><SPAN lang=EN-US 
+style="COLOR: navy"><FONT size=3><SHAPETYPE id=_x0000_t75 
+coordsize="21600,21600" o:spt="75" o:preferrelative="t" 
+path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f"></SHAPETYPE><STROKE 
+joinstyle="miter"></STROKE><FORMULAS></FORMULAS><F 
+eqn="if lineDrawn pixelLineWidth 0"></F><F eqn="sum @0 1 0"></F><F 
+eqn="sum 0 0 @1"></F><F eqn="prod @2 1 2"></F><F 
+eqn="prod @3 21600 pixelWidth"></F><F eqn="prod @3 21600 pixelHeight"></F><F 
+eqn="sum @0 0 1"></F><F eqn="prod @6 1 2"></F><F 
+eqn="prod @7 21600 pixelWidth"></F><F eqn="sum @8 21600 0"></F><F 
+eqn="prod @7 21600 pixelHeight"></F><F eqn="sum @10 21600 0"></F><PATH 
+o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"></PATH><LOCK 
+v:ext="edit" aspectratio="t"></LOCK><SHAPE id=_x0000_i1025 
+style="WIDTH: 354pt; HEIGHT: 324.75pt" type="#_x0000_t75"></SHAPE><IMAGEDATA 
+o:title="aspxForm01" 
+src="file:///D:\DOCUME~1\ADMINI~2\LOCALS~1\Temp\msohtml1\01\clip_image001.jpg"></IMAGEDATA>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></FONT></SPAN></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 60pt; TEXT-INDENT: -18pt; mso-list: l4 level1 lfo5; tab-stops: list 60.0pt"><SPAN 
+lang=EN-US style="COLOR: navy; mso-fareast-font-family: 'Times New Roman'"><SPAN 
+style="mso-list: Ignore"><FONT face="Times New Roman"><FONT 
+size=3>2、</FONT><SPAN style="FONT: 7pt 'Times New Roman'">&nbsp; 
+</SPAN></FONT></SPAN></SPAN><FONT size=3><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">点击按钮“配置”，出现如下对话框：</SPAN></FONT></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 60pt; TEXT-INDENT: -18pt; mso-list: l4 level1 lfo5; tab-stops: list 60.0pt"><FONT 
+size=3><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'"></SPAN><SPAN 
+lang=EN-US style="COLOR: navy">
+<P><IMG alt="" 
+src="ASP_NET 安全认证----如何运用 Form 表单认证详解 - 海东的技术资料 - 博客园_files/r_aspxForm02.jpg"></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></FONT></P>
+<P></P>
+<P><IMG alt="" 
+src="ASP_NET 安全认证----如何运用 Form 表单认证详解 - 海东的技术资料 - 博客园_files/r_aspxForm02.jpg"></P>
+<P></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt 42pt"><SPAN lang=EN-US 
+style="COLOR: navy"><FONT size=3><SHAPE id=_x0000_i1026 
+style="WIDTH: 302.25pt; HEIGHT: 330pt" type="#_x0000_t75"></SHAPE><IMAGEDATA 
+o:title="aspxForm02" 
+src="file:///D:\DOCUME~1\ADMINI~2\LOCALS~1\Temp\msohtml1\01\clip_image002.jpg"></IMAGEDATA>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></FONT></SPAN></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 60pt; TEXT-INDENT: -18pt; mso-list: l4 level1 lfo5; tab-stops: list 60.0pt"><SPAN 
+lang=EN-US style="COLOR: navy; mso-fareast-font-family: 'Times New Roman'"><SPAN 
+style="mso-list: Ignore"><FONT face="Times New Roman"><FONT 
+size=3>3、</FONT><SPAN style="FONT: 7pt 'Times New Roman'">&nbsp; 
+</SPAN></FONT></SPAN></SPAN><FONT size=3><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">双击</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"><FONT face="Times New Roman"> .aspx 
+</FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">的应用程序扩展</SPAN><SPAN 
+style="COLOR: navy"><FONT face="Times New Roman"> </FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">→</SPAN><SPAN 
+style="COLOR: navy"><FONT face="Times New Roman"> </FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">查看对话框内容，如下图：</SPAN></FONT></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 60pt; TEXT-INDENT: -18pt; mso-list: l4 level1 lfo5; tab-stops: list 60.0pt"><FONT 
+size=3><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'"></SPAN><SPAN 
+lang=EN-US style="COLOR: navy">
+<P><IMG alt="" 
+src="ASP_NET 安全认证----如何运用 Form 表单认证详解 - 海东的技术资料 - 博客园_files/r_aspxForm03.jpg"></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></FONT></P>
+<P></P>
+<P><IMG alt="" 
+src="ASP_NET 安全认证----如何运用 Form 表单认证详解 - 海东的技术资料 - 博客园_files/r_aspxForm03.jpg"></P>
+<P></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt 42pt"><SPAN lang=EN-US 
+style="COLOR: navy"><FONT size=3><SHAPE id=_x0000_i1027 
+style="WIDTH: 318pt; HEIGHT: 178.5pt" type="#_x0000_t75"></SHAPE><IMAGEDATA 
+o:title="aspxForm03" 
+src="file:///D:\DOCUME~1\ADMINI~2\LOCALS~1\Temp\msohtml1\01\clip_image003.jpg"></IMAGEDATA>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></FONT></SPAN></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 60pt; TEXT-INDENT: -18pt; mso-list: l4 level1 lfo5; tab-stops: list 60.0pt"><SPAN 
+lang=EN-US style="COLOR: navy; mso-fareast-font-family: 'Times New Roman'"><SPAN 
+style="mso-list: Ignore"><FONT face="Times New Roman"><FONT 
+size=3>4、</FONT><SPAN style="FONT: 7pt 'Times New Roman'">&nbsp; 
+</SPAN></FONT></SPAN></SPAN><FONT size=3><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">复制“可执行文件”的全路径名称后</SPAN><SPAN 
+style="COLOR: navy"><FONT face="Times New Roman"> </FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">→</SPAN><SPAN 
+style="COLOR: navy"><FONT face="Times New Roman"> </FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">点击“取消”返回上一层对话框</SPAN><SPAN 
+style="COLOR: navy"><FONT face="Times New Roman"> </FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">→</SPAN><SPAN 
+style="COLOR: navy"><FONT face="Times New Roman"> </FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">点击按钮“添加”</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"> 
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></FONT></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 60pt; TEXT-INDENT: -18pt; mso-list: l4 level1 lfo5; tab-stops: list 60.0pt"><SPAN 
+lang=EN-US style="COLOR: navy; mso-fareast-font-family: 'Times New Roman'"><SPAN 
+style="mso-list: Ignore"><FONT face="Times New Roman"><FONT 
+size=3>5、</FONT><SPAN style="FONT: 7pt 'Times New Roman'">&nbsp; 
+</SPAN></FONT></SPAN></SPAN><FONT size=3><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">粘贴刚才复制的内容（我的系统装在</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"><FONT face="Times New Roman"> D 
+</FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">盘，所以内容为</SPAN><SPAN 
+style="COLOR: navy"><FONT face="Times New Roman"> <SPAN lang=EN-US><FONT 
+color=#ff0000>D:\WINDOWS\Microsoft.NET\Framework\v1.1.4322\aspnet_isapi.dll</FONT> 
+</SPAN></FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">）</SPAN><SPAN 
+style="COLOR: navy"><FONT face="Times New Roman"> </FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">→</SPAN><SPAN 
+style="COLOR: navy"><FONT face="Times New Roman"> </FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">填写后缀名为</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"><FONT face="Times New Roman"> .htm 
+</FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">→</SPAN><SPAN 
+style="COLOR: navy"><FONT face="Times New Roman"> </FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">填写动作限制为“</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"><FONT face="Times New Roman" 
+color=#ff0000>GET,HEAD,POST,DEBUG</FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">”（为方便省事你可选全部）</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"> 
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></FONT></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 60pt; TEXT-INDENT: -18pt; mso-list: l4 level1 lfo5; tab-stops: list 60.0pt"><SPAN 
+lang=EN-US style="COLOR: navy; mso-fareast-font-family: 'Times New Roman'"><SPAN 
+style="mso-list: Ignore"><FONT face="Times New Roman"><FONT 
+size=3>6、</FONT><SPAN style="FONT: 7pt 'Times New Roman'">&nbsp; 
+</SPAN></FONT></SPAN></SPAN><FONT size=3><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">最后点击“确定”</SPAN><SPAN 
+style="COLOR: navy"><FONT face="Times New Roman"> </FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">→</SPAN><SPAN 
+style="COLOR: navy"><FONT face="Times New Roman"> </FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">往项目中添加</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"><FONT face="Times New Roman"> HtmlPage1.htm 
+</FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">→</SPAN><SPAN 
+style="COLOR: navy"><FONT face="Times New Roman"> </FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">在</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"><FONT face="Times New Roman"> IE 
+</FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">浏览器的地址栏直接输入</SPAN><SPAN 
+lang=EN-US style="COLOR: red"><FONT 
+face="Times New Roman">http://localhost/FormTest/HtmlPage1.htm</FONT></SPAN><SPAN 
+lang=EN-US style="COLOR: navy"><FONT face="Times New Roman"> </FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">→</SPAN><SPAN 
+style="COLOR: navy"><FONT face="Times New Roman"> </FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">观看测试效果</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"> 
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></FONT></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt 42pt"><FONT size=3><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">最后送大家一段</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"><FONT face="Times New Roman"> Web.config 
+</FONT></SPAN><SPAN 
+style="COLOR: navy; FONT-FAMILY: 宋体; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">设置</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"> 
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></FONT></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 94.5pt; TEXT-INDENT: 10.5pt; TEXT-ALIGN: left; mso-layout-grid-align: none; mso-para-margin-left: 9.0gd" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&lt;</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">location 
+</SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: red; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">path</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"><FONT face="Times New Roman" size=3> 
+</FONT></SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">="</SPAN><SPAN 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">决战紫禁城<SPAN 
+lang=EN-US>"&gt; 
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></SPAN></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 73.5pt; TEXT-ALIGN: left; mso-layout-grid-align: none; mso-para-margin-left: 7.0gd" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"><SPAN 
+style="mso-spacerun: yes">&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN style="COLOR: blue">&lt;</SPAN><SPAN 
+style="COLOR: maroon">system.web</SPAN><SPAN style="COLOR: blue">&gt; 
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></SPAN></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 73.5pt; TEXT-ALIGN: left; mso-layout-grid-align: none; mso-para-margin-left: 7.0gd" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN style="COLOR: blue">&lt;</SPAN><SPAN 
+style="COLOR: maroon">authorization</SPAN><SPAN style="COLOR: blue">&gt; 
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></SPAN></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 147pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none; mso-para-margin-left: 14.0gd" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&lt;</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">allow</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: fuchsia; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"> 
+</SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: red; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">users</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">="</SPAN><SPAN 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">叶孤城<SPAN 
+lang=EN-US>"/&gt; 
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></SPAN></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 147pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none; mso-para-margin-left: 14.0gd" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&lt;</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">allow</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: fuchsia; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"> 
+</SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: red; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">users</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">="</SPAN><SPAN 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">西门吹雪<SPAN 
+lang=EN-US>"/&gt; 
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></SPAN></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 147pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none; mso-para-margin-left: 14.0gd" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&lt;</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">deny</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: fuchsia; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"> 
+</SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: red; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">users</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">="*"/&gt; 
+
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 126pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&lt;/</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">authorization</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&gt;</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"> 
+
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 73.5pt; TEXT-ALIGN: left; mso-layout-grid-align: none; mso-para-margin-left: 7.0gd" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"><SPAN 
+style="mso-spacerun: yes">&nbsp;</SPAN><SPAN 
+style="mso-tab-count: 3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN style="COLOR: blue">&lt;/</SPAN><SPAN 
+style="COLOR: maroon">system.web</SPAN><SPAN style="COLOR: blue">&gt; 
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></SPAN></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 73.5pt; TEXT-ALIGN: left; mso-layout-grid-align: none; mso-para-margin-left: 7.0gd" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;/</SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">location</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&gt; 
+
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 94.5pt; TEXT-INDENT: 10.5pt; TEXT-ALIGN: left; mso-layout-grid-align: none; mso-para-margin-left: 9.0gd" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&lt;</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">location 
+</SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: red; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">path</SPAN><SPAN 
+lang=EN-US style="COLOR: navy"><FONT face="Times New Roman" size=3> 
+</FONT></SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">="</SPAN><SPAN 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">金銮殿屋脊<SPAN 
+lang=EN-US>"&gt; 
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></SPAN></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 73.5pt; TEXT-ALIGN: left; mso-layout-grid-align: none; mso-para-margin-left: 7.0gd" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"><SPAN 
+style="mso-spacerun: yes">&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN style="COLOR: blue">&lt;</SPAN><SPAN 
+style="COLOR: maroon">system.web</SPAN><SPAN style="COLOR: blue">&gt; 
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></SPAN></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 94.5pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none; mso-para-margin-left: 9.0gd" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="COLOR: blue">&lt;</SPAN><SPAN 
+style="COLOR: maroon">authorization</SPAN><SPAN style="COLOR: blue">&gt; 
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></SPAN></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 147pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none; mso-para-margin-left: 14.0gd" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&lt;</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">allow</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: fuchsia; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"> 
+</SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: red; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">users</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">="</SPAN><SPAN 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">腰系缎带之人<SPAN 
+lang=EN-US>"/&gt; 
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></SPAN></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 147pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none; mso-para-margin-left: 14.0gd" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&lt;</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">deny</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: fuchsia; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"> 
+</SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: red; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">users</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">="*"/&gt; 
+
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 136.5pt; TEXT-INDENT: 10.5pt; TEXT-ALIGN: left; mso-layout-grid-align: none; mso-para-margin-left: 13.0gd" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&lt;/</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">authorization</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&gt;</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"> 
+
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 73.5pt; TEXT-ALIGN: left; mso-layout-grid-align: none; mso-para-margin-left: 7.0gd" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"><SPAN 
+style="mso-spacerun: yes">&nbsp;</SPAN><SPAN 
+style="mso-tab-count: 3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN style="COLOR: blue">&lt;/</SPAN><SPAN 
+style="COLOR: maroon">system.web</SPAN><SPAN style="COLOR: blue">&gt; 
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left></SPAN></SPAN></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 73.5pt; TEXT-ALIGN: left; mso-layout-grid-align: none; mso-para-margin-left: 7.0gd" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt"><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;/</SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: maroon; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">location</SPAN><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; COLOR: blue; FONT-FAMILY: 新宋体; mso-hansi-font-family: 'Times New Roman'; mso-font-kerning: 0pt">&gt;</SPAN></P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 21pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-layout-grid-align: none" 
+align=left><BR></SPAN></FONT></P></DIV>
+<DIV class=postfoot>posted on 2005-12-07 18:42 <A 
+href="http://ghd258.cnblogs.com/">高海东</A> 阅读(517) <A 
+href="http://www.cnblogs.com/ghd258/archive/2005/12/07/292664.html#Post">评论(1)</A> 
+&nbsp;<A 
+href="http://www.cnblogs.com/ghd258/admin/EditPosts.aspx?postid=292664">编辑</A>&nbsp;<A 
+href="http://www.cnblogs.com/ghd258/AddToFavorite.aspx?id=292664">收藏</A> <A 
+href="http://www.cnblogs.com/ghd258/services/trackbacks/292664.aspx">引用</A> <A 
+href="javascript:d=document;t=d.selection?(d.selection.type!='None'?d.selection.createRange().text:''):(d.getSelection?d.getSelection():'');void(saveit=window.open('http://wz.csdn.net/storeit.aspx?t='+escape(d.title)+'&amp;u='+escape(d.location.href)+'&amp;c='+escape(t),'saveit','scrollbars=no,width=590,height=300,left=75,top=20,status=no,resizable=yes'));saveit.focus();">网摘</A> 
+</DIV></DIV><IMG height=1 
+src="ASP_NET 安全认证----如何运用 Form 表单认证详解 - 海东的技术资料 - 博客园_files/292664.jpg" width=1> 
+<!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+rdf:about="http://www.cnblogs.com/ghd258/archive/2005/12/07/292664.html"
+dc:identifier="http://www.cnblogs.com/ghd258/archive/2005/12/07/292664.html"
+dc:title="ASP.NET 安全认证----如何运用 Form 表单认证详解"
+trackback:ping="http://www.cnblogs.com/ghd258/services/trackbacks/292664.aspx" />
+</rdf:RDF>
+-->
+<SCRIPT type=text/javascript>
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('AjaxHolder$scriptmanager1', document.getElementById('Form1'));
+Sys.WebForms.PageRequestManager.getInstance()._updateControls(['tAjaxHolder$UpdatePanel1'], [], [], 90);
+
+//]]>
+</SCRIPT>
+
+<DIV id=AjaxHolder_UpdatePanel1><A name=pagedcomment></A><A name=评论><BR>
+<DIV id=comments>
+<H3>评论</H3>
+<DIV class=post>
+<DIV class=postTitle><A title="permalink: re: ASP.NET 安全认证----如何运用 Form 表单认证详解" 
+href="http://www.cnblogs.com/ghd258/archive/2005/12/07/292664.html#292667">#</A>&nbsp;<A 
+name=292667></A>re: ASP.NET 安全认证----如何运用 Form 表单认证详解<A name=Post></A> 
+<SPAN>2005-12-07 18:45 </SPAN><A 
+id=AjaxHolder_Comments_CommentList_ctl00_NameLink 
+href="http://ghd258.cnblogs.com/" target=_blank>高海东</A> </DIV>
+<DIV class=postText>本文作者 “寒羽枫（cityhunter172）” <BR>由于本文比较长，所见减掉一些内容，原文见 <BR><A 
+href="http://blog.csdn.net/cityhunter172/archive/2005/11/06/524043.aspx" 
+target=_new>http://blog.csdn.net/cityhunter172/archive/2005/11/06/524043.aspx</A> 
+<BR><A href="http://blog.csdn.net/cityhunter172/archive/2005/11/13/528463.aspx" 
+target=_new>http://blog.csdn.net/cityhunter172/archive/2005/11/13/528463.aspx</A> 
+<BR>&nbsp;&nbsp;<A onclick='return SetReplyAuhor("高海东")' 
+href="http://www.cnblogs.com/ghd258/archive/2005/12/07/292664.html#post">回复</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/comment?author=%e9%ab%98%e6%b5%b7%e4%b8%9c" 
+target=_blank>更多评论</A> <BR><A 
+id=AjaxHolder_Comments_CommentList_ctl00_DeleteLink 
+href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl00$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=AjaxHolder_Comments_CommentList_ctl00_EditLink></A> </DIV></DIV><BR></DIV>
+<DIV id=AjaxHolder_Comments_divRefreshComments 
+style="FONT-SIZE: 12px; MARGIN-BOTTOM: 5px; MARGIN-RIGHT: 10px; TEXT-ALIGN: right"><A 
+id=AjaxHolder_Comments_refreshList 
+href="javascript:__doPostBack('AjaxHolder$Comments$refreshList','')">刷新评论列表</A></DIV>
+<STYLE>TD {
+	FONT-SIZE: 12px
+}
+.commentTextBox {
+	FONT-SIZE: 13px; FONT-FAMILY: Verdana
+}
+</STYLE>
+<!--Beging Temp Save-->
+<STYLE>.userData {
+	BEHAVIOR: url(#default#userdata)
+}
+</STYLE>
+
+<DIV class=userData id=CommentsPersistDiv></DIV>
+<SCRIPT type=text/javascript>
+function pageLoad()
+{
+    Sys.WebForms.PageRequestManager.getInstance().add_initializeRequest(handleInitializeRequest);
+    //Sys.WebForms.PageRequestManager.getInstance().add_endRequest(handleEndRequest);
+}
+
+function handleInitializeRequest(sender, args)
+{
+    var prm = Sys.WebForms.PageRequestManager.getInstance();
+    var eid = args.get_postBackElement().id;
+    if (eid.indexOf("DeleteLink")>0) 
+    {
+       args.get_postBackElement().innerHTML = "<font color='red'>正在删除...</font>";         
+    }    
+    if (eid.indexOf("btnSubmit")>0) 
+    {
+       document.getElementById("AjaxHolder_PostComment_ltSubmitMsg").innerHTML="正在提交...";
+       document.getElementById("AjaxHolder_PostComment_btnSubmit").disabled = true;
+       
+    }    
+   
+}	
+
+function TempSave(ElementID)
+{
+	try
+	{
+	CommentsPersistDiv.setAttribute("CommentContent",document.getElementById(ElementID).value);
+	CommentsPersistDiv.save("CommentXMLStore");
+	}
+	catch(ex)
+	{
+	}
+	
+}
+function Restore(ElementID)
+{
+	CommentsPersistDiv.load("CommentXMLStore");
+	document.getElementById(ElementID).value=CommentsPersistDiv.getAttribute("CommentContent");
+}	
+			
+			
+</SCRIPT>
+<!--Ene TempSave-->
+<DIV class=commentform><SPAN id=AjaxHolder_PostComment_ltSubmitMsg 
+style="COLOR: red"></SPAN><BR><A name=Feedback></A>
+<TABLE cellSpacing=1 cellPadding=1 border=0>
+  <TBODY>
+  <TR>
+    <TD width=75></TD>
+    <TD></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD width=55>标题</TD>
+    <TD><INPUT id=AjaxHolder_PostComment_tbTitle style="WIDTH: 320px" 
+      value="re: ASP.NET 安全认证----如何运用 Form 表单认证详解" 
+      name=AjaxHolder$PostComment$tbTitle></TD>
+    <TD><SPAN id=AjaxHolder_PostComment_RequiredFieldValidator1 
+      style="VISIBILITY: hidden; COLOR: red">请输入标题</SPAN></TD></TR>
+  <TR>
+    <TD>姓名</TD>
+    <TD><INPUT id=AjaxHolder_PostComment_tbName style="WIDTH: 320px" 
+      name=AjaxHolder$PostComment$tbName></TD>
+    <TD><SPAN id=AjaxHolder_PostComment_RequiredFieldValidator2 
+      style="VISIBILITY: hidden; COLOR: red">请输入你的姓名</SPAN></TD></TR>
+  <TR>
+    <TD>主页</TD>
+    <TD><INPUT id=AjaxHolder_PostComment_tbUrl style="WIDTH: 320px" 
+      name=AjaxHolder$PostComment$tbUrl></TD>
+    <TD><FONT face=宋体></FONT></TD></TR>
+  <TR>
+    <TD align=left colSpan=3>
+      <TABLE class=CommentForm id=AjaxHolder_PostComment_tbCaptchaImage 
+      cellSpacing=0 cellPadding=0 border=0>
+        <TBODY>
+        <TR>
+          <TD colSpan=3><SPAN 
+            id=AjaxHolder_PostComment_Requiredfieldvalidator4 
+            style="DISPLAY: none; COLOR: red">请输入验证码</SPAN> <SPAN 
+            id=AjaxHolder_PostComment_lblImage 
+            style="FONT-WEIGHT: bold; COLOR: red"></SPAN></TD></TR>
+        <TR>
+          <TD width=78>验证码</TD>
+          <TD><INPUT id=AjaxHolder_PostComment_CodeNumberTextBox 
+            name=AjaxHolder$PostComment$CodeNumberTextBox>*&nbsp;&nbsp;<IMG 
+            src="ASP_NET 安全认证----如何运用 Form 表单认证详解 - 海东的技术资料 - 博客园_files/JpegImage.jpg"></TD>
+          <TD align=left></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD colSpan=3>内容(提交失败后,可以通过“恢复上次提交”恢复刚刚提交的内容) <SPAN 
+      id=AjaxHolder_PostComment_RequiredFieldValidator3 
+      style="VISIBILITY: hidden; COLOR: red">请输入评论内容</SPAN><BR><TEXTAREA class=commentTextBox id=AjaxHolder_PostComment_tbComment onkeydown="ctlent(event,'AjaxHolder_PostComment_tbComment')" style="WIDTH: 480px; HEIGHT: 220px" name=AjaxHolder$PostComment$tbComment rows=10 cols=50></TEXTAREA></TD></TR>
+  <TR>
+    <TD colSpan=3><SPAN id=AjaxHolder_PostComment_Message 
+      style="COLOR: red"></SPAN></TD>
+  <TR>
+    <TD colSpan=3><INPUT id=AjaxHolder_PostComment_chkRemember tabIndex=-1 
+      type=checkbox CHECKED name=AjaxHolder$PostComment$chkRemember><LABEL 
+      for=AjaxHolder_PostComment_chkRemember>Remember Me?</LABEL></TD></TR>
+  <TR>
+    <TD height=23><INPUT class=commentTextBox id=AjaxHolder_PostComment_btnSubmit onclick="TempSave('AjaxHolder_PostComment_tbComment');WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;AjaxHolder$PostComment$btnSubmit&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" type=submit value=提交 name=AjaxHolder$PostComment$btnSubmit> 
+    </TD>
+    <TD colSpan=2 height=23>&nbsp; <A id=AjaxHolder_PostComment_lnkLogin 
+      href="http://www.cnblogs.com/login.aspx?ReturnURL=http://www.cnblogs.com/ghd258/archive/2005/12/07/292664.html&amp;SourceURL=/ghd258/archive/2005/12/07/292664.html">登录</A>&nbsp;&nbsp;<A 
+      id=AjaxHolder_PostComment_linkLoginComment 
+      onclick="if(document.getElementById('AjaxHolder_PostComment_tbComment').value != '') return confirm('未提交的评论内容将会丢失, 你真的要进入高级评论吗?');" 
+      href="http://www.cnblogs.com/ghd258/archive/2005/12/07/292664.html?login=1#Post">使用高级评论</A>&nbsp;&nbsp;<A 
+      href="http://www.cnblogs.com/RequireRegister.aspx">新用户注册</A>&nbsp;&nbsp;<A 
+      href="http://www.cnblogs.com/ghd258/archive/2005/12/07/292664.html#Top">返回页首</A>&nbsp;&nbsp;<A 
+      id=AjaxHolder_PostComment_lbRestore 
+      onclick="Restore('AjaxHolder_PostComment_tbComment'); return false;" 
+      href="http://www.cnblogs.com/ghd258/archive/2005/12/07/292664.html#Post">恢复上次提交</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    </TD></TR>
+  <TR>
+    <TD colSpan=3>[使用Ctrl+Enter键可以直接提交]</TD></TR>
+  <TR>
+    <TD colSpan=3 height=5></TD></TR>
+  <TR>
+    <TD colSpan=3></TD></TR></TBODY></TABLE></DIV>
+<DIV id=AjaxHolder_PostComment_ValidationSummary1 
+style="DISPLAY: none; COLOR: red"></DIV></DIV></DIV>
+<P id=footer>Powered by: <BR><A id=Footer1_Hyperlink3 
+style="FONT-SIZE: 12px; FONT-FAMILY: Verdana" href="http://www.cnblogs.com/" 
+name=Hyperlink1>博客园</A> <BR>Copyright © 高海东 </P>
+<SCRIPT type=text/javascript>
+<!--
+var Page_ValidationSummaries =  new Array(document.getElementById("AjaxHolder_PostComment_ValidationSummary1"));
+var Page_Validators =  new Array(document.getElementById("AjaxHolder_PostComment_RequiredFieldValidator1"), document.getElementById("AjaxHolder_PostComment_RequiredFieldValidator2"), document.getElementById("AjaxHolder_PostComment_Requiredfieldvalidator4"), document.getElementById("AjaxHolder_PostComment_RequiredFieldValidator3"));
+// -->
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+<!--
+var AjaxHolder_PostComment_RequiredFieldValidator1 = document.all ? document.all["AjaxHolder_PostComment_RequiredFieldValidator1"] : document.getElementById("AjaxHolder_PostComment_RequiredFieldValidator1");
+AjaxHolder_PostComment_RequiredFieldValidator1.controltovalidate = "AjaxHolder_PostComment_tbTitle";
+AjaxHolder_PostComment_RequiredFieldValidator1.errormessage = "请输入标题";
+AjaxHolder_PostComment_RequiredFieldValidator1.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+AjaxHolder_PostComment_RequiredFieldValidator1.initialvalue = "";
+var AjaxHolder_PostComment_RequiredFieldValidator2 = document.all ? document.all["AjaxHolder_PostComment_RequiredFieldValidator2"] : document.getElementById("AjaxHolder_PostComment_RequiredFieldValidator2");
+AjaxHolder_PostComment_RequiredFieldValidator2.controltovalidate = "AjaxHolder_PostComment_tbName";
+AjaxHolder_PostComment_RequiredFieldValidator2.errormessage = "请输入你的姓名";
+AjaxHolder_PostComment_RequiredFieldValidator2.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+AjaxHolder_PostComment_RequiredFieldValidator2.initialvalue = "";
+var AjaxHolder_PostComment_Requiredfieldvalidator4 = document.all ? document.all["AjaxHolder_PostComment_Requiredfieldvalidator4"] : document.getElementById("AjaxHolder_PostComment_Requiredfieldvalidator4");
+AjaxHolder_PostComment_Requiredfieldvalidator4.controltovalidate = "AjaxHolder_PostComment_CodeNumberTextBox";
+AjaxHolder_PostComment_Requiredfieldvalidator4.errormessage = "请输入验证码";
+AjaxHolder_PostComment_Requiredfieldvalidator4.display = "Dynamic";
+AjaxHolder_PostComment_Requiredfieldvalidator4.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+AjaxHolder_PostComment_Requiredfieldvalidator4.initialvalue = "";
+var AjaxHolder_PostComment_RequiredFieldValidator3 = document.all ? document.all["AjaxHolder_PostComment_RequiredFieldValidator3"] : document.getElementById("AjaxHolder_PostComment_RequiredFieldValidator3");
+AjaxHolder_PostComment_RequiredFieldValidator3.controltovalidate = "AjaxHolder_PostComment_tbComment";
+AjaxHolder_PostComment_RequiredFieldValidator3.errormessage = "请输入评论内容";
+AjaxHolder_PostComment_RequiredFieldValidator3.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+AjaxHolder_PostComment_RequiredFieldValidator3.initialvalue = "";
+var AjaxHolder_PostComment_ValidationSummary1 = document.all ? document.all["AjaxHolder_PostComment_ValidationSummary1"] : document.getElementById("AjaxHolder_PostComment_ValidationSummary1");
+AjaxHolder_PostComment_ValidationSummary1.showmessagebox = "True";
+AjaxHolder_PostComment_ValidationSummary1.showsummary = "False";
+// -->
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+<!--
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+// -->
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+<!--
+Sys.Application.initialize();
+// -->
+</SCRIPT>
+</FORM>
+<SCRIPT 
+src="ASP_NET 安全认证----如何运用 Form 表单认证详解 - 海东的技术资料 - 博客园_files/ShowHidden.js" 
+type=text/javascript></SCRIPT>
+</BODY></HTML>

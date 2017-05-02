@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>test Document</title>
+		<script language="javascript" type="text/javascript" src="core.js"></script>
+		<script language="JavaScript" type="text/javascript">
+			var connectInstanceMap = new Array;
+
+			function connectCSS(obj,id){
+				obj.onChange = function(value){
+					$("show"+id).innerHTML=value;
+				}
+			}
+			
+		</script>
+	</head>
+	<body>
+		<br /><br /><br /><br /><div style="width:500px;" id="msg"></div>
+		<div style="background-color:#DDD;height:40px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<script language="JavaScript" type="text/javascript">
+				var cp = new ColorPicker("black");
+				cp.render();
+				connectCSS(cp,1);
+			</script>
+		</div>
+		<div id="show1"></div>
+		<div style="background-color:#DDD;height:40px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<script language="JavaScript" type="text/javascript">
+				var cp = new ColorPicker();
+				cp.render();
+				connectCSS(cp,2);
+			</script>
+		</div>
+		<div id="show2"></div>
+	</body>
+</html>

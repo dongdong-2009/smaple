@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Solution xmlns="http://schemas.microsoft.com/sharepoint/" SolutionId="0f056f7c-af30-45ca-a964-30084c5eba6b" SharePointProductVersion="14.0">
+  <Assemblies>
+    <Assembly Location="Bugs.dll" DeploymentTarget="GlobalAssemblyCache" />
+  </Assemblies>
+  <FeatureManifests>
+    <FeatureManifest Location="Bugs_Feature1\Feature.xml" />
+  </FeatureManifests>
+</Solution>

@@ -1,0 +1,890 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0065)http://www.itvue.com/Article/NETWORKSUPPORT/MSISA/200503/796.html -->
+<HTML><HEAD><TITLE>配置VPN服务器使用智能卡身份验证</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=gb2312">
+<META content=ITVUE网络技术文献、CCNA/CCNP/MCSE/LINUX/JAVA资源共享、全国计算机考试、视频教学资料 
+name=DESCRIPTION>
+<META 
+content="ITVUE网络无极限,ITVUE,ITVUE网络,无极限,网络技术,CISCO资料,,MICROSOFT资料免费下载,认证考试,全国计算机考试,视频资料,LINXU资料,CCNA,CCNP,MCSE,CCSP,SCJP,JAVA,CIW,ORACLE,news, technology, headlines, xplus, software, download, downloads, free, community,动易,动网,CCNA折扣" 
+name=keywords>
+<STYLE type=text/css>.style1 {
+	COLOR: #0099cc
+}
+</STYLE>
+<LINK href="配置VPN服务器使用智能卡身份验证_files/Skin4.css" type=text/css rel=stylesheet>
+<SCRIPT language=JavaScript src="配置VPN服务器使用智能卡身份验证_files/menu.js" 
+type=text/JavaScript></SCRIPT>
+
+<SCRIPT language=JavaScript1.2 src="配置VPN服务器使用智能卡身份验证_files/stm31.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT language=JavaScript type=text/JavaScript>
+//改变图片大小
+function resizepic(thispic)
+{
+if(thispic.width>550){thispic.height=thispic.height*550/thispic.width;thispic.width=550;} 
+}
+//无级缩放图片大小
+function bbimg(o)
+{
+  var zoom=parseInt(o.style.zoom, 10)||100;
+  zoom+=event.wheelDelta/12;
+  if (zoom>0) o.style.zoom=zoom+'%';
+  return false;
+}
+//双击鼠标滚动屏幕的代码
+var currentpos,timer;
+function initialize()
+{
+timer=setInterval ("scrollwindow ()",30);
+}
+function sc()
+{
+clearInterval(timer);
+}
+function scrollwindow()
+{
+currentpos=document.body.scrollTop;
+window.scroll(0,++currentpos);
+if (currentpos !=document.body.scrollTop)
+sc();
+}
+document.onmousedown=sc
+document.ondblclick=initialize
+
+//更改字体大小
+var status0='';
+var curfontsize=10;
+var curlineheight=18;
+function fontZoomA(){
+  if(curfontsize>8){
+    document.getElementById('fontzoom').style.fontSize=(--curfontsize)+'pt';
+	document.getElementById('fontzoom').style.lineHeight=(--curlineheight)+'pt';
+  }
+}
+function fontZoomB(){
+  if(curfontsize<64){
+    document.getElementById('fontzoom').style.fontSize=(++curfontsize)+'pt';
+	document.getElementById('fontzoom').style.lineHeight=(++curlineheight)+'pt';
+  }
+}
+</SCRIPT>
+
+<META content="MSHTML 6.00.3790.2541" name=GENERATOR></HEAD>
+<BODY>
+<DIV id=menuDiv 
+style="Z-INDEX: 1000; VISIBILITY: hidden; WIDTH: 1px; POSITION: absolute; HEIGHT: 1px; BACKGROUND-COLOR: #9cc5f8"></DIV>
+<TABLE cellSpacing=0 cellPadding=0 width=1000 align=center border=0>
+  <TBODY>
+  <TR>
+    <TD colSpan=3 height=6><IMG src="配置VPN服务器使用智能卡身份验证_files/space.gif"></TD></TR>
+  <TR>
+    <TD width=14 height=34><IMG 
+    src="配置VPN服务器使用智能卡身份验证_files/Top_01Left.gif"></TD>
+    <TD style="COLOR: #ffffff" align=right 
+    background=配置VPN服务器使用智能卡身份验证_files/Top_01BG.gif>&nbsp;|&nbsp;<A 
+      class=Channel 
+      href="http://www.itvue.com/Index.html">网站首页</A>&nbsp;|&nbsp;<A 
+      class=Channel2 href="http://www.itvue.com/Article/Index.html" 
+      target=_blank>IT技术中心</A>&nbsp;|&nbsp;<A class=Channel 
+      href="http://www.itvue.com/Soft/Index.html" 
+      target=_blank>免费资料下载</A>&nbsp;|&nbsp;<A class=Channel 
+      href="http://www.itvue.com/Photo/Index.html" 
+      target=_blank>图霸天下</A>&nbsp;|&nbsp;<A class=Channel 
+      href="http://www.itvue.com/GuestBook/Index.asp" 
+      target=_blank>访客留言</A>&nbsp;|&nbsp;<A class=Channel 
+      href="http://it.itvue.com/" target=_blank>IT资讯</A>&nbsp;|&nbsp;<A 
+      class=Channel href="http://prod.itvue.com/" 
+      target=_blank>IT产品报价</A>&nbsp;|&nbsp;<A class=Channel 
+      href="http://www.itvue.com/bbs" target=_blank>网络社区</A>&nbsp;|&nbsp;<A 
+      class=Channel href="http://www.itvue.com/Chrismas/" 
+      target=_blank>圣诞狂欢</A>&nbsp;|&nbsp;</TD>
+    <TD width=14><IMG 
+  src="配置VPN服务器使用智能卡身份验证_files/Top_01Right.gif"></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=0 width=1000 align=center border=0>
+  <TBODY>
+  <TR>
+    <TD width=4 background=配置VPN服务器使用智能卡身份验证_files/Top_02Left.gif><IMG 
+      src="配置VPN服务器使用智能卡身份验证_files/space.gif"></TD>
+    <TD background=配置VPN服务器使用智能卡身份验证_files/Top_02BG.gif>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD align=middle width=280 height=90><IMG 
+            src="配置VPN服务器使用智能卡身份验证_files/PElogo_sealove.gif"></TD>
+          <TD align=middle>
+            <SCRIPT type=text/javascript>
+            <!--
+google_ad_client = "pub-3874976685677009";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_channel ="";
+google_page_url = document.location;
+google_color_border = ["336699","000000","B4D0DC","A8DDA0"];
+google_color_bg = ["FFFFFF","F0F0F0","ECF8FF","EBFFED"];
+google_color_link = ["0000FF","0000FF","0000CC","0000CC"];
+google_color_url = "008000";
+google_color_text = ["000000","000000","6F6F6F","6F6F6F"];
+//--></SCRIPT>
+
+            <SCRIPT src="配置VPN服务器使用智能卡身份验证_files/show_ads.js" 
+            type=text/javascript>
+                        </SCRIPT>
+          </TD></TR></TBODY></TABLE></TD>
+    <TD width=4 background=配置VPN服务器使用智能卡身份验证_files/Top_02Right.gif><IMG 
+      src="配置VPN服务器使用智能卡身份验证_files/space.gif"></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=0 width=1000 align=center border=0>
+  <TBODY>
+  <TR>
+    <TD width=17 background=配置VPN服务器使用智能卡身份验证_files/Top_03Left.gif><IMG 
+      src="配置VPN服务器使用智能卡身份验证_files/space.gif"></TD>
+    <TD background=配置VPN服务器使用智能卡身份验证_files/Top_03BG.gif>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD width=20 height=33><IMG 
+          src="配置VPN服务器使用智能卡身份验证_files/icon01.gif"></TD>
+          <TD width=60>最新公告：</TD>
+          <TD width=400>
+            <MARQUEE onmouseover=this.stop() onmouseout=this.start() 
+            scrollAmount=1 scrollDelay=4 width=400 align="left">
+            <P>&nbsp;&nbsp;没有公告</P></MARQUEE></TD>
+          <TD align=right>
+            <SCRIPT language=JavaScript src="配置VPN服务器使用智能卡身份验证_files/date.js" 
+            type=text/JavaScript></SCRIPT>
+          </TD></TR></TBODY></TABLE></TD>
+    <TD width=17 background=配置VPN服务器使用智能卡身份验证_files/Top_03Right.gif><IMG 
+      src="配置VPN服务器使用智能卡身份验证_files/space.gif"></TD></TR>
+  <TR>
+    <TD colSpan=3 height=5><IMG 
+  src="配置VPN服务器使用智能卡身份验证_files/space.gif"></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=0 width=1000 align=center border=0>
+  <TBODY>
+  <TR>
+    <TD width=15><IMG src="配置VPN服务器使用智能卡身份验证_files/Main_TopLeft.gif"></TD>
+    <TD background=配置VPN服务器使用智能卡身份验证_files/Main_TopBG.gif height=11><IMG 
+      src="配置VPN服务器使用智能卡身份验证_files/space.gif"></TD>
+    <TD width=15><IMG 
+  src="配置VPN服务器使用智能卡身份验证_files/Main_TopRight.gif"></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=0 width=1000 align=center bgColor=#ffffff 
+border=0>
+  <TBODY>
+  <TR>
+    <TD width=8 background=配置VPN服务器使用智能卡身份验证_files/Main_Left.gif></TD>
+    <TD vAlign=top>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD>
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD align=middle width=30><IMG 
+                  src="配置VPN服务器使用智能卡身份验证_files/icon02.gif"></TD>
+                <TD>您现在的位置：&nbsp;<A class=LinkPath 
+                  href="http://www.itvue.com/">ITVUE网络无极限</A>&nbsp;&gt;&gt;&nbsp;<A 
+                  class=LinkPath 
+                  href="http://www.itvue.com/Article/Index.html">IT技术中心</A>&nbsp;&gt;&gt;&nbsp;<A 
+                  class=LinkPath 
+                  href="http://www.itvue.com/Article/NETWORKSUPPORT/Index.html">网络技术</A>&nbsp;&gt;&gt;&nbsp;<A 
+                  class=LinkPath 
+                  href="http://www.itvue.com/Article/NETWORKSUPPORT/MSISA/Index.html">网络安全及ISA技术</A>&nbsp;&gt;&gt;&nbsp;最新信息正文</TD></TR>
+              <TR>
+                <TD bgColor=#eeeeee colSpan=2 height=2></TD></TR></TBODY></TABLE></TD>
+          <TD align=right width=166><IMG 
+            src="配置VPN服务器使用智能卡身份验证_files/Main_girl01.gif"></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD vAlign=top>
+            <TABLE cellSpacing=0 cellPadding=0 width="98%" align=center 
+            background=配置VPN服务器使用智能卡身份验证_files/Path_BG.gif border=0>
+              <TBODY>
+              <TR>
+                <TD width=9><IMG 
+                src="配置VPN服务器使用智能卡身份验证_files/Path_Left.gif"></TD>
+                <TD>
+                  <SCRIPT language=JavaScript1.2 
+                  src="配置VPN服务器使用智能卡身份验证_files/ShowClass_Menu.js" 
+                  type=text/JavaScript></SCRIPT>
+                </TD>
+                <TD width=9><IMG 
+                src="配置VPN服务器使用智能卡身份验证_files/Path_Right.gif"></TD></TR></TBODY></TABLE></TD>
+          <TD vAlign=top align=right width=92 height=48><IMG 
+            src="配置VPN服务器使用智能卡身份验证_files/Main_girl02.gif"></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD bgColor=#0099bb height=2></TD></TR>
+        <TR>
+          <TD height=1>
+            <SCRIPT language=JavaScript 
+            src="配置VPN服务器使用智能卡身份验证_files/html_show.htm" 
+            type=text/JavaScript> </SCRIPT>
+          </TD></TR>
+        <TR>
+          <TD bgColor=#0099bb height=1></TD></TR>
+        <TR>
+          <TD height=6></TD></TR></TBODY></TABLE></TD>
+    <TD width=8 background=配置VPN服务器使用智能卡身份验证_files/Main_Right.gif>
+      <P>&nbsp;</P>
+      <P>&nbsp;</P></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=0 width=1000 align=center bgColor=#ffffff 
+border=0>
+  <TBODY>
+  <TR>
+    <TD width=8 background=配置VPN服务器使用智能卡身份验证_files/Main_Left.gif></TD>
+    <TD width=5></TD>
+    <TD vAlign=top width=170>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD width=33 height=28><IMG 
+            src="配置VPN服务器使用智能卡身份验证_files/Column01_L.gif"></TD>
+          <TD style="COLOR: #ffffff" 
+          background=配置VPN服务器使用智能卡身份验证_files/Column01_BG.gif><B>专题栏目</B></TD>
+          <TD width=10><IMG 
+        src="配置VPN服务器使用智能卡身份验证_files/Column01_R.gif"></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD width=1 bgColor=#aaaaaa></TD>
+          <TD vAlign=top>
+            <TABLE cellSpacing=0 cellPadding=0 width="96%" align=center 
+border=0>
+              <TBODY>
+              <TR>
+                <TD vAlign=top height=70>
+                  <SCRIPT language=javascript 
+                  src="配置VPN服务器使用智能卡身份验证_files/ShowSpecialList.js"></SCRIPT>
+                </TD></TR></TBODY></TABLE></TD>
+          <TD width=1 bgColor=#aaaaaa></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD width=6 height=23><IMG 
+            src="配置VPN服务器使用智能卡身份验证_files/Column01_Lb.gif"></TD>
+          <TD align=right 
+            background=配置VPN服务器使用智能卡身份验证_files/Column01_BGb.gif><IMG alt=更多内容 
+            src="配置VPN服务器使用智能卡身份验证_files/More01.gif" border=0></TD>
+          <TD width=6><IMG 
+src="配置VPN服务器使用智能卡身份验证_files/Column01_Rb.gif"></TD></TR>
+        <TR>
+          <TD colSpan=3 height=8><IMG 
+          src="配置VPN服务器使用智能卡身份验证_files/space.gif"></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD width=14 height=28><IMG 
+            src="配置VPN服务器使用智能卡身份验证_files/Column02_L.gif"></TD>
+          <TD style="COLOR: #0099bb" 
+          background=配置VPN服务器使用智能卡身份验证_files/Column02_BG.gif><B>最新推荐</B></TD>
+          <TD align=right width=45 
+          background=配置VPN服务器使用智能卡身份验证_files/Column02_BG.gif><A 
+            href="http://www.itvue.com/Article/ShowElite.asp"><IMG alt=更多内容 
+            src="配置VPN服务器使用智能卡身份验证_files/More01.gif" border=0></A></TD>
+          <TD width=10><IMG 
+        src="配置VPN服务器使用智能卡身份验证_files/Column02_R.gif"></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD width=7 background=配置VPN服务器使用智能卡身份验证_files/Column02_Lc.gif></TD>
+          <TD vAlign=top>
+            <TABLE cellSpacing=0 cellPadding=0 width="96%" align=center 
+border=0>
+              <TBODY>
+              <TR>
+                <TD vAlign=top height=80>
+                  <SCRIPT language=javascript 
+                  src="配置VPN服务器使用智能卡身份验证_files/Article_Elite2.js"></SCRIPT>
+                </TD></TR></TBODY></TABLE></TD>
+          <TD width=7 
+        background=配置VPN服务器使用智能卡身份验证_files/Column02_Rc.gif></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD width=8 height=7><IMG 
+            src="配置VPN服务器使用智能卡身份验证_files/Column02_Lb.gif"></TD>
+          <TD background=配置VPN服务器使用智能卡身份验证_files/Column02_BGb.gif><IMG 
+            src="配置VPN服务器使用智能卡身份验证_files/space.gif"></TD>
+          <TD width=8><IMG 
+src="配置VPN服务器使用智能卡身份验证_files/Column02_Rb.gif"></TD></TR>
+        <TR>
+          <TD colSpan=3 height=8><IMG 
+          src="配置VPN服务器使用智能卡身份验证_files/space.gif"></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD width=33 height=28><IMG 
+            src="配置VPN服务器使用智能卡身份验证_files/Column01_L.gif"></TD>
+          <TD style="COLOR: #ffffff" 
+          background=配置VPN服务器使用智能卡身份验证_files/Column01_BG.gif><B>相关文章</B></TD>
+          <TD width=10><IMG 
+        src="配置VPN服务器使用智能卡身份验证_files/Column01_R.gif"></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD width=1 bgColor=#aaaaaa></TD>
+          <TD vAlign=top>
+            <TABLE cellSpacing=0 cellPadding=0 width="96%" align=center 
+border=0>
+              <TBODY>
+              <TR>
+                <TD vAlign=top height=70>
+                  <LI><A class=LinkArticleCorrelative 
+                  title="最新信息标题：配置VPN服务器使用智能卡身份验证&#13;&#10;作&nbsp;&nbsp;&nbsp;&nbsp;者：ITVUE整理&#13;&#10;更新时间：2005-5-4 22:23:23" 
+                  href="http://www.itvue.com/Article/NETWORKSUPPORT/MSISA/200505/858.html">配置VPN服务器使用智能卡</A><BR></LI></TD></TR></TBODY></TABLE></TD>
+          <TD width=1 bgColor=#aaaaaa></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD width=6 height=23><IMG 
+            src="配置VPN服务器使用智能卡身份验证_files/Column01_Lb.gif"></TD>
+          <TD align=right 
+            background=配置VPN服务器使用智能卡身份验证_files/Column01_BGb.gif><IMG alt=更多内容 
+            src="配置VPN服务器使用智能卡身份验证_files/More01.gif" border=0></TD>
+          <TD width=6><IMG 
+src="配置VPN服务器使用智能卡身份验证_files/Column01_Rb.gif"></TD></TR>
+        <TR>
+          <TD colSpan=3 height=8><IMG 
+          src="配置VPN服务器使用智能卡身份验证_files/space.gif"></TD></TR></TBODY></TABLE>
+      <SCRIPT type=text/javascript><!--
+google_ad_client = "pub-3874976685677009";
+google_ad_width = 120;
+google_ad_height = 240;
+google_ad_format = "120x240_as_rimg";
+google_cpa_choice = "CAAQ4IzL9gEaCKp3b4CecxxzKNzI6n4";
+//--></SCRIPT>
+
+      <SCRIPT src="配置VPN服务器使用智能卡身份验证_files/show_ads.js" type=text/javascript>
+</SCRIPT>
+    </TD>
+    <TD width=5></TD>
+    <TD width=1 bgColor=#eeeeee></TD>
+    <TD width=5></TD>
+    <TD vAlign=top>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD>
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" align=center 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD height=22><IMG 
+src="配置VPN服务器使用智能卡身份验证_files/icon02.gif"></TD>
+                <TD><SPAN class=S_headline1>[图文]</SPAN>配置VPN服务器使用智能卡身份验证</TD>
+                <TD align=right>&nbsp;&nbsp;&nbsp;<FONT 
+                  color=red>热</FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+                  color=#009999></FONT></TD></TR></TBODY></TABLE>
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" align=center 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD bgColor=#eeeeee height=1></TD></TR>
+              <TR>
+                <TD class=main_ArticleTitle style="WORD-BREAK: break-all" 
+                align=middle height=35>配置VPN服务器使用智能卡身份验证</TD></TR>
+              <TR>
+                <TD class=main_ArticleSubheading 
+                style="WORD-BREAK: break-all"></TD></TR>
+              <TR>
+                <TD class=Article_tdbgall align=middle height=23>作者：<A 
+                  title=ITVUE整理 
+                  href="http://www.itvue.com/ShowAuthor.asp?ChannelID=1&amp;AuthorName=ITVUE整理">ITVUE整理</A> 
+                  文章来源：<A 
+                  href="http://www.itvue.com/ShowCopyFrom.asp?ChannelID=1&amp;SourceName=ISACN">ISACN</A> 
+                  点击数：
+                  <SCRIPT language=javascript 
+                  src="配置VPN服务器使用智能卡身份验证_files/GetHits.htm"></SCRIPT>
+                   更新时间：2005-3-29 <A 
+                  title=收藏的网页将被永久地保存到新浪ViVi收藏夹http://vivi.sina.com.cn 
+                  href="javascript:d=document;t=d.selection?(d.selection.type!='None'?d.selection.createRange().text:''):(d.getSelection?d.getSelection():'');void(vivi=window.open('http://vivi.sina.com.cn/collect/icollect.php?pid=2008&amp;title='+escape(d.title)+'&amp;url='+escape(d.location.href)+'&amp;desc='+escape(t),'vivi','scrollbars=no,width=480,height=480,left=75,top=20,status=no,resizable=yes'));vivi.focus();"><IMG 
+                  src="配置VPN服务器使用智能卡身份验证_files/vivi_coop1.gif" align=absMiddle 
+                  border=0></A></TD></TR>
+              <TR>
+                <TD height=6></TD></TR>
+              <TR>
+                <TD id=fontzoom height=300>
+                  <SCRIPT type=text/javascript>
+                  <!--
+google_ad_client = "pub-3874976685677009";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as_rimg";
+google_cpa_choice = "CAAQnaWdzgEaCINObkyS6oFDKIvN93M";
+//--></SCRIPT>
+
+                  <SCRIPT src="配置VPN服务器使用智能卡身份验证_files/show_ads.js" 
+                  type=text/javascript>
+</SCRIPT>
+
+                  <SCRIPT type=text/javascript>
+                  <!--
+google_ad_client = "pub-3874976685677009";
+google_ad_width = 180;
+google_ad_height = 60;
+google_ad_format = "180x60_as_rimg";
+google_cpa_choice = "CAAQ0cX8zwEaCEpGRZ0Cl8yyKPu_93M";
+//--></SCRIPT>
+
+                  <SCRIPT src="配置VPN服务器使用智能卡身份验证_files/show_ads.js" 
+                  type=text/javascript>
+</SCRIPT>
+
+                  <SCRIPT type=text/javascript>
+                  <!--
+google_ad_client = "pub-3874976685677009";
+google_ad_width = 120;
+google_ad_height = 60;
+google_ad_format = "120x60_as_rimg";
+google_cpa_choice = "CAAQyKmU_AEaCEgmBX1Smfx8KODy9IMB";
+//--></SCRIPT>
+
+                  <SCRIPT src="配置VPN服务器使用智能卡身份验证_files/show_ads.js" 
+                  type=text/javascript>
+</SCRIPT>
+
+                  <DIV><FONT 
+                  face=Verdana>我公司的外地办事处人员或出差人员使用VPN连入公司内部网络，但是感觉使用用户名加密码的认证方式保密性较差，所以使用智能卡来进行身份验证：对需要使用公司的VPN服务的人员发一个智能卡，只能插入智能卡才可以登录公司的VPN服务。 
+                  <BR>智能卡产品采用的是飞天诚信的Epass1000，接口是USB的 ，相类似的产品应该很多。</DIV>
+                  <DIV>网络结构图如下： 
+                  <P align=center><BR><IMG height=334 
+                  src="配置VPN服务器使用智能卡身份验证_files/vpnuseeap01.jpg" width=418 
+                  border=0><FONT size=2> 
+                  <P align=center>　</P></DIV></FONT>
+                  <DIV>实现思路：采用ISA2004基于EAP的认证方式，通过操作系统自带的CA功能来实现证书的注册、管理。</FONT><FONT 
+                  size=2></DIV><SPAN style="FONT-FAMILY: 宋体">
+                  <DIV>　</DIV></SPAN></FONT><SPAN style="FONT-FAMILY: 宋体">
+                  <DIV><FONT face=Verdana>在测试环境中各服务器操作系统说明：</FONT> 
+                  <P><FONT face=Verdana>域控制器　　Windows 2003企业版</FONT> 
+                  <P><FONT face=Verdana>ISA2004 Windows 2000服务器版</FONT> 
+                  <P><FONT face=Verdana>远程客户端　Windows XP</FONT> 
+                  <P>　</P></DIV></SPAN>
+                  <DIV><FONT face=Verdana>本文中的配置过程如下 ：</FONT></DIV><SPAN 
+                  style="FONT-FAMILY: 宋体">
+                  <UL>
+                    <LI><FONT face=Verdana color=#006699>一、配置域控制器</FONT> 
+                    <LI><FONT face=Verdana color=#006699>二、配置IIS 服务器 </FONT>
+                    <LI><FONT face=Verdana color=#006699>三、配置CA服务器 </FONT>
+                    <LI><FONT face=Verdana 
+                    color=#006699>四、增加一个VPN用户组，并在此用户组中增加域用户test</FONT> 
+                    <LI><FONT face=Verdana color=#006699>五、智能卡的初始化与注册申请 </FONT>
+                    <LI><FONT face=Verdana color=#006699>六、开启ISA2004 VPN功能 
+                    </FONT>
+                    <LI><FONT face=Verdana color=#006699>七、远程客户端根证书安装 </FONT>
+                    <LI><FONT face=Verdana><FONT 
+                    color=#006699>八、远程客户端建入VPN拨号连接</FONT> </LI></UL>
+                  <DIV>　 
+                  <P><B><FONT color=#006699 size=4>一、配置域控制器</FONT></B></P></DIV>
+                  <DIV>由于智能卡是基于PKI体系的，而PKI体系的核心是CA中心，而要建立CA 
+                  中心颁发智能卡证书，需要安装企业根CA，而安装企业CA 中心，必须安装 活动目录（Active Directory 
+                  ）。</FONT></DIV><FONT size=2>
+                  <DIV>　</DIV></FONT>
+                  <DIV><FONT face=Verdana><FONT color=#006699 size=4><B>二、配置IIS 
+                  服务器</B></FONT> <BR>　　因为我们从web 上来申请智能卡证书，而windows 2003 Server 
+                  自带的证书系统需要通过IIS 来发布证书，因此我们需要安装IIS 
+                  服务器，IIS６默认是不支持ASP的，而证书发布系统却是基于asp，所以我们必须配置active server page 
+                  为允许。</FONT></DIV><FONT size=2>
+                  <DIV>　</DIV>
+                  <DIV>　</DIV>
+                  <DIV>　</DIV></FONT>
+                  <DIV><FONT face=Verdana><FONT color=#006699 size=4><B>三、配置CA 
+                  服务器</B></FONT> 
+                  <BR>　　要颁发智能卡证书，必须要配置证书服务器，我们下面来配置证书服务器。选择“添加/删除Windows 
+                  组件，出现添加删除windows 组件的界面 <BR>　</DIV>
+                  <DIV align=center><IMG height=401 
+                  src="配置VPN服务器使用智能卡身份验证_files/vpnuseeap02.jpg" width=503 
+                  border=0></DIV>
+                  <DIV><BR>选择“证书服务”选项后出现，选择“下一步（N）&gt;”按钮,根据系统提示进行操作，出现选择CA 类型界面 
+                  <BR>　</DIV>
+                  <DIV align=center><IMG height=401 
+                  src="配置VPN服务器使用智能卡身份验证_files/vpnuseeap03.jpg" width=503 
+                  border=0></DIV>
+                  <DIV><BR>要颁发智能卡登录证书，必须选择“企业根CA”才可以使用，选择“企业根CA（E）”后，选择“下一步（N）&gt;”按钮，根据系统提示填写CA 
+                  识别信息、证书数据库设置等信息后完成证书颁发机构的安装 
+                  <P>启动“证书颁发机构”，启动证书模板对话框 <BR>　</P></DIV>
+                  <DIV>
+                  <P align=center><IMG height=322 
+                  src="配置VPN服务器使用智能卡身份验证_files/vpnuseeap04.jpg" width=587 
+                  border=0> 
+                  <P><BR>选择智能卡用户，智能卡登录，注册代理，注册代理（计算机）等策略，后选择“<B>确定</B>”按钮，返回到证书颁发机构 
+                  <BR>　</P></DIV>
+                  <DIV>
+                  <P align=center><IMG height=537 
+                  src="配置VPN服务器使用智能卡身份验证_files/vpnuseeap05.jpg" width=768 
+                  border=0> <BR>　 
+                  <P>我们看到我们新增加的证书模板，已经位于证书模板中了，此时就完成了CA 中心的配置。 
+                  <P>　 
+                  <P>申请注册代理证书 <BR>Windows Server 2003 
+                  为了安全起见，要求颁发智能卡证书必须通过注册代理站来颁发，不允许随意颁发智能卡证书，注册代理站需要使用注册代理证书，所以必须先申请注册代理证书，我们下面来申请注册代理证书运行mmc 
+                  程序进入控制台管理，启动添加独立管理单元对话对话框 ， <BR>　</P></DIV>
+                  <DIV>
+                  <P align=center><IMG height=366 
+                  src="配置VPN服务器使用智能卡身份验证_files/vpnuseeap06.jpg" width=385 
+                  border=0> 
+                  <P><BR>选择“证书”，选择“添加（A）”按钮后，根据系统提示完成证书管理单元选择。在控制台管理界面，选择“证书-当前用户”，选择“个人”，点击鼠标右键，选择“所有证书（K）”，选择“申请新证书…”， 
+                  进行证书类别选择 <BR>　</P></DIV>
+                  <DIV>
+                  <P align=center><IMG height=380 
+                  src="配置VPN服务器使用智能卡身份验证_files/vpnuseeap07.jpg" width=503 
+                  border=0> 
+                  <P><BR>选择“<B>注册代理</B>”，选择“下一步（N）&gt;”按钮，根据系统提示填写出现证书的名称和描述等信息完成注册代理证书的申请 
+                  。</FONT></P></DIV><FONT size=2>
+                  <DIV>
+                  <P></FONT><BR></P>
+                  <DIV><FONT face=Verdana><B><FONT color=#006699 
+                  size=4>四、增加一个VPN用户组，并在此用户组中增加域用户test</FONT></B></DIV>
+                  <DIV>在域控制器中，点击“开始”－“程序”－“管理工具”－“Active 
+                  Directroy用户和计算机”，增加“VPN”用户组，并在此组中增加成员“test”。 
+                  <P></FONT></P></DIV><FONT size=2>
+                  <DIV>　</DIV></FONT>
+                  <DIV><FONT face=Verdana><B><FONT color=#006699 
+                  size=4>五、智能卡的初始化与注册申请</FONT></B></DIV>
+                  <DIV>此步骤与智能卡相关，因为在测试环境中用的飞天诚信公司的Epass1000产品，各公司的产品可能相关设置略有不同。</FONT></DIV><FONT 
+                  size=2>
+                  <DIV>　</DIV></FONT>
+                  <DIV><FONT face=Verdana><B><FONT size=4>安装ePass 
+                  的驱动程序及硬件</FONT></B> <BR>要在计算机上使用ePass，必须要安装ePass 
+                  的驱动程序，才可以访问ePass，下面我们来安装ePass 的驱动程序。运行eps1k_full.exe 
+                  程序，根据系统提示完成驱动程序的安装。 <BR>注意：在安装驱动时不要将ePass 插在计算机的USB 接口上。 
+                  <BR>驱动安装完成后需要重新启动计算机。在计算机重新启动后，将ePass 插入到计算机的USB 
+                  接口，出现找到新硬件，根据系统提示完成ePass 硬件的安装。 
+                  <P><B><FONT size=4>初始化ePass</FONT></B> <BR>要在ePass 
+                  中存放证书，必须先对ePass 
+                  进行初始化后，才能存储证书，我们下面就对ePass进行初始化。下图为Epass1000的管理器界面。</P></DIV>
+                  <DIV align=center><IMG height=430 
+                  src="配置VPN服务器使用智能卡身份验证_files/vpnuseeap08.jpg" width=580 
+                  border=0></FONT></DIV><FONT size=2>
+                  <DIV align=center>　</DIV></FONT>
+                  <DIV align=left><FONT face=Verdana><B><FONT 
+                  size=4>申请智能卡证书</FONT></B> <BR>在CA服务器上运行Internet 
+                  Explorer，在地址中输入http://localhost/certsrv，出现证书服务页面,选择申请一个证书，选择选择“高级证书申请”，进行高级证书申请。</DIV>
+                  <DIV align=center><IMG height=574 
+                  src="配置VPN服务器使用智能卡身份验证_files/vpnuseeap09.jpg" width=800 
+                  border=0></DIV>
+                  <DIV 
+                  align=left><BR>选择“通过使用智能卡证书注册站来为另一个用户申请一个智能卡证书”，出现智能卡证书注册站 
+                  <BR>　</DIV>
+                  <DIV align=center><IMG height=574 
+                  src="配置VPN服务器使用智能卡身份验证_files/vpnuseeap10.jpg" width=800 
+                  border=0></DIV>
+                  <DIV align=left><BR>选择证书模板为“<B>智能卡用户</B>”，选择加密服务提供程序为：“FTSafe 
+                  ePass1000 RSA Cryptographic Service Provider”， 
+                  点击<B>选择用户</B>按钮选择智能卡注册到的用户，选择用户后，选择“<B>注册</B>”按钮，出现输入用户PIN 
+                  码的对话框，输入用户PIN 码后，选择“<B>确定</B>”按钮，完成智能卡证书的申请 
+                  <P>注意：这里选择的用户就是你准备允许VPN拨入的用户，选择我们刚才增加的test用户，后面将在isa2004 
+                  vpn设置中允许此用户拨入。 <BR>　</P></DIV>
+                  <DIV align=center>　</DIV>
+                  <DIV align=center><IMG height=574 
+                  src="配置VPN服务器使用智能卡身份验证_files/vpnuseeap11.jpg" width=800 
+                  border=0></DIV>
+                  <DIV align=center><BR><IMG height=140 
+                  src="配置VPN服务器使用智能卡身份验证_files/vpnuseeap12.jpg" width=288 
+                  border=0></DIV>
+                  <DIV align=left>　</DIV>
+                  <DIV align=left>　</DIV>
+                  <DIV align=left>证书注册完成。 <BR></FONT><BR>
+                  <DIV><B><FONT color=#006699 size=4>六、开启ISA2004 
+                  VPN功能</FONT></B></DIV>
+                  <DIV>开启ISA2004的VPN功能，请 参见<A style="TEXT-DECORATION: none" 
+                  href="http://www.isacn.org/info/info.php?sessid=&amp;infoid=26" 
+                  target=_blank>启用ISA Server 2004 的VPN服务器</A>一文。</DIV>
+                  <DIV>需要注意的时这两个地方：</DIV>
+                  <DIV>（1）在允许远程访问的域组中要增加入刚才所建立的VPN用户组。 
+                  <P align=center><IMG height=442 
+                  src="配置VPN服务器使用智能卡身份验证_files/vpnuseeap13.jpg" width=402 
+                  border=0> 
+                  <P>　</P></DIV>
+                  <DIV>（2）开启EAP认证方式</DIV>
+                  <DIV><BR>　</DIV>
+                  <DIV align=center><IMG height=469 
+                  src="配置VPN服务器使用智能卡身份验证_files/vpnuseeap14.jpg" width=451 
+                  border=0></DIV><FONT size=2>
+                  <DIV>　</DIV></FONT>
+                  <DIV><FONT face=Verdana>七、远程客户端根证书安装</DIV>
+                  <DIV>　　此步骤在客户端的拨号连接中设置成“不验证服务器证书”后可以省略，但是不验证服务器证书降低了安全性，我们建议给客户端安装计算机证书。</FONT></DIV><FONT 
+                  size=2>
+                  <DIV>　</DIV></FONT>
+                  <DIV><FONT face=Verdana>在客户端电脑上访问：http://CA服务器/certsrv</DIV>
+                  <DIV>
+                  <P align=center><IMG height=574 
+                  src="配置VPN服务器使用智能卡身份验证_files/vpnuseeap09.jpg" width=800 
+                  border=0></P></DIV>
+                  <DIV align=center>　</DIV>
+                  <DIV><BR>选择“申请一个证书”，选择“用户证书”，点击“安装证书”即可。</DIV>
+                  <DIV>大家不禁要问，我现在客户端无法访问CA服务器，那么如何安装这个证书呢？其实这个证书可以在CA服务器上或者通过内网的计算机申请后导出来，安装到客户端PC上即可，注意：一定要 
+                  将CA证书导入到“受信任的证书颁发安全机构”中。</DIV>
+                  <DIV></FONT></DIV><FONT size=2>
+                  <DIV>　 
+                  <P>　</P></DIV></FONT>
+                  <DIV><B><FONT face=Verdana color=#006699 
+                  size=4>八、远程客户端建入VPN拨号连接</FONT></B></DIV><FONT size=2>
+                  <DIV>　</DIV></FONT>
+                  <DIV><FONT 
+                  face=Verdana>首先我们为客户端电脑安装epass驱动软件，按要求重启电脑。</FONT></DIV><FONT 
+                  size=2>
+                  <DIV>　</DIV></FONT>
+                  <DIV><FONT 
+                  face=Verdana>点击“开始”，选择“设置”，“网络连接”，“新建连接向导”</FONT></SPAN></DIV>
+                  <P style="MARGIN: 0cm 0cm 0pt; TEXT-ALIGN: center" 
+                  align=center>　 
+                  <P style="MARGIN: 0cm 0cm 0pt; TEXT-ALIGN: center" 
+                  align=center><IMG height=337 
+                  src="配置VPN服务器使用智能卡身份验证_files/vpnuseeap15.jpg" width=553 
+                  border=0> 
+                  <P style="MARGIN: 0cm 0cm 0pt; TEXT-ALIGN: center" 
+                  align=center>　 
+                  <P style="MARGIN: 0cm 0cm 0pt"><SPAN 
+                  style="FONT-FAMILY: Verdana">在接下来的窗口中选择“下一步”继续。</SPAN> 
+                  <P style="MARGIN: 0cm 0cm 0pt; TEXT-ALIGN: center" 
+                  align=center>　 
+                  <P style="MARGIN: 0cm 0cm 0pt"><SPAN 
+                  style="FONT-FAMILY: Verdana">选择“连接到我的工作场所的网络”，并点击“下一步”</SPAN> 
+                  <P style="MARGIN: 0cm 0cm 0pt; TEXT-ALIGN: center" 
+                  align=center>　 
+                  <P style="MARGIN: 0cm 0cm 0pt; TEXT-ALIGN: center" 
+                  align=center><IMG height=380 
+                  src="配置VPN服务器使用智能卡身份验证_files/vpnuseeap16.jpg" width=503 
+                  border=0> 
+                  <P style="MARGIN: 0cm 0cm 0pt; TEXT-ALIGN: center" 
+                  align=center>　 
+                  <P style="MARGIN: 0cm 0cm 0pt; TEXT-ALIGN: center" 
+                  align=center>　 
+                  <P style="MARGIN: 0cm 0cm 0pt"><SPAN 
+                  style="FONT-FAMILY: Verdana">选择“虚拟专用网络连接”，并点击“下一步”</SPAN> 
+                  <P style="MARGIN: 0cm 0cm 0pt; TEXT-ALIGN: center" 
+                  align=center>　 
+                  <P style="MARGIN: 0cm 0cm 0pt; TEXT-ALIGN: center" 
+                  align=center><IMG height=380 
+                  src="配置VPN服务器使用智能卡身份验证_files/vpnuseeap17.jpg" width=503 
+                  border=0> 
+                  <P style="MARGIN: 0cm 0cm 0pt; TEXT-ALIGN: center" 
+                  align=center>　 
+                  <P style="MARGIN: 0cm 0cm 0pt"><SPAN 
+                  style="FONT-FAMILY: Verdana">在公司名中可以随便输入，如“</SPAN><SPAN 
+                  lang=EN-US><FONT face=Verdana>Jandar</FONT></SPAN><SPAN 
+                  style="FONT-FAMILY: Verdana">”，并点击“下一步”</SPAN> 
+                  <P style="MARGIN: 0cm 0cm 0pt; TEXT-ALIGN: center" 
+                  align=center>　 
+                  <P style="MARGIN: 0cm 0cm 0pt; TEXT-ALIGN: center" 
+                  align=center><IMG height=380 
+                  src="配置VPN服务器使用智能卡身份验证_files/vpnuseeap18.jpg" width=503 
+                  border=0> 
+                  <P style="MARGIN: 0cm 0cm 0pt; TEXT-ALIGN: center" 
+                  align=center>　 
+                  <P style="MARGIN: 0cm 0cm 0pt; TEXT-ALIGN: center" 
+                  align=center>　 
+                  <P style="MARGIN: 0cm 0cm 0pt"><SPAN 
+                  style="FONT-FAMILY: Verdana">选择“<B>不拨初始连接</B>”，继续。</SPAN> 
+                  <P style="MARGIN: 0cm 0cm 0pt; TEXT-ALIGN: center" 
+                  align=center>　 
+                  <P style="MARGIN: 0cm 0cm 0pt; TEXT-ALIGN: center" 
+                  align=center><IMG height=380 
+                  src="配置VPN服务器使用智能卡身份验证_files/vpnuseeap19.jpg" width=503 
+                  border=0> 
+                  <P style="MARGIN: 0cm 0cm 0pt; TEXT-ALIGN: center" 
+                  align=center>　 
+                  <P style="MARGIN: 0cm 0cm 0pt; TEXT-ALIGN: center" 
+                  align=center>　 
+                  <P style="MARGIN: 0cm 0cm 0pt; TEXT-ALIGN: center" 
+                  align=center>　 
+                  <P style="MARGIN: 0cm 0cm 0pt"><SPAN 
+                  style="FONT-FAMILY: Verdana">在主机名中输入“</SPAN><SPAN 
+                  lang=EN-US><FONT 
+                  face=Verdana>vpn.jandar.com.cn</FONT></SPAN><SPAN 
+                  style="FONT-FAMILY: Verdana">”，继续。</SPAN> 
+                  <P style="MARGIN: 0cm 0cm 0pt">　<FONT size=2> 
+                  <P style="MARGIN: 0cm 0cm 0pt; TEXT-ALIGN: center" 
+                  align=center><IMG height=380 
+                  src="配置VPN服务器使用智能卡身份验证_files/vpnuseeap20.jpg" width=503 
+                  border=0> 
+                  <P style="MARGIN: 0cm 0cm 0pt">　 
+                  <P style="MARGIN: 0cm 0cm 0pt"><FONT size=3><SPAN 
+                  style="FONT-FAMILY: Verdana">根据自己需要选择此</SPAN><SPAN 
+                  lang=EN-US><FONT face=Verdana>VPN</FONT></SPAN><SPAN 
+                  style="FONT-FAMILY: Verdana">拨号连接是否给此计算机的所有用户使用，还是只给当前用户使用。</SPAN></FONT> 
+
+                  <P style="MARGIN: 0cm 0cm 0pt">　 
+                  <P style="MARGIN: 0cm 0cm 0pt; TEXT-ALIGN: center" 
+                  align=center><IMG height=380 
+                  src="配置VPN服务器使用智能卡身份验证_files/vpnuseeap21.jpg" width=503 
+                  border=0> 
+                  <P style="MARGIN: 0cm 0cm 0pt; TEXT-ALIGN: center" 
+                  align=center>　 
+                  <P style="MARGIN: 0cm 0cm 0pt; TEXT-ALIGN: center" 
+                  align=center>　 
+                  <P style="MARGIN: 0cm 0cm 0pt">　 
+                  <P style="MARGIN: 0cm 0cm 0pt">　 
+                  <P style="MARGIN: 0cm 0cm 0pt"><SPAN 
+                  style="FONT-FAMILY: Verdana"><FONT 
+                  size=3>根据自己需要，选择是否中桌面建立快捷方式</FONT></SPAN> 
+                  <P style="MARGIN: 0cm 0cm 0pt">　 
+                  <P style="MARGIN: 0cm 0cm 0pt">　 
+                  <P style="MARGIN: 0cm 0cm 0pt; TEXT-ALIGN: center" 
+                  align=center><IMG height=380 
+                  src="配置VPN服务器使用智能卡身份验证_files/vpnuseeap22.jpg" width=503 
+                  border=0> 
+                  <P style="MARGIN: 0cm 0cm 0pt; TEXT-ALIGN: center" 
+                  align=center>　 
+                  <P style="MARGIN: 0cm 0cm 0pt; TEXT-ALIGN: center" 
+                  align=center>　 
+                  <P style="MARGIN: 0cm 0cm 0pt"><SPAN 
+                  style="FONT-FAMILY: Verdana"><FONT 
+                  size=3>点击“完成”按钮后，接着会弹出下图，请先点击“属性”。</FONT></SPAN> 
+                  <P style="MARGIN: 0cm 0cm 0pt">　 
+                  <P style="MARGIN: 0cm 0cm 0pt; TEXT-ALIGN: center" 
+                  align=center><IMG height=366 
+                  src="配置VPN服务器使用智能卡身份验证_files/vpnuseeap23.jpg" width=348 
+                  border=0> 
+                  <P style="MARGIN: 0cm 0cm 0pt; TEXT-ALIGN: center" 
+                  align=center>　 
+                  <P style="MARGIN: 0cm 0cm 0pt; TEXT-ALIGN: center" 
+                  align=center>　 
+                  <P style="MARGIN: 0cm 0cm 0pt"><SPAN 
+                  style="FONT-FAMILY: Verdana"><FONT 
+                  size=3>切换到“安全”页，在“验证我的身份为”里选择“使用智能卡”，点击“确定”按钮保存设置。</FONT></SPAN> 
+
+                  <P style="MARGIN: 0cm 0cm 0pt">　 
+                  <P style="MARGIN: 0cm 0cm 0pt">　 
+                  <P style="MARGIN: 0cm 0cm 0pt; TEXT-ALIGN: center" 
+                  align=center><IMG height=439 
+                  src="配置VPN服务器使用智能卡身份验证_files/vpnuseeap24.jpg" width=367 
+                  border=0> 
+                  <P style="MARGIN: 0cm 0cm 0pt; TEXT-ALIGN: center" 
+                  align=center>　 
+                  <P style="MARGIN: 0cm 0cm 0pt; TEXT-ALIGN: center" 
+                  align=center>　 
+                  <P style="MARGIN: 0cm 0cm 0pt"><FONT size=3><SPAN 
+                  style="FONT-FAMILY: Verdana">这时候插入Epass1000,点击连接按钮，可以进行</SPAN><SPAN 
+                  lang=EN-US><FONT face=Verdana>VPN</FONT></SPAN><SPAN 
+                  style="FONT-FAMILY: Verdana">连接了。</SPAN></FONT> 
+                  <P style="MARGIN: 0cm 0cm 0pt">　</FONT> 
+                  <P style="MARGIN: 0cm 0cm 0pt; TEXT-ALIGN: center" 
+                  align=center><IMG height=262 
+                  src="配置VPN服务器使用智能卡身份验证_files/vpnuseeap25.jpg" width=348 
+                  border=0> 
+                  <DIV></DIV></FONT><BR></DIV></DIV></SPAN>
+                  <CENTER></CENTER></TD></TR>
+              <TR>
+                <TD height=10></TD></TR>
+              <TR>
+                <TD class=Article_tdbgall 
+                  align=right>最新信息录入：itvue&nbsp;&nbsp;&nbsp;&nbsp;责任编辑：itvue&nbsp;</TD></TR>
+              <TR>
+                <TD background=配置VPN服务器使用智能卡身份验证_files/line01.gif 
+              height=1></TD></TR>
+              <TR>
+                <TD height=6></TD></TR>
+              <TR>
+                <TD>
+                  <LI>上一篇最新信息： <A class=LinkPrevArticle 
+                  title="最新信息标题：How&nbsp;to：配置ISA&nbsp;Server&nbsp;2004的拒绝重定向&#13;&#10;作&nbsp;&nbsp;&nbsp;&nbsp;者：ITVUE整理&#13;&#10;更新时间：2005-3-29 9:20:22" 
+                  href="http://www.itvue.com/Article/NETWORKSUPPORT/MSISA/200503/795.html">How&nbsp;to：配置ISA&nbsp;Server&nbsp;2004的拒绝重定向</A><BR>
+                  <LI>下一篇最新信息： <A class=LinkNextArticle 
+                  title="最新信息标题：How&nbsp;to&nbsp;：配置ISA&nbsp;Server&nbsp;2004中的Web链&#13;&#10;作&nbsp;&nbsp;&nbsp;&nbsp;者：ITVUE整理&#13;&#10;更新时间：2005-3-29 9:22:17" 
+                  href="http://www.itvue.com/Article/NETWORKSUPPORT/MSISA/200503/797.html">How&nbsp;to&nbsp;：配置ISA&nbsp;Server&nbsp;2004中的Web链</A></LI></TD></TR>
+              <TR>
+                <TD height=6></TD></TR>
+              <TR>
+                <TD bgColor=#cccccc height=1></TD></TR>
+              <TR>
+                <TD align=right bgColor=#f2f2f2 height=22>【字体：<A 
+                  class=top_UserLogin href="javascript:fontZoomA();">小</A> <A 
+                  class=top_UserLogin href="javascript:fontZoomB();">大</A>】【<A 
+                  href="http://www.itvue.com/Article/Comment.asp?ArticleID=796" 
+                  target=_blank>发表评论</A>】【<A 
+                  href="http://www.itvue.com/User/User_Favorite.asp?Action=Add&amp;ChannelID=1&amp;InfoID=796" 
+                  target=_blank>加入收藏</A>】【<A 
+                  href="http://www.itvue.com/Article/SendMail.asp?ArticleID=796" 
+                  target=_blank>告诉好友</A>】【<A 
+                  href="http://www.itvue.com/Article/Print.asp?ArticleID=796" 
+                  target=_blank>打印此文</A>】【<A 
+                  href="javascript:window.close();">关闭窗口</A>】 </TD></TR>
+              <TR>
+                <TD bgColor=#cccccc height=1></TD></TR></TBODY></TABLE>
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" align=center 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD height=25>　<IMG src="配置VPN服务器使用智能卡身份验证_files/TEAM.gif" 
+                  align=absMiddle>　<B>网友评论：</B>（只显示最新10条。评论内容只代表网友观点，与本站立场无关！）</TD></TR>
+              <TR>
+                <TD class=main_tdbg_760>
+                  <SCRIPT language=javascript 
+                  src="配置VPN服务器使用智能卡身份验证_files/Comment.htm"></SCRIPT>
+                </TD></TR></TBODY></TABLE><BR></TD></TR></TBODY></TABLE></TD>
+    <TD width=5></TD>
+    <TD width=8 
+  background=配置VPN服务器使用智能卡身份验证_files/Main_Right.gif></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=0 width=1000 align=center bgColor=#ffffff 
+border=0>
+  <TBODY>
+  <TR>
+    <TD width=8 background=配置VPN服务器使用智能卡身份验证_files/Main_Left.gif></TD>
+    <TD vAlign=top>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD bgColor=#0099bb height=1></TD></TR>
+        <TR>
+          <TD height=1></TD></TR>
+        <TR>
+          <TD bgColor=#0099bb height=9></TD></TR>
+        <TR>
+          <TD height=1></TD></TR>
+        <TR>
+          <TD bgColor=#0099bb height=1></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="90%" align=center border=0>
+        <TBODY>
+        <TR>
+          <TD style="COLOR: #000000" align=middle height=25>| <A class=Bottom 
+            onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.itvue.com');" 
+            href="http://www.itvue.com/$">设为首页</A> | <A class=Bottom 
+            href="http://www.itvue.com/info/" target=_blank>网站排名查询</A> | <A 
+            class=Bottom 
+            href="javascript:window.external.addFavorite('http://www.itvue.com','ITVUE网络无极限');">加入收藏</A> 
+            | <A class=Bottom href="mailto:webmaster@itvue.com">联系站长</A> | <A 
+            class=Bottom href="http://www.itvue.com/FriendSite/Index.asp" 
+            target=_blank>友情链接</A> | <A class=Bottom 
+            href="http://www.itvue.com/Copyright.asp" target=_blank>版权申明</A> | 
+          </TD></TR>
+        <TR>
+          <TD background=配置VPN服务器使用智能卡身份验证_files/line01.gif 
+        height=1></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD align=middle width=210><A href="http://www.itvue.com/" 
+            target=_blank><IMG alt=ITVUE网络无极限 
+            src="配置VPN服务器使用智能卡身份验证_files/PElogo_sealove.gif" border=0></A></TD>
+          <TD><A href="http://www.itvue.com/"><B><FONT 
+            color=#cc0000>ITVUE</FONT>网络无极限</B>(上海网络爱好者)</A><FONT 
+            color=#ffffff><A href="http://www.miibeian.gov.cn/"> 
+            沪ICP备05001194号</A></FONT> 站长：<A 
+            href="mailto:webmaster@itvue.com">ITVUE</A>
+            <SCRIPT src="配置VPN服务器使用智能卡身份验证_files/mystat.htm"></SCRIPT>
+
+            <SCRIPT language=JavaScript src="配置VPN服务器使用智能卡身份验证_files/click.htm" 
+            type=text/javascript>
+                        </SCRIPT>
+             <BR></TD>
+          <TD width=20></TD>
+          <TD width=120 height=80><A href="http://www.miibeian.gov.cn/" 
+            target=_blank><IMG alt=信息产业部备案 src="配置VPN服务器使用智能卡身份验证_files/mii.gif" 
+            border=0><BR>*ICP备05001194号</A></TD></TR></TBODY></TABLE></TD>
+    <TD width=8 
+  background=配置VPN服务器使用智能卡身份验证_files/Main_Right.gif></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=0 width=1000 align=center border=0>
+  <TBODY>
+  <TR>
+    <TD width=15><IMG src="配置VPN服务器使用智能卡身份验证_files/Main_BottomLeft.gif"></TD>
+    <TD background=配置VPN服务器使用智能卡身份验证_files/Main_BottomBG.gif height=11><IMG 
+      src="配置VPN服务器使用智能卡身份验证_files/space.gif"></TD>
+    <TD width=15><IMG 
+src="配置VPN服务器使用智能卡身份验证_files/Main_BottomRight.gif"></TD></TR>
+  <TR>
+    <TD colSpan=3 height=5></TD></TR></TBODY></TABLE><NOSCRIPT><IFRAME 
+src="res://C:\WINDOWS\system32\shdoclc.dll/http_403.htm" width=0 
+height=0></IFRAME></IFRAME></NOSCRIPT></BODY></HTML>

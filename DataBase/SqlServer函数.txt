@@ -1,0 +1,50 @@
+Create function GetUserName
+(
+	@UserIDs varchar(4000)
+)
+returns varchar(4000)
+as
+
+begin
+     declare @tempUserName varchar(200)
+     declare @UserNameTotal varchar(4000)
+     set @tempUserName =''
+     set @UserNameTotal=''
+
+	if(rtrim(lTRIM(@UserIDs)) = '' or @UserIDs is null) 
+	 begin	
+		return ''
+	end
+	--set @UserIDs = substring(@UserIDs,2,len(@UserIDs) -2);
+	--return @UserIDs
+	--set @UserIDs = Replace(@UserIDs,';',',')
+
+--声明一个游标    
+ declare cur_getUserName cursor for     
+ select User_Name from Users where charindex (';' + user_id + ';',@UserIDs) > 0
+
+--打开游标    
+ open cur_getUserName       
+--取游标中第一行记录并且写入变量。    
+ fetch next from cur_getUserName     
+  into  @tempUserName
+
+while(@@fetch_status=0)
+  begin
+     set @UserNameTotal = @UserNameTotal+@tempUserName+','
+    
+--用游标去取下一条记录 
+    fetch next from cur_getUserName into @tempUserName
+  end
+   set @UserNameTotal =substring(@UserNameTotal,1,len(@UserNameTotal)-1)
+--关闭游标    
+ close cur_getUserName    
+--删除游标    
+ deallocate cur_getUserName  
+
+return @UserNameTotal
+end
+go
+
+select  dbo.GetUserName('')
+go

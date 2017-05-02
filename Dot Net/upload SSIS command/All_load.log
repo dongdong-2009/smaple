@@ -1,0 +1,7 @@
+
+C:\temp\R20>dtutil /Quiet /FILE COMMONamFixedAssetLoadfromDM_ssis_R20.0.dtsx /DestServer 205.239.18.192 /DestUser SSISuser /DestPassword Pitoaadp!123  /COPY SQL;COMMON\COMMONamFixedAssetLoadfromDM_ssis_R200    
+Microsoft (R) SQL Server SSIS Package Utilities
+Version 11.0.2100.60 for 64-bit
+Copyright (C) Microsoft Corporation 2012. All rights reserved.
+
+The operation completed successfully.

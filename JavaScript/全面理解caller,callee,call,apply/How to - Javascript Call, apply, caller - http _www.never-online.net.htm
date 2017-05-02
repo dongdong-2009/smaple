@@ -1,0 +1,274 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=gb2312">
+
+
+<title> How to - Javascript Call, apply, caller - http://www.never-online.net </title>
+<meta name="Generator" content="EditPlus">
+<meta name="Author" content="never-online, blueDestiny">
+<meta name="Keywords" content="never-online, blueDestiny">
+<meta name="Description" content="http://www.never-online.net">
+<style>
+<!--
+body, pre, td
+{
+  font-size: 0.8em;
+  font-family: verdana;
+}
+h1
+{
+	font-size: 2.0em;
+	text-align: center;
+}
+h6
+{
+	font-size: 1.0em;
+	text-align: center;
+}
+.block
+{
+	border: 1px solid #003366;
+	background-color: #eeeeee;
+	padding: 20px;
+	width: 95%;
+	text-align: left;
+	line-height: 130%;
+	margin-bottom: 15px;
+}
+.code
+{
+	color: #666666;
+}
+.copyright
+{
+  text-align: center;
+  font-size: 0.8em;
+  font-weight: normal;
+}
+-->
+</style>
+<script language="JavaScript" type="text/javascript">
+//<![CDATA[
+
+// caller demo
+function callerDemo(b) {
+	if (callerDemo.caller) {
+		var a= callerDemo.caller.toString();
+		alert(a);
+	} else {
+		alert("this is a top function");
+	}
+}
+function handleCaller() {
+	callerDemo();
+}
+// callee demo
+function calleeDemo() {
+	alert(arguments.callee);
+}
+function calleeLengthDemo(arg1, arg2) {
+	if (arguments.length==arguments.callee.length) {
+		window.alert("验证形参和实参长度正确！");
+		return;
+	} else {
+		alert("实参长度：" +arguments.length);
+		alert("形参长度： " +arguments.callee.length);
+	}
+}
+
+// simple call demo
+function simpleCallDemo(arg) {
+	window.alert(arg);
+}
+function handleSPC(arg) {
+	simpleCallDemo.call(this, arg);
+}
+// simple apply demo
+function simpleApplyDemo(arg) {
+	window.alert(arg);
+}
+function handleSPA(arg) {
+	simpleApplyDemo.apply(this, arguments);
+}
+
+// inherit
+function base() {
+	this.member = "never-online";
+	this.method = function() {
+		alert(this.member);
+	}
+}
+function extend() {
+	base.call(this);
+	window.alert(member);
+	window.alert(this.method);
+}
+// advanced apply demo
+function adApplyDemo(x) {
+	return ("this is never-online, BlueDestiny '" + x + "' demo");
+}
+function handleAdApplyDemo(obj, fname, before) {
+  var oldFunc = obj[fname];
+  obj[fname] = function() {
+    return oldFunc.apply(this, before(arguments));
+  };
+}
+function hellowordFunc(args) {
+  args[0] = "hello " + args[0];
+  return args;
+}
+function applyBefore() {
+	alert(adApplyDemo("world"));
+}
+function applyAfter() {
+	handleAdApplyDemo(this, "adApplyDemo", hellowordFunc);
+	alert(adApplyDemo("world")); // Hello world!
+}
+//]]>
+</script>
+</head><body>
+
+<h1> Javascript - 全面理解 caller，callee，call，apply </h1>
+<h6> Author: BlueDestiny, never-online From: http://www.never-online.net, Blog.csdn.net/BlueDestiny </h6>
+
+<div align="center">
+<div class="block">
+  <h3> 1、caller </h3>
+  <h5> JScript参考中说明为：返回一个对函数的引用，该函数调用了当前函数。
+如何理解这句话, 先来举个简单的例子：</h5><h5>
+  <pre class="code">// caller demo {
+function callerDemo() {
+	if (callerDemo.caller) {
+		var a= callerDemo.caller.toString();
+		alert(a);
+	} else {
+		alert("this is a top function");
+	}
+}
+function handleCaller() {
+	callerDemo();
+}
+  </pre>
+	<input onclick="callerDemo()" value="callerDemo" type="button">
+	<input onclick="handleCaller()" value="handleCaller" type="button">
+	</h5><h5>上面的例子，可以看出，它就是返回一个调用数据的引用。(指向请求调用的函数) 也由此可以看出，当在这样的情况下，onclick触发事件的时候总是带着匿名函数的 </h5>
+</div>
+</div>
+
+<div align="center">
+	<div class="block">
+		<h3> 2、callee </h3>
+		<h5> JScript参考中的说明为：返回正被执行的 Function 对象，也就是所指定的 Function 对象的正文。</h5>
+		需要注意的是callee拥有length属性，这个在有的时候用于验证还是比较好的。
+		<pre class="code">function calleeDemo() {
+	alert(arguments.callee);
+}
+function calleeLengthDemo(arg1, arg2) {
+	if (arguments.length==arguments.callee.length) {
+		window.alert("验证形参和实参长度正确！");
+		return;
+	} else {
+		alert("实参长度：" +arguments.length);
+		alert("形参长度： " +arguments.callee.length);
+	}
+}
+		</pre>
+		<input onclick="calleeDemo()" value="handleCallee" type="button">
+		<input onclick="calleeLengthDemo()" value="handleCalleeLength" type="button">
+		<h5>
+从上面的例子可以看出，callee可以用来打在执行函数，也就是指向被调用的函数。上面的例子就说明calee可以打印其本身，当然还有其它的一些用
+途。而length属性中arguments.length是实参长度，arguments.callee.length是形参长度，由此可以判断调用时
+形参长度是否和实参长度一致。</h5>
+	</div>
+
+<div align="center">
+	<div class="block">
+		<h3> 3、call 和 apply</h3>
+		<h5> call方法JScript参考中的说明：调用一个对象的一个方法，以另一个对象替换当前对象。call([thisObj[,arg1[, arg2[,   [,.argN]]]]])，但是没有示例
+		</h5>
+		<h5> apply方法JScript参考中的说明：应用某一对象的一个方法，用另一个对象替换当前对象。apply([thisObj[,argArray]]) </h5>
+		<h5> 实际上这两个的作用几乎是相同的，要注意的地方是call(thisObj[,arg1[, arg2[,)中的arg参数可以是变量，而apply([thisObj[,argArray]])中的参数为数组集合。下面来看看call, apply的具体应用 </h5>
+	<pre class="code">// simple call demo
+function simpleCallDemo(arg) {
+	window.alert(arg);
+}
+function handleSPC(arg) {
+	simpleCallDemo.call(this, arg);
+}
+// simple apply demo
+function simpleApplyDemo(arg) {
+	window.alert(arg);
+}
+function handleSPA(arg) {
+	simpleApplyDemo.apply(this, arguments);
+}
+	</pre>
+	<input onclick="handleSPC('never-online')" value="handle simple call" type="button">
+	<input onclick="handleSPA('BlueDestiny')" value="handle simple apply" type="button">
+	<h5> 从上面简单的例子可以看出，call和apply可以把当前的参数传递给另外一个函数的参数中，从而调用另一个函数的应用。有的时候这是一个很实用的方法，当然，用call或是apply（是参数或是数组），看实际情况而定了。
+	</h5>
+	<h4> 下面来看另一个应用 </h4>
+	<h5> call和apply还有一个技巧在里面，就是用call和apply应用另一个函数（类）以后，当前的函数（类）就具备了另一个函数（类）的方法或者是属性，这也可以称之为“继承”。看下面示例。
+	</h5>
+	<pre class="code">// inherit
+function base() {
+	this.member = "never-online";
+	this.method = function() {
+		window.alert(this.member);
+	}
+}
+function extend() {
+	base.call(this);
+	window.alert(member);
+	window.alert(this.method);
+}
+	</pre>
+	<input onclick="extend()" value="inherited" type="button">
+	<h5> 上面的例子可以看出，通过call之后，extend可以继承到base的方法和属性。 </h5>
+
+	<h4> 再看一个apply的应用 </h4>
+	<pre class="code">// advanced apply demo
+function adApplyDemo(x) {
+	return ("this is never-online, BlueDestiny '" + x + "' demo");
+}
+function handleAdApplyDemo(obj, fname, before) {
+  var oldFunc = obj[fname];
+  obj[fname] = function() {
+    return oldFunc.apply(this, before(arguments));
+  };
+}
+function hellowordFunc(args) {
+  args[0] = "hello " + args[0];
+  return args;
+}
+function applyBefore() {
+	alert(adApplyDemo("world"));
+}
+function applyAfter() {
+	handleAdApplyDemo(this, "adApplyDemo", hellowordFunc);
+	alert(adApplyDemo("world")); // Hello world!
+}
+	</pre>
+	<h5>
+需要注意的是，要先点"原始的adApplyDemo('world')"按钮，如果先点"应用后的adApplyDemo('world')"按扭，会
+先应用了apply方法，这样原始的值将会被改变。或许有的朋友没有发现有什么特别的，我在这里指明一下，当点击左边的按扭时，只有"this is
+never-online, BlueDestiny 'world' demo"， 当点击右边的按扭后，会现结果是"this is
+never-online, BlueDestiny 'hello world'
+demo"，再点点左边的按扭，看看结果又会是什么呢？自己试试看:D，已经改写了函数adApplyDemo。这个例子则说明了call和apply的
+“真正”作用了。 </h5>
+	<input onclick="applyBefore()" value="原始的adApplyDemo('world')" type="button">
+	<input onclick="applyAfter()" value="应用后的adApplyDemo('world')" type="button">
+	</div>
+</div>
+    <p align="center">
+      </p><div class="content" style="text-align: center;">
+        <script type="text/javascript" src="How%20to%20-%20Javascript%20Call,%20apply,%20caller%20-%20http%20_www.never-online.net_files/google_code_ad.js"></script><script type="text/javascript" src="How%20to%20-%20Javascript%20Call,%20apply,%20caller%20-%20http%20_www.never-online.net_files/show_ads.js"></script><script src="How%20to%20-%20Javascript%20Call,%20apply,%20caller%20-%20http%20_www.never-online.net_files/test_domain.js"></script><script>window.google_render_ad();</script><iframe name="google_ads_frame" src="How%20to%20-%20Javascript%20Call,%20apply,%20caller%20-%20http%20_www.never-online.net_files/ads.htm" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" width="728" frameborder="0" height="90"></iframe>
+      </div>
+    <p></p>
+  <h4 class="copyright">
+    Power By BlueDestiny, never-online, 
+    <a href="http://www.never-online.net/">http://www.never-online.net</a> 
+  </h4>
+</div>
+
+</body></html>

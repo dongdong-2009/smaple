@@ -1,0 +1,5 @@
+obj\Debug\ResolveAssemblyReference.cache
+bin\Debug\DESLibrary.dll
+bin\Debug\DESLibrary.pdb
+obj\Debug\DESLibrary.dll
+obj\Debug\DESLibrary.pdb

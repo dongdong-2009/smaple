@@ -1,0 +1,37 @@
+定义一个枚举型
+
+
+  [Flags] 
+   enum ActionAttributes 
+  { 
+   Read   =  1,
+   Write  =  2,
+   Delete =  4,
+   Query  =  8,
+   Sync   = 16 
+  }
+
+遍历这个枚举型,并把他填充到DropDownList中
+
+   ActionAttributes[] o = (ActionAttributes[]) Enum.GetValues(typeof(ActionAttributes));
+ 
+   for (int x = 0; x < o.Length; x++) 
+   {
+    ActionAttributes aax = ((ActionAttributes)(o[x]));
+ 
+    DropDownList1.Items.Add
+     (new ListItem(aax.ToString("G"),((ActionAttributes) aax).ToString("D")));
+   }
+
+这样使DropDownList中的item的text与value和枚举型的name与value对应起来
+
+生成的HTML是这样的
+
+<select name="DropDownList1" id="DropDownList1">
+ <option value="1">Read</option>
+ <option value="2">Write</option>
+ <option value="4">Delete</option>
+ <option value="8">Query</option>
+ <option value="16">Sync</option>
+</select>
+

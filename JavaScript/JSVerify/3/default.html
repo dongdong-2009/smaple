@@ -1,0 +1,97 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>JS Verify 3</title>
+<script type="text/javascript">
+function SubmitInfo()
+{
+    var name = document.getElementById("txtName");
+    var age = document.getElementById("txtAge");
+    var intro = document.getElementById("txtIntro");
+
+    if(!name.value.initVerify().isEmpty("请输入用户名!").isSafeString("用户名只能由中文,英文,数字及下划线组成!").verifyComplete())
+        return false;
+    
+    if(!age.value.initVerify().isEmpty("请输入年龄!").isInt("年龄必须为正整数!").verifyComplete())
+        return false;
+    
+    if(!intro.value.initVerify().isEmpty("请输入自我介绍!").verifyComplete())
+        return false;
+    
+    alert("提交成功!");
+    return true;
+}
+
+var validateStatus;
+var validateMessage;
+
+String.prototype.initVerify = function()
+{
+    validateStatus = true;
+    validateMessage = "";
+    return this;
+}
+
+String.prototype.isEmpty = function(msg)
+{
+    if(validateStatus)
+    {
+        if(this == null || this == "")
+        {
+            validateStatus = false;
+            validateMessage = msg;
+        }
+    }
+    return this;
+}
+
+String.prototype.isInt = function(msg)
+{
+    if(validateStatus)
+    {
+	    if(!/^[1-9]\d$/.test(this))
+	    {
+	        validateStatus = false;
+	        validateMessage = msg;
+	    }
+	}
+	return this;
+}
+
+String.prototype.isSafeString = function(msg)
+{
+    if(validateStatus)
+    {
+        if(!/^[\u4E00-\u9FA5a-z0-9_]*$/gi.test(this))
+        {
+            validateStatus = false;
+	        validateMessage = msg;
+        }
+    }
+    return this;
+}
+
+String.prototype.verifyComplete = function()
+{
+    if(!validateStatus)
+        alert(validateMessage);
+    return validateStatus;
+}
+
+</script>
+</head>
+<body>
+    <div>
+        <span>请输入用户名,年龄和自我介绍:</span>
+        <br />
+        <span>用户名:<input type="text" id="txtName" size="20" /></span>
+        <br />
+        <span>年龄:<input type="text" id="txtAge" size="5" />岁</span>
+        <br />
+        <span>自我介绍:</span>
+        <br />
+        <span><textarea id="txtIntro" rows="10" cols="50"></textarea></span>
+        <br />
+        <span><input type="button" onclick="return SubmitInfo();" value="提交信息" /></span>
+    </div>
+</body>
+</html>

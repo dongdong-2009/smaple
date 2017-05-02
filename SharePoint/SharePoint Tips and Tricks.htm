@@ -1,0 +1,998 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0062)http://www.cnblogs.com/osamede/archive/2011/09/22/2185262.html -->
+<HTML xmlns="http://www.w3.org/1999/xhtml"><HEAD><TITLE>SharePoint Tips and Tricks -- Ribbon,People Editor - 心利 - 博客园</TITLE>
+<META content="text/html; charset=utf-8" http-equiv=Content-Type>
+<META name=keywords content=SharePoint,Ribbon><LINK rel=stylesheet type=text/css 
+href="SharePoint%20Tips%20and%20Tricks_files/common.css"><LINK id=MainCss 
+rel=stylesheet type=text/css 
+href="SharePoint%20Tips%20and%20Tricks_files/style.css"><LINK rel=stylesheet 
+type=text/css href="SharePoint%20Tips%20and%20Tricks_files/common2.css"><LINK 
+rel=stylesheet type=text/css 
+href="SharePoint%20Tips%20and%20Tricks_files/shCore.css"><LINK rel=stylesheet 
+type=text/css 
+href="SharePoint%20Tips%20and%20Tricks_files/shThemeDefault.css"><LINK 
+rel=stylesheet type=text/css 
+href="SharePoint%20Tips%20and%20Tricks_files/customcss.css"><LINK title=RSS 
+rel=alternate type=application/rss+xml 
+href="http://www.cnblogs.com/osamede/rss"><LINK title=RSD rel=EditURI 
+type=application/rsd+xml href="http://www.cnblogs.com/osamede/rsd.xml"><LINK 
+rel=wlwmanifest type=application/wlwmanifest+xml 
+href="http://www.cnblogs.com/osamede/wlwmanifest.xml">
+<SCRIPT type=text/javascript 
+src="SharePoint%20Tips%20and%20Tricks_files/jquery.js"></SCRIPT>
+
+<SCRIPT type=text/javascript 
+src="SharePoint%20Tips%20and%20Tricks_files/common.js"></SCRIPT>
+
+<SCRIPT type=text/javascript 
+src="SharePoint%20Tips%20and%20Tricks_files/jquery.json-2.2.min.js"></SCRIPT>
+
+<SCRIPT type=text/javascript 
+src="SharePoint%20Tips%20and%20Tricks_files/shCore.js"></SCRIPT>
+
+<SCRIPT type=text/javascript 
+src="SharePoint%20Tips%20and%20Tricks_files/shLanguage.js"></SCRIPT>
+
+<META name=GENERATOR content="MSHTML 9.00.8112.16434"></HEAD>
+<BODY><A name=top></A>
+<FORM id=Form1 method=post action=2185262.html>
+<DIV class=aspNetHidden><INPUT id=__EVENTTARGET name=__EVENTTARGET type=hidden> 
+<INPUT id=__EVENTARGUMENT name=__EVENTARGUMENT type=hidden> <INPUT 
+id=__VIEWSTATE name=__VIEWSTATE type=hidden> </DIV>
+<SCRIPT type=text/javascript>
+//<![CDATA[
+var theForm = document.forms['Form1'];
+if (!theForm) {
+    theForm = document.Form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</SCRIPT>
+<!--done-->
+<CENTER>
+<DIV id=home>
+<DIV id=header>
+<DIV id=blogTitle><A id=lnkBlogLogo href="http://www.cnblogs.com/osamede/"><IMG 
+id=blogLogo alt="" src="SharePoint%20Tips%20and%20Tricks_files/logo.gif"></A> <!--done-->
+<H1><A id=Header1_HeaderTitle class=headermaintitle 
+href="http://www.cnblogs.com/osamede/">心利</A></H1>
+<H2>常怀恭敬之心</H2></DIV><!--end: blogTitle 博客的标题和副标题 -->
+<DIV id=navigator><!--done-->
+<UL id=navList>
+  <LI><A id=MyLinks1_HomeLink class=menu href="http://www.cnblogs.com/">博客园</A> 
+  </LI>
+  <LI><A id=MyLinks1_SpaceLink class=menu 
+  href="http://space.cnblogs.com/">社区</A> </LI>
+  <LI><A id=MyLinks1_MyHomeLink class=menu 
+  href="http://www.cnblogs.com/osamede/">首页</A> </LI>
+  <LI><A id=MyLinks1_NewPostLink class=menu 
+  href="http://www.cnblogs.com/osamede/admin/EditPosts.aspx?opt=1" 
+  rel=nofollow>新随笔</A> </LI>
+  <LI><A accessKey=9 id=MyLinks1_ContactLink class=menu 
+  href="http://space.cnblogs.com/msg/send/%e5%bf%83%e5%88%a9" 
+  rel=nofollow>联系</A> </LI>
+  <LI><A id=MyLinks1_Admin class=menu 
+  href="http://www.cnblogs.com/osamede/admin/EditPosts.aspx" rel=nofollow>管理</A> 
+  </LI>
+  <LI><A id=MyLinks1_Syndication class=menu 
+  href="http://www.cnblogs.com/osamede/rss">订阅</A> <A id=MyLinks1_XMLLink 
+  class=aHeaderXML href="http://www.cnblogs.com/osamede/rss"><IMG alt=订阅 
+  src="SharePoint%20Tips%20and%20Tricks_files/rss.gif"></A> </LI></UL>
+<DIV class=blogStats><!--done-->随笔- 26&nbsp; 文章- 0&nbsp; 评论- 200&nbsp; </DIV><!--end: blogStats --></DIV><!--end: navigator 博客导航栏 --></DIV><!--end: header 头部 -->
+<DIV class=clear></DIV>
+<DIV id=topicList><!--done-->
+<DIV id=topics>
+<DIV class=post>
+<H1 class=postTitle><A id=ctl02_TitleUrl class=postTitle2 
+href="http://www.cnblogs.com/osamede/archive/2011/09/22/2185262.html">SharePoint 
+Tips and Tricks -- Ribbon,People Editor</A> </H1>
+<DIV class=clear></DIV>
+<DIV class=postBody>
+<DIV id=cnblogs_post_body>
+<P><SPAN style="COLOR: #17365d; FONT-SIZE: 16pt"><STRONG><SPAN 
+style="FONT-FAMILY: 宋体">一</SPAN> Ribbon</STRONG> </SPAN></P>
+<P>&nbsp; &nbsp;</P>
+<P><SPAN style="COLOR: #366092; FONT-SIZE: 13pt"><STRONG>How To<SPAN 
+style="FONT-FAMILY: 宋体">在非"</SPAN>Application Page<SPAN 
+style="FONT-FAMILY: 宋体">"页面上添加</SPAN>Ribbon Tool Bar?</STRONG><SPAN 
+style="FONT-FAMILY: Times New Roman"> </SPAN></SPAN></P>
+<P>&nbsp; &nbsp;</P>
+<P><SPAN style="FONT-FAMILY: 宋体">需要在</SPAN>Head<SPAN 
+style="FONT-FAMILY: 宋体">部分添加</SPAN>Ribbon<SPAN 
+style="FONT-FAMILY: 宋体">控件</SPAN><SPAN style="FONT-FAMILY: Times New Roman"> 
+</SPAN></P>
+<P>&nbsp; &nbsp;</P>
+<P><SPAN 
+style="FONT-FAMILY: Times New Roman; COLOR: blue; FONT-SIZE: 15pt">&lt;<SPAN 
+style="COLOR: maroon">head</SPAN><STRONG> </STRONG><SPAN 
+style="COLOR: red">id<SPAN style="COLOR: blue">="Head1"</SPAN><STRONG> 
+</STRONG>runat<SPAN style="COLOR: blue">="server"&gt;</SPAN> </SPAN></SPAN></P>
+<P><SPAN 
+style="FONT-FAMILY: Times New Roman; COLOR: blue; FONT-SIZE: 15pt">&lt;<SPAN 
+style="COLOR: maroon">SharePoint<SPAN style="COLOR: blue">:<SPAN 
+style="COLOR: maroon">SPRibbon</SPAN><STRONG> </STRONG><SPAN 
+style="COLOR: red">ID<SPAN style="COLOR: blue">="SPRibbon2"</SPAN><STRONG> 
+</STRONG>runat<SPAN style="COLOR: blue">="server"</SPAN><STRONG> 
+</STRONG>PlaceholderElementId<SPAN 
+style="COLOR: blue">="RibbonContainer"</SPAN><STRONG> </STRONG>CssFile<SPAN 
+style="COLOR: blue">=""&gt;</SPAN> </SPAN></SPAN></SPAN></SPAN></P>
+<P><SPAN 
+style="FONT-FAMILY: Times New Roman; FONT-SIZE: 15pt"><STRONG></STRONG><SPAN 
+style="COLOR: blue">&lt;<SPAN style="COLOR: maroon">SharePoint<SPAN 
+style="COLOR: blue">:<SPAN 
+style="COLOR: maroon">SPRibbonPeripheralContent</SPAN><STRONG> </STRONG><SPAN 
+style="COLOR: red">runat<SPAN style="COLOR: blue">="server"</SPAN><STRONG> 
+</STRONG>Location<SPAN style="COLOR: blue">="TabRowRight"</SPAN><STRONG> 
+</STRONG>ID<SPAN 
+style="COLOR: blue">="SPRibbonPeripheralContent1"</SPAN><STRONG> 
+</STRONG>CssClass<SPAN style="COLOR: blue">="s4-trc-container 
+s4-notdlg"</SPAN><STRONG> </STRONG><SPAN style="COLOR: blue">&gt;&lt;/<SPAN 
+style="COLOR: maroon">SharePoint<SPAN style="COLOR: blue">:<SPAN 
+style="COLOR: maroon">SPRibbonPeripheralContent<SPAN 
+style="COLOR: blue">&gt;</SPAN> 
+</SPAN></SPAN></SPAN></SPAN></SPAN></SPAN></SPAN></SPAN></SPAN></P>
+<P><SPAN 
+style="FONT-FAMILY: Times New Roman; FONT-SIZE: 15pt"><STRONG></STRONG><SPAN 
+style="COLOR: blue">&lt;/<SPAN style="COLOR: maroon">SharePoint<SPAN 
+style="COLOR: blue">:<SPAN style="COLOR: maroon">SPRibbon<SPAN 
+style="COLOR: blue">&gt;</SPAN> </SPAN></SPAN></SPAN></SPAN></SPAN></P>
+<P>&nbsp; &nbsp;</P>
+<P><SPAN style="COLOR: #366092; FONT-SIZE: 13pt"><STRONG>How To <SPAN 
+style="FONT-FAMILY: 宋体">在"</SPAN>Application Page<SPAN 
+style="FONT-FAMILY: 宋体">"上添加</SPAN>Contextual Tab?</STRONG><SPAN 
+style="FONT-FAMILY: Times New Roman"> </SPAN></SPAN></P>
+<P>&nbsp; &nbsp;</P>
+<P>1 <SPAN style="FONT-FAMILY: 宋体">为</SPAN>ContextualGroup<SPAN 
+style="FONT-FAMILY: 宋体">添加</SPAN>Command<SPAN 
+style="FONT-FAMILY: 宋体">属性</SPAN><SPAN style="FONT-FAMILY: Times New Roman"> 
+</SPAN></P>
+<P>&nbsp;</P>
+<P><SPAN 
+style="FONT-FAMILY: Times New Roman; COLOR: blue; FONT-SIZE: 15pt">&lt;<SPAN 
+style="COLOR: #a31515">ContextualGroup<SPAN style="COLOR: blue"> <SPAN 
+style="COLOR: red">Color<SPAN style="COLOR: blue">=</SPAN>"<SPAN 
+style="COLOR: blue">Magenta</SPAN>"<SPAN style="COLOR: blue"> <SPAN 
+style="COLOR: red">Command<SPAN style="COLOR: blue">=</SPAN>"<SPAN 
+style="COLOR: blue">CustomContextualTab.EnableContextualGroup</SPAN>"<SPAN 
+style="COLOR: blue"> <SPAN style="COLOR: red">Id<SPAN 
+style="COLOR: blue">=</SPAN>"<SPAN 
+style="COLOR: blue">Ribbon.CustomContextualTabGroup</SPAN>"</SPAN> 
+</SPAN></SPAN></SPAN></SPAN></SPAN></SPAN></SPAN></P>
+<P><SPAN 
+style="FONT-FAMILY: Times New Roman; COLOR: blue; FONT-SIZE: 15pt"><SPAN 
+style="COLOR: red">Title<SPAN style="COLOR: blue">=</SPAN>"<SPAN 
+style="COLOR: blue">Custom Contextual Tab Group</SPAN>"</SPAN> </SPAN></P>
+<P><SPAN 
+style="FONT-FAMILY: Times New Roman; COLOR: blue; FONT-SIZE: 15pt"><SPAN 
+style="COLOR: red">Sequence<SPAN style="COLOR: blue">=</SPAN>"<SPAN 
+style="COLOR: blue">502</SPAN>"</SPAN> </SPAN></P>
+<P><SPAN 
+style="FONT-FAMILY: Times New Roman; COLOR: blue; FONT-SIZE: 15pt"><SPAN 
+style="COLOR: red">ContextualGroupId<SPAN style="COLOR: blue">=</SPAN>"<SPAN 
+style="COLOR: blue">CustomContextualTabGroup</SPAN>"<SPAN 
+style="COLOR: blue">&gt;</SPAN> </SPAN></SPAN></P>
+<P>&nbsp; &nbsp;</P>
+<P>2 <SPAN style="FONT-FAMILY: 宋体">在您自定义的<A 
+href="http://www.andrewconnell.com/blog/archive/2010/10/11/implementing-page-components-in-the-sharepoint-ribbon.aspx"></A></SPAN>PageComponent<SPAN 
+style="FONT-FAMILY: 宋体">中处理</SPAN>ContextualGroup<SPAN 
+style="FONT-FAMILY: 宋体">相关的</SPAN>Command.<SPAN 
+style="FONT-FAMILY: Times New Roman"> </SPAN></P>
+<P><SPAN style="FONT-FAMILY: 宋体">例如上文中的</SPAN>ContextualGroup<SPAN 
+style="FONT-FAMILY: 宋体">，您需要在</SPAN>getGlobalCommands<SPAN 
+style="FONT-FAMILY: 宋体">方法返回的命令数组中，包含"</SPAN>CustomContextualTab.EnableContextualGroup<SPAN 
+style="FONT-FAMILY: 宋体">"，并在</SPAN>canHandleCommand<SPAN 
+style="FONT-FAMILY: 宋体">返回</SPAN>True.</P>
+<P>&nbsp; &nbsp;</P>
+<P><SPAN style="COLOR: #17365d; FONT-SIZE: 16pt"><STRONG><SPAN 
+style="FONT-FAMILY: 宋体">二</SPAN> People Editor</STRONG><SPAN 
+style="FONT-FAMILY: Times New Roman"> </SPAN></SPAN></P>
+<P>&nbsp; &nbsp;</P>
+<P><SPAN style="COLOR: #366092; FONT-SIZE: 13pt"><STRONG>How To <SPAN 
+style="FONT-FAMILY: 宋体">用</SPAN>JavaScript<SPAN 
+style="FONT-FAMILY: 宋体">为</SPAN>PeopleEditor<SPAN 
+style="FONT-FAMILY: 宋体">控件赋值？</SPAN></STRONG><SPAN 
+style="FONT-FAMILY: Times New Roman"> </SPAN></SPAN></P>
+<P>&nbsp; &nbsp;</P>
+<P><SPAN 
+style="FONT-FAMILY: Times New Roman; FONT-SIZE: 15pt"><STRONG></STRONG><SPAN 
+style="COLOR: blue">function</SPAN><STRONG> 
+</STRONG>setPeoplePicker<STRONG>(</STRONG>pickerid,<STRONG> 
+</STRONG>value<STRONG>) {</STRONG> </SPAN></P>
+<P><SPAN 
+style="FONT-FAMILY: Times New Roman; FONT-SIZE: 15pt"><STRONG></STRONG><SPAN 
+style="COLOR: blue">var</SPAN><STRONG> </STRONG>field<STRONG> </STRONG>=<STRONG> 
+</STRONG>$<STRONG>(</STRONG><SPAN style="COLOR: maroon">"#"</SPAN><STRONG> 
+</STRONG>+<STRONG> </STRONG>pickerid<STRONG>);</STRONG> </SPAN></P>
+<P><SPAN 
+style="FONT-FAMILY: Times New Roman; FONT-SIZE: 15pt"><STRONG></STRONG><SPAN 
+style="COLOR: blue">if</SPAN><STRONG> 
+(</STRONG>field<STRONG>.</STRONG>find<STRONG>(</STRONG><SPAN 
+style="COLOR: maroon">'.ms-inputuserfield:visible'</SPAN><STRONG>).</STRONG>length<STRONG> 
+</STRONG>&gt;<STRONG> </STRONG>0<STRONG>) {</STRONG> </SPAN></P>
+<P><SPAN 
+style="FONT-FAMILY: Times New Roman; FONT-SIZE: 15pt"><STRONG></STRONG><SPAN 
+style="COLOR: darkgreen">// IE</SPAN> </SPAN></P>
+<P><SPAN 
+style="FONT-FAMILY: Times New Roman; FONT-SIZE: 15pt"><STRONG></STRONG><SPAN 
+style="COLOR: blue">var</SPAN><STRONG> </STRONG>userlist<STRONG> 
+</STRONG>=<STRONG> </STRONG>field<STRONG>.</STRONG>find<STRONG>(</STRONG><SPAN 
+style="COLOR: maroon">'.ms-inputuserfield'</SPAN><STRONG>).</STRONG>html<STRONG>();</STRONG> 
+</SPAN></P>
+<P><SPAN 
+style="FONT-FAMILY: Times New Roman; FONT-SIZE: 15pt"><STRONG></STRONG>field<STRONG>.</STRONG>find<STRONG>(</STRONG><SPAN 
+style="COLOR: maroon">'.ms-inputuserfield'</SPAN><STRONG>).</STRONG>html<STRONG>(</STRONG>userlist+<SPAN 
+style="COLOR: maroon">";"</SPAN>+value<STRONG>);</STRONG> </SPAN></P>
+<P><SPAN 
+style="FONT-FAMILY: Times New Roman; FONT-SIZE: 15pt"><STRONG></STRONG>field<STRONG>.</STRONG>find<STRONG>(</STRONG><SPAN 
+style="COLOR: maroon">'img:first'</SPAN><STRONG>).</STRONG>click<STRONG>();</STRONG> 
+</SPAN></P>
+<P><SPAN style="FONT-FAMILY: Times New Roman; FONT-SIZE: 15pt"><STRONG>} 
+</STRONG><SPAN style="COLOR: blue">else</SPAN><STRONG> {</STRONG> </SPAN></P>
+<P><SPAN 
+style="FONT-FAMILY: Times New Roman; FONT-SIZE: 15pt"><STRONG></STRONG><SPAN 
+style="COLOR: darkgreen">// FF</SPAN> </SPAN></P>
+<P><SPAN 
+style="FONT-FAMILY: Times New Roman; FONT-SIZE: 15pt"><STRONG></STRONG><SPAN 
+style="COLOR: blue">var</SPAN><STRONG> </STRONG>userlist<STRONG> 
+</STRONG>=<STRONG> </STRONG>field<STRONG>.</STRONG>find<STRONG>(</STRONG><SPAN 
+style="COLOR: maroon">"textarea:first"</SPAN><STRONG>).</STRONG>val<STRONG>();</STRONG> 
+</SPAN></P>
+<P><SPAN 
+style="FONT-FAMILY: Times New Roman; FONT-SIZE: 15pt"><STRONG></STRONG>field<STRONG>.</STRONG>find<STRONG>(</STRONG><SPAN 
+style="COLOR: maroon">"textarea:first"</SPAN><STRONG>).</STRONG>val<STRONG>(</STRONG>userlist<STRONG> 
+</STRONG>+<STRONG> </STRONG><SPAN style="COLOR: maroon">";"</SPAN><STRONG> 
+</STRONG>+<STRONG> </STRONG>value<STRONG>);</STRONG> </SPAN></P>
+<P><SPAN 
+style="FONT-FAMILY: Times New Roman; FONT-SIZE: 15pt"><STRONG>}</STRONG> 
+</SPAN></P>
+<P><SPAN 
+style="FONT-FAMILY: Times New Roman; FONT-SIZE: 15pt"><STRONG>}</STRONG> 
+</SPAN></P>
+<P><SPAN 
+style="FONT-FAMILY: Times New Roman; FONT-SIZE: 15pt"><STRONG></STRONG>$<STRONG>(</STRONG>document<STRONG>).</STRONG>ready<STRONG>(</STRONG><SPAN 
+style="COLOR: blue">function</SPAN><STRONG> () {</STRONG> </SPAN></P>
+<P><SPAN 
+style="FONT-FAMILY: Times New Roman; FONT-SIZE: 15pt"><STRONG></STRONG>setPeoplePicker<STRONG>(</STRONG><SPAN 
+style="COLOR: maroon">"<SPAN 
+style="BACKGROUND-COLOR: yellow">&lt;%</SPAN>=MyPeopleEditor.ClientID<SPAN 
+style="BACKGROUND-COLOR: yellow">%&gt;</SPAN>"</SPAN>,<STRONG> </STRONG><SPAN 
+style="COLOR: maroon">"CustomValue"</SPAN><STRONG>);</STRONG> </SPAN></P></DIV>
+<SCRIPT type=text/javascript>
+if ($ != jQuery) {
+	$ = jQuery.noConflict();
+}
+var isLogined = true;
+var cb_blogId = 24299;
+var cb_entryId = 2185262;
+var cb_blogApp = "osamede";
+var cb_blogUserGuid = "1b6b3d0b-63cf-dd11-9e4d-001cf0cd104b";
+var cb_entryCreatedDate = '2011/9/22 16:31:00';
+</SCRIPT>
+
+<DIV id=blog_post_info_block>
+<DIV id=BlogPostCategory></DIV>
+<DIV id=EntryTag>标签: <A 
+href="http://www.cnblogs.com/osamede/tag/SharePoint/">SharePoint</A>, <A 
+href="http://www.cnblogs.com/osamede/tag/Ribbon/">Ribbon</A></DIV>
+<DIV style="DISPLAY: none" id=green_channel>绿色通道：<A id=green_channel_digg 
+onclick="DiggIt(cb_entryId,cb_blogId,1);green_channel_success(this,'谢谢推荐！');" 
+href="javascript:void(0);">好文要顶</A><A id=green_channel_follow 
+onclick=c_follow(); href="javascript:void(0);">关注我</A><A 
+id=green_channel_favorite onclick="AddToWz(2185262);return false;" 
+href="javascript:void(0);">收藏该文</A><A id=green_channel_contact 
+href="http://space.cnblogs.com/msg/send/%e5%bf%83%e5%88%a9" 
+target=_blank>与我联系</A> <A id=green_channel_weibo title=分享至新浪微博 
+onclick=ShareToTsina() href="javascript:void(0);"><IMG alt="" 
+src="SharePoint%20Tips%20and%20Tricks_files/icon_sina.gif"></A> </DIV>
+<DIV id=digg_block>
+<DIV id=author_profile>
+<DIV id=author_profile_info class=author_profile_info>
+<DIV id=author_profile_detail class=author_profile_info></DIV></DIV>
+<DIV class=clear></DIV>
+<DIV id=author_profile_honor></DIV>
+<DIV id=author_profile_follow></DIV></DIV>
+<DIV style="DISPLAY: none" id=div_digg>
+<DIV class=diggit onclick=DiggIt(cb_entryId,cb_blogId,1)><SPAN id=digg_count 
+class=diggnum></SPAN></DIV>
+<DIV class=buryit onclick=DiggIt(cb_entryId,cb_blogId,2)><SPAN id=bury_count 
+class=burynum></SPAN></DIV>
+<DIV class=clear></DIV>
+<DIV id=digg_tips class=diggword></DIV></DIV></DIV>
+<DIV class=clear></DIV>
+<DIV id=post_next_prev></DIV></DIV>
+<SCRIPT type=text/javascript>
+LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate);
+</SCRIPT>
+</DIV>
+<DIV class=postDesc>posted @ 2011-09-22 16:31 <A 
+href="http://www.cnblogs.com/osamede/">心利</A> 阅读(46) <A 
+href="http://www.cnblogs.com/osamede/archive/2011/09/22/2185262.html#commentform">评论(0)</A> 
+<A 
+onclick="open_link('http://www.cnblogs.com/osamede/admin/EditPosts.aspx?postid=2185262')" 
+href="http://www.cnblogs.com/osamede/archive/2011/09/22/2185262.html#" 
+rel=nofollow>编辑</A> <A onclick="AddToWz(2185262);return false;" 
+href="http://www.cnblogs.com/osamede/archive/2011/09/22/2185262.html#">收藏</A></DIV></DIV><IMG 
+alt="" src="SharePoint%20Tips%20and%20Tricks_files/2185262.jpg" width=1 
+height=1> </DIV><!--end: topics 文章、评论容器-->
+<SCRIPT type=text/javascript>   
+    function PostComment(){
+        if($("#btn_comment_submit").val() == "修改" && $("#comment_edit_id").html !=''){
+            UpdateComment(24299);
+        }
+        else{
+            PostNewComment();
+        }
+    }
+    
+    function PostNewComment() {
+        
+        var content = $("#tbCommentBody").val();
+        if (content.length == 0) {
+            alert('请输入评论内容！');
+            return;
+        }
+        if(content.length > 4000){
+            alert('评论内容过长，超过4000个字数限制！当前长度：'+content.length);
+            return;
+        }
+        
+        if($("#span_comment_posted").html()!='' && $("#span_comment_posted").html()==content){
+             alert("该评论已发表过!");
+            return;
+        }        
+        
+        $("#tip_comment").html("评论提交中...");        
+        $("#span_comment_posted").html(content);
+        var email = $("#tbCommentEmail").val();
+        var author =$("#ctl03_tbCommentAuthor").val();
+        var comment = {};
+        comment.parentId = 2185262;
+        comment.blogId = 24299;
+        comment.sourceUrl = 'http://www.cnblogs.com/osamede/archive/2011/09/22/2185262.html';        
+        comment.title = $("#span_comment_title").text();
+        comment.content = $.trim(content);
+        var parentId = $("#span_parentcomment_id").text();
+        if(/(\d)/.test(parentId)){
+        comment.parentCommentId = parentId;
+        }else{
+        comment.parentCommentId = 0;
+        }
+        var startDate = new Date();
+        if(typeof($.toJSON) == "undefined"){
+            alert("博主自定义脚本与系统脚本冲突，无法提交评论，请与管理员联系！");
+            return;
+        }
+        $.ajax({
+            url: '/ws/CommentService.asmx/AddComment',
+            data: $.toJSON(comment),
+            type: "post",
+            dataType: "json",
+            contentType: "application/json; charset=utf8",
+            success: function(data) {
+                if (data.d) {
+                    if(data.d["IsSuccess"]){
+                        var dt = (new Date()).getTime()-startDate;
+                        ShowCommentMsg("感谢您的回复:)" + " 提交耗时"+dt+"毫秒");                        
+                        //RereshComments2(comment.parentId);  
+                        $("#tbCommentBody").val(''); 
+                        $("#divCommentShow").html($("#divCommentShow").html()+data.d["ReturnData"]);                  
+                        //$("#divCommentShow").html(data.d["ReturnData"]+content.replace(/\n/g,"<br/>")+"<br/><br/>");                         
+                        CommentNotify(data.d["CommentID"]);                        
+                        }else{
+                        ShowCommentMsg(data.d["ReturnData"]);
+                        $("#span_comment_posted").html('');                        
+                   }
+                } else {
+                    var errorMsg = "抱歉！评论提交失败！请与管理员联系。";                    
+                    if(data.d["ReturnData"]!=''){
+                        errorMsg = errorMsg+"错误信息："+errorMsg;
+                    }
+                    ShowCommentMsg(errorMsg);
+                    $("#span_comment_posted").html('');  
+                }
+            },
+            error: function(xhr) {
+                //alert(xhr.responseText);
+                ShowCommentMsg("抱歉！评论提交失败！请与管理员联系。");
+                $("#span_comment_posted").html('');  
+            }
+        });
+    }
+
+        
+    function SubscribeComment(){
+        var entryId = 2185262;
+        var blogId = 24299;
+        $("#ctl03_lnkSubscribe").html("<span style='color:red'>订阅操作中...</span>");
+        AjaxPost("/ws/CommentService.asmx/SubscribeComment","{entryId:"+entryId+",blogId:"+blogId+"}",OnSubscribeSuccess);
+        return false;
+    }
+    
+    function OnSubscribeSuccess(response){
+        if(response){
+            $("#ctl03_lnkSubscribe").html("<span style='color:red'>订阅成功</span>");
+            $("#ctl03_lnkSubscribe").removeAttr("href");
+            $("#ctl03_lnkSubscribe").removeAttr("onclick");
+        }
+        else{
+            $("#ctl03_lnkSubscribe").html("<span style='color:red'>订阅失败</span>");
+        }
+    }
+    
+   function CancelCommentSubscribe(){
+        var entryId = 2185262;
+        $("#ctl03_lnkSubscribe").html("<span style='color:red'>取消操作中...</span>");
+        AjaxPost("/ws/CommentService.asmx/CancelCommentSubscribe","{entryId:"+entryId+"}",OnCancelSubscribeSuccess);
+        return false;
+    }
+    
+    function OnCancelSubscribeSuccess(response){
+        if(response){
+            $("#ctl03_lnkSubscribe").html("<span style='color:red'>取消成功</span>");
+                        $("#ctl03_lnkSubscribe").removeAttr("href");
+            $("#ctl03_lnkSubscribe").removeAttr("onclick");
+        }
+        else{
+            $("#ctl03_lnkSubscribe").html("<span style='color:red'>取消操作失败</span>");
+        }
+    }
+
+    
+</SCRIPT>
+
+<DIV id=comment_form class=commentform>
+<SCRIPT type=text/javascript>
+    try {
+        SyntaxHighlighter.all();
+        isSyntaxHighlighted = true;
+    } catch (e) { }
+</SCRIPT>
+
+<DIV id=divCommentShow></DIV>
+<DIV id=comment_nav><SPAN id=span_refresh_tips></SPAN><A id=lnk_RefreshComments 
+onclick="return RefreshCommentList(2185262);" 
+href="http://www.cnblogs.com/osamede/archive/2011/09/22/2185262.html#" 
+name=commentform>刷新评论列表</A><A onclick="return RefreshPage();" 
+href="http://www.cnblogs.com/osamede/archive/2011/09/22/2185262.html#">刷新页面</A><A 
+href="http://www.cnblogs.com/osamede/archive/2011/09/22/2185262.html#top">返回顶部</A></DIV>
+<DIV id=commentform_title>发表评论</DIV><SPAN style="COLOR: red" 
+id=tip_comment></SPAN>
+<P>昵称：<INPUT id=ctl03_tbCommentAuthor class=author disabled 
+name=ctl03$tbCommentAuthor value=amingo> </P>
+<P>主页：<INPUT id=ctl03_tbCommentAuthorUrl class=url disabled 
+name=ctl03$tbCommentAuthorUrl value=http://home.cnblogs.com/u/amingo/> </P>
+<DIV class=commentbox_main>
+<DIV class=commentbox_title>
+<DIV class=commentbox_title_left>评论内容： </DIV>
+<DIV class=commentbox_title_right><IMG id=ubb_quote class=comment_icon 
+title=添加引用 onclick="insertUBB('tbCommentBody','quote')" alt=引用 
+src="SharePoint%20Tips%20and%20Tricks_files/quote.gif"> <IMG id=ubb_bold 
+class=comment_icon title=添加粗体 onclick="insertUBB('tbCommentBody','b')" alt=粗体 
+src="SharePoint%20Tips%20and%20Tricks_files/b.png"> <IMG id=ubb_url 
+class=comment_icon title=添加链接 onclick="insertUbbUrl('tbCommentBody')" alt=链接 
+src="SharePoint%20Tips%20and%20Tricks_files/lk.png"> <IMG id=ubb_indent 
+class=comment_icon title=添加首行缩进 onclick="insertIndent('tbCommentBody')" alt=缩进 
+src="SharePoint%20Tips%20and%20Tricks_files/indent.png"> <IMG id=ubb_code 
+class=comment_icon title=添加代码 onclick=insertUbbCode() alt=代码 
+src="SharePoint%20Tips%20and%20Tricks_files/InsertCode.gif"> <IMG id=ubb_img 
+class=comment_icon title=添加图片 onclick="insertUbbImg('tbCommentBody')" alt=图片 
+src="SharePoint%20Tips%20and%20Tricks_files/img.gif"> <A 
+class=comment_uploadimg_a title=上传图片并插入评论框 
+href="javascript:OpenImageUploadWindow();">上传图片</A> </DIV></DIV>
+<DIV class=clear></DIV><TEXTAREA onkeydown="return clt_enter(event)" id=tbCommentBody class=comment_textarea></TEXTAREA> 
+</DIV>
+<P><INPUT id=btn_comment_submit class=comment_btn onclick="PostComment();return false;" value=提交 type=button> 
+&nbsp;&nbsp;<SPAN style="DISPLAY: none" id=span_comment_canceledit><A 
+onclick="return CancelCommentEdit()" 
+href="http://www.cnblogs.com/osamede/archive/2011/09/22/2185262.html###">不改了</A>&nbsp;&nbsp;</SPAN><A 
+onclick="return confirm('确认注销吗？')" 
+href="http://passport.cnblogs.com/logout.aspx?ReturnUrl=http%3a%2f%2fwww.cnblogs.com%2fosamede%2farchive%2f2011%2f09%2f22%2f2185262.html%3flogout%3d1%23commentform">注销</A>&nbsp;&nbsp;<A 
+id=ctl03_lnkSubscribe title=邮件订阅回复通知 onclick="return SubscribeComment();" 
+href="http://www.cnblogs.com/UI/Controls/#%23%23">订阅回复</A> </P>
+<P>[使用Ctrl+Enter键快速提交] </P>
+<DIV style="DISPLAY: none"><SPAN id=comment_edit_id></SPAN><SPAN 
+id=span_parentcomment_id>0</SPAN> <SPAN id=span_parent_id>2185262</SPAN> <SPAN 
+id=span_comment_replyto></SPAN><SPAN id=span_comment_title>SharePoint Tips and 
+Tricks -- Ribbon,People Editor</SPAN> <SPAN id=span_comment_posted></SPAN></DIV>
+<DIV id=clear_read_link></DIV>
+<SCRIPT type=text/javascript>
+    $("#clear_read_link").html('<a href="http://archive.cnblogs.com/a/' + cb_entryId + '/" target="_blank">简洁阅读版式</a>')
+</SCRIPT>
+
+<DIV id=ctl03_UnderCommentBox1_ad_text_commentbox class=ad_text_commentbox><A 
+href="http://a4.yeshj.com/rd/40860/" rel=nofollow 
+target=_blank>不3k就业不给1分学费(java, .net, php, android)</A> </DIV>
+<DIV class="itnews c_ad_block"><B>最新IT新闻</B>:<BR>· <A 
+href="http://news.cnblogs.com/n/116530/" target=_blank>多家科技公司CEO退休后不愿放权 
+改任董事长</A><BR>· <A href="http://news.cnblogs.com/n/116529/" 
+target=_blank>《今日美国》Twitter账号遭遇黑客攻击</A><BR>· <A 
+href="http://news.cnblogs.com/n/116528/" 
+target=_blank>大众点评网宣布暂停收录77家炒作点评商户</A><BR>· <A 
+href="http://news.cnblogs.com/n/116527/" 
+target=_blank>Android疯狂的专利战争大史记</A><BR>· <A 
+href="http://news.cnblogs.com/n/116525/" 
+target=_blank>卡巴斯基回应央视虚假病毒报道：代理公司违规</A><BR>» <A title=IT新闻 
+href="http://news.cnblogs.com/" target=_blank>更多新闻...</A> </DIV>
+<DIV id=kb_block class="itnews c_ad_block"><B>最新知识库文章</B>:<BR>
+<DIV id=kb_recent>· <A href="http://kb.cnblogs.com/page/116501/" 
+target=_blank>浅谈JavaScript编程语言的编码规范</A><BR>· <A 
+href="http://kb.cnblogs.com/page/107847/" target=_blank>开发到底是什么？</A><BR>· <A 
+href="http://kb.cnblogs.com/page/108405/" target=_blank>探讨.NET中的联合结构</A><BR>· <A 
+href="http://kb.cnblogs.com/page/107911/" target=_blank>谈软件架构</A><BR>· <A 
+href="http://kb.cnblogs.com/page/107856/" 
+target=_blank>字符串匹配那些事（一）</A><BR></DIV>» <A href="http://kb.cnblogs.com/" 
+target=_blank>更多知识库文章...</A> </DIV>
+<SCRIPT type=text/javascript 
+src="SharePoint%20Tips%20and%20Tricks_files/google_service.js"></SCRIPT>
+
+<SCRIPT type=text/javascript>
+    var c_enable_dfp = true;
+    if (navigator.userAgent.indexOf("Chrome/6.0.401.1") > 0) {
+        c_enable_dfp = false;
+    }
+    if (c_enable_dfp) {
+        try {
+            GS_googleAddAdSenseService("ca-pub-4210569241504288");
+            GS_googleEnableAllServices();
+        }
+        catch (e) { }
+    }
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+    if (c_enable_dfp) {
+        try {
+            GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_bottom");
+            GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_C2");
+        }
+        catch (e) { }
+    }
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+    if (c_enable_dfp) {
+        try {
+            GA_googleFetchAds();
+        } catch (e) { }
+    }
+</SCRIPT>
+
+<DIV class=c_ad_block>
+<SCRIPT type=text/javascript>
+    try {
+        if (c_enable_dfp) {
+
+            GA_googleFillSlot("cnblogs_blogpost_bottom");
+        }
+    }
+    catch (e) { }
+</SCRIPT>
+</DIV>
+<DIV class=c_ad_block>
+<SCRIPT type=text/javascript>
+    try {
+        if (c_enable_dfp) {
+
+            GA_googleFillSlot("cnblogs_blogpost_C2");
+        }
+    }
+    catch (e) { }
+</SCRIPT>
+</DIV>
+<DIV id=HistoryToday class=c_ad_block></DIV>
+<SCRIPT type=text/javascript>
+    $(document).ready(function () {
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    });
+</SCRIPT>
+
+<DIV id=ctl03_UnderCommentBox1_ad_under_comment2 class=c_ad_block><A 
+href="http://www.china-pub.com/STATIC07/1107/2011chinapub_6810_110718/2011chinapub_6810_110718.asp" 
+rel=nofollow target=_blank><IMG 
+style="BORDER-RIGHT-WIDTH: 0px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px" 
+alt="" src="SharePoint%20Tips%20and%20Tricks_files/china-pub.jpg"></A><BR><A 
+href="http://www.china-pub.com/STATIC07/1107/zh_autumntb_110725/zh_autumntb_110725.asp" 
+rel=nofollow target=_blank>China-pub 2011秋季教材巡展</A><BR><A 
+href="http://www.china-pub.com/static07/0901/zh_jueba_090121.asp" rel=nofollow 
+target=_blank>China-Pub 计算机绝版图书按需印刷服务</A><BR></DIV>
+<DIV id=site_nav_under class=c_ad_block><A title=程序员的网上家园 
+href="http://www.cnblogs.com/" target=_blank>网站首页</A><A 
+href="http://q.cnblogs.com/" target=_blank>博问</A><A 
+href="http://kb.cnblogs.com/" target=_blank>知识库</A><A 
+href="http://news.cnblogs.com/" target=_blank>IT新闻</A><A 
+href="http://home.cnblogs.com/" target=_blank>我的园子</A><A 
+href="http://home.cnblogs.com/ing/" target=_blank>闪存</A><A 
+href="http://job.cnblogs.com/" target=_blank>程序员招聘</A> </DIV></DIV>
+<SCRIPT type=text/javascript>
+    if (typeof (jQuery) == 'undefined') {
+        $("#comment_form").hide();
+    }
+</SCRIPT>
+</DIV><!--end: topicList 文章列表容器-->
+<DIV id=sideBar>
+<DIV id=sideBarMain><!--done-->
+<DIV class=newsItem>
+<H3 class=catListTitle>公告</H3><IMG alt=Me 
+src="SharePoint%20Tips%20and%20Tricks_files/o_http_imgload.jpg"> 
+<P>目前主要在做一些基于SharePoint的开发工作。 </P>
+<DIV id=profile_block>昵称：<A 
+href="http://home.cnblogs.com/u/osamede/">心利</A><BR>园龄：<A title=入园时间：2007-01-25 
+href="http://home.cnblogs.com/u/osamede/">4年8个月</A><BR>粉丝：<A 
+href="http://home.cnblogs.com/u/osamede/followers/">3</A><BR>关注：<A 
+href="http://home.cnblogs.com/u/osamede/followees/">1</A>
+<DIV id=p_b_follow></DIV>
+<SCRIPT type=text/javascript>cnblogs.UserManager.GetFollowStatus('1b6b3d0b-63cf-dd11-9e4d-001cf0cd104b')</SCRIPT>
+</DIV></DIV>
+<DIV id=calendar>
+<TABLE id=Calendar1_entryCal class=Cal title=Calendar cellSpacing=0 
+cellPadding=0>
+  <TBODY>
+  <TR>
+    <TD colSpan=7>
+      <TABLE class=CalTitle cellSpacing=0>
+        <TBODY>
+        <TR>
+          <TD class=CalNextPrev><A style="COLOR: black" 
+            title="Go to the previous month" 
+            href="javascript:__doPostBack('Calendar1$entryCal','V4230')">&lt;</A></TD>
+          <TD align=center>2011年9月</TD>
+          <TD class=CalNextPrev align=right><A style="COLOR: black" 
+            title="Go to the next month" 
+            href="javascript:__doPostBack('Calendar1$entryCal','V4291')">&gt;</A></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TH class=CalDayHeader abbr=日 scope=col align=center>日</TH>
+    <TH class=CalDayHeader abbr=一 scope=col align=center>一</TH>
+    <TH class=CalDayHeader abbr=二 scope=col align=center>二</TH>
+    <TH class=CalDayHeader abbr=三 scope=col align=center>三</TH>
+    <TH class=CalDayHeader abbr=四 scope=col align=center>四</TH>
+    <TH class=CalDayHeader abbr=五 scope=col align=center>五</TH>
+    <TH class=CalDayHeader abbr=六 scope=col align=center>六</TH></TR>
+  <TR>
+    <TD class=CalOtherMonthDay align=center>28</TD>
+    <TD class=CalOtherMonthDay align=center>29</TD>
+    <TD class=CalOtherMonthDay align=center>30</TD>
+    <TD class=CalOtherMonthDay align=center>31</TD>
+    <TD align=center>1</TD>
+    <TD align=center>2</TD>
+    <TD class=CalWeekendDay align=center>3</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay align=center>4</TD>
+    <TD align=center>5</TD>
+    <TD align=center>6</TD>
+    <TD align=center>7</TD>
+    <TD align=center>8</TD>
+    <TD align=center>9</TD>
+    <TD class=CalWeekendDay align=center>10</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay align=center>11</TD>
+    <TD align=center>12</TD>
+    <TD align=center>13</TD>
+    <TD align=center>14</TD>
+    <TD align=center>15</TD>
+    <TD align=center>16</TD>
+    <TD class=CalWeekendDay align=center>17</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay align=center>18</TD>
+    <TD align=center>19</TD>
+    <TD align=center>20</TD>
+    <TD align=center>21</TD>
+    <TD align=center><A 
+      href="http://www.cnblogs.com/osamede/archive/2011/9/22.html"><U>22</U></A></TD>
+    <TD align=center><A 
+      href="http://www.cnblogs.com/osamede/archive/2011/9/23.html"><U>23</U></A></TD>
+    <TD class=CalWeekendDay align=center>24</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay align=center>25</TD>
+    <TD class=CalTodayDay align=center>26</TD>
+    <TD align=center>27</TD>
+    <TD align=center>28</TD>
+    <TD align=center>29</TD>
+    <TD align=center>30</TD>
+    <TD class=CalOtherMonthDay align=center>1</TD></TR>
+  <TR>
+    <TD class=CalOtherMonthDay align=center>2</TD>
+    <TD class=CalOtherMonthDay align=center>3</TD>
+    <TD class=CalOtherMonthDay align=center>4</TD>
+    <TD class=CalOtherMonthDay align=center>5</TD>
+    <TD class=CalOtherMonthDay align=center>6</TD>
+    <TD class=CalOtherMonthDay align=center>7</TD>
+    <TD class=CalOtherMonthDay align=center>8</TD></TR></TBODY></TABLE></DIV>
+<DIV id=leftcontentcontainer>
+<SCRIPT type=text/javascript>
+var blogapp = 'osamede';
+</SCRIPT>
+
+<DIV class=mySearch>
+<H3 class=catListTitle>搜索</H3></DIV>
+<DIV class=catListLink>
+<H3 class=catListTitle>常用链接</H3>
+<UL>
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_lnkLinkItem_0 
+  href="http://www.cnblogs.com/osamede/MyPosts.html">我的随笔</A> 
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_lnkLinkItem_1 
+  href="http://home.cnblogs.com/osamede/">我的空间</A> 
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_lnkLinkItem_2 
+  href="http://space.cnblogs.com/msg/recent">我的短信</A> 
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_lnkLinkItem_3 
+  href="http://www.cnblogs.com/osamede/MyComments.html">我的评论</A> 
+  <LI><A id=itemListLink 
+  onclick="this.blur();WarpClass('itemListLink', 'itemListLin_con');return false;" 
+  href="http://www.cnblogs.com/osamede/archive/2011/09/22/2185262.html#">更多链接</A> 
+  </LI></UL>
+<DIV style="DISPLAY: none" id=itemListLin_con>
+<UL>
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_lnkLinkItem_0 title=我发表过评论的随笔 
+  href="http://www.cnblogs.com/osamede/OtherPosts.html">我的参与</A> 
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_lnkLinkItem_1 
+  href="http://www.cnblogs.com/osamede/MyNews.html">我的新闻</A> 
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_lnkLinkItem_2 
+  href="http://www.cnblogs.com/osamede/RecentComments.html">最新评论</A> 
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_lnkLinkItem_3 
+  href="http://www.cnblogs.com/osamede/tag/">我的标签</A> </LI></UL></DIV></DIV>
+<DIV class=catListMyTeams>
+<H3 class=catListTitle>我参与的团队</H3>
+<UL>
+  <LI><A id=SingleColumn1__27a7734_TeamList_lnkTeam_0 
+  href="http://www.cnblogs.com/team/BJDotNetClub/">北京.NET俱乐部(0/0)</A> 
+  <LI><A id=SingleColumn1__27a7734_TeamList_lnkTeam_1 
+  href="http://www.cnblogs.com/team/nm/">内蒙古.NET俱乐部(0/0)</A> 
+  <LI><A id=SingleColumn1__27a7734_TeamList_lnkTeam_2 
+  href="http://www.cnblogs.com/team/wcfs/">WCF技术研究团队(0/0)</A> </LI></UL></DIV>
+<DIV class=catListTag>
+<H3 class=catListTitle>我的标签</H3>
+<UL>
+  <LI><A href="http://www.cnblogs.com/osamede/tag/Windows+Mobile/">Windows 
+  Mobile(2)</A>
+  <LI><A href="http://www.cnblogs.com/osamede/tag/XML/">XML(1)</A>
+  <LI><A href="http://www.cnblogs.com/osamede/tag/%ef%bf%a5Net/">.Net(1)</A>
+  <LI><A href="http://www.cnblogs.com/osamede/tag/Ras/">Ras(1)</A>
+  <LI><A href="http://www.cnblogs.com/osamede/tag/T4/">T4(1)</A>
+  <LI><A href="http://www.cnblogs.com/osamede/tag/Ajax/">Ajax(1)</A>
+  <LI><A href="http://www.cnblogs.com/osamede/tag/SharePoint/">SharePoint(1)</A>
+  <LI><A href="http://www.cnblogs.com/osamede/tag/Ribbon/">Ribbon(1)</A>
+  <LI><A href="http://www.cnblogs.com/osamede/tag/asp%ef%bf%a5net+/">asp.net 
+  (1)</A>
+  <LI><A href="http://www.cnblogs.com/osamede/tag/excel/">excel(1)</A> 
+</LI></UL></DIV>
+<DIV class=catListPostCategory>
+<H3 class=catListTitle>随笔分类<SPAN 
+style="FONT-SIZE: 11px; FONT-WEIGHT: normal">(27)</SPAN></H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_LinkList_0_Link_0 
+  href="http://www.cnblogs.com/osamede/category/121760.html">.Net 
+  Framework(4)</A> <A id=SingleColumn1_Categories_CatList_LinkList_0_RssLink_0 
+  onclick="return open_link('http://www.cnblogs.com/osamede/category/121760.html/rss');" 
+  href="http://www.cnblogs.com/osamede/archive/2011/09/22/2185262.html#">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_LinkList_0_Link_1 
+  href="http://www.cnblogs.com/osamede/category/94090.html">Ajax(2)</A> <A 
+  id=SingleColumn1_Categories_CatList_LinkList_0_RssLink_1 
+  onclick="return open_link('http://www.cnblogs.com/osamede/category/94090.html/rss');" 
+  href="http://www.cnblogs.com/osamede/archive/2011/09/22/2185262.html#">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_LinkList_0_Link_2 
+  href="http://www.cnblogs.com/osamede/category/94089.html">Asp.net(10)</A> <A 
+  id=SingleColumn1_Categories_CatList_LinkList_0_RssLink_2 
+  onclick="return open_link('http://www.cnblogs.com/osamede/category/94089.html/rss');" 
+  href="http://www.cnblogs.com/osamede/archive/2011/09/22/2185262.html#">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_LinkList_0_Link_3 
+  href="http://www.cnblogs.com/osamede/category/123142.html">Feeling(2)</A> <A 
+  id=SingleColumn1_Categories_CatList_LinkList_0_RssLink_3 
+  onclick="return open_link('http://www.cnblogs.com/osamede/category/123142.html/rss');" 
+  href="http://www.cnblogs.com/osamede/archive/2011/09/22/2185262.html#">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_LinkList_0_Link_4 
+  href="http://www.cnblogs.com/osamede/category/226250.html">IPhone</A> <A 
+  id=SingleColumn1_Categories_CatList_LinkList_0_RssLink_4 
+  onclick="return open_link('http://www.cnblogs.com/osamede/category/226250.html/rss');" 
+  href="http://www.cnblogs.com/osamede/archive/2011/09/22/2185262.html#">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_LinkList_0_Link_5 
+  href="http://www.cnblogs.com/osamede/category/226253.html">Mobile Web </A><A 
+  id=SingleColumn1_Categories_CatList_LinkList_0_RssLink_5 
+  onclick="return open_link('http://www.cnblogs.com/osamede/category/226253.html/rss');" 
+  href="http://www.cnblogs.com/osamede/archive/2011/09/22/2185262.html#">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_LinkList_0_Link_6 
+  href="http://www.cnblogs.com/osamede/category/131714.html">Other(5)</A> <A 
+  id=SingleColumn1_Categories_CatList_LinkList_0_RssLink_6 
+  onclick="return open_link('http://www.cnblogs.com/osamede/category/131714.html/rss');" 
+  href="http://www.cnblogs.com/osamede/archive/2011/09/22/2185262.html#">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_LinkList_0_Link_7 
+  href="http://www.cnblogs.com/osamede/category/226251.html">Symbian</A> <A 
+  id=SingleColumn1_Categories_CatList_LinkList_0_RssLink_7 
+  onclick="return open_link('http://www.cnblogs.com/osamede/category/226251.html/rss');" 
+  href="http://www.cnblogs.com/osamede/archive/2011/09/22/2185262.html#">(rss)</A> 
+
+  <LI><A id=SingleColumn1_Categories_CatList_LinkList_0_Link_8 
+  href="http://www.cnblogs.com/osamede/category/131713.html">Trick(4)</A> <A 
+  id=SingleColumn1_Categories_CatList_LinkList_0_RssLink_8 
+  onclick="return open_link('http://www.cnblogs.com/osamede/category/131713.html/rss');" 
+  href="http://www.cnblogs.com/osamede/archive/2011/09/22/2185262.html#">(rss)</A> 
+  </LI></UL></DIV>
+<DIV class=catListPostArchive>
+<H3 class=catListTitle>随笔档案<SPAN 
+style="FONT-SIZE: 11px; FONT-WEIGHT: normal">(26)</SPAN></H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_LinkList_1_Link_0 
+  href="http://www.cnblogs.com/osamede/archive/2011/09.html">2011年9月 (2)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_LinkList_1_Link_1 
+  href="http://www.cnblogs.com/osamede/archive/2009/07.html">2009年7月 (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_LinkList_1_Link_2 
+  href="http://www.cnblogs.com/osamede/archive/2009/06.html">2009年6月 (2)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_LinkList_1_Link_3 
+  href="http://www.cnblogs.com/osamede/archive/2009/05.html">2009年5月 (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_LinkList_1_Link_4 
+  href="http://www.cnblogs.com/osamede/archive/2008/12.html">2008年12月 (2)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_LinkList_1_Link_5 
+  href="http://www.cnblogs.com/osamede/archive/2008/10.html">2008年10月 (2)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_LinkList_1_Link_6 
+  href="http://www.cnblogs.com/osamede/archive/2008/04.html">2008年4月 (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_LinkList_1_Link_7 
+  href="http://www.cnblogs.com/osamede/archive/2008/03.html">2008年3月 (2)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_LinkList_1_Link_8 
+  href="http://www.cnblogs.com/osamede/archive/2008/02.html">2008年2月 (5)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_LinkList_1_Link_9 
+  href="http://www.cnblogs.com/osamede/archive/2008/01.html">2008年1月 (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_LinkList_1_Link_10 
+  href="http://www.cnblogs.com/osamede/archive/2007/08.html">2007年8月 (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_LinkList_1_Link_11 
+  href="http://www.cnblogs.com/osamede/archive/2007/06.html">2007年6月 (3)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_LinkList_1_Link_12 
+  href="http://www.cnblogs.com/osamede/archive/2007/05.html">2007年5月 (1)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_LinkList_1_Link_13 
+  href="http://www.cnblogs.com/osamede/archive/2007/03.html">2007年3月 (2)</A> 
+  </LI></UL></DIV>
+<DIV class=catListArticleCategory>
+<H3 class=catListTitle>文章分类</H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_LinkList_2_Link_0 
+  href="http://www.cnblogs.com/osamede/category/87741.html">ajax</A> <A 
+  id=SingleColumn1_Categories_CatList_LinkList_2_RssLink_0 
+  onclick="return open_link('http://www.cnblogs.com/osamede/category/87741.html/rss');" 
+  href="http://www.cnblogs.com/osamede/archive/2011/09/22/2185262.html#">(rss)</A> 
+  </LI></UL></DIV>
+<DIV class=catListImageCategory>
+<H3 class=catListTitle>相册</H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_LinkList_3_Link_0 
+  href="http://www.cnblogs.com/osamede/gallery/160528.html" 
+  rel=nofollow>GLDP</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_LinkList_3_Link_1 
+  href="http://www.cnblogs.com/osamede/gallery/100253.html" 
+  rel=nofollow>穿半袖的我</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_LinkList_3_Link_2 
+  href="http://www.cnblogs.com/osamede/gallery/94911.html" 
+  rel=nofollow>桃花盛开的时候</A> </LI></UL></DIV>
+<DIV class=catList>
+<H3 class=catListTitle>我所关注的博客</H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_LinkList_4_Link_0 
+  href="http://wayfarer.cnblogs.com/" rel=nofollow>Bruce Zhang</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_LinkList_4_Link_1 
+  href="http://dflying.cnblogs.com/" rel=nofollow>Dflying Chen</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_LinkList_4_Link_2 
+  href="http://www.cnblogs.com/thin" rel=nofollow>Thin</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_LinkList_4_Link_3 
+  href="http://www.cnblogs.com/JeffreyZhao" rel=nofollow target=_blank>老赵点滴</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_LinkList_4_Link_4 
+  href="http://kwklover.cnblogs.com/" rel=nofollow>随风流月</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_LinkList_4_Link_5 
+  href="http://www.cnblogs.com/Ninputer" rel=nofollow>装配中的脑袋</A> </LI></UL></DIV>
+<DIV class=catList我最喜欢的网站>
+<H3 class=catListTitle>我最喜欢的网站</H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_LinkList_5_Link_0 
+  href="http://www.ibookman.com/" rel=nofollow>书友文化传播</A> </LI></UL></DIV>
+<DIV class=catListEssay>
+<H3 class=catListTitle>最新随笔</H3>
+<UL>
+  <LI><A id=SingleColumn1_ctl05_RecentPostsList_RecentPostsList2_0_Hyperlink1_0 
+  href="http://www.cnblogs.com/osamede/archive/2011/09/23/2186525.html">1.&nbsp;SharePoint 
+  Tips and Tricks --如何用JS向PeopleEditor填充数据</A> 
+  <LI><A id=SingleColumn1_ctl05_RecentPostsList_RecentPostsList2_1_Hyperlink1_0 
+  href="http://www.cnblogs.com/osamede/archive/2011/09/22/2185262.html">2.&nbsp;SharePoint 
+  Tips and Tricks -- Ribbon,People Editor</A> 
+  <LI><A id=SingleColumn1_ctl05_RecentPostsList_RecentPostsList2_2_Hyperlink1_0 
+  href="http://www.cnblogs.com/osamede/archive/2009/07/19/T4_Tutorial.html">3.&nbsp;使用T4为数据库自动生成实体类（C#）</A> 
+
+  <LI><A id=SingleColumn1_ctl05_RecentPostsList_RecentPostsList2_3_Hyperlink1_0 
+  href="http://www.cnblogs.com/osamede/archive/2009/06/11/JavaScript_Client_Template.html">4.&nbsp;(Tips&amp;Tricks)用客户端模板精简JavaScript代码</A> 
+
+  <LI><A id=SingleColumn1_ctl05_RecentPostsList_RecentPostsList2_4_Hyperlink1_0 
+  href="http://www.cnblogs.com/osamede/archive/2009/05/21/1486330.html">5.&nbsp;(Tips 
+  &amp;Tricks）如何为Windows Mobile 创建拨号连接--C#</A> 
+  <LI><A id=SingleColumn1_ctl05_RecentPostsList_RecentPostsList2_5_Hyperlink1_0 
+  href="http://www.cnblogs.com/osamede/archive/2008/10/28/1321524.html">6.&nbsp;System.Xml 
+  FAQ Part 1</A> 
+  <LI><A id=SingleColumn1_ctl05_RecentPostsList_RecentPostsList2_6_Hyperlink1_0 
+  href="http://www.cnblogs.com/osamede/archive/2008/10/07/1305416.html">7.&nbsp;Windows 
+  Ce vs Windows Mobile</A> 
+  <LI><A id=SingleColumn1_ctl05_RecentPostsList_RecentPostsList2_7_Hyperlink1_0 
+  href="http://www.cnblogs.com/osamede/archive/2008/04/14/1153414.html">8.&nbsp;Asp.net程序中生成Excel报表</A> 
+
+  <LI><A id=SingleColumn1_ctl05_RecentPostsList_RecentPostsList2_8_Hyperlink1_0 
+  href="http://www.cnblogs.com/osamede/archive/2008/02/22/1077105.html">9.&nbsp;My 
+  Page StartKit项目概览</A> 
+  <LI><A id=SingleColumn1_ctl05_RecentPostsList_RecentPostsList2_9_Hyperlink1_0 
+  href="http://www.cnblogs.com/osamede/archive/2008/02/16/1070700.html">10.&nbsp;做一个更好的程序员</A> 
+  </LI></UL></DIV>
+<DIV class=catListBlogRank>
+<H3 class=catListTitle>积分与排名</H3>
+<UL>
+  <LI class=liScore>积分 - 43220 
+  <LI class=liRank>排名 - 2398 </LI></UL></DIV>
+<DIV class=catListComment>
+<H3 class=catListTitle>最新评论<A id=SingleColumn1__24e4edb_RSSHyperlink1 
+title=RSS订阅最最新评论 href="http://www.cnblogs.com/osamede/CommentsRSS.aspx"><IMG 
+title=RSS订阅最最新评论 alt="" 
+src="SharePoint%20Tips%20and%20Tricks_files/xml.gif"></A></H3>
+<DIV class=divRecentCommentAticle><A 
+id=SingleColumn1__24e4edb_CommentList_Hyperlink2_0 class=listitem 
+href="http://www.cnblogs.com/osamede/archive/2008/04/14/1153414.html#2060218">1.&nbsp;Re:Asp.net程序中生成Excel报表</A> 
+</DIV>
+<DIV class=divRecentComment>请问xls.Send();怎么提示不包括send的方法 (dotnet初行者) </DIV>
+<DIV class=divRecentCommentAticle><A 
+id=SingleColumn1__24e4edb_CommentList_Hyperlink2_1 class=listitem 
+href="http://www.cnblogs.com/osamede/archive/2008/04/14/1153414.html#1998506">2.&nbsp;Re:Asp.net程序中生成Excel报表</A> 
+</DIV>
+<DIV class=divRecentComment>@Mr 
+Chai你说的是使用一个Excel模板,然后填充内容，创建一个Excel文件吧？你可以直接用ADO.NET，Insert语句就可以搞定了，性能相对很好... 
+(心利) </DIV>
+<DIV class=divRecentCommentAticle><A 
+id=SingleColumn1__24e4edb_CommentList_Hyperlink2_2 class=listitem 
+href="http://www.cnblogs.com/osamede/archive/2008/04/14/1153414.html#1998504">3.&nbsp;Re:Asp.net程序中生成Excel报表</A> 
+</DIV>
+<DIV class=divRecentComment><A title=查看所回复的评论 
+href="http://www.cnblogs.com/osamede/archive/2011/09/22/2185262.html#1956443">@</A>城市の蜗牛<BR>很快 
+(心利) </DIV>
+<DIV class=divRecentCommentAticle><A 
+id=SingleColumn1__24e4edb_CommentList_Hyperlink2_3 class=listitem 
+href="http://www.cnblogs.com/osamede/archive/2008/04/14/1153414.html#1956443">4.&nbsp;Re:Asp.net程序中生成Excel报表</A> 
+</DIV>
+<DIV class=divRecentComment>性能咋样？ (城市の蜗牛) </DIV>
+<DIV class=divRecentCommentAticle><A 
+id=SingleColumn1__24e4edb_CommentList_Hyperlink2_4 class=listitem 
+href="http://www.cnblogs.com/osamede/archive/2008/04/14/1153414.html#1803148">5.&nbsp;Re:Asp.net程序中生成Excel报表</A> 
+</DIV>
+<DIV class=divRecentComment>最大的缺点应该是不能打开一个文档吧。 (Mr Chai) </DIV></DIV>
+<DIV class=catListView>
+<H3 class=catListTitle>阅读排行榜</H3>
+<UL>
+  <LI><A id=SingleColumn1_ctl08_TopList_Hyperlink1_0 
+  href="http://www.cnblogs.com/osamede/archive/2008/04/14/1153414.html">1.&nbsp;Asp.net程序中生成Excel报表(7384)</A> 
+
+  <LI><A id=SingleColumn1_ctl08_TopList_Hyperlink1_1 
+  href="http://www.cnblogs.com/osamede/archive/2009/07/19/T4_Tutorial.html">2.&nbsp;使用T4为数据库自动生成实体类（C#）(3674)</A> 
+
+  <LI><A id=SingleColumn1_ctl08_TopList_Hyperlink1_2 
+  href="http://www.cnblogs.com/osamede/archive/2008/01/30/1058211.html">3.&nbsp;.Net类库中实现的HashTable(3174)</A> 
+
+  <LI><A id=SingleColumn1_ctl08_TopList_Hyperlink1_3 
+  href="http://www.cnblogs.com/osamede/archive/2007/06/05/771944.html">4.&nbsp;为Asp.net控件写单元测试(ViewState)(2605)</A> 
+
+  <LI><A id=SingleColumn1_ctl08_TopList_Hyperlink1_4 
+  href="http://www.cnblogs.com/osamede/archive/2008/02/22/1077105.html">5.&nbsp;My 
+  Page StartKit项目概览(2455)</A> </LI></UL></DIV></DIV></DIV><!--end: sideBarMain -->
+<DIV class=clear></DIV>
+<DIV id=footer><!--done-->Copyright ©2011 心利 </DIV><!--end: footer --></DIV><!--end: sideBar 侧边栏容器 --></DIV><!--end: home 自定义的最大容器 --></CENTER></FORM>
+<SCRIPT type=text/javascript>
+        if (!isSyntaxHighlighted) {
+            try {
+                SyntaxHighlighter.all();
+            } catch (e) { }
+        }
+    </SCRIPT>
+
+<SCRIPT type=text/javascript 
+src="SharePoint%20Tips%20and%20Tricks_files/ShowHidden.js"></SCRIPT>
+</BODY></HTML>

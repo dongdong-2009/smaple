@@ -1,0 +1,87 @@
+<html>
+<head>
+<title>俄罗斯方块 80 行</title>
+</head>
+<script language=javascript>
+var bgsz=new Array(),qjtsz=new Array(),bgcols=28,bgrows=28,pointx=4,pointy=4,hcst='',pointz=0,keybz=0,fangkuaileixing=0;
+for (var x=0;x<bgrows;x++) for(var y=0;y<bgcols;y++) bgsz[x*bgrows+y]=0;
+for (var x=3;x<bgrows-3;x++) for(var y=3;y<bgcols-3;y++) bgsz[x*bgrows+y]=9;
+for (var x=4;x<bgrows-4;x++) for(var y=4;y<bgcols-4;y++) bgsz[x*bgrows+y]=0;
+for (var x=0;x<bgrows;x++) bgsz[(x+1)*bgcols-1]=8;
+qjstall ="0,0,0,0,5,5,5,5,0,0,0,0,0,0,0,0,$0,5,0,0,0,5,0,0,0,5,0,0,0,5,0,0,$0,0,0,0,5,5,5,5,0,0,0,0,0,0,0,0,$0,5,0,0,0,5,0,0,0,5,0,0,0,5,0,0,$0,0,0,0,0,5,5,0,0,5,5,0,0,0,0,0,$0,0,0,0,0,5,5,0,0,5,5,0,0,0,0,0,$0,0,0,0,0,5,5,0,0,5,5,0,0,0,0,0,$0,0,0,0,0,5,5,0,0,5,5,0,0,0,0,0,$0,5,0,0,5,5,5,0,0,0,0,0,0,0,0,0,$0,5,0,0,0,5,5,0,0,5,0,0,0,0,0,0,$0,0,0,0,5,5,5,0,0,5,0,0,0,0,0,0,$0,5,0,0,5,5,0,0,0,5,0,0,0,0,0,0,$0,5,0,0,0,5,0,0,0,5,5,0,0,0,0,0,$0,0,0,0,5,5,5,0,5,0,0,0,0,0,0,0,$0,5,5,0,0,0,5,0,0,0,5,0,0,0,0,0,$0,0,5,0,5,5,5,0,0,0,0,0,0,0,0,0,$0,0,5,0,0,0,5,0,0,5,5,0,0,0,0,0,$5,0,0,0,5,5,5,0,0,0,0,0,0,0,0,0,$0,5,5,0,0,5,0,0,0,5,0,0,0,0,0,0,$5,5,5,0,0,0,5,0,0,0,0,0,0,0,0,0,$0,5,0,0,0,5,5,0,0,0,5,0,0,0,0,0,$0,5,5,0,5,5,0,0,0,0,0,0,0,0,0,0,$0,5,0,0,0,5,5,0,0,0,5,0,0,0,0,0,$0,5,5,0,5,5,0,0,0,0,0,0,0,0,0,0,$0,0,5,0,0,5,5,0,0,5,0,0,0,0,0,0,$5,5,0,0,0,5,5,0,0,0,0,0,0,0,0,0,$0,0,5,0,0,5,5,0,0,5,0,0,0,0,0,0,$5,5,0,0,0,5,5,0,0,0,0,0,0,0,0,0,";
+qjtsz=qjstall.split('$')
+function hc(iny,inx,inz) {
+     if (inz>3) inz=0;
+     var hcsz=new Array(),downbz=false,qjsz=qjtsz[fangkuaileixing*4+inz].split(',');
+     for(var x=0;x<bgsz.length;x++) hcsz[x]=bgsz[x];
+     for(var x=0;x<4;x++) {
+           for (var y=0;y<4;y++) {
+                 if (bgsz[(inx+x)*bgrows+(iny+y)]+qjsz[x*4+y]*1>9) {
+                       if (pointx==inx) return;
+                       downbz=true;
+                       inx=pointx;
+                       iny=pointy;
+                       break;
+                 }
+           }
+     }
+     for(var x=0;x<4;x++) for (var y=0;y<4;y++) hcsz[(inx+x)*bgrows+(iny+y)]=bgsz[(inx+x)*bgrows+(iny+y)]+qjsz[x*4+y]*1;
+     hcst=hcsz.join('').replace(/8/g,'<br>');
+     hcst=hcst.replace(/0/g,'<font color=white>■</font>');
+     hcst=hcst.replace(/[789]/g,'■');
+     hcst=hcst.replace(/5/g,'■');
+     if (downbz) {
+           pointx=4;
+           pointy=4;
+           for(var x=0;x<hcsz.length;x++) bgsz[x]=hcsz[x];
+           for (var x=4;x<bgrows-4;x++) {
+                 var manbz=true;
+                 for(var y=4;y<bgcols-4;y++) if (bgsz[x*bgrows+y]==0) manbz=false;
+                 if (manbz) {
+                       for (var z=x;z>5;z--) for(var y=4;y<bgcols-4;y++) bgsz[z*bgrows+y]=bgsz[(z-1)*bgrows+y];
+                       for(var y=4;y<bgcols-4;y++) bgsz[z*bgrows+y]=0;
+                 }
+           }
+           if ( (fangkuaileixing=Math.round(Math.random()*6)) >6) fangkuaileixing=0;
+           keybz=38;
+     }
+     else {
+           pointx=inx;
+           pointy=iny;
+           pointz=inz;
+     }
+}
+function loop() {
+     if (keybz==37) hc(pointy-1,pointx,pointz);
+     if (keybz==39) hc(pointy+1,pointx,pointz);
+     if (keybz==40) hc(pointy,pointx+1,pointz);
+     if (keybz==38) hc(pointy,pointx,pointz+1);
+     document.body.innerHTML="用四个方向键控制,要重新玩请刷新页面<br><br>"+hcst;
+     
+     keybz=0;
+     setTimeout(loop,0);
+}
+function timeint() {
+     keybz=40;
+     setTimeout(timeint,1000);
+}
+function start() {
+     loop();
+     timeint();
+     keybz=38;
+}
+function down(e) {
+     try{
+           keybz=event.keyCode;
+     }
+     catch(a){
+           keybz=down.arguments[0].keyCode;
+     }
+}
+document.onkeydown=down;
+document.onkeypress=down;
+</script>
+</head>
+<body onload="start();">
+</body>
+</html> 

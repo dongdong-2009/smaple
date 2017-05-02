@@ -1,0 +1,32 @@
+body { background:#FFFFFF; font-size: 12px; }
+td {  font-size: 12px}
+input, textarea {  font-size: 12px; border-width:1px}
+select {  font-size: 12px; border-width:1px}
+span {  font-size: 12px; position: static }
+
+a:link {  color: #000000;text-decoration:none}
+a:visited {  color: #000000;text-decoration:none}
+a:hover {  color: #003399}
+
+a.navlink:link {color: #000000; text-decoration:none}
+a.navlink:visited {color: #000000; text-decoration:none }
+a.navlink:hover {color: #003399; text-decoration:none }
+
+.twidth { width:760px; }
+.content { font-size: 14px;font-family:Tahoma,ËÎÌו; line-height:140%; margin:5px 20px }
+.aTitle { font-size: 15px;font-weight:bold; }
+
+.sitehead {  }
+.sitehead-left {width:0px}
+.sitehead-right {width:0px}
+.footline {height:1px; background:#CCCCCC;}
+
+.summary-title { background: #FFFFFF; border-bottom:1px solid #CCCCCC; font-weight:bold;height:23px }
+
+.gray { color:gray; text-decoration:none }
+
+.tdBg { background: #FFFFFF ; line-height:120%}
+.tdbg-dark {background: #E8F2FF;}
+
+.quote { margin:10px; margin-left:2em; border:1px solid #CCCCCC; padding:5px;  background: #FFFFFF; font-family:Verdana,Arial,ËÎÌו; }
+

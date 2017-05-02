@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+
+  <Field Type="Note" DisplayName="Description" Required="FALSE" NumLines="6" RichText="FALSE" Sortable="FALSE" ID="{cb55bba1-81a9-47b6-8e6c-6a7da1d25602}" StaticName="BugDescription" Name="BugDescription" Group="Custom Columns" />
+  <Field Type="Text" DisplayName="Project" Required="FALSE" MaxLength="255" ID="{0248c82f-9136-4b3a-b802-d0b77280b3bc}" StaticName="BugProject" Name="BugProject" Group="Custom Columns" />
+  <Field Type="Text" DisplayName="Assigned To" Required="FALSE" MaxLength="255" ID="{aa4a82dd-5b32-4507-9874-4e1c7bca3279}" StaticName="BugAssignedTo" Name="BugAssignedTo" Group="Custom Columns" />
+
+  <ContentType ID="0x010089E3E6DB8C9B4B3FBB980447E313CE94" Name="Bug Item" Group="Custom Content Types" Description="Bug item content type." Version="0">
+    <FieldRefs>
+      <FieldRef ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" />
+      <FieldRef ID="{cb55bba1-81a9-47b6-8e6c-6a7da1d25602}" />
+      <FieldRef ID="{0248c82f-9136-4b3a-b802-d0b77280b3bc}" />
+      <FieldRef ID="{aa4a82dd-5b32-4507-9874-4e1c7bca3279}" />
+    </FieldRefs>
+  </ContentType>
+
+  <!-- Do not change the value of the Name attribute below. If it does not match the folder name of the List Definition project item, an error will occur when the project is run. -->
+    <ListTemplate
+        Name="ListDefinition1"
+        Type="10001"
+        BaseType="0"
+        OnQuickLaunch="TRUE"
+        SecurityBits="11"
+        Sequence="410"
+        DisplayName="Bugs List"
+        Description="My List Definition"
+        Image="/_layouts/images/itgen.png"
+        DisallowContentTypes="FALSE"
+        />
+ 
+
+</Elements>

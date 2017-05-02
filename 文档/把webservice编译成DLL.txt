@@ -1,0 +1,11 @@
+在命令行中：
+
+把webservice生成cs
+wsdl /out:myweb.cs http://localhost:3623/websevice/w1.asmx
+wsdl:命令
+myweb.cs 指定的webservice所生成的cs文件
+http://localhost:3623/websevice/w1.asmx 指定的webservice
+
+把webservice生成dll
+csc /out:regmyweb.dll /t:library /r:system.xml.dll /r:system.web.services.dll myweb.cs
+

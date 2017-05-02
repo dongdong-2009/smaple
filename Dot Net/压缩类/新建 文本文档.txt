@@ -1,0 +1,14 @@
+http://www.icsharpcode.net
+
+
+Compression.FileEntity f = new Compression.FileEntity();
+                f.FileName = "123";
+                f.Buffer = entity.AttachmentContent;
+                System.Collections.Generic.List<Compression.FileEntity> list = new System.Collections.Generic.List<Compression.FileEntity>();
+                list.Add(f);
+                Compression.FileEntity f1 = new Compression.FileEntity();
+                f1.FileName = "567";
+                f1.Buffer = entity.AttachmentContent;
+                list.Add(f1);
+
+                Compression.ZipClass.ZipFile(list, @"f:\111.zip");

@@ -1,0 +1,24 @@
+﻿function StringBuffer(){
+
+    this._strings=new Array();
+
+}
+
+StringBuffer.prototype.append=function(str){
+
+    this._strings.push(str)
+
+}
+
+StringBuffer.prototype.toString=function(){
+
+    return this._strings.join("");
+
+}
+
+var buffer=new StringBuffer();
+ d1=new Date();
+ for(var j=0;j<10000;j++){
+     buffer.append("text");
+ }
+ var result=buffer.toString();

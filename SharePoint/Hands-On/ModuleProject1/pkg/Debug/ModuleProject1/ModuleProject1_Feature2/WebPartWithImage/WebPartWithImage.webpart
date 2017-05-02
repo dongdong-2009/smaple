@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<webParts>
+  <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+    <metaData>
+      <type name="ModuleProject1.WebPartWithImage.WebPartWithImage, ModuleProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d7be930379408772" />
+      <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+    </metaData>
+    <data>
+      <properties>
+        <property name="Title" type="string">WebPartWithImage</property>
+        <property name="Description" type="string">My WebPart</property>
+      </properties>
+    </data>
+  </webPart>
+</webParts>

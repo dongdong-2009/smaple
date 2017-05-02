@@ -1,0 +1,65 @@
+using System;
+using System.IO;
+using System.Security;
+using System.Threading;
+using System.Security.Permissions;
+
+public static class Program
+{
+    public static void Main()
+    {
+        AttempAccess("defualt context");
+        new FileIOPermission(PermissionState.Unrestricted).Deny();
+        AttempAccess("no file permissions");
+        ECFlowing();
+        ECFlowingSuppressed();
+
+        //捕获线程的当前上下文
+        ExecutionContext ec = ExecutionContext.Capture();
+
+        //修改线程执行上下文，从而允许文件访问
+        SecurityPermission.RevertDeny();
+
+        AttempAccess("default context agaiin");
+
+        ECCaptureAndRun(ec);
+        Console.Read();
+    }
+
+    private static void ECFlowing()
+    {
+        WaitCallback wc = AttempAccess;
+        wc.EndInvoke(wc.BeginInvoke("ecflowing", null, null));
+    }
+
+    private static void ECFlowingSuppressed()
+    {
+        WaitCallback wc = AttempAccess;
+        //临时告诉clr不要将这个线程的执行上下文流到辅助线程中去
+        using (AsyncFlowControl afc = ExecutionContext.SuppressFlow())
+        {
+            wc.EndInvoke(wc.BeginInvoke("flowingsuppressed", null, null));
+        }
+    }
+
+    private static void ECCaptureAndRun(ExecutionContext ec)
+    { 
+        //通过使用前面捕获的执行上下文调用AttmptAccess方法
+        ExecutionContext.Run(ec, AttempAccess, "eccaptureAndRun with run");
+    }
+
+    private static void AttempAccess(Object test)
+    {
+        bool success = false;
+        try
+        {
+            File.GetAttributes(@"c:\ReadMe.txt");
+            success = true;
+            Console.WriteLine("{0}:{1}", test, success);
+        }
+        catch(SecurityException se)
+        {
+            Console.WriteLine(se.InnerException + "-----" + se.Message);
+        }
+    }
+}

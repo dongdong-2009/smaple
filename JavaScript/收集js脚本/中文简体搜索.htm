@@ -1,0 +1,410 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="MSThemeCompatible" CONTENT="Yes">
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+   <TITLE>Search</TITLE>
+   <Style type=text/css>
+    body {BACKGROUND-COLOR: #ffffff;  MARGIN-top: 0px;	MARGIN-left: 0px;}
+   </Style>	
+<SCRIPT language="JavaScript">
+//set cookie
+function GetCookie(sName)
+{
+  // cookies are separated by semicolons
+  var aCookie = document.cookie.split(";");
+  for (var i=0; i < aCookie.length; i++)
+  {
+    // a name/value pair (a crumb) is separated by an equal sign
+    var aCrumb = aCookie[i].split("=");aCrumb[0]=trim(aCrumb[0]);
+    if (sName == aCrumb[0]) 
+      return unescape(aCrumb[1]);
+  }
+
+  // a cookie with the requested name does not exist
+  return null;
+}
+function SetCookie(sName, sValue)
+{
+  document.cookie = sName + "=" + escape(sValue) + ";expires=Mon, 31 Dec 2100 23:59:59 UTC;";
+}
+
+aSearch = GetCookie("myiesearch");
+if(aSearch!=null)
+	aSearch = aSearch.split(',');
+
+function savesearch()
+{
+ var strsearch="";
+ for (var i=0; i<se.length; i++)
+  if (se[i].checked)
+	strsearch += "1,";
+  else
+	strsearch += "0,";
+  SetCookie("myiesearch", strsearch);
+}
+
+//end cookies
+
+
+	function onselall(s, bsel)
+	{
+	for (var i=s+1; i<se.length && se[i].url!=''; i++)
+	 {
+	  se[i].checked = bsel;
+	  eval('document.searchtable.w'+i+'.checked = ' + bsel + ';');
+	  }
+  
+	}
+
+	function SearchEngine(name, url, checked, parameter1, parameter2)
+	{this.name = name;
+	 this.url = url;
+	 this.checked = checked;
+	 this.p1 = parameter1;
+	 this.p2 = parameter2;
+	}
+
+	function SearchEngineArray() 
+	{with(SearchEngineArray)
+	 {this.length = arguments.length / 5;
+	  var j = 0;
+	  for (var i = 0; i < this.length; i++) 
+	   {this[i] = new SearchEngine(arguments[j+1], arguments[j], 
+	    arguments[j+2], arguments[j+3], arguments[j+4]);
+	    if(aSearch!=null && i<aSearch.length)
+		if(aSearch[i]==1)
+			this[i].checked = true;
+		else
+			this[i].checked = false;
+	    j += 5;
+	   }
+	 }
+	}
+
+	var se = new SearchEngineArray(
+
+		"", "中文简体搜索", false, "", "",
+		"http://www.google.com/", "中文Google", true, "http://www.google.com/search?q=", "&hl=zh-CN&lr=lang_zh-CN",		
+		"http://cn.yahoo.com/", "中文Yahoo", true, "http://cn.search.yahoo.com/search/cn?p=", "&u=g&y=y",
+		"http://www.163.com/","网易搜索",false,"http://search.163.com/cgi-bin/search/engine/search.fcgi?key=","",
+		"http://www.sohu.com/","搜狐", true, "http://site.search.sohu.com/sitesearch.jsp?key_word=","&page_index=0",
+		"http://search.sina.com.cn/","新浪搜索", true, "http://search.sina.com.cn/cgi-bin/search/search.cgi?ss=sina&_searchkey=","&_andor=and",
+		"http://search.fm365.com/", "FM365", false, "http://search.fm365.com/cgi-bin/search/search.cgi?query=", "&ty365=web",
+		"http://www.goyoyo.com.cn", "悠游", false, "http://www.goyoyo.com.cn/gyy/search%20GB?query=", "",
+		"http://www.sobao.com/", "搜豹", false, "http://search.sobao.com/websearch/websearch.php?word=", "",		
+		"http://www.online.sh.cn/", "上海热线", false, "http://search.online.sh.cn/cgi-bin/search.cgi?opt=2&cl=3&myselect=0&searchtxt=&strQy=&wydz=&myselectvalue=0&word=", "",		
+		"http://www.lycos.com.cn/", "Lycos中国", false, "http://searchpages.lycos.com.cn/cgi-bin/searchall/search.cgi?typelycos=all&query=", "",
+
+		
+		"", "中文繁体搜索", false, "", "",
+		"http://chinese.yahoo.com/", "繁体中文Yahoo", false, "http://search.chinese.yahoo.com/search/big5?p=", "&y=b",
+		"http://taiwan.csie.ntu.edu.tw/b5/yam", "番薯藤", false, "http://search.yam.org.tw/b5/search/?k=", "",
+		"http://search.kimo.com.tw/", "奇摩", false, "http://search.kimo.com.tw/cgi-bin/srchfz.pl?query=", "",
+		"http://search.hksrch.com.hk/", "香港添达", false, "http://search.hksrch.com.hk/cgi-bin/hksrch/hk/search.cgi?searchtext=", "&cva=hk",
+		"http://www.netvigator.com/", "网上行", false, "http://imssr006.netvigator.com/ipo-cgi/iposearch?terms=", "&code=1&trans=1&theColls=&vers=15239&web=sites&db=ALL&x=23&y=10",
+		"http://yayawoo.com/", "也也乌", false, "http://yayawoo.com/cgi-bin/search/search.cgi?db=chinese&query=", "",
+		"http://search.hyweb.com.tw/", "恐龙引擎", false, "http://search.hyweb.com.tw/cgi-bin/psearch?k=", "",
+		"http://ep.sunup.net/index.cgi", "绿界", false, "http://ep.sunup.net/search.pl?Keywords=", "",
+		"http://www.formosa.com.tw/", "福尔摩莎", false, "http://www.formosa.com.tw/addlinks/ser.asp?txt_name=", "",
+		"http://www.hinet.net/", "中华电信", false, "http://hisearch.web.hinet.net/cgi-bin/Search/webgais2.exe?query=","",
+
+		"", "软件搜索", false, "", "",
+		"http://www.mydown.com/", "电脑报", false, "http://www.mydown.com/servlet/mydown.yeskydown?tag=6&sortID=144115188075855872&nameField0=NAME&searchName=","",
+		"http://www.download.com.cn/", "中国下载", false, "http://www.download.com.cn/show.phtml?action=search&sk=", "",
+		"http://www.newhua.com/", "华军软件园", false, "http://search.onlinedown.net/search.asp?Keyword=", "",
+		"http://soft.zz.ha.cn/", "软件任我行", false, "http://soft.zz.ha.cn/query/query.asp?kword=", "",
+ 		"http://bingle.pku.edu.cn/","天网FTP搜索",false,"http://bingle.pku.edu.cn/scripts/ftp_search.exe?word=","&FileType=255&Range=0&cdtype=GB&NoShortCut=1",
+		"http://www.mydrivers.com/", "驱动之家", false, "http://www.mydrivers.com/scripts/search.dll?item=", "",
+
+			
+		"", "MP3搜索", false, "", "",		
+		"http://mp3.stn.sh.cn/mp3/", "MP3之家", false, "http://mp3.stn.sh.cn/Mp3/Mp3Music/Mp3_Search.asp?trsSearchType=0&trsSearchStr=", "",
+		"http://www.100mp3.com/", "100MP3", false, "http://www.100mp3.com/mp3search.cgi?action=search&Keywords=", "",
+		"http://www.sogua.com/", "SoGua", false, "http://search.sogua.com/mp3/search.asp?fmp3=1&key=","",
+
+		"", "新闻搜索", false, "", "",
+		"http://www.sina.com.cn/", "新浪新闻", false, "http://ofind.sina.com.cn/cgi-bin/news/news?query=", "",
+		"http://www.nease.net/", "网易新闻", false, "http://nisearch.163.com/Search?in=news&q=", "",	
+		"http://www.sohu.com/", "搜狐新闻", false, "http://news.search.sohu.com/fl_search.jsp?words=", "",
+		"http://search.people.com.cn", "人民网", false,"http://search.people.com.cn/was40/search?channelid=35254&Content=","",
+
+		"", "股票行情", false, "", "",
+		"http://www.stockstar.com/", "证券之星", false, "http://quote.stockstar.com/stock/external_quote.asp?code=shag", "",
+		"http://stock.sina.com.cn/", "沪深行情", false,"http://stock.sina.com.cn/cgi-bin/stock/quote/search.cgi?symbol=","",
+		"http://stock2.163.com", "网易股票", false,"http://stock2.163.com/stock/show_full.php?code=","",
+
+		"", "技术类搜索", false, "", "",
+		"http://search.microsoft.com/", "MSDN", false, "http://search.microsoft.com/Default.asp?&so=RECCNT&boolean=ALL&siteid=us%2Fdev&p=1&nq=NEW&qu=", "&btnsearch=GO&IntlSearch=&ig=01&ig=02&ig=03&ig=04&ig=05&ig=06&i=00&i=01&i=02&i=03&i=04&i=05&i=06&i=07&i=08&i=09&i=10&i=11&i=12&i=13&i=14&i=15&i=16&i=17&i=18&i=19&i=20&i=21&i=22&i=23&i=24&i=25&i=26&i=27&i=28&i=29&i=30&i=31&i=32&i=33&i=34&i=35&i=36&i=37&i=38&i=39&i=40&i=41&i=42&i=43&i=44&i=45&i=46&i=47&i=48&i=49&i=50&i=51&i=52&i=53&i=54&i=55&i=56&i=57&i=58&i=59&i=60&i=61&i=62&i=63",
+		"http://itsearch.ccidnet.com/", "赛迪搜索", false, "http://itsearch.ccidnet.com/cgi-bin/engine/search?Stext=", "&Surlw=0",
+
+		"", "", false, "", ""
+	);
+    function trim(string)
+	{var str2="";
+	 for(var i=0;i<string.length;i++)
+	   if(string.charAt(i)!=" ")
+	     str2+=string.charAt(i);
+	  return str2;
+	 }
+	
+	function Search()
+	{if (trim(document.searchtable.keyword.value)=="")
+	   return;
+	 savesearch();
+	 for (var i=0; i<se.length; i++)
+	  if (se[i].checked && se[i].p1 != "")
+	  {if (se[i].p1 != "spc")
+	      window.open(se[i].p1 + document.searchtable.keyword.value + se[i].p2 , 'w'+i);
+    	   else
+	     {with (document)
+		{searchbox.action = se[i].p2;
+		 searchbox.keywordc.value = searchtable.keyword.value;
+		 searchbox.keywords.value = searchtable.keyword.value;
+		 searchbox.query.value = searchtable.keyword.value;
+		 searchbox.SearchFor.value = searchtable.keyword.value;
+		 searchbox.search.value = searchtable.keyword.value;
+		 searchbox.terms.value = searchtable.keyword.value;
+		 searchbox.target = 'w'+i;				
+		 searchbox.submit();				
+		}
+	   }
+	  }
+	  //document.searchtable.keyword.value=""; 
+	}
+
+
+   </script>
+
+<!--hide search engines-->
+<script language="JavaScript">
+
+NS4 = (document.layers) ? 1 : 0;
+IE4 = (document.all) ? 1 : 0;
+ver4 = (NS4 || IE4) ? 1 : 0;
+if (ver4) {
+  with (document) {
+      write("<STYLE TYPE='text/css'>");
+      if (NS4) {
+          write(".parent {position:absolute; visibility:visible}");
+          write(".child {position:absolute; visibility:visible}");
+          write(".regular {position:absolute; visibility:visible}")
+      }
+      else {
+          write(".child {display:none}")
+      }
+      write("</STYLE>");
+  }
+}
+
+//======================
+
+function getIndex(el) {
+  ind = null;
+  for (i=0; i<document.layers.length; i++) {
+      whichEl = document.layers[i];
+      if (whichEl.id == el) {
+          ind = i;
+          break;
+      }
+  }
+  return ind;
+}
+function arrange() {
+  nextY = document.layers[firstInd].pageY +document.layers[firstInd].document.height;
+  for (i=firstInd+1; i<document.layers.length; i++) {
+      whichEl = document.layers[i];
+      if (whichEl.visibility != "hide") {
+          whichEl.pageY = nextY;
+          nextY += whichEl.document.height;
+      }
+  }
+}
+function initIt(){
+  if (!ver4) return;
+  if (NS4) {
+      for (i=0; i<document.layers.length; i++) {
+          whichEl = document.layers[i];
+          if (whichEl.id.indexOf("Child") != -1) whichEl.visibility = "hide";
+     }
+      arrange();
+  }
+  else {
+      divColl = document.all.tags("DIV");
+      for (i=0; i<divColl.length; i++) {
+          whichEl = divColl(i);
+          if (whichEl.className == "child") whichEl.style.display = "none";
+      }
+  }
+}
+function expandIt(el) {
+  if (!ver4) return;
+  if (IE4) {
+      whichEl = eval(el + "Child");
+      if (whichEl.style.display != "block") {
+          whichEl.style.display = "block";
+      }
+      else {
+          whichEl.style.display = "none";
+      }
+  }
+  else {
+      whichEl = eval("document." + el + "Child");
+      if (whichEl.visibility == "hide") {
+          whichEl.visibility = "show";
+      }
+      else {
+          whichEl.visibility = "hide";
+      }
+      arrange();
+  }
+}
+
+function moues_txt(txt)
+{
+  window.status=txt;
+}
+
+var sellist = new Array();
+
+function checkall()
+{
+	for(i=0; i<sellist.length; i++)
+		if(sellist[i])
+			eval('document.searchtable.selall'+i+'.checked=true');
+}
+//-->
+   </script>
+<style type="text/css">
+<!--
+.d1 	{font-family: "宋体";font-size: 9pt; cursor:hand; width:105}
+.d 	{font-family: "宋体";font-size: 9pt; background: #3C6EA4;color: #FFFFFF}
+td.d2 	{font-family: "宋体";font-size: 9pt; background: #ffffff;color: #000000; width:110}
+a 	{font-family: "宋体";text-decoration: none; font-size: 9pt; color: #000000; cursor: hand; }
+a:hover	{font-family: "宋体";color: #FF0000; text-decoration: underline; font-size: 9pt; cursor: hand}
+input.i1{font-size: 9pt;}
+-->
+   </style>
+</head>
+
+<body link="#303030" alink=#00a0e9 onUnload="savesearch()" onLoad="checkall()">
+
+<center>
+
+<table border="0" width="100%" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF">
+<tr><td>
+<center>
+<form name="searchtable" onSubmit="Search(); return false;">
+</form>
+<center>
+<input type="text" name="keyword" style="width: 150; background-color: #FAFCEF; border: 1px solid #20663B; "><Br>
+<input type="submit" value="查询" style="background-color: #bfbfe2;">
+<input type="reset" value="重新输入" style="background-color: #bfbfe2;">
+</center>
+<table border=0 cellpadding="0" cellspacing="0" cols="2" width="100%" >
+<TR><TD COLSPAN="2" class="d1"><div></td>
+<script language="javascript">
+                                                                                         
+with (document)
+	{var tb=0, total=0, selected=0, cates=0, selalllist='';
+ 	 for (var i=0; i<se.length; i++)
+	  {if (se[i].url == ''&& se[i].name!='')
+	   {if (tb > 0)
+	   	write('</TR>');
+		write('</table></div><div align=left class="d"><span onClick="expandIt(\'category'+cates+'\')" class="d1">' + se[i].name + '</span>  <input TYPE="CHECKBOX" name="selall'+cates+'" onClick="onselall('+i+', document.searchtable.selall'+cates+'.checked' +')">全选</div>');
+		write('<div align=left id="category'+cates+'Child" class="child"><table border=0 cellpadding="0" cellspacing="0">')
+ 	        if(selected > 0 && total!=selected)
+		  expandIt('category'+(cates-1));
+		if(total == selected && cates>0)
+		  {
+			sellist[cates-1]=1;  
+		  }
+		else
+			sellist[cates-1]=0;
+		tb = 0;
+		total = 0;
+		selected = 0;
+		cates++;
+	    }
+	    else if (se[i].name!='')
+	    {
+	     tb++;
+	     if (tb==1)
+	     write('<TR>\n');
+	     write('<TD NOWRAP class="d2"><INPUT TYPE="CHECKBOX" ' + (se[i].checked?' CHECKED':'') + ' NAME="w' + i + '" onClick="se[' + i + '].checked = document.searchtable.w'+i+'.checked">' + 
+	     '<A HREF="' + se[i].url + '" TARGET="w' + i + '"><class="d1">' + se[i].name + '</font></A></TD>');
+	     if (tb > 1)
+		{
+		 write('</TR>\n');
+		 tb = 0;
+		}
+	     if(se[i].checked)
+		selected++
+	     total++;
+	     }
+	  }
+	}
+
+        if(selected > 0)
+	  expandIt('category'+(cates-1));
+	if(total == selected && cates>0)
+		sellist[cates-1]=1;  
+	else
+		sellist[cates-1]=0;
+
+	if (top.NS)
+	 {document.searchbox.reset();
+          document.searchtable.reset();
+         }
+
+	/*selalllist = selalllist.split(';');
+	for(i=0; i<selalllist.length-1; i++)
+		eval('document.searchtable.selall'+selalllist[i]+'.checked=true');*/
+
+  </script>
+</table>
+</center>
+</form>
+
+</tr></td>
+</table>
+
+<form name="searchbox" method=post >
+
+<input type="hidden" name="maxhits" value="25">
+<input type="hidden" name="format" value="terse">
+<input type="hidden" name="threaded" value="0">
+<input type="hidden" name="showsort" value="score">
+<input type="hidden" name="agesign" value="1">
+<input type="hidden" name="ageweight" value="1">
+<input type="hidden" name="head" value="noframes">
+<input type="hidden" name="tail" value="noframes">
+<input type="hidden" name="mode" value="phrase">
+<input type="hidden" name="bool" value="allterms">
+<input type="hidden" name="websearch" value="checked">
+<input type="hidden" name="area" value="webtext">
+<input type="hidden" name="defaultop" value="and">
+<input type="hidden" name="svcclass" value="dncurrent">
+<input type="hidden" name="searnum" value="0">
+<input type="hidden" name="searadd" value="searchgo">
+<input type="hidden" name="keywordc">
+<input type="hidden" name="keywords">
+<input type="hidden" name="query">
+<input type="hidden" name="terms">
+<input type="hidden" name="SearchFor">
+<input type="hidden" name="search">
+
+</form>
+
+
+</body>
+</html>
+
+</SCRIPT> 
+ 
+<A href="myjs.htm" target=_blank><FONT color=red>
+<div style="position: absolute; top: 10; right: 10; width: 148; height: 18">
+  My Js Collection!</FONT></A> 
+<!-- 海娃＠haiwa@blueidea.com＠无忧视窗＠http://www.51windows.com -->  
+
+</div>
+<html><script language="JavaScript">

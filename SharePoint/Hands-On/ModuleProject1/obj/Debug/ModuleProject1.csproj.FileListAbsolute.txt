@@ -1,0 +1,5 @@
+D:\Project\smaple\SharePoint\Hands-On\ModuleProject1\bin\Debug\ModuleProject1.dll
+D:\Project\smaple\SharePoint\Hands-On\ModuleProject1\bin\Debug\ModuleProject1.pdb
+D:\Project\smaple\SharePoint\Hands-On\ModuleProject1\obj\Debug\ResolveAssemblyReference.cache
+D:\Project\smaple\SharePoint\Hands-On\ModuleProject1\obj\Debug\ModuleProject1.dll
+D:\Project\smaple\SharePoint\Hands-On\ModuleProject1\obj\Debug\ModuleProject1.pdb

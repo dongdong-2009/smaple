@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package dslVersion="1.0.0.0" Id="7639f44b-616b-4ee0-8c9d-7dd1d1100eee" solutionId="7639f44b-616b-4ee0-8c9d-7dd1d1100eee" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel" name="SiteCollectionSupportWorkflow">
+    <features>
+        <featureReference itemId="c6293667-cb18-4bd8-9fc9-cf62553275d9" />
+    </features>
+</package>

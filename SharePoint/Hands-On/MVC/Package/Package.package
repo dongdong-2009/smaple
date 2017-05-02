@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="32e63c7c-0c3b-4fb1-a67b-4bae5f9754ce" solutionId="32e63c7c-0c3b-4fb1-a67b-4bae5f9754ce" resetWebServer="false" name="MVC" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <assemblies>
+    <customAssembly location="Microsoft.Practices.ServiceLocation.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="C:\Users\Administrator\Desktop\Microsoft.Practices.ServiceLocation.dll" />
+    <customAssembly location="Microsoft.Practices.SharePoint.Common.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="C:\Users\Administrator\Desktop\Microsoft.Practices.SharePoint.Common.dll" />
+    <customAssembly location="Microsoft.Practices.SharePoint.Common.XmlSerializers.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="C:\Users\Administrator\Desktop\Microsoft.Practices.SharePoint.Common.XmlSerializers.dll" />
+  </assemblies>
+  <features>
+    <featureReference itemId="bc6c7172-3cf5-4203-8f37-93e1b72d74ea" />
+  </features>
+</package>

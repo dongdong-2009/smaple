@@ -1,0 +1,18 @@
+var obj = new Object();
+
+obj.triggerOnce = function(fn) { //控制让函数只触发一次
+    return function() {
+        try {
+            fn.apply(this, arguments);
+        }
+        catch (e) {
+            var txt = "There was an error on this page.\n\n";
+            txt += "Error message: " + e.message + "\n\n";
+            txt += "Error name: " + e.name + "\n\n";
+            //alert(txt);//正式平台上可能需要注释掉该行
+        }
+        finally {
+            fn = null;
+        }
+    }
+}

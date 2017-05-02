@@ -1,0 +1,7 @@
+D:\Project\smaple\Dot Net\EssentialAsp.Net\WebApplication1\obj\Debug\ResolveAssemblyReference.cache
+D:\Project\smaple\Dot Net\EssentialAsp.Net\WebApplication1\bin\WebApplication1.dll
+D:\Project\smaple\Dot Net\EssentialAsp.Net\WebApplication1\bin\WebApplication1.pdb
+D:\Project\smaple\Dot Net\EssentialAsp.Net\WebApplication1\bin\EssentialAspNet.dll
+D:\Project\smaple\Dot Net\EssentialAsp.Net\WebApplication1\bin\EssentialAspNet.pdb
+D:\Project\smaple\Dot Net\EssentialAsp.Net\WebApplication1\obj\Debug\WebApplication1.dll
+D:\Project\smaple\Dot Net\EssentialAsp.Net\WebApplication1\obj\Debug\WebApplication1.pdb

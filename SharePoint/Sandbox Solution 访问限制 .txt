@@ -1,0 +1,7 @@
+﻿The following list identifies the most common things that an assembly that will run in a sandbox cannot do:
+ •Connect to resources that are not located on the local farm.
+•Access a database.
+•Change the threading model.
+•Call unmanaged code.
+•Write to disk.
+•Access resources in a different site collection.

@@ -1,0 +1,5 @@
+E:\Project\smaple\SharePoint\ClientOMProject\ClientOMProject\bin\Debug\ClientOMProject.dll
+E:\Project\smaple\SharePoint\ClientOMProject\ClientOMProject\bin\Debug\ClientOMProject.pdb
+E:\Project\smaple\SharePoint\ClientOMProject\ClientOMProject\obj\Debug\ResolveAssemblyReference.cache
+E:\Project\smaple\SharePoint\ClientOMProject\ClientOMProject\obj\Debug\ClientOMProject.dll
+E:\Project\smaple\SharePoint\ClientOMProject\ClientOMProject\obj\Debug\ClientOMProject.pdb

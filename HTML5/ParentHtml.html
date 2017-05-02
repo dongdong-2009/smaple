@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+Cross-Window Messaging
+</title>
+</head>
+<body>
+<h1>Cross-Window Messaging</h1>
+<iframe id='iframe' src='child.html' height='300' width='600'>
+</iframe>
+<br>
+<br>
+Message to Send: <input id='message' type='text'>
+<input type='button' onclick=send() value='Send'>
+
+<script type='text/javascript'>
+function send()
+{
+    
+    var message = document.getElementById('message').value;
+    var location = window.location;
+    var protocol = location.protocol;
+    var host = location.host;
+ 
+    document.getElementById('iframe').contentWindow.postMessage(message, "*"); 
+}
+</script>
+</body>

@@ -1,0 +1,78 @@
+<html>
+<body leftmargin=20>
+<script>
+function aline_laodongjie(x,y,color)
+{
+	document.write("<img border='0' style='position:absolute; left: "+x +"; top:"+y +"; background-color:"+color+"' width=1 height=1 /> ")
+}
+
+
+function getLeft_laodongjie(root)
+{
+    var left = 0;
+    while(root != null)
+    {
+        left += root.offsetLeft;
+        root = root.offsetParent; 
+    }      
+    return left; 
+}
+
+function getTop_laodongjie(root)
+{
+    var Top = 0;
+    while(root != null)
+    {
+        Top += root.offsetTop;
+        root = root.offsetParent; 
+    }      
+    return Top; 
+}
+
+</script>
+
+<div width='400' >
+
+
+<table><tr><TD style='padding-left:10px; padding-top:52;'>
+
+<table border=0 bgcolor='000000' width='500'>
+<tr bgcolor='ffffff'>
+<td id='td1'></td>
+<td>123</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<script>
+function line_laodongjie(id,color)
+{
+	var td1 = document.getElementById(id);
+	var x1 = getLeft_laodongjie(td1); 
+	var y1  = getTop_laodongjie(td1);
+	var x2 = getLeft_laodongjie(td1)+td1.offsetWidth;
+	var y2 = getTop_laodongjie(td1)+td1.offsetHeight;
+	var tmp;
+	if(x1>=x2)
+	{
+		tmp = x1;
+		x1=x2;
+		x2=tmp;
+		tmp=y1;
+		y1=y2;
+		y2=tmp;
+	}
+	for(var i = x1; i<=x2;)
+	{
+		var x=i;
+		var y=((y2-y1)/(x2-x1)*(x-x1))+y1;
+		aline_laodongjie(x,y,color);
+		i = i+0.1
+	}
+}
+line_laodongjie('td1','#000000');
+</script>
+</body>
+</html>

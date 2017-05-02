@@ -1,0 +1,5 @@
+bin\Debug\RenderHello.dll
+bin\Debug\RenderHello.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\RenderHello.dll
+obj\Debug\RenderHello.pdb

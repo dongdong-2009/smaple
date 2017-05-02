@@ -1,0 +1,924 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head profile="http://a9.com/-/spec/opensearch/1.1/">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+
+
+<!-- base href="http://dotnet.aspx.cc/" --><title>
+	带图片的，多列的DropDownList的实现__【孟宪会之精彩世界】
+</title><link href="http://dotnet.aspx.cc/Images/favicon.ico" rel="Shortcut Icon"><link href="read.aspx_files/Detail.css" type="text/css" rel="stylesheet"><link rel="alternate" type="application/rss+xml" title="【孟宪会之精彩世界】" href="http://dotnet.aspx.cc/Rss.aspx"><link rel="search" type="application/opensearchdescription+xml" title="【孟宪会之精彩世界】网站搜索" href="http://dotnet.aspx.cc/search.xml"><link rel="search" type="application/opensearchdescription+xml" title="【孟宪会之精彩世界】Google搜索" href="http://dotnet.aspx.cc/searchgoogle.xml">
+    <script type="text/javascript">
+//<![CDATA[
+try
+{  
+  if(top.location == "" )
+  {
+    window.open(window.location.href,"_top"); 
+  }
+  if(window != top ) 
+  top.location.href = window.location.href; 
+}
+catch(e)
+{
+  window.open(window.location.href,"_top");
+}
+
+function AddFav()
+{
+	window.external.AddFavorite(window.location.href,window.document.title);
+	return false;
+}
+//]]>
+    </script>
+
+<meta name="keywords"><meta name="description" content="带图片的，多列的DropDownList的实现"></head><body>
+    <form name="form1" method="post" action="ShowDetail.aspx?id=c81ad80e-fc14-4ff8-85f3-16cc68811bd5" id="form1">
+<div>
+<input name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTEyODYxNTI5NDlkZCqJ1DcWM8zHuXjv7c8LS7JTH9+8" type="hidden">
+</div>
+
+    
+<div class="PageHeaderDiv">
+  <table class="PageHeader" summary="导航" width="100%" border="0" cellpadding="3" cellspacing="0">
+  <tbody>
+    <tr align="center">
+      <td class="PageTd1">
+        <a href="http://dotnet.aspx.cc/">
+          <img src="read.aspx_files/logoSite.gif" id="Header1_ImgLogo" style="border: 0pt none ;" alt="网站 Logo"></a></td>
+      <td>
+<script type="text/javascript"><!--
+google_ad_client = "pub-8905127525253818";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "text_image";
+google_ad_channel = "";
+google_ui_features = "rc:0";
+//-->
+</script>
+<script type="text/javascript" src="read.aspx_files/show_ads.js">
+</script><iframe name="google_ads_frame" src="read.aspx_files/ads.htm" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" width="468" frameborder="0" height="60"></iframe></td>
+<td>
+<script type="text/javascript"><!--
+google_ad_client = "pub-8905127525253818";
+google_ad_width = 234;
+google_ad_height = 60;
+google_ad_format = "234x60_as";
+google_ad_type = "text_image";
+google_ad_channel = "";
+//-->
+</script>
+<script type="text/javascript" src="read.aspx_files/show_ads.js">
+</script><iframe name="google_ads_frame" src="read.aspx_files/ads_002.htm" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" width="234" frameborder="0" height="60"></iframe>
+</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+    
+<!--导航-->
+<table style="background-position: right bottom; background-attachment: fixed; background-image: url(/Images/navbg2.gif); background-repeat: no-repeat;" class="bar" width="100%" align="center" bgcolor="#9cd67c" border="0" cellpadding="0" cellspacing="2" height="28">
+ <tbody>
+  <tr align="center">
+   <td>
+    <table style="border: 1px solid rgb(247, 255, 222); table-layout: fixed;" class="bar" bgcolor="#f48142" border="0" cellpadding="0" cellspacing="0">
+     <tbody>
+      <tr>
+       <td width="8">
+        <img src="read.aspx_files/arrow.gif" width="8" height="16">
+       </td>
+       <td style="padding-top: 2px;" width="80" align="center">
+        <a class="bar" href="http://dotnet.aspx.cc/" target="_top">首 页</a>
+       </td>
+      </tr>
+     </tbody>
+    </table>
+   </td>
+   <td>
+    <table style="border: 1px solid rgb(247, 255, 222); table-layout: fixed;" class="bar" bgcolor="#f48142" border="0" cellpadding="0" cellspacing="0">
+     <tbody>
+      <tr>
+       <td width="8">
+        <img src="read.aspx_files/arrow.gif" width="8" height="16">
+       </td>
+       <td style="padding-top: 2px;" width="80" align="center">
+        <a class="bar" href="http://dotnet.aspx.cc/ShowList.aspx?id=1">ASP.NET</a>
+       </td>
+      </tr>
+     </tbody>
+    </table>
+   </td>
+   <td>
+    <table style="border: 1px solid rgb(247, 255, 222); table-layout: fixed;" class="bar" bgcolor="#f48142" border="0" cellpadding="0" cellspacing="0">
+     <tbody>
+      <tr>
+       <td width="8">
+        <img src="read.aspx_files/arrow.gif" width="8" height="16">
+       </td>
+       <td style="padding-top: 2px;" width="80" align="center">
+        <a class="bar" href="http://dotnet.aspx.cc/ShowList.aspx?id=8">VB.NET</a>
+       </td>
+      </tr>
+     </tbody>
+    </table>
+   </td>
+   <td>
+    <table style="border: 1px solid rgb(247, 255, 222); table-layout: fixed;" class="bar" bgcolor="#f48142" border="0" cellpadding="0" cellspacing="0">
+     <tbody>
+      <tr>
+       <td width="8">
+        <img src="read.aspx_files/arrow.gif" width="8" height="16">
+       </td>
+       <td style="padding-top: 2px;" width="80" align="center">
+        <a class="bar" href="http://dotnet.aspx.cc/ShowList.aspx?id=9">Visual C#</a>
+       </td>
+      </tr>
+     </tbody>
+    </table>
+   </td>
+   <td>
+    <table style="border: 1px solid rgb(247, 255, 222); table-layout: fixed;" class="bar" bgcolor="#f48142" border="0" cellpadding="0" cellspacing="0">
+     <tbody>
+      <tr>
+       <td width="8">
+        <img src="read.aspx_files/arrow.gif" width="8" height="16">
+       </td>
+       <td style="padding-top: 2px;" width="80" align="center">
+        <a class="bar" href="http://dotnet.aspx.cc/ShowList.aspx?id=11">XML/XSL</a>
+       </td>
+      </tr>
+     </tbody>
+    </table>
+   </td>
+   <td>
+    <table style="border: 1px solid rgb(247, 255, 222); table-layout: fixed;" class="bar" bgcolor="#f48142" border="0" cellpadding="0" cellspacing="0">
+     <tbody>
+      <tr>
+       <td width="8">
+        <img src="read.aspx_files/arrow.gif" width="8" height="16">
+       </td>
+       <td style="padding-top: 2px;" width="85" align="center">
+        <a class="bar" href="http://dotnet.aspx.cc/ShowList.aspx?id=6">Web Services</a>
+       </td>
+      </tr>
+     </tbody>
+    </table>
+   </td>
+   <td>
+    <table style="border: 1px solid rgb(247, 255, 222); table-layout: fixed;" class="bar" bgcolor="#f48142" border="0" cellpadding="0" cellspacing="0">
+     <tbody>
+      <tr>
+       <td width="8">
+        <img src="read.aspx_files/arrow.gif" width="8" height="16">
+       </td>
+       <td style="padding-top: 2px;" width="85" align="center">
+        <a class="bar" href="http://dotnet.aspx.cc/ShowList.aspx?id=12">.NET FAQs</a>
+       </td>
+      </tr>
+     </tbody>
+    </table>
+   </td>
+   <td>
+    <table style="border: 1px solid rgb(247, 255, 222); table-layout: fixed;" class="bar" bgcolor="#f48142" border="0" cellpadding="0" cellspacing="0">
+     <tbody>
+      <tr>
+       <td width="8">
+        <img src="read.aspx_files/arrow.gif" width="8" height="16">
+       </td>
+       <td style="padding-top: 2px;" width="80" align="center">
+        <a class="bar" href="http://dotnet.aspx.cc/Books.aspx">书籍出版</a>
+       </td>
+      </tr>
+     </tbody>
+    </table>
+   </td>
+   <td>
+    <table style="border: 1px solid rgb(247, 255, 222); table-layout: fixed;" class="bar" bgcolor="#f48142" border="0" cellpadding="0" cellspacing="0">
+     <tbody>
+      <tr>
+       <td width="8">
+        <img src="read.aspx_files/arrow.gif" width="8" height="16">
+       </td>
+       <td style="padding-top: 2px;" width="160" align="center">
+        <a class="bar" href="http://dotnet.aspx.cc/SilverlightSDK/Silverlight.html">Silverlight 1.0 SDK 中文版</a>
+       </td>
+      </tr>
+     </tbody>
+    </table>
+   </td>
+   <td>
+    <table style="border: 1px solid rgb(247, 255, 222); table-layout: fixed;" class="bar" bgcolor="#f48142" border="0" cellpadding="0" cellspacing="0">
+     <tbody>
+      <tr>
+       <td width="8">
+        <img src="read.aspx_files/arrow.gif" width="8" height="16">
+       </td>
+       <td style="padding-top: 2px;" width="96" align="center">
+        <a class="bar" href="http://translate.google.com/translate?hl=en&amp;langpair=zh%7Cen&amp;u=http://dotnet.aspx.cc">English Version</a>
+       </td>
+      </tr>
+     </tbody>
+    </table>
+   </td>
+  </tr>
+ </tbody>
+</table>
+<!-- 导航结束 -->
+
+    <div style="padding: 5px;">
+    </div>
+    <table style="font-size: 9pt;" width="100%" align="center"><tbody><tr><td style="padding: 5px; font-size: 18px; color: rgb(15, 60, 205);" align="center"><b>带图片的，多列的DropDownList的实现</b></td></tr><tr><td style="padding: 6px 0px; font-size: 12px; font-weight: bold;" align="center">作者：孟宪会&nbsp;出自：【孟宪会之精彩世界】&nbsp;发布日期：2004年7月29日 17点49分13秒<hr size="1" color="#f46240"></td></tr><tr><td style="padding-top: 10px;" bgcolor="#eeeeee"><!---【孟宪会之精彩世界】--><p>下面是模仿的DropDownList的效果，支持图片，多列，换行等。<b><a href="http://dotnet.aspx.cc/Exam/WebDropDownList.aspx" target="_blank">查看例子</a></b></p>
+<p><b>WebDropDownList.aspx</b></p>
+<xmp>
+&lt;%@ Page language="c#" Codebehind="WebDropDownList.aspx.cs"validateRequest="false" 
+ AutoEventWireup="false" Inherits="eMeng.WebDropDownList" %&gt;
+&lt;HTML&gt;
+&lt;HEAD&gt;
+&lt;title&gt;模拟下拉列表框&lt;/title&gt;
+&lt;meta http-equiv="Content-Type" content="text/html; charset=gb2312"&gt;
+&lt;style&gt;BODY {
+FONT: 12px 宋体
+}
+TD {
+FONT: 12px 宋体
+}
+DIV {
+FONT: 12px 宋体
+}
+LABEL {
+PADDING-RIGHT: 0px; PADDING-LEFT: 4px; PADDING-BOTTOM: 0px; PADDING-TOP: 3px; HEIGHT: 19px
+}
+.link_box {
+CURSOR: default; TEXT-ALIGN: left
+}
+.link_head {
+BORDER-RIGHT: 2px inset; BORDER-TOP: 2px inset; BORDER-LEFT: 2px inset; WIDTH: 100%; 
+BORDER-BOTTOM: 2px inset; HEIGHT: 23px
+}
+.link_text {
+PADDING-LEFT: 2px; BACKGROUND: #fff
+}
+.link_arrow0 {
+BORDER-RIGHT: 2px outset; BORDER-TOP: 2px outset; BACKGROUND: buttonface; 
+FONT: 14px marlett; BORDER-LEFT: 2px outset; WIDTH: 22px;
+ BORDER-BOTTOM: 2px outset; HEIGHT: 100%; TEXT-ALIGN: center
+}
+.link_arrow1 {
+BORDER-RIGHT: buttonshadow 1px solid; PADDING-RIGHT: 0px; 
+BORDER-TOP: buttonshadow 1px solid; PADDING-LEFT: 2px; 
+BACKGROUND: buttonface; PADDING-BOTTOM: 0px; FONT: 14px marlett; 
+BORDER-LEFT: buttonshadow 1px solid; WIDTH: 22px; PADDING-TOP: 2px; 
+BORDER-BOTTOM: buttonshadow 1px solid; HEIGHT: 100%; TEXT-ALIGN: center
+}
+.link_value {
+BORDER-RIGHT: 1px solid; BORDER-TOP: 1px solid; FILTER: alpha(opacity:0); 
+VISIBILITY: hidden; OVERFLOW-X: hidden; OVERFLOW: auto; BORDER-LEFT: 1px solid; 
+BORDER-BOTTOM: 1px solid; POSITION: absolute
+}
+.link_record0 {
+BORDER-TOP: #eee 1px solid; PADDING-LEFT: 2px; BACKGROUND: #fff; 
+WIDTH: 100%; COLOR: #000; HEIGHT: 20px
+}
+.link_record1 {
+BORDER-TOP: #047 1px solid; PADDING-LEFT: 2px; BACKGROUND: #058; 
+WIDTH: 100%; COLOR: #fe0; HEIGHT: 20px
+}
+&lt;/style&gt;
+&lt;script&gt;
+var dropShow=false
+var currentID
+function dropdown(el){
+if(dropShow){
+dropFadeOut()
+}else{
+currentID=el
+el.style.visibility="visible"
+dropFadeIn()
+}
+}
+function dropFadeIn(){//选单淡入的效果
+if(currentID.filters.alpha.opacity&lt;100){
+currentID.filters.alpha.opacity+=20
+fadeTimer=setTimeout("dropFadeIn()",50)
+}else{
+dropShow=true
+clearTimeout(fadeTimer)
+}
+}
+function dropFadeOut(){//选单淡出的效果
+if(currentID.filters.alpha.opacity&gt;0){
+clearTimeout(fadeTimer)
+currentID.filters.alpha.opacity-=20
+fadeTimer=setTimeout("dropFadeOut()",50)
+}else{
+dropShow=false
+currentID.style.visibility="hidden"
+}
+}
+function dropdownHide(){
+if(dropShow){
+dropFadeOut()
+dropShow=false
+}
+}
+function hiLight(el){//高亮度显示指标位置
+if(dropShow){
+for(i=0;i&lt;el.parentElement.childNodes.length;i++){
+el.parentElement.childNodes(i).className="link_record0"
+}
+el.className="link_record1"
+}
+}
+function CheckMe(el){//替换显示内容
+document.all.text1.innerText=el.innerText
+}
+document.onclick=dropdownHide
+&lt;/script&gt;
+&lt;/HEAD&gt;
+&lt;body text="#000000" onload="document.all.form1.reset()"&gt;
+&lt;div style="padding:10px;border-bottom:2px solid red"&gt;模拟下拉框&lt;/div&gt;
+&lt;form id="form1" onsubmit="alert(city.value)" runat="server"&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;div class="link_box" onselectstart="return false" style="WIDTH: 100px"&gt;
+&lt;div class="link_head" onclick="dropdown(value1)"&gt;
+&lt;table height="100%" cellSpacing="0" cellPadding="0" width="100%" border="0"&gt;
+&lt;tr&gt;
+	&lt;td&gt;
+		&lt;div class="link_text"&gt;&lt;nobr&gt;&lt;label id="text1"&gt;请选择？&lt;/label&gt;&lt;/nobr&gt;&lt;/div&gt;
+	&lt;/td&gt;
+	&lt;td align="right" width="22"&gt;
+		&lt;div onmouseup="this.className='link_arrow0'" class="link_arrow0" 
+		onmousedown="this.className='link_arrow1'" onmouseout="this.className='link_arrow0'"&gt;6&lt;/div&gt;
+	&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class="link_value" id="value1" style="WIDTH: 500px; HEIGHT: 300px"&gt;
+&lt;asp:datagrid id="DataGrid1" runat="server" AutoGenerateColumns="False" Font-Size="12px" Width="100%"
+ShowHeader="False"&gt;
+&lt;Columns&gt;
+&lt;asp:BoundColumn DataField="Title" SortExpression="Title" 
+	DataFormatString="&lt;img src='http://dotnet.aspx.cc/Images/meng.gif' align='absmiddle'&gt; {0}"&gt;
+	&lt;/asp:BoundColumn&gt;
+&lt;asp:BoundColumn DataField="CreateDate" SortExpression="CreateDate" 
+	HeaderText="" DataFormatString="{0:yyyy年MM月dd日}"&gt;&lt;/asp:BoundColumn&gt;
+&lt;/Columns&gt;
+&lt;/asp:datagrid&gt;
+&lt;div id="mx"&gt;
+&lt;div class="link_record0" onmouseover="hiLight(this)" 
+	onclick="CheckMe(this);document.all.form1.city.value=this.innerText"&gt;&lt;label&gt;北京市&lt;/label&gt;&lt;/div&gt;
+&lt;div class="link_record0" onmouseover="hiLight(this)" 
+	onclick="CheckMe(this);document.all.form1.city.value=this.innerText"&gt;&lt;label&gt;上海市&lt;/label&gt;&lt;/div&gt;
+&lt;div class="link_record0" onmouseover="hiLight(this)"
+ onclick="CheckMe(this);document.all.form1.city.value=this.innerText"&gt;&lt;label&gt;河南省&lt;/label&gt;&lt;/div&gt;
+&lt;div class="link_record0" onmouseover="hiLight(this)"
+ onclick="CheckMe(this);document.all.form1.city.value=this.innerText"&gt;&lt;label&gt;深圳市&lt;/label&gt;&lt;/div&gt;
+&lt;div class="link_record0" onmouseover="hiLight(this)"
+ onclick="CheckMe(this);document.all.form1.city.value=this.innerText"&gt;&lt;label&gt;大连市&lt;/label&gt;&lt;/div&gt;
+&lt;div class="link_record0" onmouseover="hiLight(this)"
+ onclick="CheckMe(this);document.all.form1.city.value=this.innerText"&gt;&lt;label&gt;云南省&lt;/label&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;td&gt;&lt;input type="hidden" value="您尚未选择" name="city"&gt; &lt;input type="submit" value="确定"&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/form&gt;
+&lt;/body&gt;
+&lt;/HTML&gt;
+</xmp>
+<p><b>WebDropDownList.aspx.cs</b></p>
+<xmp>
+using System;
+using System.Collections;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Web;
+using System.Web.SessionState;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.HtmlControls;
+using System.Data.OleDb;
+
+namespace eMeng
+{
+/// &lt;summary&gt;
+/// ShowList 的摘要说明。
+/// &lt;/summary&gt;
+public class WebDropDownList : System.Web.UI.Page
+{
+protected System.Web.UI.WebControls.DataGrid DataGrid1;
+
+private void Page_Load(object sender, System.EventArgs e)
+{			
+DataGrid1.Columns[0].ItemStyle.Width = Unit.Pixel(400);
+DataGrid1.Columns[1].ItemStyle.Width = Unit.Pixel(100);
+Data_Bind();
+}
+
+public void Data_Bind()
+{
+Response.CacheControl = "no-cache";
+Response.Expires = -1;
+try
+{
+string strSQL = "SELECT id,objectGuid,Title,CreateDate,HitCount FROM Document ORDER BY id DESC";
+string cnString = (new Connection()).ConnectionString;
+OleDbConnection cn = new OleDbConnection(cnString);
+cn.Open();
+OleDbCommand cmd = new OleDbCommand(strSQL, cn);
+DataGrid1.DataSource = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+DataGrid1.DataBind();
+cn.Close();
+cn.Dispose();
+cn = null;
+cmd.Dispose();
+cmd = null;
+}
+catch(OleDbException myOleDbException)
+{
+Response.Write("错误：" + myOleDbException.Message + ":" + myOleDbException.HelpLink);
+Response.End();
+}
+}
+private void DataGrid1_ItemDataBound(object sender,System.Web.UI.WebControls.DataGridItemEventArgs e)
+{
+
+if( e.Item.ItemIndex != -1 )
+{
+e.Item.Attributes.Add("onmouseover", "this.bgColor='#C1D2EE'");
+e.Item.Attributes.Add("onclick", 
+"document.all.text1.innerText=this.cells[0].innerText;document.all.form1.city.value=this.cells[0].innerText;");
+if (e.Item.ItemIndex % 2 == 0 )
+{
+	e.Item.Attributes.Add("bgcolor", "#FFFFFF");
+	e.Item.Attributes.Add("onmouseout", "this.bgColor=document.getElementById('DataGrid1').getAttribute('singleValue')");
+}
+else
+{
+	e.Item.Attributes.Add("bgcolor", "oldlace");
+	e.Item.Attributes.Add("onmouseout", "this.bgColor=document.getElementById('DataGrid1').getAttribute('oldValue')");
+}
+}
+else
+{
+DataGrid1.Attributes.Add("oldValue", "oldlace");
+DataGrid1.Attributes.Add("singleValue", "#FFFFFF");
+}
+}
+#region Web Form Designer generated code
+override protected void OnInit(EventArgs e)
+{
+//
+// CODEGEN：该调用是 ASP.NET Web 窗体设计器所必需的。
+//
+InitializeComponent();
+base.OnInit(e);
+}
+
+/// &lt;summary&gt;
+/// 设计器支持所需的方法 - 不要使用代码编辑器修改
+/// 此方法的内容。
+/// &lt;/summary&gt;
+private void InitializeComponent()
+{    
+this.DataGrid1.ItemDataBound += new System.Web.UI.WebControls.DataGridItemEventHandler(this.DataGrid1_ItemDataBound);
+this.Load += new System.EventHandler(this.Page_Load);
+}
+#endregion
+}
+}
+
+</xmp></td></tr><tr><td style="padding-top: 6px;"><strong>关键字：</strong></td></tr></tbody></table>
+    <div style="padding: 5px; text-align: right;">
+        【<a href="#" onclick="document.documentElement.scrollTop=document.documentElement.scrollHeight;return false">发表评论</a>】
+        【<a href="http://dotnet.aspx.cc/article/c81ad80e-fc14-4ff8-85f3-16cc68811bd5/print.aspx">打印文章</a>】 【<a href="javascript:void(AddFav())">收藏文章</a>】
+    </div>
+    <div>
+        
+                <table style="font-size: 12px; table-layout: fixed;" width="100%" align="center" border="0" cellpadding="0" cellspacing="1">
+                    <tbody><tr bgcolor="#ff9801">
+                        <td colspan="3" style="height: 30px;">
+                            <b>&nbsp;&nbsp;关于本文的评论：</b>为了保护您的电子邮件不被骚扰，地址中的个别符号转换成了全角字符！</td>
+                    </tr>
+            
+                <tr style="background-color: rgb(255, 215, 128);">
+                    <td style="padding: 2px; width: 33%;">
+                        评论人：<b></b></td>
+                    <td style="padding: 2px; width: 34%;">
+                        电子邮件：<b>cqqjj1029＠gmail．com</b></td>
+                    <td style="padding: 2px; width: 33%;">
+                        评论日期：2007年12月13日 03:06:00</td>
+                </tr>
+                <tr style="background-color: rgb(255, 255, 255);">
+                    <td colspan="3" style="padding: 2px;">
+                        Firefox2.0下没通过
+                    </td>
+                </tr>
+                <tr style="background-color: rgb(244, 98, 64); height: 1px;">
+                    <td colspan="3">
+                        <img src="read.aspx_files/pixel.gif" alt=""></td>
+                </tr>
+            
+                <tr style="background-color: rgb(255, 215, 128);">
+                    <td style="padding: 2px; width: 33%;">
+                        评论人：<b>goodman</b></td>
+                    <td style="padding: 2px; width: 34%;">
+                        电子邮件：<b>wxzlymanfs＠163．net</b></td>
+                    <td style="padding: 2px; width: 33%;">
+                        评论日期：2007年08月09日 05:27:26</td>
+                </tr>
+                <tr style="background-color: rgb(255, 255, 255);">
+                    <td colspan="3" style="padding: 2px;">
+                        做成用户控件就好了，研究研究
+                    </td>
+                </tr>
+                <tr style="background-color: rgb(244, 98, 64); height: 1px;">
+                    <td colspan="3">
+                        <img src="read.aspx_files/pixel.gif" alt=""></td>
+                </tr>
+            
+                <tr style="background-color: rgb(255, 215, 128);">
+                    <td style="padding: 2px; width: 33%;">
+                        评论人：<b>sx</b></td>
+                    <td style="padding: 2px; width: 34%;">
+                        电子邮件：<b>sx．84＠163．com</b></td>
+                    <td style="padding: 2px; width: 33%;">
+                        评论日期：2007年06月04日 04:37:16</td>
+                </tr>
+                <tr style="background-color: rgb(255, 255, 255);">
+                    <td colspan="3" style="padding: 2px;">
+                        效果不错
+                    </td>
+                </tr>
+                <tr style="background-color: rgb(244, 98, 64); height: 1px;">
+                    <td colspan="3">
+                        <img src="read.aspx_files/pixel.gif" alt=""></td>
+                </tr>
+            
+                <tr style="background-color: rgb(255, 215, 128);">
+                    <td style="padding: 2px; width: 33%;">
+                        评论人：<b>メ冰枫ぱ雪</b></td>
+                    <td style="padding: 2px; width: 34%;">
+                        电子邮件：<b>lantk＠126．com</b></td>
+                    <td style="padding: 2px; width: 33%;">
+                        评论日期：2006年05月25日 04:24:53</td>
+                </tr>
+                <tr style="background-color: rgb(255, 255, 255);">
+                    <td colspan="3" style="padding: 2px;">
+                        关键还是CSS+Js哈，不过做的很赞哦。。取到了点灵感，晚上试做做。。
+                    </td>
+                </tr>
+                <tr style="background-color: rgb(244, 98, 64); height: 1px;">
+                    <td colspan="3">
+                        <img src="read.aspx_files/pixel.gif" alt=""></td>
+                </tr>
+            
+                <tr style="background-color: rgb(255, 215, 128);">
+                    <td style="padding: 2px; width: 33%;">
+                        评论人：<b>santa</b></td>
+                    <td style="padding: 2px; width: 34%;">
+                        电子邮件：<b></b></td>
+                    <td style="padding: 2px; width: 33%;">
+                        评论日期：2006年05月09日 02:52:36</td>
+                </tr>
+                <tr style="background-color: rgb(255, 255, 255);">
+                    <td colspan="3" style="padding: 2px;">
+                        Firefox1.5&nbsp;不通过
+                    </td>
+                </tr>
+                <tr style="background-color: rgb(244, 98, 64); height: 1px;">
+                    <td colspan="3">
+                        <img src="read.aspx_files/pixel.gif" alt=""></td>
+                </tr>
+            
+                <tr style="background-color: rgb(255, 215, 128);">
+                    <td style="padding: 2px; width: 33%;">
+                        评论人：<b></b></td>
+                    <td style="padding: 2px; width: 34%;">
+                        电子邮件：<b></b></td>
+                    <td style="padding: 2px; width: 33%;">
+                        评论日期：2006年02月20日 08:12:17</td>
+                </tr>
+                <tr style="background-color: rgb(255, 255, 255);">
+                    <td colspan="3" style="padding: 2px;">
+                        string&nbsp;cnString&nbsp;=&nbsp;(new&nbsp;OleDbConnection()).ConnectionString;
+                    </td>
+                </tr>
+                <tr style="background-color: rgb(244, 98, 64); height: 1px;">
+                    <td colspan="3">
+                        <img src="read.aspx_files/pixel.gif" alt=""></td>
+                </tr>
+            
+                <tr style="background-color: rgb(255, 215, 128);">
+                    <td style="padding: 2px; width: 33%;">
+                        评论人：<b>kk</b></td>
+                    <td style="padding: 2px; width: 34%;">
+                        电子邮件：<b>laojie＠hotmail．com</b></td>
+                    <td style="padding: 2px; width: 33%;">
+                        评论日期：2005年01月28日 09:36:38</td>
+                </tr>
+                <tr style="background-color: rgb(255, 255, 255);">
+                    <td colspan="3" style="padding: 2px;">
+                        string&nbsp;cnString&nbsp;=&nbsp;(new&nbsp;Connection()).ConnectionString;&nbsp;&nbsp;怎么解决
+                    </td>
+                </tr>
+                <tr style="background-color: rgb(244, 98, 64); height: 1px;">
+                    <td colspan="3">
+                        <img src="read.aspx_files/pixel.gif" alt=""></td>
+                </tr>
+            
+                <tr style="background-color: rgb(255, 215, 128);">
+                    <td style="padding: 2px; width: 33%;">
+                        评论人：<b>Cornfield</b></td>
+                    <td style="padding: 2px; width: 34%;">
+                        电子邮件：<b>cornfield＠gmail．com</b></td>
+                    <td style="padding: 2px; width: 33%;">
+                        评论日期：2004年11月12日 04:35:06</td>
+                </tr>
+                <tr style="background-color: rgb(255, 255, 255);">
+                    <td colspan="3" style="padding: 2px;">
+                        请问如何实现多选,或者图片换成CheckBox实现多选?
+                    </td>
+                </tr>
+                <tr style="background-color: rgb(244, 98, 64); height: 1px;">
+                    <td colspan="3">
+                        <img src="read.aspx_files/pixel.gif" alt=""></td>
+                </tr>
+            
+                <tr style="background-color: rgb(255, 215, 128);">
+                    <td style="padding: 2px; width: 33%;">
+                        评论人：<b>leilei</b></td>
+                    <td style="padding: 2px; width: 34%;">
+                        电子邮件：<b></b></td>
+                    <td style="padding: 2px; width: 33%;">
+                        评论日期：2004年11月10日 02:39:06</td>
+                </tr>
+                <tr style="background-color: rgb(255, 255, 255);">
+                    <td colspan="3" style="padding: 2px;">
+                        东东好是好，不过，该程序的重点应该是在JS脚本与css的结合，而非c#,能设立个脚本专区就好了
+                    </td>
+                </tr>
+                <tr style="background-color: rgb(244, 98, 64); height: 1px;">
+                    <td colspan="3">
+                        <img src="read.aspx_files/pixel.gif" alt=""></td>
+                </tr>
+            
+                <tr style="background-color: rgb(255, 215, 128);">
+                    <td style="padding: 2px; width: 33%;">
+                        评论人：<b>re</b></td>
+                    <td style="padding: 2px; width: 34%;">
+                        电子邮件：<b></b></td>
+                    <td style="padding: 2px; width: 33%;">
+                        评论日期：2004年09月24日 05:48:37</td>
+                </tr>
+                <tr style="background-color: rgb(255, 255, 255);">
+                    <td colspan="3" style="padding: 2px;">
+                        牛
+                    </td>
+                </tr>
+                <tr style="background-color: rgb(244, 98, 64); height: 1px;">
+                    <td colspan="3">
+                        <img src="read.aspx_files/pixel.gif" alt=""></td>
+                </tr>
+            
+                <tr style="background-color: rgb(255, 215, 128);">
+                    <td style="padding: 2px; width: 33%;">
+                        评论人：<b>xia</b></td>
+                    <td style="padding: 2px; width: 34%;">
+                        电子邮件：<b>asdf</b></td>
+                    <td style="padding: 2px; width: 33%;">
+                        评论日期：2004年09月03日 10:58:00</td>
+                </tr>
+                <tr style="background-color: rgb(255, 255, 255);">
+                    <td colspan="3" style="padding: 2px;">
+                        adf
+                    </td>
+                </tr>
+                <tr style="background-color: rgb(244, 98, 64); height: 1px;">
+                    <td colspan="3">
+                        <img src="read.aspx_files/pixel.gif" alt=""></td>
+                </tr>
+            
+                <tr style="background-color: rgb(255, 215, 128);">
+                    <td style="padding: 2px; width: 33%;">
+                        评论人：<b>Super</b></td>
+                    <td style="padding: 2px; width: 34%;">
+                        电子邮件：<b></b></td>
+                    <td style="padding: 2px; width: 33%;">
+                        评论日期：2004年08月27日 10:51:48</td>
+                </tr>
+                <tr style="background-color: rgb(255, 255, 255);">
+                    <td colspan="3" style="padding: 2px;">
+                        孟大哥真是牛人!
+                    </td>
+                </tr>
+                <tr style="background-color: rgb(244, 98, 64); height: 1px;">
+                    <td colspan="3">
+                        <img src="read.aspx_files/pixel.gif" alt=""></td>
+                </tr>
+            
+                <tr style="background-color: rgb(255, 215, 128);">
+                    <td style="padding: 2px; width: 33%;">
+                        评论人：<b>ly</b></td>
+                    <td style="padding: 2px; width: 34%;">
+                        电子邮件：<b></b></td>
+                    <td style="padding: 2px; width: 33%;">
+                        评论日期：2004年08月13日 03:20:23</td>
+                </tr>
+                <tr style="background-color: rgb(255, 255, 255);">
+                    <td colspan="3" style="padding: 2px;">
+                        楼下的兄弟也太懒了。孟子代码算是好的了，copy过去都能用。不出现字符转义，已经很方便了。
+                    </td>
+                </tr>
+                <tr style="background-color: rgb(244, 98, 64); height: 1px;">
+                    <td colspan="3">
+                        <img src="read.aspx_files/pixel.gif" alt=""></td>
+                </tr>
+            
+                <tr style="background-color: rgb(255, 215, 128);">
+                    <td style="padding: 2px; width: 33%;">
+                        评论人：<b>要求过不过份啊???</b></td>
+                    <td style="padding: 2px; width: 34%;">
+                        电子邮件：<b>xiaosonge＠hotmail．com</b></td>
+                    <td style="padding: 2px; width: 33%;">
+                        评论日期：2004年08月10日 09:29:52</td>
+                </tr>
+                <tr style="background-color: rgb(255, 255, 255);">
+                    <td colspan="3" style="padding: 2px;">
+                        如果每篇文章后面能提供实例下载该多好啊
+                    </td>
+                </tr>
+                <tr style="background-color: rgb(244, 98, 64); height: 1px;">
+                    <td colspan="3">
+                        <img src="read.aspx_files/pixel.gif" alt=""></td>
+                </tr>
+            
+                <tr style="background-color: rgb(255, 215, 128);">
+                    <td style="padding: 2px; width: 33%;">
+                        评论人：<b></b></td>
+                    <td style="padding: 2px; width: 34%;">
+                        电子邮件：<b></b></td>
+                    <td style="padding: 2px; width: 33%;">
+                        评论日期：2004年08月09日 04:16:55</td>
+                </tr>
+                <tr style="background-color: rgb(255, 255, 255);">
+                    <td colspan="3" style="padding: 2px;">
+                        有没有VB.net的版本啊
+                    </td>
+                </tr>
+                <tr style="background-color: rgb(244, 98, 64); height: 1px;">
+                    <td colspan="3">
+                        <img src="read.aspx_files/pixel.gif" alt=""></td>
+                </tr>
+            
+                <tr style="background-color: rgb(255, 215, 128);">
+                    <td style="padding: 2px; width: 33%;">
+                        评论人：<b>yanyl</b></td>
+                    <td style="padding: 2px; width: 34%;">
+                        电子邮件：<b></b></td>
+                    <td style="padding: 2px; width: 33%;">
+                        评论日期：2004年08月04日 04:53:57</td>
+                </tr>
+                <tr style="background-color: rgb(255, 255, 255);">
+                    <td colspan="3" style="padding: 2px;">
+                        string&nbsp;cnString&nbsp;=&nbsp;(new&nbsp;Connection()).ConnectionString;&nbsp;报错.
+                    </td>
+                </tr>
+                <tr style="background-color: rgb(244, 98, 64); height: 1px;">
+                    <td colspan="3">
+                        <img src="read.aspx_files/pixel.gif" alt=""></td>
+                </tr>
+            
+                <tr style="background-color: rgb(255, 215, 128);">
+                    <td style="padding: 2px; width: 33%;">
+                        评论人：<b>bluefee</b></td>
+                    <td style="padding: 2px; width: 34%;">
+                        电子邮件：<b>bluefee＠21cn．com</b></td>
+                    <td style="padding: 2px; width: 33%;">
+                        评论日期：2004年08月01日 08:22:20</td>
+                </tr>
+                <tr style="background-color: rgb(255, 255, 255);">
+                    <td colspan="3" style="padding: 2px;">
+                        效果不错啊
+                    </td>
+                </tr>
+                <tr style="background-color: rgb(244, 98, 64); height: 1px;">
+                    <td colspan="3">
+                        <img src="read.aspx_files/pixel.gif" alt=""></td>
+                </tr>
+            
+                <tr style="background-color: rgb(255, 215, 128);">
+                    <td style="padding: 2px; width: 33%;">
+                        评论人：<b>gordon</b></td>
+                    <td style="padding: 2px; width: 34%;">
+                        电子邮件：<b>gordon772＠yahoo．com</b></td>
+                    <td style="padding: 2px; width: 33%;">
+                        评论日期：2004年07月29日 11:37:15</td>
+                </tr>
+                <tr style="background-color: rgb(255, 255, 255);">
+                    <td colspan="3" style="padding: 2px;">
+                        string&nbsp;cnString&nbsp;=&nbsp;(new&nbsp;Connection()).ConnectionString;&nbsp;报错.<br>
+                    </td>
+                </tr>
+                <tr style="background-color: rgb(244, 98, 64); height: 1px;">
+                    <td colspan="3">
+                        <img src="read.aspx_files/pixel.gif" alt=""></td>
+                </tr>
+            
+                </tbody></table>
+            
+        <table width="100%" bgcolor="#ffd780" cellspacing="1">
+            <tbody><tr>
+                <td style="font-size: 9pt;" height="22">
+                    <b>&nbsp;&nbsp;发表评论（小于4000字）</b> [注意：如果您输入电子邮件，将有利于您得到及时的回复。]<font size="font-size:9pt" color="red">【请勿发表国家法律不允许的言论，谢谢！！】</font></td>
+            </tr>
+            <tr bgcolor="#ffffff">
+                <td style="padding-right: 2px;">
+                    <textarea name="Comments" rows="5" cols="20" id="Comments" style="border: 1px solid Gray; overflow: auto; width: 100%;"></textarea>
+                </td>
+            </tr>
+            <tr bgcolor="#ffffff">
+                <td style="font-size: 9pt;" align="middle">
+                    用户名：<input name="UserName" maxlength="25" id="UserName" style="border: 1px solid Gray; height: 18px; width: 220px;" type="text">
+                    电子邮件：<input name="email" maxlength="25" id="email" style="border: 1px solid Gray; height: 18px; width: 220px;" type="text">
+                    验证码：<input name="ValidateCode" maxlength="25" id="ValidateCode" style="border: 1px solid Gray; height: 18px; width: 30px;" type="text"><img src="read.aspx_files/validatecode.png" alt="">
+                    <input name="AddComments" value="发表评论" id="AddComments" style="background-color: rgb(207, 213, 229); height: 20px;" type="submit">
+                </td>
+            </tr>
+        </tbody></table>
+            </div>
+    
+<div>
+
+	<input name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWBgLez/CjDwKDzu2ECQKvruq2CAKyzcaDDQLRmZCFBgKj0+mEB3XgEn4l5EuQWyeIKfGpzJJNtTqZ" type="hidden">
+</div></form> 
+    
+<script type="text/javascript">
+//<![CDATA[
+function SearchMSDN()
+{
+ var quKey = document.getElementById("qu");
+ if(quKey.value == "")
+ {
+  alert("请输入关键字。");
+  return;
+ }
+ window.open("http://www.microsoft.com/china/msdn/searchredir.aspx?qu=" + escape(quKey.value),"_blank");
+}
+//]]>
+</script>
+<hr size="1" color="#f46240">
+<table style="font-size: 9pt;" align="center" border="0" cellpadding="2" cellspacing="2">
+<tbody><tr align="center">
+<td valign="middle" align="center"><a href="http://feedvalidator.org/check.cgi?url=http%3A//dotnet.aspx.cc/Rss.aspx" target="_blank"><img src="read.aspx_files/valid-rss.png" alt="[Valid RSS]" title="Validate my RSS feed" vspace="3" border="0" hspace="2"></a></td>
+<td valign="middle" align="center"><a href="http://jigsaw.w3.org/css-validator/validator?uri=http://dotnet.aspx.cc/ShowDetail.aspx?id=c81ad80e-fc14-4ff8-85f3-16cc68811bd5" target="_blank"><img src="read.aspx_files/CSS_Validation.gif" alt="Valid CSS!" title="Validate my RSS feed" vspace="3" border="0" hspace="2"></a></td>
+<td><table bgcolor="#e5eaed" border="0" cellpadding="2" cellspacing="2"><tbody><tr><td><input id="qu" size="30" type="text"></td><td><input value="搜索MSDN" onclick="SearchMSDN();" type="button"></td></tr></tbody></table></td><td>
+<!-- SiteSearch Google -->
+<form method="get" action="http://www.google.cn/custom" target="google_window">
+<table bgcolor="#ffffff" border="0">
+<tbody><tr><td valign="top" align="left" height="32" nowrap="nowrap">
+
+<br>
+<input name="domains" value="dotnet.aspx.cc" type="hidden">
+<label for="sbi" style="display: none;">输入您的搜索字词</label>
+<input name="q" size="31" maxlength="255" value="" id="sbi" type="text">
+<label for="sbb" style="display: none;">提交搜索表单</label>
+<input name="sa" value="Google 搜索" id="sbb" type="submit">
+</td>
+<td nowrap="nowrap">
+<table>
+<tbody><tr>
+<td>
+<input name="sitesearch" value="" checked="checked" id="ss0" type="radio">
+<label for="ss0" title="搜索网络"><font size="-1" color="#000000">Web</font></label></td>
+<td>
+<input name="sitesearch" value="dotnet.aspx.cc" id="ss1" type="radio">
+<label for="ss1" title="搜索 dotnet.aspx.cc"><font size="-1" color="#000000">dotnet.aspx.cc</font></label></td>
+</tr>
+</tbody></table>
+<input name="client" value="pub-8905127525253818" type="hidden">
+<input name="forid" value="1" type="hidden">
+<input name="ie" value="UTF-8" type="hidden">
+<input name="oe" value="UTF-8" type="hidden">
+<input name="cof" value="GALT:#008000;GL:1;DIV:#336699;VLC:663399;AH:center;BGC:FFFFFF;LBGC:336699;ALC:0000FF;LC:0000FF;T:000000;GFNT:0000FF;GIMP:0000FF;FORID:1" type="hidden">
+<input name="hl" value="zh-CN" type="hidden">
+</td></tr></tbody></table>
+</form>
+<!-- SiteSearch Google -->
+</td></tr><tr align="center">
+<td colspan="4"><img alt="【孟宪会之精彩世界】" src="read.aspx_files/copyright.gif" vspace="2" width="16" align="absmiddle" border="0" height="16">&nbsp;&nbsp;<span style="font-size: 16pt; vertical-align: middle;">©</span><a href="http://dotnet.aspx.cc/" target="_blank" class="Footer" title="欢迎光临【孟宪会之精彩世界】">【孟宪会之精彩世界】</a><sup style="font-size: 11pt;">®</sup>由<a href="mailto:amxh@21cn.com" class="Footer">孟宪会</a>制作
+ 2008年 版权所有 Powered By ASP.NET 2.0 特别感谢：<a href="http://www.aspx.cc/" target="_blank">Ahui</a>
+</td>
+</tr>
+</tbody></table>
+<hr size="1" color="#f46240">
+
+   
+</body></html>

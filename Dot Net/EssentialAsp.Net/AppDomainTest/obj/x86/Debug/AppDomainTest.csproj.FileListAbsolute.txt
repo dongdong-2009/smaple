@@ -1,0 +1,7 @@
+D:\Project\smaple\Dot Net\EssentialAsp.Net\AppDomainTest\bin\Debug\AppDomainTest.exe
+D:\Project\smaple\Dot Net\EssentialAsp.Net\AppDomainTest\bin\Debug\AppDomainTest.pdb
+D:\Project\smaple\Dot Net\EssentialAsp.Net\AppDomainTest\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Project\smaple\Dot Net\EssentialAsp.Net\AppDomainTest\obj\x86\Debug\AppDomainTest.exe
+D:\Project\smaple\Dot Net\EssentialAsp.Net\AppDomainTest\obj\x86\Debug\AppDomainTest.pdb
+D:\Project\smaple\Dot Net\EssentialAsp.Net\AppDomainTest\bin\Debug\EssentialAspNet.dll
+D:\Project\smaple\Dot Net\EssentialAsp.Net\AppDomainTest\bin\Debug\EssentialAspNet.pdb

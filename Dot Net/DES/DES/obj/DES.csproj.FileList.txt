@@ -1,0 +1,10 @@
+bin\Debug\DES.exe
+bin\Debug\DES.pdb
+bin\Debug\DESLibrary.dll
+bin\Debug\DESLibrary.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\DES.Form1.resources
+obj\Debug\DES.Properties.Resources.resources
+obj\Debug\DES.csproj.GenerateResource.Cache
+obj\Debug\DES.exe
+obj\Debug\DES.pdb

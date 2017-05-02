@@ -1,0 +1,7 @@
+bin\Debug\Variable.dll
+bin\Debug\Variable.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\Variable.dll
+obj\Debug\Variable.pdb
+obj\Debug\LUCC.Properties.Resources.resources
+obj\Debug\Variable.csproj.GenerateResource.Cache

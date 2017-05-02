@@ -1,0 +1,116 @@
+ASP.NET中实现单点登陆(不允许多用户使用同一帐号同时登陆)2006-12-06 16:55由于某些原因，在我们的应用中会遇到一个用户只能在一个地方登录的情况，也就是我们通常所说的单点登录。在ASP.NET中实现单点登录其实很简单，下面就把主要的方法和全部代码进行分析。 
+
+实现思路 
+
+利用Cache的功能，我们把用户的登录信息保存在Cache中，并设置过期时间为Session失效的时间，因此，一旦Session失效，我们的Cache也过期；而Cache对所有的用户都可以访问，因此，用它保存用户信息比数据库来得方便。 
+
+SingleLogin.aspx代码 
+
+<%@ Page language="c#" Codebehind="SingleLogin.aspx.cs" AutoEventWireup="false"
+ Inherits="eMeng.Exam.SingleLogin" %>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<HTML>
+<HEAD>
+<title>单点登录测试</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<style>
+H3 { FONT: 17px 宋体 }
+INPUT { FONT: 12px 宋体 }
+SPAN { FONT: 12px 宋体 }
+P { FONT: 12px 宋体 }
+H4 { FONT: 12px 宋体 }
+</style>
+</HEAD>
+<body MS_POSITIONING="GridLayout">
+<form id="Form1" method="post" runat="server">
+  <div align="center">
+    <h3>单点登录测试</h3>
+    <p>用户名称：<asp:TextBox id="UserName" runat="server"></asp:TextBox></p>
+    <p>用户密码：<asp:TextBox id="PassWord" runat="server" TextMode="Password"></asp:TextBox></p>
+    <p><asp:Button id="Login" runat="server" Text=" 登  录 "></asp:Button></p>
+    <p><asp:Label id="Msg" runat="server"></asp:Label></p>
+  </div>
+</form>
+</body>
+</HTML> 
+
+SingleLogin.aspx.cs代码 
+
+using System;
+using System.Collections;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Web;
+using System.Web.SessionState;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.HtmlControls; 
+
+namespace eMeng.Exam
+{
+/// <summary>
+/// SingleLogin 的摘要说明。
+/// 实现单点登录
+/// </summary>
+public class SingleLogin : System.Web.UI.Page
+{
+protected System.Web.UI.WebControls.TextBox UserName;
+protected System.Web.UI.WebControls.TextBox PassWord;
+protected System.Web.UI.WebControls.Label Msg;
+protected System.Web.UI.WebControls.Button Login; 
+
+private void Page_Load(object sender, System.EventArgs e)
+{
+
+} 
+
+#region Web 窗体设计器生成的代码
+override protected void OnInit(EventArgs e)
+{
+  InitializeComponent();
+  base.OnInit(e);
+} 
+
+/// <summary>
+/// 设计器支持所需的方法 - 不要使用代码编辑器修改
+/// 此方法的内容。
+/// </summary>
+private void InitializeComponent()
+{
+  this.Login.Click += new System.EventHandler(this.Login_Click);
+  this.Load += new System.EventHandler(this.Page_Load);
+}
+#endregion 
+
+private void Login_Click(object sender, System.EventArgs e)
+{
+  // 作为唯一标识的Key，应该是唯一的，这可根据需要自己设定规则。
+  // 做为测试，这里用用户名和密码的组合来做标识；也不进行其它的错误检查。 
+
+  // 生成Key
+  string sKey = UserName.Text + "_" + PassWord.Text;
+  // 得到Cache中的给定Key的值
+  string sUser = Convert.ToString(Cache[sKey]);
+  // 检查是否存在
+  if (sUser == null || sUser == String.Empty)
+  {
+    // Cache中没有该Key的项目，表名用户没有登录，或者已经登录超时
+    // 注意下面使用的TimeSpan构造函数重载版本的方法，是进行是否登录判断的关键。
+    TimeSpan SessTimeOut = new TimeSpan(0,0,System.Web.HttpContext.Current.Session.Timeout,0,0);
+    HttpContext.Current.Cache.Insert(sKey,sKey,null,DateTime.MaxValue,SessTimeOut,
+      System.Web.Caching.CacheItemPriority.NotRemovable,null);
+    Session["User"] = sKey;
+    // 首次登录，您可以做您想做的工作了。
+    Msg.Text="<h4 style='color:red'>嗨！欢迎您访问<a href='http://www.21asp.net/'>www.21asp.net"；
+    Msg.Text += "</a>，祝您浏览愉快！：）</h4>";
+  }
+  else
+  {
+    // 在 Cache 中发现该用户的记录，表名已经登录过，禁止再次登录
+    Msg.Text="<h4 style='color:red'>抱歉，您好像已经登录了呀：－（</h4>";
+   return;
+  }
+}
+
+ 

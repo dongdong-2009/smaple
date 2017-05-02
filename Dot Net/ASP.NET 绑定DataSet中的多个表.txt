@@ -1,0 +1,76 @@
+<%@ Page Language="C#" %> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+
+<script runat="server"> 
+  protected void Page_Load(object sender, EventArgs e) 
+  { 
+    System.Data.DataSet ds = new System.Data.DataSet(); 
+    System.Data.DataTable dataTable1 = new System.Data.DataTable("BlogUser"); 
+    System.Data.DataRow dr; 
+    dataTable1.Columns.Add(new System.Data.DataColumn("UserId", typeof(System.Int32))); 
+    dataTable1.Columns.Add(new System.Data.DataColumn("UserName", typeof(System.String))); 
+    dataTable1.PrimaryKey = new System.Data.DataColumn[] { dataTable1.Columns["UserId"] }; 
+
+    for (int i = 0; i < 8; i++) 
+    { 
+      dr = dataTable1.NewRow(); 
+      dr[0] = i; 
+      dr[1] = "【孟子E章】" + i.ToString(); 
+      dataTable1.Rows.Add(dr); 
+    } 
+
+    System.Data.DataTable dataTable2 = new System.Data.DataTable("BlogArticle"); 
+    dataTable2.Columns.Add(new System.Data.DataColumn("ArticleId", typeof(System.Int32))); 
+    dataTable2.Columns.Add(new System.Data.DataColumn("Title", typeof(System.String))); 
+    dataTable2.Columns.Add(new System.Data.DataColumn("UserId", typeof(System.Int32))); 
+    dataTable2.PrimaryKey = new System.Data.DataColumn[] { dataTable1.Columns["ArticleId"] }; 
+    Random rd = new Random(); 
+    for (int i = 0; i < 20; i++) 
+    { 
+      dr = dataTable2.NewRow(); 
+      dr[0] = i; 
+      dr[1] = "文章标题" + i.ToString(); 
+      dr[2] = rd.Next(0, 7); 
+      dataTable2.Rows.Add(dr); 
+    } 
+    ds.Tables.Add(dataTable1); 
+    ds.Tables.Add(dataTable2); 
+
+    System.Data.DataColumn parentColumn = ds.Tables["BlogUser"].Columns["UserId"]; 
+    System.Data.DataColumn childColumn = ds.Tables["BlogArticle"].Columns["UserId"]; 
+    System.Data.DataRelation user_article = new System.Data.DataRelation("UserId", parentColumn, childColumn); 
+    ds.Relations.Add(user_article); 
+    this.Repeater1.DataSource = ds.Tables["BlogArticle"].DefaultView; 
+    this.Repeater1.DataBind(); 
+  } 
+</script> 
+
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head id="Head1" runat="server"> 
+  <title>【孟宪会之精彩世界】- ASP.NET 绑定DataSet中的多个表 作者：孟子E章</title> 
+</head> 
+<body> 
+  <form id="form1" runat="server"> 
+  <asp:Repeater ID="Repeater1" runat="server"> 
+    <HeaderTemplate> 
+      <table border="1"> 
+        <tr style="background:orange"> 
+          <th>文章标题</th> 
+          <th>用户ID</th> 
+          <th>用户名</th> 
+        </tr> 
+    </HeaderTemplate> 
+    <FooterTemplate> 
+      </table></FooterTemplate> 
+    <ItemTemplate> 
+      <tr> 
+        <td><%#Eval("Title")%></td><td><%#Eval("UserId") %></td> 
+        <td><%#(Container.DataItem as System.Data.DataRowView).Row.GetParentRow("UserId")["UserName"]%> 
+        </td> 
+      </tr> 
+    </ItemTemplate> 
+  </asp:Repeater> 
+  </form> 
+</body> 
+</html> 

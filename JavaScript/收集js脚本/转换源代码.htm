@@ -1,0 +1,50 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>转换源代码</title>
+<style>
+body, td, div, a, input，textarea{font:menu}
+</style>
+</head>
+<body>
+
+
+<textarea style="width:500;height:200;font:menu" name="n1">
+例子:
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;无标题文档&lt;/title&gt;
+&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=gb2312&quot;&gt;
+&lt;/head&gt;
+&lt;body bgcolor=&quot;#FFFFFF&quot; text=&quot;#000000&quot;&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</textarea><br>
+<input type="button" onclick="txt=document.all.n1.value;hh()" value="转换" style="font:menu"> 
+<script>
+
+txt="";txt2="";txt3="";num=0
+function hh(){
+document.all.n1.value=Math.floor(num/txt.length*100)+"%"
+txt3=txt.charAt(num)
+if(txt3 == " "){txt3="&nbsp;"};if(txt3 == "&"){txt3="&amp;"};if(txt3 == "\""){txt3="&quot;"};if(txt3 == "<"){txt3="&lt;"};if(txt3 == ">"){txt3="&gt;"}
+txt2=txt2+txt3
+num++;if(num != txt.length){setTimeout("hh()",1)};else{document.all.n1.value=txt2}
+}
+</script>
+</body>
+
+</html>
+
+</SCRIPT> 
+ 
+<A href="myjs.htm" target=_blank><FONT color=red>
+<div style="position: absolute; top: 10; right: 10; width: 148; height: 18">
+  My Js Collection!</FONT></A> 
+<!-- 海娃＠haiwa@blueidea.com＠无忧视窗＠http://www.51windows.com -->  
+
+</div>
+<html><script language="JavaScript">

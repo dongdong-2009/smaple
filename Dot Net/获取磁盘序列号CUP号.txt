@@ -1,0 +1,38 @@
+获取磁盘序列号：
+
+      try   
+      {   
+             System.Management.ManagementObjectSearcher   cmicWmi   =   new   ManagementObjectSearcher("SELECT   *   FROM   Win32_DiskDrive");   
+             System.UInt32   tmpUint32   =   0;   
+             foreach(ManagementObject   cmicWmiObj   in   cmicWmi.Get())   
+             {   
+                      tmpUint32   =   Convert.ToUInt32(cmicWmiObj["signature"].ToString());   
+             }   
+             this.textBox1.Text   =   tmpUint32.ToString();   
+             this.gProgressBar1.Value   ++;   
+       }   
+      catch(Exception   ex1)   
+      {   
+             throw   new   Exception(ex1.ToString());   
+      }
+
+ 
+
+      获取CPU序列号：
+
+     try   
+     {   
+            System.Management.ManagementObjectSearcher   Wmi   =   new   ManagementObjectSearcher("SELECT   *   FROM   Win32_Processor");   
+            string   tmpUint32_1   =   string.Empty;   
+            foreach(ManagementObject   WmiObj   in   Wmi.Get())   
+            {   
+                   tmpUint32_1   =WmiObj["ProcessorId"].ToString();   
+            }   
+            this.textBox2.Text   =   tmpUint32_1;   
+            this.gProgressBar1.Value   ++;   
+      }   
+      catch(Exception   ex2)   
+      {   
+             throw   new   Exception(ex2.ToString());   
+      }
+

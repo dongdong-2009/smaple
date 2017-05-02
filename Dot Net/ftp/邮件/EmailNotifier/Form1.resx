@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" targetNamespace="" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <data name="contextMenu1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>147, 14</value>
+  </data>
+  <data name="notifyIcon1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 17</value>
+  </data>
+  <data name="notifyIcon1.Icon" mimetype="text/microsoft-urt/binary-serialized/base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFRTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj0xLjAuMjQxMS4wLCBD
+        dWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABNTeXN0ZW0u
+        RHJhd2luZy5JY29uAgAAAAhJY29uRGF0YQhJY29uU2l6ZQcEAhNTeXN0ZW0uRHJhd2luZy5TaXplAgAA
+        AAIAAAAJAwAAAAX/////E1N5c3RlbS5EcmF3aW5nLlNpemUCAAAABXdpZHRoBmhlaWdodAAACAgCAAAA
+        IAAAACAAAAAPAwAAADYEAAACAAABAAIAICAQAAAAAADoAgAAJgAAABAQEAAAAAAAKAEAAA4DAAAoAAAA
+        IAAAAEAAAAABAAQAAAAAAIACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAgAAAAICAAIAAAACAAIAA
+        gIAAAMDAwACAgIAAAAD/AAD/AAAA//8A/wAAAP8A/wD//wAA////AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAeAAAAAAAAAAAAAAAAAAAd3iIAAAAAAAAAAAAAAAAd3d4iIgAAAAAAAAAAAAAd3d3eIiIiAAAAAAA
+        AAAAd3d3d3iIiIiIAAAAAAAAd3f/d3d4iIiIiIgIAACAd3f/iPd3eIiIiIiIgAAAh3d/iI9///+IiIiI
+        iIAAAId3f4/P93d3/4iIiIiAAACHd/iPz////3f/iIiIgEAAh3f4j8/////3d/+IiIBAAId/iI/P///P
+        9wd3/4iARACH/4iPz//Pz/cHB3f/gEQAj4iIj///z8/3BwcH/4hEQIj/iI///8/P9wcHD4jMREAAiP+P
+        ///Pz/cHBwjMxMRAAACIj///z8/3BwcGTMxCQAAAh4///8/P9wcHAkzMTCAAAIeP///Pz/cHBwJEzMJA
+        AACGj///z//3BwcEzMwkIAAAj4///8//9wcHDGIiQkAAAAiP//////cHBwIiJiQAAAAIj/8f///3BwcM
+        IiJCAAAAAI+Rn//3eIcHBiIgIAAAAACPmZ/3eId4hwIiJkAAAAAAjxkXeId4h3iCIiCAAAAAAI+XeId4
+        h3iCIiIoAAAAAACHeId4h3iCIiIiAAAAAAAAiId4h3iCJsIiiAAAAAAAAACIh3iGeMZmiAAAAAAAAAAA
+        AIiAiIiIiAAAAAAA//z////wP///wA///wAD//wAAP/wAAA/wAAADwAAAA8AAAAPAAAABwAAAAMAAAAD
+        AAAAAQAAAAEAAAAAAAAAAMAAAADwAAAA8AAAAPAAAADwAAAA8AAAAPgAAAH4AAAB/AAAA/wAAAP8AAAH
+        /AAAD/wAAB/8AAA//wAA///EA/8oAAAAEAAAACAAAAABAAQAAAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAgAAAgAAAAICAAIAAAACAAIAAgIAAAMDAwACAgIAAAAD/AAD/AAAA//8A/wAAAP8A/wD//wAA
+        ////AAAAAAAAAAAAAAAAd4gAAAAAAHd3iIgAAAB3d3eIiIAAh3d3/4iIgACHd/+I/4iAQIf/iP+A/4BA
+        j4j8/PcA8EAIiPz89wiMQAh4//z3DMxgCMj//PcGIsAAiHn89wYiAACImf/4giIAAAiX+IIiKAAACPiP
+        dmiAAAAIgIiIgAAA/D8AAPAPAADAAwAAAAEAAAABAAAAAAAAAAAAAAAAAACAAAAAgAAAAIAAAADAAQAA
+        wAEAAOADAADgBwAA5B8AAAs=
+</value>
+  </data>
+  <data name="timer1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>290, 16</value>
+  </data>
+  <data name="$this.Name">
+    <value>Form1</value>
+  </data>
+  <resheader name="ResMimeType">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="Version">
+    <value>1.0.0.0</value>
+  </resheader>
+  <resheader name="Reader">
+    <value>System.Resources.ResXResourceReader</value>
+  </resheader>
+  <resheader name="Writer">
+    <value>System.Resources.ResXResourceWriter</value>
+  </resheader>
+</root>

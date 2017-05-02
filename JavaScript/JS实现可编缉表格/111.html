@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+<title>无标题页</title>
+<style type="text/css">
+<!--
+input {
+         font-family: Geneva, Arial, Helvetica, sans-serif;
+         font-size: 12px;
+         color: #999999;
+         background-color: #FFFFE1;
+         border: 1px solid #999999;
+     }
+     -->
+     </style>
+     <script type="text/javascript" src="EditTable.js"></script>
+     <script type="text/javascript">        
+         function out_Table()
+         {
+             
+             var object_table = document.getElementById('editTable');
+             var span_txt = document.getElementById('txt_span');
+             var tableinfo = document.getElementById('txt_tableinfo');
+             
+             tableinfo.innerText = "共有"+object_table.rows.length+"行,共有"+object_table.rows.item(0).cells.length+"列";
+            for(var i=0; i<object_table.rows.length; i++)
+             {
+                 for(var j=0; j<object_table.rows.item(0).cells.length; j++)
+                 {
+                    span_txt.innerText += object_table.rows(i).cells(j).innerText + "  ";
+                 }
+             
+             }
+         
+         }
+     
+     </script>
+ 
+     
+ </head>
+ <body>
+ <div>
+ <input id="Button1" type="button" value="button" onclick="out_Table()"/>
+ 
+ <br/>
+ 表格信息:<span id="txt_tableinfo"></span>
+ <br/>
+ <span id="txt_span"></span> 
+ </div>
+ </body> 
+ </html>

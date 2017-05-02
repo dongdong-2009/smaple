@@ -1,0 +1,4 @@
+userid=dpzhoum/dpzhoum@JSZXOA.FE.COM
+FILE="D:\Êý¾Ý¿â\test.dmp" 
+owner=('dpzhoum')
+feedback=1000

@@ -1,0 +1,22 @@
+protected void GridView_Merge_Header_RowCreated(object sender, GridViewRowEventArgs e)
+{
+    if (e.Row.RowType == DataControlRowType.Header)
+    { 
+        //Build custom header.
+        GridView oGridView = (GridView)sender;
+        GridViewRow oGridViewRow = new GridViewRow(0, 0, DataControlRowType.Header, DataControlRowState.Insert);
+        TableCell oTableCell = new TableCell();
+        
+                //Add Department
+                oTableCell.Text = "Department";
+                oTableCell.ColumnSpan = 2;
+                oGridViewRow.Cells.Add(oTableCell);
+
+                //Add Employee
+                oTableCell = new TableCell();
+                oTableCell.Text = "Employee";
+                oTableCell.ColumnSpan = 3;
+                oGridViewRow.Cells.Add(oTableCell);
+                oGridView.Controls[0].Controls.AddAt(0, oGridViewRow);
+    }
+}   

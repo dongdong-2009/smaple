@@ -1,0 +1,12 @@
+
+
+--É¾³ý <%DateTime%>
+create or replace procedure UP_<%TableName%>_Delete
+(
+ <%profix%><%Id%> <%TableName%>.<%Id%>%type 
+)
+ is
+begin
+  delete <%TableName%>
+   where <%Id%> = pm<%Id%>;
+end UP_<%TableName%>_Delete;

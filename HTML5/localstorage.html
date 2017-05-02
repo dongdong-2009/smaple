@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+Web Storage
+</title>
+<script type='text/javascript'>
+function localStore()
+{
+var text =
+document.getElementById
+('Data').value;
+localStorage.setItem('Data', text);
+}
+function localGet()
+{
+document.getElementById('Data').value =
+localStorage.getItem('Data');
+}
+function localClear()
+{
+localStorage.removeItem('Data');
+document.getElementById('Data').value =
+'';
+}
+</script>
+</head>
+<body>
+<h1>Local Storage</h1>
+Data <input id='Data' type='text'>
+<input type='button' value='Store'
+onclick='localStore();'>
+<input type='button' value='Get'
+onclick='localGet();'>
+<input type='button' value='Clear'
+onclick='localClear();'>
+</body>
+</html>

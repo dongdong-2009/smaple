@@ -1,0 +1,324 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0037)http://sty3052.bokee.com/5424227.html -->
+<HTML><HEAD><TITLE>Windows 2003 CA服务器配置及客户端证书申请和安装--现在开始</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=GBK">
+<META http-equiv=Pragma content=no-cache>
+<META http-equiv=Cache-Control content=no-cache>
+<META http-equiv=Expires content=0>
+<META 
+content="转载这篇文章以自勉Windows 2003 CA服务器配置及客户端证书申请和安装国家干部VS公务员  博客 博客中国 博客动力 blog blogdriver blogger 中国" 
+name=description>
+<META 
+content="现在开始 转载这篇文章以自勉Windows 2003 CA服务器配置及客户端证书申请和安装国家干部VS公务员 博客 博客中国 博客动力 blog blogdriver blogger 中国" 
+name=keywords><LINK href="Windows 2003 CA服务器配置及客户端证书申请和安装--现在开始_files/diary.css" 
+type=text/css rel=stylesheet>
+<SCRIPT language=JavaScript 
+src="Windows 2003 CA服务器配置及客户端证书申请和安装--现在开始_files/UBB.js"></SCRIPT>
+
+<SCRIPT src="Windows 2003 CA服务器配置及客户端证书申请和安装--现在开始_files/blog.js" 
+type=text/javascript></SCRIPT>
+
+<META content="MSHTML 6.00.3790.2541" name=GENERATOR></HEAD>
+<BODY>
+<DIV id=container>
+<DIV id=header>
+<H1 class=title><A 
+href="http://sty3052.bokee.com/index.html">现在开始</A></H1></DIV>
+<DIV id=category><A title=上一篇 
+href="http://sty3052.bokee.com/5418271.html">转载这篇文章以自勉</A>- -| <A 
+href="http://sty3052.bokee.com/index.html">回首页</A> | <A 
+href="http://sty3052.bokee.com/catalog_2006.html">2006年索引</A> | - -<A title=下一篇 
+href="http://sty3052.bokee.com/5426330.html">国家干部VS公务员</A></DIV>
+<DIV class=entity>
+<H2 class=diaryTitle>Windows 2003 CA服务器配置及客户端证书申请和安装</H2><B>关键词</B>： <A 
+href="http://tag.bokee.com/tag/CA·&thorn;&Icirc;&ntilde;&AElig;÷" target=_blank>CA服务器</A> &nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+
+<P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt; mso-pagination: widow-orphan; mso-margin-top-alt: auto; mso-margin-bottom-alt: auto"><B 
+style="mso-bidi-font-weight: normal"><SPAN lang=EN-US 
+style="FONT-SIZE: 15pt; FONT-FAMILY: 宋体; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体">1</SPAN></B><B 
+style="mso-bidi-font-weight: normal"><SPAN 
+style="FONT-SIZE: 15pt; FONT-FAMILY: 宋体; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体">．<SPAN 
+lang=EN-US>CA</SPAN>服务器安装<SPAN lang=EN-US></SPAN></SPAN></B></P>
+<P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-pagination: widow-orphan" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 宋体; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体">1</SPAN><SPAN 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 宋体; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体">．安装证书服务之前要先安装<SPAN 
+lang=EN-US>IIS</SPAN>服务并且保证“<SPAN lang=EN-US>WEB</SPAN>服务扩展”中的“<SPAN 
+lang=EN-US>Active Server Pages</SPAN>”为允许状态</SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 12pt; FONT-FAMILY: 宋体; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体"></SPAN></P>
+<P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-pagination: widow-orphan" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 宋体; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体">2</SPAN><SPAN 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 宋体; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体">．在“控制面板”中运行“添加或删除程序”，切换到“添加<SPAN 
+lang=EN-US>/</SPAN>删除<SPAN lang=EN-US>Windows</SPAN>组件”页<SPAN 
+lang=EN-US></SPAN></SPAN></P>
+<P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-pagination: widow-orphan" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 宋体; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体">3</SPAN><SPAN 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 宋体; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体">．在“<SPAN 
+lang=EN-US>Windows</SPAN>组件向导”对话框中，选中“证书服务”选项，接下来选择<SPAN 
+lang=EN-US>CA</SPAN>类型，这里选择“独立根<SPAN lang=EN-US>CA</SPAN>”<SPAN 
+lang=EN-US></SPAN></SPAN></P>
+<P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 21pt; TEXT-ALIGN: left; mso-pagination: widow-orphan" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 宋体; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体">4</SPAN><SPAN 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 宋体; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体">．然后为该<SPAN 
+lang=EN-US>CA</SPAN>服务器起个名字，设置证书的有效期限，建议使用默认值“<SPAN 
+lang=EN-US>5</SPAN>年”即可，最后指定证书数据库和证书数据库日志的位置后，就完成了证书服务的安装。<SPAN lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp; </SPAN></SPAN></SPAN></P>
+<P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt; mso-pagination: widow-orphan; mso-margin-top-alt: auto; mso-margin-bottom-alt: auto"><B 
+style="mso-bidi-font-weight: normal"><SPAN lang=EN-US 
+style="FONT-SIZE: 15pt; FONT-FAMILY: 宋体; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体">3</SPAN></B><B 
+style="mso-bidi-font-weight: normal"><SPAN 
+style="FONT-SIZE: 15pt; FONT-FAMILY: 宋体; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体">．客户端证书申请步骤：<SPAN 
+lang=EN-US></SPAN></SPAN></B></P>
+<P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt; mso-pagination: widow-orphan; mso-margin-top-alt: auto; mso-margin-bottom-alt: auto"><SPAN 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 宋体; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体">申请证书的过程：<SPAN 
+lang=EN-US></SPAN></SPAN></P>
+<P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt; mso-pagination: widow-orphan; mso-margin-top-alt: auto; mso-margin-bottom-alt: auto"><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 宋体; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体">1. 
+</SPAN><SPAN 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 宋体; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体">运行<SPAN 
+lang=EN-US>Internet Explorer</SPAN>浏览器，在地址栏中输入<SPAN lang=EN-US>“http://CA Server 
+IP /CertSrv/default.asp”</SPAN>。证书申请页面，输入相应的申请信息，然后点击［申请］。<SPAN 
+lang=EN-US></SPAN></SPAN></P>
+<P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt; mso-pagination: widow-orphan; mso-margin-top-alt: auto; mso-margin-bottom-alt: auto"><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 宋体; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体">2. 
+</SPAN><SPAN 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 宋体; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体">系统将处理您提交的申请，此过程可能要等待<SPAN 
+lang=EN-US>10</SPAN>秒钟左右。<SPAN lang=EN-US></SPAN></SPAN></P>
+<P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt; mso-pagination: widow-orphan; mso-margin-top-alt: auto; mso-margin-bottom-alt: auto"><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 宋体; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体">3. 
+</SPAN><SPAN 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 宋体; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体">点击［导入］，此时可能会跳出安全提示，点击［是］。然后会跳出交换密钥的界面，建议设置［设置安全级别］为高，如果设置为高，将会要求输入保护证书用的密码，请牢记该密码。点［确定］继续。<SPAN 
+lang=EN-US></SPAN></SPAN></P>
+<P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt; mso-pagination: widow-orphan; mso-margin-top-alt: auto; mso-margin-bottom-alt: auto"><SPAN 
+lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 宋体; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体">4. 
+</SPAN><SPAN 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 宋体; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体">对接下来跳出的安全提示，点击［是］。<SPAN 
+lang=EN-US></SPAN></SPAN></P>
+<P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt; TEXT-ALIGN: left; mso-pagination: widow-orphan" 
+align=left><SPAN lang=EN-US style="FONT-SIZE: 9pt; mso-font-kerning: 0pt"><FONT 
+face="Times New Roman">5. </FONT></SPAN><SPAN 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 宋体; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体; mso-ascii-font-family: " 
+times="" roman?;="" mso-hansi-font-family:="" ?times="" new="" 
+roman??="">当网页上显示成功时，您的个人证书申请过程就完成了。</SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 宋体; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体"></SPAN></P>
+<P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt; mso-pagination: widow-orphan; mso-margin-top-alt: auto; mso-margin-bottom-alt: auto"><B 
+style="mso-bidi-font-weight: normal"><SPAN lang=EN-US 
+style="FONT-SIZE: 15pt; FONT-FAMILY: 宋体; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体">4</SPAN></B><B 
+style="mso-bidi-font-weight: normal"><SPAN 
+style="FONT-SIZE: 15pt; FONT-FAMILY: 宋体; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体">．服务器端颁发证书<SPAN 
+lang=EN-US></SPAN></SPAN></B></P>
+<P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt; TEXT-ALIGN: left; mso-pagination: widow-orphan" 
+align=left><SPAN lang=EN-US style="FONT-SIZE: 9pt; mso-font-kerning: 0pt"><FONT 
+face="Times New Roman">1</FONT></SPAN><SPAN 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 宋体; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体; mso-ascii-font-family: " 
+times="" roman?;="" mso-hansi-font-family:="" ?times="" new="" 
+roman??="">．打开“管理工具”选择“证书颁发机构”</SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 宋体; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体"></SPAN></P>
+<P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt; TEXT-ALIGN: left; mso-pagination: widow-orphan" 
+align=left><SPAN lang=EN-US style="FONT-SIZE: 9pt; mso-font-kerning: 0pt"><FONT 
+face="Times New Roman">2</FONT></SPAN><SPAN 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 宋体; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体; mso-ascii-font-family: " 
+times="" roman?;="" mso-hansi-font-family:="" ?times="" new="" 
+roman??="">．打开“挂起的申请”，选中要颁发的证书右击，选择“所有任务”——〉“颁发”即可</SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 宋体; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体"></SPAN></P>
+<P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt; mso-pagination: widow-orphan; mso-margin-top-alt: auto; mso-margin-bottom-alt: auto"><B 
+style="mso-bidi-font-weight: normal"><SPAN lang=EN-US 
+style="FONT-SIZE: 15pt; FONT-FAMILY: 宋体; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体">5</SPAN></B><B 
+style="mso-bidi-font-weight: normal"><SPAN 
+style="FONT-SIZE: 15pt; FONT-FAMILY: 宋体; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体">．客户端证书安装步骤<SPAN 
+lang=EN-US>A</SPAN></SPAN></B></P>
+<P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt; TEXT-ALIGN: left; mso-pagination: widow-orphan" 
+align=left><SPAN lang=EN-US style="FONT-SIZE: 9pt; mso-font-kerning: 0pt"><FONT 
+face="Times New Roman">1</FONT></SPAN><SPAN 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 宋体; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体; mso-ascii-font-family: " 
+times="" roman?;="" mso-hansi-font-family:="" ?times="" new="" 
+roman??="">．打开“</SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; mso-font-kerning: 0pt"><FONT 
+face="Times New Roman">http://CA Server IP 
+/CertSrv/default.asp</FONT></SPAN><SPAN 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 宋体; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体; mso-ascii-font-family: " 
+times="" roman?;="" mso-hansi-font-family:="" ?times="" new="" 
+roman??="">”证书服务申请页面，选择“查看挂起的证书申请的状态”</SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 宋体; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体"></SPAN></P>
+<P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt; TEXT-ALIGN: left; mso-pagination: widow-orphan" 
+align=left><SPAN lang=EN-US style="FONT-SIZE: 9pt; mso-font-kerning: 0pt"><FONT 
+face="Times New Roman">2</FONT></SPAN><SPAN 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 宋体; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体; mso-ascii-font-family: " 
+times="" roman?;="" mso-hansi-font-family:="" ?times="" new="" 
+roman??="">．该页面显示所有证书申请，直接选择安装证书即可。如果则调到第</SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; mso-font-kerning: 0pt"><FONT 
+face="Times New Roman">6</FONT></SPAN><SPAN 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 宋体; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体; mso-ascii-font-family: " 
+times="" roman?;="" mso-hansi-font-family:="" ?times="" new="" 
+roman??="">步选择下载证书</SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 宋体; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体"></SPAN></P>
+<P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt; mso-pagination: widow-orphan; mso-margin-top-alt: auto; mso-margin-bottom-alt: auto"><B 
+style="mso-bidi-font-weight: normal"><SPAN lang=EN-US 
+style="FONT-SIZE: 15pt; FONT-FAMILY: 宋体; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体">6</SPAN></B><B 
+style="mso-bidi-font-weight: normal"><SPAN 
+style="FONT-SIZE: 15pt; FONT-FAMILY: 宋体; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体">．客户端证书安装步骤<SPAN 
+lang=EN-US>B</SPAN></SPAN></B></P>
+<P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt 18pt; TEXT-INDENT: -18pt; TEXT-ALIGN: left; mso-pagination: widow-orphan" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体"><FONT 
+face="Times New Roman">1</FONT></SPAN><SPAN 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 宋体; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体; mso-ascii-font-family: " 
+times="" roman?;="" mso-hansi-font-family:="" ?times="" new="" 
+roman??="">、</SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体"><FONT 
+face="Times New Roman">&nbsp; </FONT></SPAN><SPAN 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 宋体; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体; mso-ascii-font-family: " 
+times="" roman?;="" mso-hansi-font-family:="" ?times="" new="" 
+roman??="">右键单击下载好的证书文件，选择“安装证书”</SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体"></SPAN></P>
+<P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt; TEXT-ALIGN: left; mso-pagination: widow-orphan" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体"><FONT 
+face="Times New Roman">2</FONT></SPAN><SPAN 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 宋体; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体; mso-ascii-font-family: " 
+times="" roman?;="" mso-hansi-font-family:="" ?times="" new="" 
+roman??="">、使用鼠标左键点击“下一步”</SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体"></SPAN></P>
+<P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt; TEXT-ALIGN: left; mso-pagination: widow-orphan" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体"><FONT 
+face="Times New Roman">3</FONT></SPAN><SPAN 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 宋体; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体; mso-ascii-font-family: " 
+times="" roman?;="" mso-hansi-font-family:="" ?times="" new="" 
+roman??="">、选择“根据证书类型，自动选择证书存储区”，然后点击“下一步”</SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体"></SPAN></P>
+<P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt; TEXT-ALIGN: left; mso-pagination: widow-orphan" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体"><FONT 
+face="Times New Roman">4</FONT></SPAN><SPAN 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 宋体; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体; mso-ascii-font-family: " 
+times="" roman?;="" mso-hansi-font-family:="" ?times="" new="" 
+roman??="">、使用鼠标左键点击“完成”</SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体"></SPAN></P>
+<P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt; TEXT-ALIGN: left; mso-pagination: widow-orphan" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体"><FONT 
+face="Times New Roman">5</FONT></SPAN><SPAN 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 宋体; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体; mso-ascii-font-family: " 
+times="" roman?;="" mso-hansi-font-family:="" ?times="" new="" 
+roman??="">、使用鼠标左键点击“安全警告”下方的“是”</SPAN><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体"></SPAN></P>
+<P>
+<P class=MsoNormal 
+style="MARGIN: 0cm 0cm 0pt; TEXT-ALIGN: left; mso-pagination: widow-orphan" 
+align=left><SPAN lang=EN-US 
+style="FONT-SIZE: 9pt; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体"><FONT 
+face="Times New Roman">6</FONT></SPAN><SPAN 
+style="FONT-SIZE: 9pt; FONT-FAMILY: 宋体; mso-font-kerning: 0pt; mso-bidi-font-family: 宋体; mso-ascii-font-family: " 
+times="" roman?;="" mso-hansi-font-family:="" ?times="" new="" 
+roman??="">、使用鼠标左键点击“确定”。至此，安全证书已经被安装成功</SPAN></P>
+<P></P>
+<P class=diaryFoot>【作者: <A 
+onclick="window.open('http://publishblog.blogchina.com/blog/postMessage.b?receiver=2337245','发送短消息','width=520, height=455')" 
+href="javascript:void(0);">sty3052</A>】【访问统计:
+<SCRIPT language=JavaScript 
+src="Windows 2003 CA服务器配置及客户端证书申请和安装--现在开始_files/PageServlet.htm"></SCRIPT>
+】【2006年07月21日 星期五 21:56】【 <A 
+href="javascript:void(keyit=window.open('http://blogmark.blogchina.com/jsp/key/quickaddkey.jsp?k='+encodeURI('Windows 2003 CA服务器配置及客户端证书申请和安装')+'&amp;u='+encodeURI('http://sty3052.blogchina.com/sty3052/5424227.html')+'&amp;c='+encodeURI(''),'keyit','scrollbars=no,width=500,height=430,status=no,resizable=yes'));keyit.focus();">加入博采</A>】【<A 
+href="javascript:window.print();">打印</A>】 </TD></P></DIV>
+<DIV class=operation><A name=trackback>
+<H3>Trackback</H3></A>
+<P class=trackback>你可以使用这个链接引用该篇文章 
+http://publishblog.blogchina.com/blog/tb.b?diaryID=5424227 </P></DIV>
+<DIV class=operation><A name=comment>
+<H3>回复</H3></A>
+<TABLE cellSpacing=0 cellPadding=0 width=700 border=0>
+  <TBODY></TBODY></TABLE></DIV>
+<DIV class=operation>
+<TABLE class=comment cellSpacing=0 cellPadding=0 width=700 border=0>
+  <FORM id=replyForm method=post><INPUT type=hidden value=2333434 name=blogID> 
+  <INPUT type=hidden value=5424227 name=diaryID> <INPUT type=hidden 
+  value=sty3052 name=blogDomino>
+  <SCRIPT>
+if(getCookie('userID') == null){        
+document.write('<tr><td width="70">发布人：</td>');
+document.write('<td width="150"> <input name="remark.authorNameFUI" type="text" size="20" class="inputStyle" maxlength="20"></td>');
+document.write('<td width="70">邮箱：</td>');
+document.write('<td width="435"> <input name="remark.authorEmail" type="text" size="20" class="inputStyle" maxlength="40"></td>');
+document.write('</tr><tr><td>主　页：</td>');
+document.write('<td colspan="3"> <input name="remark.authorURL" type="text" class="inputStyle" value="HTTP://" size="63" maxlength="100"></td></tr>');
+}else{
+document.write('<input type="hidden" name="remark.authorNameFUI" value="Blogchina网友">');
+}
+</SCRIPT>
+   
+  <TBODY>
+  <TR>
+    <TD width=70>验证码：</TD>
+    <TD><INPUT class=inputStyle maxLength=4 name=validateCode></TD>
+    <TD>&nbsp;&nbsp;<IMG 
+      src="Windows 2003 CA服务器配置及客户端证书申请和安装--现在开始_files/getValidateImg.jpg" 
+      border=0></TD></TR>
+  <TR align=left>
+    <TD colSpan=4>评论内容：<BR><TEXTAREA class=textStyle id=remark name=remark.remarkFUI rows=8 cols=60>          </TEXTAREA> 
+    </TD></TR>
+  <TR align=left>
+    <TD colSpan=4>　　　　　　 　　　　　　 <INPUT onclick=reply() type=button value=提交> 　 
+<INPUT type=reset value=重置> </TD></TR></FORM></TBODY></TABLE></DIV></DIV>
+<SCRIPT src="Windows 2003 CA服务器配置及客户端证书申请和安装--现在开始_files/extend3.js" 
+type=text/javascript></SCRIPT>
+
+<DIV id=footer><A href="http://blog.bokee.com/">2003-2004 BOKEE.COM All rights 
+reserved</A><BR><A href="http://www.blogdriver.com/">Powered by BlogDriver 
+2.1</A> </DIV></BODY></HTML>

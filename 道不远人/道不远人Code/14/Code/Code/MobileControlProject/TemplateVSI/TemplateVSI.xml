@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<contentProject noCompress="true" output="WAP.vsi">
+
+  <contentItem itemSourceRoot="root" source="TemplateVSI\TemplateVSI.vscontent" />
+
+  <contentProject output="WAPPageCS.zip">
+
+    <!-- CS Item template files -->
+    <contentItem itemSourceRoot="root" source="TemplateVSI\CommonFiles\__TemplateIcon.ico" />
+    <contentItem itemSourceRoot="root" source="TemplateVSI\ItemTemplateCS\Default.aspx" />    
+    <contentItem itemSourceRoot="root" source="TemplateVSI\ItemTemplateCS\MyTemplate.vstemplate" />
+  </contentProject>
+
+  <contentProject output="WAPWebsiteCS.zip">
+
+    <!-- CS website template files -->
+    <contentItem itemSourceRoot="root" source="TemplateVSI\WebsiteTemplate\web.config" />
+    <contentItem itemSourceRoot="root" source="TemplateVSI\WebsiteTemplate\readme.txt" />
+    <contentItem itemSourceRoot="root" source="TemplateVSI\WebsiteTemplate\WebsiteTemplateCS\Default.aspx" />
+    <contentItem itemSourceRoot="root" source="TemplateVSI\WebsiteTemplate\WebsiteTemplateCS\WapWebsiteCS.vstemplate" />
+    <contentItem itemSourceRoot="root" source="TemplateVSI\WebsiteTemplate\WebsiteTemplateCS\WapWebsiteCS.webproj" />
+
+    <!-- Built files -->
+    <contentItem itemSourceRoot="root" source="MobileControlLibrary\bin\Debug\MobileControlLibrary.dll" />
+  </contentProject>
+
+</contentProject>

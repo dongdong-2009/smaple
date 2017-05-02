@@ -1,0 +1,7 @@
+D:\My Documents\Visual Studio 2005\Projects\MQTools\MQTools\obj\Debug\ResolveAssemblyReference.cache
+D:\My Documents\Visual Studio 2005\Projects\MQTools\MQTools\bin\Debug\MQTools.dll
+D:\My Documents\Visual Studio 2005\Projects\MQTools\MQTools\bin\Debug\MQTools.pdb
+D:\My Documents\Visual Studio 2005\Projects\MQTools\MQTools\obj\Debug\MQTools.dll
+D:\My Documents\Visual Studio 2005\Projects\MQTools\MQTools\obj\Debug\MQTools.pdb
+D:\My Documents\Visual Studio 2005\Projects\MQTools\MQTools\obj\Debug\MQTools.JScript1.js
+D:\My Documents\Visual Studio 2005\Projects\MQTools\MQTools\obj\Debug\MQTools.JsLib.js

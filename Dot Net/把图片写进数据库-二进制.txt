@@ -1,0 +1,40 @@
+public void AddPerson(object sender, System.EventArgs e)
+{
+int intImageSize;
+string strImageType;
+Stream ImageStream;
+intImageSize = personImage.PostedFile.ContentLength; // 文件大小
+strImageType = personImage.PostedFile.ContentType; // 文件类型
+ImageStream = personImage.PostedFile.InputStream;
+byte[] ImageContent = new byte[intImageSize];
+int intStatus = ImageStream.Read(ImageContent, 0, intImageSize);
+
+// 写入数据库
+string strConn = ConfigurationSettings.AppSettings["ConnectionString"];
+SqlConnection myConnection = new SqlConnection(strConn);
+SqlCommand myCommand = new SqlCommand("sp_person_isp", myConnection);
+myCommand.CommandType = CommandType.StoredProcedure;
+
+myCommand.Parameters.Add("@PersonEmail", SqlDbType.VarChar, 255).Value = txtPersonEmail.Text;
+myCommand.Parameters.Add("@PersonName", SqlDbType.VarChar, 255).Value = txtPersonName.Text;
+myCommand.Parameters.Add("@PersonSex", SqlDbType.Char, 1);
+if(sexMale.Checked)
+myCommand.Parameters["@PersonSex"].Value = "M";
+else
+myCommand.Parameters["@PersonSex"].Value = "F";
+myCommand.Parameters.Add("@PersonDOB", SqlDbType.DateTime).Value = txtPersonDOB.Text;
+myCommand.Parameters.Add("@PersonImage", SqlDbType.Image).Value = ImageContent;
+myCommand.Parameters.Add("@PersonImageType", SqlDbType.VarChar, 255).Value = strImageType;
+
+try
+{
+myConnection.Open();
+myCommand.ExecuteNonQuery();
+myConnection.Close();
+Response.Write("添加成功！");
+}
+catch(System.Exception SQLExe)
+{
+Response.Write("添加失败！原因："+SQLExe.ToString());
+}
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0058)http://www.gaia-china.com/support/jishuzhishi/vpnbasic.htm -->
+<!-- saved from url=(0039)http://sj.wxtelecom.com/zhishi_vpn1.htm --><HTML><HEAD><TITLE></TITLE>
+<META http-equiv=Content-Language content=zh-cn>
+<META http-equiv=Content-Type content="text/html; charset=gb2312"><LINK 
+href="VPN基本概念.files/font.css" type=text/css rel=stylesheet>
+<META content="tb, default" name="Microsoft Border">
+<META content="MSHTML 6.00.3790.2541" name=GENERATOR></HEAD>
+<BODY leftMargin=0 topMargin=0>
+<TABLE cellSpacing=0 cellPadding=0 width="90%" border=0>
+  <TBODY>
+  <TR><!--msnavigation-->
+    <TD vAlign=top>
+      <DIV align=center></DIV>
+      <P align=center><FONT size=2><B><FONT face=黑体 color=#000066 
+      size=3>VPN基本概念</FONT></B> </FONT><FONT size=2>
+      <CENTER></FONT>
+      <TABLE width=680 bgColor=#ffffff border=0>
+        <TBODY>
+        <TR>
+          <TD width=594><FONT size=2><B><FONT color=#254889>何为VPN</FONT></B> 
+            </FONT></TD>
+          <TD width=72>
+            <P align=right valign="bottom"><FONT size=2>　 </FONT></P></TD></TR>
+        <TR>
+          <TD width=672 bgColor=#f3f7fc colSpan=2>
+            <P style="MARGIN: 4px 2px 8px 4px; TEXT-INDENT: 26px"><FONT 
+            size=2>VPN（Virtual Private 
+            Network）：虚拟专用网络，是一门网络新技术，为我们提供了一种通过公用网络安全地对企业内部专用网络进行远程访问的连接方式。我们知道一个网络连接通常由三个部分组成：客户机、传输介质和服务器。VPN同样也由这三部分组成，不同的是VPN连接使用隧道作为传输通道，这个隧道是建立在公共网络或专用网络基础之上的，如：Internet或Intranet。&nbsp; 
+            </FONT>
+            <P style="MARGIN: 4px 2px 8px 4px; TEXT-INDENT: 26px"><FONT 
+            size=2>要实现VPN连接，企业内部网络中必须配置有一台基于Windows NT或Windows2000 
+            Server的VPN服务器，VPN服务器一方面连接企业内部专用网络，另一方面要连接到Internet，也就是说VPN服务器必须拥有一个公用的IP地址。当客户机通过VPN连接与专用网络中的计算机进行通信时，先由ISP（Internet服务提供商）将所有的数据传送到VPN服务器，然后再由VPN服务器负责将所有的数据传送到目标计算机。VPN使用三个方面的技术保证了通信的安全性：隧道协议、身份验证和数据加密。客户机向VPN服务器发出请求，VPN服务器响应请求并向客户机发出身份质询，客户机将加密的响应信息发送到VPN服务器，VPN服务器根据用户数据库检查该响应，如果账户有效，VPN服务器将检查该用户是否具有远程访问权限，如果该用户拥有远程访问的权限，VPN服务器接受此连接。在身份验证过程中产生的客户机和服务器公有密钥将用来对数据进行加密。VPN连接的示意图如下所示。&nbsp; 
+            </FONT>
+            <P style="MARGIN: 4px 2px 8px 4px; TEXT-INDENT: 26px" 
+            align=center><FONT size=2><IMG height=155 
+            src="vpnbasic_files/vpn1.jpg" width=350 border=0> 
+        </FONT></P></TD></TR></TBODY></TABLE>
+      <DIV align=center>
+      <TABLE width=680 bgColor=#ffffff border=0>
+        <TBODY>
+        <TR>
+          <TD width=593><FONT size=2><B><FONT 
+            color=#254889>VPN带来的好处</FONT></B> </FONT></TD>
+          <TD width=73>
+            <P align=right valign="bottom"><FONT size=2>　 </FONT></P></TD></TR>
+        <TR>
+          <TD width=672 bgColor=#f3f7fc colSpan=2>
+            <P style="MARGIN: 4px 2px 8px 4px; TEXT-INDENT: 26px"><FONT 
+            size=2>降低费用：首先远程用户可以通过向当地的ISP申请账户登录到Internet，以Internet作为隧道与企业内部专用网络相连，通信费用大幅度降低；其次企业可以节省购买和维护通讯设备的费用。&nbsp; 
+            </FONT>
+            <P style="MARGIN: 4px 2px 8px 4px; TEXT-INDENT: 26px"><FONT 
+            size=2>增强的安全性VPN通过使用点到点协议（PPP）用户级身份验证的方法进行验证，这些验证方法包括：密码身份验证协议（PAP）、质询握手身份验证协议（CHAP）、Shiva密码身份验证协议（SPAP）、Microsoft质询握手身份验证协议（MS-CHAP）和可选的可扩展身份验证协议（EAP）；并且采用微软点对点加密算法（MPPE）和网际协议安全（IPSec）机制对数据进行加密。以上的身份验证和加密手段由远程VPN服务器强制执行。对于敏感的数据，可以使用VPN连接通过VPN服务器将高度敏感的数据服务器物理地进行分隔，只有企业Intranet上拥有适当权限的用户才能通过远程访问建立与VPN服务器的VPN连接，并且可以访问敏感部门网络中受到保护的资源。&nbsp; 
+            </FONT>
+            <P style="MARGIN: 4px 2px 8px 4px; TEXT-INDENT: 26px"><FONT 
+            size=2>网络协议支持：VPN支持最常用的网络协议，基于IP、IPX和NetBEUI协议网络中的客户机都可以很容易地使用VPN。这意味着通过VPN连接可以远程运行依赖于特殊网络协议的应用程序。&nbsp; 
+            </FONT>
+            <P style="MARGIN: 4px 2px 8px 4px; TEXT-INDENT: 26px"><FONT 
+            size=2>IP地址安全：因为VPN是加密的，VPN数据包在Internet中传输时，Internet上的用户只看到公用的IP地址，看不到数据包内包含的专有网络地址。因此远程专用网络上指定的地址是受到保护的。&nbsp; 
+            </FONT></P></TD></TR></TBODY></TABLE></DIV>
+      <DIV align=center>
+      <TABLE width=680 bgColor=#ffffff border=0>
+        <TBODY>
+        <TR>
+          <TD width=592 height=23><FONT size=2><B><FONT 
+            color=#254889>VPN使用的协议</FONT></B> </FONT></TD>
+          <TD width=74 height=23>
+            <P align=right valign="bottom"><FONT size=2><A 
+            href="http://sj.wxtelecom.com/zhishi_adsl.HTM" target=_self>&nbsp; 
+            </A>　 </FONT></P></TD></TR>
+        <TR>
+          <TD width=672 bgColor=#f3f7fc colSpan=2>
+            <P style="MARGIN: 4px 2px 8px 4px; TEXT-INDENT: 26px"><FONT 
+            size=2>VPN使用两种隧道协议：点到点隧道协议（PPTP）和第二层隧道协议（L2TP）。&nbsp; </FONT>
+            <P style="MARGIN: 4px 2px 8px 4px; TEXT-INDENT: 26px"><FONT 
+            size=2><B>PPTP</B>：PPTP是PPP的扩展，它增加了一个新的安全等级，并且可以通过Internet进行多协议通信，它支持通过公共网络（如Internet）建立按需的、多协议的、虚拟专用网络。PPTP可以建立隧道或将IP、IPX或NetBEUI协议封装在PPP数据包内，因此允许用户远程运行依赖特定网络协议的应用程序。PPTP在基于TCP/IP协议的数据网络上创建VPN连接，实现从远程计算机到专用服务器的安全数据传输。VPN服务器执行所有的安全检查和验证，并启用数据加密，使得在不安全的网络上发送信息变得更加安全。尤其是使用EAP后，通过启用PPTP的VPN传输数据就象在企业的一个局域网内那样安全。另外还可以使用PPTP建立专用LAN到LAN的网络。&nbsp; 
+            </FONT>
+            <P style="MARGIN: 4px 2px 8px 4px; TEXT-INDENT: 26px"><FONT 
+            size=2><B>L2TP</B>：L2TP是一个工业标准的Internet隧道协议，它和PPTP的功能大致相同。L2TP也会压缩PPP的帧，从而压缩IP、IPX或NetBEUI协议，同样允许用户远程运行依赖特定网络协议的应用程序。与PPTP不同的是，L2TP使用新的网际协议安全（IPSec）机制来进行身份验证和数据加密。目前L2TP只支持通过IP网络建立隧道，不支持通过X.25、帧中继或ATM网络的本地隧道。&nbsp; 
+            </FONT></P></TD></TR></TBODY></TABLE></DIV>
+      <DIV align=center>
+      <TABLE width=680 align=left bgColor=#ffffff border=0>
+        <TBODY>
+        <TR>
+          <TD width=592 height=23><FONT size=2><B><FONT 
+            color=#254889>VPN的身份验证方法</FONT></B> </FONT></TD>
+          <TD width=74 height=23>
+            <P align=right valign="bottom"><FONT size=2><A 
+            href="http://sj.wxtelecom.com/zhishi_adsl.HTM" target=_self>&nbsp; 
+            </A>　 </FONT></P></TD></TR>
+        <TR>
+          <TD width=672 bgColor=#f3f7fc colSpan=2>
+            <P style="MARGIN: 4px 2px 8px 4px; TEXT-INDENT: 26px"><FONT 
+            size=2>前面已经提到VPN的身份验证采用PPP的身份验证方法，下面介绍一下VPN进行身份验证的几种方法。&nbsp;</FONT></P>
+            <P style="MARGIN: 4px 2px 8px 4px; TEXT-INDENT: 26px"><FONT 
+            size=2><B>CHAP</B>：CHAP通过使用MD5（一种工业标准的散列方案）来协商一种加密身份验证的安全形式。CHAP在响应时使用质询-响应机制和单向MD5散列。用这种方法，可以向服务器证明客户机知道密码，但不必实际地将密码发送到网络上。&nbsp;</FONT></P>
+            <P style="MARGIN: 4px 2px 8px 4px; TEXT-INDENT: 26px"><FONT 
+            size=2><B>MS-CHAP</B>：同CHAP相似，微软开发MS-CHAP是为了对远程Windows工作站进行身份验证，它在响应时使用质询-响应机制和单向加密。而且MS-CHAP不要求使用原文或可逆加密密码。&nbsp;</FONT></P>
+            <P style="MARGIN: 4px 2px 8px 4px; TEXT-INDENT: 26px"><FONT 
+            size=2><B>MS-CHAP v2</B>：MS-CHAP 
+            v2是微软开发的第二版的质询握手身份验证协议，它提供了相互身份验证和更强大的初始数据密钥，而且发送和接收分别使用不同的密钥。如果将VPN连接配置为用MS-CHAP 
+            v2作为唯一的身份验证方法，那么客户端和服务器端都要证明其身份，如果所连接的服务器不提供对自己身份的验证，则连接将被断开。</FONT></P>
+            <P style="MARGIN: 4px 2px 8px 4px; TEXT-INDENT: 26px"><FONT 
+            size=2><B>EAP</B>：EAP的开发是为了适应对使用其他安全设备的远程访问用户进行身份验证的日益增长的需求。通过使用EAP，可以增加对许多身份验证方案的支持，其中包括令牌卡、一次性密码、使用智能卡的公钥身份验证、证书及其他身份验证。对于VPN来说，使用EAP可以防止暴力或词典攻击及密码猜测，提供比其他身份验证方法（例如CHAP）更高的安全性。&nbsp;</FONT></P>
+            <P style="MARGIN: 4px 2px 8px 4px; TEXT-INDENT: 26px"><FONT 
+            size=2>在Windows系统中，对于采用智能卡进行身份验证，将采用EAP验证方法；对于通过密码进行身份验证，将采用CHAP、MS-CHAP或MS-CHAP 
+            v2验证方法。&nbsp; </FONT></P></TD></TR>
+        <TR>
+          <TD width=591><FONT size=2><B><FONT 
+            color=#254889>VPN的加密技术</FONT></B> </FONT></TD>
+          <TD width=75>
+            <P align=right valign="bottom"><FONT size=2><A 
+            href="http://sj.wxtelecom.com/zhishi_adsl.HTM" target=_self>&nbsp; 
+            </A>　 </FONT></P></TD></TR>
+        <TR>
+          <TD width=672 bgColor=#f3f7fc colSpan=2>
+            <P style="MARGIN: 4px 2px 8px 4px; TEXT-INDENT: 26px"><FONT 
+            size=2>VPN采用何种加密技术依赖于VPN服务器的类型，因此可以分为两种情况。&nbsp;</FONT></P>
+            <P style="MARGIN: 4px 2px 8px 4px; TEXT-INDENT: 26px"><FONT 
+            size=2>对于PPTP服务器，将采用MPPE加密技术MPPE可以支持40位密钥的标准加密方案和128位密钥的增强加密方案。只有在MS-CHAP、MS-CHAP 
+            v2或EAP/TLS身份验证被协商之后，数据才由MPPE进行加密，MPPE需要这些类型的身份验证生成的公用客户和服务器密钥。&nbsp; 
+            </FONT>
+            <P style="MARGIN: 4px 2px 8px 4px; TEXT-INDENT: 26px"><FONT 
+            size=2>对于L2TP服务器，将使用IPSec机制对数据进行加密IPSec是基于密码学的保护服务和安全协议的套件。IPSec对使用L2TP协议的VPN连接提供机器级身份验证和数据加密。在保护密码和数据的L2TP连接建立之前，IPSec在计算机及其远程VPN服务器之间进行协商。IPSec可用的加密包括56位密钥的数据加密标准DES和56位密钥的三倍DES（3DES）。&nbsp; 
+            </FONT></P></TD></TR></TBODY></TABLE></DIV>
+      <CENTER><FONT 
+  size=2>　</FONT></CENTER></CENTER></TD></TR><!--msnavigation--></TBODY></TABLE></BODY></HTML>

@@ -1,0 +1,47 @@
+.prompt {
+  left: 50%;
+  top: 50%;
+  padding: 10px;
+  width: auto;
+  float: left;
+  z-index: 9002;
+  display: none;
+  position: absolute;
+  border-radius: 3px;
+}
+.prompt i {
+  background: url(../images/pic.png) no-repeat 0 0;
+  display: block;
+  width: 18px;
+  height: 18px;
+  float: left;
+  margin-right: 5px;
+}
+.error {
+  background-color: #FFE4E4;
+  border: 1px solid #F6B9B9;
+  color: #B94A48;
+}
+.warning {
+  background-color: #FCF6D7;
+  border: 1px solid #FED88F;
+  color: #C09853;
+}
+.success {
+  background-color: #DEF1D7;
+  border: 1px solid #BFD3AF;
+  color: #468847;
+}
+.success i {
+  background-position: 0 -44px;
+}
+.warning i {
+  background-position: 0 -70px;
+}
+.error i {
+  background-position: 0 -16px;
+}
+.prompt em {
+  font-style: normal;
+  font: 14px/20px '宋体';
+}

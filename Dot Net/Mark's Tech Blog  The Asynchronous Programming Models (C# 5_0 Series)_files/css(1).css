@@ -1,0 +1,534 @@
+body {
+	font-family: calibri,arial;
+}
+textarea {
+	font-family: calibri,arial;
+}
+table {
+	font-family: calibri,arial;
+}
+tr {
+	font-family: calibri,arial;
+}
+td {
+	font-family: calibri,arial;
+}
+body {
+	background: url("images/livesino_bg.jpg") no-repeat top rgb(255, 255, 255); margin: 0px auto; width: 1095px; color: rgb(68, 68, 68); position: relative;
+}
+h1 {
+	color: rgb(243, 110, 48); font-size: 150%;
+}
+h2 {
+	font-size: 110%;
+}
+a {
+	color: rgb(92, 128, 177); text-decoration: none;
+}
+a[href^='/file.axd'] {
+	background: url("download.png") no-repeat right; padding-right: 15px; font-weight: bold;
+}
+a:hover {
+	color: rgb(243, 110, 48); text-decoration: none;
+}
+img {
+	border: currentColor;
+}
+#content {
+	width: 70%; float: left;
+}
+#sidepanel {
+	width: 28%; float: right;
+}
+.loginbox {
+	margin: 0px auto;
+}
+.loginbox td {
+	padding: 3px;
+}
+#postnavigation {
+	background: white; padding: 3px; border: 1px solid silver; text-align: center; color: gray; margin-bottom: 10px;
+}
+#footer {
+	text-align: center; font-size: 80%;
+}
+#header {
+	width: 100%; text-align: left; color: rgb(51, 51, 51); margin-bottom: 30px;
+}
+#header p {
+	margin: 0px; font-family: "Segoe UI Light","Microsoft Yahei",Calibri; font-size: 32px;
+}
+#header span {
+	margin: 0px; color: rgb(170, 170, 170); font-weight: normal;
+}
+#header a {
+	color: rgb(17, 17, 17); text-decoration: none;
+}
+#menu {
+	padding: 5px; margin-bottom: 20px;
+}
+#menu a.apmlfilter {
+	background: url("../../pics/apml.png") no-repeat left 14px; padding-left: 15px;
+}
+#menu .login {
+	padding-left: 16px; margin-right: 10px; float: right;
+}
+#menu .login span {
+	color: rgb(102, 102, 102); padding-right: 5px;
+}
+#menu ul {
+	list-style: none; margin: 0px; padding: 0px;
+}
+#menu ul li {
+	display: inline;
+}
+#menu ul li a {
+	padding: 10px; font-size: medium; font-weight: bold;
+}
+#menu ul li a.feed img {
+	margin-right: 3px; margin-bottom: -2px;
+}
+div.widgetzone {
+	padding: 0px;
+}
+div.widgetzone .clear {
+	clear: left;
+}
+div.widget {
+	padding: 10px 15px; margin-bottom: 10px; z-index: 1; min-width: 1px;
+}
+div.widget .content {
+	color: rgb(102, 102, 102); line-height: 16px;
+}
+div.widget h4 {
+	margin: 0px 0px 5px; color: rgb(153, 153, 153); padding-bottom: 5px; font-size: 120%; border-bottom-color: silver; border-bottom-width: 1px; border-bottom-style: solid; z-index: 0;
+}
+div.widget a.edit {
+	font-size: 85%; font-weight: normal; margin-left: 5px; float: right; z-index: 1;
+}
+div.widget a.move {
+	font-size: 85%; font-weight: normal; margin-left: 5px; float: right; z-index: 1;
+}
+div.widget a.delete {
+	top: -3px; color: rgb(153, 153, 153); font-weight: bold; text-decoration: none; margin-left: 5px; float: right; position: relative; z-index: 1;
+}
+div.widget a.delete:hover {
+	color: black;
+}
+.widgetzone .widget ul {
+	margin: 0px; padding: 0px; text-transform: capitalize; list-style-type: none;
+}
+.widgetzone .widget ul li {
+	margin-bottom: 3px;
+}
+.widgetzone div.search {
+	border: currentColor; padding-left: 10px;
+}
+.widgetzone img.rssButton {
+	margin-right: 3px;
+}
+.widgetzone div#moveWidgetToContainer {
+	margin: 3px; text-align: right;
+}
+#blogroll ul {
+	margin: 0px 0px 3px; padding: 0px; list-style-type: none;
+}
+#blogroll ul li ul li a {
+	color: rgb(102, 102, 102); font-size: 90%; margin-left: 25px;
+}
+#blogroll ul li a img {
+	border: currentColor; margin-right: 3px;
+}
+div.post {
+	padding: 3px 10px; margin-bottom: 20px;
+}
+.mceContentBody {
+	padding: 3px 10px; margin-bottom: 20px;
+}
+.post h1 a {
+	color: rgb(92, 128, 177);
+}
+.post h1 a:hover {
+	color: rgb(243, 110, 48); text-decoration: underline;
+}
+.post h2 {
+	color: rgb(243, 110, 48); line-height: 160%; padding-bottom: 3px; font-size: 18px; text-decoration: none;
+}
+.post h2 a {
+	color: rgb(243, 110, 48); line-height: 160%; padding-bottom: 3px; font-size: 18px; text-decoration: none;
+}
+.content h2 a:visited {
+	color: rgb(243, 110, 48); line-height: 160%; padding-bottom: 3px; font-size: 18px; text-decoration: none;
+}
+.post h2 a:hover {
+	text-decoration: none; border-bottom-color: rgb(92, 128, 177); border-bottom-width: 2px; border-bottom-style: solid;
+}
+div.post h1 {
+	margin: 5px 0px 0px;
+}
+.mceContentBody h1 {
+	margin: 5px 0px 0px;
+}
+div.post .author {
+	color: rgb(102, 102, 102); text-transform: capitalize; font-size: 95%; float: left;
+}
+div.post .pubDate {
+	color: rgb(102, 102, 102); font-size: 95%; float: right;
+}
+div.post .text {
+	margin-top: 30px;
+}
+div.post .text h2 {
+	margin-bottom: -10px;
+}
+div.post .text h3 {
+	padding: 0px; font-size: 11px; margin-bottom: -10px;
+}
+div.post .footer {
+	text-align: right; padding-top: 4px; padding-bottom: 2px; clear: both; border-top-color: silver; border-top-width: 1px; border-top-style: dashed;
+}
+div.post .bottom {
+	margin-bottom: 45px;
+}
+div.post .categories {
+	margin-bottom: 5px; float: right;
+}
+div.post .divFContainer {
+	background: rgb(249, 250, 252); margin: 5px 0px 15px; border: 1px solid rgb(225, 243, 247);
+}
+div.post .tags {
+	margin-bottom: 5px; float: left;
+}
+div.post .text a[href^='http:'] {
+	white-space: nowrap;
+}
+#relatedPosts div {
+	padding: 5px 10px 10px; border: 1px solid silver;
+}
+#relatedPosts h1 {
+	margin: 0px 0px 10px;
+}
+#relatedPosts p {
+	font-size: 120%; font-weight: bold;
+}
+#relatedPosts a {
+	margin-top: 5px; display: block;
+}
+#relatedPosts span {
+	color: rgb(102, 102, 102); text-indent: 10px; display: inline-block;
+}
+ul.recentPosts li {
+	padding-bottom: 10px;
+}
+ul.recentPosts li a {
+	font-weight: bold;
+}
+ul.recentPosts li span {
+	text-transform: none; text-indent: 10px; display: block;
+}
+ul.recentComments li {
+	text-transform: none; padding-bottom: 10px;
+}
+ul.recentComments li a.postTitle {
+	font-weight: bold;
+}
+.bookmarks {
+	float: left;
+}
+#archive {
+	padding: 10px; background-color: white;
+}
+#archive h1 {
+	margin: 0px; padding-bottom: 9px; border-bottom-color: silver; border-bottom-width: 1px; border-bottom-style: dashed;
+}
+#archive h2 {
+	padding-bottom: 4px; margin-bottom: 10px; border-bottom-color: silver; border-bottom-width: 1px; border-bottom-style: solid;
+}
+#archive h2 img {
+	margin-right: 3px;
+}
+#archive ul {
+	margin: 0px 10px; padding: 10px; list-style-type: square;
+}
+#archive ul li {
+	margin-right: 20px;
+}
+#archive table {
+	width: 100%; border-collapse: collapse;
+}
+#archive table td {
+	text-align: left;
+}
+#archive table th {
+	text-align: left;
+}
+#archive table td {
+	padding: 2px 0px; text-align: left; font-size: 95%; border-bottom-color: rgb(216, 216, 216); border-bottom-width: 1px; border-bottom-style: solid;
+}
+#archive .date {
+	width: 70px;
+}
+#archive .comments {
+	width: 70px; text-align: center;
+}
+#archive .rating {
+	width: 70px; text-align: center;
+}
+#searchbox {
+	font-size: 85%; margin-top: 5px;
+}
+#searchbox input {
+	font-size: 85%;
+}
+#searchbox #searchbutton {
+	margin-left: 5px;
+}
+#searchbox #searchfield {
+	width: 180px;
+}
+#searchonsearch {
+	background: white; padding: 5px 10px; border: 1px solid silver; margin-bottom: 20px;
+}
+#searchonsearch h3 {
+	margin: 3px; font-size: 13px;
+}
+#searchonsearch ol li {
+	margin: 2px 0px;
+}
+#monthList li {
+	font-weight: normal;
+}
+#monthList .year {
+	font-weight: bold; cursor: pointer;
+}
+#monthList .year li {
+	margin-left: 20px;
+}
+#monthList ul {
+	display: none;
+}
+#monthList .open {
+	display: block;
+}
+.tagcloud {
+	margin-bottom: 10px; white-space: normal;
+}
+.tagcloud li {
+	display: inline;
+}
+.tagcloud a {
+	margin-right: 3px; display: inline;
+}
+.tagcloud a.biggest {
+	font-size: 130%;
+}
+.tagcloud a.big {
+	font-size: 124%;
+}
+.tagcloud a.medium {
+	font-size: 115%;
+}
+.tagcloud a.small {
+	font-size: 100%;
+}
+.tagcloud a.smallest {
+	font-size: 90%;
+}
+#page {
+	padding: 3px 10px; line-height: 17px; margin-bottom: 20px; background-color: white;
+}
+#page h1 {
+	margin: 3px 0px 10px;
+}
+#page #admin {
+	padding: 5px 0px; margin-top: 10px; border-top-color: silver; border-top-width: 1px; border-top-style: solid;
+}
+#calendarContainer {
+	margin: 0px auto; text-transform: capitalize;
+}
+.calendar {
+	margin: 0px auto; border: currentColor;
+}
+.calendar .weekend {
+	background-color: rgb(241, 241, 241);
+}
+.calendar .other {
+	color: silver;
+}
+.calendar a.exist {
+	font-weight: bold; display: block; background-color: rgb(241, 241, 241);
+}
+.calendar td {
+	background: white; vertical-align: top;
+}
+#searchpage {
+	margin-bottom: 30px;
+}
+#searchpage input#q {
+	width: 300px;
+}
+#searchpage input#comment {
+	clear: both;
+}
+.searchresult {
+	margin-bottom: 20px;
+}
+.searchresult a {
+	font-weight: bold;
+}
+.searchresult span.text {
+	margin: 3px 0px; clear: both; display: block;
+}
+.searchresult span.type {
+	display: block;
+}
+.searchresult span.url {
+	color: gray;
+}
+.searchpage ul.paging {
+	margin: 0px 0px 20px; padding: 0px; list-style-type: none;
+}
+.searchpage ul.paging li {
+	background: rgb(241, 241, 241); border: 1px solid gray; margin-right: 5px; display: inline;
+}
+.searchpage ul.paging li a {
+	padding: 5px 8px;
+}
+.searchpage ul.paging li.active {
+	background: rgb(241, 241, 241); border: 1px solid black;
+}
+#contact {
+	background: white; padding: 10px;
+}
+#contact h1 {
+	margin-top: 0px;
+}
+#contact label {
+	padding-top: 5px; display: block;
+}
+#contact input.field {
+	width: 200px;
+}
+#contact textarea {
+	margin: 0px; width: 75%; height: 150px; overflow: auto; display: block;
+}
+#commentlist {
+	padding-top: 10px; background-color: rgb(255, 255, 255);
+}
+.comment_header {
+	padding: 0px 5px; border-radius: 5px; border: 1px solid rgb(204, 204, 204); height: 36px; vertical-align: middle; display: block; background-color: rgb(248, 244, 255); -moz-border-radius: 5px;
+}
+.comment {
+	padding: 3px 10px; border: 0px currentColor; margin-bottom: 10px;
+}
+.comment .author {
+	margin: 0px; padding: 3px 5px; border: 0px currentColor; height: 16px; font-size: 90%;
+}
+#addcomment {
+	font-size: 120%; font-weight: bold;
+}
+#comment {
+	font-size: 120%; font-weight: bold;
+}
+.self {
+	background: rgb(248, 248, 248);
+}
+.comment .gravatar {
+	margin: 3px 10px 6px 0px; clear: both; float: left;
+}
+.comment .gravatar img {
+	margin: 0px; padding: 0px; border: 1px solid silver; height: 28px;
+}
+.comment img.flag {
+	margin-left: 5px;
+}
+.comment .content {
+	margin: 1px; padding: 5px; min-height: 25px;
+}
+.comment cite {
+	font-family: Monospace; font-style: normal;
+}
+.visitor {
+	padding: 8px 0px;
+}
+.visitor div {
+	color: rgb(102, 102, 102); font-size: 0.8em;
+}
+.comment {
+	padding: 5px;
+}
+.comment-replies {
+	background: url("../../pics/reply-arrow.gif") no-repeat 2px 15px; margin: 5px 0px 0px; padding: 0px 0px 0px 15px;
+}
+#commentlist #comment-form {
+	background: rgb(255, 255, 255); margin: 10px 0px; padding: 10px; border: 1px solid rgb(204, 204, 204);
+}
+#commentNotificationUnsubscription {
+	background: rgb(255, 255, 204); padding: 10px; border: 1px solid silver; color: gray; margin-bottom: 10px;
+}
+#commentNotificationUnsubscription h1 {
+	margin: 0px auto 12px; padding: 0px;
+}
+#commentMenu {
+	margin: 0px; padding: 0px; clear: both;
+}
+#commentMenu li {
+	background: rgb(216, 216, 216); border-width: 1px 1px medium; border-style: solid solid none; border-color: silver silver transparent; list-style: none; margin: 0px 5px 0px 0px; padding: 3px 8px; top: 2px; float: left; position: relative; cursor: pointer;
+}
+#commentMenu li.selected {
+	background: white; border-bottom-color: white; border-bottom-width: 1px; border-bottom-style: solid;
+}
+.commentForm .bbcode {
+	padding: 3px; top: 20px; font-size: 90%; float: right; position: relative;
+}
+.commentForm .bbcodeNoLivePreview {
+	top: 0px;
+}
+.bbcode a {
+	background: rgb(255, 255, 255); margin: 1px; padding: 1px 3px; border: 1px solid rgb(204, 204, 204);
+}
+.commentForm textarea {
+	border: 1px solid silver; width: 100%; height: 150px;
+}
+.commentForm label {
+	width: 80px; padding-top: 3px; float: left; display: block;
+}
+.commentForm input[type='text'] {
+	margin: 2px 0px; border: 1px solid rgb(204, 204, 204); width: 300px; background-color: rgb(255, 255, 255);
+}
+.commentForm select {
+	border: 1px solid rgb(204, 204, 204); width: 308px;
+}
+select {
+	padding: 3px;
+}
+input[type='text'] {
+	padding: 3px;
+}
+input[type='select'] {
+	padding: 3px;
+}
+input[type='submit'] {
+	background: rgb(255, 255, 255); padding: 3px 5px; border: 1px solid rgb(184, 193, 202); color: rgb(0, 0, 0);
+}
+input[type='button'] {
+	background: rgb(255, 255, 255); padding: 3px 5px; border: 1px solid rgb(184, 193, 202); color: rgb(0, 0, 0);
+}
+input[type='file'] {
+	background: rgb(255, 255, 255); padding: 3px 5px; border: 1px solid rgb(184, 193, 202); color: rgb(0, 0, 0);
+}
+input[type='submit']:hover {
+	background: rgb(184, 193, 202); color: rgb(255, 255, 255); cursor: pointer;
+}
+input[type='button']:hover {
+	background: rgb(184, 193, 202); color: rgb(255, 255, 255); cursor: pointer;
+}
+#searchcomments {
+	margin: 10px 5px 0px 0px;
+}
+blockquote {
+	margin: 1em; padding: 0pt 0pt 0pt 0.5em; border-left-color: rgb(204, 204, 204); border-left-width: 0.15em; border-left-style: solid;
+}
+pre {
+	padding: 4px; border: 1px solid rgb(170, 170, 170); background-color: rgb(248, 248, 248);
+}

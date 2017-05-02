@@ -1,0 +1,100 @@
+TABLE.bar
+{
+  font-size: 12px;
+  font-family: 宋体,新宋体,arial,sans-serif;
+}
+DIV
+{
+  font-size: 12px;
+}
+A
+{
+  font-size: 12px;
+}
+A:visited
+{
+  color: #000099;
+}
+SPAN
+{
+  font-size: 12px;
+}
+FONT
+{
+  font-size: 12px;
+}
+A.bar
+{
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 12px;
+}
+A.bar:hover
+{
+  color: #ff0000;
+}
+A.bar:visited
+{
+  color: #ffffff;
+}
+A.bar:active
+{
+  color: #ff0000;
+}
+A.topten
+{
+  color: #000099;
+  text-decoration: none;
+}
+A.topten:hover
+{
+  color: #ff0000;
+}
+A.topten:active
+{
+  color: #ff0000;
+}
+A.topten:visited
+{
+  color: #FF0000;
+}
+xmp
+{
+  padding: 10px;
+  background-color: #FFD780;
+  border: 1px solid #FF9801;
+}
+p
+{
+  text-indent: 14pt;
+}
+html, body
+{
+  margin-top: 1px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 1px;
+  font-size: 12px;
+  background-color: #ffffff;
+  border: 1px inset Window;
+  cursor: url(  "images/meng.cur" ),auto;
+  font-family: 宋体,新宋体,arial,sans-serif;
+}
+A.Footer
+{
+  font-size: 12px;
+  color: #0070c0;
+  text-decoration: none;
+}
+A.Footer:hover
+{
+  font-size: 12px;
+  color: #d04000;
+}
+
+#GoPage
+{
+  width: 60px;
+  border:solid 1px gray;
+}

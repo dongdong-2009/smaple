@@ -1,0 +1,948 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0064)http://www.cnblogs.com/jaic-xiao/archive/2008/05/31/1211335.html -->
+<HTML><HEAD id=Head><TITLE>搜索 GridView 关键字 高亮 控制 - ZJ - 博客园</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META id=metaKeywords content="搜索 GridView 关键字 高亮 控制 " name=keywords><LINK 
+id=CommondCss href="搜索 GridView 关键字 高亮 控制 - ZJ - 博客园_files/common.css" 
+type=text/css rel=stylesheet><LINK id=MainCss 
+href="搜索 GridView 关键字 高亮 控制 - ZJ - 博客园_files/style.css" type=text/css 
+rel=stylesheet><LINK id=RSSLink title=RSS 
+href="http://www.cnblogs.com/jaic-xiao/rss.aspx" type=application/rss+xml 
+rel=alternate>
+<SCRIPT src="搜索 GridView 关键字 高亮 控制 - ZJ - 博客园_files/common.js" 
+type=text/javascript></SCRIPT>
+
+<META content="MSHTML 6.00.3790.2993" name=GENERATOR></HEAD>
+<BODY>
+<FORM id=Form1 name=Form1 onsubmit="javascript:return WebForm_OnSubmit();" 
+action=1211335.html method=post>
+<DIV><INPUT id=__EVENTTARGET type=hidden name=__EVENTTARGET> <INPUT 
+id=__EVENTARGUMENT type=hidden name=__EVENTARGUMENT> <INPUT 
+id="&#13;&#10;__VIEWSTATE" type=hidden name=__VIEWSTATE> </DIV>
+<SCRIPT type=text/javascript>
+//<![CDATA[
+var theForm = document.forms['Form1'];
+if (!theForm) {
+    theForm = document.Form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</SCRIPT>
+
+<SCRIPT src="搜索 GridView 关键字 高亮 控制 - ZJ - 博客园_files/WebResource.axd" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT language=JavaScript>
+									function ctlent(evt,id)
+											{
+												if(evt.ctrlKey && evt.keyCode == 13)
+												{	
+													try
+													{
+														TempSave(id);
+													}
+													catch(ex)
+													{
+													}
+													finally
+													{
+													    __doPostBack('AjaxHolder$PostComment$btnSubmit','')
+													}
+												}
+		
+												}</SCRIPT>
+
+<SCRIPT language=JavaScript>function SetReplyAuhor(author){document.getElementById('AjaxHolder_PostComment_tbComment').value+="@"+author+"\n";document.getElementById('AjaxHolder_PostComment_tbComment').focus();return false}</SCRIPT>
+
+<SCRIPT src="搜索 GridView 关键字 高亮 控制 - ZJ - 博客园_files/ScriptResource.axd" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT 
+src="C:\Documents and Settings\Administrator.SZLANYOU-7NGZ4R\桌面\搜索 GridView 关键字 高亮 控制 - ZJ - 博客园_files\ScriptResource(1).axd" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT 
+src="C:\Documents and Settings\Administrator.SZLANYOU-7NGZ4R\桌面\搜索 GridView 关键字 高亮 控制 - ZJ - 博客园_files\ScriptResource(2).axd" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="搜索 GridView 关键字 高亮 控制 - ZJ - 博客园_files/js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+//<![CDATA[
+function WebForm_OnSubmit() {
+if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+return true;
+}
+//]]>
+</SCRIPT>
+<!--done-->
+<DIV id=home>
+<DIV id=header>
+<DIV id=blogTitle><A id=lnkBlogLogo 
+href="http://www.cnblogs.com/jaic-xiao/"><IMG id=blogLogo alt=返回主页 
+src="搜索 GridView 关键字 高亮 控制 - ZJ - 博客园_files/logo.gif"></A> <!--done-->
+<H1><A class=headermaintitle id=Header1_HeaderTitle 
+href="http://www.cnblogs.com/jaic-xiao/">ZJ</A></H1>
+<H2></H2></DIV><!--end: blogTitle 博客的标题和副标题 -->
+<DIV id=navigator><!--done-->
+<UL id=navList>
+  <LI><A class=menu id=MyLinks1_HomeLink href="http://www.cnblogs.com/">博客园</A> 
+  </LI>
+  <LI><A class=menu id=MyLinks1_SpaceLink 
+  href="http://space.cnblogs.com/">社区</A> </LI>
+  <LI><A class=menu id=MyLinks1_MyHomeLink 
+  href="http://jaic-xiao.cnblogs.com/">首页</A> </LI>
+  <LI><A class=menu id=MyLinks1_NewPostLink 
+  href="http://www.cnblogs.com/jaic-xiao/admin/EditPosts.aspx?opt=1">新随笔</A> 
+  </LI>
+  <LI><A class=menu id=MyLinks1_ContactLink accessKey=9 
+  href="http://www.cnblogs.com/jaic-xiao/contact.aspx?id=1">联系</A> </LI>
+  <LI><A class=menu id=MyLinks1_Admin 
+  href="http://www.cnblogs.com/jaic-xiao/admin/EditPosts.aspx">管理</A> </LI>
+  <LI><A class=menu id=MyLinks1_Syndication 
+  href="http://jaic-xiao.cnblogs.com/rss">订阅</A> <A class=aHeaderXML 
+  id=MyLinks1_XMLLink href="http://jaic-xiao.cnblogs.com/rss"><IMG 
+  style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+  alt=订阅 src="搜索 GridView 关键字 高亮 控制 - ZJ - 博客园_files/rss.gif"></A> </LI></UL>
+<DIV class=blogStats><!--done-->随笔- 9&nbsp; 文章- 0&nbsp; 评论- 57&nbsp; </DIV><!--end: blogStats --></DIV><!--end: navigator 博客导航栏 --></DIV><!--end: header 头部 -->
+<DIV id=main>
+<DIV id=mainContent>
+<DIV class=forFlow>
+<SCRIPT type=text/javascript>
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('AjaxHolder$scriptmanager1', document.getElementById('Form1'));
+Sys.WebForms.PageRequestManager.getInstance()._updateControls(['tAjaxHolder$UpdatePanel1'], [], [], 90);
+//]]>
+</SCRIPT>
+<!--done-->
+<DIV id=topics>
+<DIV class=post>
+<H1 class=postTitle><A class=postTitle2 id=AjaxHolder_ctl01_TitleUrl 
+href="http://www.cnblogs.com/jaic-xiao/archive/2008/05/31/1211335.html">搜索 
+GridView 关键字 高亮 控制 </A></H1>
+<DIV class=clear></DIV>
+<DIV class=postBody>
+<P>&nbsp;&nbsp;&nbsp; 简介： 为了提高程序的专业性和用户的体验性。<BR>&nbsp;<U><FONT face=Verdana 
+size=2><SPAN 
+id=ctl00_cphCell1_datalistArticles_ctl01_lblArticleDescription><STRONG>填充gridview：<BR><IMG 
+alt="" src="搜索 GridView 关键字 高亮 控制 - ZJ - 博客园_files/gridviewFull_test1.bmp" 
+border=0><BR><U><FONT face=Verdana size=2><SPAN 
+id=ctl00_cphCell1_datalistArticles_ctl01_lblArticleDescription>HTML搜索框：</SPAN></FONT></U> 
+<BR><IMG alt="" 
+src="搜索 GridView 关键字 高亮 控制 - ZJ - 博客园_files/gridviewsearchtextbox_test1.jpg" 
+border=0><BR><U><FONT face=Verdana size=2><SPAN 
+id=ctl00_cphCell1_datalistArticles_ctl01_lblArticleDescription>构造highlightext方法：</SPAN></FONT></U> 
+<BR><IMG alt="" 
+src="搜索 GridView 关键字 高亮 控制 - ZJ - 博客园_files/highligtText_test1.bmp" 
+border=0><BR><IMG alt="" 
+src="搜索 GridView 关键字 高亮 控制 - ZJ - 博客园_files/yellowstyle_test1.bmp" 
+border=0><BR></STRONG>注意其中的 <FONT 
+face=Verdana>ReplaceKeywords</FONT>方法<STRONG>&nbsp;就是</STRONG> 把匹配的 m.Value 
+<STRONG>替换成</STRONG>&nbsp; <FONT face=Verdana>&lt;span 
+class='highlightTxtSearch'&gt;" + m.Value + 
+"&lt;/span&gt;</FONT>。。<BR><STRONG><U><FONT face=Verdana size=2><SPAN 
+id=ctl00_cphCell1_datalistArticles_ctl01_lblArticleDescription>配置gridview：<BR><IMG 
+alt="" src="搜索 GridView 关键字 高亮 控制 - ZJ - 博客园_files/databindgridview_test1.bmp" 
+border=0><BR>&nbsp;<FONT face=Verdana size=2><SPAN 
+id=ctl00_cphCell1_datalistArticles_ctl01_lblArticleDescription>现在，运行该应用程序</SPAN></FONT>：<BR><IMG 
+alt="" src="搜索 GridView 关键字 高亮 控制 - ZJ - 博客园_files/app1_test1.bmp" 
+border=0><BR><IMG alt="" 
+src="搜索 GridView 关键字 高亮 控制 - ZJ - 博客园_files/app2_test1.bmp" 
+border=0><BR>好了，到此已经做完。希望你能用得上。<IMG alt="" 
+src="搜索 GridView 关键字 高亮 控制 - ZJ - 博客园_files/055243485.gif">。。</SPAN></FONT></U></STRONG></SPAN></FONT></U></P>
+<DIV id=EntryTag>Tag标签: <A 
+href="http://www.cnblogs.com/jaic-xiao/tag/Aspï¿¥net3ï¿¥5/">Asp.net3.5</A></DIV></DIV>
+<DIV class=postDesc>posted @ 2008-05-31 19:26 <A 
+href="http://jaic-xiao.cnblogs.com/">真见</A> 阅读(967) <A 
+href="http://www.cnblogs.com/jaic-xiao/archive/2008/05/31/1211335.html#Post">评论(7)</A> 
+&nbsp;<A 
+href="http://www.cnblogs.com/jaic-xiao/admin/EditPosts.aspx?postid=1211335">编辑</A> 
+<A href="http://www.cnblogs.com/jaic-xiao/AddToFavorite.aspx?id=1211335">收藏</A> 
+所属分类: <A 
+href="http://www.cnblogs.com/jaic-xiao/category/136329.html">Asp.Net</A> 
+</DIV></DIV><IMG height=1 
+src="搜索 GridView 关键字 高亮 控制 - ZJ - 博客园_files/1211335.jpg" width=1> <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+rdf:about="http://www.cnblogs.com/jaic-xiao/archive/2008/05/31/1211335.html"
+dc:identifier="http://www.cnblogs.com/jaic-xiao/archive/2008/05/31/1211335.html"
+dc:title="搜索 GridView 关键字 高亮 控制 "
+trackback:ping="http://www.cnblogs.com/jaic-xiao/services/trackbacks/1211335.aspx" />
+</rdf:RDF>
+--></DIV><!--end: topics 文章、评论容器-->
+<DIV id=AjaxHolder_UpdatePanel1><A name=pagedcomment></A><!--done--><BR>
+<DIV class=feedback_area_title>发表评论</DIV>
+<DIV class=feedbackNoItems></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A 
+onclick='return SetReplyAuhor("BoyLee")' 
+href="http://www.cnblogs.com/jaic-xiao/archive/2008/05/31/1211335.html#post">回复</A>&nbsp;&nbsp;<A 
+onclick="GetQuote(1214611);return false" 
+href="http://www.cnblogs.com/jaic-xiao/archive/2008/05/31/1211335.html#post">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=BoyLee" 
+target=_blank>查看</A>&nbsp;&nbsp;<A 
+id=AjaxHolder_Comments_CommentList_ctl00_DeleteLink 
+href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl00$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=AjaxHolder_Comments_CommentList_ctl00_EditLink CausesValidation="False"></A> 
+</DIV><A title="permalink: re: 搜索 GridView 关键字 高亮 控制 " 
+href="http://www.cnblogs.com/jaic-xiao/archive/2008/05/31/1211335.html#1214611">#1楼</A>&nbsp;<A 
+name=1214611></A>2008-05-31 20:31 | <A 
+id=AjaxHolder_Comments_CommentList_ctl00_NameLink 
+href="http://www.cnblogs.com/boylee/" target=_blank>BoyLee</A>&nbsp;<A 
+class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/BoyLee">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><IMG alt="" 
+src="搜索 GridView 关键字 高亮 控制 - ZJ - 博客园_files/055243485.gif"> <BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A onclick='return SetReplyAuhor("哦，奇怪")' 
+href="http://www.cnblogs.com/jaic-xiao/archive/2008/05/31/1211335.html#post">回复</A>&nbsp;&nbsp;<A 
+onclick="GetQuote(1214751);return false" 
+href="http://www.cnblogs.com/jaic-xiao/archive/2008/05/31/1211335.html#post">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e5%93%a6%ef%bc%8c%e5%a5%87%e6%80%aa" 
+target=_blank>查看</A>&nbsp;&nbsp;<A 
+id=AjaxHolder_Comments_CommentList_ctl01_DeleteLink 
+href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl01$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=AjaxHolder_Comments_CommentList_ctl01_EditLink CausesValidation="False"></A> 
+</DIV><A title="permalink: re: 搜索 GridView 关键字 高亮 控制 " 
+href="http://www.cnblogs.com/jaic-xiao/archive/2008/05/31/1211335.html#1214751">#2楼</A>&nbsp;<A 
+name=1214751></A>2008-06-01 01:20 | <A 
+id=AjaxHolder_Comments_CommentList_ctl01_NameLink 
+href="http://www.cnblogs.com/caspnet/" target=_blank>哦，奇怪</A>&nbsp;<A 
+class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/å¦ï¼å¥æª">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><IMG alt="" 
+src="搜索 GridView 关键字 高亮 控制 - ZJ - 博客园_files/055243485.gif"> <BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A onclick='return SetReplyAuhor("求知无傲")' 
+href="http://www.cnblogs.com/jaic-xiao/archive/2008/05/31/1211335.html#post">回复</A>&nbsp;&nbsp;<A 
+onclick="GetQuote(1214763);return false" 
+href="http://www.cnblogs.com/jaic-xiao/archive/2008/05/31/1211335.html#post">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e6%b1%82%e7%9f%a5%e6%97%a0%e5%82%b2" 
+target=_blank>查看</A>&nbsp;&nbsp;<A 
+id=AjaxHolder_Comments_CommentList_ctl02_DeleteLink 
+href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl02$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=AjaxHolder_Comments_CommentList_ctl02_EditLink CausesValidation="False"></A> 
+</DIV><A title="permalink: re: 搜索 GridView 关键字 高亮 控制 " 
+href="http://www.cnblogs.com/jaic-xiao/archive/2008/05/31/1211335.html#1214763">#3楼</A>&nbsp;<A 
+name=1214763></A>2008-06-01 02:44 | <A 
+id=AjaxHolder_Comments_CommentList_ctl02_NameLink 
+href="http://52knowledge.cnblogs.com/" target=_blank>求知无傲</A>&nbsp;<A 
+class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/æ±ç¥æ&nbsp;å²">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon>BoyLee 心情不错么，又来逛园子啦。呵呵。<BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A onclick='return SetReplyAuhor("丁学")' 
+href="http://www.cnblogs.com/jaic-xiao/archive/2008/05/31/1211335.html#post">回复</A>&nbsp;&nbsp;<A 
+onclick="GetQuote(1214808);return false" 
+href="http://www.cnblogs.com/jaic-xiao/archive/2008/05/31/1211335.html#post">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e4%b8%81%e5%ad%a6" 
+target=_blank>查看</A>&nbsp;&nbsp;<A 
+id=AjaxHolder_Comments_CommentList_ctl03_DeleteLink 
+href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl03$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=AjaxHolder_Comments_CommentList_ctl03_EditLink CausesValidation="False"></A> 
+</DIV><A title="permalink: re: 搜索 GridView 关键字 高亮 控制 " 
+href="http://www.cnblogs.com/jaic-xiao/archive/2008/05/31/1211335.html#1214808">#4楼</A>&nbsp;<A 
+name=1214808></A>2008-06-01 09:24 | <A 
+id=AjaxHolder_Comments_CommentList_ctl03_NameLink 
+href="http://dingxue.cnblogs.com/" target=_blank>丁学</A>&nbsp;<A 
+class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/ä¸å&shy;¦">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon>建议下次贴代码出来不要放图，复制太难<BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A onclick='return SetReplyAuhor("真见")' 
+href="http://www.cnblogs.com/jaic-xiao/archive/2008/05/31/1211335.html#post">回复</A>&nbsp;&nbsp;<A 
+onclick="GetQuote(1214815);return false" 
+href="http://www.cnblogs.com/jaic-xiao/archive/2008/05/31/1211335.html#post">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e7%9c%9f%e8%a7%81" 
+target=_blank>查看</A>&nbsp;&nbsp;<A 
+id=AjaxHolder_Comments_CommentList_ctl04_DeleteLink 
+href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl04$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=AjaxHolder_Comments_CommentList_ctl04_EditLink CausesValidation="False"></A> 
+</DIV><A title="permalink: re: 搜索 GridView 关键字 高亮 控制 " 
+href="http://www.cnblogs.com/jaic-xiao/archive/2008/05/31/1211335.html#1214815">#5楼</A>&nbsp;<A 
+name=1214815></A>[<SPAN class=louzhu>楼主</SPAN>]2008-06-01 09:48 | <A 
+id=AjaxHolder_Comments_CommentList_ctl04_NameLink 
+href="http://www.cnblogs.com/jaic-xiao/" target=_blank>真见</A>&nbsp;<A 
+class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/çè§">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon><IMG alt="" 
+src="搜索 GridView 关键字 高亮 控制 - ZJ - 博客园_files/055243485.gif"> <BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A onclick='return SetReplyAuhor("阿森纳")' 
+href="http://www.cnblogs.com/jaic-xiao/archive/2008/05/31/1211335.html#post">回复</A>&nbsp;&nbsp;<A 
+onclick="GetQuote(1215077);return false" 
+href="http://www.cnblogs.com/jaic-xiao/archive/2008/05/31/1211335.html#post">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e9%98%bf%e6%a3%ae%e7%ba%b3" 
+target=_blank>查看</A>&nbsp;&nbsp;<A 
+id=AjaxHolder_Comments_CommentList_ctl05_DeleteLink 
+href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl05$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=AjaxHolder_Comments_CommentList_ctl05_EditLink CausesValidation="False"></A> 
+</DIV><A title="permalink: re: 搜索 GridView 关键字 高亮 控制 " 
+href="http://www.cnblogs.com/jaic-xiao/archive/2008/05/31/1211335.html#1215077">#6楼</A>&nbsp;<A 
+name=1215077></A>2008-06-01 16:45 | <A 
+id=AjaxHolder_Comments_CommentList_ctl05_NameLink 
+href="http://xs8577.cnblogs.com/" target=_blank>阿森纳</A>&nbsp;<A 
+class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/é¿æ£®çº³">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon>请问把@放在查询语句之前是什么意思？ <BR>string cmdText=@"..." 
+<BR><BR>还有一种好像是 " &amp;_ " 的字符串连接方式，和用 " + " 来连接字符串有什么区别呢？<BR></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle>
+<DIV class=feedbackManage>&nbsp;&nbsp;<A onclick='return SetReplyAuhor("jowo")' 
+href="http://www.cnblogs.com/jaic-xiao/archive/2008/05/31/1211335.html#post">回复</A>&nbsp;&nbsp;<A 
+onclick="GetQuote(1215615);return false" 
+href="http://www.cnblogs.com/jaic-xiao/archive/2008/05/31/1211335.html#post">引用</A>&nbsp;&nbsp;<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=jowo" 
+target=_blank>查看</A>&nbsp;&nbsp;<A 
+id=AjaxHolder_Comments_CommentList_ctl06_DeleteLink 
+href="javascript:__doPostBack('AjaxHolder$Comments$CommentList$ctl06$DeleteLink','')"></A>&nbsp;&nbsp;<A 
+id=AjaxHolder_Comments_CommentList_ctl06_EditLink CausesValidation="False"></A> 
+</DIV><A title="permalink: re: 搜索 GridView 关键字 高亮 控制 " 
+href="http://www.cnblogs.com/jaic-xiao/archive/2008/05/31/1211335.html#1215615">#7楼</A>&nbsp;<A 
+name=1215615></A><A name=Post></A>2008-06-02 10:01 | <A 
+id=AjaxHolder_Comments_CommentList_ctl06_NameLink 
+href="http://zjw2004112.cnblogs.com/" target=_blank>jowo</A>&nbsp;<A 
+class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/jowo">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A> 
+</DIV>
+<DIV class=feedbackCon>这种估计效率不怎么样<BR></DIV></DIV>
+<STYLE>TD {
+	FONT-SIZE: 12px
+}
+.commentTextBox {
+	FONT-SIZE: 13px; FONT-FAMILY: Verdana
+}
+A.blue:visited {
+	COLOR: blue
+}
+A.blue:active {
+	COLOR: blue
+}
+A.blue:link {
+	COLOR: blue
+}
+A.blue:hover {
+	COLOR: blue
+}
+</STYLE>
+<!--Beging Temp Save-->
+<STYLE>.userData {
+	BEHAVIOR: url(#default#userdata)
+}
+</STYLE>
+
+<DIV class=userData id=CommentsPersistDiv></DIV>
+<SCRIPT type=text/javascript>
+function pageLoad()
+{
+    Sys.WebForms.PageRequestManager.getInstance().add_initializeRequest(handleInitializeRequest);
+    //Sys.WebForms.PageRequestManager.getInstance().add_endRequest(handleEndRequest);
+}
+
+function handleInitializeRequest(sender, args)
+{
+    var prm = Sys.WebForms.PageRequestManager.getInstance();
+    var eid = args.get_postBackElement().id;
+    if (eid.indexOf("DeleteLink")>0) 
+    {
+       args.get_postBackElement().innerHTML = "<font color='red'>正在删除...</font>";         
+    }    
+    else if (eid.indexOf("btnSubmit")>0) 
+    {
+       document.getElementById("AjaxHolder_PostComment_ltSubmitMsg").innerHTML="正在提交...";
+       document.getElementById("AjaxHolder_PostComment_btnSubmit").disabled = true;       
+    }   
+    else if(eid.indexOf("refreshList")>0)
+    {
+        document.getElementById("AjaxHolder_PostComment_refreshList").innerHTML="<font color='red'>正在刷新...</font>";
+    }
+   
+}	
+
+function TempSave(ElementID)
+{
+	try
+	{
+	CommentsPersistDiv.setAttribute("CommentContent",document.getElementById(ElementID).value);
+	CommentsPersistDiv.save("CommentXMLStore");
+	}
+	catch(ex)
+	{
+	}
+	
+}
+function Restore(ElementID)
+{
+	CommentsPersistDiv.load("CommentXMLStore");
+	document.getElementById(ElementID).value=CommentsPersistDiv.getAttribute("CommentContent");
+}	
+			
+			
+</SCRIPT>
+<!--Ene TempSave-->
+<DIV id=divRefreshComments 
+style="FONT-SIZE: 12px; MARGIN-BOTTOM: 5px; MARGIN-RIGHT: 10px; TEXT-ALIGN: right"><A 
+href="http://www.cnblogs.com/RequireRegister.aspx">新用户注册</A>&nbsp;&nbsp;<A 
+id=AjaxHolder_PostComment_refreshList 
+href="javascript:__doPostBack('AjaxHolder$PostComment$refreshList','')">刷新评论列表</A>&nbsp;&nbsp;</DIV>
+<DIV class=commentform><SPAN id=AjaxHolder_PostComment_ltSubmitMsg 
+style="COLOR: red"></SPAN><BR><A name=Feedback></A>
+<TABLE cellSpacing=1 cellPadding=1 border=0>
+  <TBODY>
+  <TR>
+    <TD width=75></TD>
+    <TD></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD width=55>标题</TD>
+    <TD><INPUT class=commenttb id=AjaxHolder_PostComment_tbTitle 
+      value="re: 搜索 GridView 关键字 高亮 控制 " name=AjaxHolder$PostComment$tbTitle></TD>
+    <TD><SPAN id=AjaxHolder_PostComment_RequiredFieldValidator1 
+      style="VISIBILITY: hidden; COLOR: red">请输入标题</SPAN></TD></TR>
+  <TR>
+    <TD>姓名</TD>
+    <TD><INPUT class=commenttb id=AjaxHolder_PostComment_tbName readOnly 
+      value=amingo name=AjaxHolder$PostComment$tbName></TD>
+    <TD><SPAN id=AjaxHolder_PostComment_RequiredFieldValidator2 
+      style="VISIBILITY: hidden; COLOR: red">请输入你的姓名</SPAN></TD></TR>
+  <TR>
+    <TD>主页</TD>
+    <TD><INPUT class=commenttb id=AjaxHolder_PostComment_tbUrl readOnly 
+      value=http://amingo.cnblogs.com/ name=AjaxHolder$PostComment$tbUrl></TD>
+    <TD><FONT face=宋体></FONT></TD></TR>
+  <TR id=AjaxHolder_PostComment_trEmail>
+    <TD>Email</TD>
+    <TD><INPUT class=commenttb id=AjaxHolder_PostComment_tbEmail 
+      name=AjaxHolder$PostComment$tbEmail>(只有博主才能看到)<SPAN 
+      id=AjaxHolder_PostComment_revContactMail 
+      style="VISIBILITY: hidden; COLOR: red">邮件地址无效</SPAN></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD align=left colSpan=3></TD></TR>
+  <TR>
+    <TD colSpan=3>内容(请不要发表任何与政治相关的内容) <SPAN 
+      id=AjaxHolder_PostComment_RequiredFieldValidator3 
+      style="VISIBILITY: hidden; COLOR: red">请输入评论内容</SPAN><BR><TEXTAREA class=commentTextBox id=AjaxHolder_PostComment_tbComment onkeydown="ctlent(event,'AjaxHolder_PostComment_tbComment')" name=AjaxHolder$PostComment$tbComment></TEXTAREA></TD></TR>
+  <TR>
+    <TD colSpan=3><SPAN id=AjaxHolder_PostComment_Message 
+      style="COLOR: red"></SPAN></TD>
+  <TR>
+    <TD colSpan=3><INPUT id=AjaxHolder_PostComment_chkIsNotify tabIndex=-1 
+      type=checkbox name=AjaxHolder$PostComment$chkIsNotify><LABEL 
+      for=AjaxHolder_PostComment_chkIsNotify>有回复时邮件通知我</LABEL></TD></TR>
+  <TR>
+    <TD height=23><INPUT class=commentButton id=AjaxHolder_PostComment_btnSubmit onclick="TempSave('AjaxHolder_PostComment_tbComment');WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;AjaxHolder$PostComment$btnSubmit&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" type=submit value=提交 name=AjaxHolder$PostComment$btnSubmit> 
+    </TD>
+    <TD colSpan=2 height=23>&nbsp; <A id=AjaxHolder_PostComment_lnkLogin 
+      href="http://www.cnblogs.com/logout.aspx?ReturnURL=http://www.cnblogs.com/jaic-xiao/archive/2008/05/31/1211335.html">注销</A>&nbsp;&nbsp;<A 
+      id=AjaxHolder_PostComment_linkLoginComment 
+      onclick="if(document.getElementById('AjaxHolder_PostComment_tbComment').value != '') return confirm('未提交的评论内容将会丢失, 你真的要进入高级评论吗?');" 
+      href="http://www.cnblogs.com/jaic-xiao/archive/2008/05/31/1211335.html?login=1#Post">使用高级评论</A>&nbsp;&nbsp;<A 
+      href="http://www.cnblogs.com/RequireRegister.aspx">新用户注册</A>&nbsp;&nbsp;<A 
+      href="http://www.cnblogs.com/jaic-xiao/archive/2008/05/31/1211335.html#Top">返回页首</A>&nbsp;&nbsp;<A 
+      id=AjaxHolder_PostComment_lbRestore 
+      onclick="Restore('AjaxHolder_PostComment_tbComment'); return false;" 
+      href="http://www.cnblogs.com/jaic-xiao/archive/2008/05/31/1211335.html#Post">恢复上次提交</A>&nbsp;&nbsp;&nbsp;&nbsp;<A 
+      id=AjaxHolder_PostComment_btnSubscibe 
+      href="javascript:__doPostBack('AjaxHolder$PostComment$btnSubscibe','')">订阅回复</A>&nbsp;&nbsp; 
+    </TD></TR>
+  <TR>
+    <TD colSpan=3><LABEL class=CtrlEnter>[使用Ctrl+Enter键可以直接提交]</LABEL></TD></TR>
+  <TR>
+    <TD colSpan=3>该文被作者在 2008-05-31 19:31 编辑过</TD></TR>
+  <TR>
+    <TD colSpan=3 height=3>&nbsp;</TD></TR>
+  <TR>
+    <TD colSpan=3></TD></TR>
+  <TR>
+    <TD colSpan=3><A id=AjaxHolder_PostComment_lbViewReaders 
+      href="javascript:__doPostBack('AjaxHolder$PostComment$lbViewReaders','')">看看谁阅读了该文章</A></TD></TR>
+  <TR>
+    <TD colSpan=3>
+      <DIV id=AjaxHolder_PostComment_RelativePosts1_divRelativePosts 
+      style="MARGIN-TOP: 2px">所属分类的其他文章:<BR><SPAN 
+      style="LIST-STYLE-TYPE: none">· <A 
+      id=AjaxHolder_PostComment_RelativePosts1_RelativePostsList_ctl00_Hyperlink1 
+      href="http://www.cnblogs.com/jaic-xiao/archive/2008/06/02/1212283.html">创建一个 
+      GridView Hover Menu( 悬停菜单 )</A><BR></SPAN><SPAN 
+      style="LIST-STYLE-TYPE: none">· <A 
+      id=AjaxHolder_PostComment_RelativePosts1_RelativePostsList_ctl01_Hyperlink1 
+      href="http://www.cnblogs.com/jaic-xiao/archive/2008/06/01/1211485.html">GridView 
+      内 onBlur 和 onFocus 时的 一行高亮控制</A><BR></SPAN><SPAN 
+      style="LIST-STYLE-TYPE: none">· <A 
+      id=AjaxHolder_PostComment_RelativePosts1_RelativePostsList_ctl02_Hyperlink1 
+      href="http://www.cnblogs.com/jaic-xiao/archive/2008/05/31/1211393.html">Asp.Net 
+      不同区别的 OnClick （ onserverclick， onclientclick ）</A><BR></SPAN><SPAN 
+      style="DISPLAY: none; LIST-STYLE-TYPE: none">· <A 
+      id=AjaxHolder_PostComment_RelativePosts1_RelativePostsList_ctl03_Hyperlink1 
+      href="http://www.cnblogs.com/jaic-xiao/archive/2008/05/31/1211335.html">搜索 
+      GridView 关键字 高亮 控制 </A><BR></SPAN><SPAN style="LIST-STYLE-TYPE: none">· <A 
+      id=AjaxHolder_PostComment_RelativePosts1_RelativePostsList_ctl04_Hyperlink1 
+      href="http://www.cnblogs.com/jaic-xiao/archive/2008/05/18/1201830.html">拖放自定义控件到页面，如何避免cc1前缀 
+      和 属性生成的默认值</A><BR></SPAN><SPAN style="LIST-STYLE-TYPE: none">· <A 
+      id=AjaxHolder_PostComment_RelativePosts1_RelativePostsList_ctl05_Hyperlink1 
+      href="http://www.cnblogs.com/jaic-xiao/archive/2008/05/17/1201155.html">企业库第4版最后版本下载</A><BR></SPAN><SPAN 
+      style="LIST-STYLE-TYPE: none">· <A 
+      id=AjaxHolder_PostComment_RelativePosts1_RelativePostsList_ctl06_Hyperlink1 
+      href="http://www.cnblogs.com/jaic-xiao/archive/2008/04/04/1137410.html">企业库4.0 
+      2008年3月发布的CTP </A><BR></SPAN></DIV>
+      <DIV style="MARGIN-TOP: 3px"><A 
+      href="http://www.cnblogs.com/">博客园首页</A>&nbsp;&nbsp;<A 
+      href="http://space.cnblogs.com/">社区</A> </DIV></TD></TR>
+  <TR>
+    <TD colSpan=3 height=5>&nbsp;</TD></TR>
+  <TR>
+    <TD colSpan=3>
+      <SCRIPT type=text/javascript><!--
+google_ad_client = "pub-4210569241504288";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "text";
+google_ad_channel ="";
+google_color_link = "6699CC";
+//--></SCRIPT>
+
+      <SCRIPT src="搜索 GridView 关键字 高亮 控制 - ZJ - 博客园_files/show_ads.js" 
+      type=text/javascript>
+</SCRIPT>
+    </TD></TR></TBODY></TABLE></DIV>
+<DIV id=AjaxHolder_PostComment_ValidationSummary1 
+style="DISPLAY: none; COLOR: red"></DIV></DIV>
+<SCRIPT language=javascript>
+
+function GetQuote(id)
+{
+    //www.cnblogs.com.ICommentService.GetCommentText(id,SetQuote);
+    BlogServer.WebService.AjaxWS.GetComment(id,SetQuote);
+}
+
+ function SetQuote(result)
+{
+    document.getElementById('AjaxHolder_PostComment_tbComment').value += ("--引用--------------------------------------------------\n"+result+"\n--------------------------------------------------------\n");
+    document.getElementById('AjaxHolder_PostComment_tbComment').focus(); 
+}
+
+function Favorite(entryID,title,url,element)
+{
+    document.getElementById(element.id).innerHTML = "<span style='color:red'>正在收藏...</span>";
+    BlogServer.WebService.AjaxWS.AddToFavorites(entryID,title,url,OnFavoriteSuccess);
+    document.getElementById(element.id).removeAttribute("href");
+    document.getElementById(element.id).removeAttribute("onclick");
+}
+
+function OnFavoriteSuccess(result)
+{
+    if(result == "请先登录")
+    {
+        window.location.href = "../../../../../login.aspx?ReturnUrl=" + window.location.href;
+    }
+    else
+    {
+        var returnstr = result.split(",");
+        var id = "lnkFavorite"+returnstr[0];
+        document.getElementById(id).innerHTML = "<span style='color:red'>" + returnstr[1] + "</span>";
+    }
+}
+</SCRIPT>
+</DIV><!--end: forFlow --></DIV><!--end: mainContent 主体内容容器-->
+<DIV id=sideBar>
+<DIV id=sideBarMain>
+<DIV id=calendar>
+<TABLE class=Cal id=Calendar1_entryCal title=Calendar cellSpacing=0 
+cellPadding=0 border=0>
+  <TBODY>
+  <TR>
+    <TD colSpan=7>
+      <TABLE class=CalTitle cellSpacing=0 border=0>
+        <TBODY>
+        <TR>
+          <TD class=CalNextPrev><A title="Go to the previous month" 
+            style="COLOR: black" 
+            href="javascript:__doPostBack('Calendar1$entryCal','V3013')">&lt;</A></TD>
+          <TD align=middle>2008年5月</TD>
+          <TD class=CalNextPrev align=right><A title="Go to the next month" 
+            style="COLOR: black" 
+            href="javascript:__doPostBack('Calendar1$entryCal','V3074')">&gt;</A></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TH class=CalDayHeader scope=col align=middle abbr=日>日</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=一>一</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=二>二</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=三>三</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=四>四</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=五>五</TH>
+    <TH class=CalDayHeader scope=col align=middle abbr=六>六</TH></TR>
+  <TR>
+    <TD class=CalOtherMonthDay align=middle>27</TD>
+    <TD class=CalOtherMonthDay align=middle>28</TD>
+    <TD class=CalOtherMonthDay align=middle>29</TD>
+    <TD class=CalOtherMonthDay align=middle>30</TD>
+    <TD align=middle>1</TD>
+    <TD align=middle>2</TD>
+    <TD class=CalWeekendDay align=middle>3</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay align=middle>4</TD>
+    <TD align=middle>5</TD>
+    <TD align=middle>6</TD>
+    <TD align=middle>7</TD>
+    <TD align=middle>8</TD>
+    <TD align=middle>9</TD>
+    <TD class=CalWeekendDay align=middle>10</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay align=middle>11</TD>
+    <TD align=middle>12</TD>
+    <TD align=middle>13</TD>
+    <TD align=middle>14</TD>
+    <TD align=middle>15</TD>
+    <TD align=middle>16</TD>
+    <TD class=CalWeekendDay align=middle><A 
+      href="http://www.cnblogs.com/jaic-xiao/archive/2008/05/17.html"><U>17</U></A></TD></TR>
+  <TR>
+    <TD class=CalWeekendDay align=middle><A 
+      href="http://www.cnblogs.com/jaic-xiao/archive/2008/05/18.html"><U>18</U></A></TD>
+    <TD align=middle><A 
+      href="http://www.cnblogs.com/jaic-xiao/archive/2008/05/19.html"><U>19</U></A></TD>
+    <TD align=middle>20</TD>
+    <TD align=middle>21</TD>
+    <TD align=middle>22</TD>
+    <TD align=middle>23</TD>
+    <TD class=CalWeekendDay align=middle>24</TD></TR>
+  <TR>
+    <TD class=CalWeekendDay align=middle>25</TD>
+    <TD align=middle>26</TD>
+    <TD align=middle>27</TD>
+    <TD align=middle>28</TD>
+    <TD align=middle>29</TD>
+    <TD align=middle>30</TD>
+    <TD class=CalWeekendDay align=middle><A 
+      href="http://www.cnblogs.com/jaic-xiao/archive/2008/05/31.html"><U>31</U></A></TD></TR>
+  <TR>
+    <TD class=CalOtherMonthDay align=middle>1</TD>
+    <TD class=CalOtherMonthDay align=middle>2</TD>
+    <TD class=CalTodayDay align=middle>3</TD>
+    <TD class=CalOtherMonthDay align=middle>4</TD>
+    <TD class=CalOtherMonthDay align=middle>5</TD>
+    <TD class=CalOtherMonthDay align=middle>6</TD>
+    <TD class=CalOtherMonthDay align=middle>7</TD></TR></TBODY></TABLE></DIV>
+<DIV id=leftcontentcontainer>
+<DIV class=catListInteraction>
+<H3 class=catListTitle>与我互动</H3>
+<UL>
+  <LI><A class=sendMsg id=SingleColumn1_ctl00_lnkSendMsg 
+  href="http://space.cnblogs.com/msg/send/çè§">给我发短消息</A> </LI></UL></DIV>
+<DIV class=catListLink>
+<H3 class=catListTitle>常用链接</H3>
+<UL>
+  <LI><A id=SingleColumn1_ctl01_rptMainLinks_ctl00_lnkLinkItem 
+  href="http://www.cnblogs.com/jaic-xiao/MyPosts.html">我的随笔</A> 
+  <LI><A id=SingleColumn1_ctl01_rptMainLinks_ctl01_lnkLinkItem 
+  href="http://space.cnblogs.com/jaic-xiao">我的空间</A> 
+  <LI><A id=SingleColumn1_ctl01_rptMainLinks_ctl02_lnkLinkItem 
+  href="http://space.cnblogs.com/msg/recent">我的短信</A> 
+  <LI><A id=SingleColumn1_ctl01_rptMainLinks_ctl03_lnkLinkItem 
+  href="http://www.cnblogs.com/jaic-xiao/MyComments.html">我的评论</A> 
+  <LI><A id=itemListLink 
+  onclick="this.blur();WarpClass('itemListLink', 'itemListLin_con');return false;" 
+  href="http://www.cnblogs.com/jaic-xiao/archive/2008/05/31/1211335.html#">更多链接</A> 
+  </LI></UL>
+<DIV id=itemListLin_con style="DISPLAY: none">
+<UL>
+  <LI><A id=SingleColumn1_ctl01_repeaterLinks_ctl00_lnkLinkItem title=我发表过评论的随笔 
+  href="http://www.cnblogs.com/jaic-xiao/OtherPosts.html">我的参与</A> 
+  <LI><A id=SingleColumn1_ctl01_repeaterLinks_ctl01_lnkLinkItem 
+  href="http://www.cnblogs.com/jaic-xiao/MyReads.html">我的阅读</A> 
+  <LI><A id=SingleColumn1_ctl01_repeaterLinks_ctl02_lnkLinkItem 
+  href="http://www.cnblogs.com/jaic-xiao/MyNews.html">我的新闻</A> 
+  <LI><A id=SingleColumn1_ctl01_repeaterLinks_ctl03_lnkLinkItem 
+  href="http://www.cnblogs.com/jaic-xiao/RecentComments.html">最新评论</A> 
+  <LI><A id=SingleColumn1_ctl01_repeaterLinks_ctl04_lnkLinkItem 
+  href="http://www.cnblogs.com/jaic-xiao/tag/">我的标签</A> </LI></UL></DIV></DIV>
+<DIV class=catListNoteBook>
+<H3 class=catListTitle>留言簿</H3>
+<UL>
+  <LI><A class=sendMSG id=SingleColumn1_ctl02_lnkMessages 
+  href="http://www.cnblogs.com/jaic-xiao/Contact.aspx?id=1">给我留言</A> <!--<li><a id="SingleColumn1_ctl02_lnkPublicMsgView" class="viewPubMSG" href="http://www.cnblogs.com/jaic-xiao/default.aspx?opt=msg">查看公开留言</a></li>-->
+  <LI><A class=viewPerMSG id=SingleColumn1_ctl02_lnkPrivateMsgView 
+  href="http://www.cnblogs.com/jaic-xiao/admin/MyMessages.aspx" 
+  target=_blank>查看留言</A> </LI></UL></DIV>
+<DIV class=catListTag>
+<H3 class=catListTitle>我的标签</H3>
+<UL>
+  <LI><A 
+  href="http://www.cnblogs.com/jaic-xiao/tag/Aspï¿¥net3ï¿¥5/">Asp.net3.5(6)</A>
+  <LI><A href="http://www.cnblogs.com/jaic-xiao/tag/AjAX/">AjAX(2)</A> 
+</LI></UL></DIV>
+<DIV class=catListPostCategory>
+<H3 class=catListTitle>随笔分类<SPAN 
+style="FONT-WEIGHT: normal; FONT-SIZE: 11px">(9)</SPAN></H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl01_Link 
+  href="http://www.cnblogs.com/jaic-xiao/category/136329.html">Asp.Net(7)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl01_RssLink 
+  title="Subscribe to Asp.Net(7)" 
+  href="http://www.cnblogs.com/jaic-xiao/category/136329.html/rss">(rss)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl02_Link 
+  href="http://www.cnblogs.com/jaic-xiao/category/136330.html">Asp.Net 
+  Ajax(2)</A> <A 
+  id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl02_RssLink 
+  title="Subscribe to Asp.Net Ajax(2)" 
+  href="http://www.cnblogs.com/jaic-xiao/category/136330.html/rss">(rss)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl03_Link 
+  href="http://www.cnblogs.com/jaic-xiao/category/136332.html">Silverlight</A> 
+  <A id=SingleColumn1_Categories_CatList_ctl00_LinkList_ctl03_RssLink 
+  title="Subscribe to Silverlight" 
+  href="http://www.cnblogs.com/jaic-xiao/category/136332.html/rss">(rss)</A> 
+  </LI></UL></DIV>
+<DIV class=catListPostArchive>
+<H3 class=catListTitle>随笔档案<SPAN 
+style="FONT-WEIGHT: normal; FONT-SIZE: 11px">(9)</SPAN></H3>
+<UL>
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl01_Link 
+  href="http://www.cnblogs.com/jaic-xiao/archive/2008/06.html">2008年6月 (2)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl02_Link 
+  href="http://www.cnblogs.com/jaic-xiao/archive/2008/05.html">2008年5月 (6)</A> 
+  <LI><A id=SingleColumn1_Categories_CatList_ctl01_LinkList_ctl03_Link 
+  href="http://www.cnblogs.com/jaic-xiao/archive/2008/04.html">2008年4月 (1)</A> 
+  </LI></UL></DIV>
+<DIV class=catListEssay>
+<H3 class=catListTitle>最新随笔</H3>
+<UL>
+  <LI><A 
+  id=SingleColumn1_ctl06_RecentPostsList_ctl00_RecentPostsList2_ctl00_Hyperlink1 
+  href="http://www.cnblogs.com/jaic-xiao/archive/2008/06/02/1212283.html">1.&nbsp;创建一个 
+  GridView Hover Menu( 悬停菜单 )</A> 
+  <LI><A 
+  id=SingleColumn1_ctl06_RecentPostsList_ctl01_RecentPostsList2_ctl00_Hyperlink1 
+  href="http://www.cnblogs.com/jaic-xiao/archive/2008/06/01/1211485.html">2.&nbsp;GridView 
+  内 onBlur 和 onFocus 时的 一行高亮控制</A> 
+  <LI><A 
+  id=SingleColumn1_ctl06_RecentPostsList_ctl02_RecentPostsList2_ctl00_Hyperlink1 
+  href="http://www.cnblogs.com/jaic-xiao/archive/2008/05/31/1211393.html">3.&nbsp;Asp.Net 
+  不同区别的 OnClick （ onserverclick， onclientclick ）</A> 
+  <LI><A 
+  id=SingleColumn1_ctl06_RecentPostsList_ctl02_RecentPostsList2_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/jaic-xiao/archive/2008/05/31/1211335.html">4.&nbsp;搜索 
+  GridView 关键字 高亮 控制 </A>
+  <LI><A 
+  id=SingleColumn1_ctl06_RecentPostsList_ctl03_RecentPostsList2_ctl00_Hyperlink1 
+  href="http://www.cnblogs.com/jaic-xiao/archive/2008/05/19/1202306.html">5.&nbsp;Asp.Net 
+  Ajax 之 取消异步PostBack（ 一 ）</A> 
+  <LI><A 
+  id=SingleColumn1_ctl06_RecentPostsList_ctl04_RecentPostsList2_ctl00_Hyperlink1 
+  href="http://www.cnblogs.com/jaic-xiao/archive/2008/05/18/1201830.html">6.&nbsp;拖放自定义控件到页面，如何避免cc1前缀 
+  和 属性生成的默认值</A> 
+  <LI><A 
+  id=SingleColumn1_ctl06_RecentPostsList_ctl05_RecentPostsList2_ctl00_Hyperlink1 
+  href="http://www.cnblogs.com/jaic-xiao/archive/2008/05/17/1201526.html">7.&nbsp;页面第一次打开即给用户异步提示之Asp.net 
+  Ajax延迟加载UpdatePanel</A> 
+  <LI><A 
+  id=SingleColumn1_ctl06_RecentPostsList_ctl05_RecentPostsList2_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/jaic-xiao/archive/2008/05/17/1201155.html">8.&nbsp;企业库第4版最后版本下载</A> 
+
+  <LI><A 
+  id=SingleColumn1_ctl06_RecentPostsList_ctl06_RecentPostsList2_ctl00_Hyperlink1 
+  href="http://www.cnblogs.com/jaic-xiao/archive/2008/04/04/1137410.html">9.&nbsp;企业库4.0 
+  2008年3月发布的CTP </A></LI></UL></DIV>
+<SCRIPT language=JavaScript>
+function SearchGoogle(key,evt,site)
+		{
+			if(evt.keyCode==13 || evt.keyCode==0 || evt.type =='click')
+			{
+				key.focus();
+				var keystr = encodeURIComponent(key.value);
+				url = "http://www.google.com/search?q=";
+				url = url+keystr;
+				url += "&ie=UTF-8&oe=GB2312&hl=zh-CN&domains="+site+"&sitesearch="+site;
+				window.location=url;
+				return false;
+			}
+		}
+</SCRIPT>
+
+<DIV class=mySearch>
+<H3 class=catListTitle>搜索</H3>
+<DIV><INPUT id=q 
+onkeydown="return SearchGoogle(document.getElementById('q'),event,'http://www.cnblogs.com/jaic-xiao/')" 
+name=q>&nbsp;<INPUT onclick="SearchGoogle(document.getElementById('q'),event,'http://www.cnblogs.com/jaic-xiao/')" type=button value=搜索 name=sa> 
+</DIV></DIV>
+<DIV class=catListComment>
+<H3 class=catListTitle>最新评论<A id=SingleColumn1__17f1909_RSSHyperlink1 
+title=RSS订阅最最新评论 href="http://www.cnblogs.com/jaic-xiao/CommentsRSS.aspx"><IMG 
+title=RSS订阅最最新评论 
+style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+src="搜索 GridView 关键字 高亮 控制 - ZJ - 博客园_files/xml.gif"></A></H3>
+<DIV class=divRecentCommentAticle><A class=listitem 
+id=SingleColumn1__17f1909_CommentList_ctl00_Hyperlink2 
+href="http://www.cnblogs.com/jaic-xiao/archive/2008/06/03/1211485.html#1216529">1.&nbsp;re: 
+GridView 内 onBlur 和 onFocus 时的 一行高亮控制</A> </DIV>
+<DIV class=divRecentComment>我回复过吗？？ <BR>(www.chinacmsb.cn) </DIV>
+<DIV class=divRecentCommentAticle><A class=listitem 
+id=SingleColumn1__17f1909_CommentList_ctl01_Hyperlink2 
+href="http://www.cnblogs.com/jaic-xiao/archive/2008/06/02/1212283.html#1216157">2.&nbsp;re: 
+创建一个 GridView Hover Menu( 悬停菜单 )</A> </DIV>
+<DIV class=divRecentComment>楼猪 能做个datalist的3行4列 然后隔行变色的例子？ 想淘宝的列表一样 d！！ 
+(www.chinacmsb.cn) </DIV>
+<DIV class=divRecentCommentAticle><A class=listitem 
+id=SingleColumn1__17f1909_CommentList_ctl02_Hyperlink2 
+href="http://www.cnblogs.com/jaic-xiao/archive/2008/06/02/1212283.html#1216064">3.&nbsp;re: 
+创建一个 GridView Hover Menu( 悬停菜单 )</A> </DIV>
+<DIV class=divRecentComment>(真见) </DIV>
+<DIV class=divRecentCommentAticle><A class=listitem 
+id=SingleColumn1__17f1909_CommentList_ctl03_Hyperlink2 
+href="http://www.cnblogs.com/jaic-xiao/archive/2008/06/02/1212283.html#1216060">4.&nbsp;re: 
+创建一个 GridView Hover Menu( 悬停菜单 )</A> </DIV>
+<DIV class=divRecentComment>哦，沙发：）<BR>(哦，奇怪) </DIV>
+<DIV class=divRecentCommentAticle><A class=listitem 
+id=SingleColumn1__17f1909_CommentList_ctl04_Hyperlink2 
+href="http://www.cnblogs.com/jaic-xiao/archive/2008/06/02/1211485.html#1216017">5.&nbsp;re: 
+GridView 内 onBlur 和 onFocus 时的 一行高亮控制</A> </DIV>
+<DIV class=divRecentComment>cool. (Ryan Yu) </DIV></DIV>
+<DIV class=catListView>
+<H3 class=catListTitle>阅读排行榜</H3>
+<UL>
+  <LI><A id=SingleColumn1__2480066_TopList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/jaic-xiao/archive/2008/05/17/1201155.html">1.&nbsp;企业库第4版最后版本下载(2049)</A> 
+
+  <LI><A id=SingleColumn1__2480066_TopList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/jaic-xiao/archive/2008/04/04/1137410.html">2.&nbsp;企业库4.0 
+  2008年3月发布的CTP (1508)</A> 
+  <LI><A id=SingleColumn1__2480066_TopList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/jaic-xiao/archive/2008/05/18/1201830.html">3.&nbsp;拖放自定义控件到页面，如何避免cc1前缀 
+  和 属性生成的默认值(1450)</A> 
+  <LI><A id=SingleColumn1__2480066_TopList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/jaic-xiao/archive/2008/05/17/1201526.html">4.&nbsp;页面第一次打开即给用户异步提示之Asp.net 
+  Ajax延迟加载UpdatePanel(1352)</A> 
+  <LI><A id=SingleColumn1__2480066_TopList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/jaic-xiao/archive/2008/06/01/1211485.html">5.&nbsp;GridView 
+  内 onBlur 和 onFocus 时的 一行高亮控制(1127)</A> </LI></UL></DIV>
+<DIV class=catListFeedback>
+<H3 class=catListTitle>评论排行榜</H3>
+<UL>
+  <LI><A id=SingleColumn1__d2db6c_TopList_ctl01_Hyperlink1 
+  href="http://www.cnblogs.com/jaic-xiao/archive/2008/05/17/1201155.html">1.&nbsp;企业库第4版最后版本下载(17)</A> 
+
+  <LI><A id=SingleColumn1__d2db6c_TopList_ctl02_Hyperlink1 
+  href="http://www.cnblogs.com/jaic-xiao/archive/2008/06/01/1211485.html">2.&nbsp;GridView 
+  内 onBlur 和 onFocus 时的 一行高亮控制(14)</A> 
+  <LI><A id=SingleColumn1__d2db6c_TopList_ctl03_Hyperlink1 
+  href="http://www.cnblogs.com/jaic-xiao/archive/2008/05/31/1211335.html">3.&nbsp;搜索 
+  GridView 关键字 高亮 控制 (7)</A> 
+  <LI><A id=SingleColumn1__d2db6c_TopList_ctl04_Hyperlink1 
+  href="http://www.cnblogs.com/jaic-xiao/archive/2008/05/18/1201830.html">4.&nbsp;拖放自定义控件到页面，如何避免cc1前缀 
+  和 属性生成的默认值(7)</A> 
+  <LI><A id=SingleColumn1__d2db6c_TopList_ctl05_Hyperlink1 
+  href="http://www.cnblogs.com/jaic-xiao/archive/2008/04/04/1137410.html">5.&nbsp;企业库4.0 
+  2008年3月发布的CTP (6)</A> </LI></UL></DIV></DIV></DIV><!--end: sideBarMain --></DIV><!--end: sideBar 侧边栏容器 -->
+<DIV class=clear></DIV></DIV><!--end: main -->
+<DIV class=clear></DIV>
+<DIV id=footer><!--done-->Copyright ©2008 真见 </DIV><!--end: footer --></DIV><!--end: home 自定义的最大容器 -->
+<SCRIPT type=text/javascript>
+//<![CDATA[
+var Page_ValidationSummaries =  new Array(document.getElementById("AjaxHolder_PostComment_ValidationSummary1"));
+var Page_Validators =  new Array(document.getElementById("AjaxHolder_PostComment_RequiredFieldValidator1"), document.getElementById("AjaxHolder_PostComment_RequiredFieldValidator2"), document.getElementById("AjaxHolder_PostComment_revContactMail"), document.getElementById("AjaxHolder_PostComment_RequiredFieldValidator3"));
+//]]>
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+//<![CDATA[
+var AjaxHolder_PostComment_RequiredFieldValidator1 = document.all ? document.all["AjaxHolder_PostComment_RequiredFieldValidator1"] : document.getElementById("AjaxHolder_PostComment_RequiredFieldValidator1");
+AjaxHolder_PostComment_RequiredFieldValidator1.controltovalidate = "AjaxHolder_PostComment_tbTitle";
+AjaxHolder_PostComment_RequiredFieldValidator1.errormessage = "请输入标题";
+AjaxHolder_PostComment_RequiredFieldValidator1.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+AjaxHolder_PostComment_RequiredFieldValidator1.initialvalue = "";
+var AjaxHolder_PostComment_RequiredFieldValidator2 = document.all ? document.all["AjaxHolder_PostComment_RequiredFieldValidator2"] : document.getElementById("AjaxHolder_PostComment_RequiredFieldValidator2");
+AjaxHolder_PostComment_RequiredFieldValidator2.controltovalidate = "AjaxHolder_PostComment_tbName";
+AjaxHolder_PostComment_RequiredFieldValidator2.errormessage = "请输入你的姓名";
+AjaxHolder_PostComment_RequiredFieldValidator2.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+AjaxHolder_PostComment_RequiredFieldValidator2.initialvalue = "";
+var AjaxHolder_PostComment_revContactMail = document.all ? document.all["AjaxHolder_PostComment_revContactMail"] : document.getElementById("AjaxHolder_PostComment_revContactMail");
+AjaxHolder_PostComment_revContactMail.controltovalidate = "AjaxHolder_PostComment_tbEmail";
+AjaxHolder_PostComment_revContactMail.errormessage = "邮件地址无效";
+AjaxHolder_PostComment_revContactMail.evaluationfunction = "RegularExpressionValidatorEvaluateIsValid";
+AjaxHolder_PostComment_revContactMail.validationexpression = "^([0-9a-zA-Z+-._]([+-._\\w]*[0-9a-zA-Z+-._])*@([0-9a-zA-Z][-\\w]*\\.)+[a-zA-Z]{2,9})$";
+var AjaxHolder_PostComment_RequiredFieldValidator3 = document.all ? document.all["AjaxHolder_PostComment_RequiredFieldValidator3"] : document.getElementById("AjaxHolder_PostComment_RequiredFieldValidator3");
+AjaxHolder_PostComment_RequiredFieldValidator3.controltovalidate = "AjaxHolder_PostComment_tbComment";
+AjaxHolder_PostComment_RequiredFieldValidator3.errormessage = "请输入评论内容";
+AjaxHolder_PostComment_RequiredFieldValidator3.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+AjaxHolder_PostComment_RequiredFieldValidator3.initialvalue = "";
+var AjaxHolder_PostComment_ValidationSummary1 = document.all ? document.all["AjaxHolder_PostComment_ValidationSummary1"] : document.getElementById("AjaxHolder_PostComment_ValidationSummary1");
+AjaxHolder_PostComment_ValidationSummary1.showmessagebox = "True";
+AjaxHolder_PostComment_ValidationSummary1.showsummary = "False";
+//]]>
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+<!--
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+// -->
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+//<![CDATA[
+
+document.getElementById('AjaxHolder_PostComment_ValidationSummary1').dispose = function() {
+    Array.remove(Page_ValidationSummaries, document.getElementById('AjaxHolder_PostComment_ValidationSummary1'));
+}
+Sys.Application.initialize();
+
+document.getElementById('AjaxHolder_PostComment_RequiredFieldValidator1').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('AjaxHolder_PostComment_RequiredFieldValidator1'));
+}
+
+document.getElementById('AjaxHolder_PostComment_RequiredFieldValidator2').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('AjaxHolder_PostComment_RequiredFieldValidator2'));
+}
+
+document.getElementById('AjaxHolder_PostComment_revContactMail').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('AjaxHolder_PostComment_revContactMail'));
+}
+
+document.getElementById('AjaxHolder_PostComment_RequiredFieldValidator3').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('AjaxHolder_PostComment_RequiredFieldValidator3'));
+}
+//]]>
+</SCRIPT>
+</FORM>
+<SCRIPT src="搜索 GridView 关键字 高亮 控制 - ZJ - 博客园_files/ShowHidden.js" 
+type=text/javascript></SCRIPT>
+</BODY></HTML>

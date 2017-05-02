@@ -1,0 +1,13 @@
+﻿stsadm -o setproperty -propertyname peoplepicker-onlysearchwithinsitecollection -propertyvalue yes -url http://SiteUrl 
+
+如果你看到Operation completed successfully 的提示，那说明这个命令已经起作用了。
+ 
+测试下吧：
+ 
+在打开的People Picker中搜索非站点内的用户，肯定搜不到了。
+ 
+注意：尽管搜索不到用户，但是如果知道用户的Login Name，你还是可以往站点集添加新用户的。
+ 
+如果你要取消这个限制，只要把PropertyValue 设置为No即可。
+
+<span style="background-color: rgb(255, 255, 0);">stsadm -o setproperty -propertyname peoplepicker-onlysearchwithinsitecollection -propertyvalue yes -url http://SiteUrl</span>

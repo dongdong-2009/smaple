@@ -1,0 +1,41 @@
+/*
+ * 开发者：
+ * 创建日期：<%Data%>
+ * 最后修改日期：<%Data%>
+ * 描述：
+ * */
+
+using System;
+using System.Collections.Generic;
+using System.Text;
+using DawnPro.WebArchitechture.DAL;
+using DawnProArchitechture.DataAccess.Entity;
+
+
+namespace DawnProArchitechture.DataAccess.AbstractCommand
+{
+    public abstract class <%TableName%>Command:DawnProCommand
+    {
+        /// <summary>
+        /// 与此类相关的实体类的类型
+        /// </summary>
+        public override Type EntityType
+        {
+            get
+            {
+                return typeof(<%TableName%>Entity);
+            }
+        }
+
+        /// <summary>
+        /// 数据库表主键列的名字
+        /// </summary>
+        public override string IDName
+        {
+            get 
+            {
+                return <%ID%>;
+            }
+        }
+    }
+}

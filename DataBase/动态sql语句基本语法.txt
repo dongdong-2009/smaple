@@ -1,0 +1,102 @@
+1 :普通SQL语句可以用Exec执行
+
+      例:      Select * from tableName 
+
+                Exec('select * from tableName') 
+
+                Exec sp_executesql N'select * from tableName'    -- 请注意字符串前一定要加N 
+
+
+2:字段名，表名，数据库名之类作为变量时，必须用动态SQL 
+
+
+    错误:        declare @fname varchar(20) 
+
+                set @fname = 'FiledName' 
+
+                Select @fname from tableName              -- 错误,不会提示错误，但结果为固定值FiledName,并非所要。
+
+    正确:      Exec('select ' + @fname + ' from tableName')     -- 请注意加号前后的单引号的边上加空格
+
+
+    当然将字符串改成变量的形式也可
+
+                declare @fname varchar(20) 
+
+                set @fname = 'FiledName' --设置字段名
+
+
+                declare @s varchar(1000) 
+
+                set @s = 'select ' + @fname + ' from tableName' 
+
+                Exec(@s)                -- 成功
+
+                exec sp_executesql @s   -- 此句会报错
+
+              --注：@s参数必须为ntext或nchar或nvarchar类型,必须将declare @s varchar(1000) 改为declare @s Nvarchar(1000) 
+
+
+
+
+               如下：
+                declare @s Nvarchar(1000) -- 注意此处改为nvarchar(1000) 
+
+
+                set @fname = 'FiledName' --设置字段名
+                set @s = 'select ' + @fname + ' from tableName' 
+
+                Exec(@s)                -- 成功    
+
+                exec sp_executesql @s   -- 此句正确
+
+
+3. 输入或输出参数
+
+      (1)输入参数:
+          declare @QueryString nvarchar(1000) --动态查询语句变量(注：必须为ntext或nchar哐nvarchar类型，不能是varchar类型)
+          declare @paramstring nvarchar(200) --设置动态语句中的参数的字符串(注：必须为ntext或nchar哐nvarchar类型，不能是varchar类型)
+          declare @input_id int--定义需传入动态语句的参数的值
+
+          set @QueryString='select * from tablename  where id=@id'  --id为字段名，@id为要传入的参数
+          set @paramstring='@id int' --设置动态语句中参数的定义的字符串
+          set @input_id =1  --设置需传入动态语句的参数的值为1
+          exec sp_executesql @querystring,@paramstring,@id=@input_id　　
+
+          若有多个参数:
+           declare @QueryString nvarchar(1000) --动态查询语句变量(注：必须为ntext或nchar哐nvarchar类型，不能是varchar类型)
+          declare @paramstring nvarchar(200) --设置动态语句中的参数的字符串(注：必须为ntext或nchar哐nvarchar类型，不能是varchar类型)
+          declare @input_id int--定义需传入动态语句的参数的值,参数1
+          declare @input_name varchar(20)--定义需传入动态语句的参数的值,参数2
+
+          set @QueryString='select * from tablename  where id=@id and name=@name'   --id与name为字段名，@id与@name为要传入的参数
+          set @paramstring='@id int,@name varchar(20)' --设置动态语句中参数的定义的字符串,多个参数用","隔开
+          set @input_id =1  --设置需传入动态语句的参数的值为1
+          set @input_name='张三'   --设置需传入动态语句的参数的值为"张三"
+          exec sp_executesql @querystring,@paramstring,@id=@input_id,@name=@input_name　--请注意参数的顺序
+     (2)输出参数
+
+             declare @num int, @sqls nvarchar(4000) 
+            set @sqls='select count(*) from tableName' 
+            exec(@sqls) 
+
+        --如何将exec执行结果放入变量中？          
+
+        declare @QueryString nvarchar(1000) --动态查询语名变量(注：必须为ntext或nchar哐nvarchar类型，不能是varchar类型)
+        declare @paramstring nvarchar(200) --设置动态语句中的参数的字符串(注：必须为ntext或nchar哐nvarchar类型，不能是varchar类型)
+        declare @output_result int--查询结果赋给@output_result 
+
+        set @QueryString='select @totalcount=count(*) from tablename' --@totalcount　为输出结果参数
+        set @paramstring='@totalcount int output' --设置动态语句中参数的定义的字符串,多个参数用","隔开
+        exec sp_executesql @querystring,@paramstring,@totalcount=@output_result output
+        select @output_result
+
+        当然，输入与输出参数可以一起使用，大家可以自己去试一试。
+        另外，动态语句查询的结果集要输出的话，我只想到以下用临时表的方法，不知各位有没有更好的方法.
+        IF object_id('[tempdb].[dbo].#tmp') IS NOT NULL --判断临时表#tmp是否存在,存在则删除
+            drop table #tmp
+        select * into #tmp from tablename where 1=2 --创建临时表#tmp,其结构与tablename相同
+
+        declare @QueryString nvarchar(1000) --动态查询语名变量(注：必须为ntext或nchar哐nvarchar类型，不能是varchar类型)
+        set @QueryString='select * from tablename '
+        insert into #tmp(field1,field2,...) exec(@querystirng)  

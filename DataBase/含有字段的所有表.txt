@@ -1,0 +1,16 @@
+﻿select a.[name] 表名 from sysobjects a,
+
+(
+
+      select [id],count(*) b from syscolumns
+
+      where [name] like '%allow%'
+
+      group by [id]
+
+)
+
+b where a.[id]=b.[id]
+
+
+ 

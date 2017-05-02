@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package dslVersion="1.0.0.0" Id="f567307d-b05b-4704-b797-e9a4812df3c3" solutionId="f567307d-b05b-4704-b797-e9a4812df3c3" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel" name="PluggableWorkflowServices">
+    <features>
+        <featureReference itemId="5956e07f-7932-4944-a46c-f1f3cdff6bd8" />
+    </features>
+</package>

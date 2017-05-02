@@ -1,0 +1,6 @@
+bin\Debug\PostBackControls.dll
+bin\Debug\PostBackControls.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\PostBackControls.dll
+obj\Debug\PostBackControls.pdb
+obj\Debug\PostBackControls.AutoFlexTextArea.bmp

@@ -1,0 +1,75 @@
+create procedure SqlDataPaging
+@tbName varchar(255),               --表名
+@tbFields varchar(1000),            --返回字段
+@OrderField varchar(255),           --排序的字段名
+@PageSize int,                      --页尺寸
+@PageIndex int,                     --页码
+@OrderType bit,                     --排序类型,1是升序,0是降序
+@strWhere varchar(1500),            --查询条件
+@Total int output                   --返回总记录数
+as
+begin
+declare @strSql varchar(5000)       --主语句
+declare @strOrder varchar(200)      --排序
+declare @strSqlCount nvarchar(500)  --查询记录总数主语句
+declare @strtemp varchar(50)        --排序附加语句
+--------------排序-----------------1是降序,0为升序
+if @OrderType !=0
+    begin
+        set @strtemp = ' > (select max('
+        set @strOrder = ' order by ' + @OrderField + ' asc '
+    end
+else
+    begin
+        set @strtemp = ' < (select min('
+        set @strOrder = ' order by ' + @OrderField + ' desc'
+    end
+--------------总记录数---------------
+if @strWhere != ''
+    begin
+        set @strSqlCount = 'Select @TotalCout=count(*) from ' + @tbName
+                         + ' where ' + @strWhere
+    end
+else
+    begin
+        set @strSqlCount = 'Select @TotalCout = count(*) from ' + @tbName
+    end
+--------------如果是第一页------------
+if @PageIndex = 1
+    begin
+        if @strWhere != ''
+            begin
+                set @strSql = 'Select top ' + cast(@PageSize as varchar) + ' ' + @tbFields
+                            + ' from ' + @tbName + ' where ' + @strWhere + ' ' + @strOrder
+            end
+        else
+            begin
+                set @strSql = 'Select top ' + cast(@PageSize as varchar) + ' ' + @tbFields
+                            + ' from ' + @tbName + ' ' + @strOrder
+            end
+    end
+else
+    begin
+        if @strWhere != ''
+            begin
+                set @strSql = 'Select top ' + cast(@PageSize as varchar) + ' ' + @tbFields 
+                            + ' from ' + @tbName + ' where ' + @OrderField + ' '
+                            + @strtemp + @OrderField + ') from (select top '
+                            + cast((@PageIndex - 1) * @PageSize as varchar) + ' '
+                            + @OrderField + ' from ' + @tbName
+                            + @strWhere + @strOrder + ') as tb)' + @strOrder
+            end
+        else
+            begin
+                set @strSql = 'Select top ' + cast(@PageSize as varchar) + ' ' + @tbFields 
+                            + ' from ' + @tbName + ' where ' + @OrderField + ' '
+                            + @strtemp + @OrderField + ') from (select top '
+                            + cast((@PageIndex - 1) * @PageSize as varchar) + ' '
+                            + @OrderField + ' from ' + @tbName 
+                            + @strOrder + ') as tb)' + @strOrder
+            end
+    end
+exec sp_executesql @strSqlCount, N'@TotalCout int output', @Total output
+print @strSql
+exec(@strSql)
+end

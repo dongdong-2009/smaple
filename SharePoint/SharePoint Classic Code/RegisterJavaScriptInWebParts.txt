@@ -1,0 +1,17 @@
+in farm solutions
+ScriptLink.Register(this.Page, "Custom.js", false);
+
+
+in sandboxed solutions
+protected override void RenderContents(HtmlTextWriter writer) {
+string url = SPContext.Current.Web.Url + "/SiteAssets/script.js";
+writer.Write("<script type='text/javascript' src='"
++ url + "'></script>");
+base.RenderContents(writer);
+}
+
+this.Page.ClientScript.RegisterStartupScript(
+typeof(MyWebPart),
+"helloworld",
+"alert('Hello World');",
+true);

@@ -1,0 +1,26 @@
+﻿[DllImport("advapi32.dll")]
+public static extern uint EventActivityIdControl(
+uint controlCode,
+ref Guid activityId);
+public const uint EVENT_ACTIVITY_CTRL_GET_ID = 1;
+protected override void CreateChildControls() {
+try {
+// code that throws an Exception
+}
+catch (FormatException ex) {
+SPDiagnosticsService diagSvc = SPDiagnosticsService.Local;
+diagSvc.WriteTrace(0,
+new SPDiagnosticsCategory("Exception",
+TraceSeverity.Monitorable,
+EventSeverity.Error),
+TraceSeverity.Monitorable,
+"An exception occurred: {0}",
+new object[] {ex});
+Guid g = Guid.Empty;
+EventActivityIdControl(EVENT_ACTIVITY_CTRL_GET_ID, ref g);
+this.Controls.Add(new Label {
+Text = string.Format(
+"An error occurred with correlation id {0}", g)
+});
+}
+}

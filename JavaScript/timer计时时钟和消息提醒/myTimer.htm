@@ -1,0 +1,56 @@
+<html>
+<head>
+<title>考试时钟</title>
+<META http-equiv=Content-Type content="text/html; charset=gb2312">
+<SCRIPT src="timer.js" language="javascript" type=text/javascript charset="gb2312"></SCRIPT>
+
+<SCRIPT src="msgbox.js" language="javascript" type=text/javascript charset="gb2312"></SCRIPT>
+<link rel="stylesheet" href="timer.css" type="text/css"/>
+<style type="text/css">
+body
+{font-size:12px;margin-top:150px;}
+table
+{font-size:12px;}
+input
+{text-align:center;}
+</style>
+<script type="text/javascript" language="javascript">
+window.onload=function(){
+document.all.txtTime.value=new Date().toLocaleTimeString();
+var index=document.all.txtTime.value.lastIndexOf(":");
+var alertTime=document.all.txtTime.value.substr(0,index+1)+(document.all.txtTime.value.substr(index+1)*1+5);
+document.all.txtAlert.value=alertTime;
+showExamClock(null,alertTime,null,null,'dvTimer');}
+function setTime()
+{
+   var time=document.all.txtTime.value;
+   var alertTime=document.all.txtAlert.value;
+   var direObj=document.getElementsByName("direction");
+   var dire="asc";
+   var alertFlag=false;
+   if(document.getElementsByName("alertPic")[1].checked)alertFlag=true;
+   if(direObj[1].checked) dire="desc";   
+   showExamClock(time,alertTime,dire,alertFlag);
+}
+</script>
+</head>
+<body>
+<center>
+<div style="padding-bottom:2px;"><img src="timeNum/time.jpg" alt="剩余时间" /></div>
+<div id="dvTimer">
+</div>
+<br/>
+<table>
+<tr><td>开始时间:<input type="text" size="20" id="txtTime"/></td></tr>
+<tr><td>报警时间:<input type="text" size="20" id="txtAlert"/></td></tr>
+<tr><td>报警图标:<input type="radio" id="rdFlash" name="alertPic" checked/><label for="rdFlash">不闪</label>
+<input type="radio" id="rdNoFlash" name="alertPic" /><label for="rdNoFlash">闪动</label></td></tr>
+<tr><td>计时方向:<input type="radio" id="rdAsc" value="asc" name="direction" checked/><label for="rdAsc">正计</label>
+<input type="radio" id="rdDesc" name="direction" /><label for="rdDesc">倒计</label>
+</td></tr>
+<tr><td align="center"><input type="submit" value="加载配置" onclick="setTime()"/></td></tr>
+<tr><td align="center"><br/><br/><input type="input" id="txtMessage" value="请输入你要显示的内容!"/>&nbsp;<input type="button"  value="显示提醒" onclick="displayMsgbox(document.all.txtMessage.value,100)"/></td></tr>
+</table>
+</center>
+</body>
+</html>

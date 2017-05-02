@@ -1,0 +1,84 @@
+using System;
+using System.Collections;
+using System.ComponentModel;
+using System.Web;
+using System.Web.SessionState;
+
+namespace ASPNETThread 
+{
+	/// <summary>
+	/// Global 的摘要说明。
+	/// </summary>
+	public class Global : System.Web.HttpApplication
+	{
+		public Global()
+		{
+			InitializeComponent();
+		}	
+		
+		protected void Application_Start(Object sender, EventArgs e)
+		{
+			CheckOnline online=new CheckOnline();
+		}
+ 
+		protected void Session_Start(Object sender, EventArgs e)
+		{
+			//得到在线用户列表
+			User newuser=new User();
+			newuser.name=Session.SessionID ;
+			newuser.sessionid=Session.SessionID ;
+			newuser.lasttime=newuser.curtime=DateTime.Now;
+        
+			OnLineUser alluser= new OnLineUser();
+			if(alluser.AddUserToOnLine(newuser))
+			{
+				Response.Write ("用户添加成功<br>");
+			}
+			else
+			{
+				Response.Write ("用户添加失败<br>");
+			}
+		}
+
+		protected void Application_BeginRequest(Object sender, EventArgs e)
+		{
+
+		}
+
+		protected void Application_EndRequest(Object sender, EventArgs e)
+		{
+
+		}
+
+		protected void Application_AuthenticateRequest(Object sender, EventArgs e)
+		{
+
+		}
+
+		protected void Application_Error(Object sender, EventArgs e)
+		{
+
+		}
+
+		protected void Session_End(Object sender, EventArgs e)
+		{
+
+		}
+
+		protected void Application_End(Object sender, EventArgs e)
+		{
+
+		}
+			
+		#region Web Form Designer generated code
+		/// <summary>
+		/// 设计器支持所需的方法 - 不要使用代码编辑器修改
+		/// 此方法的内容。
+		/// </summary>
+		private void InitializeComponent()
+		{    
+		}
+		#endregion
+	}
+}
+

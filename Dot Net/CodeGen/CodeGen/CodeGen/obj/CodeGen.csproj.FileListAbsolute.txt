@@ -1,0 +1,10 @@
+C:\Documents and Settings\Administrator.SZLANYOU-7NGZ4R\桌面\CodeGen\CodeGen\CodeGen\bin\Debug\CodeGen.exe
+C:\Documents and Settings\Administrator.SZLANYOU-7NGZ4R\桌面\CodeGen\CodeGen\CodeGen\bin\Debug\CodeGen.pdb
+C:\Documents and Settings\Administrator.SZLANYOU-7NGZ4R\桌面\CodeGen\CodeGen\CodeGen\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator.SZLANYOU-7NGZ4R\桌面\CodeGen\CodeGen\CodeGen\obj\Debug\CodeGen.exe
+C:\Documents and Settings\Administrator.SZLANYOU-7NGZ4R\桌面\CodeGen\CodeGen\CodeGen\obj\Debug\CodeGen.pdb
+D:\desktop\CodeGen\CodeGen\CodeGen\obj\Debug\CodeGen.exe
+D:\desktop\CodeGen\CodeGen\CodeGen\obj\Debug\CodeGen.pdb
+D:\desktop\CodeGen\CodeGen\CodeGen\bin\Debug\CodeGen.exe
+D:\desktop\CodeGen\CodeGen\CodeGen\bin\Debug\CodeGen.pdb
+D:\desktop\CodeGen\CodeGen\CodeGen\obj\Debug\ResolveAssemblyReference.cache

@@ -1,0 +1,83 @@
+body 
+{
+	font-family: Trebuchet MS, Tahoma, Verdana, Arial;
+}
+
+.bookContainer, .bookContainer-odd
+{
+	position: relative;
+	background-color: White;
+	clear: both;
+	padding: 10px;
+	height: 240px;
+}
+
+.bookContainer-odd 
+{
+	background-color: #EBEBEB;
+}
+
+.bookCover 
+{
+	float: left;
+}
+
+.bookContent 
+{
+	position: relative;
+	padding: 10px;
+	float: left;
+	height: 220px;
+}
+
+.bookPublisher 
+{
+	position: absolute;
+	bottom: 0px;
+	left: 10px;
+}
+
+h3 
+{
+	margin: 0px;
+	
+}
+
+.listView
+{
+    min-width:400px;
+    margin:0px;
+    padding:0px;
+}
+.listView li
+{
+    list-style-type: none; 
+    border-bottom:dashed 1px red;
+    list-style-position: outside; 
+    min-height:240px;
+    margin:0px;
+    padding:0px;
+}
+
+.listView img
+{
+    position:absolute;
+    right:10px;
+}
+.listView div
+{
+    position:absolute;
+    left:10px;
+}
+
+.alternating-item img
+{
+    position:absolute;
+    left:10px;    
+}
+.alternating-item div
+{
+    position:absolute;
+    right:10px;
+    text-align:right;
+}

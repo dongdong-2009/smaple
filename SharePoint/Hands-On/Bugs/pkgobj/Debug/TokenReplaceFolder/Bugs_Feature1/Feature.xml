@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Feature xmlns="http://schemas.microsoft.com/sharepoint/" Description="My List Definition Feature" Id="5600de87-64c5-4d32-8f24-a7588b1b985e" Scope="Web" Title="Bugs Feature1">
+  <ElementManifests>
+    <ElementManifest Location="ListDefinition1\Elements.xml" />
+    <ElementFile Location="ListDefinition1\Schema.xml" />
+    <ElementManifest Location="ListInstance1\Elements.xml" />
+  </ElementManifests>
+</Feature>

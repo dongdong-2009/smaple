@@ -1,0 +1,45 @@
+P {
+	TEXT-INDENT: 0px; MARGIN: 5px auto
+}
+.postBody P {
+	MARGIN: 5px auto
+}
+.postCon P {
+	MARGIN: 5px auto
+}
+.postBody P {
+	TEXT-INDENT: 0px
+}
+.postCon P {
+	TEXT-INDENT: 0px
+}
+.cnblogs_code SPAN {
+	LINE-HEIGHT: 1.5
+}
+.login_tips A {
+	TEXT-DECORATION: underline
+}
+#div_digg .diggnum {
+	LINE-HEIGHT: 1.5em
+}
+#div_digg .burynum {
+	LINE-HEIGHT: 1.5em
+}
+#green_channel A:link {
+	BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-TOP-STYLE: none; COLOR: #ffffff; BORDER-RIGHT-STYLE: none
+}
+#green_channel A:visited {
+	BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-TOP-STYLE: none; COLOR: #ffffff; BORDER-RIGHT-STYLE: none
+}
+#green_channel A:active {
+	BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-TOP-STYLE: none; COLOR: #ffffff; BORDER-RIGHT-STYLE: none
+}
+.cnblogs_code {
+	FONT-FAMILY: Courier New; FONT-SIZE: 12px
+}
+.cnblogs_code PRE {
+	FONT-FAMILY: Courier New; FONT-SIZE: 12px
+}
+.cnblogs_code SPAN {
+	FONT-FAMILY: Courier New; FONT-SIZE: 12px
+}

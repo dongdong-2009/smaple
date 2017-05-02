@@ -1,0 +1,7 @@
+D:\360云盘\Project\smaple\Dot Net\Socket\Simulation2\bin\Debug\Simulation2.dll
+D:\360云盘\Project\smaple\Dot Net\Socket\Simulation2\bin\Debug\Simulation2.pdb
+D:\360云盘\Project\smaple\Dot Net\Socket\Simulation2\bin\Debug\ISocket.dll
+D:\360云盘\Project\smaple\Dot Net\Socket\Simulation2\bin\Debug\ISocket.pdb
+D:\360云盘\Project\smaple\Dot Net\Socket\Simulation2\obj\Debug\ResolveAssemblyReference.cache
+D:\360云盘\Project\smaple\Dot Net\Socket\Simulation2\obj\Debug\Simulation2.dll
+D:\360云盘\Project\smaple\Dot Net\Socket\Simulation2\obj\Debug\Simulation2.pdb

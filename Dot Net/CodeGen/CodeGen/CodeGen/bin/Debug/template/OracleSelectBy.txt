@@ -1,0 +1,30 @@
+
+
+--≤È—Ø <%DateTime%>
+create or replace procedure Up_<%TableName%>_SelectBy
+(
+  Criteria varchar2 default null,
+  dataset out <%Package%>.<%Cursor%>
+)
+is
+SqlString varchar2(1000);
+Target varchar(1000);
+begin
+Target := Criteria;
+SqlString := '
+				Select
+        <%Columns%>
+				from
+				<%TableName%>
+			   ';
+         
+         if(Criteria is not null and length(Criteria)!=0 ) then
+         begin     
+             			<%Target%>
+		         SqlString := upper(SqlString) || ' where ' || Target;
+         end;         
+         end if;
+         Dbms_Output.put_line(SqlString);
+         open dataset for sqlstring;  
+         
+end Up_<%TableName%>_SelectBy;

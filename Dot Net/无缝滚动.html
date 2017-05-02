@@ -1,0 +1,47 @@
+﻿<!DOCTYPE   html   PUBLIC   "-//W3C//DTD   XHTML   1.0   Transitional//EN"   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">   
+ <html   xmlns="http://www.w3.org/1999/xhtml">   
+ <head>   
+ <meta   http-equiv="Content-Type"   content="text/html;   charset=utf-8"   />   
+ <title>无缝滚动</title>   
+ </head>   
+   
+ <body>   
+ <style>a{display:block;font-size:15px};</style>   
+ <div   id="div1" style="width:300px;height:68px;overflow:hidden">  
+   <div  id="div2" style="margin-top:0px;line-height:20px;"> 
+     <a   href="javascript:">1,你可曾有过无数的梦想，</a>   
+     <a   href="javascript:">2,却在时光的流逝里幻灭   </a>   
+     <a   href="javascript:">3,你可曾对未来期待憧憬，</a>   
+     <a   href="javascript:">4,却在成长的岁月中迷失</a>   
+     <a   href="javascript:">5,CSDN中国程序员论坛</a>   
+     <a   href="javascript:">6,大家一起来</a>   
+     <a   href="javascript:">7,好象都很不错的样子</a>   
+    </div>
+ </div>     
+ <script>   
+ function scrolln(id,samont,step){
+   var  d=document.getElementById(id);
+  if(!d.scrolln){
+    if(step){d.step=step;d.samont=samont;}
+    d.scrolln=setInterval("scrolln('"+id+"')",d.samont);
+     d.onmouseover=function(){clearInterval(this.scrolln);this.scrolln=null;}   
+     d.onmouseout=function(){scrolln(this.id)}
+  }
+   var top=parseInt(d.style.marginTop);  
+  var lineheight=parseInt(d.style.lineHeight);
+  if(top>-lineheight){
+     d.style.marginTop=(top-d.step)+"px";}
+  else{
+   do{
+   var o=d.firstChild; 
+   d.removeChild(o); 
+   d.appendChild(o); 
+   }while(!d.firstChild.tagName)
+   d.style.marginTop="0px";
+  }
+ }
+//第一个参数为要滚动块的标签id,第二个参数为滚动间隔时间，第三个参数为滚动距离px
+ scrolln("div2",100,2);
+ </script>   
+ </body>   
+ </html> 

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Feature xmlns="http://schemas.microsoft.com/sharepoint/" Id="ca0b5d75-5d26-43ea-9059-2b3279617f88" Scope="Site" Title="HOL1-Ex2 Feature1">
+  <ElementManifests>
+    <ElementManifest Location="ProviderWebPart\Elements.xml" />
+    <ElementFile Location="ProviderWebPart\ProviderWebPart.webpart" />
+    <ElementManifest Location="ConsumerWebPart\Elements.xml" />
+    <ElementFile Location="ConsumerWebPart\ConsumerWebPart.webpart" />
+    <ElementManifest Location="VerbWebPart\Elements.xml" />
+    <ElementFile Location="VerbWebPart\VerbWebPart.webpart" />
+  </ElementManifests>
+</Feature>

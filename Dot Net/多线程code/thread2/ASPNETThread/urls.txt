@@ -1,0 +1,3 @@
+www.microsoft.com:80
+www.yahoo.com:80,21
+www.cnn.com:79-82

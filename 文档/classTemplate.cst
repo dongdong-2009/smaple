@@ -1,0 +1,33 @@
+<%-- 
+Name:
+Author: 
+Description: 
+--%>
+<%@ CodeTemplate Language="C#" TargetLanguage="Text" %>
+<%@ Property Name="NameSpace" Type="String"  Category="Context" Description="????" %>
+<%@ Property Name="ClassName" Type="String"  Category="Context" Description="??" %>
+<%@ Property Name="Author" Type="String"  Category="Context" Description="???" %>
+<%@ Property Name="Function" Type="String"  Category="Context" Description="????" %>
+<%@ Assembly Name="System.Data" %>
+<%@ Import Namespace="System.Data" %>
+///////////////////////////////////////////////////////////////////////////////////////
+// ????<%=Author%> 
+// ?????<%=Function%> 
+// ?????<%= DateTime.Now.ToShortDateString() %>
+///////////////////////////////////////////////////////////////////////////////////////
+ 
+using System;
+ 
+namespace <%=NameSpace %>
+{
+      /// <summary>
+      /// Summary description for <%=ClassName %>.
+      /// </summary>
+      public class <%=ClassName %>
+      {
+            public <%=ClassName %>()
+            {
+
+            }
+      }
+}

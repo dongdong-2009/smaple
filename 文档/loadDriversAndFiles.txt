@@ -1,0 +1,62 @@
+using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using System.IO;
+using System.Threading;
+
+public partial class uploadn : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if(!Page.IsPostBack)
+        {
+            LoadDrive();
+        }        
+    }
+
+    private void LoadDrive()
+    {
+        
+        string[] drivers = Directory.GetLogicalDrives();
+        foreach (string s in drivers)
+        {
+            DriveInfo d = new DriveInfo(s);
+            if (d.DriveType == DriveType.Fixed)
+            {
+                string temp;
+                temp = "±æµÿ¥≈≈Ã(" + s.Substring(0, 2) + ")";
+                TreeNode tn = new TreeNode(temp, s, "img/drive.JPG");
+                DriveTree.Nodes.Add(tn);
+            }
+        }
+    }
+
+    private void LoadFile(TreeNode tn,string Path)
+    {
+        string[] folders = Directory.GetDirectories(Path);
+        tn.ChildNodes.Clear();
+        foreach (string f in folders)
+        {
+            
+            TreeNode t = new TreeNode(f, f, "img/folder.jpg");
+            string[] subfolders = Directory.GetDirectories(f);
+            if(subfolders.Length != 0)
+            {
+                t.ChildNodes.Add(new TreeNode(""));
+            }
+            tn.ChildNodes.Add(t);            
+        }
+    }
+
+    protected void DriveTree_TreeNodeExpanded(object sender, TreeNodeEventArgs e)
+    {
+        LoadFile(e.Node, e.Node.Value);
+    }
+}

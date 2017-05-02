@@ -1,0 +1,14 @@
+﻿通过dll来引用webservice的方法
+
+1.打开浏览器，然后写输入http://192.168.0.2/RentService.asmx?wsdl
+
+2.然后选择浏览器->文件->另存为RentService.wsdl
+
+3.然后用vs的命令提示符来编译,输入：wsdl /namespace:NRentService E:\RentService.wsdl  
+  或 使用CMD 进入C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\x64， wsdl.exe在这个目录下
+
+4.然后会在：D:\Program Files\Microsoft Visual Studio 10.0\VC\目录下生成一个RentServie.cs的类
+
+5.最后再执行命令：csc /out:RentService.dll /t:library RentService.cs ,其中RentService.cs为代理类文件，执行生成RentService.dll
+
+6.最后在项目中引用dll就可以使用了

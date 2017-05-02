@@ -1,0 +1,1 @@
+﻿SELECT ','+PersonName FROM dbo.PersonalBaseInfo AS pbi FOR XML PATH('')

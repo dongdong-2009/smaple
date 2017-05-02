@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Solution xmlns="http://schemas.microsoft.com/sharepoint/" SolutionId="950fe67c-352d-4828-8a45-828e2e008c1b" SharePointProductVersion="14.0">
+  <Assemblies>
+    <Assembly Location="HOL1-Ex2.dll" DeploymentTarget="GlobalAssemblyCache">
+      <SafeControls>
+        <SafeControl Assembly="HOL1-Ex2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d272ebf2da96da96" Namespace="HOL1_Ex2.ProviderWebPart" TypeName="*" />
+        <SafeControl Assembly="HOL1-Ex2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d272ebf2da96da96" Namespace="HOL1_Ex2.ConsumerWebPart" TypeName="*" />
+        <SafeControl Assembly="HOL1-Ex2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d272ebf2da96da96" Namespace="HOL1_Ex2.VerbWebPart" TypeName="*" />
+      </SafeControls>
+    </Assembly>
+  </Assemblies>
+  <FeatureManifests>
+    <FeatureManifest Location="HOL1-Ex2_Feature1\Feature.xml" />
+  </FeatureManifests>
+</Solution>

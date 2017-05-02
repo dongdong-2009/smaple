@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package dslVersion="1.0.0.0" Id="486b0212-2c01-42c6-9bd9-8bb68377b03d" solutionId="486b0212-2c01-42c6-9bd9-8bb68377b03d" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel" name="BDCEx1">
+    <features>
+        <featureReference itemId="8e2acb0f-367b-4881-af8f-ba07459f06f0" />
+    </features>
+</package>

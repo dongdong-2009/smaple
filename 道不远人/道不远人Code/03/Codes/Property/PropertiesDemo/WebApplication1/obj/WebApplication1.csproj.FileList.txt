@@ -1,0 +1,7 @@
+bin\WebApplication1.dll
+bin\WebApplication1.pdb
+bin\ControlProperties.dll
+bin\ControlProperties.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\WebApplication1.dll
+obj\Debug\WebApplication1.pdb

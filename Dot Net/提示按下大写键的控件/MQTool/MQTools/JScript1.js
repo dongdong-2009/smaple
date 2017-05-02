@@ -1,0 +1,5 @@
+
+function dd()
+{
+    alert("OK")
+}

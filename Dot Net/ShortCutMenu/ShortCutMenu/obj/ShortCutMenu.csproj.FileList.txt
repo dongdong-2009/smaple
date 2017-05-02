@@ -1,0 +1,13 @@
+bin\Debug\ShortCutMenu.exe
+bin\Debug\ShortCutMenu.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\ShortCutMenu.frm.resources
+obj\Debug\ShortCutMenu.Properties.Resources.resources
+obj\Debug\ShortCutMenu.csproj.GenerateResource.Cache
+obj\Debug\ShortCutMenu.exe
+obj\Debug\ShortCutMenu.pdb
+obj\Debug\ShortCutMenu.close.bmp
+obj\Debug\ShortCutMenu.close2.bmp
+obj\Debug\ShortCutMenu.skin.bmp
+obj\Debug\ShortCutMenu.skin2.bmp
+obj\Debug\ShortCutMenu.skin3.bmp

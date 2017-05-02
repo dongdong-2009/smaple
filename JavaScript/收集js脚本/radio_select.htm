@@ -1,0 +1,26 @@
+<script>
+function getRbSelect(){
+var rb=document.all.tags('input')
+for (i=0;i<rb.length;i++){
+	if(rb[i].name=='radiobutton'){
+		if(rb[i].checked){alert(rb[i].value)
+			return
+		}
+	}
+}
+alert("you havn't selected radio")
+}
+
+function setSelect(){
+	if(event.srcElement.tagName=='INPUT')return
+	event.srcElement.children[0].click()
+}
+</script>
+<span onclick="setSelect()">
+<span><input type="radio" name="radiobutton" value="A">A</span>
+<span><input type="radio" name="radiobutton" value="B">B</span>
+<span><input type="radio" name="radiobutton" value="C">C</span>
+</span>
+<INPUT TYPE="Button" NAME="cmdClick" VALUE="µ¥»÷" onclick="getRbSelect()">
+
+<html><script language="JavaScript">

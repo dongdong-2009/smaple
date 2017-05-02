@@ -1,0 +1,121 @@
+﻿expression 6WDDQ-K7D4F-GQGF4-2VYBJ-8K6MB
+
+four type wf
+
+部署wf
+
+
+显示错误信息
+
+
+filter
+
+
+backup
+
+back up script for farm or site collection
+
+-----------------------------------------------------------------------
+branding sample
+http://msdn.microsoft.com/en-us/library/gg430141.aspx
+    
+页面banner，加到head里
+<SharePoint:SPLinkButton runat="server" NavigateUrl="~sitecollection/">
+<SharePoint:SiteLogoImage LogoImageUrl="/Style Library/Waffles/logo.png"
+runat="server"/>
+</SharePoint:SPLinkButton>
+
+收藏夹icon，加到head里
+<SharePoint:SPShortcutIcon runat="server" IconUrl="/Style Library/Waffles/favicon.ico"/>
+
+
+
+sharepoint css
+http://www.electrictoolbox.com/using-important-css/
+ 
+http://www.yellowjug.com/web-design/the-importance-of-important-in-css/
+ 
+http://www.webcredible.co.uk/user-friendly-resources/web-dev/css-important.shtml
+ 
+http://webdesign.about.com/od/css/f/blcssfaqimportn.htm
+
+
+
+
+master page template
+http://archive.msdn.microsoft.com/odcSP14StarterMaster
+http://startermasterpages.codeplex.com/
+
+
+Setting Up the Development Environment for SharePoint 2010 on Windows Vista, Windows 7, and Windows Server 2008
+http://msdn.microsoft.com/en-us/library/ee554869.aspx
+
+
+Comparing SharePoint List and Form Library Forms
+http://blogs.msdn.com/b/infopath/archive/2010/04/22/comparing-list-and-form-library-forms.aspx
+
+
+full trust proxy
+http://www.cnblogs.com/wsdj-ITtech/archive/2011/09/15/2177790.html
+
+smart query
+http://www.cnblogs.com/jianyi0115/archive/2011/12/09/2282287.html
+
+element schema(List  Definitions,Content Type,Custom Action Definition Schema, etc )
+http://msdn.microsoft.com/en-us/library/ms414322
+
+
+删除Feature
+1.stsadm.exe -o uninstallfeature -name '01_Feature1' -force
+2. delete folder
+C:\Program Files\Common Files\Microsoft Shared\Web Server Extensions\14\TEMPLATE\FEATURES\01_Feature1
+
+Form Service
+http://localhost:81/_vti_bin/formsservices.asmx
+
+Create Total Count for List
+http://sharepointlogics.com/2010/03/total-count-of-items-in-list-in.html
+
+
+Connect a Filter Web Part to a List View Web Part
+http://office.microsoft.com/en-us/sharepoint-server-help/connect-a-filter-web-part-to-a-list-view-web-part-HA010250989.aspx#BMs2
+
+
+approval-workflow
+http://office.microsoft.com/en-us/sharepoint-server-help/use-an-approval-workflow-HA010154425.aspx#BM4
+
+configure-sharepoint-to-send-email-through-gmail
+http://sharepoint-snippets.com/configure-sharepoint-to-send-email-through-gmail/
+http://blog.miniasp.com/post/2008/03/03/Open-relay-for-localhost-when-using-IIS-SMTP-Service-at-the-first-time.aspx
+
+
+configure incoming email
+http://technet.microsoft.com/en-us/library/cc287879.aspx
+
+CAML
+http://www.cnblogs.com/jianyi0115/archive/2008/01/05/1027319.html
+http://tech.ddvip.com/2009-02/1234780248108954.html
+
+
+
+Deploying a custom master page in SharePoint 2010
+http://www.sharepointchick.com/archive/2010/03/26/deploying-a-custom-master-page-in-sharepoint-2010.aspx
+
+Reset a customized page to the site definition
+http://office.microsoft.com/en-us/sharepoint-designer-help/reset-a-customized-page-to-the-site-definition-HA010174145.aspx?CTT=5&origin=HA010100906
+
+when to create a subsite or site collection
+http://technet.microsoft.com/en-us/library/cc742548.aspx.
+
+
+
+
+
+sharepoint开发
+http://microsoft.cnfan.net/list_33_2.html
+http://www.cq-soft.net/postView.aspx?logID=171
+
+
+
+sharepoint permission
+http://office.microsoft.com/en-us/windows-sharepoint-services-help/permission-levels-and-permissions-HA010100149.aspx

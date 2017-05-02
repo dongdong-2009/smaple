@@ -1,0 +1,4 @@
+删除方法：
+打开注册表,
+找到HKEY_USERS\S-1-5-21-699429042-3081107387-3585865962-500(不同的机器不知道是不是一样)\Software\Microsoft\VisualStudio\8.0(VS的版本) 
+找到FileMRUList项和 ProjectMRUList项，删除那些值列表就行了。

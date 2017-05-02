@@ -1,0 +1,7 @@
+E:\Documents\深入浅出ASP.NET2.0控件与组件开发\chapter15\Code\MobileControlProject\TestMobileControlProject\obj\Debug\ResolveAssemblyReference.cache
+E:\Documents\深入浅出ASP.NET2.0控件与组件开发\chapter15\Code\MobileControlProject\TestMobileControlProject\bin\Debug\TestMobileControlProject.dll
+E:\Documents\深入浅出ASP.NET2.0控件与组件开发\chapter15\Code\MobileControlProject\TestMobileControlProject\bin\Debug\TestMobileControlProject.pdb
+E:\Documents\深入浅出ASP.NET2.0控件与组件开发\chapter15\Code\MobileControlProject\TestMobileControlProject\bin\Debug\MobileControlLibrary.dll
+E:\Documents\深入浅出ASP.NET2.0控件与组件开发\chapter15\Code\MobileControlProject\TestMobileControlProject\bin\Debug\MobileControlLibrary.pdb
+E:\Documents\深入浅出ASP.NET2.0控件与组件开发\chapter15\Code\MobileControlProject\TestMobileControlProject\obj\Debug\TestMobileControlProject.dll
+E:\Documents\深入浅出ASP.NET2.0控件与组件开发\chapter15\Code\MobileControlProject\TestMobileControlProject\obj\Debug\TestMobileControlProject.pdb

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Solution xmlns="http://schemas.microsoft.com/sharepoint/" SolutionId="c3171642-7469-4e80-a9cb-29b04a437a91" SharePointProductVersion="14.0">
+  <Assemblies>
+    <Assembly Location="ModuleProject1.dll" DeploymentTarget="GlobalAssemblyCache">
+      <SafeControls>
+        <SafeControl Assembly="ModuleProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d7be930379408772" Namespace="ModuleProject1.WebPartWithImage" TypeName="*" />
+      </SafeControls>
+    </Assembly>
+  </Assemblies>
+  <FeatureManifests>
+    <FeatureManifest Location="ModuleProject1_Feature1\Feature.xml" />
+    <FeatureManifest Location="ModuleProject1_Feature2\Feature.xml" />
+  </FeatureManifests>
+</Solution>

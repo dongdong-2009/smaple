@@ -1,0 +1,10 @@
+<asp:ContentPlaceHolder id=”PlaceHolderLeftNavBar” runat=”server”>
+<style type=”text/css”>
+#s4-leftpanel {
+display: none;
+}
+.s4-ca {
+margin-left:0px;
+}
+</style>
+</asp:ContentPlaceHolder>

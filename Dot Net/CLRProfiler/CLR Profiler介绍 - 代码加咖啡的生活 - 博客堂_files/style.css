@@ -1,0 +1,114 @@
+BODY {
+	FONT-SIZE: 10pt; MARGIN: 10px 30px; FONT-FAMILY: ËÎÌå; BACKGROUND-COLOR: #d9d6cb
+}
+A {
+	COLOR: #223355; TEXT-DECORATION: none
+}
+A:hover {
+	TEXT-DECORATION: underline
+}
+#aspnetForm {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black 1px solid; BACKGROUND-COLOR: #eeeeee
+}
+#headerWrapper {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; HEIGHT: 100px
+}
+#header {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; HEIGHT: 75px; BACKGROUND-COLOR: #20375f
+}
+#mainTitle A {
+	DISPLAY: block; FONT-SIZE: 1.8em; MARGIN: 0px 0px 0px 10px; COLOR: #fff; PADDING-TOP: 5px; TEXT-DECORATION: none
+}
+#subTitle {
+	COLOR: #fff
+}
+#subTitle A {
+	COLOR: #fff
+}
+#stats UL {
+	MARGIN-LEFT: 500px; POSITION: absolute; TOP: 50px
+}
+#stats LI {
+	BORDER-RIGHT: gray 1px dotted; PADDING-RIGHT: 10px; DISPLAY: inline; PADDING-LEFT: 10px; PADDING-BOTTOM: 0px; COLOR: #a4a4a4; PADDING-TOP: 0px
+}
+#topNav {
+	HEIGHT: 25px; BACKGROUND-COLOR: #000000
+}
+#topNav UL {
+	BORDER-TOP-WIDTH: 0px; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; HEIGHT: 25px; BORDER-RIGHT-WIDTH: 0px
+}
+#topNav LI {
+	DISPLAY: inline; FLOAT: left; MARGIN: 2px 0px 0px 20px; LIST-STYLE-TYPE: none; marker-offset: 0
+}
+#topNav LI A {
+	FONT-SIZE: 9pt; MARGIN-LEFT: 10px; COLOR: white
+}
+#rss {
+	LEFT: 400px; POSITION: absolute; TOP: 95px
+}
+.contentWrapper {
+	BORDER-TOP-WIDTH: 0px; CLEAR: both; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 100%; PADDING-TOP: 0px; BORDER-RIGHT-WIDTH: 0px
+}
+#content {
+	MARGIN-TOP: 0px; PADDING-TOP: 0px
+}
+#sidebar {
+	FLOAT: left; VERTICAL-ALIGN: top; WIDTH: 200px; BACKGROUND-COLOR: #eeeeee
+}
+#main {
+	MARGIN-LEFT: 230px; VERTICAL-ALIGN: top; BORDER-LEFT: #dddddd 1px solid; BORDER-BOTTOM: #dddddd 1px solid; BACKGROUND-COLOR: white
+}
+.Gadget {
+	MARGIN: 10px; PADDING-TOP: 20px
+}
+.Gadget UL {
+	PADDING-RIGHT: 0px; BORDER-TOP: #e1e1e1 1px dashed; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 5px 0px 15px; PADDING-TOP: 0px
+}
+.Gadget UL LI {
+	PADDING-RIGHT: 0px; DISPLAY: block; PADDING-LEFT: 10px; PADDING-BOTTOM: 0.3em; WIDTH: 94%; COLOR: #666666; PADDING-TOP: 0.3em; TEXT-DECORATION: none
+}
+.Gadget UL LI A:hover {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 10px; BACKGROUND: #fff; PADDING-BOTTOM: 0.3em; COLOR: #cb4721; PADDING-TOP: 0.3em
+}
+.GadgetTitle {
+	PADDING-RIGHT: 4px; PADDING-LEFT: 4px; FONT-WEIGHT: 700; FONT-SIZE: 1em; PADDING-BOTTOM: 4px; MARGIN: 0px; PADDING-TOP: 4px; BORDER-BOTTOM: #bbbbbb 1px solid
+}
+.Date {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: bold; FONT-SIZE: 1.2em; MARGIN-BOTTOM: 0px; PADDING-BOTTOM: 2px; COLOR: #aaaaaa; PADDING-TOP: 2px; TEXT-ALIGN: right
+}
+.PostWrapper {
+	BORDER-RIGHT: #cccccc 2px solid; BORDER-TOP: #cccccc 1px solid; MARGIN: 10px 10px 28px; BORDER-LEFT: #cccccc 1px solid; BORDER-BOTTOM: #cccccc 2px solid
+}
+.PostContent {
+	MIN-HEIGHT: 70px; FONT-FAMILY: 'ËÎÌå'
+}
+.PostContent IMG {
+	max-width: 600px
+}
+.PostTitle {
+	FONT-WEIGHT: 700; FONT-SIZE: 16px; MARGIN: 0px 0px 4px; FONT-FAMILY: ºÚÌå¡¡Î¢ÈíÑÅºÚ
+}
+.PostFoot {
+	BORDER-TOP: #dddddd 1px solid; FONT-SIZE: 0.8em; MARGIN: 14px 0px 0px; COLOR: #aaaaaa
+}
+#comments {
+	MARGIN: 5px 10px 15px
+}
+.Comment {
+	BORDER-RIGHT: #cccccc 2px solid; PADDING-RIGHT: 10px; BORDER-TOP: #cccccc 1px solid; PADDING-LEFT: 10px; PADDING-BOTTOM: 10px; MARGIN: 10px 15px 18px; BORDER-LEFT: #cccccc 1px solid; PADDING-TOP: 10px; BORDER-BOTTOM: #cccccc 2px solid
+}
+#commentform {
+	MARGIN: 10px 15px 18px
+}
+.Avatar {
+	MARGIN: 5px
+}
+.CommentTitle {
+	FONT-SIZE: 14px; MARGIN: 0px 0px 4px
+}
+.CommentFoot {
+	BORDER-TOP: #dddddd 1px solid; FONT-SIZE: 0.8em; MARGIN: 14px 0px 0px; COLOR: #aaaaaa
+}
+#foot {
+	CLEAR: both; PADDING-RIGHT: 10px; BORDER-TOP: #cccccc 1px solid; PADDING-LEFT: 10px; PADDING-BOTTOM: 10px; MARGIN: 10px; PADDING-TOP: 10px; TEXT-ALIGN: center
+}

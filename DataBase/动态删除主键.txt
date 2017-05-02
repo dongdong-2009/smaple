@@ -1,0 +1,10 @@
+DECLARE @pk VARCHAR(100)
+DECLARE @tablename VARCHAR(100)
+SET @pk=''
+SET @tablename ='myAutoCode'
+SELECT @pk = constraint_name FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE WHERE TABLE_NAME=@tablename AND constraint_name LIKE '%PK%'
+
+IF @pk <> ''
+BEGIN
+	EXEC ('alter table '+ @tablename +' drop CONSTRAINT ' + @pk)
+END

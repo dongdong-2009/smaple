@@ -1,0 +1,157 @@
+<!--
+	
+    HTML sample accompanying my 
+    Javascript file to draw web page organization charts.
+    
+    created by Roland Bouman
+    Copyright (C) 2006  
+    roland.bouman@gmail.com
+    http://rpbouman.blogspot.com/
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+-->
+<!DOCTYPE 
+	html 
+	PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"
+>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>HTML Organization Chart</title>
+		<link rel="stylesheet" type="text/css" href="OrganizationChartNode.css" />
+		<script type="text/javascript" src="OrganizationChartNode.js"></script>
+		<script type="text/javascript" defer=defer>
+		function aaa(ss)
+		{
+		    alert(ss);
+		}
+		
+		function doAll()
+		{
+			var root = new OrganizationChartNode("java","1","aaa");
+			root.addToContainer(document.getElementById("_body"));
+			var node1,node2;
+			node1 = new OrganizationChartNode("java.lang","2");
+			root.addChildNode(node1,0);
+			
+			root = node1;
+			node2 = new OrganizationChartNode("java.lang.reflect","3");
+			root.addChildNode(node2,0);
+			
+			
+//			node1 = new OrganizationChartNode("java.applet","4");
+//			root.addChildNode(node1,1);
+//			node1 = new OrganizationChartNode("java.nio","5");
+//			root.addChildNode(node1,2);
+//			node2 = new OrganizationChartNode("java.nio.channels","6");
+//			node1.addChildNode(node2,0);
+//			node2 = new OrganizationChartNode("java.nio.charset","7");
+//			node1.addChildNode(node2,1);
+			
+		}
+		
+		
+		</script>
+	</head>
+	<body onload="doAll()">
+	   
+
+
+ <div id="templates" style=" display:none;">
+			<table	id="OrganizationCharNodeTemplate" cellspacing="0" cellpadding="0" class="CSS_NODE"> 
+				<tbody style="	display:none;">
+					<tr	class="CSS_VSTICKS"	>
+						<td	class="	CSS_FLANK">
+							<br/>
+						</td>
+						<td class="CSS_VSTICKR">
+							<br />
+						</td>
+						<td class="CSS_VSTICKL">
+							<br/>
+						</td>
+						<td class="CSS_FLANK">
+							<br/>
+						</td>
+					</tr>
+				</tbody>
+				<tbody>
+					<tr>
+						<td class="CSS_FLANK">
+							<br/>
+						</td>
+						<td colspan="2">
+							<table cellpadding="0" cellspacing="0" class="CSS_NODE_BODY">
+								<tr>
+									<td colspan="2" class="CSS_NODE_BODY_LABEL" >
+									</td>
+								</tr>
+								<tr id="if-has-children2" class="CSS_NODE_BODY_CHILDREN" style="display:none">
+								<td class=" CSS_NODE_BODY_CHILDREN CSS_NODE_BODY_CHILDREN_SWITCH" onclick="toggleChildNodes(this)">-</td>
+									 <!--如果需要折叠效果，删除style="display:none;"  -->
+									<td class=" CSS_NODE_BODY_CHILDREN CSS_NODE_BODY_CHILDREN_COUNT">										
+									</td>
+									<!--如果需要折叠效果，删除style="display:none;"  -->
+								</tr>
+							</table> 
+						</td>
+						<td class="CSS_FLANK">
+							<br/>
+						</td>
+					</tr>
+				</tbody>
+				<tbody style="display:none;">
+					<tr class="CSS_VSTICKS">
+						<td	class="CSS_FLANK">
+							<br/>
+						</td>
+						<td class="CSS_VSTICKR">
+							<br/>
+						</td>
+						<td class="CSS_VSTICKL">
+							<br/>
+						</td>
+						<td class="CSS_FLANK">
+							<br/>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="4">
+							<table cellpadding="0" cellspacing="0" class="CSS_NODE_CHILDREN">
+								<tr>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</tbody>
+			</table>			
+		</div>
+		<table>
+			<tr>
+				<td style="width:50%;">
+					<br/>
+				</td>
+				<td id="_body" style="width:0%;">
+				</td>
+				<td style="width:50%;">
+					<br/>
+				</td>
+			</tr>
+		</table>
+		<script>
+		
+		</script>
+	</body>
+</html>

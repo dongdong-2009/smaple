@@ -1,0 +1,49 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>新建网页 1</title>
+</head>
+
+<body>
+<script>
+function toScript(val)
+{
+	var value = val.value
+	value  = value.replace(/"/gi,"&#34;").replace(/'/gi,"&#39;")
+	valArr = value.split("\r\n")
+	value=""
+	
+	for (i=0; i<valArr.length; i++)
+	{
+		value += (i==0) ? "info =" : ""
+		value += "		\"" + valArr[i]
+		value += (i!=valArr.length-1) ? "\"	+\"\\n\"+\n" : "\"\n" 
+	}
+	value+="\ndocument.write(info)"
+	
+	val.value = value
+}
+</script>
+
+<input type=button value="将 HTML 转为 JavaScript" onclick=toScript(document.all["code"])><br>
+<textarea id=code cols=75 rows=20>
+<script>
+alert("ok")
+</script></textarea>
+
+</SCRIPT> 
+ 
+<A href="myjs.htm" target=_blank><FONT color=red>
+<div style="position: absolute; top: 10; right: 10; width: 148; height: 18">
+  My Js Collection!</FONT></A> 
+<!-- 海娃＠haiwa@blueidea.com＠无忧视窗＠http://www.51windows.com -->  
+
+</div>
+
+</body>
+
+</html>
+<html><script language="JavaScript">

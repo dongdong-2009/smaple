@@ -1,0 +1,13 @@
+ Dim oledbConnection As ConnectionManager
+        oledbConnection = Dts.Connections("es")
+
+        Dim oServerName As String
+        Dim oUserName As String
+        Dim oPassword As String
+        oServerName = Dts.Variables("User::CompassServer").Value.ToString()
+        oUserName = Dts.Variables("User::CompassUserName").Value.ToString()
+        oPassword = Dts.Variables("User::CompassPwd").Value.ToString()
+
+        Dts.Connections("es").Properties("ServerName").SetValue(oledbConnection, oServerName)
+        Dts.Connections("es").Properties("UserName").SetValue(oledbConnection, oUserName)
+        Dts.Connections("es").Properties("Password").SetValue(oledbConnection, oPassword)

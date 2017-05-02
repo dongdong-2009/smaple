@@ -1,0 +1,158 @@
+/*
+ * 开发者：
+ * 创建日期：<%Data%>
+ * 最后修改日期：<%Data%>
+ * 描述：
+ * */
+
+using System;
+using System.Collections.Generic;
+using System.Text;
+using DawnProArchitechture.DataAccess.Entity;
+using DawnProArchitechture.DataAccess.Server;
+using System.Data;
+using System.Data.Common;
+
+namespace DawnProArchitechture.Bussiness
+{
+    public class <%TableName%>Bussiness
+    {
+	#region 基本方法
+        /// <summary>
+        /// 新增
+        /// </summary>
+        /// <param name="e"><%TableName%>Entity实体类</param>
+        /// <returns>得到自增主键值</returns>
+        public int Add(<%TableName%>Entity e)
+        {
+            <%TableName%>Server server = new <%TableName%>Server();
+            server.AddNewEntity(e,null);
+            return e.ID;
+        }
+
+        /// <summary>
+        /// 新增
+        /// </summary>
+        /// <param name="e"><%TableName%>Entity实体类</param>
+	/// <param name="trans">事务</param>
+        /// <returns>得到自增主键值</returns>
+        public int Add(<%TableName%>Entity e,DbTransaction trans)
+        {
+            <%TableName%>Server server = new <%TableName%>Server();
+            server.AddNewEntity(e,trans);
+            return e.ID;
+        }
+
+        /// <summary>
+        /// 删除
+        /// </summary>
+        /// <param name="id">主键值</param>
+        public void Delete(string id)
+        {
+            <%TableName%>Server server = new <%TableName%>Server();
+            server.DeleteEntity(int.Parse(id), null);
+        }
+
+	/// <summary>
+        /// 删除
+        /// </summary>
+        /// <param name="id">主键值</param>
+        public void Delete(int id)
+        {
+            <%TableName%>Server server = new <%TableName%>Server();
+            server.DeleteEntity(id, null);
+        }
+
+        /// <summary>
+        /// 删除
+        /// </summary>
+        /// <param name="id">主键值</param>
+	/// <param name="trans">事务</param>
+        public void Delete(string id,DbTransaction trans)
+        {
+            <%TableName%>Server server = new <%TableName%>Server();
+            server.DeleteEntity(int.Parse(id), trans);
+        }
+
+	/// <summary>
+        /// 删除
+        /// </summary>
+        /// <param name="id">主键值</param>
+	/// <param name="trans">事务</param>
+        public void Delete(int id,DbTransaction trans)
+        {
+            <%TableName%>Server server = new <%TableName%>Server();
+            server.DeleteEntity(id, trans);
+        }
+
+        /// <summary>
+        /// 更新
+        /// </summary>
+        /// <param name="e"><%TableName%>Entity实体类</param>
+        public void Update(<%TableName%>Entity e)
+        {
+            <%TableName%>Server server = new <%TableName%>Server();
+            server.UpdateEntity(e, null);
+        }
+
+        /// <summary>
+        /// 更新
+        /// </summary>
+        /// <param name="e"><%TableName%>Entity实体类</param>
+	/// <param name="trans">事务</param>
+        public void Update(<%TableName%>Entity e,DbTransaction trans)
+        {
+            <%TableName%>Server server = new <%TableName%>Server();
+            server.UpdateEntity(e, trans);
+        }
+
+        /// <summary>
+        /// 查询
+        /// </summary>
+        /// <param name="Criteria">查询条件,如"username like '%jacky%' and age = 10"</param>
+        /// <returns>结果集</returns>
+        public DataTable Select(string Criteria)
+        {
+            <%TableName%>Server server = new <%TableName%>Server();
+            server.LoadDataBy(Criteria, null);
+            return server.Data;
+        }
+
+	/// <summary>
+        /// 查询所有记录
+        /// </summary>        
+        /// <returns>结果集</returns>
+	public DataTable Select()
+        {
+            <%TableName%>Server server = new <%TableName%>Server();
+            server.LoadData();
+            return server.Data;
+        }
+
+	/// <summary>
+        /// 查询
+        /// </summary>
+        /// <param name="Criteria">查询条件,如"username like '%jacky%' and age = 10"</param>
+	/// <param name="trans">事务</param>
+        /// <returns>结果集</returns>
+        public DataTable Select(string Criteria,DbTransaction trans)
+        {
+            <%TableName%>Server server = new <%TableName%>Server();
+            server.LoadDataBy(Criteria, trans);
+            return server.Data;
+        }
+
+	/// <summary>
+        /// 查询所有记录
+        /// </summary>        
+	/// <param name="trans">事务</param>
+        /// <returns>结果集</returns>
+	public DataTable Select(DbTransaction trans)
+        {
+            <%TableName%>Server server = new <%TableName%>Server();
+            server.LoadDataBy(null, trans);
+            return server.Data;
+        }
+	#endregion
+    }
+}

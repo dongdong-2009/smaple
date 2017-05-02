@@ -1,0 +1,41 @@
+一直被一个问题困扰就是导出excel时如何关闭excel进程，我使用过oExcelApp.Quit(); 也用过GC回收，结果都不理想，后来发现可以kill进程，但是问题是kill进程 时不好解决多人并发的使用，比如一个人在导表然后kill所以的excel但是如果同时又有人在导表那么这就把另外一个excel结束了，现在我们要办的 是如何kill当前这个进程，这里我们先看一下代码：
+
+oExcelApp.Quit();
+    oExcelApp = null;
+    PublicMethod.Kill(oExcelApp);//调用kill当前excel进程
+
+PublicMethod.Kill()内容是：
+
+using System.Runtime.InteropServices;
+ public class PublicMethod
+ {
+  public PublicMethod()
+  {
+   //
+   // TODO: 在此处添加构造函数逻辑
+   //
+  }
+  [DllImport("User32.dll",   CharSet   =   CharSet.Auto)]   
+  public static extern int GetWindowThreadProcessId(IntPtr hwnd,out int ID);
+  public static void Kill(Excel.Application excel)
+  {   
+   IntPtr t=new IntPtr(excel.Hwnd);   //得到这个句柄，具体作用是得到这块内存入口 
+
+  int k= 0;   
+   GetWindowThreadProcessId(t,out k);   //得到本进程唯一标志k
+   System.Diagnostics.Process p=System.Diagnostics.Process.GetProcessById(k);   //得到对进程k的引用
+   p.Kill();     //关闭进程k
+  }
+
+}
+
+ 
+
+这样我们就可以关闭当前进程excel而不是杀掉所有的类型为excel进程了，
+
+ 
+
+另外一个新发现的方法：
+
+如果你某刻发现一个excel做模板然后载入excel应用对象，导出数据如果excel进程自己会退出，那么复制这个模板，然后清空内容，重新在这个摸板设计你x想要的模板内容，载入这个模板excel应用对象，导出数据，那么这个excel进程自己会很听话的退掉，
+我曾经测试过，再系统非常多用户时同时点击导出excel报表也仅仅是2-3个进程，正常使用仅仅一个！前提是你要发现一个听话的excel模板。 

@@ -1,0 +1,50 @@
+目前我学习过程中感觉开源中最好的一个验证码形式
+原版中不能使用ValidationGroup,我把验证部分改成重写CustomValidator,增加了ValidationGroup,可直接封装控件分享大家,欢迎拍砖.
+可放入UpdatePanel中
+
+
+下载地址:http://www.cnblogs.com/Files/davy79/WebCtr.rar
+重新建立了一个项目文件,并生成DLL,方便调用,但是建议把源码加入到你的项目中,方便您以后修改.
+VS2008,Application项目
+原版地址:http://www.codeproject.com/KB/custom-controls/CaptchaControl.aspx
+国外Jeff Atwood写的VB版本
+在第5页留言给出了别人改的C#版本
+地址:http://www.treehousesystems.com:8070/trac/attachment/wiki/WikiStart/CaptchaLib.zip?format=raw
+
+
+
+
+配置:
+webconfig:
+<httpHandlers>
+<add verb="GET" path="CaptchaImage.axd" type="WebCtr.CaptchaImageHandler, WebCtr"/>
+</httpHandlers>
+
+
+aspx:
+<%@ Register Assembly="WebCtr" Namespace="WebCtr" TagPrefix="cc1" %>
+<asp:TextBox ID="WTByzm" runat="server" ValidationGroup="tt"></asp:TextBox>
+<cc1:CaptchaControl ID="CaptchaControl3" runat="server" ControlToValidate="WTByzm"
+                CaptchaBackgroundNoise="None" CaptchaFontWarping="High" CaptchaWidth="290" Height="80"
+                CaptchaLineNoise="Extreme" ValidationGroup="tt" Display="Dynamic" 
+                CssClass="input_error" CaptchaMaxTimeout="15" CaptchaMinTimeout="5" />
+
+
+cs:
+if (!Page.IsValid)
+   {
+  your code;
+}
+
+
+另外感觉验证码虽小,里面问题设计太多,最近几天一直在看一些验证码的资料
+百度给出了一个验证码PK的资料,GZUG之Captcha深度对抗比赛
+http://baike.baidu.com/view/538168.htm
+
+这个是一个验证码分析的资料,作者并提供了一个MVC的版本
+http://en.wikipedia.org/wiki/Captcha
+
+这个是最著名的开源验证码项目,已经好多年了,不过我感觉用起来不是很方面,所以改写了一个
+http://www.captcha.net/captchas/
+
+曾经发布一个小程序被BS,深受打击,虚心接受批评,拒绝其他语言攻击,谢谢.

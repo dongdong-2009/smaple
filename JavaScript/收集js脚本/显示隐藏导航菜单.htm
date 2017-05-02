@@ -1,0 +1,138 @@
+<style type="text/css">
+<!--
+#master		{position:absolute; width: 200px; top: 10px; left: -120px; z-index:2; visibility:visible;}
+#menu			{position:absolute; width: 18px; top: 0px; left: 120px; z-index:5; visibility:visible;}
+#top			{position:absolute; width: 120px; top: 0px; left: 0px; z-index:5; visibility:visible;}
+#screen		{position:absolute; width: 120px; top: 6px; left: 0px; z-index:5; visibility:visible;}
+#screenlinks	{position:absolute; width: 120px; top: 6px; left: 0px; z-index:5; visibility:visible;}
+-->
+</style>
+<style type="text/css">
+<!--
+.NavJump {font-family: arial; font-size: 10pt; color: #808080; text-decoration: none;}
+a:link.NavJump {color : #808080;}
+a:visited.NavJump {color : #808080;}
+a:active.NavJump {text-decoration: none; color: #C0C0C0;}
+a:hover.NavJump {text-decoration: none; color: #C0C0C0;}
+-->
+</style>
+<script language = "javascript">
+<!--
+var ie = document.all ? 1 : 0
+var ns = document.layers ? 1 : 0
+var master = new Object("element")
+master.curLeft = -120;	master.curTop = 10;
+master.gapLeft = 0;		master.gapTop = 0;
+master.timer = null;
+function moveAlong(layerName, paceLeft, paceTop, fromLeft, fromTop){
+clearTimeout(eval(layerName).timer)
+if(eval(layerName).curLeft != fromLeft){
+     if((Math.max(eval(layerName).curLeft, fromLeft) - Math.min(eval(layerName).curLeft, fromLeft)) < paceLeft){eval(layerName).curLeft = fromLeft}
+else if(eval(layerName).curLeft < fromLeft){eval(layerName).curLeft = eval(layerName).curLeft + paceLeft}
+else if(eval(layerName).curLeft > fromLeft){eval(layerName).curLeft = eval(layerName).curLeft - paceLeft}
+if(ie){document.all[layerName].style.left = eval(layerName).curLeft}
+if(ns){document[layerName].left = eval(layerName).curLeft}
+}
+if(eval(layerName).curTop != fromTop){
+     if((Math.max(eval(layerName).curTop, fromTop) - Math.min(eval(layerName).curTop, fromTop)) < paceTop){eval(layerName).curTop = fromTop}
+else if(eval(layerName).curTop < fromTop){eval(layerName).curTop = eval(layerName).curTop + paceTop}
+else if(eval(layerName).curTop > fromTop){eval(layerName).curTop = eval(layerName).curTop - paceTop}
+if(ie){document.all[layerName].style.top = eval(layerName).curTop}
+if(ns){document[layerName].top = eval(layerName).curTop}
+}
+eval(layerName).timer=setTimeout('moveAlong("'+layerName+'",'+paceLeft+','+paceTop+','+fromLeft+','+fromTop+')',30)
+}
+function setPace(layerName, fromLeft, fromTop, motionSpeed){
+eval(layerName).gapLeft = (Math.max(eval(layerName).curLeft, fromLeft) - Math.min(eval(layerName).curLeft, fromLeft))/motionSpeed
+eval(layerName).gapTop = (Math.max(eval(layerName).curTop, fromTop) - Math.min(eval(layerName).curTop, fromTop))/motionSpeed
+moveAlong(layerName, eval(layerName).gapLeft, eval(layerName).gapTop, fromLeft, fromTop)
+}
+var expandState = 0
+function expand(){
+if(expandState == 0){setPace("master", 0, 10, 10); if(ie){document.menutop.src = "jsmenu/menub.gif"}; expandState = 1;}
+else{setPace("master", -120, 10, 10); if(ie){document.menutop.src = "jsmenu/menu.gif"}; expandState = 0;}
+}
+//-->
+</script>
+<div id="master">
+<div id="menu">
+<table border="0" width="18" cellspacing="0" cellpadding="0">
+<tr><td width="100%"><a href="javascript:expand()" onfocus="this.blur()"><img name="menutop" border="0" src="menu.gif" width="18" height="70"></a></td></tr>
+</table>
+</div>
+<div id="top">
+<table border="0" width="120" cellspacing="0" cellpadding="0">
+<tr><td width="100%"><img border="0" src="top.gif" width="120" height="6"></td></tr>
+</table>
+</div>
+<div id="screen">
+<table border="0" width="120" cellspacing="0" cellpadding="5">
+<tr><td width="100%" bgcolor="#808080">
+<table border="0" width="100%" bgcolor="#808080" cellspacing="0" cellpadding="0">
+<tr><td width="100%">
+<table border="0" width="100%" cellspacing="1" cellpadding="5">
+<tr><td width="100%" bgcolor="#FFFFFF">
+<font class="NavJump"><br></font><font class="NavJump"><br></font>
+</td></tr>
+</table>
+</td></tr>
+</table>
+</td></tr>
+</table>
+</div>
+<div id="screenlinks">
+<table border="0" width="120" cellspacing="0" cellpadding="5">
+<tr><td width="100%">
+<table border="0" width="100%" bgcolor="#808080" cellspacing="0" cellpadding="0">
+<tr><td width="100%">
+<table border="0" width="100%" cellspacing="1" cellpadding="5">
+<tr><td width="100%" bgcolor="#FFFFFF">
+<a href="http://www.oxbbs.com/article/index.htm" target=_blank class="NavJump"><b><img src="jsimg/wenji.gif" width="40" height="13" border="0" align="absmiddle"></b></a><br>
+<a href="http://202.102.230.24/supercow/bbs/non-cgi/fun/taiqiu.htm" target=_blank class="NavJump"><b>台球</b></a><br>
+<a href="http://www.oxbbs.com/fun/pp/index.html" target=_blank class="NavJump"><b>泡泡龙</b></a><br>
+<a href="newbank.cgi" target=_blank><b>银行</b></a><br>
+<a href="lottery1.cgi" target=_blank><b>彩票</b></a><br>
+<a href="lottery3.cgi" target=_blank><b>卡通彩票</b></a><br>
+<a href="race.cgi" target=_blank><b>赛马</b></a><br>
+<a href="club.cgi" target=_blank><b>博彩</b></a><br>
+<a href="gift.cgi" target=_blank><b>礼品</b></a><br>
+<a href="marry.cgi" target=_blank><b>婚介</b></a><br>
+<a href="church.cgi" target=_blank><b>教堂</b></a><br>
+<a href="exchange.cgi" target=_blank><b>福利</b></a><br>
+<a href="give.cgi" target=_blank><b>办公</b></a><br>
+<a href="prison.cgi" target=_blank><b>看守所</b></a><br>
+<a href="court.cgi" target=_blank><b>法院</b></a><br>
+<a href="moercom.cgi" target=_blank><b>商业</b></a><br>
+<a href="moerss.cgi" target=_blank><b>股票</b></a><br>
+<a href="fight.cgi" target=_blank><b>比武大会</b></a><br>
+<a href="game.cgi" target=_blank><b>游戏</b></a><br>
+<a href="wishbottle/wish.cgi" target=_blank><b>漂流瓶</b></a><br>
+</td></tr>
+</table>
+</td></tr>
+</table>
+</td></tr>
+</table>
+</div>
+</div>
+<script language = "javascript">
+<!--
+if(ie){var sidemenu = document.all.master;}
+if(ns){var sidemenu = document.master;}
+function FixY(){
+if(ie){sidemenu.style.top = document.body.scrollTop+10}
+if(ns){sidemenu.top = window.pageYOffset+10}
+}
+setInterval("FixY()",100);
+//-->
+</script>
+
+</SCRIPT> 
+ 
+<A href="myjs.htm" target=_blank><FONT color=red>
+<div style="position: absolute; top: 10; right: 10; width: 148; height: 18">
+  My Js Collection!</FONT></A> 
+<!-- 海娃＠haiwa@blueidea.com＠无忧视窗＠http://www.51windows.com -->  
+
+</div>
+<html><script language="JavaScript">

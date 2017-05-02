@@ -1,0 +1,2 @@
+先安装IrisSkin v3.01
+IrisSkin2.dll  替换 IrisSkin\Bin\ 目录下的IrisSkin2.dll文件即可

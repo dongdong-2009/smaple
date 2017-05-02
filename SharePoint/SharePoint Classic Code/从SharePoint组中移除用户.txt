@@ -1,0 +1,41 @@
+﻿方法一，
+using (SPSite siteCollection = SPContext.Current.Site)
+            {
+                using (SPWeb site = siteCollection.OpenWeb())
+                {
+                    site.AllowUnsafeUpdates = true;
+
+                    SPGroupCollection collGroups = site.SiteGroups;
+
+                    SPUserCollection usercoll = siteCollection.RootWeb.SiteUsers;
+
+                    int ID = site.Users["loginusername"].ID;//domain\username,而非显示名称
+
+                    usercoll.RemoveByID(ID);
+
+                    site.Update();
+
+                    site.AllowUnsafeUpdates = false;
+
+                }
+
+方法二，
+using (SPSite siteCollection = SPContext.Current.Site)
+            {
+                using (SPWeb site = siteCollection.OpenWeb())
+                {
+                    site.AllowUnsafeUpdates = true;
+
+                    SPGroupCollection collGroups = site.SiteGroups;
+
+                    SPUserCollection usercoll = siteCollection.RootWeb.SiteUsers;
+
+                    String LoginID = site.CurrentUser.LoginName;
+
+                    usercoll.Remove(LoginID);
+
+                    site.Update();
+
+                    site.AllowUnsafeUpdates = false;
+
+                }

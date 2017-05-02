@@ -1,0 +1,10 @@
+D:\360云盘\Project\smaple\Dot Net\IocpServer\IocpServer\bin\Debug\IocpServer.exe
+D:\360云盘\Project\smaple\Dot Net\IocpServer\IocpServer\bin\Debug\IocpServer.pdb
+D:\360云盘\Project\smaple\Dot Net\IocpServer\IocpServer\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\360云盘\Project\smaple\Dot Net\IocpServer\IocpServer\obj\x86\Debug\IocpServer.MainForm.resources
+D:\360云盘\Project\smaple\Dot Net\IocpServer\IocpServer\obj\x86\Debug\IocpServer.Properties.Resources.resources
+D:\360云盘\Project\smaple\Dot Net\IocpServer\IocpServer\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\360云盘\Project\smaple\Dot Net\IocpServer\IocpServer\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\360云盘\Project\smaple\Dot Net\IocpServer\IocpServer\obj\x86\Debug\IocpServer.exe
+D:\360云盘\Project\smaple\Dot Net\IocpServer\IocpServer\obj\x86\Debug\IocpServer.pdb
+E:\360云盘\Project\smaple\Dot Net\IocpServer\IocpServer\obj\x86\Debug\IocpServer.exe

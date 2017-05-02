@@ -1,0 +1,5 @@
+obj\Debug\ResolveAssemblyReference.cache
+bin\Debug\Cnblogs.DTC.THIN.RegexUrlMapping.dll
+bin\Debug\Cnblogs.DTC.THIN.RegexUrlMapping.pdb
+obj\Debug\Cnblogs.DTC.THIN.RegexUrlMapping.dll
+obj\Debug\Cnblogs.DTC.THIN.RegexUrlMapping.pdb

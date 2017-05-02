@@ -1,0 +1,40 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>新建网页 1</title>
+</head>
+
+<body onunload="Exit()"><!--判断是关闭窗口，而不是刷新窗口-->
+<script language=javascript>
+function Exit()
+{ 
+ if (event.clientX > document.body.clientWidth && event.clientY < 0||event.altkey)
+  alert("关闭窗口");
+}
+</script>
+<script language=javascript>
+function window.onbeforeunload()
+{
+if (event.clientX>document.body.clientWidth && event.clientY<0||event.altKey)
+  window.event.returnValue="确定要退出本页吗？";
+  //window.open("wei.asp","","")
+
+}
+</script>
+<SCRIPT ID=clientEventHandlersJS LANGUAGE=javascript>
+<!--
+
+function window.onunload() {
+	window.open("yourpage","","")
+}
+
+//-->
+</SCRIPT>
+
+</body>
+
+</html>
+<html><script language="JavaScript">

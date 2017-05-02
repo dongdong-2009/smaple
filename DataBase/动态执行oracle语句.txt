@@ -1,0 +1,34 @@
+create or replace procedure up_t_person_SelectBy
+(
+  Criteria varchar2 default null,
+  pxmycs out test.OutParam
+)
+is
+SqlString varchar2(1000);
+target varchar2(1000);
+begin
+SqlString := '
+				Select 
+				u.ID,
+				u.FirstName,
+				u.LastName,
+        u.Birth,
+        u.Age
+				from
+				T_Person u
+			   ';
+         target:=Criteria;
+         if(Criteria is not null and length(Criteria)!=0 ) then
+         begin
+             target :=Replace(target, 'ID', 'u.ID');             
+          	 target := Replace(target, 'FirstName', 'u.FirstName');
+          	 target := Replace(target, 'LastName', 'u.LastName');
+           	 target := Replace(target, 'Birth', 'u.Birth');
+           	 target := Replace(target, 'Age', 'u.Age');
+		         SqlString := SqlString || ' where ' || target;
+         end;
+         end if;
+         Dbms_Output.put_line(SqlString);
+         open pxmycs for sqlstring;
+  
+end up_t_person_SelectBy;

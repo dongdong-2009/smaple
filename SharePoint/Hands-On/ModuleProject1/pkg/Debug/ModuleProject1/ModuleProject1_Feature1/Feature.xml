@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Feature xmlns="http://schemas.microsoft.com/sharepoint/" Description="My Module Feature" Id="b58ea987-3899-4553-b3ee-90ad9f09fdb6" Scope="Web" Title="ModuleProject1 Feature1">
+  <ElementManifests>
+    <ElementManifest Location="Module1\Elements.xml" />
+    <ElementFile Location="Module1\Tick.jpg" />
+  </ElementManifests>
+</Feature>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<webParts>
+  <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+    <metaData>
+      <type name="HOL1_Ex1.VisualWebPart1.VisualWebPart1, HOL1-Ex1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2042c4a743169e50" />
+      <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+    </metaData>
+    <data>
+      <properties>
+        <property name="Title" type="string">SPLinqDemoTitle</property>
+        <property name="Description" type="string">SPLinqDemoPart Description</property>
+      </properties>
+    </data>
+  </webPart>
+</webParts>

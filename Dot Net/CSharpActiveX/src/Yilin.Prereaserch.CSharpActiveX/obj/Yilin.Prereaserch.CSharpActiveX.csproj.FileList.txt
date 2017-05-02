@@ -1,0 +1,2 @@
+C:\Documents and Settings\Administrator\桌面\temp\Preresearch\Yilin.Preresearch.CSharpActiveX\Yilin.Prereaserch.CSharpActiveX\bin\Debug\Yilin.Prereaserch.CSharpActiveX.tlb
+C:\Documents and Settings\Administrator\桌面\temp\Preresearch\Yilin.Preresearch.CSharpActiveX\Yilin.Prereaserch.CSharpActiveX\bin\Release\Yilin.Prereaserch.CSharpActiveX.tlb

@@ -1,0 +1,5 @@
+bin\Debug\DESDemo.exe
+bin\Debug\DESDemo.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\DESDemo.exe
+obj\Debug\DESDemo.pdb

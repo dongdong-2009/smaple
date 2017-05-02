@@ -1,0 +1,94 @@
+﻿<script>
+
+
+
+/**
+ * 固定第一個數值為基準值(Pivot)
+ */ 
+var swap = function(data, i, j){ 
+    var tmp = data[i];
+    data[i] = data[j];
+    data[j] = tmp;
+};
+    
+// 以data[left]為Pivot，left相當於最左邊第一個元素    
+var quickSort = function(data, left, right){    
+    if(left < right){
+        var i=left, j=right+1;
+var xx=0;
+//alert(i); 0
+//alert(data[++i]); 38
+//alert(i); 1
+//alert(j); 10
+
+        while(true){
+
+debugger;
+//alert(xx++);
+            // 向右找小於Pivot的數值的位置
+            while(i+1 < data.length &&  data[left] > data[++i]  ); 
+//alert(i);   8         
+
+
+            // 向左找大於Pivot的數值的位置
+            while(j-1 > -1 && data[left] < data[--j]  );
+            //j=9
+            // 若i,j的位置交叉
+            //     代表範圍內，Pivot右邊已無比Pivot小的數值
+            //     代表範圍內，Pivot左邊已無比Pivot大的數值    
+
+		//alert(i);
+
+            if(i >= j)    
+                break;
+            
+            // 將比Pivot大的數值換到右邊，比Pivot小的數值換到左邊
+
+            swap(data, i, j);  
+
+        }
+        swap(data, left, j);    // 將Pivot移到中間
+
+        quickSort(data, left, j-1);    // 對左子串列進行快速排序
+        quickSort(data, j+1, right);   // 對右子串列進行快速排序
+    }
+};
+
+var aa =[80,38,47,46,24,30,100,99,29,75];
+
+quickSort(aa,0,9)
+
+
+
+
+
+/**
+ * 固定最後一個數值為基準值(Pivot)
+ */ 
+
+/**
+ * 將比Pivot小的數值右移，比Pivot大的數值左移
+ * 最後回傳Pivot的位置 
+ */
+var partition = function(data, left, right){
+    var i = left - 1;
+    for(var j = left; j < right; j++){
+        if(data[j] < data[right]){   // data[right]為Pivot
+            i++;                     // 計數有幾個比Pivot小的數值
+            swap(data, i, j);
+        }
+    }
+    swap(data, i+1, right);          // 將Pivot移到中間
+    return i+1;
+};
+
+var quickSort1 = function(data, left, right){
+    if(left < right){
+        var pivotLocation = partition(data, left, right);
+        quickSort1(data, left, pivotLocation-1);
+        quickSort1(data, pivotLocation+1, right);
+    }
+};
+
+
+</script>

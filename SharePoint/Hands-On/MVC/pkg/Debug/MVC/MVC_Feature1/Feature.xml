@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Feature xmlns="http://schemas.microsoft.com/sharepoint/" Id="23353f47-2653-46f1-8160-6e6b62b274b4" ReceiverAssembly="MVC, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4a831b0677556ea4" ReceiverClass="MVC.Features.Feature1.Feature1EventReceiver" Scope="Site" Title="MVC Feature1">
+  <ElementManifests>
+    <ElementManifest Location="ListInfo\Elements.xml" />
+    <ElementFile Location="ListInfo\ListInfo.webpart" />
+  </ElementManifests>
+</Feature>

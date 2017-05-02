@@ -1,0 +1,44 @@
+ id       name   
+  01       小张   
+  01       小王   
+  02       小王   
+  02       小陈   
+    
+  请问怎样变成     
+  id         name   
+  01         小张；小王   
+  02         小王；小陈  
+
+
+--建立测试环境   
+  Create   Table   TEST   
+  (ID Varchar(10),   
+    Name   Nvarchar(10))   
+  Insert   TEST   Values('01',       N'小张')   
+  Insert   TEST   Values('01',       N'小王')   
+  Insert   TEST   Values('02',       N'小王')   
+  Insert   TEST   Values('02',       N'小陈')   
+  GO   
+  --建立函数   
+  Create   Function   GetName(@ID   Int)   
+  Returns   Nvarchar(2000)   
+  As   
+  Begin   
+          Declare   @S   Nvarchar(2000)   
+          Set   @S=''   
+          Select   @S=@S+'；'+Name   from   TEST   Where   ID=@ID   Order   By   Name   
+          Return   (Stuff(@S,1,1,''))   
+  End   
+  GO   
+  --测试   
+  Select   ID,dbo.GetName(ID)   As   Name   from   TEST   Group   By   ID   
+  --删除测试环境   
+  Drop   Table   TEST   
+  Drop   Function   GetName   
+  GO   
+  --结果   
+  /*   
+  ID Name   
+  01 小张;小王   
+  02 小王;小陈   
+  */   

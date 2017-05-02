@@ -1,0 +1,19 @@
+Public Shared Function HexConvert(ByVal intNum As Integer, Optional ByVal intHex As Integer = 27) As String
+        If intNum <= 0 Or intHex <= 0 Then
+            Return intNum
+        End If
+        If intNum > 26 Then
+            intNum = intNum + 1
+        End If
+
+        Dim strResult As String = String.Empty
+        Dim intShang As Integer  '商
+        Dim intYushu As Integer '余数
+        Do While intNum > 0
+            intShang = intNum \ intHex '取整
+            intYushu = intNum Mod intHex
+            strResult = Chr(intYushu + 65 - 1) & strResult
+            intNum = intShang
+        Loop
+        Return strResult
+    End Function

@@ -1,0 +1,18 @@
+﻿1.$('#pass').keyup(function(e) {  
+2.     var strongRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\W).*$", "g");  
+3.     var mediumRegex = new RegExp("^(?=.{7,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$", "g");  
+4.     var enoughRegex = new RegExp("(?=.{6,}).*", "g");  
+5.     if (false == enoughRegex.test($(this).val())) {  
+6.             $('#passstrength').html('More Characters');  
+7.     } else if (strongRegex.test($(this).val())) {  
+8.             $('#passstrength').className = 'ok';  
+9.             $('#passstrength').html('Strong!');  
+10.     } else if (mediumRegex.test($(this).val())) {  
+11.             $('#passstrength').className = 'alert';  
+12.             $('#passstrength').html('Medium!');  
+13.     } else {  
+14.             $('#passstrength').className = 'error';  
+15.             $('#passstrength').html('Weak!');  
+16.     }  
+17.     return true;  
+18.}); 

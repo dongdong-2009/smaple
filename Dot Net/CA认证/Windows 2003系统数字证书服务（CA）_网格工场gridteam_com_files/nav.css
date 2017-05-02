@@ -1,0 +1,15 @@
+.nav {
+	FONT-SIZE: 10pt; COLOR: #ffffff; LINE-HEIGHT: 22px; TEXT-DECORATION: none
+}
+A:link {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #ff0000
+}
+A:hover {
+	COLOR: #ffffff
+}
+A:active {
+	COLOR: #ff0000
+}

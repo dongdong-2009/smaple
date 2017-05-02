@@ -1,0 +1,87 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CE075A53-B72E-4E38-AC8A-B14A8DF8EADE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DateChooserLibrary</RootNamespace>
+    <AssemblyName>DateChooserLibrary</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DateChooser.cs" />
+    <Compile Include="Designer\CssFilePathConverter.cs" />
+    <Compile Include="Designer\CssUrlEditor.cs" />
+    <Compile Include="Designer\DateChooserDesigner.cs" />
+    <Compile Include="Designer\DateConverter.cs" />
+    <Compile Include="Designer\DateFormatConverter.cs" />
+    <Compile Include="Designer\FxConverter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CSS\DateChooser.css" />
+    <EmbeddedResource Include="Images\bNext-disable.png" />
+    <EmbeddedResource Include="Images\bNext-down.png" />
+    <EmbeddedResource Include="Images\bNext-hot.png" />
+    <EmbeddedResource Include="Images\bNext.png" />
+    <EmbeddedResource Include="Images\bPrev-disable.png" />
+    <EmbeddedResource Include="Images\bPrev-down.png" />
+    <EmbeddedResource Include="Images\bPrev-hot.png" />
+    <EmbeddedResource Include="Images\bPrev.png" />
+    <EmbeddedResource Include="DateChooser.bmp">
+    </EmbeddedResource>
+    <EmbeddedResource Include="Images\edit_0.gif" />
+    <EmbeddedResource Include="Images\edit_1.gif" />
+    <EmbeddedResource Include="Images\edit_2.gif" />
+    <EmbeddedResource Include="Images\month.png" />
+    <EmbeddedResource Include="Javascript\DateChooser.js" />
+    <EmbeddedResource Include="Javascript\Globalization\zh-CN.js" />
+    <EmbeddedResource Include="Javascript\iepngfix.htc" />
+    <EmbeddedResource Include="Javascript\interface.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DateChooserClassDiagram.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Javascript\jquery.js" />
+    <EmbeddedResource Include="Javascript\TypeExtend.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Javascript\jquery.dimensions.js" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

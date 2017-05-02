@@ -1,0 +1,5 @@
+D:\Project\smaple\SharePoint\PluggableWorkflowServices\PluggableWorkflowServices\obj\Debug\ResolveAssemblyReference.cache
+D:\Project\smaple\SharePoint\PluggableWorkflowServices\PluggableWorkflowServices\bin\Debug\PluggableWorkflowServices.dll
+D:\Project\smaple\SharePoint\PluggableWorkflowServices\PluggableWorkflowServices\bin\Debug\PluggableWorkflowServices.pdb
+D:\Project\smaple\SharePoint\PluggableWorkflowServices\PluggableWorkflowServices\obj\Debug\PluggableWorkflowServices.dll
+D:\Project\smaple\SharePoint\PluggableWorkflowServices\PluggableWorkflowServices\obj\Debug\PluggableWorkflowServices.pdb

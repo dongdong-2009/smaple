@@ -1,0 +1,9 @@
+D:\360云盘\Project\smaple\Dot Net\Socket\Test\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\360云盘\Project\smaple\Dot Net\Socket\Test\obj\x86\Debug\Test.Properties.Resources.resources
+D:\360云盘\Project\smaple\Dot Net\Socket\Test\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\360云盘\Project\smaple\Dot Net\Socket\Test\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\360云盘\Project\smaple\Dot Net\Socket\Test\bin\Debug\Test.exe
+D:\360云盘\Project\smaple\Dot Net\Socket\Test\bin\Debug\Test.pdb
+D:\360云盘\Project\smaple\Dot Net\Socket\Test\obj\x86\Debug\Test.exe
+D:\360云盘\Project\smaple\Dot Net\Socket\Test\obj\x86\Debug\Test.pdb
+D:\360云盘\Project\smaple\Dot Net\Socket\Test\obj\x86\Debug\Test.Form1.resources

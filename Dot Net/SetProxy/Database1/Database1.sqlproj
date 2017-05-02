@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>Database1</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{b39f651c-f0df-4db1-8cf1-1e677aec2126}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql110DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>Database1</RootNamespace>
+    <AssemblyName>Database1</AssemblyName>
+    <ModelCollation>2052,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>Chinese_PRC_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <!-- VS10 without SP1 will not have VisualStudioVersion set, so do that here -->
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Views\" />
+    <Folder Include="Security\" />
+    <Folder Include="dbo\Functions\" />
+    <Folder Include="dbo\Stored Procedures\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\CompanyMaxDraw.sql" />
+    <Build Include="dbo\Tables\DeleteMatch_BFSP.sql" />
+    <Build Include="dbo\Tables\HistoryTerm.sql" />
+    <Build Include="dbo\Tables\ReturnRate.sql" />
+    <Build Include="dbo\Tables\HighSPTeam.sql" />
+    <Build Include="dbo\Tables\Company_Okooo.sql" />
+    <Build Include="dbo\Tables\Company_500.sql" />
+    <Build Include="dbo\Tables\CurrentMatch.sql" />
+    <Build Include="dbo\Tables\TeamDataLoading.sql" />
+    <Build Include="dbo\Tables\YaPan_DaXiaoQiu.sql" />
+    <Build Include="dbo\Tables\Focus.sql" />
+    <Build Include="dbo\Tables\HistoryPan.sql" />
+    <Build Include="dbo\Tables\Team_Information.sql" />
+    <Build Include="dbo\Tables\Forecast.sql" />
+    <Build Include="dbo\Tables\HistoryLoading.sql" />
+    <Build Include="dbo\Tables\CurrentLoading.sql" />
+    <Build Include="dbo\Tables\League.sql" />
+    <Build Include="dbo\Tables\LeagueHighScoreSP.sql" />
+    <Build Include="dbo\Tables\OP2YP.sql" />
+    <Build Include="dbo\Tables\LHXT_OP.sql" />
+    <Build Include="dbo\Tables\LHXT_ZhanJi.sql" />
+    <Build Include="dbo\Tables\NotesOkooo.sql" />
+    <Build Include="dbo\Tables\KeyWord.sql" />
+    <Build Include="dbo\Tables\HistoryEuropePan.sql" />
+    <Build Include="dbo\Tables\CurrentEuropePan.sql" />
+    <Build Include="dbo\Tables\HistoryMatch.sql" />
+    <Build Include="dbo\Tables\CurrentAsiaPan.sql" />
+    <Build Include="dbo\Tables\Company.sql" />
+    <Build Include="dbo\Tables\AsiaCompany.sql" />
+    <Build Include="dbo\Tables\TeamPlayerData.sql" />
+    <Build Include="dbo\Tables\CurrentPan.sql" />
+    <Build Include="dbo\Tables\TeamData.sql" />
+    <Build Include="dbo\Tables\HistoryAsiaPan.sql" />
+    <Build Include="dbo\Tables\ClassicPan.sql" />
+    <Build Include="dbo\Views\v_TeamInformation.sql" />
+    <Build Include="dbo\Views\vAllCompany.sql" />
+    <Build Include="dbo\Views\test.sql" />
+    <Build Include="dbo\Views\vHistoryEuropePan_1.sql" />
+    <Build Include="dbo\Views\vCurrentEuropePan_1.sql" />
+    <Build Include="dbo\Views\vhistoryAsiaPan.sql" />
+    <Build Include="dbo\Views\vCurrentAsiaPan_1.sql" />
+    <Build Include="dbo\Views\vhistoryAsiaPan_1.sql" />
+    <Build Include="dbo\Views\vCurrentEuropePan.sql" />
+    <Build Include="dbo\Views\vForecast.sql" />
+    <Build Include="dbo\Views\HistoryMatch_1.sql" />
+    <Build Include="dbo\Views\vHistoryEuropePan.sql" />
+    <Build Include="dbo\Views\vHistoryForecast.sql" />
+    <Build Include="dbo\Views\vGetForeCast.sql" />
+    <Build Include="dbo\Views\vInformation.sql" />
+    <Build Include="dbo\Views\v_hometeamkeyplayer.sql" />
+    <Build Include="dbo\Views\v_awayteamkeyplayer.sql" />
+    <Build Include="dbo\Views\v_teamkeyplayerTemp.sql" />
+    <Build Include="dbo\Views\v_teamkeyplayer.sql" />
+    <Build Include="dbo\Views\vCurrentAsiaPan.sql" />
+    <Build Include="Security\zhouming-PC_zhouming.sql" />
+    <Build Include="Security\NT AUTHORITY_NETWORK.sql" />
+    <Build Include="Security\RoleMemberships.sql" />
+    <Build Include="dbo\Functions\fn_CreateHighSpTeam.sql" />
+    <Build Include="dbo\Stored Procedures\sp_UpdateCompanyMaxDraw.sql" />
+    <Build Include="dbo\Stored Procedures\sp_UpdateReturnRate.sql" />
+    <Build Include="dbo\Stored Procedures\sp_CreateHighSpTeam.sql" />
+    <Build Include="dbo\Stored Procedures\sp_CreateReturnRate.sql" />
+    <Build Include="dbo\Stored Procedures\sp_CrossEuropean.sql" />
+    <Build Include="dbo\Stored Procedures\ComputeLeagueHighScoreSPRate.sql" />
+    <Build Include="dbo\Stored Procedures\sp_delete_duplicate_forecast.sql" />
+    <Build Include="dbo\Stored Procedures\sp_clearforecast.sql" />
+    <Build Include="dbo\Stored Procedures\SP_LHXT_OP.sql" />
+    <Build Include="dbo\Stored Procedures\sp_addextendedproc.sql" />
+    <Build Include="dbo\Stored Procedures\sp_dropextendedproc.sql" />
+    <Build Include="dbo\Stored Procedures\sp_AddKeyPlayer.sql" />
+  </ItemGroup>
+</Project>

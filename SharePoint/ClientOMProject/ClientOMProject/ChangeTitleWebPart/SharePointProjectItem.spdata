@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProjectItem Type="Microsoft.VisualStudio.SharePoint.VisualWebPart" DefaultFile="ChangeTitleWebPartUserControl.ascx" SupportedTrustLevels="FullTrust" SupportedDeploymentScopes="Site" xmlns="http://schemas.microsoft.com/VisualStudio/2010/SharePointTools/SharePointProjectItemModel">
+  <Files>
+    <ProjectItemFile Source="Elements.xml" Target="ChangeTitleWebPart\" Type="ElementManifest" />
+    <ProjectItemFile Source="ChangeTitleWebPart.webpart" Target="ChangeTitleWebPart\" Type="ElementFile" />
+    <ProjectItemFile Source="ChangeTitleWebPartUserControl.ascx" Target="CONTROLTEMPLATES\ClientOMProject\ChangeTitleWebPart\" Type="TemplateFile" />
+  </Files>
+  <SafeControls>
+    <SafeControl Name="SafeControlEntry1" Assembly="$SharePoint.Project.AssemblyFullName$" Namespace="ClientOMProject.ChangeTitleWebPart" TypeName="*" IsSafe="true" IsSafeAgainstScript="false" />
+  </SafeControls>
+</ProjectItem>

@@ -1,0 +1,21 @@
+/*
+ * 开发者：
+ * 创建日期：<%Data%>
+ * 最后修改日期：<%Data%>
+ * 描述：
+ * */
+
+using System;
+using System.Collections.Generic;
+using System.Text;
+using DawnProArchitechture.DataAccess.Server;
+using DawnProArchitechture.DataAccess.Entity;
+using DawnProArchitechture.DataAccess.AbstractCommand;
+
+namespace DawnProArchitechture.DataCommand.OracleCommand
+{
+    public class <%TableName%>OracleCommand:<%TableName%>Command
+    {
+        
+    }
+}

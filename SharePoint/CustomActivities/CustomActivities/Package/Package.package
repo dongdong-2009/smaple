@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="e4e95c08-1851-48f8-9e20-19eca7bf23c0" solutionId="e4e95c08-1851-48f8-9e20-19eca7bf23c0" resetWebServer="false" name="CustomActivities" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <assemblies>
+    <customAssembly location="bin\Debug\V1\CustomActivities.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="bin\Debug\V1\CustomActivities.dll" />
+  </assemblies>
+  <features>
+    <featureReference itemId="c85bdc5d-4a81-469e-90bd-9565ecd9215c" />
+  </features>
+  <projectItems>
+    <projectItemReference itemId="88cbf322-ba60-4d5d-a05e-8dc2a8001172" />
+  </projectItems>
+</package>

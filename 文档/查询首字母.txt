@@ -1,0 +1,39 @@
+select isnull(b.py,upper(left(a.username,1)))  as py
+,a.username
+from (
+select 'a3' as username
+union select '中华人民共和国'
+union select '周笔畅'
+union select '郭安俊'
+union select '天堂'
+union select '包振'
+union select '魔兽'
+union select '精灵'
+union select '安全第一'
+)
+a
+left outer join (
+select 'A' as PY,N'驁' as word, N'啊' as sword
+union select 'B',N'簿',N'驁'
+union select 'C',N'錯',N'簿'
+union select 'D',N'鵽',N'錯'
+union select 'E',N'樲',N'鵽'
+union select 'F',N'鰒',N'樲'
+union select 'G',N'腂',N'鰒'
+union select 'H',N'夻',N'腂'
+union select 'J',N'攈',N'夻'
+union select 'K',N'穒',N'攈'
+union select 'L',N'鱳',N'穒'
+union select 'M',N'旀',N'鱳'
+union select 'N',N'桛',N'旀'
+union select 'O',N'漚',N'桛'
+union select 'P',N'曝',N'漚'
+union select 'Q',N'囕',N'曝'
+union select 'R',N'鶸',N'囕'
+union select 'S',N'蜶',N'鶸'
+union select 'T',N'籜',N'蜶'
+union select 'W',N'鶩',N'籜'
+union select 'X',N'鑂',N'鶩'
+union select 'Y',N'韻',N'鑂'
+union select 'Z',N'咗',N'韻'
+) b on left(username,1) between b.sword and b.word

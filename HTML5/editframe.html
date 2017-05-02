@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+Editable  iframe 
+</title>
+</head>
+<body >
+<h1>Editable  iframe </h1>
+<iframe id='content' style='border:solid black; height: 300px; width: 400px' src='about:blank'>
+</iframe>
+
+<script type='text/javascript'>
+var iframe;
+function loader()
+{
+iframe = document.getElementById('content');
+iframe.contentDocument.designMode = 'on';
+}
+
+ 
+window.addEventListener('load',loader,false);
+</script>
+</body>
+</html>

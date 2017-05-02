@@ -1,0 +1,136 @@
+.NET面试题，看看你的水平 1.DateTime.Parse(myString); 这行代码有什么问题？
+
+2.PDB是什么东西? 在调试中它应该放在哪里？ 
+
+3.什么叫圈复杂度（cyclomatic complexity）？为什么它很重要？ 
+
+4.写一个标准的lock()，在访问变量的前后创建临界区，要有"双重检查"， 
+
+5.什么叫FullTrust？放入GAC的assembly是否是FullTrust的? 
+
+6.代码加上需要安全权限的特性有什么好处？ 
+
+7.gacutil /l | find /i "Corillian" 这句命令的作用是什么？ 
+
+8.sn -t foo.dll 这句命令是干嘛的？ 
+
+9.DCOM需要防火墙打开哪些端口？端口135是干嘛用的？
+
+10.对比OOP和SOA，它们的目的分别是什么？ 
+
+11.XmlSerializer是如何工作的？使用这个类的进程需要什么ACL权限？ 
+
+12.为什么不提倡catch(Exception)？ 
+
+13.Debug.Write和Trace.Write有什么不同？何时应该使用哪一个？ 
+
+14.Debug Build和Release Build的区别，是否会有明显的速度变化？请说明理由。 
+
+15.JIT是以assembly为单位发生还是以方法为单位发生？这对于工作区有何影响? 
+
+16.对比抽象基类和接口的使用 
+
+17.a.Equals(b)和a == b一样吗？ 
+
+18.在对象比较中，对象一致和对象相等分别是指什么？ 
+
+19.在.NET中如何实现深拷贝（deep copy）？ 
+
+20.请解释一下IClonable 
+
+21.什么叫装箱? 
+
+22.string是值类型还是引用类型? 
+
+23.XmlSerializer使用的针对属性的模式有什么好处？解决了什么问题？ 
+
+24.为什么不应该在.NET中使用out参数？它究竟好不好? 
+
+25.特性能够放到某个方法的参数上？如果可以，这有什么用？ 
+
+26.新建包含DataGrid控件的ASP.NET页，DataGrid控件负责显示检索到的数据并可按升降排序，我们通过 SortOrder 属性来给DataGrid控件提供数据排序方式：升序时SortOrder 的值为ASC，降序时SortOrder 的值为DESC。如果用户选择降序，应该执行
+a)Application[“SortOrder”] = “DESC”;
+string val = (string) Application[“SortOrder”];
+
+b)Cache[“SortOrder”] = “DESC”;
+string val = (string) Cache[“SortOrder”];
+
+c)ViewState[“SortOrder”] = “DESC”;
+string SortOrder = (string) ViewState[“SortOrder”];
+
+d)Cache[“SortOrder”] = “SortOrder”;
+string val = (string) Cache[“DESC”];
+
+
+27.public static void Main(string[] args) 
+{ 
+int i = 2000;
+object o = i;
+ i = 2001; 
+int j =(int) o; 
+Console.WriteLine("i={0},o={1}, j={2}",i,o,j); 
+} 
+请问此程序的输出是什么，为什么
+
+28.class Class1 
+ { 
+  public static int Count = 0; 
+  static Class1() 
+  { 
+   Count++; 
+  } 
+  public Class1() 
+  { 
+   Count++; 
+  }   
+  
+  static void Main()
+  {
+   Class1 o1 = new Class1(); 
+   Class1 o2 = new Class1(); 
+ 
+   Console.WriteLine(Class1.Count);
+   Console.Read();
+  }     
+ }
+输出什么？
+
+29.以下语句执行后myTable的名称是什么？。
+System.Data.DataTable myTable= new System.Data.DataTable();
+
+30.如下的 IDimensions 接口和Box 类，该类显式实现接口成员 Length 和 Width。myDimensions是IDimensions 接口的一个实例。
+
+
+interface IDimensions 
+{
+   float Length();
+   float Width();
+}
+class Box : IDimensions 
+{
+   float lengthInches;
+   float widthInches;
+   public Box(float length, float width) 
+   {
+      lengthInches = length;
+      widthInches = width;
+   }
+   float IDimensions.Length() 
+   {
+      return lengthInches;
+   }
+   float IDimensions.Width() 
+   {
+      return widthInches;      
+   }
+   public static void Main() 
+   {
+      Box myBox = new Box(30.0f, 20.0f);
+      IDimensions myDimensions = (IDimensions) myBox;
+      System.Console.WriteLine("Length: {0}", myBox.Length());
+      System.Console.WriteLine("Width: {0}", myBox.Width());
+   }
+}
+
+执行以上程序控制台输出为？
+

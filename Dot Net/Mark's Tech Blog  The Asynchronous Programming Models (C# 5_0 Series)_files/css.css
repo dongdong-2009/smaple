@@ -1,0 +1,189 @@
+p {
+	
+}
+.rating {
+	margin-bottom: 10px;
+}
+.rating p {
+	left: 55px; top: 14px; display: inline; position: relative;
+}
+.star-rating {
+	list-style: none; margin: 0px; padding: 0px; width: 125px; height: 25px; overflow: hidden; position: relative;
+}
+.star-rating li {
+	display: inline;
+}
+.star-rating a {
+	border: currentColor; left: 0px; top: 0px; height: 25px; line-height: 25px; text-indent: -1000em; overflow: hidden; position: absolute;
+}
+.star-rating .current-rating {
+	border: currentColor; left: 0px; top: 0px; height: 25px; line-height: 25px; text-indent: -1000em; overflow: hidden; position: absolute;
+}
+.star-rating a:hover {
+	background-position: left bottom;
+}
+.star-rating a:active {
+	background-position: left bottom;
+}
+.star-rating a:focus {
+	background-position: left bottom;
+}
+.star-rating a.one-star {
+	width: 20%; z-index: 6;
+}
+.star-rating a.two-stars {
+	width: 40%; z-index: 5;
+}
+.star-rating a.three-stars {
+	width: 60%; z-index: 4;
+}
+.star-rating a.four-stars {
+	width: 80%; z-index: 3;
+}
+.star-rating a.five-stars {
+	width: 100%; z-index: 2;
+}
+.star-rating .current-rating {
+	background-position: left; z-index: 1;
+}
+.small-star {
+	width: 50px; height: 10px;
+}
+.small-star {
+	height: 10px; line-height: 10px; background-image: url("../../pics/star_small.gif");
+}
+.small-star a:hover {
+	height: 10px; line-height: 10px; background-image: url("../../pics/star_small.gif");
+}
+.small-star a:active {
+	height: 10px; line-height: 10px; background-image: url("../../pics/star_small.gif");
+}
+.small-star a:focus {
+	height: 10px; line-height: 10px; background-image: url("../../pics/star_small.gif");
+}
+.small-star .current-rating {
+	height: 10px; line-height: 10px; background-image: url("../../pics/star_small.gif");
+}
+.code {
+	color: black; line-height: normal; font-family: Consolas,"Courier New",Courier,Monospace; font-size: 12px; background-color: rgb(241, 241, 241);
+}
+.code p {
+	padding: 5px;
+}
+.code .rem {
+	color: rgb(0, 128, 0);
+}
+.code .kwrd {
+	color: rgb(0, 0, 255);
+}
+.code .str {
+	color: rgb(0, 96, 128);
+}
+.code .op {
+	color: rgb(0, 0, 192);
+}
+.code .preproc {
+	color: rgb(0, 0, 255);
+}
+.code .asp {
+	background-color: rgb(255, 255, 0);
+}
+.code .html {
+	color: rgb(128, 0, 0);
+}
+.code .attr {
+	color: rgb(255, 0, 0);
+}
+.code .alt {
+	background-color: rgb(244, 244, 244);
+}
+.code .lnum {
+	color: rgb(96, 96, 96);
+}
+div.post .text a[rel] {
+	background-position: right; background-repeat: no-repeat;
+}
+div.post .text a[rel='me'] {
+	background-image: url("../../pics/xfn/me.gif");
+}
+div.post .text a[rel~='contact'] {
+	padding-right: 11px; background-image: url("../../pics/xfn/contact.gif");
+}
+div.post .text a[rel~='acquaintance'] {
+	padding-right: 11px; background-image: url("../../pics/xfn/contact.gif");
+}
+div.post .text a[rel~='friend'] {
+	padding-right: 11px; background-image: url("../../pics/xfn/contact.gif");
+}
+div.post .text a[rel~='contact'][rel~='met'] {
+	padding-right: 11px; background-image: url("../../pics/xfn/contactMet.gif");
+}
+div.post .text a[rel~='acquaintance'][rel~='met'] {
+	padding-right: 11px; background-image: url("../../pics/xfn/contactMet.gif");
+}
+div.post .text a[rel~='friend'][rel~='met'] {
+	padding-right: 11px; background-image: url("../../pics/xfn/contactMet.gif");
+}
+div.post .text a[rel~='colleague'] {
+	padding-right: 11px; background-image: url("../../pics/xfn/colleague.gif");
+}
+div.post .text a[rel~='co-worker'] {
+	padding-right: 11px; background-image: url("../../pics/xfn/colleague.gif");
+}
+div.post .text a[rel~='colleague'][rel~='met'] {
+	padding-right: 11px; background-image: url("../../pics/xfn/colleagueMet.gif");
+}
+div.post .text a[rel~='co-worker'][rel~='met'] {
+	padding-right: 11px; background-image: url("../../pics/xfn/colleagueMet.gif");
+}
+div.post .text a[rel~='muse'] {
+	padding-right: 11px; background-image: url("../../pics/xfn/sweet.gif");
+}
+div.post .text a[rel~='crush'] {
+	padding-right: 11px; background-image: url("../../pics/xfn/sweet.gif");
+}
+div.post .text a[rel~='date'] {
+	padding-right: 11px; background-image: url("../../pics/xfn/sweet.gif");
+}
+a[rel~='sweetheart'] {
+	padding-right: 11px; background-image: url("../../pics/xfn/sweet.gif");
+}
+div.post .text a[rel~='muse'][rel~='met'] {
+	padding-right: 11px; background-image: url("../../pics/xfn/sweetMet.gif");
+}
+div.post .text a[rel~='crush'][rel~='met'] {
+	padding-right: 11px; background-image: url("../../pics/xfn/sweetMet.gif");
+}
+div.post .text a[rel~='date'][rel~='met'] {
+	padding-right: 11px; background-image: url("../../pics/xfn/sweetMet.gif");
+}
+div.post .text a[rel~='sweetheart'][rel~='met'] {
+	padding-right: 11px; background-image: url("../../pics/xfn/sweetMet.gif");
+}
+#PostPager {
+	text-align: center; display: block;
+}
+#PostPager li {
+	margin: 1px; padding: 2px; border: 1px solid rgb(204, 204, 204); display: inline;
+}
+#PostPager li a {
+	padding: 2px; font-weight: bold; text-decoration: none;
+}
+#PostPager .PagerLinkCurrent {
+	padding: 2px 5px; border: 1px solid rgb(204, 204, 204); color: rgb(255, 255, 255); background-color: rgb(92, 128, 177);
+}
+#PostPager .PagerLinkCurrent li {
+	padding: 2px;
+}
+#PostPager .PagerLinkDisabled {
+	padding: 2px; color: rgb(204, 204, 204);
+}
+#PostPager .PagerEllipses {
+	padding: 2px; border: 0px currentColor;
+}
+#commentPreview {
+	clear: both; display: none; min-height: 150px;
+}
+.LoginRequired {
+	margin: 10px 0px;
+}

@@ -1,0 +1,28 @@
+CSS code
+-----------------------
+    <style type="text/css"  id="print" media="print">
+        #leftSide, #footerSide {
+            display:none;
+        }
+    </style>
+    <style type="text/css" > 
+.Freezing 
+   { 
+    
+   position:relative ; 
+   table-layout:fixed;
+   top:expression(this.offsetParent.scrollTop);   
+   z-index: 10;
+   } 
+
+.Freezing th{text-overflow:ellipsis;overflow:hidden;white-space: nowrap;padding:2px;}
+    </style>
+
+
+
+HTML code
+-----------------------
+<div  id="Div1"  style="overflow: scroll; height: 140px;width:638px" >
+Gridview дкетРя
+</div>
+

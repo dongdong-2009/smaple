@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/" >
+  <Module Name="ListOperationsVisualWebPart" List="113" Url="_catalogs/wp">
+    <File Path="ListOperationsVisualWebPart\ListOperationsVisualWebPart.webpart" Url="ListOperationsVisualWebPart.webpart" Type="GhostableInLibrary" >
+      <Property Name="Group" Value="Custom" />
+    </File>
+  </Module>
+
+  <Module Name="jsFiles" Url="SiteAssets" Path="ListOperationsVisualWebPart" >
+
+    <File Url="ListOperations.js" Type="GhostableInLibrary" IgnoreIfAlreadyExists="TRUE" />
+
+  </Module >
+
+</Elements>

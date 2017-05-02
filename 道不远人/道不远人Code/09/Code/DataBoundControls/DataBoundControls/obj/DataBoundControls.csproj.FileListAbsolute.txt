@@ -1,0 +1,5 @@
+E:\Documents\深入浅出ASP.NET2.0控件与组件开发\chapter10\Code\DataBoundControls\DataBoundControls\bin\Debug\DataBoundControls.dll
+E:\Documents\深入浅出ASP.NET2.0控件与组件开发\chapter10\Code\DataBoundControls\DataBoundControls\bin\Debug\DataBoundControls.pdb
+E:\Documents\深入浅出ASP.NET2.0控件与组件开发\chapter10\Code\DataBoundControls\DataBoundControls\obj\Debug\ResolveAssemblyReference.cache
+E:\Documents\深入浅出ASP.NET2.0控件与组件开发\chapter10\Code\DataBoundControls\DataBoundControls\obj\Debug\DataBoundControls.dll
+E:\Documents\深入浅出ASP.NET2.0控件与组件开发\chapter10\Code\DataBoundControls\DataBoundControls\obj\Debug\DataBoundControls.pdb

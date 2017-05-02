@@ -1,0 +1,47 @@
+create or replace package Test
+is
+type OutParam is ref cursor;
+end; 
+
+
+create or replace procedure MyTest
+(
+ mycs out test.outparam
+)
+is
+begin
+
+open mycs for select * from newsdynamic;
+
+end;
+
+
+
+
+
+
+
+
+
+
+
+OracleCommand cmd=new OracleCommand("qkw.p_wt",orcn);
+
+
+
+OracleParameter p2=new OracleParameter("result",OracleType.VarChar,100);
+
+p2.Direction=System.Data.ParameterDirection.ReturnValue;
+
+cmd.Parameters.Add(p1);
+
+cmd.Parameters.Add(p2);
+
+orcn.Open();
+
+cmd.ExecuteNonQuery();
+
+orcn.Close();
+
+this.Button_function.Text=p2.Value.ToString();
+

@@ -1,0 +1,6 @@
+C:\Users\zhouming\Desktop\FizzBuzzWhizz-master\FizzBuzzWhizz\bin\Debug\FizzBuzzWhizz.exe.config
+C:\Users\zhouming\Desktop\FizzBuzzWhizz-master\FizzBuzzWhizz\bin\Debug\FizzBuzzWhizz.exe
+C:\Users\zhouming\Desktop\FizzBuzzWhizz-master\FizzBuzzWhizz\bin\Debug\FizzBuzzWhizz.pdb
+C:\Users\zhouming\Desktop\FizzBuzzWhizz-master\FizzBuzzWhizz\obj\Debug\FizzBuzzWhizz.csprojResolveAssemblyReference.cache
+C:\Users\zhouming\Desktop\FizzBuzzWhizz-master\FizzBuzzWhizz\obj\Debug\FizzBuzzWhizz.exe
+C:\Users\zhouming\Desktop\FizzBuzzWhizz-master\FizzBuzzWhizz\obj\Debug\FizzBuzzWhizz.pdb

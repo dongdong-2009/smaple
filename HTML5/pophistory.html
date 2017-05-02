@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+Page to Page History
+</title>
+<script type='text/javascript'>
+function go()
+{
+    var amount = document.getElementById('amount').value;
+    window.history.go(amount);
+}
+function back()
+{
+    window.history.back();
+}
+function forward()
+{
+    window.history.forward();
+}
+function loader()
+{
+    var length = window.history.length;
+    document.getElementById('length').innerHTML = '<h1>' + 'History length: ' + length + '</h1>';   
+}
+function pushData()
+{
+    var statedata = document.getElementById('statedata').value;
+    var containerObject = {container: statedata};
+    history.pushState(containerObject,'item', 'pophistory.html');
+}
+function popData(event)
+{
+    var state = 'Page: ' +
+    document.location + ' Data: ' + event.state.container;
+    document.getElementById('state').innerHTML = '<h1>' + state + '</h1>';
+};
+window.addEventListener('popstate', popData, false);
+</script>
+</head>
+<body onload='loader()'>
+<h1>Page to Page History</h1>
+<input type='button' value='Back' onclick='back();'>
+<input type='button' value='Forward' onclick='forward();'>
+    <br>
+Pages to move by: <input id='amount' type='text'>
+<input type='button' value='Go' onclick='go();'>
+<br>
+<br>
+<br>
+Text to push: <input id='statedata' type='text'>
+<input type='button' value='Push Data' onclick='pushdata();'>
+<br>
+<div id='length'></div>
+<br>
+<div id='state'></div>
+<br>
+</body>
+</html>
+    

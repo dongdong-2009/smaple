@@ -1,0 +1,96 @@
+.UserInfo IMG {
+	FLOAT: left; WIDTH: 30px; HEIGHT: 40px
+}
+.RecommendPanel {
+	DISPLAY: block; PADDING-LEFT: 0px; FLOAT: left; MARGIN: 10px 10px 5px; VERTICAL-ALIGN: top; WIDTH: 52px; HEIGHT: 76px
+}
+.RecommendPanel LI {
+	PADDING-RIGHT: 0px; DISPLAY: block; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; LIST-STYLE-TYPE: none
+}
+.RecommendCount {
+	FONT-SIZE: 9px; BACKGROUND: url(../images/shade-news.gif) no-repeat center top; OVERFLOW: hidden; WIDTH: 52px; FONT-FAMILY: Georgia,Arial,Verdana,sans-serif; HEIGHT: 52px; TEXT-ALIGN: center
+}
+.RecommendCount A {
+	DISPLAY: block; FONT-WEIGHT: 700; FONT-SIZE: 18px; WIDTH: 52px; COLOR: #ce4a02; PADDING-TOP: 14px; HEIGHT: 52px; TEXT-DECORATION: none
+}
+.RecommendByMe {
+	BORDER-RIGHT: #deeaf7 1px solid; BORDER-TOP: #deeaf7 1px solid; DISPLAY: block; FONT-SIZE: 8pt; BORDER-LEFT: #deeaf7 1px solid; COLOR: #393733; BORDER-BOTTOM: #deeaf7 1px solid; LIST-STYLE-TYPE: none; HEIGHT: 20px
+}
+.RecommendByMe INPUT {
+	BORDER-TOP-WIDTH: 0px; FONT-WEIGHT: 500; BORDER-LEFT-WIDTH: 0px; FONT-SIZE: 8pt; BORDER-BOTTOM-WIDTH: 0px; WIDTH: 100%; BACKGROUND-COLOR: white; TEXT-ALIGN: center; BORDER-RIGHT-WIDTH: 0px
+}
+.ratingStar {
+	PADDING-RIGHT: 0px; DISPLAY: block; PADDING-LEFT: 0px; FONT-SIZE: 0pt; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 13px; CURSOR: pointer; PADDING-TOP: 0px; BACKGROUND-REPEAT: no-repeat; HEIGHT: 12px
+}
+.filledRatingStar {
+	BACKGROUND-IMAGE: url(../Images/FilledStar.png)
+}
+.emptyRatingStar {
+	BACKGROUND-IMAGE: url(../Images/EmptyStar.png)
+}
+.savedRatingStar {
+	BACKGROUND-IMAGE: url(../Images/SavedStar.png)
+}
+.accordionHeader {
+	BORDER-RIGHT: #2f4f4f 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #2f4f4f 1px solid; MARGIN-TOP: 5px; PADDING-LEFT: 5px; FONT-WEIGHT: bold; FONT-SIZE: 12px; PADDING-BOTTOM: 5px; BORDER-LEFT: #2f4f4f 1px solid; CURSOR: pointer; COLOR: white; PADDING-TOP: 5px; BORDER-BOTTOM: #2f4f4f 1px solid; FONT-FAMILY: Arial, Sans-Serif; BACKGROUND-COLOR: #2e4d7b
+}
+#master_content .accordionHeader A {
+	BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #ffffff; TEXT-DECORATION: none
+}
+#master_content .accordionHeader A:hover {
+	BACKGROUND: none transparent scroll repeat 0% 0%; TEXT-DECORATION: underline
+}
+.accordionHeaderSelected {
+	BORDER-RIGHT: #2f4f4f 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #2f4f4f 1px solid; MARGIN-TOP: 5px; PADDING-LEFT: 5px; FONT-WEIGHT: bold; FONT-SIZE: 12px; PADDING-BOTTOM: 5px; BORDER-LEFT: #2f4f4f 1px solid; CURSOR: pointer; COLOR: white; PADDING-TOP: 5px; BORDER-BOTTOM: #2f4f4f 1px solid; FONT-FAMILY: Arial, Sans-Serif; BACKGROUND-COLOR: #5078b3
+}
+#master_content .accordionHeaderSelected A {
+	BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #ffffff; TEXT-DECORATION: none
+}
+#master_content .accordionHeaderSelected A:hover {
+	BACKGROUND: none transparent scroll repeat 0% 0%; TEXT-DECORATION: underline
+}
+.accordionContent {
+	BORDER-RIGHT: #2f4f4f 1px dashed; PADDING-RIGHT: 5px; BORDER-TOP: #2f4f4f 1px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; BORDER-LEFT: #2f4f4f 1px dashed; PADDING-TOP: 10px; BORDER-BOTTOM: #2f4f4f 1px dashed; BACKGROUND-COLOR: #d3deef
+}
+#tag-cloud {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 1em; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+#tag-cloud LI {
+	DISPLAY: inline; LIST-STYLE-TYPE: none
+}
+#tag-cloud LI {
+	PADDING-RIGHT: 2px; DISPLAY: inline; PADDING-LEFT: 2px; BACKGROUND-IMAGE: none; PADDING-BOTTOM: 2px; MARGIN: 2px; PADDING-TOP: 2px; TEXT-DECORATION: none
+}
+#tag-cloud LI A {
+	PADDING-RIGHT: 2px; DISPLAY: inline; PADDING-LEFT: 2px; BACKGROUND-IMAGE: none; PADDING-BOTTOM: 2px; MARGIN: 2px; PADDING-TOP: 2px; TEXT-DECORATION: none
+}
+#tag-cloud LI {
+	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; PADDING-BOTTOM: 2px; PADDING-TOP: 2px
+}
+.tag-style-1 {
+	FONT-WEIGHT: normal; FONT-SIZE: 0.8em
+}
+.tag-style-2 {
+	FONT-WEIGHT: normal; FONT-SIZE: 1em
+}
+.tag-style-3 {
+	FONT-WEIGHT: bold; FONT-SIZE: 1.2em
+}
+.tag-style-4 {
+	FONT-WEIGHT: normal; FONT-SIZE: 1.4em
+}
+.tag-style-5 {
+	FONT-WEIGHT: bold; FONT-SIZE: 1.6em
+}
+.tag-style-6 {
+	FONT-WEIGHT: bold; FONT-SIZE: 1.8em
+}
+.tag-style-7 {
+	FONT-WEIGHT: bold; FONT-SIZE: 2em
+}
+.collapsePanel {
+	OVERFLOW: hidden; BACKGROUND-COLOR: white
+}
+.collapsePanelHeader {
+	FONT-WEIGHT: bold; BACKGROUND-IMAGE: url(/images/bg-menu-main.png); WIDTH: 100%; COLOR: #fff; BACKGROUND-REPEAT: repeat-x; HEIGHT: 30px
+}

@@ -1,0 +1,16 @@
+<html>
+<body>
+<script>
+function aaa(){
+var file="c:\\b.bmp";
+
+var WshShell=new ActiveXObject("WScript.Shell");
+document.getElementById("file_id").focus();
+WshShell.sendKeys(file);
+}
+</script>
+<input id ='adf' value='Ìá½»' type=button onclick='aaa();' />
+	<input  type="file" id="file_id"/>
+
+</body>
+</html>

@@ -1,0 +1,5 @@
+D:\Project\smaple\SharePoint\Hands-On\HOL1-Ex1\obj\Debug\ResolveAssemblyReference.cache
+D:\Project\smaple\SharePoint\Hands-On\HOL1-Ex1\bin\Debug\HOL1-Ex1.dll
+D:\Project\smaple\SharePoint\Hands-On\HOL1-Ex1\bin\Debug\HOL1-Ex1.pdb
+D:\Project\smaple\SharePoint\Hands-On\HOL1-Ex1\obj\Debug\HOL1-Ex1.dll
+D:\Project\smaple\SharePoint\Hands-On\HOL1-Ex1\obj\Debug\HOL1-Ex1.pdb

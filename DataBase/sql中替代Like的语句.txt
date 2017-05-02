@@ -1,0 +1,20 @@
+比如查找用户名包含有"c"的所有用户, 可以用 
+
+use mydatabase 
+select * from table1 where username like'%c%" 
+
+
+下面是完成上面功能的另一种写法: 
+use mydatabase 
+select * from table1 where charindex('c',username)>0 
+这种方法理论上比上一种方法多了一个判断语句,即>0, 但这个判断过程是最快的, 我想信80%以上的运算都是花在查找字 
+符串及其它的运算上, 所以运用charindex函数也没什么大不了. 用这种方法也有好处, 那就是对%,|等在不能直接用like 
+查找到的字符中可以直接在这charindex中运用, 如下: 
+use mydatabase 
+select * from table1 where charindex('%',username)>0 
+也可以写成: 
+use mydatabase 
+select * from table1 where charindex(char(37),username)>0 
+ASCII的字符即为% 
+
+

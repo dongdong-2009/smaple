@@ -1,0 +1,276 @@
+官方描述：
+
+http://help.sohu.com/article_usershow_detail.php?id=960
+
+接收服务器：pop3.sohu.com
+外发服务器：smtp.sohu.com 
+mail.sohu.com
+61.135.132.99  
+
+SMTP POP3的代码
+我测试没问题 做成组件调用
+
+using System;
+using System.Data;
+using System.Configuration;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using System.Web.Mail;
+/// <summary>
+/// Summary description for class_smtp
+/// </summary>
+public class class_smtp
+{
+public String urlpath = HttpContext.Current.Server.MapPath("");
+public class_smtp(string towho,string mhtfile)
+{
+System.Web.Mail.MailMessage msg = new MailMessage();
+msg.From = "???@163.com";
+msg.To = towho;
+msg.BodyFormat = MailFormat.Text;
+msg.BodyEncoding = System.Text.Encoding.Default;
+msg.Subject =("松江商务网");
+msg.Body = "松江商务网";
+msg.Fields.Add("http://schemas.microsoft.com/cdo/configuration/smtpauthenticate", "1");
+msg.Fields.Add("http://schemas.microsoft.com/cdo/configuration/sendusername", "邮件用户名");
+msg.Fields.Add("http://schemas.microsoft.com/cdo/configuration/sendpassword", "邮件密码");
+msg.Attachments.Add(new MailAttachment(附件地址~~));
+SmtpMail.SmtpServer = "smtp.163.com";
+SmtpMail.Send(msg);
+
+}
+}
+
+using System;
+using System.Data;
+using System.Configuration;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using System.Net.Sockets;
+using System.Collections;
+using System.IO;
+using System.Net;
+using System.Web.Mail;
+using System.Text;
+
+/// <summary>
+/// Summary description for POP3
+/// </summary>
+public class POP3
+{
+public string maillist = "";
+string POPServer;
+string user;
+string pwd;
+NetworkStream ns;
+StreamReader sr;
+
+public POP3() { }
+
+public POP3(string server, string _user, string _pwd)
+{
+POPServer = server;
+user = _user;
+pwd = _pwd;
+}
+
+private void Connect()
+{
+TcpClient sender = new TcpClient(POPServer, 110);
+Byte[] outbytes;
+string input;
+
+try
+{
+ns = sender.GetStream();
+sr = new StreamReader(ns);
+
+sr.ReadLine();
+//Console.WriteLine(sr.ReadLine() );
+
+input = "user " + user + "\r\n";
+outbytes = System.Text.Encoding.ASCII.GetBytes(input.ToCharArray());
+ns.Write(outbytes, 0, outbytes.Length);
+sr.ReadLine();
+//Console.WriteLine(sr.ReadLine() );
+
+input = "pass " + pwd + "\r\n";
+outbytes = System.Text.Encoding.GetEncoding(936).GetBytes(input.ToCharArray());
+ns.Write(outbytes, 0, outbytes.Length);
+sr.ReadLine();
+//Console.WriteLine(sr.ReadLine() );
+
+}
+catch (InvalidOperationException ioe)
+{
+Console.WriteLine("Could not connect to mail server");
+}
+}
+
+private void Disconnect()
+{
+string input = "quit" + "\r\n";
+Byte[] outbytes = System.Text.Encoding.ASCII.GetBytes(input.ToCharArray());
+ns.Write(outbytes, 0, outbytes.Length);
+//Console.WriteLine(sr.ReadLine() );
+ns.Close();
+}
+
+public int GetNumberOfNewMessages()
+{
+Byte[] outbytes;
+string input;
+
+try
+{
+Connect();
+
+input = "stat" + "\r\n";
+outbytes = System.Text.Encoding.ASCII.GetBytes(input.ToCharArray());
+ns.Write(outbytes, 0, outbytes.Length);
+string resp = sr.ReadLine();
+//Console.WriteLine(resp);
+string[] tokens = resp.Split(new Char[] { ' ' });
+
+Disconnect();
+
+return Convert.ToInt32(tokens[1]);
+}
+catch (InvalidOperationException ioe)
+{
+Console.WriteLine("Could not connect to mail server");
+return 0;
+}
+}
+public ArrayList GetNewMessages(string subj)
+{
+
+int newcount;
+ArrayList newmsgs = new ArrayList();
+
+try
+{
+newcount = GetNumberOfNewMessages();
+Connect();
+
+for (int n = 1; n < newcount + 1; n++)
+{
+ArrayList msglines = GetRawMessage(n);
+string msgsubj = GetMessageSubject(msglines);
+// if (msgsubj.CompareTo(subj) == 0)
+// {
+System.Web.Mail.MailMessage msg = new MailMessage();
+msg.Subject = msgsubj;
+msg.From = GetMessageFrom(msglines);
+string mfrom =GetMessageFrom(msglines);
+msg.Body = GetMessageBody(msglines);
+newmsgs.Add(msg);
+maillist += msgsubj + "|" + mfrom + "!";
+//DeleteMessage(n);
+// }
+}
+
+Disconnect();
+return newmsgs;
+}
+catch (Exception e)
+{
+Console.WriteLine(e.ToString());
+Console.ReadLine();
+return newmsgs;
+}
+}
+private ArrayList GetRawMessage(int messagenumber)
+{
+Byte[] outbytes;
+string input;
+string line = "";
+input = "retr " + messagenumber.ToString() + "\r\n";
+outbytes = System.Text.Encoding.ASCII.GetBytes(input.ToCharArray());
+ns.Write(outbytes, 0, outbytes.Length);
+ArrayList msglines = new ArrayList();
+do
+{
+line = sr.ReadLine();
+msglines.Add(line);
+} while (line != ".");
+msglines.RemoveAt(msglines.Count - 1);
+
+return msglines;
+}
+private string GetMessageSubject(ArrayList msglines)
+{
+string[] tokens;
+IEnumerator msgenum = msglines.GetEnumerator();
+while (msgenum.MoveNext())
+{
+string line = (string)msgenum.Current;
+if (line.StartsWith("Subject:"))
+{
+tokens = line.Split(new Char[] { ' ' });
+return tokens[1].Trim();
+}
+}
+return "None";
+}
+private string GetMessageFrom(ArrayList msglines)
+{
+string[] tokens;
+IEnumerator msgenum = msglines.GetEnumerator();
+while (msgenum.MoveNext())
+{
+string line = (string)msgenum.Current;
+if (line.StartsWith("From:"))
+{
+tokens = line.Split(new Char[] { '<' });
+return tokens[1].Trim(new Char[] { '<', '>' });
+}
+}
+return "None";
+}
+private string GetMessageBody(ArrayList msglines)
+{
+string body = "";
+string line = " ";
+IEnumerator msgenum = msglines.GetEnumerator();
+
+while (line.CompareTo("") != 0)
+{
+msgenum.MoveNext();
+line = (string)msgenum.Current;
+}
+
+while (msgenum.MoveNext())
+{
+body = body + (string)msgenum.Current + "\r\n";
+}
+return body;
+}
+private void DeleteMessage(int messagenumber)
+{
+Byte[] outbytes;
+string input;
+
+try
+{
+input = "dele " + messagenumber.ToString() + "\r\n";
+outbytes = System.Text.Encoding.ASCII.GetBytes(input.ToCharArray());
+ns.Write(outbytes, 0, outbytes.Length);
+}
+catch (Exception e)
+{
+Console.WriteLine(e.ToString());
+Console.ReadLine();
+}
+
+}
+
+}

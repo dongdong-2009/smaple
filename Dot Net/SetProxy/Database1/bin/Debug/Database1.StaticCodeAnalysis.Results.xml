@@ -1,0 +1,1859 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Problems>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Functions\fn_CreateHighSpTeam.sql</SourceFile>
+    <Line>9</Line>
+    <Column>95</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Functions\fn_CreateHighSpTeam.sql</SourceFile>
+    <Line>9</Line>
+    <Column>123</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0014</Rule>
+    <ProblemDescription>Data loss might occur when casting from Integer to Decimal(10, 2).</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Functions\fn_CreateHighSpTeam.sql</SourceFile>
+    <Line>9</Line>
+    <Column>131</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Functions\fn_CreateHighSpTeam.sql</SourceFile>
+    <Line>12</Line>
+    <Column>95</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Functions\fn_CreateHighSpTeam.sql</SourceFile>
+    <Line>12</Line>
+    <Column>123</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0014</Rule>
+    <ProblemDescription>Data loss might occur when casting from Integer to Decimal(10, 2).</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Functions\fn_CreateHighSpTeam.sql</SourceFile>
+    <Line>12</Line>
+    <Column>131</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\ComputeLeagueHighScoreSPRate.sql</SourceFile>
+    <Line>15</Line>
+    <Column>8</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\ComputeLeagueHighScoreSPRate.sql</SourceFile>
+    <Line>21</Line>
+    <Column>121</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0016</Rule>
+    <ProblemDescription>Stored procedure(sp_addextendedproc) includes sp_ prefix in its name.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_addextendedproc.sql</SourceFile>
+    <Line>1</Line>
+    <Column>18</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0016</Rule>
+    <ProblemDescription>Stored procedure(sp_AddKeyPlayer) includes sp_ prefix in its name.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_AddKeyPlayer.sql</SourceFile>
+    <Line>2</Line>
+    <Column>24</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_AddKeyPlayer.sql</SourceFile>
+    <Line>10</Line>
+    <Column>53</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_AddKeyPlayer.sql</SourceFile>
+    <Line>10</Line>
+    <Column>68</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_AddKeyPlayer.sql</SourceFile>
+    <Line>10</Line>
+    <Column>97</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0014</Rule>
+    <ProblemDescription>Data loss might occur when casting from VarChar(100) to VarChar(50).</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_AddKeyPlayer.sql</SourceFile>
+    <Line>22</Line>
+    <Column>13</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0014</Rule>
+    <ProblemDescription>Data loss might occur when casting from VarChar(151) to VarChar(50).</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_AddKeyPlayer.sql</SourceFile>
+    <Line>26</Line>
+    <Column>31</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_AddKeyPlayer.sql</SourceFile>
+    <Line>26</Line>
+    <Column>71</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_AddKeyPlayer.sql</SourceFile>
+    <Line>26</Line>
+    <Column>86</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_AddKeyPlayer.sql</SourceFile>
+    <Line>26</Line>
+    <Column>115</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0016</Rule>
+    <ProblemDescription>Stored procedure(sp_clearforecast) includes sp_ prefix in its name.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>3</Line>
+    <Column>24</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>8</Line>
+    <Column>29</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0005</Rule>
+    <ProblemDescription>Avoid using patterns that start with "%" in LIKE predicates</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>8</Line>
+    <Column>39</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>9</Line>
+    <Column>29</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0005</Rule>
+    <ProblemDescription>Avoid using patterns that start with "%" in LIKE predicates</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>9</Line>
+    <Column>39</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>9</Line>
+    <Column>52</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>10</Line>
+    <Column>29</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0005</Rule>
+    <ProblemDescription>Avoid using patterns that start with "%" in LIKE predicates</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>10</Line>
+    <Column>39</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>10</Line>
+    <Column>56</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>11</Line>
+    <Column>29</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0005</Rule>
+    <ProblemDescription>Avoid using patterns that start with "%" in LIKE predicates</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>11</Line>
+    <Column>39</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>11</Line>
+    <Column>54</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>12</Line>
+    <Column>29</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0005</Rule>
+    <ProblemDescription>Avoid using patterns that start with "%" in LIKE predicates</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>12</Line>
+    <Column>39</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>12</Line>
+    <Column>51</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>13</Line>
+    <Column>29</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0005</Rule>
+    <ProblemDescription>Avoid using patterns that start with "%" in LIKE predicates</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>13</Line>
+    <Column>39</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>13</Line>
+    <Column>51</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>14</Line>
+    <Column>29</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0005</Rule>
+    <ProblemDescription>Avoid using patterns that start with "%" in LIKE predicates</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>14</Line>
+    <Column>39</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>14</Line>
+    <Column>52</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>15</Line>
+    <Column>29</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0005</Rule>
+    <ProblemDescription>Avoid using patterns that start with "%" in LIKE predicates</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>15</Line>
+    <Column>39</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>15</Line>
+    <Column>52</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>16</Line>
+    <Column>29</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0005</Rule>
+    <ProblemDescription>Avoid using patterns that start with "%" in LIKE predicates</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>16</Line>
+    <Column>39</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>16</Line>
+    <Column>52</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>17</Line>
+    <Column>29</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0005</Rule>
+    <ProblemDescription>Avoid using patterns that start with "%" in LIKE predicates</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>17</Line>
+    <Column>39</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>17</Line>
+    <Column>52</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>18</Line>
+    <Column>29</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0005</Rule>
+    <ProblemDescription>Avoid using patterns that start with "%" in LIKE predicates</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>18</Line>
+    <Column>39</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>18</Line>
+    <Column>53</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>19</Line>
+    <Column>29</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0005</Rule>
+    <ProblemDescription>Avoid using patterns that start with "%" in LIKE predicates</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>19</Line>
+    <Column>39</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>19</Line>
+    <Column>53</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>20</Line>
+    <Column>29</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0005</Rule>
+    <ProblemDescription>Avoid using patterns that start with "%" in LIKE predicates</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>20</Line>
+    <Column>39</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>20</Line>
+    <Column>52</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>21</Line>
+    <Column>29</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0005</Rule>
+    <ProblemDescription>Avoid using patterns that start with "%" in LIKE predicates</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>21</Line>
+    <Column>39</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>21</Line>
+    <Column>50</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>22</Line>
+    <Column>29</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0005</Rule>
+    <ProblemDescription>Avoid using patterns that start with "%" in LIKE predicates</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>22</Line>
+    <Column>39</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>22</Line>
+    <Column>57</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>23</Line>
+    <Column>29</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0005</Rule>
+    <ProblemDescription>Avoid using patterns that start with "%" in LIKE predicates</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>23</Line>
+    <Column>39</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>23</Line>
+    <Column>51</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>24</Line>
+    <Column>29</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0005</Rule>
+    <ProblemDescription>Avoid using patterns that start with "%" in LIKE predicates</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>24</Line>
+    <Column>39</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>24</Line>
+    <Column>51</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>25</Line>
+    <Column>29</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0005</Rule>
+    <ProblemDescription>Avoid using patterns that start with "%" in LIKE predicates</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>25</Line>
+    <Column>39</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>25</Line>
+    <Column>52</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>26</Line>
+    <Column>29</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0005</Rule>
+    <ProblemDescription>Avoid using patterns that start with "%" in LIKE predicates</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>26</Line>
+    <Column>39</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>26</Line>
+    <Column>52</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>27</Line>
+    <Column>29</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0005</Rule>
+    <ProblemDescription>Avoid using patterns that start with "%" in LIKE predicates</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>27</Line>
+    <Column>39</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>27</Line>
+    <Column>52</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>28</Line>
+    <Column>29</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0005</Rule>
+    <ProblemDescription>Avoid using patterns that start with "%" in LIKE predicates</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>28</Line>
+    <Column>39</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>28</Line>
+    <Column>52</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>29</Line>
+    <Column>29</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0005</Rule>
+    <ProblemDescription>Avoid using patterns that start with "%" in LIKE predicates</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>29</Line>
+    <Column>39</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>29</Line>
+    <Column>50</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>30</Line>
+    <Column>29</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0005</Rule>
+    <ProblemDescription>Avoid using patterns that start with "%" in LIKE predicates</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>30</Line>
+    <Column>39</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>30</Line>
+    <Column>50</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>31</Line>
+    <Column>29</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0005</Rule>
+    <ProblemDescription>Avoid using patterns that start with "%" in LIKE predicates</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>31</Line>
+    <Column>39</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>31</Line>
+    <Column>52</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>32</Line>
+    <Column>29</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0005</Rule>
+    <ProblemDescription>Avoid using patterns that start with "%" in LIKE predicates</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>32</Line>
+    <Column>39</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>32</Line>
+    <Column>51</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>33</Line>
+    <Column>29</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>33</Line>
+    <Column>48</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>34</Line>
+    <Column>29</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>34</Line>
+    <Column>48</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>35</Line>
+    <Column>29</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0005</Rule>
+    <ProblemDescription>Avoid using patterns that start with "%" in LIKE predicates</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>35</Line>
+    <Column>39</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>35</Line>
+    <Column>52</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>36</Line>
+    <Column>29</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0005</Rule>
+    <ProblemDescription>Avoid using patterns that start with "%" in LIKE predicates</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>36</Line>
+    <Column>39</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>36</Line>
+    <Column>51</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>37</Line>
+    <Column>29</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0005</Rule>
+    <ProblemDescription>Avoid using patterns that start with "%" in LIKE predicates</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>37</Line>
+    <Column>39</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>37</Line>
+    <Column>50</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>38</Line>
+    <Column>29</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0005</Rule>
+    <ProblemDescription>Avoid using patterns that start with "%" in LIKE predicates</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>38</Line>
+    <Column>39</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>38</Line>
+    <Column>52</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>39</Line>
+    <Column>29</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>39</Line>
+    <Column>50</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>40</Line>
+    <Column>29</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0005</Rule>
+    <ProblemDescription>Avoid using patterns that start with "%" in LIKE predicates</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>40</Line>
+    <Column>39</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>40</Line>
+    <Column>50</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>41</Line>
+    <Column>28</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0005</Rule>
+    <ProblemDescription>Avoid using patterns that start with "%" in LIKE predicates</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>41</Line>
+    <Column>38</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>41</Line>
+    <Column>51</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>42</Line>
+    <Column>28</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0005</Rule>
+    <ProblemDescription>Avoid using patterns that start with "%" in LIKE predicates</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>42</Line>
+    <Column>38</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>42</Line>
+    <Column>49</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>43</Line>
+    <Column>28</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0005</Rule>
+    <ProblemDescription>Avoid using patterns that start with "%" in LIKE predicates</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>43</Line>
+    <Column>38</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>43</Line>
+    <Column>51</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>44</Line>
+    <Column>28</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0005</Rule>
+    <ProblemDescription>Avoid using patterns that start with "%" in LIKE predicates</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>44</Line>
+    <Column>38</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>44</Line>
+    <Column>51</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>45</Line>
+    <Column>28</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0005</Rule>
+    <ProblemDescription>Avoid using patterns that start with "%" in LIKE predicates</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>45</Line>
+    <Column>38</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>45</Line>
+    <Column>51</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>46</Line>
+    <Column>28</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0005</Rule>
+    <ProblemDescription>Avoid using patterns that start with "%" in LIKE predicates</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>46</Line>
+    <Column>38</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>46</Line>
+    <Column>50</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>47</Line>
+    <Column>28</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0005</Rule>
+    <ProblemDescription>Avoid using patterns that start with "%" in LIKE predicates</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>47</Line>
+    <Column>38</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>47</Line>
+    <Column>51</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>48</Line>
+    <Column>28</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0005</Rule>
+    <ProblemDescription>Avoid using patterns that start with "%" in LIKE predicates</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>48</Line>
+    <Column>38</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>48</Line>
+    <Column>53</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>49</Line>
+    <Column>28</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0005</Rule>
+    <ProblemDescription>Avoid using patterns that start with "%" in LIKE predicates</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>49</Line>
+    <Column>38</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>49</Line>
+    <Column>51</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>50</Line>
+    <Column>28</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0005</Rule>
+    <ProblemDescription>Avoid using patterns that start with "%" in LIKE predicates</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>50</Line>
+    <Column>38</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>50</Line>
+    <Column>50</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>51</Line>
+    <Column>28</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0005</Rule>
+    <ProblemDescription>Avoid using patterns that start with "%" in LIKE predicates</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>51</Line>
+    <Column>38</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>51</Line>
+    <Column>57</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>52</Line>
+    <Column>28</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0005</Rule>
+    <ProblemDescription>Avoid using patterns that start with "%" in LIKE predicates</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>52</Line>
+    <Column>38</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>52</Line>
+    <Column>51</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>53</Line>
+    <Column>28</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0005</Rule>
+    <ProblemDescription>Avoid using patterns that start with "%" in LIKE predicates</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>53</Line>
+    <Column>38</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>53</Line>
+    <Column>50</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>54</Line>
+    <Column>28</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0005</Rule>
+    <ProblemDescription>Avoid using patterns that start with "%" in LIKE predicates</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>54</Line>
+    <Column>38</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>54</Line>
+    <Column>50</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>55</Line>
+    <Column>28</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0005</Rule>
+    <ProblemDescription>Avoid using patterns that start with "%" in LIKE predicates</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>55</Line>
+    <Column>38</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>55</Line>
+    <Column>50</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>56</Line>
+    <Column>30</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>57</Line>
+    <Column>30</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0005</Rule>
+    <ProblemDescription>Avoid using patterns that start with "%" in LIKE predicates</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_clearforecast.sql</SourceFile>
+    <Line>57</Line>
+    <Column>47</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0016</Rule>
+    <ProblemDescription>Stored procedure(sp_CreateHighSpTeam) includes sp_ prefix in its name.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_CreateHighSpTeam.sql</SourceFile>
+    <Line>2</Line>
+    <Column>24</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_CreateHighSpTeam.sql</SourceFile>
+    <Line>12</Line>
+    <Column>28</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0005</Rule>
+    <ProblemDescription>Avoid using patterns that start with "%" in LIKE predicates</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_CreateHighSpTeam.sql</SourceFile>
+    <Line>12</Line>
+    <Column>38</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_CreateHighSpTeam.sql</SourceFile>
+    <Line>13</Line>
+    <Column>28</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0005</Rule>
+    <ProblemDescription>Avoid using patterns that start with "%" in LIKE predicates</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_CreateHighSpTeam.sql</SourceFile>
+    <Line>13</Line>
+    <Column>38</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0014</Rule>
+    <ProblemDescription>Data loss might occur when casting from DateTime to VarChar(100).</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_CreateHighSpTeam.sql</SourceFile>
+    <Line>28</Line>
+    <Column>80</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_CreateHighSpTeam.sql</SourceFile>
+    <Line>31</Line>
+    <Column>7</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0014</Rule>
+    <ProblemDescription>Data loss might occur when casting from DateTime to VarChar(100).</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_CreateHighSpTeam.sql</SourceFile>
+    <Line>34</Line>
+    <Column>83</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_CreateHighSpTeam.sql</SourceFile>
+    <Line>37</Line>
+    <Column>7</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0016</Rule>
+    <ProblemDescription>Stored procedure(sp_CreateReturnRate) includes sp_ prefix in its name.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_CreateReturnRate.sql</SourceFile>
+    <Line>4</Line>
+    <Column>24</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_CreateReturnRate.sql</SourceFile>
+    <Line>7</Line>
+    <Column>28</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0005</Rule>
+    <ProblemDescription>Avoid using patterns that start with "%" in LIKE predicates</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_CreateReturnRate.sql</SourceFile>
+    <Line>7</Line>
+    <Column>40</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_CreateReturnRate.sql</SourceFile>
+    <Line>7</Line>
+    <Column>59</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0004</Rule>
+    <ProblemDescription>A column without an index that is used as an IN predicate test expression might degrade performance.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_CreateReturnRate.sql</SourceFile>
+    <Line>10</Line>
+    <Column>7</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0015</Rule>
+    <ProblemDescription>Deterministic function call (count) might cause an unnecessary table scan.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_CreateReturnRate.sql</SourceFile>
+    <Line>13</Line>
+    <Column>9</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_CreateReturnRate.sql</SourceFile>
+    <Line>13</Line>
+    <Column>45</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_CreateReturnRate.sql</SourceFile>
+    <Line>15</Line>
+    <Column>59</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0001</Rule>
+    <ProblemDescription>The shape of the result set produced by a SELECT * statement will change if the underlying table or view structure changes.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_CreateReturnRate.sql</SourceFile>
+    <Line>33</Line>
+    <Column>8</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0004</Rule>
+    <ProblemDescription>A column without an index that is used as an IN predicate test expression might degrade performance.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_CreateReturnRate.sql</SourceFile>
+    <Line>42</Line>
+    <Column>7</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0015</Rule>
+    <ProblemDescription>Deterministic function call (count) might cause an unnecessary table scan.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_CreateReturnRate.sql</SourceFile>
+    <Line>44</Line>
+    <Column>8</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_CreateReturnRate.sql</SourceFile>
+    <Line>44</Line>
+    <Column>44</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_CreateReturnRate.sql</SourceFile>
+    <Line>46</Line>
+    <Column>59</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0016</Rule>
+    <ProblemDescription>Stored procedure(sp_CrossEuropean) includes sp_ prefix in its name.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_CrossEuropean.sql</SourceFile>
+    <Line>3</Line>
+    <Column>24</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_CrossEuropean.sql</SourceFile>
+    <Line>6</Line>
+    <Column>28</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0005</Rule>
+    <ProblemDescription>Avoid using patterns that start with "%" in LIKE predicates</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_CrossEuropean.sql</SourceFile>
+    <Line>6</Line>
+    <Column>40</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_CrossEuropean.sql</SourceFile>
+    <Line>6</Line>
+    <Column>51</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0016</Rule>
+    <ProblemDescription>Stored procedure(sp_delete_duplicate_forecast) includes sp_ prefix in its name.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_delete_duplicate_forecast.sql</SourceFile>
+    <Line>3</Line>
+    <Column>24</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_delete_duplicate_forecast.sql</SourceFile>
+    <Line>14</Line>
+    <Column>31</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0005</Rule>
+    <ProblemDescription>Avoid using patterns that start with "%" in LIKE predicates</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_delete_duplicate_forecast.sql</SourceFile>
+    <Line>14</Line>
+    <Column>48</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0016</Rule>
+    <ProblemDescription>Stored procedure(sp_dropextendedproc) includes sp_ prefix in its name.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_dropextendedproc.sql</SourceFile>
+    <Line>1</Line>
+    <Column>22</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0016</Rule>
+    <ProblemDescription>Stored procedure(SP_LHXT_OP) includes sp_ prefix in its name.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\SP_LHXT_OP.sql</SourceFile>
+    <Line>1</Line>
+    <Column>24</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0016</Rule>
+    <ProblemDescription>Stored procedure(sp_UpdateCompanyMaxDraw) includes sp_ prefix in its name.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_UpdateCompanyMaxDraw.sql</SourceFile>
+    <Line>2</Line>
+    <Column>24</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0016</Rule>
+    <ProblemDescription>Stored procedure(sp_UpdateReturnRate) includes sp_ prefix in its name.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_UpdateReturnRate.sql</SourceFile>
+    <Line>3</Line>
+    <Column>24</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0014</Rule>
+    <ProblemDescription>Data loss might occur when casting from Decimal(8, 3) to Decimal(18, 2).</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_UpdateReturnRate.sql</SourceFile>
+    <Line>10</Line>
+    <Column>29</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0014</Rule>
+    <ProblemDescription>Data loss might occur when casting from Decimal(8, 3) to Decimal(18, 2).</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_UpdateReturnRate.sql</SourceFile>
+    <Line>10</Line>
+    <Column>64</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0014</Rule>
+    <ProblemDescription>Data loss might occur when casting from Decimal(38, 3) to Decimal(18, 2).</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_UpdateReturnRate.sql</SourceFile>
+    <Line>10</Line>
+    <Column>99</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_UpdateReturnRate.sql</SourceFile>
+    <Line>18</Line>
+    <Column>7</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Stored Procedures\sp_UpdateReturnRate.sql</SourceFile>
+    <Line>18</Line>
+    <Column>26</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0011</Rule>
+    <ProblemDescription>Object name(PK_[Company_500) contains special characters.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Tables\Company_500.sql</SourceFile>
+    <Line>4</Line>
+    <Column>5</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0001</Rule>
+    <ProblemDescription>The shape of the result set produced by a SELECT * statement will change if the underlying table or view structure changes.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Views\HistoryMatch_1.sql</SourceFile>
+    <Line>5</Line>
+    <Column>1</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0001</Rule>
+    <ProblemDescription>The shape of the result set produced by a SELECT * statement will change if the underlying table or view structure changes.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Views\HistoryMatch_1.sql</SourceFile>
+    <Line>7</Line>
+    <Column>1</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Views\HistoryMatch_1.sql</SourceFile>
+    <Line>8</Line>
+    <Column>9</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0014</Rule>
+    <ProblemDescription>Data loss might occur when casting from Integer to Decimal(5, 2).</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Views\HistoryMatch_1.sql</SourceFile>
+    <Line>8</Line>
+    <Column>14</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Views\HistoryMatch_1.sql</SourceFile>
+    <Line>8</Line>
+    <Column>20</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0014</Rule>
+    <ProblemDescription>Data loss might occur when casting from Integer to Decimal(5, 2).</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Views\HistoryMatch_1.sql</SourceFile>
+    <Line>8</Line>
+    <Column>27</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Views\HistoryMatch_1.sql</SourceFile>
+    <Line>8</Line>
+    <Column>33</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0014</Rule>
+    <ProblemDescription>Data loss might occur when casting from Integer to Decimal(5, 2).</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Views\HistoryMatch_1.sql</SourceFile>
+    <Line>8</Line>
+    <Column>40</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Views\HistoryMatch_1.sql</SourceFile>
+    <Line>8</Line>
+    <Column>46</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Views\HistoryMatch_1.sql</SourceFile>
+    <Line>8</Line>
+    <Column>62</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Views\vCurrentAsiaPan_1.sql</SourceFile>
+    <Line>4</Line>
+    <Column>48</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Views\vCurrentAsiaPan_1.sql</SourceFile>
+    <Line>4</Line>
+    <Column>74</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Views\vCurrentEuropePan_1.sql</SourceFile>
+    <Line>4</Line>
+    <Column>70</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0004</Rule>
+    <ProblemDescription>A column without an index that is used as an IN predicate test expression might degrade performance.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Views\vGetForeCast.sql</SourceFile>
+    <Line>250</Line>
+    <Column>5</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0004</Rule>
+    <ProblemDescription>A column without an index that is used as an IN predicate test expression might degrade performance.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Views\vGetForeCast.sql</SourceFile>
+    <Line>258</Line>
+    <Column>5</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0001</Rule>
+    <ProblemDescription>The shape of the result set produced by a SELECT * statement will change if the underlying table or view structure changes.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Views\vGetForeCast.sql</SourceFile>
+    <Line>311</Line>
+    <Column>93</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Views\vGetForeCast.sql</SourceFile>
+    <Line>413</Line>
+    <Column>20</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Views\vGetForeCast.sql</SourceFile>
+    <Line>413</Line>
+    <Column>51</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0004</Rule>
+    <ProblemDescription>A column without an index that is used as an IN predicate test expression might degrade performance.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Views\vGetForeCast.sql</SourceFile>
+    <Line>413</Line>
+    <Column>51</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Views\vGetForeCast.sql</SourceFile>
+    <Line>422</Line>
+    <Column>20</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Views\vGetForeCast.sql</SourceFile>
+    <Line>422</Line>
+    <Column>51</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0004</Rule>
+    <ProblemDescription>A column without an index that is used as an IN predicate test expression might degrade performance.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Views\vGetForeCast.sql</SourceFile>
+    <Line>422</Line>
+    <Column>51</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0001</Rule>
+    <ProblemDescription>The shape of the result set produced by a SELECT * statement will change if the underlying table or view structure changes.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Views\vGetForeCast.sql</SourceFile>
+    <Line>547</Line>
+    <Column>93</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0005</Rule>
+    <ProblemDescription>Avoid using patterns that start with "%" in LIKE predicates</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Views\vGetForeCast.sql</SourceFile>
+    <Line>678</Line>
+    <Column>66</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0005</Rule>
+    <ProblemDescription>Avoid using patterns that start with "%" in LIKE predicates</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Views\vGetForeCast.sql</SourceFile>
+    <Line>678</Line>
+    <Column>127</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Views\vhistoryAsiaPan_1.sql</SourceFile>
+    <Line>4</Line>
+    <Column>48</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Views\vhistoryAsiaPan_1.sql</SourceFile>
+    <Line>4</Line>
+    <Column>74</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Views\vHistoryEuropePan_1.sql</SourceFile>
+    <Line>5</Line>
+    <Column>44</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Views\vHistoryEuropePan_1.sql</SourceFile>
+    <Line>5</Line>
+    <Column>70</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0007</Rule>
+    <ProblemDescription>Nullable columns can cause final results to be evaluated as NULL for the predicate.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\dbo\Views\vInformation.sql</SourceFile>
+    <Line>7</Line>
+    <Column>150</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+  <Problem>
+    <Rule>Microsoft.Rules.Data.SR0011</Rule>
+    <ProblemDescription>Object name(NT AUTHORITY\NETWORK) contains special characters.</ProblemDescription>
+    <SourceFile>E:\360云盘\Project\smaple\Dot Net\SetProxy\Database1\Security\NT AUTHORITY_NETWORK.sql</SourceFile>
+    <Line>1</Line>
+    <Column>13</Column>
+    <Severity>Warning</Severity>
+  </Problem>
+</Problems>

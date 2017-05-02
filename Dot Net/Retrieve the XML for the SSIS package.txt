@@ -1,0 +1,2 @@
+select package = cast(cast(packagedata as varbinary(max)) as xml)
+from dbo.sysssispackages

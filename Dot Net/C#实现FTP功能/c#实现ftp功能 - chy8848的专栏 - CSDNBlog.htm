@@ -1,0 +1,484 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0060)http://blog.csdn.net/chy8848/archive/2007/11/14/1883875.aspx -->
+<HTML xmlns="http://www.w3.org/1999/xhtml"><HEAD><TITLE>c#实现ftp功能 - chy8848的专栏 - CSDNBlog</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META content="chy8848,.net,.net framework,c#,ftpwebrequest,reqftp," 
+name=keywords>
+<META content="c#实现ftp功能 " name=description>
+<SCRIPT src="c#实现ftp功能 - chy8848的专栏 - CSDNBlog_files/tabber.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT src="c#实现ftp功能 - chy8848的专栏 - CSDNBlog_files/feedBackToolTips.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT language=javascript 
+src="c#实现ftp功能 - chy8848的专栏 - CSDNBlog_files/JSUtils.js" 
+type=text/javascript></SCRIPT>
+<LINK media=screen href="c#实现ftp功能 - chy8848的专栏 - CSDNBlog_files/tabber.css" 
+type=text/css rel=stylesheet><LINK 
+href="http://profile.csdn.net/chy8848/picture/1.ico" rel="Shortcut Icon"><LINK 
+media=all href="c#实现ftp功能 - chy8848的专栏 - CSDNBlog_files/style.css" type=text/css 
+rel=stylesheet><LINK media=print 
+href="c#实现ftp功能 - chy8848的专栏 - CSDNBlog_files/print.htm" type=text/css 
+rel=stylesheet><LINK title=RSS href="http://blog.csdn.net/chy8848/rss.aspx" 
+type=application/rss+xml rel=alternate>
+<META content="MSHTML 6.00.3790.2993" name=GENERATOR></HEAD>
+<BODY>
+<FORM language=javascript id=Form1 name=Form1 
+onsubmit="javascript:return WebForm_OnSubmit();" action=1883875.aspx 
+method=post><INPUT id=__EVENTTARGET type=hidden name=__EVENTTARGET> <INPUT 
+id=__EVENTARGUMENT type=hidden name=__EVENTARGUMENT> <INPUT 
+id="&#13;&#10;__VIEWSTATE" type=hidden name=__VIEWSTATE>
+<SCRIPT type=text/javascript>
+<!--
+var theForm = document.forms['Form1'];
+if (!theForm) {
+    theForm = document.Form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+// -->
+</SCRIPT>
+
+<SCRIPT src="c#实现ftp功能 - chy8848的专栏 - CSDNBlog_files/WebResource.axd" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+//<![CDATA[
+var Anthem_FormID = "Form1";
+//]]>
+</SCRIPT>
+
+<SCRIPT 
+src="C:\Documents and Settings\Administrator.SZLANYOU-7NGZ4R\桌面\c#实现ftp功能 - chy8848的专栏 - CSDNBlog_files\WebResource(1).axd" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT 
+src="C:\Documents and Settings\Administrator.SZLANYOU-7NGZ4R\桌面\c#实现ftp功能 - chy8848的专栏 - CSDNBlog_files\WebResource(2).axd" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT type=text/javascript>
+<!--
+function WebForm_OnSubmit() {
+if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+return true;
+}
+// -->
+</SCRIPT>
+ 
+<DIV id=top>
+<DIV>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD class=HeaderTitles>
+      <H1><A class=headermaintitle id=Header1_HeaderTitle 
+      href="http://blog.csdn.net/chy8848/">chy8848的专栏</A></H1>
+      <P id=tagline><SPAN id=TopicAuthor 
+    style="DISPLAY: none">chy8848</SPAN></P></TD></TR></TBODY></TABLE></DIV>
+<DIV class=HeaderBar>
+<TABLE class=HeaderBar id=HeaderBar>
+  <TBODY>
+  <TR>
+    <TD class=HeaderBarTab noWrap>&nbsp; <A href="http://www.csdn.net/" 
+      target=_blank>CSDN</A>&nbsp;|&nbsp; <A href="http://dev.csdn.net/" 
+      target=_blank>技术中心</A>&nbsp;|&nbsp; <A id=Header1_MyLinks1_HomeLink 
+      title=到聚合站点 href="http://blog.csdn.net/" 
+      target=_blank>BLOG首页</A>&nbsp;|&nbsp; <A id=Header1_MyLinks1_PersonalHome 
+      title="访问 chy8848的专栏" href="http://blog.csdn.net/chy8848/" 
+      target=_blank>我的首页</A>&nbsp;|&nbsp; <A id=Header1_MyLinks1_MyArticles 
+      title="查看 chy8848的专栏 所有文章" 
+      href="http://blog.csdn.net/chy8848/MyArticles.aspx" 
+      target=_blank>我的文章</A>&nbsp;|&nbsp; <A id=Header1_MyLinks1_MySpace 
+      title="查看 chy8848 的个人空间" href="http://hi.csdn.net/chy8848/profile" 
+      target=_blank><FONT color=red>我的空间</FONT></A>&nbsp;|&nbsp; <A 
+      id=Header1_MyLinks1_ContactLink accessKey=9 
+      href="http://blog.csdn.net/chy8848/contact.aspx">联系作者</A>&nbsp;|&nbsp; <A 
+      id=Header1_MyLinks1_HyperLink1 
+      href="http://search.csdn.net/search_blog.asp" 
+      target=_blank>搜索</A>&nbsp;|&nbsp; <A id=Header1_MyLinks1_Admin 
+      href="http://writeblog.csdn.net/">写文章</A> <IMG id=Header1_BlueTab 
+      src="c#实现ftp功能 - chy8848的专栏 - CSDNBlog_files/BlueTabRight.jpg" 
+      align=absMiddle border=0> </TD>
+    <TD class=HeaderBarTabBack noWrap width="100%">
+      <DIV class=BlogStatsBar>
+      <TABLE class=BlogStatsBar>
+        <TBODY>
+        <TR>
+          <TD width="100%"></TD>
+          <TD class=BlogStatsBar noWrap>&nbsp; 5篇原创: 0篇翻译: 4篇转载: 422次点击: 0个评论: 
+            0个Trackbacks 
+</TD></TR></TBODY></TABLE></DIV></TD></TR></TBODY></TABLE></DIV></DIV>
+<DIV id=leftmenu>
+<H3>公告</H3>
+<DIV id=News1_pnlMyResume><BR>
+<H3>我的简历</H3>
+<DIV id=job_csdn_net_sr></DIV>
+<SCRIPT src="c#实现ftp功能 - chy8848的专栏 - CSDNBlog_files/chy8848.htm"></SCRIPT>
+</DIV><SPAN id=SubscriptionList>
+<H3 class=listtitle>订阅博客</H3>
+<UL class=list>
+  <LI class=listitem><A href="http://blog.csdn.net/chy8848/Rss.aspx"><IMG 
+  alt=XML聚合 src="c#实现ftp功能 - chy8848的专栏 - CSDNBlog_files/xml.gif" 
+  border=0></A>&nbsp;&nbsp;<A href="http://feeds.feedsky.com/csdn.net/chy8848" 
+  target=_blank><IMG alt=FeedSky 
+  src="c#实现ftp功能 - chy8848的专栏 - CSDNBlog_files/feedsky.gif" border=0></A>
+  <LI class=listitem><A 
+  href="http://www.xianguo.com/subscribe.php?url=http://blog.csdn.net/chy8848/Rss.aspx" 
+  target=_blank><IMG alt=订阅到鲜果 
+  src="c#实现ftp功能 - chy8848的专栏 - CSDNBlog_files/rss_xianguo.jpg" border=0></A>
+  <LI class=listitem><A 
+  href="http://fusion.google.com/add?feedurl=http://blog.csdn.net/chy8848/Rss.aspx" 
+  target=_blank><IMG alt=订阅到Google 
+  src="c#实现ftp功能 - chy8848的专栏 - CSDNBlog_files/rss_google.gif" border=0></A>
+  <LI class=listitem><A 
+  href="http://www.zhuaxia.com/add_channel.php?url=http://blog.csdn.net/chy8848/Rss.aspx" 
+  target=_blank><IMG alt=订阅到抓虾 
+  src="c#实现ftp功能 - chy8848的专栏 - CSDNBlog_files/rss_zhuaxia.gif" border=0></A>
+  <LI class=listitem><A 
+  href="http://www.bloglines.com/sub/http://blog.csdn.net/chy8848/Rss.aspx" 
+  target=_blank><IMG alt=订阅到BlogLines 
+  src="c#实现ftp功能 - chy8848的专栏 - CSDNBlog_files/rss_bloglines.gif" border=0></A>
+  <LI class=listitem><A 
+  href="http://add.my.yahoo.com/rss?url=http://blog.csdn.net/chy8848/Rss.aspx" 
+  target=_blank><IMG alt=订阅到Yahoo 
+  src="c#实现ftp功能 - chy8848的专栏 - CSDNBlog_files/rss_yahoo.gif" border=0></A>
+  <LI class=listitem><A 
+  href="http://rss.gougou.com/find_rss.jsp?url=http://blog.csdn.net/chy8848/Rss.aspx" 
+  target=_blank><IMG alt=订阅到GouGou 
+  src="c#实现ftp功能 - chy8848的专栏 - CSDNBlog_files/rss_gougou.gif" border=0></A>
+  <LI class=listitem><A 
+  href="http://www.pageflakes.com/subscribe.aspx?url=http://blog.csdn.net/chy8848/Rss.aspx" 
+  target=_blank><IMG alt=订阅到飞鸽 
+  src="c#实现ftp功能 - chy8848的专栏 - CSDNBlog_files/rss_pageflakes.gif" border=0></A>
+  <LI class=listitem><A 
+  href="http://www.rojo.com/add-subscription?resource=http://blog.csdn.net/chy8848/Rss.aspx" 
+  target=_blank><IMG alt=订阅到Rojo 
+  src="c#实现ftp功能 - chy8848的专栏 - CSDNBlog_files/rss_rojo.gif" border=0></A>
+  <LI class=listitem><A 
+  href="http://www.newsgator.com/ngs/subscriber/subfext.aspx?url=http://blog.csdn.net/chy8848/Rss.aspx" 
+  target=_blank><IMG alt=订阅到newsgator 
+  src="c#实现ftp功能 - chy8848的专栏 - CSDNBlog_files/rss_newsgator.gif" border=0></A>
+  <LI class=listitem><A 
+  href="http://www.netvibes.com/subscribe.php?url=http://blog.csdn.net/chy8848/Rss.aspx" 
+  target=_blank><IMG alt=订阅到netvibes 
+  src="c#实现ftp功能 - chy8848的专栏 - CSDNBlog_files/rss_netvibes.gif" 
+  border=0></A></LI></UL></SPAN><SPAN id=RecentVisitors></SPAN>
+<H3 class=listtitle>文章</H3>
+<UL class=list></UL>
+<H3 class=listtitle>收藏</H3>
+<UL class=list></UL>
+<H3 class=listtitle>相册</H3><!--category title-->
+<UL class=list></UL>
+<H3 class=listtitle>存档</H3>
+<UL class=list>
+  <LI><A 
+href="http://blog.csdn.net/chy8848/archive/2008/01.aspx">2008年01月(5)</A>
+  <LI><A 
+href="http://blog.csdn.net/chy8848/archive/2007/11.aspx">2007年11月(3)</A>
+  <LI><A 
+  href="http://blog.csdn.net/chy8848/archive/2007/08.aspx">2007年08月(1)</A></LI></UL><SPAN 
+id=Anthem_RecentComments_ltlComments__><SPAN 
+id=RecentComments_ltlComments></SPAN></SPAN><BR><BR></DIV>
+<DIV id=main><SPAN class=PreAndNext id=viewpost.ascx_PreviousAndNextEntriesUp>
+<DIV align=center><A 
+href="http://blog.csdn.net/chy8848/archive/2007/11/15/1887064.aspx">上一篇:&nbsp;根据扩展名, 
+从注册表中取得文件的图标</A>&nbsp;|&nbsp;<A 
+href="http://blog.csdn.net/chy8848/archive/2007/11/13/1882358.aspx">下一篇:&nbsp;如何在子窗体中操作主窗体上的控件</A></DIV></SPAN><BR>
+<SCRIPT>function StorePage(){d=document;t=d.selection?(d.selection.type!='None'?d.selection.createRange().text:''):(d.getSelection?d.getSelection():'');void(keyit=window.open('http://www.365key.com/storeit.aspx?t='+escape(d.title)+'&u='+escape(d.location.href)+'&c='+escape(t),'keyit','scrollbars=no,width=475,height=575,left=75,top=20,status=no,resizable=yes'));keyit.focus();}</SCRIPT>
+
+<DIV class=post>
+<DIV class=postTitle>
+<SCRIPT src="c#实现ftp功能 - chy8848的专栏 - CSDNBlog_files/vote.js"></SCRIPT>
+<A href="http://blog.csdn.net/chy8848/archive/2007/11/14/1883875.aspx"><IMG 
+height=13 src="c#实现ftp功能 - chy8848的专栏 - CSDNBlog_files/authorship.gif" width=15 
+border=0>&nbsp;c#实现ftp功能 </A>&nbsp;&nbsp;
+<SCRIPT src="c#实现ftp功能 - chy8848的专栏 - CSDNBlog_files/count.htm"></SCRIPT>
+ </DIV>
+<DIV class=postText>
+<H2><A id=AjaxHolder_ctl01_TitleUrl 
+href="http://www.cnblogs.com/kerryking/archive/2007/07/10/813079.html">c#实现ftp功能</A> 
+</H2>
+<DIV class=postText><STRONG>介绍 <BR></STRONG>&nbsp;&nbsp;微软的.net framework 
+2.0相对于1.x来说增加了对FTP的支持。以前为了符合我的需求，我不等不使用第三方类库来实现FTP功能，但是为了可靠，还是使用.net 
+framework的类比较好。我的这段代码没有做成可重复使用的类库的形式，但它却是比较容易理解的并能满足你的需求。它可以实现上传，下载，删除等任意功能。在这篇文章的后面将给大家出示.net 
+2.0下实现ftp的简单代码，使用的语言是c#。或许是因为这是.net新增的类，又或许是第三方类库已经能很好的实现你的需求，.net 
+2.0的这部分类库并没有得到足够的关注。 <BR>&nbsp;&nbsp; <BR>&nbsp;&nbsp; 
+<BR>&nbsp;&nbsp;<STRONG>背景</STRONG> 
+<BR>&nbsp;&nbsp;作为我的工作的一部分，我已经使用了ftp模块，但是我只能在.net 1.1中去使用它，所以我不能深入的研究.net 
+2.0下ftp的实现。但是我相信，.ne 2.0下对ftp的支持是非常好的。 <BR>&nbsp;&nbsp; <BR>&nbsp;&nbsp; 
+<BR>&nbsp;&nbsp;<STRONG>代码 <BR></STRONG>&nbsp;&nbsp;不要忘记引入命名空间 
+<BR>&nbsp;&nbsp;using System.Net; <BR>&nbsp;&nbsp;using System.IO; 
+<BR>&nbsp;&nbsp;下面的几个步骤包括了使用FtpWebRequest类实现ftp功能的一般过程 <BR>&nbsp;&nbsp; 
+<BR>&nbsp;&nbsp;1、创建一个FtpWebRequest对象，指向ftp服务器的uri 
+<BR>&nbsp;&nbsp;2、设置ftp的执行方法（上传，下载等） 
+<BR>&nbsp;&nbsp;3、给FtpWebRequest对象设置属性（是否支持ssl，是否使用二进制传输等） 
+<BR>&nbsp;&nbsp;4、设置登录验证（用户名，密码） <BR>&nbsp;&nbsp;5、执行请求 
+<BR>&nbsp;&nbsp;6、接收相应流（如果需要的话） <BR>&nbsp;&nbsp;7、如果没有打开的流，则关闭ftp请求 
+<BR>&nbsp;&nbsp; 
+<BR>&nbsp;&nbsp;开发任何ftp应用程序都需要一个相关的ftp服务器及它的配置信息。FtpWebRequest暴露了一些属性来设置这些信息。 
+<BR>&nbsp;&nbsp; <BR>&nbsp;&nbsp;<STRONG>接下来的代码示例了上传功能</STRONG> <BR>&nbsp;&nbsp; 
+<BR>&nbsp;&nbsp;首先设置一个uri地址，包括路径和文件名。这个uri被使用在FtpWebRequest实例中。 <BR>&nbsp;&nbsp; 
+<BR>&nbsp;&nbsp;然后根据ftp请求设置FtpWebRequest对象的属性 <BR>&nbsp;&nbsp; 
+<BR>&nbsp;&nbsp;其中一些重要的属性如下： <BR>&nbsp;&nbsp; ·Credentials - 指定登录ftp服务器的用户名和密码。 
+<BR>&nbsp;&nbsp; ·KeepAlive - 指定连接是应该关闭还是在请求完成之后关闭，默认为true <BR>&nbsp;&nbsp; 
+·UseBinary - 
+指定文件传输的类型。有两种文件传输模式，一种是Binary，另一种是ASCII。两种方法在传输时，字节的第8位是不同的。ASCII使用第8位作为错误控制，而Binary的8位都是有意义的。所以当你使用ASCII传输时要小心一些。简单的说，如果能用记事本读和写的文件用ASCII传输就是安全的，而其他的则必须使用Binary模式。当然使用Binary模式发送ASCII文件也是非常好的。 
+<BR>&nbsp;&nbsp; ·UsePassive - 
+指定使用主动模式还是被动模式。早先所有客户端都使用主动模式，而且工作的很好，而现在因为客户端防火墙的存在，将会关闭一些端口，这样主动模式将会失败。在这种情况下就要使用被动模式，但是一些端口也可能被服务器的防火墙封掉。不过因为ftp服务器需要它的ftp服务连接到一定数量的客户端，所以他们总是支持被动模式的。这就是我们为什么要使用被动模式的原意，为了确保数据可以正确的传输，使用被动模式要明显优于主动模式。（译者注：主动（PORT）模式建立数据传输通道是由服务器端发起的，服务器使用20端口连接客户端的某一个大于1024的端口；在被动（PASV）模式中，数据传输的通道的建立是由FTP客户端发起的，他使用一个大于1024的端口连接服务器的1024以上的某一个端口） 
+<BR>&nbsp;&nbsp; ·ContentLength - 
+设置这个属性对于ftp服务器是有用的，但是客户端不使用它，因为FtpWebRequest忽略这个属性，所以在这种情况下，该属性是无效的。但是如果我们设置了这个属性，ftp服务器将会提前预知文件的大小（在upload时会有这种情况） 
+<BR>&nbsp;&nbsp; ·Method - 
+指定当前请求是什么命令（upload，download，filelist等）。这个值定义在结构体WebRequestMethods.Ftp中。
+<P>
+<TABLE 
+style="BORDER-TOP-STYLE: dotted; BORDER-RIGHT-STYLE: dotted; BORDER-LEFT-STYLE: dotted; BORDER-BOTTOM-STYLE: dotted" 
+borderColor=#cccccc cellSpacing=0 cellPadding=3 width=500 align=center 
+bgColor=#f3f3f3 border=1 heihgt="">
+  <TBODY>
+  <TR>
+    <TD>&nbsp;&nbsp;private void Upload(string filename) <BR>&nbsp;&nbsp;{ 
+      <BR>&nbsp;&nbsp; FileInfo fileInf = new FileInfo(filename); 
+      <BR>&nbsp;&nbsp; string uri = "ftp://" + ftpServerIP + "/" + fileInf.Name; 
+      <BR>&nbsp;&nbsp; FtpWebRequest reqFTP; <BR>&nbsp;&nbsp; <BR>&nbsp;&nbsp; 
+      // 根据uri创建FtpWebRequest对象 <BR>&nbsp;&nbsp; reqFTP = 
+      (FtpWebRequest)FtpWebRequest.Create(new Uri("ftp://" + ftpServerIP + "/" + 
+      fileInf.Name)); <BR>&nbsp;&nbsp; <BR>&nbsp;&nbsp; // ftp用户名和密码 
+      <BR>&nbsp;&nbsp; reqFTP.Credentials = new NetworkCredential(ftpUserID, 
+      ftpPassword); <BR>&nbsp;&nbsp; <BR>&nbsp;&nbsp; // 默认为true，连接不会被关闭 
+      <BR>&nbsp;&nbsp; // 在一个命令之后被执行 <BR>&nbsp;&nbsp; reqFTP.KeepAlive = false; 
+      <BR>&nbsp;&nbsp; <BR>&nbsp;&nbsp; // 指定执行什么命令 <BR>&nbsp;&nbsp; 
+      reqFTP.Method = WebRequestMethods.Ftp.UploadFile; <BR>&nbsp;&nbsp; 
+      <BR>&nbsp;&nbsp; // 指定数据传输类型 <BR>&nbsp;&nbsp; reqFTP.UseBinary = true; 
+      <BR>&nbsp;&nbsp; <BR>&nbsp;&nbsp; // 上传文件时通知服务器文件的大小 <BR>&nbsp;&nbsp; 
+      reqFTP.ContentLength = fileInf.Length; <BR>&nbsp;&nbsp; <BR>&nbsp;&nbsp; 
+      // 缓冲大小设置为2kb <BR>&nbsp;&nbsp; int buffLength = 2048; <BR>&nbsp;&nbsp; 
+      <BR>&nbsp;&nbsp; byte[] buff = new byte[buffLength]; <BR>&nbsp;&nbsp; int 
+      contentLen; <BR>&nbsp;&nbsp; <BR>&nbsp;&nbsp; // 打开一个文件流 
+      (System.IO.FileStream) 去读上传的文件 <BR>&nbsp;&nbsp; FileStream fs = 
+      fileInf.OpenRead(); <BR>&nbsp;&nbsp; try <BR>&nbsp;&nbsp; { 
+      <BR>&nbsp;&nbsp; // 把上传的文件写入流 <BR>&nbsp;&nbsp; Stream strm = 
+      reqFTP.GetRequestStream(); <BR>&nbsp;&nbsp; <BR>&nbsp;&nbsp; // 每次读文件流的2kb 
+      <BR>&nbsp;&nbsp; contentLen = fs.Read(buff, 0, buffLength); 
+      <BR>&nbsp;&nbsp; <BR>&nbsp;&nbsp; // 流内容没有结束 <BR>&nbsp;&nbsp; while 
+      (contentLen != 0) <BR>&nbsp;&nbsp; { <BR>&nbsp;&nbsp; // 把内容从file stream 
+      写入 upload stream <BR>&nbsp;&nbsp; strm.Write(buff, 0, contentLen); 
+      <BR>&nbsp;&nbsp; <BR>&nbsp;&nbsp; contentLen = fs.Read(buff, 0, 
+      buffLength); <BR>&nbsp;&nbsp; } <BR>&nbsp;&nbsp; <BR>&nbsp;&nbsp; // 关闭两个流 
+      <BR>&nbsp;&nbsp; strm.Close(); <BR>&nbsp;&nbsp; fs.Close(); 
+      <BR>&nbsp;&nbsp; } <BR>&nbsp;&nbsp; catch (Exception ex) <BR>&nbsp;&nbsp; 
+      { <BR>&nbsp;&nbsp; MessageBox.Show(ex.Message, "Upload Error"); 
+      <BR>&nbsp;&nbsp; } <BR>&nbsp;&nbsp;}&nbsp;</TD></TR></TBODY></TABLE></P>
+<P>&nbsp;以上代码简单的示例了ftp的上传功能。创建一个指向某ftp服务器的FtpWebRequest对象，然后设置其不同的属性Credentials，KeepAlive，Method，UseBinary，ContentLength。 
+<BR>&nbsp;&nbsp; 
+<BR>&nbsp;&nbsp;打开本地机器上的文件，把其内容写入ftp请求流。缓冲的大小为2kb，无论上传大文件还是小文件，这都是一个合适的大小。</P><BR 
+clear=all>
+<P>
+<TABLE 
+style="BORDER-TOP-STYLE: dotted; BORDER-RIGHT-STYLE: dotted; BORDER-LEFT-STYLE: dotted; BORDER-BOTTOM-STYLE: dotted" 
+borderColor=#cccccc cellSpacing=0 cellPadding=3 width=500 align=center 
+bgColor=#f3f3f3 border=1 heihgt="">
+  <TBODY>
+  <TR>
+    <TD>&nbsp;&nbsp;private void Download(string filePath, string fileName) 
+      <BR>&nbsp;&nbsp;{ <BR>&nbsp;&nbsp; FtpWebRequest reqFTP; <BR>&nbsp;&nbsp; 
+      <BR>&nbsp;&nbsp; try <BR>&nbsp;&nbsp; { <BR>&nbsp;&nbsp; FileStream 
+      outputStream = new FileStream(filePath + "\\" + fileName, 
+      FileMode.Create); <BR>&nbsp;&nbsp; <BR>&nbsp;&nbsp; reqFTP = 
+      (FtpWebRequest)FtpWebRequest.Create(new Uri("ftp://" + ftpServerIP + "/" + 
+      fileName)); <BR>&nbsp;&nbsp; <BR>&nbsp;&nbsp; reqFTP.Method = 
+      WebRequestMethods.Ftp.DownloadFile; <BR>&nbsp;&nbsp; <BR>&nbsp;&nbsp; 
+      reqFTP.UseBinary = true; <BR>&nbsp;&nbsp; <BR>&nbsp;&nbsp; 
+      reqFTP.Credentials = new NetworkCredential(ftpUserID, ftpPassword); 
+      <BR>&nbsp;&nbsp; <BR>&nbsp;&nbsp; FtpWebResponse response = 
+      (FtpWebResponse)reqFTP.GetResponse(); <BR>&nbsp;&nbsp; <BR>&nbsp;&nbsp; 
+      Stream ftpStream = response.GetResponseStream(); <BR>&nbsp;&nbsp; 
+      <BR>&nbsp;&nbsp; long cl = response.ContentLength; <BR>&nbsp;&nbsp; 
+      <BR>&nbsp;&nbsp; int bufferSize = 2048; <BR>&nbsp;&nbsp; <BR>&nbsp;&nbsp; 
+      int readCount; <BR>&nbsp;&nbsp; <BR>&nbsp;&nbsp; byte[] buffer = new 
+      byte[bufferSize]; <BR>&nbsp;&nbsp; <BR>&nbsp;&nbsp; readCount = 
+      ftpStream.Read(buffer, 0, bufferSize); <BR>&nbsp;&nbsp; <BR>&nbsp;&nbsp; 
+      while (readCount &gt; 0) <BR>&nbsp;&nbsp; { <BR>&nbsp;&nbsp; 
+      outputStream.Write(buffer, 0, readCount); <BR>&nbsp;&nbsp; 
+      <BR>&nbsp;&nbsp; readCount = ftpStream.Read(buffer, 0, bufferSize); 
+      <BR>&nbsp;&nbsp; } <BR>&nbsp;&nbsp; <BR>&nbsp;&nbsp; ftpStream.Close(); 
+      <BR>&nbsp;&nbsp; <BR>&nbsp;&nbsp; outputStream.Close(); <BR>&nbsp;&nbsp; 
+      <BR>&nbsp;&nbsp; response.Close(); <BR>&nbsp;&nbsp; } <BR>&nbsp;&nbsp; 
+      catch (Exception ex) <BR>&nbsp;&nbsp; { <BR>&nbsp;&nbsp; 
+      MessageBox.Show(ex.Message); <BR>&nbsp;&nbsp; } 
+  <BR>&nbsp;&nbsp;}&nbsp;</TD></TR></TBODY></TABLE></P>
+<P><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;上面的代码实现了从ftp服务器上下载文件的功能。这不同于之前所提到的上传功能，下载需要一个响应流，它包含着下载文件的内容。这个下载的文件是在FtpWebRequest对象中的uri指定的。在得到所请求的文件后，通过FtpWebRequest对象的 
+GetResponse()方法下载文件。它将把文件作为一个流下载到你的客户端的机器上。 <BR>&nbsp;&nbsp; 
+<BR>&nbsp;&nbsp;注意：我们可以设置文件在我们本地机器上的存放路径和名称。</P>
+<P>&nbsp;
+<TABLE 
+style="BORDER-TOP-STYLE: dotted; BORDER-RIGHT-STYLE: dotted; BORDER-LEFT-STYLE: dotted; BORDER-BOTTOM-STYLE: dotted" 
+borderColor=#cccccc cellSpacing=0 cellPadding=3 width=500 align=center 
+bgColor=#f3f3f3 border=1 heihgt="">
+  <TBODY>
+  <TR>
+    <TD>&nbsp;&nbsp;public string[] GetFileList() <BR>&nbsp;&nbsp;{ 
+      <BR>&nbsp;&nbsp; string[] downloadFiles; <BR>&nbsp;&nbsp; StringBuilder 
+      result = new StringBuilder(); <BR>&nbsp;&nbsp; FtpWebRequest reqFTP; 
+      <BR>&nbsp;&nbsp; try <BR>&nbsp;&nbsp; { <BR>&nbsp;&nbsp; reqFTP = 
+      (FtpWebRequest)FtpWebRequest.Create(new Uri("ftp://" + ftpServerIP + 
+      "/")); <BR>&nbsp;&nbsp; reqFTP.UseBinary = true; <BR>&nbsp;&nbsp; 
+      reqFTP.Credentials = new NetworkCredential(ftpUserID, ftpPassword); 
+      <BR>&nbsp;&nbsp; reqFTP.Method = WebRequestMethods.Ftp.ListDirectory; 
+      <BR>&nbsp;&nbsp; WebResponse response = reqFTP.GetResponse(); 
+      <BR>&nbsp;&nbsp; StreamReader reader = new 
+      StreamReader(response.GetResponseStream()); <BR>&nbsp;&nbsp; string line = 
+      reader.ReadLine(); <BR>&nbsp;&nbsp; while (line != null) <BR>&nbsp;&nbsp; 
+      { <BR>&nbsp;&nbsp; result.Append(line); <BR>&nbsp;&nbsp; 
+      result.Append("\n"); <BR>&nbsp;&nbsp; line = reader.ReadLine(); 
+      <BR>&nbsp;&nbsp; } <BR>&nbsp;&nbsp; // to remove the trailing '\n' 
+      <BR>&nbsp;&nbsp; result.Remove(result.ToString().LastIndexOf('\n'), 1); 
+      <BR>&nbsp;&nbsp; reader.Close(); <BR>&nbsp;&nbsp; response.Close(); 
+      <BR>&nbsp;&nbsp; return result.ToString().Split('\n'); <BR>&nbsp;&nbsp; } 
+      <BR>&nbsp;&nbsp; catch (Exception ex) <BR>&nbsp;&nbsp; { <BR>&nbsp;&nbsp; 
+      System.Windows.Forms.MessageBox.Show(ex.Message); <BR>&nbsp;&nbsp; 
+      downloadFiles = null; <BR>&nbsp;&nbsp; return downloadFiles; 
+      <BR>&nbsp;&nbsp; } 
+<BR>&nbsp;&nbsp;}&nbsp;</TD></TR></TBODY></TABLE><BR>&nbsp;&nbsp;&nbsp;<BR>&nbsp;&nbsp;&nbsp;上面的代码示例了如何从ftp服务器上获得文件列表。uri指向ftp服务器的地址。我们使用StreamReader对象来存储一个流，文件名称列表通过“\r\n”分隔开，也就是说每一个文件名称都占一行。你可以使用StreamReader对象的ReadToEnd() 
+方法来得到文件列表。上面的代码中我们用一个StringBuilder对象来保存文件名称，然后把结果通过分隔符分开后作为一个数组返回。我确定只是一个比较好的方法。 
+<BR>&nbsp;&nbsp; 
+<BR>&nbsp;&nbsp;其他的实现如Rename，Delete，GetFileSize，FileListDetails，MakeDir等与上面的几段代码类似，就不多说了。 
+<BR>&nbsp;&nbsp; 
+<BR>&nbsp;&nbsp;注意：实现重命名的功能时，要把新的名字设置给FtpWebRequest对象的RenameTo属性。连接指定目录的时候，需要在FtpWebRequest对象所使用的uri中指明。 
+<BR>&nbsp;&nbsp; <BR>&nbsp;&nbsp; <BR>&nbsp;&nbsp;需要注意的地方 
+<BR>&nbsp;&nbsp;你在编码时需要注意以下几点： <BR>&nbsp;&nbsp; 
+·除非EnableSsl属性被设置成true，否作所有数据，包括你的用户名和密码都将明文发给服务器，任何监视网络的人都可以获取到你连接服务器的验证信息。如果你连接的ftp服务器提供了SSL，你就应当把EnableSsl属性设置为true。 
+<BR>&nbsp;&nbsp; ·如果你没有访问ftp服务器的权限，将会抛出SecurityException错误 <BR>&nbsp;&nbsp; 
+·发送请求到ftp服务器需要调用GetResponse方法。当请求的操作完成后，一个FtpWebResponse对象将返回。这个 
+FtpWebResponse对象提供了操作的状态和已经从ftp服务器上下载的数据。FtpWebResponse对象的StatusCode属性提供了ftp服务器返回的最后的状态代码。FtpWebResponse对象的StatusDescription属性为这个状态代码的描述。</P>
+<P>转自：http://dotnet.chinaitlab.com/CSharp/725107.html<BR>&nbsp;</P></DIV><BR><BR>
+<P id=TBPingURL>Trackback: 
+http://tb.blog.csdn.net/TrackBack.aspx?PostId=1883875</P><BR></DIV>
+<DIV class=postFoot>
+<SCRIPT src=""></SCRIPT>
+[<A title=功能强大的网络收藏夹，一秒钟操作就可以轻松实现保存带来的价值、分享带来的快乐 
+href="javascript:d=document;t=d.selection?(d.selection.type!='None'?d.selection.createRange().text:''):(d.getSelection?d.getSelection():'');void(saveit=window.open('http://wz.csdn.net/storeit.aspx?t='+escape(d.title)+'&amp;u='+escape(d.location.href)+'&amp;c='+escape(t),'keyit','scrollbars=no,width=590,height=300,left=75,top=20,status=no,resizable=yes'));saveit.focus();">收藏到我的网摘</A>]&nbsp;&nbsp; 
+[<A 
+href="http://tb.blog.csdn.net/TrackBack.aspx?PostId=1883875">发送Trackback]</A>&nbsp;&nbsp;chy8848发表于 
+2007年11月14日 11:08:00 </DIV></DIV><LINK 
+href="http://blog.csdn.net/chy8848/Services/Pingback.aspx" rel=pingback><!--<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"xmlns:dc="http://purl.org/dc/elements/1.1/"xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"><rdf:Descriptionrdf:about="http://blog.csdn.net/chy8848/archive/2007/11/14/1883875.aspx"dc:identifier="http://blog.csdn.net/chy8848/archive/2007/11/14/1883875.aspx"dc:title="c#实现ftp功能 "trackback:ping="http://tb.blog.csdn.net/TrackBack.aspx?PostId=1883875" /></rdf:RDF>-->
+<SCRIPT>function hide(){showComment();}</SCRIPT>
+<BR><BR><BR><BR>
+<DIV class=post id=csdn_zhaig_ad_yahoo></DIV>
+<SCRIPT type=text/javascript>document.write("<img src=http://counter.csdn.net/pv.aspx?id=24 border=0 width=0 height=0>");</SCRIPT>
+<SPAN class=PreAndNext id=viewpost.ascx_PreviousAndNextEntriesDown>
+<DIV align=center><A 
+href="http://blog.csdn.net/chy8848/archive/2007/11/15/1887064.aspx">上一篇:&nbsp;根据扩展名, 
+从注册表中取得文件的图标</A>&nbsp;|&nbsp;<A 
+href="http://blog.csdn.net/chy8848/archive/2007/11/13/1882358.aspx">下一篇:&nbsp;如何在子窗体中操作主窗体上的控件</A></DIV></SPAN><SPAN 
+id=Anthem_Comments.ascx_ltlComments__><SPAN id=Comments.ascx_ltlComments><BR>
+<DIV id=comments>
+<H3>评论</H3>没有评论。 </DIV></SPAN></SPAN>
+<SCRIPT language=javascript>
+ad_width=468;
+ad_height=60;
+adcss=2;
+unionuser=19;
+ad_type='j';
+count=5; 
+</SCRIPT>
+
+<DIV>
+<SCRIPT language=javascript 
+src="c#实现ftp功能 - chy8848的专栏 - CSDNBlog_files/showads.js" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT language=javascript 
+src="c#实现ftp功能 - chy8848的专栏 - CSDNBlog_files/showgm.js" 
+type=text/javascript></SCRIPT>
+</DIV>
+<DIV class=CommentForm id=commentform>
+<H3>发表评论 </H3>
+<DIV id=Anthem_PostComment.ascx_CommentUpdatePanel__>
+<DIV id=PostComment.ascx_CommentUpdatePanel>
+<TABLE class=CommentForm>
+  <TBODY>
+  <TR>
+    <TD width=69 height=0></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD width=70>大名：</TD>
+    <TD align=left><INPUT id=PostComment.ascx_tbName style="WIDTH: 300px" 
+      disabled maxLength=32 size=40 value=amingo name=PostComment.ascx:tbName> 
+      <SPAN id=PostComment.ascx_RequiredFieldValidator2 
+      style="DISPLAY: none; COLOR: red" initialvalue="" 
+      evaluationfunction="RequiredFieldValidatorEvaluateIsValid" 
+      display="Dynamic" errormessage="<br>请输入尊姓大名" 
+      controltovalidate="PostComment.ascx_tbName"><BR>请输入尊姓大名</SPAN> </TD></TR>
+  <TR>
+    <TD width=70>网址：</TD>
+    <TD align=left><INPUT id=PostComment.ascx_tbUrl style="WIDTH: 300px" 
+      maxLength=256 size=40 name=PostComment.ascx:tbUrl> </TD></TR>
+  <DIV id=PostComment.ascx_AntiBotImageRegion></DIV>
+  <TR>
+    <TD width=70>校验码：</TD>
+    <TD align=left><INPUT id=PostComment.ascx_tbAntiBotImage 
+      style="WIDTH: 75px" name=PostComment.ascx:tbAntiBotImage> <SPAN 
+      id=PostComment.ascx_valAntiBotImage style="DISPLAY: none; COLOR: red" 
+      evaluationfunction="CustomValidatorEvaluateIsValid" 
+      display="Dynamic">检验码无效!</SPAN> <SPAN 
+      id=Anthem_PostComment.ascx_imgAntiBotImage__><IMG 
+      id=PostComment.ascx_imgAntiBotImage alt="" 
+      src="c#实现ftp功能 - chy8848的专栏 - CSDNBlog_files/AntiBotImage.jpg" 
+      align=absMiddle border=0></SPAN> <SPAN 
+      id=Anthem_PostComment.ascx_lbCreateAntiBotImage__><A 
+      id=PostComment.ascx_lbCreateAntiBotImage 
+      onclick="javascript:Anthem_FireCallBackEvent(this,event,'PostComment.ascx:lbCreateAntiBotImage','',false,'','','',true,null,null,null,true,true);return false;" 
+      href="javascript:__doPostBack('PostComment.ascx$lbCreateAntiBotImage','')">看不清,换一张</A></SPAN> 
+    </TD></TR>
+  <DIV></DIV>
+  <TR>
+    <TD colSpan=3>评论&nbsp; <SPAN id=PostComment.ascx_RequiredFieldValidator3 
+      style="DISPLAY: none; COLOR: red" initialvalue="" 
+      evaluationfunction="RequiredFieldValidatorEvaluateIsValid" 
+      display="Dynamic" errormessage="<br>请输入评论" 
+      controltovalidate="PostComment.ascx_tbComment"><BR>请输入评论</SPAN> <BR><TEXTAREA id=PostComment.ascx_tbComment style="WIDTH: 381px; HEIGHT: 193px" name=PostComment.ascx:tbComment rows=10 cols=50></TEXTAREA> 
+    </TD></TR>
+  <TR>
+    <TD colSpan=3><SPAN id=Anthem_PostComment.ascx_btnSubmit__><INPUT language=javascript class=Button id=PostComment.ascx_btnSubmit onclick="javascript:Anthem_FireCallBackEvent(this,event,'PostComment.ascx:btnSubmit','',true,'','','正在处理...',false,null,null,null,true,true);return false;WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;PostComment.ascx:btnSubmit&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" type=submit value=提交 name=PostComment.ascx:btnSubmit></SPAN>&nbsp;&nbsp;&nbsp; 
+    </TD></TR>
+  <TR>
+    <TD colSpan=3><SPAN id=PostComment.ascx_Message 
+    style="COLOR: red"></SPAN></TD></TR></TBODY></TABLE></DIV></DIV></DIV></DIV>
+<P id=footer>Powered by: <BR><A id=Footer1_Hyperlink2 
+href="http://scottwater.com/blog" name=Hyperlink1><IMG 
+src="c#实现ftp功能 - chy8848的专栏 - CSDNBlog_files/100x30_Logo.gif" border=0></A> <A 
+id=Footer1_Hyperlink3 href="http://asp.net/" name=Hyperlink1><IMG 
+src="c#实现ftp功能 - chy8848的专栏 - CSDNBlog_files/PoweredByAsp.Net.gif" border=0></A> 
+<BR>Copyright © chy8848 </P>
+<SCRIPT src="c#实现ftp功能 - chy8848的专栏 - CSDNBlog_files/counter.js"></SCRIPT>
+
+<SCRIPT type=text/javascript>
+<!--
+var Page_Validators =  new Array(document.getElementById("PostComment.ascx_RequiredFieldValidator2"), document.getElementById("PostComment.ascx_valAntiBotImage"), document.getElementById("PostComment.ascx_RequiredFieldValidator3"));
+// -->
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+<!--
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+// -->
+</SCRIPT>
+</FORM></BODY></HTML>

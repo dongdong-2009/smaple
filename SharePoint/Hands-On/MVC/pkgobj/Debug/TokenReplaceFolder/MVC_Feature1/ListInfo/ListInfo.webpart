@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<webParts>
+  <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+    <metaData>
+      <type name="MVC.ListInfoWebPart, MVC, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4a831b0677556ea4" />
+      <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+    </metaData>
+    <data>
+      <properties>
+        <property name="Title" type="string">ListInfoWebPart</property>
+        <property name="Description" type="string">My WebPart</property>
+      </properties>
+    </data>
+  </webPart>
+</webParts>

@@ -1,0 +1,27 @@
+deploy a workflow to another server, you should export the workflow like a wsp solution. Follow this instructions to proceed:
+ 
+If the Workflow is a List Workflow
+ 1.Open SPD 2010 in you first server
+2.Go to workflows folder
+3.Select the workflow
+4.Click export to visio
+5.Save the file like a vwi (for example server1.vwi). Change their extension to zip.
+ 
+Now, open the site in the second server using SPD2010
+ 1.Go to workflows folder
+2.Select list to create a new workflow. The list must be identically like the server 1. Same fields.
+3.Create an empty WF and publish it.
+4.Click export to visio
+5.Save the file like a vwi (for example server2.vwi). Change their extension to zip.
+6.extract zip files at different paths
+7.copy and replace the "workflow.xoml.wfconfig" file from server2.zip to server1.zip folder
+8.select all files into the server1 folder and zipping. this file should be a zip file with the "workflow.xoml.wfconfig" file from server2 (empty wf)
+9.Rename them back to vwi
+10.in SPD2010, select workflows library and click in import from visio, select server1.vwi.
+ 
+Ready for use you wf...
+ 
+If the workflow is a reusable workflows:
+ 1.If you want to use your workflow into another site collection you can use the save as Template button in the ribbon men¨². This process must save the WF like a wsp file (SharePoint solution)
+2.deploy it in another server farm like a SharePoint solution for use  
+regards.

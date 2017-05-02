@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+	<script type="text/javascript" src="jVote.js"></script>
+	<script type="text/javascript">
+	/*<![CDATA[*/
+	var v;
+	window.onload = function()
+	{
+		v = new jVote('vote', {max:5,min:3,click:doStuff,labels:['Bad','Poor','Average','Good','Great']});
+	};
+	function doStuff(event, yourchoice)
+	{
+		alert('You chose ' + yourchoice);
+		v.lock();
+	}
+	/*]]>*/
+	</script>
+	<title>Test</title>
+</head>
+<body>
+<div id="vote"></div>
+</body>
+</html>

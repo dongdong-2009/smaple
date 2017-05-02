@@ -1,0 +1,121 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>test</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <link href="css/css.css" type="text/css" rel="Stylesheet" />   
+	<script language="javascript" type="text/javascript" src="js/dialog.js"></script>
+    <script language="javascript" type="text/javascript">
+	<!--	
+    String.prototype.trim = function(){ return this.replace(/(^[\s]*)|([\s]*$)/g, '');}  
+    function getFocus(objID)
+    {        
+        document.getElementById(objID).focus();
+    }  
+    
+	function checkData()
+	{
+		if (document.getElementById('txtUserName').value.trim() == "")
+		{
+			_error_msg_show('请输入用户名称!', 'getFocus(\'txtUserName\')', '', '');
+		    return false;
+		}
+		if (document.getElementById('pwdLoginPass').value.trim() == "")
+		{
+		    _error_msg_show('请输入密码!', 'getFocus(\'pwdLoginPass\')', '', '');
+		    return false;
+		}
+		if (document.getElementById('txtValidatecode').value.trim() == "")
+		{
+		    _error_msg_show('请输入验证码!', 'getFocus(\'txtValidatecode\')', '', '');
+		    return false;
+		}
+		
+		return true;
+	}
+	// -->
+	_confirm_msg_show();
+	</script>
+</head>
+<body>
+  <form name="frmIndex" method="post" action="index.aspx" id="frmIndex">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTM2NzQ4MDgyNA9kFgICAQ9kFgICBw8WAh4Hb25jbGljawUeamF2YXNjcmlwdDpyZXR1cm4gY2hlY2tEYXRhKCk7ZGQrsedD6uGDyV+Ke/ky3EPYITD0Nw==" />
+</div>
+
+<script type="text/javascript">
+<!--/*
+var theForm = document.forms['frmIndex'];
+if (!theForm) {
+    theForm = document.frmIndex;
+}*//*
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}*/
+// -->
+</script>
+
+
+    <table cellspacing="0" cellpadding="0" style="width:559;vertical-align:middle; height:100%">
+    <tr><td>
+    <table cellspacing="0" cellpadding="0" style="width:559;vertical-align:middle">
+      <tr>
+        <td><img height="1" alt="" src="images/spacer.gif" width="318" style="border:0"  /></td>
+        <td style="width:192"><img height="1" alt="" src="images/spacer.gif" width="192" style="border:0"  /></td>
+        <td><img height="1" alt="" src="images/spacer.gif" width="49" style="border:0"  /></td>
+        <td><img height="1" alt="" src="images/spacer.gif" width="1" style="border:0"  /></td>
+      </tr>
+      <tr>
+        <td colspan="3"><img height="172" alt="" src="images/plogin_r1_c1.jpg" width="559" style="border:0;" /></td>
+        <td><img height="172" alt="" src="images/spacer.gif" width="1" style="border:0;" /></td>
+      </tr>
+      <tr>
+        <td style="height:133"><img height="133" alt="" src="images/login_r2_c1.jpg" width="318" style="border:0;" /></td>
+        <td style="width:192;height:133;background-color:White"><table id="Table1" style="WIDTH: 190px; HEIGHT: 58px" cellspacing="1" cellpadding="1"
+										border="0">
+            <tr>
+              <td align="right" valign="middle">登录名：</td>
+              <td align="left"><input name="txtUserName" type="text" id="txtUserName" class="colorblur" style="WIDTH: 88px; HEIGHT: 16px" onFocus="this.className='colorfocus';" onBlur="this.className='colorblur';" size="9" /></td>
+            </tr>
+            <tr>
+              <td align="right" valign="middle">密码：</td>
+              <td align="left"><input name="pwdLoginPass" type="password" id="pwdLoginPass" class="colorblur" style="WIDTH: 88px; HEIGHT: 16px" onFocus="this.className='colorfocus';" onBlur="this.className='colorblur';" size="9" /></td>
+            </tr>
+           <!-- <tr>
+              <td align="right" valign="bottom">验证码：</td>
+              <td align="left"><input name="txtValidatecode" type="text" id="txtValidatecode" class="colorblur" autocomplete="off" onFocus="this.className='colorfocus';" onBlur="this.className='colorblur';" maxlength="4" size="4" style="WIDTH: 58px; HEIGHT: 16px" />
+                  <img alt="点击刷新..." src="" style="cursor:pointer;" id="vcodeimg"  onclick="this.src='validate.aspx?time=' + Math.random();" />
+                  <script language="javascript" type="text/javascript">											    
+                                                document.getElementById('vcodeimg').src='validate.aspx?time='+ Math.random();
+                                            </script>
+              </td>
+            </tr>-->
+            <tr>
+              <td colspan="2" align="center" style="height: 22px"><input name="btnSub" type="submit" id="btnSub" class="btn1" onmouseover="this.className='btn2'" onmouseout="this.className='btn1'" value=" 确 定 " onclick="javascript:return checkData();" />
+                &nbsp;
+                <input name="reset" class="btn1" onmouseover="this.className='btn2'" onmouseout="this.className='btn1'"  type="reset" id="btnReset" value=" 重 置 " /></td>
+            </tr>
+        </table></td>
+        <td style="height:133"><img height="133" alt="" src="images/login_r2_c3.jpg" width="49" style="border:0" /></td>
+        <td style="height:133"><img height="133" alt="" src="images/spacer.gif" width="1" style="border:0" /></td>
+      </tr>
+      <tr>
+        <td colspan="3"><img height="53" alt="" src="images/login_r3_c1.jpg" width="559" style="border:0" /></td>
+        <td><img src="images/spacer.gif" width="1" height="53" style="border:0"  alt="" /></td>
+      </tr>
+    </table>
+    </td></tr></table>
+  
+<div>
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWBQL3z5GNCQKl1bKzCQKAk52IBgKuqciVCQL7koHUCSzSvdm82fyvAnJvY6xXCxE+DY39" />
+</div></form>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<script>
+	function regInput(obj, reg, inputStr)
+	{
+		var docSel	= document.selection.createRange()
+		if (docSel.parentElement().tagName != "INPUT")	return false
+		oSel = docSel.duplicate()
+		oSel.text = ""
+		var srcRange	= obj.createTextRange()
+		oSel.setEndPoint("StartToStart", srcRange)
+		var str = oSel.text + inputStr + srcRange.text.substr(oSel.text.length)
+		return reg.test(str)
+	}
+</script>
+
+小写英文：<xmp style= "display:inline">	</xmp>
+<input	onkeypress	= "return regInput(this,	/^[a-z]*$/,		String.fromCharCode(event.keyCode))"
+		onpaste		= "return regInput(this,	/^[a-z]*$/,		window.clipboardData.getData('Text'))"
+		ondrop		= "return regInput(this,	/^[a-z]*$/,		event.dataTransfer.getData('Text'))"
+		style="ime-mode:Disabled"
+><br>
+
+大写英文：<xmp style= "display:inline">	</xmp>
+<input	onkeypress	= "return regInput(this,	/^[A-Z]*$/,		String.fromCharCode(event.keyCode))"
+		onpaste		= "return regInput(this,	/^[A-Z]*$/,		window.clipboardData.getData('Text'))"
+		ondrop		= "return regInput(this,	/^[A-Z]*$/,		event.dataTransfer.getData('Text'))"
+		style="ime-mode:Disabled">
+<br>
+
+任意数字：<xmp style="display:inline">	</xmp>
+<input	onkeypress	= "return regInput(this,	/^[0-9]*$/,		String.fromCharCode(event.keyCode))"
+		onpaste		= "return regInput(this,	/^[0-9]*$/,		window.clipboardData.getData('Text'))"
+		ondrop		= "return regInput(this,	/^[0-9]*$/,		event.dataTransfer.getData('Text'))"
+		style="ime-mode:Disabled"
+><br>
+
+限2位小数：<xmp style="display:inline">	</xmp>
+<input	onkeypress	= "return regInput(this,	/^\d*\.?\d{0,2}$/,		String.fromCharCode(event.keyCode))"
+		onpaste		= "return regInput(this,	/^\d*\.?\d{0,2}$/,		window.clipboardData.getData('Text'))"
+		ondrop		= "return regInput(this,	/^\d*\.?\d{0,2}$/,		event.dataTransfer.getData('Text'))"
+		style="ime-mode:Disabled"
+> 如: 123.12<br>
+
+
+日　  期：<xmp style="display:inline">	</xmp>
+<input	onkeypress	= "return regInput(this,	/^\d{1,4}([-\/](\d{1,2}([-\/](\d{1,2})?)?)?)?$/,		String.fromCharCode(event.keyCode))"
+		onpaste		= "return regInput(this,	/^\d{1,4}([-\/](\d{1,2}([-\/](\d{1,2})?)?)?)?$/,		window.clipboardData.getData('Text'))"
+		ondrop		= "return regInput(this,	/^\d{1,4}([-\/](\d{1,2}([-\/](\d{1,2})?)?)?)?$/,		event.dataTransfer.getData('Text'))"
+		style="ime-mode:Disabled"
+> 如: 2002-9-29<br>
+
+任意中文：<xmp style="display:inline">	</xmp>
+<input	onkeypress	= "return regInput(this,	/^$/,					String.fromCharCode(event.keyCode))"
+		onpaste		= "return regInput(this,	/^[\u4E00-\u9FA5]*$/,	window.clipboardData.getData('Text'))"
+		ondrop		= "return regInput(this,	/^[\u4E00-\u9FA5]*$/,	event.dataTransfer.getData('Text'))"
+><br>
+
+部分英文：<xmp style="display:inline">	</xmp>
+<input	onkeypress	= "return regInput(this,	/^[a-e]*$/,		String.fromCharCode(event.keyCode))"
+		onpaste		= "return regInput(this,	/^[a-e]*$/,		window.clipboardData.getData('Text'))"
+		ondrop		= "return regInput(this,	/^[a-e]*$/,		event.dataTransfer.getData('Text'))"
+		style="ime-mode:Disabled"
+> 范围: a,b,c,d,e<br>
+
+部分中文：<xmp style="display:inline">	</xmp>
+
+<script language=javascript>
+function checkChinese(oldLength, obj)
+{
+	var oTR = window.document.selection.createRange()
+	var reg = /[^一二三四五六七八九十]/g
+	oTR.moveStart("character", -1*(obj.value.length-oldLength))
+	oTR.text = oTR.text.replace(reg, "")
+}
+</script>
+<input	onkeypress="return false" onkeydown="setTimeout('checkChinese('+this.value.length+','+this.uniqueID+')', 1)"
+		onpaste		= "return regInput(this,	/^[一二三四五六七八九十]*$/,		window.clipboardData.getData('Text'))"
+		ondrop		= "return regInput(this,	/^[一二三四五六七八九十]*$/,		event.dataTransfer.getData('Text'))"
+> 范围: 一二三四五六七八九十<br>
+
+</SCRIPT> 
+ 
+<A href="myjs.htm" target=_blank><FONT color=red>
+<div style="position: absolute; top: 10; right: 10; width: 148; height: 18">
+  My Js Collection!</FONT></A> 
+<!-- 海娃＠haiwa@blueidea.com＠无忧视窗＠http://www.51windows.com -->  
+
+</div>
+<html><script language="JavaScript">

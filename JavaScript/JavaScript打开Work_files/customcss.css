@@ -1,0 +1,9 @@
+#cnblogs_post_body h1 {
+	background: url("http://pic002.cnblogs.com/images/2010/36987/2010092119181033.png") no-repeat 1% 50% rgb(95, 90, 75); border-radius: 6px; color: white; padding-left: 50px; text-shadow: 2px 2px 3px #222222;
+}
+#green_channel {
+	background: rgb(255, 255, 255); right: 300px; bottom: 3px; position: fixed;
+}
+#div_digg {
+	margin: 10px; padding: 10px; border: 1px solid rgb(204, 204, 204); width: 160px; text-align: center; right: 0px; bottom: 0px; font-size: 12px; float: right; position: fixed; z-index: 10; background-color: gray;
+}

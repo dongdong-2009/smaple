@@ -1,0 +1,16 @@
+ private void SendEmail(string pSubject, string pFrom, string pTo, string pBody)
+        {
+            System.Net.Mail.MailMessage message = new System.Net.Mail.MailMessage();
+
+            message.IsBodyHtml = true;
+            message.Body = pBody;
+            message.From = new System.Net.Mail.MailAddress(pFrom);
+            message.To.Add(pTo);
+            message.Subject = pSubject;
+
+	    //YourSite.WebApplication.OutboundMailServiceInstance.Server.Address
+            SPOutboundMailServiceInstance smtpServer = SPContext.Current.Site.WebApplication.OutboundMailServiceInstance;
+            System.Net.Mail.SmtpClient smtp = new System.Net.Mail.SmtpClient(smtpServer.Server.Address);
+
+            smtp.Send(message);
+        }

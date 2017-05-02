@@ -1,0 +1,16 @@
+
+
+--ĞÂÔö <%DateTime%>
+create or replace procedure Up_<%TableName%>_Insert
+(
+  <%Param%>
+)
+is
+begin
+
+ insert into <%TableName%>
+   (<%Columns%>)
+ values
+   (<%Seq%>.nextval, <%InsertColumns%>); 
+   select  <%Seq%>.currval into <%KeyParam%> from dual;
+end Up_<%TableName%>_Insert;

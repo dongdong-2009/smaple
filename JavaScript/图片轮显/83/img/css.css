@@ -1,0 +1,11 @@
+img{border-width:0;}
+.pb .steps, .pb .points li{background:transparent url(pic.gif) no-repeat left top;}
+.pb .banners{float:left;}
+.pb .banners li{width:377px;height:139px;overflow:hidden;display:none;}
+.pb .banners li.current{display:block;}
+.pb .switcher{float:left;height:139px;width:24px;background-position:left -76px; position:relative;}
+.pb .points{width:19px;margin:8px auto 0; font-size:12px;}
+.pb .points li{width:16px;height:15px;background-position:0px 0px;overflow:hidden;text-align:center;line-height:15px;margin:0 0 2px 3px;color:#fff;cursor:pointer; font-family:Arial;}
+.pb .points li.current{width:19px;background-position:-19px 0px;margin-left:0; text-align:center; text-indent:3px;}
+.pb .steps{width:16px;height:23px;background-position:0px -17px;margin:0px 0 0 5px; position:absolute; bottom:3px; _overflow:hidden;}
+.pb .steps .up, .pb .steps .down{width:15px;height:11px;cursor:pointer;}

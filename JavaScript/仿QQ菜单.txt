@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<style type="text/css">
+* {
+	font-size:14px;
+}
+</style>
+
+<script language="javascript">
+var G_sub_menu;
+var G_last_sub_menu;
+var lock=false;
+
+function showSub(submenu){
+	lock=true;
+	submenu.style.display='block';
+	G_sub_menu=submenu;
+	slide();
+}
+
+function slide(){
+	if(G_sub_menu.style.pixelHeight<437-25){
+		G_sub_menu.style.pixelHeight+=25;
+		G_last_sub_menu.style.pixelHeight-=25;
+		setTimeout(slide,10);
+	}
+	else{
+		G_sub_menu.style.pixelHeight=437;
+		G_last_sub_menu.style.pixelHeight=0;
+		G_last_sub_menu=G_sub_menu;
+		lock=false;
+	}
+}
+
+function showAll(){
+	from_expand_all=true;
+	for(i=0;i<4;i++){
+		document.getElementById('sub'+i).style.display='block';
+	}
+	lock=true;
+	shrink_next=false;
+	expand_next=true;
+	expandAll();
+}
+
+var expand_next=true;
+function expandAll(){
+	for(i=0;i<4;i++){
+		var menu=document.getElementById('sub'+i);
+		if(menu!=G_last_sub_menu && menu.style.pixelHeight<437/4-6){
+			menu.style.pixelHeight+=6;
+		}
+		else if(menu.style.pixelHeight>437/4+18){
+			menu.style.pixelHeight-=18;
+		}
+		else{
+			menu.style.pixelHeight=437/4;
+			expand_next=false;
+		}
+	}
+	if(expand_next)setTimeout(expandAll,10);
+	else lock=false;
+}
+
+var from_expand_all=false;
+function hideAll(){
+	if(from_expand_all){
+		lock=true;
+		shrink_next=true;
+		expand_next=false;
+		shrinkAll();
+		from_expand_all=false;
+	}
+}
+
+var shrink_next=true;
+function shrinkAll(){
+	for(i=0;i<4;i++){
+		var menu=document.getElementById('sub'+i);
+		if(menu!=G_last_sub_menu){
+			if(menu.style.pixelHeight>6){
+				menu.style.pixelHeight-=6;
+			}
+			else{
+				menu.style.pixelHeight=0;
+				shrink_next=false;
+			}
+		}
+		else{
+			if(menu.style.pixelHeight<437-18){
+				menu.style.pixelHeight+=18;
+			}
+			else{
+				menu.style.pixelHeight=437;
+				shrink_next=false;
+			}
+		}
+	}
+	if(shrink_next)setTimeout(shrinkAll,10);
+	else lock=false;
+}
+
+function menuClick(num){
+	var submenu=document.getElementById('sub'+num);
+	if(from_expand_all){
+		G_last_sub_menu=submenu;
+		hideAll();
+	}
+	else
+	{
+		if(submenu!=G_last_sub_menu){
+			if(!lock)showSub(submenu);
+		}
+	}
+}
+</script>
+</head>
+
+<body>
+<input type="button" onclick="showAll()" value="全部展开"/>
+<input type="button" onclick="hideAll()" value="全部收缩"/>
+<table width="200" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><div style="background-color:#3399FF; cursor:hand" onclick="menuClick(0)">此处显示新 Div 标签的内容</div></td>
+  </tr>
+  <tr>
+    <td><div id="sub0" style="background-color:#FFFFCC; overflow:hidden; height:437px">"蜘蛛"（Spider）是Internet上一种很有用的程序，搜索引擎利用蜘蛛程序将Web页面收集到数据库，企业利用蜘蛛程序监视竞争对手的网站并跟踪变动，个人用户用蜘蛛程序下载Web页面以便脱机使用，开发者利用蜘蛛程序扫描自己的Web检查无效的链接……对于不同的用户，蜘蛛程序有不同的用途。那么，蜘蛛程序到底是怎样工作的呢？</div></td>
+  </tr>
+  <tr>
+    <td><div style="background-color:#3399FF; cursor:hand" onclick="menuClick(1)">此处显示新 Div 标签的内容</div></td>
+  </tr>
+  <tr>
+    <td><div id="sub1" style="background-color:#FFFFCC; height:0px ; overflow:hidden">"蜘蛛"（Spider）是Internet上一种很有用的程序，搜索引擎利用蜘蛛程序将Web页面收集到数据库，企业利用蜘蛛程序监视竞争对手的网站并跟踪变动，个人用户用蜘蛛程序下载Web页面以便脱机使用，开发者利用蜘蛛程序扫描自己的Web检查无效的链接……对于不同的用户，蜘蛛程序有不同的用途。那么，蜘蛛程序到底是怎样工作的呢？</div></td>
+  </tr>
+    <tr>
+    <td><div style="background-color:#3399FF; cursor:hand" onclick="menuClick(2)">此处显示新 Div 标签的内容</div></td>
+  </tr>
+  <tr>
+    <td><div id="sub2" style="background-color:#FFFFCC; height:0px ; overflow:hidden">"蜘蛛"（Spider）是Internet上一种很有用的程序，搜索引擎利用蜘蛛程序将Web页面收集到数据库，企业利用蜘蛛程序监视竞争对手的网站并跟踪变动，个人用户用蜘蛛程序下载Web页面以便脱机使用，开发者利用蜘蛛程序扫描自己的Web检查无效的链接……对于不同的用户，蜘蛛程序有不同的用途。那么，蜘蛛程序到底是怎样工作的呢？</div></td>
+  </tr>
+  <tr>
+    <td><div style="background-color:#3399FF; cursor:hand" onclick="menuClick(3)">此处显示新 Div 标签的内容</div></td>
+  </tr>
+  <tr>
+    <td><div id="sub3" style="background-color:#FFFFCC; height:0px ; overflow:hidden">"蜘蛛"（Spider）是Internet上一种很有用的程序，搜索引擎利用蜘蛛程序将Web页面收集到数据库，企业利用蜘蛛程序监视竞争对手的网站并跟踪变动，个人用户用蜘蛛程序下载Web页面以便脱机使用，开发者利用蜘蛛程序扫描自己的Web检查无效的链接……对于不同的用户，蜘蛛程序有不同的用途。那么，蜘蛛程序到底是怎样工作的呢？</div></td>
+  </tr>
+</table>
+<script language="javascript">
+var G_last_sub_menu=document.getElementById('sub0');
+</script>
+</body>
+</html>

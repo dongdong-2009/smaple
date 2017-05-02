@@ -1,0 +1,9 @@
+我们经常有这样的情形：
+就是用户注册时由于某个信息填写错误要重新填写。但是这个过程经过了服务器PostBack。所以密码框就清空了。因为PostBack的时候，如果TextBox的TextMode为Password的话，是没有value属性传递的，所以密码框是空的。其实这个问题是可以解决的。
+protected void Page_Load(object sender, EventArgs e)
+    {
+
+        this.Password.Attributes.Add("value", Request["Password"]);
+
+    }
+

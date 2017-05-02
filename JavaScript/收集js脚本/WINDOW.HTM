@@ -1,0 +1,336 @@
+
+<html>
+<script Language="javascript" src="51w/hw.js"></script>
+<script Language="javascript" src="51w/date.js"></script>
+<script Language="javascript" src="51w/st.js"></script>
+<script>
+//桌面图标距离与菜单效果
+ico_top=10;
+ico_left=10;
+ico_bottom=45;
+ico_x=65;
+ico_y=65;
+var intInterval=20;
+var intDelay=20;
+</script>
+<head>
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>无忧视窗::www.51windows.com::&#8482;</title>
+<style>
+.ico{position: absolute; top: -100; left: -100; width: 60; height: 45;font-size:12px;font-family:宋体;color:#FFFFFF}
+</style>
+
+<link rel="stylesheet" type="text/css" href="51w/zi.css">
+
+</head>
+<script Language="javascript">window.name="_desktop";</script>
+<body onresize=setico(); scroll=no onselectstart="return false" onmousemove="s_t();" onload="setico();">
+<!-- 任务栏 -->
+<table id=taskbar border="0" style="position: absolute;width:expression(screen.width-0);bottom:-1;left:-1" cellpadding="0" cellspacing="0"  class="up" style="padding: 1">
+    <tr>
+      <td width="50">
+        <div align="center">
+          <table border="0" onclick="startclick();" id="startmenu" cellpadding="0" cellspacing="0" width="100%" class="up">
+            <tr>
+              <td><a href="#" onClick="return false;" id=s_img><img border="0"  onmousemove='if(startmenu.className=="up"){event.srcElement.alt="单击从这里开始。";}else{event.srcElement.alt="";}' src="icon/start_menu/start.gif" width="45" height="18" align="center" vspace="1" hspace="1"></a></td>
+            </tr>
+          </table>
+        </div>
+      </td>
+      <td width="120">
+        <div align="center">
+          <table border="0" cellpadding="0" cellspacing="0" width="116">
+            <tr>
+              <td width="10" align="center"><img border="0" src="icon/start_menu/ii16.gif" width="7" height="22"></td>
+              <td width="24" align="center"><img title="启动 Internet Explorer 浏览器" border="0" onclick=pop("http://www.51windows.com") class=button src="icon/start_menu/ie162.gif" width="20" height="20"></td>
+              <td width="24" align="center"><img title="排列图标" onclick="setico()" border="0" class=button src="icon/start_menu/desktop.gif" width="20" height="20"></td>
+              <td width="24" align="center"><img title="启动 Outlook Express(haiwa@blueidea.com)" onclick=location.href="mailto:haiwa@blueidea.com" border="0" class=button src="icon/start_menu/oe16.gif" width="21" height="20"></td>
+              <td width="24" align="center"><img title="站点地图" onclick=pop("../windows/index.htm") border="0" class=button src="icon/start_menu/soft16.gif" width="20" height="20"></td>
+              <td width="10" align="center"><img border="0" src="icon/start_menu/ii16.gif" width="7" height="22"></td>
+            </tr>
+          </table>
+        </div>
+      </td>
+      <td></td>
+      <td width="140">
+        <div align="center">
+          <table border="0" cellpadding="0" cellspacing="0"  height="24" width="140"  class="down1" >
+            <tr>
+              <td width="20"><img border="0" src="icon/start_menu/speak.gif" width="19" height="18"></td>
+              <td width="20"><img border="0" src="icon/start_menu/shuru.gif" width="18" height="18"></td>
+              <td width="20"><img border="0" src="icon/start_menu/netlink16.gif" ondblclick=alert("61.183.213.235") title="61.183.213.235" width="18" height="18"></td>
+              <td width="20"><img title="工作...."  border="0" src="icon/start_menu/oicq16.gif" width="18" height="18"></td>
+              <td width="60" style="cursor:default" id=clock onmouseover=show("date") onmouseout=hide("date")><script>tick();</script></td>
+            </tr>
+          </table>
+        </div>
+      </td>
+    </tr>
+  </table>
+<div class=date id="date"  onmouseover=show("date") onmouseout=hide("date") style="position:absolute;left:expression(screen.width-95);bottom:30;display:none;z-index:11"><script>time();</script></div>
+<div id=ico>
+<!-- 桌面图标 -->
+
+<div id="ico1" class=ico ondblclick=pop("folder.asp?id=1") onmousedown=m("ico1")  title="存诸并管理文档"><p align="center"><img border="0" width="32" height="32" src="icon/macplaza/document.gif" vspace="3"><br>我的文档</div>
+
+<div id="ico2" class=ico ondblclick=pop("folder.asp?id=2") onmousedown=m("ico2")  title="我的电脑"><p align="center"><img border="0" width="32" height="32" src="icon/macplaza/computer.gif" vspace="3"><br>我的电脑</div>
+
+<div id="ico3" class=ico ondblclick=pop("folder.asp?id=3") onmousedown=m("ico3")  title="友情链接"><p align="center"><img border="0" width="32" height="32" src="icon/macplaza/nethood.gif" vspace="3"><br>网上邻居</div>
+
+<div id="ico4" class=ico ondblclick=pop("folder.asp?id=4") onmousedown=m("ico4")  title="存储已经删除的文件"><p align="center"><img border="0" width="32" height="32" src="icon/macplaza/rec.gif" vspace="3"><br>回收站</div>
+
+<div id="ico5" class=ico ondblclick=pop("folder.asp?id=5") onmousedown=m("ico5")  title="电脑学习，技巧。。"><p align="center"><img border="0" width="32" height="32" src="icon/macplaza/explorer.gif" vspace="3"><br>电脑教程</div>
+
+<div id="ico6" class=ico ondblclick=pop("folder.asp?id=6") onmousedown=m("ico6")  title="各种网上文件下载链接"><p align="center"><img border="0" width="32" height="32" src="icon/macplaza/downloads.gif" vspace="3"><br>共享下载</div>
+
+<div id="ico7" class=ico ondblclick=pop("../bbs") onmousedown=m("ico7")  title="视窗论坛"><p align="center"><img border="0" width="32" height="32" src="icon/macplaza/bbs.gif" vspace="3"><br>视窗论坛</div>
+
+<div id="ico8" class=ico ondblclick=pop("folder.asp?id=8") onmousedown=m("ico8")  title="使用帮助"><p align="center"><img border="0" width="32" height="32" src="icon/macplaza/helper.gif" vspace="3"><br>使用帮助</div>
+
+<div id="ico9" class=ico ondblclick=pop("search.asp") onmousedown=m("ico9")  title="站内搜索"><p align="center"><img border="0" width="32" height="32" src="icon/macplaza/find.gif" vspace="3"><br>站内搜索</div>
+
+<div id="ico10" class=ico ondblclick=pop("news.asp") onmousedown=m("ico10")  title="无忧视窗站点消息"><p align="center"><img border="0" width="32" height="32" src="icon/macplaza/news.gif" vspace="3"><br>网站消息</div>
+
+<div id="ico11" class=ico ondblclick=pop("book.asp") onmousedown=m("ico11")  title="访客留言"><p align="center"><img border="0" width="32" height="32" src="icon/macplaza/book.gif" vspace="3"><br>访客留言</div>
+
+<div id="ico12" class=ico ondblclick=pop("folder.asp?id=12") onmousedown=m("ico12")  title="关于海娃"><p align="center"><img border="0" width="32" height="32" src="icon/macplaza/readme.gif" vspace="3"><br>关于海娃</div>
+
+<div id="ico14" class=ico ondblclick=pop("folder.asp?id=14") onmousedown=m("ico14")  title="好听的MIDI音乐"><p align="center"><img border="0" width="32" height="32" src="icon/macplaza/folder.gif" vspace="3"><br>midi音乐</div>
+
+<div id="ico15" class=ico ondblclick=pop("folder.asp?id=15") onmousedown=m("ico15")  title="mp3收藏夹"><p align="center"><img border="0" width="32" height="32" src="icon/macplaza/folder.gif" vspace="3"><br>mp3</div>
+
+<div id="ico20" class=ico ondblclick=pop("folder.asp?id=20") onmousedown=m("ico20")  title="转载杂文|有好的文章，欢迎推荐"><p align="center"><img border="0" width="32" height="32" src="icon/macplaza/folder.gif" vspace="3"><br>杂文</div>
+
+<div id="ico50" class=ico ondblclick=pop("tips.asp") onmousedown=m("ico50")  title="小技巧"><p align="center"><img border="0" width="32" height="32" src="icon/macplaza/explorer.gif" vspace="3"><br>Tips</div>
+
+<div id="ico76" class=ico ondblclick=pop("myjs.htm") onmousedown=m("ico76")  title="海娃收集的脚本..."><p align="center"><img border="0" width="32" height="32" src="icon/macplaza/explorer.gif" vspace="3"><br><font color=yellow>脚本收藏</a></div>
+
+<!-- 投票图标 -->
+
+<div   id="vote" class=ico ondblclick=pop("voteid.asp?id=10") onmousedown=m("vote") style="position: absolute; top: -100; left: -100; width: 56; height: 45;font-family:宋体;color:#FFFFFF" title="主题：元旦怎么过？
+日期：2002-12-31
+票数：41">
+<p align="center"><img border="0" width="32" height="32" src="icon/macplaza/readme.gif" vspace="3">
+<br>每周调查</div>
+<div   id="hc" class=ico ondblclick=pop("url.asp?id=384") onmousedown=m("hc") style="position: absolute; top: -100; left: -100; width: 56; height: 45;font-family:宋体;color:#FFFFFF" title="恒昌集团
+海娃所在的公司">
+<p align="center"><img border="0" width="32" height="32" src="icon/hc.gif" vspace="3">
+<br>恒昌在线</div>
+</div>
+
+<script>setico();</script>
+<div  style="position: absolute;bottom:35; left:expression(screen.width-150) ; width: 150; height: 45;color:#FFFFFF;align:right">
+<!-- 网站信息 -->
+版权：51windows.com&#8482;<br>
+版本：asp_1.0<br>
+最后更新：2003-1-2<br>
+Visit time:39655
+</div>
+
+<!-- 开始菜单 -->
+<script language="JScript">
+<!--
+var menu = new start_menu();
+menu.AddItem("update","icon_logo","28","<font class=w2kfont>51Windows</font>","rbpm","voteid.asp");
+menu.AddItem("sperator","","","","rbpm",null);
+menu.AddExtendMenu("start_programs","xp/start_pro","24","程序<font class=w2kfont>(<u>P</u>)</font>","rbpm",null);
+menu.AddExtendMenu("start_doc","xp/start_doc","24","文档<font class=w2kfont>(<u>D</u>)</font>","rbpm",null);
+menu.AddExtendMenu("start_fav","xp/start_fav","24","收藏<font class=w2kfont>(<u>A</u>)</font>","rbpm",null);
+
+menu.AddExtendMenu("start_doc20","folder","16","杂文","start_doc",null);
+//杂文
+menu.AddItem("start_doc_410","folder","16","杂文","start_doc20","folder.asp?id=20");
+menu.AddItem("sperator","","","","start_doc20",null);
+
+menu.AddItem("start_doc410","filetype/htm","16","一道微软面试题","start_doc20","file.asp?id=410");
+menu.AddItem("start_doc407","filetype/txt","16","小崔访问拉登","start_doc20","file.asp?id=407");
+menu.AddItem("start_doc401","filetype/txt","16","中国有多穷？ 中国为什么穷？ ","start_doc20","file.asp?id=401");
+menu.AddItem("start_doc395","filetype/txt","16","原来很简单","start_doc20","file.asp?id=395");
+menu.AddItem("start_doc393","filetype/txt","16","100分的情书","start_doc20","file.asp?id=393");
+menu.AddItem("start_doc387","filetype/htm","16","朱镕基告别演说..","start_doc20","file.asp?id=387");
+menu.AddExtendMenu("start_programs34","folder","16","系统工具","start_programs",null);
+//系统工具
+menu.AddItem("start_programs_398","folder","16","系统工具","start_programs34","folder.asp?id=34");
+menu.AddItem("sperator","","","","start_programs34",null);
+
+menu.AddItem("start_programs398","filetype/exe","16","Ghost 2003 汉化版","start_programs34","file.asp?id=398");
+menu.AddItem("start_programs264","filetype/rar","16","partitionmagic 的dos版","start_programs34","file.asp?id=264");
+menu.AddItem("start_programs89","filetype/exe","16","微软Java虚拟机","start_programs34","file.asp?id=89");
+menu.AddItem("start_programs86","filetype/rar","16","Red Hat linux 7.3 ","start_programs34","file.asp?id=86");
+menu.AddItem("start_programs34","filetype/exe","16","硬盘分区魔术师V7.0(win98/me)","start_programs34","file.asp?id=34");
+menu.AddItem("start_programs33","filetype/exe","16","硬盘分区魔术师V7.0(NT/2000/XP)","start_programs34","file.asp?id=33");
+menu.AddExtendMenu("start_doc43","folder","16","CHM","start_doc",null);
+//CHM
+menu.AddItem("start_doc_373","folder","16","CHM","start_doc43","folder.asp?id=43");
+menu.AddItem("sperator","","","","start_doc43",null);
+
+menu.AddItem("start_doc373","filetype/chm","16","VBScript 语言参考 ","start_doc43","file.asp?id=373");
+menu.AddItem("start_doc265","filetype/chm","16","win2000服务器版设置","start_doc43","file.asp?id=265");
+menu.AddItem("start_doc98","filetype/chm","16","CSS2 中文手册","start_doc43","file.asp?id=98");
+menu.AddItem("start_doc97","filetype/chm","16","JScript 语言参考","start_doc43","file.asp?id=97");
+menu.AddItem("start_doc96","filetype/chm","16","计算机技术问答BBS","start_doc43","file.asp?id=96");
+menu.AddItem("start_doc95","filetype/chm","16","Linux服务器配置方案","start_doc43","file.asp?id=95");
+menu.AddExtendMenu("start_fav51","folder","16","友链链接","start_fav",null);
+//友链链接
+menu.AddItem("start_fav_409","folder","16","友链链接","start_fav51","folder.asp?id=51");
+menu.AddItem("sperator","","","","start_fav51",null);
+
+menu.AddItem("start_fav409","filetype/lnk","16","NYSX.net","start_fav51","url.asp?id=409");
+menu.AddItem("start_fav406","filetype/lnk","16","易设计—我们成长的地方","start_fav51","url.asp?id=406");
+menu.AddItem("start_fav400","filetype/lnk","16","╆唯美设计╆","start_fav51","url.asp?id=400");
+menu.AddItem("start_fav385","filetype/lnk","16","星斗文学网站","start_fav51","url.asp?id=385");
+menu.AddItem("start_fav384","filetype/lnk","16","恒昌在线","start_fav51","url.asp?id=384");
+menu.AddItem("start_fav363","filetype/lnk","16","中国经销商在线","start_fav51","url.asp?id=363");
+menu.AddExtendMenu("start_fav58","folder","16","软件下载","start_fav",null);
+//软件下载
+menu.AddItem("start_fav_402","folder","16","软件下载","start_fav58","folder.asp?id=58");
+menu.AddItem("sperator","","","","start_fav58",null);
+
+menu.AddItem("start_fav402","filetype/lnk","16","中文之家","start_fav58","url.asp?id=402");
+menu.AddItem("start_fav148","filetype/lnk","16","无忧软件网","start_fav58","url.asp?id=148");
+menu.AddItem("start_fav147","filetype/lnk","16","163软件园","start_fav58","url.asp?id=147");
+menu.AddItem("start_fav146","filetype/lnk","16","电脑爱好者软件下载","start_fav58","url.asp?id=146");
+menu.AddItem("start_fav145","filetype/lnk","16","赢政天下-下载中心","start_fav58","url.asp?id=145");
+menu.AddItem("start_fav144","filetype/lnk","16","软件星空","start_fav58","url.asp?id=144");
+menu.AddExtendMenu("start_fav59","folder","16","网上学习","start_fav",null);
+//网上学习
+menu.AddItem("start_fav_399","folder","16","网上学习","start_fav59","folder.asp?id=59");
+menu.AddItem("sperator","","","","start_fav59",null);
+
+menu.AddItem("start_fav399","filetype/lnk","16","Oracle技术网","start_fav59","url.asp?id=399");
+menu.AddItem("start_fav155","filetype/lnk","16","北极星","start_fav59","url.asp?id=155");
+menu.AddItem("start_fav154","filetype/lnk","16","Delphi Box","start_fav59","url.asp?id=154");
+menu.AddItem("start_fav153","filetype/lnk","16","局域网DIY","start_fav59","url.asp?id=153");
+menu.AddItem("start_fav152","filetype/lnk","16","从不懂上网，到上网高手","start_fav59","url.asp?id=152");
+menu.AddItem("start_fav151","filetype/lnk","16","eNet软件学院","start_fav59","url.asp?id=151");
+menu.AddExtendMenu("start_fav60","folder","16","网页设计","start_fav",null);
+//网页设计
+menu.AddItem("start_fav_392","folder","16","网页设计","start_fav60","folder.asp?id=60");
+menu.AddItem("sperator","","","","start_fav60",null);
+
+menu.AddItem("start_fav392","filetype/lnk","16","就是酷(94Cool)","start_fav60","url.asp?id=392");
+menu.AddItem("start_fav389","filetype/lnk","16","建站资源网","start_fav60","url.asp?id=389");
+menu.AddItem("start_fav362","filetype/lnk","16","Yourthink.com","start_fav60","url.asp?id=362");
+menu.AddItem("start_fav358","filetype/lnk","16","x-pressive.com","start_fav60","url.asp?id=358");
+menu.AddItem("start_fav158","filetype/lnk","16","网页陶吧","start_fav60","url.asp?id=158");
+menu.AddItem("start_fav157","filetype/lnk","16","洪恩在线网页制作","start_fav60","url.asp?id=157");
+menu.AddExtendMenu("start_fav61","folder","16","BBS交流","start_fav",null);
+//BBS交流
+menu.AddItem("start_fav_378","folder","16","BBS交流","start_fav61","folder.asp?id=61");
+menu.AddItem("sperator","","","","start_fav61",null);
+
+menu.AddItem("start_fav378","filetype/lnk","16","精品技术论坛","start_fav61","url.asp?id=378");
+menu.AddItem("start_fav235","filetype/lnk","16","凯迪社区","start_fav61","url.asp?id=235");
+menu.AddItem("start_fav231","filetype/lnk","16","中国思维_文学特区","start_fav61","url.asp?id=231");
+menu.AddItem("start_fav168","filetype/lnk","16","中国DotNet论坛","start_fav61","url.asp?id=168");
+menu.AddItem("start_fav167","filetype/lnk","16","无忧脚本","start_fav61","url.asp?id=167");
+menu.AddItem("start_fav166","filetype/lnk","16","经典论坛","start_fav61","url.asp?id=166");
+menu.AddExtendMenu("start_fav62","folder","16","就业求职","start_fav",null);
+//就业求职
+menu.AddItem("start_fav_172","folder","16","就业求职","start_fav62","folder.asp?id=62");
+menu.AddItem("sperator","","","","start_fav62",null);
+
+menu.AddItem("start_fav172","filetype/lnk","16","中国人才热线","start_fav62","url.asp?id=172");
+menu.AddItem("start_fav171","filetype/lnk","16","高新人才热线","start_fav62","url.asp?id=171");
+menu.AddItem("start_fav170","filetype/lnk","16","西部工作网","start_fav62","url.asp?id=170");
+menu.AddItem("start_fav169","filetype/lnk","16","前程无忧","start_fav62","url.asp?id=169");
+menu.AddExtendMenu("start_fav63","folder","16","音乐天堂","start_fav",null);
+//音乐天堂
+menu.AddItem("start_fav_183","folder","16","音乐天堂","start_fav63","folder.asp?id=63");
+menu.AddItem("sperator","","","","start_fav63",null);
+
+menu.AddItem("start_fav183","filetype/lnk","16","中国乐坛","start_fav63","url.asp?id=183");
+menu.AddItem("start_fav182","filetype/lnk","16","天虎音乐网","start_fav63","url.asp?id=182");
+menu.AddItem("start_fav181","filetype/lnk","16","可听网","start_fav63","url.asp?id=181");
+menu.AddItem("start_fav180","filetype/lnk","16","搜刮网－MP3搜索","start_fav63","url.asp?id=180");
+menu.AddItem("start_fav179","filetype/lnk","16","大众电影","start_fav63","url.asp?id=179");
+menu.AddItem("start_fav178","filetype/lnk","16","TOM音乐","start_fav63","url.asp?id=178");
+menu.AddExtendMenu("start_fav67","folder","16","漫画、读书","start_fav",null);
+//漫画、读书
+menu.AddItem("start_fav_404","folder","16","漫画、读书","start_fav67","folder.asp?id=67");
+menu.AddItem("sperator","","","","start_fav67",null);
+
+menu.AddItem("start_fav404","filetype/lnk","16","国学网络","start_fav67","url.asp?id=404");
+menu.AddItem("start_fav397","filetype/lnk","16","青年文摘","start_fav67","url.asp?id=397");
+menu.AddItem("start_fav230","filetype/lnk","16","大道中文期刊网","start_fav67","url.asp?id=230");
+menu.AddItem("start_fav229","filetype/lnk","16","中国思维网","start_fav67","url.asp?id=229");
+menu.AddItem("start_fav201","filetype/lnk","16","漫画信息网","start_fav67","url.asp?id=201");
+menu.AddItem("start_fav200","filetype/lnk","16","所有文学","start_fav67","url.asp?id=200");
+menu.AddExtendMenu("start_fav68","folder","16","集邮","start_fav",null);
+//集邮
+menu.AddItem("start_fav_209","folder","16","集邮","start_fav68","folder.asp?id=68");
+menu.AddItem("sperator","","","","start_fav68",null);
+
+menu.AddItem("start_fav209","filetype/lnk","16","中国集邮在线","start_fav68","url.asp?id=209");
+menu.AddItem("start_fav208","filetype/lnk","16","我爱集邮网","start_fav68","url.asp?id=208");
+menu.AddItem("start_fav207","filetype/lnk","16","多彩邮苑","start_fav68","url.asp?id=207");
+menu.AddItem("start_fav206","filetype/lnk","16","金天集邮网","start_fav68","url.asp?id=206");
+menu.AddItem("start_fav205","filetype/lnk","16","Yestamp.net","start_fav68","url.asp?id=205");
+menu.AddItem("start_fav204","filetype/lnk","16","邮友网","start_fav68","url.asp?id=204");
+menu.AddExtendMenu("start_fav70","folder","16","摄影","start_fav",null);
+//摄影
+menu.AddItem("start_fav_216","folder","16","摄影","start_fav70","folder.asp?id=70");
+menu.AddItem("sperator","","","","start_fav70",null);
+
+menu.AddItem("start_fav216","filetype/lnk","16","中国摄影","start_fav70","url.asp?id=216");
+menu.AddItem("start_fav215","filetype/lnk","16","新浪－摄影","start_fav70","url.asp?id=215");
+menu.AddItem("start_fav214","filetype/lnk","16","中国摄影之乡","start_fav70","url.asp?id=214");
+menu.AddItem("start_fav213","filetype/lnk","16","中国摄影在线","start_fav70","url.asp?id=213");
+menu.AddItem("start_fav212","filetype/lnk","16","摄影爱好者之家","start_fav70","url.asp?id=212");
+menu.AddExtendMenu("start_fav71","folder","16","天文","start_fav",null);
+//天文
+menu.AddItem("start_fav_221","folder","16","天文","start_fav71","folder.asp?id=71");
+menu.AddItem("sperator","","","","start_fav71",null);
+
+menu.AddItem("start_fav221","filetype/lnk","16","失落的星辰","start_fav71","url.asp?id=221");
+menu.AddItem("start_fav220","filetype/lnk","16","中青网.大百科.天文地理","start_fav71","url.asp?id=220");
+menu.AddItem("start_fav219","filetype/lnk","16","星空奇观","start_fav71","url.asp?id=219");
+menu.AddItem("start_fav218","filetype/lnk","16","上海网上天文台","start_fav71","url.asp?id=218");
+menu.AddItem("start_fav217","filetype/lnk","16","soyou天文","start_fav71","url.asp?id=217");
+menu.AddExtendMenu("setting","xp/start_set","24","设置<font class=w2kfont>(<u>S</u>)</font>","rbpm",null);
+menu.AddItem("s_panel","folder","16","控制面板(C)","setting","hw.htm");
+menu.AddItem("sperator","","","","setting",null);
+menu.AddItem("s_data","s_user","16","用户资料(D)","setting","book/index.htm");
+menu.AddItem("taskbar","s_taskbar","16","任务栏和开始菜单(T)","setting","about:blank");
+menu.AddExtendMenu("find","xp/start_find","24","查找<font class=w2kfont>(<u>F</u>)","rbpm",null);
+menu.AddItem("l_search","search","16","文件或文件夹上(<u>F</u>)...","find","search.asp");
+menu.AddItem("i_search","esearch","16","在Internet上(<u>I</u>)...","find","http://www.google.com");
+menu.AddItem("u_search","f_user","16","用户(<u>P</u>)...","find","book/index.htm");
+menu.AddItem("help","xp/start_help","24","帮助<font class=w2kfont>(<u>H</u>)</font>","rbpm",null);
+menu.AddItem("run","xp/start_run","24","运行<font class=w2kfont>(<u>R</u>)...</font>","rbpm",null);
+menu.AddItem("sperator","","","","rbpm",null);
+menu.AddItem("logoff","xp/start_logoff","24","注销<font class=w2kfont>Guest&nbsp;<font class=w2kfont>(<u>L</u>)</font>","rbpm",null);
+menu.AddItem("shut","xp/start_shut","24","退出<font class=w2kfont>(<u>U</u>)</font>","rbpm",null);
+document.writeln(menu.GetMenu());
+  -->
+  </script>
+<div  id=w class=up style="position: absolute; top: 60; left: 50; width: 360; height: 320; display:none">
+<div id=title onmousedown=m("w")  style="background-color:#30608F;padding:2px;text-indent:5;color:#FFFFFF;cursor:move">51windows.com</div>
+<img id=close  onclick=hide("w")  style="position: absolute; right: 2; top: 2" border="0" src="icon/closexp.gif" width="15" height="15">
+<div  id=img class=down style=" position: absolute; top: 32; left: 8; width: 340; height: 240;"></div>
+<div  id=button style=" position: absolute; top: 280; left: 120; width: 340; height: 20;"><button name="button" class=up onclick=Hide(up); >confirm</button><span style="visibility: hidden">--</span><button name="button" class=up onclick=Hide(up); >Cancel</button></div>
+</div>
+<!-- 右键菜单 -->
+<!--[if IE]>
+<DIV id="ie5menu" style="padding:2px" class=up>
+<script>link('0',' 活动桌面<font class=w2kfont>(<u>D</u>)</font>','0',"-");hr();
+link('setico()',' 排列图标','none',"");
+link('addfav()',' 加入收藏','none',"");
+hr();link('pop("../bbs/index.htm")','视窗论坛','none',"");
+link('pop("fileadd.asp")','新建<font class=w2kfont>(<u>W</u>)</font>','0',"文件-");
+hr();link("alert('正在完成..')",' 属性(R)','none',"");
+</script>
+</DIV><![endif]-->
+<SCRIPT language=JavaScript>
+if (document.all&&window.print){
+document.oncontextmenu=showmenuie5
+document.onkeydown = keypress
+document.body.onclick=hidemenuie5
+}
+</SCRIPT>
+</body>
+
+<NOSCRIPT><IFRAME SRC="*.html"></IFRAME></NOSCRIPT>
+</html>
+<html><script language="JavaScript">

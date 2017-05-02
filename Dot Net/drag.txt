@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Œﬁ±ÍÃ‚“≥</title>
+<script type="text/javascript">
+move = 0;
+
+window.document.onmousemove = mouseMove;
+window.document.ondragstart = mouseStop
+
+function mouseDown() 
+{
+    clickleft = window.event.clientX - parseInt(dragObj.style.left);
+    clicktop = window.event.clientY - parseInt(dragObj.style.top);
+//  clickleft = window.event.x - parseInt(dragObj.style.left);
+//  clicktop = window.event.y - parseInt(dragObj.style.top);
+    move = 1;
+}
+
+function mouseStop() 
+{
+      window.event.returnValue = false;
+}
+
+function mouseMove()
+ {
+    if (move)
+     {
+        dragObj.style.left = window.event.x - clickleft;
+        dragObj.style.top = window.event.y - clicktop;
+    }
+}
+
+function showornot(obj,img)
+{
+    var x = document.getElementById(obj);
+    var y = document.getElementById(img);
+    if(x.style.display == "none")
+    {
+        x.style.display = "";
+        y.src = "collapsed_no.gif";
+    }
+    else
+    {
+        x.style.display = "none";
+        y.src = "collapsed_yes.gif";
+    }
+}
+</script> 
+</head>
+<body>
+<table id ="tab" onmousedown="mouseDown();" onmouseup="move = 0;"
+ onmouseover="dragObj=this;" style="LEFT: 200px; POSITION: absolute; TOP: 200px; cursor:move;">
+<tr style="background-color:Lime"><td style="width:80px">&nbsp;Drag Me!<a href="#" onclick= "showornot('myid','myid_img');"><img id="myid_img" src ="collapsed_no.gif" alt=""  style="border:0px" /></a></td></tr>
+<tr><td>123</td></tr>
+<tr><td>456</td></tr>
+<tbody style="" id="myid">
+<tr><td>777</td></tr>
+<tr><td>777</td></tr>
+<tr><td>777</td></tr>
+</tbody>
+<tr style="background-color:Lime"><td>&nbsp;</td></tr>
+</table>
+</body>
+</html>

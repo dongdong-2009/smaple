@@ -1,0 +1,17 @@
+	protected void Page_Load(object sender, EventArgs e)
+        {
+            object obj = GetProductInfos();
+            //string s= Serialize<dynamic>(obj);
+            var jser = new JavaScriptSerializer();
+            string ChartJSON = jser.Serialize(obj);
+        }
+
+
+        public object GetProductInfos()
+        {
+            bomEntities context = new bomEntities();
+            var productInfos =
+              from p in context.BOMInfoes
+              select new { p.BOMName, Price = p.BOMNumber };
+            return productInfos.ToList();
+        }

@@ -1,0 +1,12 @@
+E:\360云盘\Project\smaple\Dot Net\SetProxy\SetProxy\bin\Debug\SetProxy.exe.config
+E:\360云盘\Project\smaple\Dot Net\SetProxy\SetProxy\bin\Debug\SetProxy.exe
+E:\360云盘\Project\smaple\Dot Net\SetProxy\SetProxy\bin\Debug\SetProxy.pdb
+E:\360云盘\Project\smaple\Dot Net\SetProxy\SetProxy\obj\Debug\SetProxy.csprojResolveAssemblyReference.cache
+E:\360云盘\Project\smaple\Dot Net\SetProxy\SetProxy\obj\Debug\SetProxy.exe
+E:\360云盘\Project\smaple\Dot Net\SetProxy\SetProxy\obj\Debug\SetProxy.pdb
+C:\OneDrive - Hewlett Packard Enterprise\Project\smaple\Dot Net\SetProxy\SetProxy\bin\Debug\SetProxy.exe.config
+C:\OneDrive - Hewlett Packard Enterprise\Project\smaple\Dot Net\SetProxy\SetProxy\bin\Debug\SetProxy.exe
+C:\OneDrive - Hewlett Packard Enterprise\Project\smaple\Dot Net\SetProxy\SetProxy\bin\Debug\SetProxy.pdb
+C:\OneDrive - Hewlett Packard Enterprise\Project\smaple\Dot Net\SetProxy\SetProxy\obj\Debug\SetProxy.csprojResolveAssemblyReference.cache
+C:\OneDrive - Hewlett Packard Enterprise\Project\smaple\Dot Net\SetProxy\SetProxy\obj\Debug\SetProxy.exe
+C:\OneDrive - Hewlett Packard Enterprise\Project\smaple\Dot Net\SetProxy\SetProxy\obj\Debug\SetProxy.pdb

@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+/* 全局公用CSS属性 */
+* { margin:0; padding:0; }
+fieldset,img { border:0; }
+a { color:#333; text-decoration:none; }
+a:hover { text-decoration:underline; }
+
+/* 主题内容样式 */
+#mainBox {width:970px;height:auto;overflow:hidden;zoom:1;margin-top:10px;}
+	/* 主要内容区 */
+	.main {width:715px;float:left;}
+		.flashBox {float:left;width:253px;height:278px;overflow:hidden;margin-bottom:8px; position:relative; border:1px solid #000;}
+		.flashBox .SwitchPic { position:absolute;}
+			.flashBox img{width:253px;height:232px; }
+			.flashBox span{ position:absolute; left:0; bottom:48px; width:243px; height:50px; display:block; color:#fff; font-weight:bold; padding:0 5px;}
+			.flashBox span.bg {background:url(http://images.movie.xunlei.com/music_v2/images/flashTextBg.png) 0 0 no-repeat;_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://images.movie.xunlei.com/music_v2/images/flashTextBg.png',sizingMethod='scale');}
+			.flashBox h6 {width:240px;height:20px;line-height:20px;padding-top:5px;font-weight:normal;overflow:hidden;white-space:nowrap;}
+			.flashBox h6 {font-size:16px;color:#fff;font-family:"黑体";}
+			.flashBox p.sm {width:240px;height:25px;line-height:25px;font-weight:normal;overflow:hidden;white-space:nowrap;}
+			.flashBox ul.sPic {width:253px;height:47px;padding-top:1px;overflow:hidden;position:absolute;bottom:0;;left:0;background:#4B4748;}
+				.flashBox ul.sPic li {float:left;width:63px;height:46px;overflow:hidden;}
+				.flashBox ul.sPic li a {display:block;width:61px;height:44px;border:1px solid #4B4748;}
+				.flashBox ul.sPic li a:hover, .flashBox ul.sPic li.currA a{border:1px solid #FFFFFF;}
+					.flashBox ul.sPic li a img {display:block;width:61px;height:44px;overflow:hidden;}
+		

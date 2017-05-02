@@ -1,0 +1,217 @@
+﻿/* 整个控件容器*/
+.calendar
+{
+    width:140px;
+}
+.calendar img
+{
+    border:none;
+}
+.calendar a
+{
+    text-decoration:none;
+    font-size:1em;
+}
+
+
+/*日期选择区容器*/
+.calendarView
+{
+    background-color:White;
+    display:none;
+}
+/*不可选择日期*/
+.calendarInvalid
+{
+    color:white !important;
+}
+
+/*月视图*/
+.calendarMonthView
+{
+    position:relative;
+    width:10em;
+    text-align:center;
+    border:solid 1px #daf2fc;
+    padding:6px 2px;
+}
+/*两个日期之间的分隔线*/
+td.calendarDay,th.calendarDay,th.calendarSaturday,td.calendarSaturday
+{
+    border-left:1px solid #dedfde;
+}
+/*休息日*/
+td.calendarSunday,th.calendarSunday,td.calendarSaturday,td.calendarSaturday
+{
+    color:#f60;
+}
+.calendarSunday a,.calendarSaturday a
+{
+    color:#f60;
+}
+/*月视图首尾的其它月日期*/
+.calendarOtherMonth a
+{
+    color:Silver;
+}
+/*今天*/
+.calendarToday a
+{
+    color:Red;
+}
+.calendarMonthTable a
+{
+    width:1em;
+    border:solid 1px #fff;
+}
+.calendarMonthTable a:hover
+{
+    width:1em;
+    border:solid 1px #daf2fc;
+    background-color:#eef9ff;
+}
+.calendarMonthTable th,.calendarMonthTable td
+{
+    font-style:normal;
+    font-weight:normal;
+    font-size:1em;
+    border:0px;
+    padding:1px 2px;
+    text-align:right;
+}
+
+/*日期选择区的导航栏*/
+.calendarNavigator
+{
+    position:relative;
+    width:100%;
+    height:1.2em;
+    min-height:20px;
+    vertical-align:middle;
+    text-align:center;
+}
+a.calendarTitle
+{
+    font-size:1em;
+}
+/*前一月（年）按钮*/
+a.calendarPrev
+{
+   padding:0px;
+   height:16px;
+   width:16px; 
+   position:absolute;
+   left:1em;
+   z-index:999;
+}
+/*后一月（年）按钮*/
+a.calendarNext
+{
+   padding:0px;
+   height:16px;
+   width:16px; 
+   position:absolute;
+   right:1em;
+   z-index:999;
+    
+}
+
+
+/*年视图*/
+.calendarYearView
+{
+    width:10em;
+    padding:6px 2px;
+    text-align:center;
+    vertical-align:middle;
+    border:solid 1px #daf2fc;
+}
+.calendarYearTable
+{
+    margin:0 auto;
+}
+.calendarYearView a
+{
+    font-size:0.8em;
+    margin:1px 3px 3px 3px;
+    display:block;
+    border:solid 1px white;
+}
+.calendarYearTable a:hover
+{
+    border:solid 1px #daf2fc;
+    background-color:#eef9ff;
+}
+
+/*输入栏与下拉、向上、向下按钮容器*/
+.calendarInputView
+{
+    position:relative;
+    height:24px;
+    vertical-align:bottom;
+    border:solid 1px #daf2fc;
+}
+/*日期输入框*/
+.calendarInputView input
+{
+    position:absolute;
+    left:20px;
+    top:2px;
+    height:20px;
+    display:block;
+    width:7em;
+    border:none 0px;
+}
+/*日期格式错误或超出范围时样式*/
+input.calendarError
+{
+    color:Red;
+}
+.calendarInputView a
+{
+    display:block;
+    border:solid 1px #daf2fc;  
+}
+.calendarInputView a:hover
+{
+    background-color:#eafcfc;
+}
+/*下拉按钮*/
+a.calendarDropDownButton
+{
+    position:absolute;
+    left:1px;
+    height:20px;
+    width:16px;
+    top:1px;
+}
+.calendarDropDownButton img
+{
+    position:absolute;
+    top:3px;
+    left:1px;
+}
+/*向上按钮*/
+a.calendarAddButton
+{
+    position:absolute;
+    top:1px;
+    right:1px;
+    height:8px;
+    width:15px;
+}
+/*向下按钮*/
+a.calendarReduceButton
+{
+    position:absolute;
+    right:1px;
+    bottom:1px;
+    height:8px;
+    width:15px;
+}
+.calendarReduceButton img,.calendarAddButton img
+{
+    position:absolute;
+    top:1px;
+    left:1px;
+}

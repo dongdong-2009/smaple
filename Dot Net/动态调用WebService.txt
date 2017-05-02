@@ -1,0 +1,77 @@
+﻿using System;
+using System.IO;
+using System.Collections.Generic;
+using System.Linq;
+using System.Collections;
+using System.Web;
+using System.Net;
+using System.Reflection;
+using System.CodeDom;
+using System.CodeDom.Compiler;
+using System.Web.Services;
+using System.Text;
+using System.Web.Services.Description;
+using System.Web.Services.Protocols;
+using System.Xml.Serialization;
+using System.Windows.Forms;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            WebClient client = new WebClient();
+            String url = "http://localhost:3182/Service1.asmx?WSDL";//这个地址可以写在Config文件里面，这里取出来就行了.在原地址后面加上： ?WSDL
+            Stream stream = client.OpenRead(url);
+            ServiceDescription description = ServiceDescription.Read(stream);
+
+            ServiceDescriptionImporter importer = new ServiceDescriptionImporter();//创建客户端代理代理类。
+
+            importer.ProtocolName = "Soap"; //指定访问协议。
+            importer.Style = ServiceDescriptionImportStyle.Client; //生成客户端代理。
+            importer.CodeGenerationOptions = CodeGenerationOptions.GenerateProperties | CodeGenerationOptions.GenerateNewAsync;
+
+            importer.AddServiceDescription(description, null, null); //添加WSDL文档。
+
+            CodeNamespace nmspace = new CodeNamespace(); //命名空间
+            nmspace.Name = "TestWebService";
+            CodeCompileUnit unit = new CodeCompileUnit();
+            unit.Namespaces.Add(nmspace);
+
+            ServiceDescriptionImportWarnings warning = importer.Import(nmspace, unit);
+            CodeDomProvider provider = CodeDomProvider.CreateProvider("CSharp");
+
+            CompilerParameters parameter = new CompilerParameters();
+            parameter.GenerateExecutable = false;
+            parameter.OutputAssembly = "MyTest.dll";//输出程序集的名称
+            parameter.ReferencedAssemblies.Add("System.dll");
+            parameter.ReferencedAssemblies.Add("System.XML.dll");
+            parameter.ReferencedAssemblies.Add("System.Web.Services.dll");
+            parameter.ReferencedAssemblies.Add("System.Data.dll");
+
+            CompilerResults result = provider.CompileAssemblyFromDom(parameter, unit);
+            if (result.Errors.HasErrors)
+            {
+                // 显示编译错误信息
+            }
+
+            Assembly asm = Assembly.LoadFrom("MyTest.dll");//加载前面生成的程序集
+            Type t = asm.GetType("TestWebService.TestWebService");
+
+            object o = Activator.CreateInstance(t);
+            MethodInfo method = t.GetMethod("GetPersons");//GetPersons是服务端的方法名称,你想调用服务端的什么方法都可以在这里改,最好封装一下
+            String[] item = (String[])method.Invoke(o, null);
+            //注：method.Invoke(o, null)返回的是一个Object,如果你服务端返回的是DataSet,这里也是用(DataSet)method.Invoke(o, null)转一下就行了
+            foreach (string str in item)
+                Console.WriteLine(str);
+
+            //上面是根据WebService地址，模似生成一个代理类,如果你想看看生成的代码文件是什么样子，可以用以下代码保存下来，默认是保存在bin目录下面
+            TextWriter writer = File.CreateText("MyTest.cs"); 
+            provider.GenerateCodeFromCompileUnit(unit, writer, null);
+            writer.Flush();
+            writer.Close();
+        } 
+    }
+}
+

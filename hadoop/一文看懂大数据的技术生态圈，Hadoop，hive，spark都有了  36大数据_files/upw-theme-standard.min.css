@@ -1,0 +1,66 @@
+.upw-posts article {
+	padding-bottom: 1em; margin-bottom: 1.5em; border-bottom-color: rgb(221, 221, 221); border-bottom-width: 1px; border-bottom-style: solid; display: block;
+}
+.upw-posts article:last-child {
+	padding-bottom: 0px; border-bottom-color: currentColor; border-bottom-width: 0px; border-bottom-style: none;
+}
+.upw-posts .entry-title {
+	margin-bottom: 0.5em;
+}
+.upw-posts .entry-title a {
+	text-decoration: none;
+}
+.upw-posts .entry-title a:focus {
+	text-decoration: underline;
+}
+.upw-posts .entry-title a:hover {
+	text-decoration: underline;
+}
+.upw-posts .entry-image {
+	margin-bottom: 1em;
+}
+.upw-posts .entry-image img {
+	height: auto; max-width: 100%;
+}
+.upw-posts .entry-meta {
+	color: rgb(136, 136, 136); line-height: 1.4; font-size: 0.9em; margin-bottom: 1em;
+}
+.upw-posts .entry-meta .comments {
+	white-space: nowrap;
+}
+.upw-posts .entry-content > :last-child {
+	margin-bottom: 1em;
+}
+.upw-posts .entry-summary > :last-child {
+	margin-bottom: 1em;
+}
+.upw-posts .more-link {
+	white-space: nowrap;
+}
+.upw-posts footer {
+	color: rgb(136, 136, 136); line-height: 1.4; font-size: 0.9em; display: block;
+}
+.upw-posts .custom-field {
+	margin-bottom: 0.5em;
+}
+.upw-posts .entry-categories {
+	margin-bottom: 0.5em;
+}
+.upw-posts .entry-custom-fields {
+	margin-bottom: 0.5em;
+}
+.upw-posts .entry-tags {
+	margin-bottom: 0.5em;
+}
+.upw-after {
+	margin-bottom: 1rem;
+}
+.upw-before {
+	margin-bottom: 1rem;
+}
+.upw-after > :last-child {
+	margin-bottom: 0px;
+}
+.upw-before > :last-child {
+	margin-bottom: 0px;
+}

@@ -1,0 +1,36 @@
+USE [dfl_iisp]
+GO
+/****** 对象:  Table [dbo].[course]    脚本日期: 03/23/2009 13:39:14 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[course](
+	[id] [int] NULL,
+	[name] [varchar](50) COLLATE Chinese_PRC_CI_AS NULL
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+
+
+
+USE [dfl_iisp]
+GO
+/****** 对象:  Table [dbo].[result]    脚本日期: 03/23/2009 13:39:08 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[result](
+	[sid] [varchar](50) COLLATE Chinese_PRC_CI_AS NULL,
+	[course] [varchar](50) COLLATE Chinese_PRC_CI_AS NULL,
+	[result] [int] NULL
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF

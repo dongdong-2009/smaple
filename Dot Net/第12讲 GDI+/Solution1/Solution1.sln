@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShapeForm", "ShapeForm\ShapeForm.csproj", "{0693CA5A-02B9-4C8C-B46D-BCBE2CB5E134}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GdiPlus", "GdiPlus\GdiPlus.csproj", "{983932A6-CB4A-40C5-B55E-6E80FA39DF0B}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{0693CA5A-02B9-4C8C-B46D-BCBE2CB5E134}.Debug.ActiveCfg = Debug|.NET
+		{0693CA5A-02B9-4C8C-B46D-BCBE2CB5E134}.Debug.Build.0 = Debug|.NET
+		{0693CA5A-02B9-4C8C-B46D-BCBE2CB5E134}.Release.ActiveCfg = Release|.NET
+		{0693CA5A-02B9-4C8C-B46D-BCBE2CB5E134}.Release.Build.0 = Release|.NET
+		{983932A6-CB4A-40C5-B55E-6E80FA39DF0B}.Debug.ActiveCfg = Debug|.NET
+		{983932A6-CB4A-40C5-B55E-6E80FA39DF0B}.Debug.Build.0 = Debug|.NET
+		{983932A6-CB4A-40C5-B55E-6E80FA39DF0B}.Release.ActiveCfg = Release|.NET
+		{983932A6-CB4A-40C5-B55E-6E80FA39DF0B}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,131 @@
+Hello everyone,
+ 
+Today I’ll talk about a request I had more than once lately, whether it’s with my clients or on msdn forums where the issue came up several times : How to filter a list based a parameter entered by the user?
+ 
+For that we have the default “TextFilter” webpart, but this webpart has two flaws:
+ 
+First you need the Enterprise version of SharePoint 2010, then this webpart only use the “equal to” and not the “contains” (when all the requests I have personally been asked a “contains”).
+ 
+I’ll show you a code snippet to add used in a webpart to give your users the ability to filter your lists.
+ 
+The idea is to load a “ListViewWebPart” of the targeted list.
+  
+string listUrl = "Lists/maliste" ; 
+SPList list = web.GetList(SPUrlUtility.CombineUrl(web.Url, listUrl)); 
+ListViewWebPart lvwp = new ListViewWebPart(); 
+lvwp.ListName = list.ID.ToString("B").ToUpper(); 
+lvwp.ViewGuid = list.Views[YourCustomViewName].ID.ToString("B").ToUpper(); 
+this.Controls.Add(lvwp); 
+ 
+With this code snippet, you will display the list on the url “listUrl” with the view whose name is equal to “YourCustomViewName”
+ 
+If you want to display the default view, replace the line
+  lvwp.ViewGuid = list.Views[YourCustomViewName].ID.ToString("B").ToUpper();  
+by
+  lvwp.ViewGuid = list.DefaultView.ID.ToString("B").ToUpper();  
+For the filter, we will use two TextBox, one for the column “LinkTitle” and one for the column “FirstName” and a filter button. The trick will be to create a CAML Query and injecting it in the selected view.
+ 
+Warning, if the selected view is already filtered, the existing filter will be replaced. In other words if you have a filtered list of column C, if you use the following code snippet, it will not be filtered on column C but on columns A and B.
+ 
+Let’s start by creating our request.
+  
+string query = string.Empty; 
+string tempAdding = string.Empty; 
+if (!string.IsNullOrEmpty(tbA.Text)) 
+{ 
+query = <Contains><FieldRef Name='A' /><Value Type='Text'>" + tbA.Text + "</Value></Contains>; 
+} 
+if (!string.IsNullOrEmpty(tbB.Text)) 
+{ 
+tempAdding = <Contains><FieldRef Name='B' /><Value Type='Text'>" + tbB.Text + "</Value></Contains>; 
+query = (query.Length > 0 ? "<And>" + query + tempAdding + "</And>" : tempAdding); 
+} 
+ 
+Now we will inject the query! For this we will go through the xml view to find the tag “Where” where we will replace the existing query with the new.
+  
+XmlDocument doc = new XmlDocument(); 
+doc.LoadXml(lvwp.ListViewXml); 
+XmlNode queryNode = doc.SelectSingleNode("//Query"); 
+XmlNode whereNode = queryNode.SelectSingleNode("Where"); 
+if (whereNode != null) queryNode.RemoveChild(whereNode); 
+XmlNode newNode = doc.CreateNode(XmlNodeType.Element, "Where", String.Empty); 
+newNode.InnerXml = query.ToString(); 
+queryNode.AppendChild(newNode); 
+lvwp.ListViewXml = doc.OuterXml; 
+ 
+We just have to put it all in one update panel and there you are with a custom filter webpart!
+ 
+Feel free to go further and put the url of the list, the view and fields in the webpart’s parameters for a filter webpart as generic as possible!
+ 
+Finally here is the complete code of my webpart.
+  
+
+ public class WebPart1 : System.Web.UI.WebControls.WebParts.WebPart
+    {
+        TextBox tbA;
+        TextBox tbB;
+        Button filterButton;
+        UpdatePanel mainUpdatePanel;
+        ListViewWebPart lvwp;
+        SPList list;
+
+        protected override void CreateChildControls()
+        {
+
+            mainUpdatePanel = new UpdatePanel();
+            mainUpdatePanel.UpdateMode = UpdatePanelUpdateMode.Conditional;
+
+            tbA = new TextBox();
+            tbB = new TextBox();
+
+            list = SPContext.Current.Web.GetList(SPUrlUtility.CombineUrl(SPContext.Current.Web.Url, "Lists/FilterList"));
+            lvwp = new ListViewWebPart();
+            lvwp.ListName = list.ID.ToString("B").ToUpper();
+            lvwp.ViewGuid = list.DefaultView.ID.ToString("B").ToUpper();
+            lvwp.ChromeType = PartChromeType.None;
+
+
+
+            filterButton = new Button();
+            filterButton.Text = "Filter";
+            filterButton.Click += new EventHandler(filterButton_Click);
+
+
+
+            Controls.Add(new LiteralControl(" Nom : "));
+            Controls.Add(tbA);
+            Controls.Add(new LiteralControl(" Prenom : "));
+            Controls.Add(tbB);
+            mainUpdatePanel.ContentTemplateContainer.Controls.Add(filterButton);
+            mainUpdatePanel.ContentTemplateContainer.Controls.Add(lvwp);
+
+
+            this.Controls.Add(mainUpdatePanel);
+        }
+
+        private void filterButton_Click(object sender, EventArgs e)
+        {
+            string query = string.Empty;
+            string tempAdding = string.Empty;
+            if (!string.IsNullOrEmpty(tbA.Text))
+            {
+                query = "<Contains><FieldRef Name='LinkTitle' /><Value Type='Text'>" + tbA.Text + "</Value></Contains>";
+            }
+            if (!string.IsNullOrEmpty(tbB.Text))
+            {
+                tempAdding = "<Contains><FieldRef Name='Prenom' /><Value Type='Text'>" + tbB.Text + "</Value></Contains>";
+                query = (query.Length > 0 ? "<And>" + query + tempAdding + "</And>" : tempAdding);
+            }
+
+            XmlDocument doc = new XmlDocument();
+            doc.LoadXml(lvwp.ListViewXml);
+            XmlNode queryNode = doc.SelectSingleNode("//Query");
+            XmlNode whereNode = queryNode.SelectSingleNode("Where");
+
+            if (whereNode != null) queryNode.RemoveChild(whereNode);
+            XmlNode newNode = doc.CreateNode(XmlNodeType.Element, "Where", String.Empty);
+            newNode.InnerXml = query.ToString();
+            queryNode.AppendChild(newNode);
+            lvwp.ListViewXml = doc.OuterXml;
+
+        }

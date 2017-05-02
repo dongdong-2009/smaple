@@ -1,0 +1,7 @@
+D:\360云盘\Project\smaple\Dot Net\Socket\OneWaySocket\bin\Debug\OneWaySocket.dll
+D:\360云盘\Project\smaple\Dot Net\Socket\OneWaySocket\bin\Debug\OneWaySocket.pdb
+D:\360云盘\Project\smaple\Dot Net\Socket\OneWaySocket\bin\Debug\ISocket.dll
+D:\360云盘\Project\smaple\Dot Net\Socket\OneWaySocket\bin\Debug\ISocket.pdb
+D:\360云盘\Project\smaple\Dot Net\Socket\OneWaySocket\obj\Debug\ResolveAssemblyReference.cache
+D:\360云盘\Project\smaple\Dot Net\Socket\OneWaySocket\obj\Debug\OneWaySocket.dll
+D:\360云盘\Project\smaple\Dot Net\Socket\OneWaySocket\obj\Debug\OneWaySocket.pdb

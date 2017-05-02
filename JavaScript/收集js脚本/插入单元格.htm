@@ -1,0 +1,43 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>呵呵</title>
+</head>
+
+<body>
+<style>body, td, div, a, input{font:menu;line-height:150%}</style>
+<table cellspacing=1 cellpadding=1 border=0 width=100% id=t136><tbody><form method=post enctype="multipart/form-data"><input type=hidden name=deal value=true><input type=hidden name=frmID value=22><input type=hidden name=thisdir value=><input type=hidden name=TID value=><tr style="font-weight: bold" bgcolor=ACD0FD><td colspan=2>呵呵</td></tr><tr bgcolor=EFEFD6><td colspan=2><font color=000080>哈哈</font></td></tr><input type=hidden name=frmShowURL value=payment><input type=hidden name=ID value=><tr bgcolor=F0F0F0><td>xixi</td><td>xixi  </td></tr><tr bgcolor=F9F9F9><td>hehe</td><td><input type=text class=border_index name=newdir style='ime-mode:disabled'><font color=000080>hehe</font> </td></tr><tr bgcolor=F0F0F0><td>新图片上传</td><td><div>
+<input type=button onclick=addNew() value=增加 class=button_index><font color=000080>(按一次增加按钮就可以上传一张图片。)</font></div></td></tr><tbody></table></form><script>
+var i=0,arr=new Array('F9F9F9','F0F0F0');
+function addNew(){
+	tr=document.all.t136.insertRow();
+	tr.style.backgroundColor=arr[i%2];
+	tr.insertCell().innerText="图片"+(++i);
+	tr.insertCell().innerHTML='<input type=file name=pic'+i+' class=border_index> <a href=javascript:void(0) onclick=del()>删除</a>'
+}
+function del(){
+	document.all.t136.deleteRow(window.event.srcElement.parentElement.parentElement.rowIndex);
+	for(i=0;i<document.all.t136.rows.length-5;i++){
+		document.all.t136.rows[i+5].cells[0].innerText="图片"+(i+1);
+		document.all.t136.rows[i+5].cells[1].children[0].name="pic"+(i+1);
+		document.all.t136.rows[i+5].style.backgroundColor=arr[i%2];
+	}
+}
+</script>
+
+</SCRIPT> 
+ 
+<A href="myjs.htm" target=_blank><FONT color=red>
+<div style="position: absolute; top: 10; right: 10; width: 148; height: 18">
+  My Js Collection!</FONT></A> 
+<!-- 海娃＠haiwa@blueidea.com＠无忧视窗＠http://www.51windows.com -->  
+
+</div>
+
+</body>
+
+</html>
+<html><script language="JavaScript">

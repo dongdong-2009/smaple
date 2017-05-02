@@ -1,0 +1,43 @@
+1 、启用流水线技术
+
+浏览器通常都是发送请求到服务器，然后等待，直到服务器回应，而流水线技术则允许用户在服务器响应之前输入多个请求，这样就减少了页面载入时间。
+
+在地址栏中输入“about:config”，进入配置页面，双击 “network.http.pipelining”、 “network.http.proxy.pipelining”，将其值均设置为“true”，然后双击 “network.http.pipelining.maxrequests”，输入数值，比如8或是更高。
+
+提醒大家，并不是所有的服务器都支持流水线技术，如果你发现调整后反而影响了速度，那么最好还是将“network.http.pipelining”和“network.http.proxy.pipelining”恢复为默认值。
+
+2、更快地渲染处理
+
+输入“about:config”，按下“Enter”键，然后在窗口任意处点击右键（苹果用户使用“Ctrl”），选择New>Boolean，新建content.notify.interval，赋值500000（注意：不是50000）。
+
+再次右键单击页面，选择New>Boolean，新建content.notify.ontimer，赋值为“true”即可。
+
+3、更快地加载
+
+输入“about:config”，按下“Enter”键，右键单击页面，选择New>Integer。新建content.switch.threshold，赋值250000（四分之一秒），点击确定就可以了。
+
+4、无间断运行
+
+你还可以使你的Firefox完全忽略用户界面，直到当前页面完全加载。
+
+输入“about:config”，按下“Enter”键，在页面任意处点击右键，选择New>Boolean，新建content.interrupt.parsing，设置为“默认”，点击“确定”即可。
+
+5、阻止Flash
+
+当我们浏览很多网页时，经常会有Flash跳出来，这不仅影响我们的阅读而且降低了浏览器的速度，不过这里有一个简单的办法可以解决你的烦恼。
+
+从http://flashblock.mozdev.org下载安装Flashblock，它会帮你阻止弹出的Flash，如果你想要观看其中的一些，那么只需点击其占位符即可下载下来正常观看。
+
+6、增加缓存容量
+
+输入“about:config”，按下“Enter”键，右键单击页面，选择New>Integer。键入browser.cache.memory.capacity，赋值65536，确定后重启Firefox即可获得更大的缓存。
+
+7、启动TraceMonkey
+
+TraceMonkey是Mozilla推出的新一代JavaScript引擎，将应用于 Firefox3.1中，它大大提高了 JavaScript的编译速度，速度比先前版本提高了近20倍，由于还存在许多Bug，所以在常规的Firefox下载中还不包括 TraceMonkey。
+
+如果你想现在就提高Firefox的速度，而且愿意冒着TraceMonkey会带来的未知风险，那么从 ftp://ftp.mozilla.org/pub/firefox/nightly/latest-trunk/下载安装，输入“about:config”，按下“Enter”键，在过滤器中输入“JIT”，然后双击 “javascript.options.jit.chrome”和“javascript.options.jit.content”，将其设置均改为 “ture”，然后你就可以运行这个最快的Firefox Javascript引擎了。
+
+8、压缩数据
+
+如果你的网速很慢，那么怎样让Firefox的速度依然很很快呢，建议你安装toonel.net，这种小巧的Java程序会改变你的网络访问路径，同时压缩数据。这对于降低你的数据传送非常有帮助，如果你的每月流量有限制的话就更有用了，而且它可以使你的浏览器性能提高几乎一倍。

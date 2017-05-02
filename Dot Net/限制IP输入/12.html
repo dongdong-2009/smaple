@@ -1,0 +1,111 @@
+<html>
+<head>
+
+<style type="text/css">
+.ZhoumIPOnly{width:30;border:0;text-align:center}
+</style>
+
+<script type="text/javascript">
+inputID = null;
+pos = 0;
+function ZhoumNumOnlyForIP(obj)
+{
+    alert("1"+pos);
+    obj.value=obj.value.replace(/[^\d]/g,'');
+    key1=event.keyCode;
+    var keycode = event.keyCode;
+    var realkey = String.fromCharCode(keycode);
+    if(!(keycode==8 || keycode==46|| keycode==37|| keycode==39 || /\d/.test(realkey)))
+    {alert("2"+pos);
+       event.returnValue = false;
+    }
+    else
+    {alert("3"+pos);
+        if(key1==37 || key1 == 8)//°˚ backspace
+        {
+            if(pos == 1)
+            {
+                obj.blur();
+                nextip=parseInt(obj.id.substr(7,1));
+                nextip=nextip-1;
+                nextip=(nextip>=10)?6:nextip;
+                nextip=(nextip<=5)?9:nextip;
+                eval("ZhoumIP"+nextip+".focus()");
+                pos = 1;
+            }
+            else
+            {
+                pos--;
+            }            
+        }
+        else
+        {alert("4"+pos);
+            if(key1 != 46)
+            {
+                pos++;
+                if(pos == 3)
+                {alert("5"+pos);
+                    obj.blur();
+                    nextip=parseInt(obj.id.substr(7,1));
+                    nextip=nextip+1;
+                    nextip=(nextip>=10)?6:nextip;
+                    nextip=(nextip<=5)?9:nextip;
+                    eval("ZhoumIP"+nextip+".focus()");
+                    pos = 0;
+                }    
+                alert("6"+pos);          
+            }            
+        }
+    }
+    
+    //keycode==8 backspace
+    //keycode==46 delete
+    //keycode>=35 && keycode<=40 °¸°˝°˚°˙            
+//    if (key1==37 || key1==39 || key1==8 || key1==46)
+//    { 
+//        obj.blur();
+//        nextip=parseInt(obj.id.substr(7,1));
+//        nextip=(key1==37)?nextip-1:nextip+1;
+//        nextip=(nextip>=10)?6:nextip;
+//        nextip=(nextip<=5)?9:nextip;
+//        eval("ZhoumIP"+nextip+".focus()");
+//    } 
+    
+//    if(obj.value.length>=3) 
+//    {
+//        if(parseInt(obj.value)>=256 || parseInt(obj.value)<=0)
+//        {
+//            //alert(parseInt(obj.value)+"IPµÿ÷∑¥ÌŒÛ£°");
+////            obj.value="";
+////            obj.focus();
+////            return false;
+//        }
+//        else 
+//        { 
+//            obj.blur();
+//            nextip=parseInt(obj.id.substr(7,1))+1;
+//            nextip=(nextip>=10)?6:nextip;
+//            nextip=(nextip<=5)?9:nextip;
+//            eval("ZhoumIP"+nextip+".focus()");
+//            pos = 1;
+//        }
+//    }    
+}
+
+function ZhoumIPFouces(ctrl)
+{
+    inputID = ctrl.id;
+    //pos = 0;
+}
+</script>
+<title>IPµÿ÷∑ ‰»Î</title>
+</head>
+<body>
+<div style="border-width:1;border-color:black;border-style:solid;width:165;font-size:9pt">
+<input type="text" id="ZhoumIP6" maxlength="3" class="ZhoumIPOnly" onfocus="ZhoumIPFouces(this);" onkeyup="ZhoumNumOnlyForIP(this)" oncontextmenu="return false;" />.
+<input type="text" id="ZhoumIP7" maxlength="3" class="ZhoumIPOnly" onfocus="ZhoumIPFouces(this);" onkeyup="ZhoumNumOnlyForIP(this)" oncontextmenu="return false;" />.
+<input type="text" id="ZhoumIP8" maxlength="3" class="ZhoumIPOnly" onfocus="ZhoumIPFouces(this);" onkeyup="ZhoumNumOnlyForIP(this)" oncontextmenu="return false;" />.
+<input type="text" id="ZhoumIP9" maxlength="3" class="ZhoumIPOnly" onfocus="ZhoumIPFouces(this);" onkeyup="ZhoumNumOnlyForIP(this)" oncontextmenu="return false;" />
+</div>
+</body>
+</html> 

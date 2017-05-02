@@ -1,0 +1,40 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string calendar = "";
+            calendar = (from x in Enumerable.Range(1, 12)
+                       group x by (x + 2) / 3 into g
+                       select (BuildCalendar(DateTime.Now.Year, g.ToList()[0]).Split(new char[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries).Union(new string[] {"\r\n" })
+                             .Zip(BuildCalendar(DateTime.Now.Year, g.ToList()[1]).Split(new char[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries).Union(new string[] { "\r\n" }), (x, y) => x.TrimEnd().PadRight(23, ' ') + y)
+                             .Zip(BuildCalendar(DateTime.Now.Year, g.ToList()[2]).Split(new char[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries).Union(new string[] { "\r\n" }), (x, y) => x.TrimEnd().PadRight(46, ' ') + y))
+                             .Zip(Enumerable.Repeat("\r\n", 8), (x, y) => x + y)
+                             .Aggregate((serials, current) => serials + current))
+                         .Aggregate((serials, current) => serials + current);
+            Console.WriteLine(DateTime.Now.Year + "\r\n" + calendar);
+        }
+
+        static string BuildCalendar(int year, int month)
+        {
+            string calendar = new string[] { month.ToString(), "SU MO TU WE TH FR SA" }
+                .Union(Enumerable.Range(
+                    1 - (int)new DateTime(year, month, 1).DayOfWeek,
+                    new DateTime(year, month, 1).AddMonths(1).AddDays(-1).Day + (int)new DateTime(year, month, 1).DayOfWeek
+                )
+                .GroupBy(x => ((x + (int)(new DateTime(year, month, 1).DayOfWeek + 6)) / 7), (key, g) => new { GroupKey = key, Items = g })
+                .Select(x =>
+                    x.Items.Select(y => y < 1 ? "   " : Convert.ToString(y).PadLeft(2, '0') + " ")
+                           .Aggregate((serials, current) => serials + current))
+                )
+                .Aggregate((serial, current) => serial + "\r\n" + current);
+            return calendar;
+        }
+    }
+}

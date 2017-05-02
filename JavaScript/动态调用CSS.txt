@@ -1,0 +1,13 @@
+public class Test : System.Web.UI.Page
+{
+                  protected string m_StyleSrc = string.Empty;
+
+private void Page_Load(object sender, System.EventArgs e)
+{
+// 在此处放置用户代码以初始化页面
+                           m_StyleSrc = //你获取地址的方法
+}
+}
+
+界面上
+<LINK href="<%=m_StyleSrc%>" type="text/css" rel="stylesheet">

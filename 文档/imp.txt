@@ -1,0 +1,30 @@
+1. 一共有两个WebPart,AnnounceReview和AnnouncesWebPart，源文件为AnnounceReview.cs和AnnouncesWebPart.cs.
+2. AnnouncesWebPart有三个属性
+ListGuid:负责取哪个List，标识为List的Guid，可以通过在IE中访问指定list里通过ViewSource查找ListName得到
+ListTitle: 负责指定在页面中显示的标题
+ListViewTitle: 负责指定获取哪个视图
+3. WebPart取数据是使用的四列，第一列必需是标题，视图中必须有Author, 类型，更新日期三列数据
+4. html的数据存在string.resx中，修改页面的显示直接修改string.resx，可以使用文本编辑器打开，也可以在数据视图中编辑
+彭翔 说:
+5. AnnounceReview在我的机器上没有问题，昨天部署到61上有错，请帮忙调试一下
+6. 列表要打开审批的选项，另外需要自己只能删除自己项目，需要设置自己只能删除自己的项目的选项
+7. 需要改进的地方是在WebPart上给管理员加上管理列表权限的链
+
+				<TABLE  style=" table-layout: fixed;Z-INDEX: 101; LEFT: 72px; POSITION: absolute; TOP: 32px" cellSpacing="1"
+					cellPadding="1" width="300" border="1">
+					<TR>
+						<TD>312312312313123</TD>
+						<TD>132313123131231231231</TD>
+						<TD>3123131331231231</TD>
+					</TR>
+					<TR>
+						<TD>1323131</TD>
+						<TD>31231313231</TD>
+						<TD>131231231231</TD>
+					</TR>
+					<TR>
+						<TD>13231232</TD>
+						<TD>31233123123</TD>
+						<TD style="  text-overflow : ellipsis; white-space : nowrap;overflow:hidden;">123123123123122222222222222222222</TD>
+					</TR>
+				</TABLE>

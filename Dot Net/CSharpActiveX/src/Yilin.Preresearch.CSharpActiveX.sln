@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yilin.Prereaserch.CSharpActiveX", "Yilin.Prereaserch.CSharpActiveX\Yilin.Prereaserch.CSharpActiveX.csproj", "{56DFD9B3-3F92-47D0-9531-0698289FFA4B}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yilin.Preresearch.CSharpActiveX.WebApp", "Yilin.Preresearch.CSharpActiveX.WebApp\Yilin.Preresearch.CSharpActiveX.WebApp.csproj", "{A77AACF5-6CFC-4945-8033-9974533BE74C}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Yilin.Preresearch.CSharpActiveX.Setup", "Yilin.Preresearch.CSharpActiveX.Setup\Yilin.Preresearch.CSharpActiveX.Setup.vdproj", "{B34BF2E3-4C04-462E-A92B-677AE2958B0F}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{56DFD9B3-3F92-47D0-9531-0698289FFA4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56DFD9B3-3F92-47D0-9531-0698289FFA4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56DFD9B3-3F92-47D0-9531-0698289FFA4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56DFD9B3-3F92-47D0-9531-0698289FFA4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A77AACF5-6CFC-4945-8033-9974533BE74C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A77AACF5-6CFC-4945-8033-9974533BE74C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A77AACF5-6CFC-4945-8033-9974533BE74C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A77AACF5-6CFC-4945-8033-9974533BE74C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B34BF2E3-4C04-462E-A92B-677AE2958B0F}.Debug|Any CPU.ActiveCfg = Debug
+		{B34BF2E3-4C04-462E-A92B-677AE2958B0F}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

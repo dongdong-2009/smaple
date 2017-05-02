@@ -1,0 +1,911 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0066)http://www.cnblogs.com/Peter-Zhang/archive/2011/09/17/2179868.html -->
+<HTML><HEAD><TITLE>C#中执行PowerShell 脚本 - PeterZhang - 博客园</TITLE>
+<META content="text/html; charset=utf-8" http-equiv=Content-Type><LINK 
+rel=stylesheet type=text/css 
+href="C%23中执行PowerShell%20脚本_files/common.css"><LINK id=MainCss rel=stylesheet 
+type=text/css href="C%23中执行PowerShell%20脚本_files/style.css"><LINK rel=stylesheet 
+type=text/css href="C%23中执行PowerShell%20脚本_files/common2.css"><LINK 
+rel=stylesheet type=text/css 
+href="C%23中执行PowerShell%20脚本_files/shCore.css"><LINK rel=stylesheet 
+type=text/css href="C%23中执行PowerShell%20脚本_files/shThemeDefault.css"><LINK 
+rel=stylesheet type=text/css 
+href="C%23中执行PowerShell%20脚本_files/customcss.css"><LINK title=RSS rel=alternate 
+type=application/rss+xml href="http://www.cnblogs.com/Peter-Zhang/rss"><LINK 
+title=RSD rel=EditURI type=application/rsd+xml 
+href="http://www.cnblogs.com/Peter-Zhang/rsd.xml"><LINK rel=wlwmanifest 
+type=application/wlwmanifest+xml 
+href="http://www.cnblogs.com/Peter-Zhang/wlwmanifest.xml">
+<SCRIPT type=text/javascript 
+src="C%23中执行PowerShell%20脚本_files/jquery.js"></SCRIPT>
+
+<SCRIPT type=text/javascript 
+src="C%23中执行PowerShell%20脚本_files/common.js"></SCRIPT>
+
+<SCRIPT type=text/javascript 
+src="C%23中执行PowerShell%20脚本_files/jquery.json-2.2.min.js"></SCRIPT>
+
+<SCRIPT type=text/javascript 
+src="C%23中执行PowerShell%20脚本_files/shCore.js"></SCRIPT>
+
+<SCRIPT type=text/javascript 
+src="C%23中执行PowerShell%20脚本_files/shLanguage.js"></SCRIPT>
+
+<META name=GENERATOR content="MSHTML 9.00.8112.16434"></HEAD>
+<BODY><A name=top></A>
+<FORM id=Form1 method=post action=2179868.html>
+<DIV class=aspNetHidden><INPUT id=__EVENTTARGET name=__EVENTTARGET type=hidden> 
+<INPUT id=__EVENTARGUMENT name=__EVENTARGUMENT type=hidden> <INPUT 
+id=__VIEWSTATE name=__VIEWSTATE type=hidden> </DIV>
+<SCRIPT type=text/javascript>
+//<![CDATA[
+var theForm = document.forms['Form1'];
+if (!theForm) {
+    theForm = document.Form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</SCRIPT>
+<!--done-->
+<DIV id=header><!--done-->
+<DIV class=header>
+<DIV class=headerText><A id=Header1_HeaderTitle class=headermaintitle 
+href="http://www.cnblogs.com/Peter-Zhang/">The more a man learns, the more he 
+knows his ignorance. </A><BR></DIV></DIV></DIV>
+<DIV id=mytopmenu>
+<DIV id=mylinks><!--done--><A id=MyLinks1_HomeLink class=menu 
+href="http://www.cnblogs.com/">博客园</A>&nbsp;&nbsp; <A id=MyLinks1_MyHomeLink 
+class=menu href="http://www.cnblogs.com/Peter-Zhang/">首页</A>&nbsp;&nbsp; <A 
+class=menu href="http://space.cnblogs.com/">社区</A>&nbsp;&nbsp; <A 
+id=MyLinks1_NewPostLink class=menu 
+href="http://www.cnblogs.com/Peter-Zhang/admin/EditPosts.aspx?opt=1" 
+rel=nofollow>新随笔</A>&nbsp;&nbsp; <A id=MyLinks1_ContactLink class=menu 
+href="http://space.cnblogs.com/msg/send/PeterZhang" 
+rel=nofollow>联系</A>&nbsp;&nbsp; <A id=MyLinks1_Syndication class=menu 
+href="http://www.cnblogs.com/Peter-Zhang/rss">订阅</A><A id=MyLinks1_XMLLink 
+href="http://www.cnblogs.com/Peter-Zhang/rss"><IMG alt=订阅 
+src="C%23中执行PowerShell%20脚本_files/xml.gif"></A>&nbsp;&nbsp; <A id=MyLinks1_Admin 
+class=menu href="http://www.cnblogs.com/Peter-Zhang/admin/EditPosts.aspx" 
+rel=nofollow>管理</A> </DIV>
+<DIV id=mystats><!--done-->随笔-30&nbsp; 评论-40&nbsp; 文章-50&nbsp; trackbacks-0 
+</DIV></DIV>
+<DIV id=centercontent>
+<DIV class=post>
+<H1 class=postTitle><A id=ctl02_TitleUrl class=postTitle2 
+href="http://www.cnblogs.com/Peter-Zhang/archive/2011/09/17/2179868.html">C#中执行PowerShell 
+脚本</A></H1>
+<DIV id=cnblogs_post_body>
+<P>在C#中调用powershell脚本，需要引用的namespace如下：</P>
+<P>using System.Management.Automation;<BR>using 
+System.Management.Automation.Runspaces;</P>
+<P>添加System.Management.Automation.dll的引用，需要使用浏览，如果不知道位置，可以先在本机查找下。</P>
+<P>代码如下：</P>
+<DIV class=cnblogs_code><PRE><SPAN style="COLOR: #008080"> 1</SPAN> <SPAN style="COLOR: #000000">        </SPAN><SPAN style="COLOR: #008000">//</SPAN><SPAN style="COLOR: #008000">RunPowershell(@".\x.ps1", "");</SPAN><SPAN style="COLOR: #008000"><BR></SPAN><SPAN style="COLOR: #008080"> 2</SPAN> <SPAN style="COLOR: #008000"></SPAN><SPAN style="COLOR: #000000">        </SPAN><SPAN style="COLOR: #0000ff">private</SPAN><SPAN style="COLOR: #000000"> Collection</SPAN><SPAN style="COLOR: #000000">&lt;</SPAN><SPAN style="COLOR: #000000">PSObject</SPAN><SPAN style="COLOR: #000000">&gt;</SPAN><SPAN style="COLOR: #000000"> RunPowershell(</SPAN><SPAN style="COLOR: #0000ff">string</SPAN><SPAN style="COLOR: #000000"> filePath, </SPAN><SPAN style="COLOR: #0000ff">string</SPAN><SPAN style="COLOR: #000000"> parameters)<BR></SPAN><SPAN style="COLOR: #008080"> 3</SPAN> <SPAN style="COLOR: #000000">        {<BR></SPAN><SPAN style="COLOR: #008080"> 4</SPAN> <SPAN style="COLOR: #000000">            RunspaceConfiguration runspaceConfiguration </SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000"> RunspaceConfiguration.Create();<BR></SPAN><SPAN style="COLOR: #008080"> 5</SPAN> <SPAN style="COLOR: #000000">            Runspace runspace </SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000"> RunspaceFactory.CreateRunspace(runspaceConfiguration);<BR></SPAN><SPAN style="COLOR: #008080"> 6</SPAN> <SPAN style="COLOR: #000000">            runspace.Open();<BR></SPAN><SPAN style="COLOR: #008080"> 7</SPAN> <SPAN style="COLOR: #000000">            RunspaceInvoke scriptInvoker </SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000"> </SPAN><SPAN style="COLOR: #0000ff">new</SPAN><SPAN style="COLOR: #000000"> RunspaceInvoke(runspace);<BR></SPAN><SPAN style="COLOR: #008080"> 8</SPAN> <SPAN style="COLOR: #000000">            Pipeline pipeline </SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000"> runspace.CreatePipeline();<BR></SPAN><SPAN style="COLOR: #008080"> 9</SPAN> <SPAN style="COLOR: #000000">            Command scriptCommand </SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000"> </SPAN><SPAN style="COLOR: #0000ff">new</SPAN><SPAN style="COLOR: #000000"> Command(filePath);<BR></SPAN><SPAN style="COLOR: #008080">10</SPAN> <SPAN style="COLOR: #000000">            Collection</SPAN><SPAN style="COLOR: #000000">&lt;</SPAN><SPAN style="COLOR: #000000">CommandParameter</SPAN><SPAN style="COLOR: #000000">&gt;</SPAN><SPAN style="COLOR: #000000"> commandParameters </SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000"> </SPAN><SPAN style="COLOR: #0000ff">new</SPAN><SPAN style="COLOR: #000000"> Collection</SPAN><SPAN style="COLOR: #000000">&lt;</SPAN><SPAN style="COLOR: #000000">CommandParameter</SPAN><SPAN style="COLOR: #000000">&gt;</SPAN><SPAN style="COLOR: #000000">();<BR></SPAN><SPAN style="COLOR: #008080">11</SPAN> <SPAN style="COLOR: #000000"><BR></SPAN><SPAN style="COLOR: #008080">12</SPAN> <SPAN style="COLOR: #000000">            </SPAN><SPAN style="COLOR: #0000ff">string</SPAN><SPAN style="COLOR: #000000">[] tempParas </SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000"> parameters.Split(</SPAN><SPAN style="COLOR: #0000ff">new</SPAN><SPAN style="COLOR: #000000"> </SPAN><SPAN style="COLOR: #0000ff">char</SPAN><SPAN style="COLOR: #000000">[] { </SPAN><SPAN style="COLOR: #800000">'</SPAN><SPAN style="COLOR: #800000"> </SPAN><SPAN style="COLOR: #800000">'</SPAN><SPAN style="COLOR: #000000"> }, StringSplitOptions.RemoveEmptyEntries);<BR></SPAN><SPAN style="COLOR: #008080">13</SPAN> <SPAN style="COLOR: #000000">            </SPAN><SPAN style="COLOR: #0000ff">for</SPAN><SPAN style="COLOR: #000000"> (</SPAN><SPAN style="COLOR: #0000ff">int</SPAN><SPAN style="COLOR: #000000"> i </SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000"> </SPAN><SPAN style="COLOR: #800080">0</SPAN><SPAN style="COLOR: #000000">; i </SPAN><SPAN style="COLOR: #000000">&lt;</SPAN><SPAN style="COLOR: #000000"> tempParas.Length; i </SPAN><SPAN style="COLOR: #000000">+=</SPAN><SPAN style="COLOR: #000000"> </SPAN><SPAN style="COLOR: #800080">2</SPAN><SPAN style="COLOR: #000000">)<BR></SPAN><SPAN style="COLOR: #008080">14</SPAN> <SPAN style="COLOR: #000000">            {<BR></SPAN><SPAN style="COLOR: #008080">15</SPAN> <SPAN style="COLOR: #000000">                CommandParameter commandParm </SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000"> </SPAN><SPAN style="COLOR: #0000ff">new</SPAN><SPAN style="COLOR: #000000"> CommandParameter(tempParas[i], tempParas[i </SPAN><SPAN style="COLOR: #000000">+</SPAN><SPAN style="COLOR: #000000"> </SPAN><SPAN style="COLOR: #800080">1</SPAN><SPAN style="COLOR: #000000">]);<BR></SPAN><SPAN style="COLOR: #008080">16</SPAN> <SPAN style="COLOR: #000000">                commandParameters.Add(commandParm);<BR></SPAN><SPAN style="COLOR: #008080">17</SPAN> <SPAN style="COLOR: #000000">                scriptCommand.Parameters.Add(commandParm);<BR></SPAN><SPAN style="COLOR: #008080">18</SPAN> <SPAN style="COLOR: #000000">            }<BR></SPAN><SPAN style="COLOR: #008080">19</SPAN> <SPAN style="COLOR: #000000"><BR></SPAN><SPAN style="COLOR: #008080">20</SPAN> <SPAN style="COLOR: #000000">            pipeline.Commands.Add(scriptCommand);<BR></SPAN><SPAN style="COLOR: #008080">21</SPAN> <SPAN style="COLOR: #000000">            Collection</SPAN><SPAN style="COLOR: #000000">&lt;</SPAN><SPAN style="COLOR: #000000">PSObject</SPAN><SPAN style="COLOR: #000000">&gt;</SPAN><SPAN style="COLOR: #000000"> psObjects;<BR></SPAN><SPAN style="COLOR: #008080">22</SPAN> <SPAN style="COLOR: #000000">            psObjects </SPAN><SPAN style="COLOR: #000000">=</SPAN><SPAN style="COLOR: #000000"> pipeline.Invoke();<BR></SPAN><SPAN style="COLOR: #008080">23</SPAN> <SPAN style="COLOR: #000000"><BR></SPAN><SPAN style="COLOR: #008080">24</SPAN> <SPAN style="COLOR: #000000">            </SPAN><SPAN style="COLOR: #0000ff">if</SPAN><SPAN style="COLOR: #000000"> (pipeline.Error.Count </SPAN><SPAN style="COLOR: #000000">&gt;</SPAN><SPAN style="COLOR: #000000"> </SPAN><SPAN style="COLOR: #800080">0</SPAN><SPAN style="COLOR: #000000">)<BR></SPAN><SPAN style="COLOR: #008080">25</SPAN> <SPAN style="COLOR: #000000">            {<BR></SPAN><SPAN style="COLOR: #008080">26</SPAN> <SPAN style="COLOR: #000000">                </SPAN><SPAN style="COLOR: #0000ff">throw</SPAN><SPAN style="COLOR: #000000"> </SPAN><SPAN style="COLOR: #0000ff">new</SPAN><SPAN style="COLOR: #000000"> Exception(</SPAN><SPAN style="COLOR: #800000">"脚本执行</SPAN><SPAN style="COLOR: #800000">失败</SPAN><SPAN style="COLOR: #800000">"</SPAN><SPAN style="COLOR: #000000">);<BR></SPAN><SPAN style="COLOR: #008080">27</SPAN> <SPAN style="COLOR: #000000">            }<BR></SPAN><SPAN style="COLOR: #008080">28</SPAN> <SPAN style="COLOR: #000000"><BR></SPAN><SPAN style="COLOR: #008080">29</SPAN> <SPAN style="COLOR: #000000">            runspace.Close();<BR></SPAN><SPAN style="COLOR: #008080">30</SPAN> <SPAN style="COLOR: #000000"><BR></SPAN><SPAN style="COLOR: #008080">31</SPAN> <SPAN style="COLOR: #000000">            </SPAN><SPAN style="COLOR: #0000ff">return</SPAN><SPAN style="COLOR: #000000"> psObjects;<BR></SPAN><SPAN style="COLOR: #008080">32</SPAN> <SPAN style="COLOR: #000000">        }</SPAN></PRE></DIV>
+<P>　　powershell脚本执行的结果存在<A 
+href="http://msdn.microsoft.com/en-us/library/ms132397.aspx" 
+target=_blank>Collection</A>&lt;<A 
+href="http://msdn.microsoft.com/en-us/library/system.management.automation.psobject(v=vs.85).aspx" 
+target=_blank>PSObject</A>&gt;集合中。</P></DIV>
+<DIV id=MySignature>
+<DIV id=PeterSignature>
+<DIV>作者：<A href="http://www.cnblogs.com/Peter-Zhang/" 
+target=_blank>Peter</A></DIV>
+<DIV>出处：<A href="http://www.cnblogs.com/Peter-Zhang/" 
+target=_blank>http://www.cnblogs.com/Peter-Zhang/</A></DIV>
+<DIV>本文版权归作者和博客园共有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利.</DIV></DIV></DIV>
+<SCRIPT type=text/javascript>
+if ($ != jQuery) {
+	$ = jQuery.noConflict();
+}
+var isLogined = true;
+var cb_blogId = 72809;
+var cb_entryId = 2179868;
+var cb_blogApp = "Peter-Zhang";
+var cb_blogUserGuid = "983b6310-8044-de11-9510-001cf0cd104b";
+var cb_entryCreatedDate = '2011/9/17 21:33:00';
+</SCRIPT>
+
+<DIV id=blog_post_info_block>
+<DIV id=BlogPostCategory></DIV>
+<DIV id=EntryTag></DIV>
+<DIV style="DISPLAY: none" id=green_channel>绿色通道：<A id=green_channel_digg 
+onclick="DiggIt(cb_entryId,cb_blogId,1);green_channel_success(this,'谢谢推荐！');" 
+href="javascript:void(0);">好文要顶</A><A id=green_channel_follow 
+onclick=c_follow(); href="javascript:void(0);">关注我</A><A 
+id=green_channel_favorite onclick="AddToWz(2179868);return false;" 
+href="javascript:void(0);">收藏该文</A><A id=green_channel_contact 
+href="http://space.cnblogs.com/msg/send/PeterZhang" target=_blank>与我联系</A> <A 
+id=green_channel_weibo title=分享至新浪微博 onclick=ShareToTsina() 
+href="javascript:void(0);"><IMG alt="" 
+src="C%23中执行PowerShell%20脚本_files/icon_sina.gif"></A> </DIV>
+<DIV id=digg_block>
+<DIV id=author_profile>
+<DIV id=author_profile_info class=author_profile_info>
+<DIV id=author_profile_detail class=author_profile_info></DIV></DIV>
+<DIV class=clear></DIV>
+<DIV id=author_profile_honor></DIV>
+<DIV id=author_profile_follow></DIV></DIV>
+<DIV style="DISPLAY: none" id=div_digg>
+<DIV class=diggit onclick=DiggIt(cb_entryId,cb_blogId,1)><SPAN id=digg_count 
+class=diggnum></SPAN></DIV>
+<DIV class=buryit onclick=DiggIt(cb_entryId,cb_blogId,2)><SPAN id=bury_count 
+class=burynum></SPAN></DIV>
+<DIV class=clear></DIV>
+<DIV id=digg_tips class=diggword></DIV></DIV></DIV>
+<DIV class=clear></DIV>
+<DIV id=post_next_prev></DIV></DIV>
+<SCRIPT type=text/javascript>
+LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate);
+</SCRIPT>
+
+<DIV class=postDesc>posted on 2011-09-17 21:33 <A 
+href="http://www.cnblogs.com/Peter-Zhang/">PeterZhang</A> 阅读(828) <A 
+href="http://www.cnblogs.com/Peter-Zhang/archive/2011/09/17/2179868.html#commentform">评论(2)</A> 
+<A 
+onclick="open_link('http://www.cnblogs.com/Peter-Zhang/admin/EditPosts.aspx?postid=2179868')" 
+href="http://www.cnblogs.com/Peter-Zhang/archive/2011/09/17/2179868.html#" 
+rel=nofollow>编辑</A> <A onclick="AddToWz(2179868);return false;" 
+href="http://www.cnblogs.com/Peter-Zhang/archive/2011/09/17/2179868.html#">收藏</A></DIV></DIV><IMG 
+alt="" src="C%23中执行PowerShell%20脚本_files/2179868.jpg" width=1 height=1> <A 
+name=pagedcomment></A><!--done--><BR><B>评论:</B> 
+<DIV class=feedbackNoItems><SPAN style="DISPLAY: none" 
+id=span_comment_maxid>2201660</SPAN></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle><A 
+href="http://www.cnblogs.com/Peter-Zhang/archive/2011/09/17/2179868.html#2201636">#1楼</A><A 
+id=comment_anchor_2201636 name=2201636></A> <SPAN class=comment_date>2011-09-17 
+21:45</SPAN> | <A id=Comments1_CommentList_NameLink_0 
+href="http://www.cnblogs.com/jiamao/" target=_blank>家猫47</A>&nbsp;<A 
+class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/%e5%ae%b6%e7%8c%ab47">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A><BR>
+<DIV align=left><SPAN id=comment_body_2201636 class=blog_comment_body><A 
+href="http://www.jm47.com/document/1193.aspx" 
+target=_blank>http://www.jm47.com/document/1193.aspx</A></SPAN><BR>　<A 
+onclick='ReplyComment("家猫47",2201636,"uhP08OgLAJekMDN4kx86GzFQTBO3uiivY5gkicU8bxrdRQ2cz3qsbA==")' 
+href="http://www.cnblogs.com/Peter-Zhang/archive/2011/09/17/2179868.html#commentform">回复</A>　<A 
+onclick='QuoteComment(2201636,"uhP08OgLAJekMDN4kx86GzFQTBO3uiivY5gkicU8bxrdRQ2cz3qsbA==")' 
+href="http://www.cnblogs.com/Peter-Zhang/archive/2011/09/17/2179868.html#commentform">引用</A>　<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=%e5%ae%b6%e7%8c%ab47" 
+target=_blank>查看</A>　&nbsp;&nbsp;</DIV></DIV></DIV>
+<DIV class=feedbackItem>
+<DIV class=feedbackListSubtitle><A 
+href="http://www.cnblogs.com/Peter-Zhang/archive/2011/09/17/2179868.html#2201660">#2楼</A><A 
+id=comment_anchor_2201660 name=2201660></A>[<SPAN class=louzhu>楼主</SPAN>]<A 
+name=Post></A> <SPAN class=comment_date>2011-09-17 22:36</SPAN> | <A 
+id=Comments1_CommentList_NameLink_1 href="http://www.cnblogs.com/Peter-Zhang/" 
+target=_blank>PeterZhang</A>&nbsp;<A class=sendMsg2This title=给此人发送站内短消息 
+href="http://space.cnblogs.com/msg/send/PeterZhang">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</A><BR>
+<DIV align=left><SPAN id=comment_body_2201660 class=blog_comment_body><A 
+title=查看所回复的评论 
+href="http://www.cnblogs.com/Peter-Zhang/archive/2011/09/17/2179868.html#2201636">@</A>家猫47<BR>thanks</SPAN><BR>　<A 
+onclick='ReplyComment("PeterZhang",2201660,"+LFweMK5G2xvi0txaNAO2oQhBBI4WNEQlQLQ3EeiQLVWBx8UAd8YKw==")' 
+href="http://www.cnblogs.com/Peter-Zhang/archive/2011/09/17/2179868.html#commentform">回复</A>　<A 
+onclick='QuoteComment(2201660,"+LFweMK5G2xvi0txaNAO2oQhBBI4WNEQlQLQ3EeiQLVWBx8UAd8YKw==")' 
+href="http://www.cnblogs.com/Peter-Zhang/archive/2011/09/17/2179868.html#commentform">引用</A>　<A 
+title=查看该作者发表过的评论 
+href="http://www.cnblogs.com/CommentsByAuthor.aspx?author=PeterZhang" 
+target=_blank>查看</A>　&nbsp;&nbsp;</DIV></DIV></DIV>
+<SCRIPT type=text/javascript>   
+    function PostComment(){
+        if($("#btn_comment_submit").val() == "修改" && $("#comment_edit_id").html !=''){
+            UpdateComment(72809);
+        }
+        else{
+            PostNewComment();
+        }
+    }
+    
+    function PostNewComment() {
+        
+        var content = $("#tbCommentBody").val();
+        if (content.length == 0) {
+            alert('请输入评论内容！');
+            return;
+        }
+        if(content.length > 4000){
+            alert('评论内容过长，超过4000个字数限制！当前长度：'+content.length);
+            return;
+        }
+        
+        if($("#span_comment_posted").html()!='' && $("#span_comment_posted").html()==content){
+             alert("该评论已发表过!");
+            return;
+        }        
+        
+        $("#tip_comment").html("评论提交中...");        
+        $("#span_comment_posted").html(content);
+        var email = $("#tbCommentEmail").val();
+        var author =$("#ctl03_tbCommentAuthor").val();
+        var comment = {};
+        comment.parentId = 2179868;
+        comment.blogId = 72809;
+        comment.sourceUrl = 'http://www.cnblogs.com/Peter-Zhang/archive/2011/09/17/2179868.html';        
+        comment.title = $("#span_comment_title").text();
+        comment.content = $.trim(content);
+        var parentId = $("#span_parentcomment_id").text();
+        if(/(\d)/.test(parentId)){
+        comment.parentCommentId = parentId;
+        }else{
+        comment.parentCommentId = 0;
+        }
+        var startDate = new Date();
+        if(typeof($.toJSON) == "undefined"){
+            alert("博主自定义脚本与系统脚本冲突，无法提交评论，请与管理员联系！");
+            return;
+        }
+        $.ajax({
+            url: '/ws/CommentService.asmx/AddComment',
+            data: $.toJSON(comment),
+            type: "post",
+            dataType: "json",
+            contentType: "application/json; charset=utf8",
+            success: function(data) {
+                if (data.d) {
+                    if(data.d["IsSuccess"]){
+                        var dt = (new Date()).getTime()-startDate;
+                        ShowCommentMsg("感谢您的回复:)" + " 提交耗时"+dt+"毫秒");                        
+                        //RereshComments2(comment.parentId);  
+                        $("#tbCommentBody").val(''); 
+                        $("#divCommentShow").html($("#divCommentShow").html()+data.d["ReturnData"]);                  
+                        //$("#divCommentShow").html(data.d["ReturnData"]+content.replace(/\n/g,"<br/>")+"<br/><br/>");                         
+                        CommentNotify(data.d["CommentID"]);                        
+                        }else{
+                        ShowCommentMsg(data.d["ReturnData"]);
+                        $("#span_comment_posted").html('');                        
+                   }
+                } else {
+                    var errorMsg = "抱歉！评论提交失败！请与管理员联系。";                    
+                    if(data.d["ReturnData"]!=''){
+                        errorMsg = errorMsg+"错误信息："+errorMsg;
+                    }
+                    ShowCommentMsg(errorMsg);
+                    $("#span_comment_posted").html('');  
+                }
+            },
+            error: function(xhr) {
+                //alert(xhr.responseText);
+                ShowCommentMsg("抱歉！评论提交失败！请与管理员联系。");
+                $("#span_comment_posted").html('');  
+            }
+        });
+    }
+
+        
+    function SubscribeComment(){
+        var entryId = 2179868;
+        var blogId = 72809;
+        $("#ctl03_lnkSubscribe").html("<span style='color:red'>订阅操作中...</span>");
+        AjaxPost("/ws/CommentService.asmx/SubscribeComment","{entryId:"+entryId+",blogId:"+blogId+"}",OnSubscribeSuccess);
+        return false;
+    }
+    
+    function OnSubscribeSuccess(response){
+        if(response){
+            $("#ctl03_lnkSubscribe").html("<span style='color:red'>订阅成功</span>");
+            $("#ctl03_lnkSubscribe").removeAttr("href");
+            $("#ctl03_lnkSubscribe").removeAttr("onclick");
+        }
+        else{
+            $("#ctl03_lnkSubscribe").html("<span style='color:red'>订阅失败</span>");
+        }
+    }
+    
+   function CancelCommentSubscribe(){
+        var entryId = 2179868;
+        $("#ctl03_lnkSubscribe").html("<span style='color:red'>取消操作中...</span>");
+        AjaxPost("/ws/CommentService.asmx/CancelCommentSubscribe","{entryId:"+entryId+"}",OnCancelSubscribeSuccess);
+        return false;
+    }
+    
+    function OnCancelSubscribeSuccess(response){
+        if(response){
+            $("#ctl03_lnkSubscribe").html("<span style='color:red'>取消成功</span>");
+                        $("#ctl03_lnkSubscribe").removeAttr("href");
+            $("#ctl03_lnkSubscribe").removeAttr("onclick");
+        }
+        else{
+            $("#ctl03_lnkSubscribe").html("<span style='color:red'>取消操作失败</span>");
+        }
+    }
+
+    
+</SCRIPT>
+
+<DIV id=comment_form class=commentform>
+<SCRIPT type=text/javascript>
+    try {
+        SyntaxHighlighter.all();
+        isSyntaxHighlighted = true;
+    } catch (e) { }
+</SCRIPT>
+
+<DIV id=divCommentShow></DIV>
+<DIV id=comment_nav><SPAN id=span_refresh_tips></SPAN><A id=lnk_RefreshComments 
+onclick="return RefreshCommentList(2179868);" 
+href="http://www.cnblogs.com/Peter-Zhang/archive/2011/09/17/2179868.html#" 
+name=commentform>刷新评论列表</A><A onclick="return RefreshPage();" 
+href="http://www.cnblogs.com/Peter-Zhang/archive/2011/09/17/2179868.html#">刷新页面</A><A 
+href="http://www.cnblogs.com/Peter-Zhang/archive/2011/09/17/2179868.html#top">返回顶部</A></DIV>
+<DIV id=commentform_title>发表评论</DIV><SPAN style="COLOR: red" 
+id=tip_comment></SPAN>
+<P>昵称：<INPUT id=ctl03_tbCommentAuthor class=author disabled 
+name=ctl03$tbCommentAuthor value=amingo> </P>
+<P>主页：<INPUT id=ctl03_tbCommentAuthorUrl class=url disabled 
+name=ctl03$tbCommentAuthorUrl value=http://home.cnblogs.com/u/amingo/> </P>
+<DIV class=commentbox_main>
+<DIV class=commentbox_title>
+<DIV class=commentbox_title_left>评论内容： </DIV>
+<DIV class=commentbox_title_right><IMG id=ubb_quote class=comment_icon 
+title=添加引用 onclick="insertUBB('tbCommentBody','quote')" alt=引用 
+src="C%23中执行PowerShell%20脚本_files/quote.gif"> <IMG id=ubb_bold 
+class=comment_icon title=添加粗体 onclick="insertUBB('tbCommentBody','b')" alt=粗体 
+src="C%23中执行PowerShell%20脚本_files/b.png"> <IMG id=ubb_url class=comment_icon 
+title=添加链接 onclick="insertUbbUrl('tbCommentBody')" alt=链接 
+src="C%23中执行PowerShell%20脚本_files/lk.png"> <IMG id=ubb_indent class=comment_icon 
+title=添加首行缩进 onclick="insertIndent('tbCommentBody')" alt=缩进 
+src="C%23中执行PowerShell%20脚本_files/indent.png"> <IMG id=ubb_code 
+class=comment_icon title=添加代码 onclick=insertUbbCode() alt=代码 
+src="C%23中执行PowerShell%20脚本_files/InsertCode.gif"> <IMG id=ubb_img 
+class=comment_icon title=添加图片 onclick="insertUbbImg('tbCommentBody')" alt=图片 
+src="C%23中执行PowerShell%20脚本_files/img.gif"> <A class=comment_uploadimg_a 
+title=上传图片并插入评论框 href="javascript:OpenImageUploadWindow();">上传图片</A> 
+</DIV></DIV>
+<DIV class=clear></DIV><TEXTAREA onkeydown="return clt_enter(event)" id=tbCommentBody class=comment_textarea></TEXTAREA> 
+</DIV>
+<P><INPUT id=btn_comment_submit class=comment_btn onclick="PostComment();return false;" value=提交 type=button> 
+&nbsp;&nbsp;<SPAN style="DISPLAY: none" id=span_comment_canceledit><A 
+onclick="return CancelCommentEdit()" 
+href="http://www.cnblogs.com/Peter-Zhang/archive/2011/09/17/2179868.html###">不改了</A>&nbsp;&nbsp;</SPAN><A 
+onclick="return confirm('确认注销吗？')" 
+href="http://passport.cnblogs.com/logout.aspx?ReturnUrl=http%3a%2f%2fwww.cnblogs.com%2fPeter-Zhang%2farchive%2f2011%2f09%2f17%2f2179868.html%3flogout%3d1%23commentform">注销</A>&nbsp;&nbsp;<A 
+id=ctl03_lnkSubscribe title=邮件订阅回复通知 onclick="return SubscribeComment();" 
+href="http://www.cnblogs.com/UI/Controls/#%23%23">订阅回复</A> </P>
+<P>[使用Ctrl+Enter键快速提交] </P>
+<DIV style="DISPLAY: none"><SPAN id=comment_edit_id></SPAN><SPAN 
+id=span_parentcomment_id>0</SPAN> <SPAN id=span_parent_id>2179868</SPAN> <SPAN 
+id=span_comment_replyto></SPAN><SPAN id=span_comment_title>C#中执行PowerShell 
+脚本</SPAN> <SPAN id=span_comment_posted></SPAN></DIV>
+<DIV id=clear_read_link></DIV>
+<SCRIPT type=text/javascript>
+    $("#clear_read_link").html('<a href="http://archive.cnblogs.com/a/' + cb_entryId + '/" target="_blank">简洁阅读版式</a>')
+</SCRIPT>
+
+<DIV id=ctl03_UnderCommentBox1_ad_text_commentbox class=ad_text_commentbox><A 
+href="http://a4.yeshj.com/rd/40860/" rel=nofollow 
+target=_blank>不3k就业不给1分学费(java, .net, php, android)</A> </DIV>
+<DIV class="itnews c_ad_block"><B>最新IT新闻</B>:<BR>· <A 
+href="http://news.cnblogs.com/n/116530/" target=_blank>多家科技公司CEO退休后不愿放权 
+改任董事长</A><BR>· <A href="http://news.cnblogs.com/n/116529/" 
+target=_blank>《今日美国》Twitter账号遭遇黑客攻击</A><BR>· <A 
+href="http://news.cnblogs.com/n/116528/" 
+target=_blank>大众点评网宣布暂停收录77家炒作点评商户</A><BR>· <A 
+href="http://news.cnblogs.com/n/116527/" 
+target=_blank>Android疯狂的专利战争大史记</A><BR>· <A 
+href="http://news.cnblogs.com/n/116525/" 
+target=_blank>卡巴斯基回应央视虚假病毒报道：代理公司违规</A><BR>» <A title=IT新闻 
+href="http://news.cnblogs.com/" target=_blank>更多新闻...</A> </DIV>
+<DIV id=kb_block class="itnews c_ad_block"><B>最新知识库文章</B>:<BR>
+<DIV id=kb_recent>· <A href="http://kb.cnblogs.com/page/116501/" 
+target=_blank>浅谈JavaScript编程语言的编码规范</A><BR>· <A 
+href="http://kb.cnblogs.com/page/107847/" target=_blank>开发到底是什么？</A><BR>· <A 
+href="http://kb.cnblogs.com/page/108405/" target=_blank>探讨.NET中的联合结构</A><BR>· <A 
+href="http://kb.cnblogs.com/page/107911/" target=_blank>谈软件架构</A><BR>· <A 
+href="http://kb.cnblogs.com/page/107856/" 
+target=_blank>字符串匹配那些事（一）</A><BR></DIV>» <A href="http://kb.cnblogs.com/" 
+target=_blank>更多知识库文章...</A> </DIV>
+<SCRIPT type=text/javascript 
+src="C%23中执行PowerShell%20脚本_files/google_service.js"></SCRIPT>
+
+<SCRIPT type=text/javascript>
+    var c_enable_dfp = true;
+    if (navigator.userAgent.indexOf("Chrome/6.0.401.1") > 0) {
+        c_enable_dfp = false;
+    }
+    if (c_enable_dfp) {
+        try {
+            GS_googleAddAdSenseService("ca-pub-4210569241504288");
+            GS_googleEnableAllServices();
+        }
+        catch (e) { }
+    }
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+    if (c_enable_dfp) {
+        try {
+            GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_bottom");
+            GA_googleAddSlot("ca-pub-4210569241504288", "cnblogs_blogpost_C2");
+        }
+        catch (e) { }
+    }
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+    if (c_enable_dfp) {
+        try {
+            GA_googleFetchAds();
+        } catch (e) { }
+    }
+</SCRIPT>
+
+<DIV class=c_ad_block>
+<SCRIPT type=text/javascript>
+    try {
+        if (c_enable_dfp) {
+
+            GA_googleFillSlot("cnblogs_blogpost_bottom");
+        }
+    }
+    catch (e) { }
+</SCRIPT>
+</DIV>
+<DIV class=c_ad_block>
+<SCRIPT type=text/javascript>
+    try {
+        if (c_enable_dfp) {
+
+            GA_googleFillSlot("cnblogs_blogpost_C2");
+        }
+    }
+    catch (e) { }
+</SCRIPT>
+</DIV>
+<DIV id=HistoryToday class=c_ad_block></DIV>
+<SCRIPT type=text/javascript>
+    $(document).ready(function () {
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    });
+</SCRIPT>
+
+<DIV id=ctl03_UnderCommentBox1_ad_under_comment2 class=c_ad_block><A 
+href="http://www.china-pub.com/STATIC07/1107/2011chinapub_6810_110718/2011chinapub_6810_110718.asp" 
+rel=nofollow target=_blank><IMG 
+style="BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px" 
+alt="" src="C%23中执行PowerShell%20脚本_files/china-pub.jpg"></A><BR><A 
+href="http://www.china-pub.com/STATIC07/1107/zh_autumntb_110725/zh_autumntb_110725.asp" 
+rel=nofollow target=_blank>China-pub 2011秋季教材巡展</A><BR><A 
+href="http://www.china-pub.com/static07/0901/zh_jueba_090121.asp" rel=nofollow 
+target=_blank>China-Pub 计算机绝版图书按需印刷服务</A><BR></DIV>
+<DIV id=site_nav_under class=c_ad_block><A title=程序员的网上家园 
+href="http://www.cnblogs.com/" target=_blank>网站首页</A><A 
+href="http://q.cnblogs.com/" target=_blank>博问</A><A 
+href="http://kb.cnblogs.com/" target=_blank>知识库</A><A 
+href="http://news.cnblogs.com/" target=_blank>IT新闻</A><A 
+href="http://home.cnblogs.com/" target=_blank>我的园子</A><A 
+href="http://home.cnblogs.com/ing/" target=_blank>闪存</A><A 
+href="http://job.cnblogs.com/" target=_blank>程序员招聘</A> </DIV></DIV>
+<SCRIPT type=text/javascript>
+    if (typeof (jQuery) == 'undefined') {
+        $("#comment_form").hide();
+    }
+</SCRIPT>
+</DIV>
+<DIV id=leftcontent>
+<DIV id=leftcontentcontainer><!--done-->
+<DIV class=newsItem>
+<DIV id=clustrmaps-widget></DIV>
+<SCRIPT type=text/javascript>var _clustrmaps = {'url' : 'http://www.cnblogs.com/peter-zhang', 'user' : 929156, 'server' : '4', 'id' : 'clustrmaps-widget', 'version' : 1, 'date' : '2011-09-08', 'lang' : 'zh', 'corners' : 'square' };(function (){ var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = 'http://www4.clustrmaps.com/counter/map.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);})();</SCRIPT>
+<NOSCRIPT></NOSCRIPT>
+<DIV id=profile_block>昵称：<A 
+href="http://home.cnblogs.com/u/Peter-Zhang/">PeterZhang</A><BR>园龄：<A 
+title=入园时间：2009-05-19 
+href="http://home.cnblogs.com/u/Peter-Zhang/">2年4个月</A><BR>粉丝：<A 
+href="http://home.cnblogs.com/u/Peter-Zhang/followers/">6</A><BR>关注：<A 
+href="http://home.cnblogs.com/u/Peter-Zhang/followees/">14</A>
+<DIV id=p_b_follow></DIV>
+<SCRIPT type=text/javascript>cnblogs.UserManager.GetFollowStatus('983b6310-8044-de11-9510-001cf0cd104b')</SCRIPT>
+</DIV></DIV>
+<TABLE 
+style="BORDER-BOTTOM: 1px solid; BORDER-LEFT: 1px solid; BORDER-COLLAPSE: collapse; BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid" 
+id=Calendar1_entryCal class=Cal title=Calendar cellSpacing=0 cellPadding=0>
+  <TBODY>
+  <TR>
+    <TD style="BACKGROUND-COLOR: silver" colSpan=7>
+      <TABLE style="WIDTH: 100%; BORDER-COLLAPSE: collapse" class=CalTitle 
+      cellSpacing=0>
+        <TBODY>
+        <TR>
+          <TD style="WIDTH: 15%" class=CalNextPrev><A style="COLOR: black" 
+            title="Go to the previous month" 
+            href="javascript:__doPostBack('Calendar1$entryCal','V4230')">&lt;</A></TD>
+          <TD style="WIDTH: 70%" align=center>2011年9月</TD>
+          <TD style="WIDTH: 15%" class=CalNextPrev align=right><A 
+            style="COLOR: black" title="Go to the next month" 
+            href="javascript:__doPostBack('Calendar1$entryCal','V4291')">&gt;</A></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TH class=CalDayHeader abbr=日 scope=col align=center>日</TH>
+    <TH class=CalDayHeader abbr=一 scope=col align=center>一</TH>
+    <TH class=CalDayHeader abbr=二 scope=col align=center>二</TH>
+    <TH class=CalDayHeader abbr=三 scope=col align=center>三</TH>
+    <TH class=CalDayHeader abbr=四 scope=col align=center>四</TH>
+    <TH class=CalDayHeader abbr=五 scope=col align=center>五</TH>
+    <TH class=CalDayHeader abbr=六 scope=col align=center>六</TH></TR>
+  <TR>
+    <TD style="WIDTH: 14%" class=CalOtherMonthDay align=center>28</TD>
+    <TD style="WIDTH: 14%" class=CalOtherMonthDay align=center>29</TD>
+    <TD style="WIDTH: 14%" class=CalOtherMonthDay align=center>30</TD>
+    <TD style="WIDTH: 14%" class=CalOtherMonthDay align=center>31</TD>
+    <TD style="WIDTH: 14%" align=center>1</TD>
+    <TD style="WIDTH: 14%" align=center>2</TD>
+    <TD style="WIDTH: 14%" class=CalWeekendDay align=center>3</TD></TR>
+  <TR>
+    <TD style="WIDTH: 14%" class=CalWeekendDay align=center>4</TD>
+    <TD style="WIDTH: 14%" align=center>5</TD>
+    <TD style="WIDTH: 14%" align=center>6</TD>
+    <TD style="WIDTH: 14%" align=center>7</TD>
+    <TD style="WIDTH: 14%" align=center>8</TD>
+    <TD style="WIDTH: 14%" align=center>9</TD>
+    <TD style="WIDTH: 14%" class=CalWeekendDay align=center>10</TD></TR>
+  <TR>
+    <TD style="WIDTH: 14%" class=CalWeekendDay align=center>11</TD>
+    <TD style="WIDTH: 14%" align=center><A 
+      href="http://www.cnblogs.com/Peter-Zhang/archive/2011/9/12.html"><U>12</U></A></TD>
+    <TD style="WIDTH: 14%" align=center>13</TD>
+    <TD style="WIDTH: 14%" align=center>14</TD>
+    <TD style="WIDTH: 14%" align=center>15</TD>
+    <TD style="WIDTH: 14%" align=center>16</TD>
+    <TD style="WIDTH: 14%" class=CalWeekendDay align=center><A 
+      href="http://www.cnblogs.com/Peter-Zhang/archive/2011/9/17.html"><U>17</U></A></TD></TR>
+  <TR>
+    <TD style="WIDTH: 14%" class=CalWeekendDay align=center><A 
+      href="http://www.cnblogs.com/Peter-Zhang/archive/2011/9/18.html"><U>18</U></A></TD>
+    <TD style="WIDTH: 14%" align=center>19</TD>
+    <TD style="WIDTH: 14%" align=center>20</TD>
+    <TD style="WIDTH: 14%" align=center>21</TD>
+    <TD style="WIDTH: 14%" align=center>22</TD>
+    <TD style="WIDTH: 14%" align=center>23</TD>
+    <TD style="WIDTH: 14%" class=CalWeekendDay align=center>24</TD></TR>
+  <TR>
+    <TD style="WIDTH: 14%" class=CalWeekendDay align=center><A 
+      href="http://www.cnblogs.com/Peter-Zhang/archive/2011/9/25.html"><U>25</U></A></TD>
+    <TD style="WIDTH: 14%" class=CalTodayDay align=center>26</TD>
+    <TD style="WIDTH: 14%" align=center>27</TD>
+    <TD style="WIDTH: 14%" align=center>28</TD>
+    <TD style="WIDTH: 14%" align=center>29</TD>
+    <TD style="WIDTH: 14%" align=center>30</TD>
+    <TD style="WIDTH: 14%" class=CalOtherMonthDay align=center>1</TD></TR>
+  <TR>
+    <TD style="WIDTH: 14%" class=CalOtherMonthDay align=center>2</TD>
+    <TD style="WIDTH: 14%" class=CalOtherMonthDay align=center>3</TD>
+    <TD style="WIDTH: 14%" class=CalOtherMonthDay align=center>4</TD>
+    <TD style="WIDTH: 14%" class=CalOtherMonthDay align=center>5</TD>
+    <TD style="WIDTH: 14%" class=CalOtherMonthDay align=center>6</TD>
+    <TD style="WIDTH: 14%" class=CalOtherMonthDay align=center>7</TD>
+    <TD style="WIDTH: 14%" class=CalOtherMonthDay 
+align=center>8</TD></TR></TBODY></TABLE><BR>
+<SCRIPT type=text/javascript>
+var blogapp = 'Peter-Zhang';
+</SCRIPT>
+
+<DIV class=mySearch>
+<H3 class=catListTitle>搜索</H3>
+<DIV class=div_my_zzk><INPUT onkeydown="return zzk_go_enter(event);" id=q 
+class=input_my_zzk>&nbsp;<INPUT id=btnZzk class=btn_my_zzk onclick=zzk_go() value=找找看 type=button></DIV>
+<DIV class=div_my_zzk><INPUT onkeydown="return google_go_enter(event)" 
+id=google_q class=input_my_zzk name=google_q>&nbsp;<INPUT class=btn_my_zzk onclick=google_go() value=谷歌搜索 type=button></DIV></DIV>
+<H3 class=catListTitle>常用链接</H3>
+<UL>
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_lnkLinkItem_0 
+  href="http://www.cnblogs.com/Peter-Zhang/MyPosts.html">我的随笔</A> 
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_lnkLinkItem_1 
+  href="http://home.cnblogs.com/Peter-Zhang/">我的空间</A> 
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_lnkLinkItem_2 
+  href="http://space.cnblogs.com/msg/recent">我的短信</A> 
+  <LI><A id=SingleColumn1_ctl02_rptMainLinks_lnkLinkItem_3 
+  href="http://www.cnblogs.com/Peter-Zhang/MyComments.html">我的评论</A> 
+  <LI><A id=itemListLink 
+  onclick="this.blur();WarpClass('itemListLink', 'itemListLin_con');return false;" 
+  href="http://www.cnblogs.com/Peter-Zhang/archive/2011/09/17/2179868.html#">更多链接</A> 
+  </LI></UL>
+<DIV style="DISPLAY: none" id=itemListLin_con>
+<UL>
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_lnkLinkItem_0 title=我发表过评论的随笔 
+  href="http://www.cnblogs.com/Peter-Zhang/OtherPosts.html">我的参与</A> 
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_lnkLinkItem_1 
+  href="http://www.cnblogs.com/Peter-Zhang/MyNews.html">我的新闻</A> 
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_lnkLinkItem_2 
+  href="http://www.cnblogs.com/Peter-Zhang/RecentComments.html">最新评论</A> 
+  <LI><A id=SingleColumn1_ctl02_repeaterLinks_lnkLinkItem_3 
+  href="http://www.cnblogs.com/Peter-Zhang/tag/">我的标签</A> </LI></UL></DIV>
+<H3 class=catListTitle>我的标签</H3>
+<DIV id=MyTag>
+<UL>
+  <LI><A 
+  href="http://www.cnblogs.com/Peter-Zhang/tag/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</A>(2)
+  <LI><A href="http://www.cnblogs.com/Peter-Zhang/tag/JSON/">JSON</A>(1) 
+</LI></UL></DIV>
+<H3 class=catListTitle>随笔分类<SPAN 
+style="FONT-SIZE: 11px; FONT-WEIGHT: normal">(28)</SPAN></H3>
+<UL class=catList>
+  <LI class=catListItem><A id=SingleColumn1_Categories_CatList_LinkList_0_Link_0 
+  class=listitem 
+  href="http://www.cnblogs.com/Peter-Zhang/category/318845.html">.NET(3)</A><A 
+  id=SingleColumn1_Categories_CatList_LinkList_0_RssLink_0 class=listitem 
+  onclick="return open_link('http://www.cnblogs.com/Peter-Zhang/category/318845.html/rss');" 
+  href="http://www.cnblogs.com/Peter-Zhang/archive/2011/09/17/2179868.html#"><IMG 
+  alt="" src="C%23中执行PowerShell%20脚本_files/xml(1).gif"></A> 
+  <LI class=catListItem><A id=SingleColumn1_Categories_CatList_LinkList_0_Link_1 
+  class=listitem 
+  href="http://www.cnblogs.com/Peter-Zhang/category/318855.html">algorithm &amp; 
+  data structure(5)</A><A 
+  id=SingleColumn1_Categories_CatList_LinkList_0_RssLink_1 class=listitem 
+  onclick="return open_link('http://www.cnblogs.com/Peter-Zhang/category/318855.html/rss');" 
+  href="http://www.cnblogs.com/Peter-Zhang/archive/2011/09/17/2179868.html#"><IMG 
+  alt="" src="C%23中执行PowerShell%20脚本_files/xml(1).gif"></A> 
+  <LI class=catListItem><A id=SingleColumn1_Categories_CatList_LinkList_0_Link_2 
+  class=listitem 
+  href="http://www.cnblogs.com/Peter-Zhang/category/318847.html">ASP.NET(2)</A><A 
+  id=SingleColumn1_Categories_CatList_LinkList_0_RssLink_2 class=listitem 
+  onclick="return open_link('http://www.cnblogs.com/Peter-Zhang/category/318847.html/rss');" 
+  href="http://www.cnblogs.com/Peter-Zhang/archive/2011/09/17/2179868.html#"><IMG 
+  alt="" src="C%23中执行PowerShell%20脚本_files/xml(1).gif"></A> 
+  <LI class=catListItem><A id=SingleColumn1_Categories_CatList_LinkList_0_Link_3 
+  class=listitem 
+  href="http://www.cnblogs.com/Peter-Zhang/category/318853.html">Batch</A><A 
+  id=SingleColumn1_Categories_CatList_LinkList_0_RssLink_3 class=listitem 
+  onclick="return open_link('http://www.cnblogs.com/Peter-Zhang/category/318853.html/rss');" 
+  href="http://www.cnblogs.com/Peter-Zhang/archive/2011/09/17/2179868.html#"><IMG 
+  alt="" src="C%23中执行PowerShell%20脚本_files/xml(1).gif"></A> 
+  <LI class=catListItem><A id=SingleColumn1_Categories_CatList_LinkList_0_Link_4 
+  class=listitem 
+  href="http://www.cnblogs.com/Peter-Zhang/category/318846.html">C#(11)</A><A 
+  id=SingleColumn1_Categories_CatList_LinkList_0_RssLink_4 class=listitem 
+  onclick="return open_link('http://www.cnblogs.com/Peter-Zhang/category/318846.html/rss');" 
+  href="http://www.cnblogs.com/Peter-Zhang/archive/2011/09/17/2179868.html#"><IMG 
+  alt="" src="C%23中执行PowerShell%20脚本_files/xml(1).gif"></A> 
+  <LI class=catListItem><A id=SingleColumn1_Categories_CatList_LinkList_0_Link_5 
+  class=listitem 
+  href="http://www.cnblogs.com/Peter-Zhang/category/318848.html">C/C++</A><A 
+  id=SingleColumn1_Categories_CatList_LinkList_0_RssLink_5 class=listitem 
+  onclick="return open_link('http://www.cnblogs.com/Peter-Zhang/category/318848.html/rss');" 
+  href="http://www.cnblogs.com/Peter-Zhang/archive/2011/09/17/2179868.html#"><IMG 
+  alt="" src="C%23中执行PowerShell%20脚本_files/xml(1).gif"></A> 
+  <LI class=catListItem><A id=SingleColumn1_Categories_CatList_LinkList_0_Link_6 
+  class=listitem 
+  href="http://www.cnblogs.com/Peter-Zhang/category/318849.html">Interview 
+  Basic</A><A id=SingleColumn1_Categories_CatList_LinkList_0_RssLink_6 
+  class=listitem 
+  onclick="return open_link('http://www.cnblogs.com/Peter-Zhang/category/318849.html/rss');" 
+  href="http://www.cnblogs.com/Peter-Zhang/archive/2011/09/17/2179868.html#"><IMG 
+  alt="" src="C%23中执行PowerShell%20脚本_files/xml(1).gif"></A> 
+  <LI class=catListItem><A id=SingleColumn1_Categories_CatList_LinkList_0_Link_7 
+  class=listitem 
+  href="http://www.cnblogs.com/Peter-Zhang/category/323289.html">Linq(1)</A><A 
+  id=SingleColumn1_Categories_CatList_LinkList_0_RssLink_7 class=listitem 
+  onclick="return open_link('http://www.cnblogs.com/Peter-Zhang/category/323289.html/rss');" 
+  href="http://www.cnblogs.com/Peter-Zhang/archive/2011/09/17/2179868.html#"><IMG 
+  alt="" src="C%23中执行PowerShell%20脚本_files/xml(1).gif"></A> 
+  <LI class=catListItem><A id=SingleColumn1_Categories_CatList_LinkList_0_Link_8 
+  class=listitem 
+  href="http://www.cnblogs.com/Peter-Zhang/category/318850.html">Powershell(1)</A><A 
+  id=SingleColumn1_Categories_CatList_LinkList_0_RssLink_8 class=listitem 
+  onclick="return open_link('http://www.cnblogs.com/Peter-Zhang/category/318850.html/rss');" 
+  href="http://www.cnblogs.com/Peter-Zhang/archive/2011/09/17/2179868.html#"><IMG 
+  alt="" src="C%23中执行PowerShell%20脚本_files/xml(1).gif"></A> 
+  <LI class=catListItem><A id=SingleColumn1_Categories_CatList_LinkList_0_Link_9 
+  class=listitem 
+  href="http://www.cnblogs.com/Peter-Zhang/category/318852.html">Reading 
+  Note(2)</A><A id=SingleColumn1_Categories_CatList_LinkList_0_RssLink_9 
+  class=listitem 
+  onclick="return open_link('http://www.cnblogs.com/Peter-Zhang/category/318852.html/rss');" 
+  href="http://www.cnblogs.com/Peter-Zhang/archive/2011/09/17/2179868.html#"><IMG 
+  alt="" src="C%23中执行PowerShell%20脚本_files/xml(1).gif"></A> 
+  <LI class=catListItem><A 
+  id=SingleColumn1_Categories_CatList_LinkList_0_Link_10 class=listitem 
+  href="http://www.cnblogs.com/Peter-Zhang/category/318854.html">SQL</A><A 
+  id=SingleColumn1_Categories_CatList_LinkList_0_RssLink_10 class=listitem 
+  onclick="return open_link('http://www.cnblogs.com/Peter-Zhang/category/318854.html/rss');" 
+  href="http://www.cnblogs.com/Peter-Zhang/archive/2011/09/17/2179868.html#"><IMG 
+  alt="" src="C%23中执行PowerShell%20脚本_files/xml(1).gif"></A> 
+  <LI class=catListItem><A 
+  id=SingleColumn1_Categories_CatList_LinkList_0_Link_11 class=listitem 
+  href="http://www.cnblogs.com/Peter-Zhang/category/318851.html">WinForm(3)</A><A 
+  id=SingleColumn1_Categories_CatList_LinkList_0_RssLink_11 class=listitem 
+  onclick="return open_link('http://www.cnblogs.com/Peter-Zhang/category/318851.html/rss');" 
+  href="http://www.cnblogs.com/Peter-Zhang/archive/2011/09/17/2179868.html#"><IMG 
+  alt="" src="C%23中执行PowerShell%20脚本_files/xml(1).gif"></A> </LI></UL>
+<H3 class=catListTitle>随笔档案<SPAN 
+style="FONT-SIZE: 11px; FONT-WEIGHT: normal">(30)</SPAN></H3>
+<UL class=catList>
+  <LI class=catListItem><A id=SingleColumn1_Categories_CatList_LinkList_1_Link_0 
+  class=listitem 
+  href="http://www.cnblogs.com/Peter-Zhang/archive/2011/09.html">2011年9月 
+  (14)</A> 
+  <LI class=catListItem><A id=SingleColumn1_Categories_CatList_LinkList_1_Link_1 
+  class=listitem 
+  href="http://www.cnblogs.com/Peter-Zhang/archive/2011/08.html">2011年8月 (1)</A> 
+
+  <LI class=catListItem><A id=SingleColumn1_Categories_CatList_LinkList_1_Link_2 
+  class=listitem 
+  href="http://www.cnblogs.com/Peter-Zhang/archive/2011/07.html">2011年7月 (3)</A> 
+
+  <LI class=catListItem><A id=SingleColumn1_Categories_CatList_LinkList_1_Link_3 
+  class=listitem 
+  href="http://www.cnblogs.com/Peter-Zhang/archive/2011/05.html">2011年5月 (1)</A> 
+
+  <LI class=catListItem><A id=SingleColumn1_Categories_CatList_LinkList_1_Link_4 
+  class=listitem 
+  href="http://www.cnblogs.com/Peter-Zhang/archive/2010/07.html">2010年7月 
+  (11)</A> </LI></UL>
+<H3 class=catListTitle>文章分类<SPAN 
+style="FONT-SIZE: 11px; FONT-WEIGHT: normal">(3)</SPAN></H3>
+<UL class=catList>
+  <LI class=catListItem><A id=SingleColumn1_Categories_CatList_LinkList_2_Link_0 
+  class=listitem 
+  href="http://www.cnblogs.com/Peter-Zhang/category/253254.html">.NET</A><A 
+  id=SingleColumn1_Categories_CatList_LinkList_2_RssLink_0 class=listitem 
+  onclick="return open_link('http://www.cnblogs.com/Peter-Zhang/category/253254.html/rss');" 
+  href="http://www.cnblogs.com/Peter-Zhang/archive/2011/09/17/2179868.html#"><IMG 
+  alt="" src="C%23中执行PowerShell%20脚本_files/xml(1).gif"></A> 
+  <LI class=catListItem><A id=SingleColumn1_Categories_CatList_LinkList_2_Link_1 
+  class=listitem 
+  href="http://www.cnblogs.com/Peter-Zhang/category/253264.html">ASP.NET</A><A 
+  id=SingleColumn1_Categories_CatList_LinkList_2_RssLink_1 class=listitem 
+  onclick="return open_link('http://www.cnblogs.com/Peter-Zhang/category/253264.html/rss');" 
+  href="http://www.cnblogs.com/Peter-Zhang/archive/2011/09/17/2179868.html#"><IMG 
+  alt="" src="C%23中执行PowerShell%20脚本_files/xml(1).gif"></A> 
+  <LI class=catListItem><A id=SingleColumn1_Categories_CatList_LinkList_2_Link_2 
+  class=listitem 
+  href="http://www.cnblogs.com/Peter-Zhang/category/253252.html">C#(2)</A><A 
+  id=SingleColumn1_Categories_CatList_LinkList_2_RssLink_2 class=listitem 
+  onclick="return open_link('http://www.cnblogs.com/Peter-Zhang/category/253252.html/rss');" 
+  href="http://www.cnblogs.com/Peter-Zhang/archive/2011/09/17/2179868.html#"><IMG 
+  alt="" src="C%23中执行PowerShell%20脚本_files/xml(1).gif"></A> 
+  <LI class=catListItem><A id=SingleColumn1_Categories_CatList_LinkList_2_Link_3 
+  class=listitem 
+  href="http://www.cnblogs.com/Peter-Zhang/category/287767.html">C++初学</A><A 
+  id=SingleColumn1_Categories_CatList_LinkList_2_RssLink_3 class=listitem 
+  onclick="return open_link('http://www.cnblogs.com/Peter-Zhang/category/287767.html/rss');" 
+  href="http://www.cnblogs.com/Peter-Zhang/archive/2011/09/17/2179868.html#"><IMG 
+  alt="" src="C%23中执行PowerShell%20脚本_files/xml(1).gif"></A> 
+  <LI class=catListItem><A id=SingleColumn1_Categories_CatList_LinkList_2_Link_4 
+  class=listitem 
+  href="http://www.cnblogs.com/Peter-Zhang/category/253397.html">Interviews</A><A 
+  id=SingleColumn1_Categories_CatList_LinkList_2_RssLink_4 class=listitem 
+  onclick="return open_link('http://www.cnblogs.com/Peter-Zhang/category/253397.html/rss');" 
+  href="http://www.cnblogs.com/Peter-Zhang/archive/2011/09/17/2179868.html#"><IMG 
+  alt="" src="C%23中执行PowerShell%20脚本_files/xml(1).gif"></A> 
+  <LI class=catListItem><A id=SingleColumn1_Categories_CatList_LinkList_2_Link_5 
+  class=listitem 
+  href="http://www.cnblogs.com/Peter-Zhang/category/311340.html">PowerShell</A><A 
+  id=SingleColumn1_Categories_CatList_LinkList_2_RssLink_5 class=listitem 
+  onclick="return open_link('http://www.cnblogs.com/Peter-Zhang/category/311340.html/rss');" 
+  href="http://www.cnblogs.com/Peter-Zhang/archive/2011/09/17/2179868.html#"><IMG 
+  alt="" src="C%23中执行PowerShell%20脚本_files/xml(1).gif"></A> 
+  <LI class=catListItem><A id=SingleColumn1_Categories_CatList_LinkList_2_Link_6 
+  class=listitem 
+  href="http://www.cnblogs.com/Peter-Zhang/category/253257.html">Web</A><A 
+  id=SingleColumn1_Categories_CatList_LinkList_2_RssLink_6 class=listitem 
+  onclick="return open_link('http://www.cnblogs.com/Peter-Zhang/category/253257.html/rss');" 
+  href="http://www.cnblogs.com/Peter-Zhang/archive/2011/09/17/2179868.html#"><IMG 
+  alt="" src="C%23中执行PowerShell%20脚本_files/xml(1).gif"></A> 
+  <LI class=catListItem><A id=SingleColumn1_Categories_CatList_LinkList_2_Link_7 
+  class=listitem 
+  href="http://www.cnblogs.com/Peter-Zhang/category/313739.html">WinForm(1)</A><A 
+  id=SingleColumn1_Categories_CatList_LinkList_2_RssLink_7 class=listitem 
+  onclick="return open_link('http://www.cnblogs.com/Peter-Zhang/category/313739.html/rss');" 
+  href="http://www.cnblogs.com/Peter-Zhang/archive/2011/09/17/2179868.html#"><IMG 
+  alt="" src="C%23中执行PowerShell%20脚本_files/xml(1).gif"></A> 
+  <LI class=catListItem><A id=SingleColumn1_Categories_CatList_LinkList_2_Link_8 
+  class=listitem 
+  href="http://www.cnblogs.com/Peter-Zhang/category/286853.html">读书笔记</A><A 
+  id=SingleColumn1_Categories_CatList_LinkList_2_RssLink_8 class=listitem 
+  onclick="return open_link('http://www.cnblogs.com/Peter-Zhang/category/286853.html/rss');" 
+  href="http://www.cnblogs.com/Peter-Zhang/archive/2011/09/17/2179868.html#"><IMG 
+  alt="" src="C%23中执行PowerShell%20脚本_files/xml(1).gif"></A> 
+  <LI class=catListItem><A id=SingleColumn1_Categories_CatList_LinkList_2_Link_9 
+  class=listitem 
+  href="http://www.cnblogs.com/Peter-Zhang/category/280429.html">批处理</A><A 
+  id=SingleColumn1_Categories_CatList_LinkList_2_RssLink_9 class=listitem 
+  onclick="return open_link('http://www.cnblogs.com/Peter-Zhang/category/280429.html/rss');" 
+  href="http://www.cnblogs.com/Peter-Zhang/archive/2011/09/17/2179868.html#"><IMG 
+  alt="" src="C%23中执行PowerShell%20脚本_files/xml(1).gif"></A> 
+  <LI class=catListItem><A 
+  id=SingleColumn1_Categories_CatList_LinkList_2_Link_10 class=listitem 
+  href="http://www.cnblogs.com/Peter-Zhang/category/253251.html">数据结构与算法</A><A 
+  id=SingleColumn1_Categories_CatList_LinkList_2_RssLink_10 class=listitem 
+  onclick="return open_link('http://www.cnblogs.com/Peter-Zhang/category/253251.html/rss');" 
+  href="http://www.cnblogs.com/Peter-Zhang/archive/2011/09/17/2179868.html#"><IMG 
+  alt="" src="C%23中执行PowerShell%20脚本_files/xml(1).gif"></A> 
+  <LI class=catListItem><A 
+  id=SingleColumn1_Categories_CatList_LinkList_2_Link_11 class=listitem 
+  href="http://www.cnblogs.com/Peter-Zhang/category/253255.html">数据库基础</A><A 
+  id=SingleColumn1_Categories_CatList_LinkList_2_RssLink_11 class=listitem 
+  onclick="return open_link('http://www.cnblogs.com/Peter-Zhang/category/253255.html/rss');" 
+  href="http://www.cnblogs.com/Peter-Zhang/archive/2011/09/17/2179868.html#"><IMG 
+  alt="" src="C%23中执行PowerShell%20脚本_files/xml(1).gif"></A> </LI></UL>
+<H3 class=catListTitle>相册</H3>
+<UL class=catList>
+  <LI class=catListItem><A id=SingleColumn1_Categories_CatList_LinkList_3_Link_0 
+  class=listitem href="http://www.cnblogs.com/Peter-Zhang/gallery/323331.html" 
+  rel=nofollow>images</A> </LI></UL>
+<H3 class=catListTitle>最新评论</H3>
+<DIV id=RecentComments class=RecentComment>
+<UL>
+  <LI><A id=SingleColumn1__1a1e844_CommentList_Hyperlink1_0 
+  href="http://www.cnblogs.com/Peter-Zhang/archive/2011/09/25/2190578.html#2207999">1.&nbsp;Re:window.showModalDialog模态对话框 
+  &amp; 值回传 &amp; TreeView无刷新</A> 
+  <LI><A title=查看所回复的评论 
+  href="http://www.cnblogs.com/Peter-Zhang/archive/2011/09/17/2179868.html#2207534">@</A>江大鱼<BR>也支持，实现功能是没问题，仅仅不支持打开单个窗口的限制。 
+
+  <LI style="TEXT-ALIGN: right; MARGIN-RIGHT: 4px">--HaoZhi 
+  <LI><A id=SingleColumn1__1a1e844_CommentList_Hyperlink1_1 
+  href="http://www.cnblogs.com/Peter-Zhang/archive/2011/09/25/2190578.html#2207866">2.&nbsp;Re:window.showModalDialog模态对话框 
+  &amp; 值回传 &amp; TreeView无刷新</A> 
+  <LI>非常不错,顶一下. 
+  <LI style="TEXT-ALIGN: right; MARGIN-RIGHT: 4px">--通用权限组件源码 
+  <LI><A id=SingleColumn1__1a1e844_CommentList_Hyperlink1_2 
+  href="http://www.cnblogs.com/Peter-Zhang/archive/2011/09/25/2190578.html#2207688">3.&nbsp;Re:window.showModalDialog模态对话框 
+  &amp; 值回传 &amp; TreeView无刷新</A> 
+  <LI>当前比较流行使用div遮盖的方式，模式窗口只在IE下可用。局限性太大。 
+  <LI style="TEXT-ALIGN: right; MARGIN-RIGHT: 4px">--Justin Zhang 
+  <LI><A id=SingleColumn1__1a1e844_CommentList_Hyperlink1_3 
+  href="http://www.cnblogs.com/Peter-Zhang/archive/2011/09/25/2190578.html#2207534">4.&nbsp;Re:window.showModalDialog模态对话框 
+  &amp; 值回传 &amp; TreeView无刷新</A> 
+  <LI>window.showModalDialog<BR>非IE浏览器支持嘛？ 
+  <LI style="TEXT-ALIGN: right; MARGIN-RIGHT: 4px">--江大鱼 
+  <LI><A id=SingleColumn1__1a1e844_CommentList_Hyperlink1_4 
+  href="http://www.cnblogs.com/Peter-Zhang/archive/2011/09/17/2179892.html#2204690">5.&nbsp;Re:WinForm 
+  UI 多线程 （线程间操作无效）</A> 
+  <LI>这里有一篇PostSharp 的AOP解决线程操作UI的的例子，实现同步方式调用<A 
+  href="http://www.cnblogs.com/Peter-Zhang/archive/2011/09/17/" 
+  target=_blank></A> 
+  <LI style="TEXT-ALIGN: right; MARGIN-RIGHT: 4px">--破狼 </LI></UL></DIV>
+<H3 class=catListTitle>阅读排行榜</H3>
+<DIV id=TopViewPosts class=RecentComment>
+<UL style="WORD-BREAK: break-all">
+  <LI><A id=SingleColumn1_ctl06_TopList_Hyperlink1_0 
+  href="http://www.cnblogs.com/Peter-Zhang/archive/2010/07/16/1778223.html">1.&nbsp;WinForm打包(VS2008)(5671)</A> 
+
+  <LI><A id=SingleColumn1_ctl06_TopList_Hyperlink1_1 
+  href="http://www.cnblogs.com/Peter-Zhang/archive/2011/09/17/2179892.html">2.&nbsp;WinForm 
+  UI 多线程 （线程间操作无效）(1420)</A> 
+  <LI><A id=SingleColumn1_ctl06_TopList_Hyperlink1_2 
+  href="http://www.cnblogs.com/Peter-Zhang/archive/2010/07/14/1777194.html">3.&nbsp;C# 
+  .NET 基本概念(1186)</A> 
+  <LI><A id=SingleColumn1_ctl06_TopList_Hyperlink1_3 
+  href="http://www.cnblogs.com/Peter-Zhang/archive/2011/09/17/2179731.html">4.&nbsp;Powershell 
+  实现 Hyper-V 虚拟机 管理(863)</A> 
+  <LI><A id=SingleColumn1_ctl06_TopList_Hyperlink1_4 
+  href="http://www.cnblogs.com/Peter-Zhang/archive/2011/09/18/2180131.html">5.&nbsp;读《程序设计实践》之一 
+  风格(844)</A> </LI></UL></DIV>
+<H3 class=catListTitle>评论排行榜</H3>
+<DIV id=TopCommentsPosts class=RecentComment>
+<UL style="WORD-BREAK: break-all">
+  <LI><A id=SingleColumn1_ctl07_TopList_Hyperlink1_0 
+  href="http://www.cnblogs.com/Peter-Zhang/archive/2011/09/17/2179892.html">1.&nbsp;WinForm 
+  UI 多线程 （线程间操作无效）(15)</A> 
+  <LI><A id=SingleColumn1_ctl07_TopList_Hyperlink1_1 
+  href="http://www.cnblogs.com/Peter-Zhang/archive/2011/08/28/2155571.html">2.&nbsp;排序 
+  小结(4)</A> 
+  <LI><A id=SingleColumn1_ctl07_TopList_Hyperlink1_2 
+  href="http://www.cnblogs.com/Peter-Zhang/archive/2011/09/17/2179731.html">3.&nbsp;Powershell 
+  实现 Hyper-V 虚拟机 管理(4)</A> 
+  <LI><A id=SingleColumn1_ctl07_TopList_Hyperlink1_3 
+  href="http://www.cnblogs.com/Peter-Zhang/archive/2011/09/25/2190578.html">4.&nbsp;window.showModalDialog模态对话框 
+  &amp; 值回传 &amp; TreeView无刷新(4)</A> 
+  <LI><A id=SingleColumn1_ctl07_TopList_Hyperlink1_4 
+  href="http://www.cnblogs.com/Peter-Zhang/archive/2010/07/16/1778223.html">5.&nbsp;WinForm打包(VS2008)(3)</A> 
+  </LI></UL></DIV></DIV></DIV><!--done-->
+<DIV class=footer>Powered by: <A href="http://www.cnblogs.com/">博客园</A> 模板提供：<A 
+href="http://blog.hjenglish.com/">沪江博客</A> Copyright ©2011 PeterZhang 
+</DIV></FORM>
+<SCRIPT type=text/javascript>
+        if (!isSyntaxHighlighted) {
+            try {
+                SyntaxHighlighter.all();
+            } catch (e) { }
+        }
+    </SCRIPT>
+
+<SCRIPT type=text/javascript 
+src="C%23中执行PowerShell%20脚本_files/ShowHidden.js"></SCRIPT>
+</BODY></HTML>

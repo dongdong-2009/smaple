@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Feature xmlns="http://schemas.microsoft.com/sharepoint/" Description="My SharePoint Workflow Feature" Id="5956e07f-7932-4944-a46c-f1f3cdff6bd8" Scope="Site" Title="PluggableWorkflowServices Feature1">
+  <Properties>
+    <Property Key="GloballyAvailable" Value="true" />
+  </Properties>
+  <ElementManifests>
+    <ElementManifest Location="Workflow1\Elements.xml" />
+    <ElementManifest Location="AnnouncementsReceiver\Elements.xml" />
+    <ElementManifest Location="EventReceiver1\Elements.xml" />
+  </ElementManifests>
+</Feature>

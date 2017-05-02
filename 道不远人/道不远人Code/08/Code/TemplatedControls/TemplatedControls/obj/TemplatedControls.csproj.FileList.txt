@@ -1,0 +1,5 @@
+bin\Debug\TemplatedControls.dll
+bin\Debug\TemplatedControls.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\TemplatedControls.dll
+obj\Debug\TemplatedControls.pdb

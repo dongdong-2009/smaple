@@ -1,0 +1,5 @@
+D:\Project\smaple\SharePoint\SiteCollectionSupportWorkflow\SiteCollectionSupportWorkflow\bin\Debug\SiteCollectionSupportWorkflow.dll
+D:\Project\smaple\SharePoint\SiteCollectionSupportWorkflow\SiteCollectionSupportWorkflow\bin\Debug\SiteCollectionSupportWorkflow.pdb
+D:\Project\smaple\SharePoint\SiteCollectionSupportWorkflow\SiteCollectionSupportWorkflow\obj\Debug\ResolveAssemblyReference.cache
+D:\Project\smaple\SharePoint\SiteCollectionSupportWorkflow\SiteCollectionSupportWorkflow\obj\Debug\SiteCollectionSupportWorkflow.dll
+D:\Project\smaple\SharePoint\SiteCollectionSupportWorkflow\SiteCollectionSupportWorkflow\obj\Debug\SiteCollectionSupportWorkflow.pdb

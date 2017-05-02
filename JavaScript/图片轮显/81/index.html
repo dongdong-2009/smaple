@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="keywords" content="素材网,网页吧网,网页吧,经典素材,经典素材网,素材站,素材网,网页素材"/>
+<meta name="description" content="jQuery仿迅雷,图片轮播切换 经典素材网,最新;最全;最经典的素材地带!"/>
+<title>jQuery仿迅雷,图片轮播切换效果-经典素材网{网页吧} </title>
+<style type="text/css">
+body{background:#000;}
+h1 { color:#fff; margin: 5px 5px;}
+*{font-size:12px; font-family:Verdana;margin:0;padding:0; color:#fff; }
+#play img {border:0px}
+#play {width:346px;height:214px;overflow:hidden;margin: 0 auto; border: 1px solid #fff; padding:4px;}
+#play_info{position:absolute;margin-top:141px;padding:8px 0 0 20px;height:42px;width:270px;color:#fff;z-index:1001;cursor:pointer}
+#play_info b{font-size:14px;display:block}
+#play_bg {position:absolute;background-color:#000;margin-top:141px;height:50px;width:346px;filter: Alpha(Opacity=30);opacity:0.3;z-index:1000}
+#play_text {position:absolute;margin:141px 0 0 296px;height:50px;width:60px;z-index:1002}
+#play_text ul {list-style-type:none; width:60px;height:50px;display:block;padding-top:1px;_padding-top:0px;filter: Alpha(Opacity=80);opacity:0.8;}
+#play_text ul li {width:14px;height:14px;float:left;background-color:#000;display:block;color:#FFF;text-align:center;margin:1px;cursor:pointer;font-family:"微软雅黑"; font-size:9px;}
+#play_list a{display:block;width:346px;height:191px;position:absolute;overflow:hidden}
+</style>
+<script type="text/javascript" src="jquery-1.2.6.pack.js"></script>
+
+</head>
+
+<body>
+<br />
+
+<br />
+<div id="play">	
+<h1>jQuery仿迅雷,图片轮播切换效果-经典素材网{网页吧}</h1>
+	<div id="play_bg"></div>
+	<div id="play_info"></div>
+	<div id="play_text">
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+		</ul>
+	</div>
+	<div id="play_list">
+	<a href="#" target="_blank">
+		<img src="imgs/1.jpg" title="" alt="&lt;b&gt;相恋9年&lt;/b&gt;尔冬升再婚娶相恋9年女友" />
+	</a>
+	<a href="#" target="_blank">
+		<img src="imgs/2.jpg" title="" alt="&lt;b&gt;恋情变贤&lt;/b&gt;周海媚公开6年恋情变贤妇" />
+	</a>
+	<a href="#" target="_blank">
+		<img src="imgs/3.jpg" title="" alt="&lt;b&gt;为啥这么&lt;/b&gt;“熊猫”阿宝为啥这么红？" />
+	</a>
+	<a href="#" target="_blank">
+		<img src="imgs/4.jpg" title="" alt="&lt;b&gt;男友被捕&lt;/b&gt;安妮-海瑟薇前男友被捕" />
+	</a>
+	<a href="#" target="_blank">
+		<img src="imgs/5.jpg" title="" alt="&lt;b&gt;开价一亿&lt;/b&gt;天后王菲“复出”开价一亿" />
+	</a>
+	<a href="#" target="_blank">
+		<img src="imgs/6.jpg" title="" alt="&lt;b&gt;赞郑伊健&lt;/b&gt;阿Sa赞郑伊健“保存”得好" />
+	</a>
+	<a href="#" target="_blank">
+		<img src="imgs/7.jpg" title="" alt="&lt;b&gt;死跑龙套&lt;/b&gt;北影演员：甘当‘死跑龙套的’" />
+	</a>
+	<a href="#" target="_blank">
+		<img src="imgs/8.jpg" title="" alt="&lt;b&gt;潘玮柏死&lt;/b&gt;潘玮柏死盯辣妹脱衣解带" />
+	</a>
+	<a href="#" target="_blank">
+		<img src="imgs/9.jpg" title="" alt="&lt;b&gt;张曼玉分&lt;/b&gt;尔冬升深爱张曼玉分手发呆" />
+	</a>
+	</div>
+</div>
+<script type="text/javascript">
+var t = n = 0, count = $("#play_list a").size();
+$(function(){	
+	$("#play_list a:not(:first-child)").hide();
+	$("#play_info").html($("#play_list a:first-child").find("img").attr('alt'));
+	$("#play_text li:first-child").css({"background":"#fff",'color':'#000'});
+	$("#play_info").click(function(){window.open($("#play_list a:first-child").attr('href'), "_blank")});
+	$("#play_text li").click(function() {
+		var i = $(this).text() - 1;
+		n = i;
+		if (i >= count) return;
+		$("#play_info").html($("#play_list a").eq(i).find("img").attr('alt'));
+		$("#play_info").unbind().click(function(){window.open($("#play_list a").eq(i).attr('href'), "_blank")})
+		$("#play_list a").filter(":visible").fadeOut(500).parent().children().eq(i).fadeIn(1000);
+		$(this).css({"background":"#fff",'color':'#000'}).siblings().css({"background":"#000",'color':'#fff'});
+	});
+	t = setInterval("showAuto()", 2000);
+	$("#play").hover(function(){clearInterval(t)}, function(){t = setInterval("showAuto()", 2000);});
+})
+
+function showAuto()
+{
+	n = n >= (count - 1) ? 0 : ++n;
+	$("#play_text li").eq(n).trigger('click');
+}
+</script>
+
+
+
+<div align="center">
+<br/><br/><br/>
+转：http://www.koyoz.com/blog
+<br/>
+ 整理：<a href="http://www.wangyeba.com" target="_blank">经典素材网(网页吧)</a> http://www.wangyeba.com
+ <br/><br/><br/></div>
+
+
+</body>
+</html>

@@ -1,0 +1,9 @@
+C:\Users\zhouming\Desktop\w1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\zhouming\Desktop\w1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\获取计算机中已安装的字体.Form1.resources
+C:\Users\zhouming\Desktop\w1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\zhouming\Desktop\w1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Users\zhouming\Desktop\w1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Users\zhouming\Desktop\w1\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\zhouming\Desktop\w1\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\zhouming\Desktop\w1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.exe
+C:\Users\zhouming\Desktop\w1\WindowsFormsApplication1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.pdb

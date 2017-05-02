@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" rev="stylesheet" href="1.css" type="text/css" media="all" >
+
+</link>
+
+
+<script language="javascript" src="p.js"></script>
+<script language="javascript" src="e.js"></script>
+</head>
+
+<body>
+
+	<!-- header end -->
+			<div class="flashBox">
+				<div id="Switch_0" class="SwitchPic">
+					<a  href="http://music.xunlei.com/contents/2b/22026.shtml" onmouseover="pauseSwitch();" onmouseout="goonSwitch();" blockid="938">
+						<img src="http://images.movie.xunlei.com/gallery/461/a3b037ce6938814e8adebb24d81c163a.jpg" alt="安室奈美惠">
+					</a>
+				</div>
+				<div id="Switch_1">
+					<a  href="http://music.xunlei.com/contents/9a/22162.shtml" onmouseover="pauseSwitch();" onmouseout="goonSwitch();" blockid="938">
+						<img src="http://images.movie.xunlei.com/gallery/461/e7abe77a352dd1fa54f5d0c43c120ca8.jpg" alt="陈慧琳十月摆酒">
+					</a>
+				</div>
+				<div id="Switch_2">
+					<a  href="http://music.xunlei.com/contents/cf/22328.shtml" onmouseover="pauseSwitch();" onmouseout="goonSwitch();" blockid="938">
+						<img src="http://images.movie.xunlei.com/gallery/461/cf89e181adf4c38970d259b7e9f558f0.jpg" alt="萧亚轩">
+					</a>
+				</div>
+				<div id="Switch_3">
+					<a  href="http://music.xunlei.com/contents/78/21906.shtml" onmouseover="pauseSwitch();" onmouseout="goonSwitch();" blockid="938">
+						<img src="http://images.movie.xunlei.com/gallery/461/1b481c8716558a4e0e92d453086644b6.jpg" alt="F4开演唱会">
+					</a>
+				</div>
+				<span class="bg" id="SwitchTitle" onmouseover="pauseSwitch();" onmouseout="goonSwitch();"></span>
+				<ul class="sPic">
+					<li id="LittleSwitch_0">
+						<a  href="javascript:goManSwitch(0);" target="_self" title="安室奈美惠" blockid="938">
+							<img src="http://images.movie.xunlei.com/gallery/461/3f08e1615d52a3a4e2045a93bb87c861.jpg" alt="安室奈美惠" />
+						</a>
+					</li>
+					<li id="LittleSwitch_1">
+						<a  href="javascript:goManSwitch(1);" target="_self" title="陈慧琳十月摆酒" blockid="938">
+							<img src="http://images.movie.xunlei.com/gallery/461/ca3bb534ddc390e4945c854a8ec6ce35.jpg" alt="陈慧琳十月摆酒" />
+						</a>
+					</li>
+					<li id="LittleSwitch_2">
+						<a  href="javascript:goManSwitch(2);" target="_self" title="萧亚轩" blockid="938">
+							<img src="http://images.movie.xunlei.com/gallery/461/4e73724a838366d2872c99cff63ca89c.jpg" alt="萧亚轩" />
+						</a>
+					</li>
+					<li id="LittleSwitch_3">
+						<a  href="javascript:goManSwitch(3);" target="_self" title="F4开演唱会" blockid="938">
+							<img src="http://images.movie.xunlei.com/gallery/461/eab29f1b070a76c94db1cfe6ff08eff8.jpg" alt="F4开演唱会" />
+						</a>
+					</li>
+				</ul>
+			</div>
+			<script>
+			var SwitchTitles = new Array();
+			SwitchTitles[0] = Array() ;
+			SwitchTitles[0]['title'] = "安室奈美惠" ;
+			SwitchTitles[0]['stitle'] = "不满儿子遭偷拍 起诉日八卦杂志" ;
+			SwitchTitles[0]['link'] = "http://music.xunlei.com/contents/2b/22026.shtml" ;
+			SwitchTitles[1] = Array() ;
+			SwitchTitles[1]['title'] = "陈慧琳十月摆酒" ;
+			SwitchTitles[1]['stitle'] = "十月二日在洲际酒店开席大宴亲朋" ;
+			SwitchTitles[1]['link'] = "http://music.xunlei.com/contents/9a/22162.shtml" ;
+			SwitchTitles[2] = Array() ;
+			SwitchTitles[2]['title'] = "萧亚轩" ;
+			SwitchTitles[2]['stitle'] = "着别致小礼服 内衣外穿展现性感一面" ;
+			SwitchTitles[2]['link'] = "http://music.xunlei.com/contents/cf/22328.shtml" ;
+			SwitchTitles[3] = Array() ;
+			SwitchTitles[3]['title'] = "F4开演唱会" ;
+			SwitchTitles[3]['stitle'] = "日本演唱会门票被炒高四倍" ;
+			SwitchTitles[3]['link'] = "http://music.xunlei.com/contents/78/21906.shtml" ;
+
+			var CurScreen = 0 ;
+			var MaxScreen = 4 ;
+			var g_pre_screen = -1 ;
+
+			function switchPic(screen) {
+				
+				if (screen >= MaxScreen) {
+					screen = 0 ;
+				}
+				if (g_pre_screen == -1) {
+					if (screen == 0) {
+						var pre_screen = MaxScreen - 1 ;
+					}
+					else {
+						var pre_screen = screen - 1 ;
+					}
+				}
+				else {
+					var pre_screen = g_pre_screen ;
+				}
+				for (i=0;i<MaxScreen;i++) {
+					document.getElementById("Switch_"+i).style.display = "none" ;
+				}
+				Effect.Appear("Switch_"+screen);
+						
+				switchLittlePic(screen);
+				showSwitchTitles(screen);
+				CurScreen = screen  ;
+				g_pre_screen = -1 ;
+			}
+			function switchLittlePic(screen) {
+				for (i=0;i<MaxScreen;i++) {
+					document.getElementById("LittleSwitch_"+i).className = "" ;
+				}
+				document.getElementById("LittleSwitch_"+screen).className = "currA" ;
+			}
+			function showSwitchTitles(screen) {
+				document.getElementById("SwitchTitle").innerHTML = '' ;
+				Effect.BlindDown('SwitchTitle');
+				document.getElementById("SwitchTitle").innerHTML = '<a href="'+SwitchTitles[screen]['link']+'" style="color:#fff;cursor:pointer;text-decoration:none;"><h6>'+SwitchTitles[screen]['title']+'</h6><p class="sm">'+SwitchTitles[screen]['stitle']+'</a></p>' ;
+			}
+			function reSwitchPic() {
+				refreshSwitchTimer = null;
+				switchPic(CurScreen+1);
+				refreshSwitchTimer = setTimeout('reSwitchPic();', 3000);
+			}
+			function pauseSwitch() {
+				clearTimeout(refreshSwitchTimer);
+			}
+			function goonSwitch() {
+				clearTimeout(refreshSwitchTimer);
+				refreshSwitchTimer = setTimeout('reSwitchPic();', 3000);
+			}
+			function goManSwitch(index) {
+				clearTimeout(refreshSwitchTimer);
+					CurScreen = index -1 ;
+				reSwitchPic();
+			}
+			switchPic(CurScreen);
+			refreshSwitchTimer = setTimeout('reSwitchPic();', 3000);
+			</script>
+
+</body>
+</html>

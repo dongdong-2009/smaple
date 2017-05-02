@@ -1,0 +1,15 @@
+<body>
+<form method="post" name="docForm">
+<OBJECT id="doc_html" style="LEFT: 0px; TOP: 0px" data="HtmlEditor.htm" width="100%" height="360" type="text/x-scriptlet"></OBJECT>
+<textarea name="oldContent"></textarea>
+<input type=button onclick="a()" value="PUT">
+</form>
+<script>
+function a()
+{
+	document.docForm.doc_html.value = document.docForm.oldContent.value
+}
+</script>
+</BODY>
+
+<html><script language="JavaScript">

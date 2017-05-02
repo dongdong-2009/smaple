@@ -1,0 +1,23 @@
+如果对文件进行了修改，无需重新启动服务器
+
+Machine.Config 
+每台计算机上仅可有一个
+
+Web.Config
+每个应用程序可以一个，重写Machine.Config
+
+
+<customErrors defaultRedirect = ""  mode = "On|Off|RemoteOnly">
+	<error statusCode ="404(错误号)" 
+	redirect = "http://localhost/Error404.aspx" />
+</customErrors>
+定义了error，customErrors 就不会生效
+
+身份验证
+windows 作为默认的身份验证模式，用于任何形式的IIS身份验证
+forms   基于ASP.NET窗体的身份验证作为默认的身份验证模式
+passport Microsoft Passport身份验证作为默认的身份验证模式
+none     没有身份验证.用于匿名用户和可以提供其自己的身份验证的应用程序.
+
+<compilation defaultLanguage = "C#" debug = "true" /> 
+发布出去的版本中debug = "false"

@@ -1,0 +1,57 @@
+#MySignature {
+	MARGIN-TOP: 10px
+}
+#EntryTag {
+	MARGIN-TOP: 20px; FONT-SIZE: 12px; COLOR: gray
+}
+.topicListFooter {
+	MARGIN-TOP: 10px; MARGIN-RIGHT: 10px; TEXT-ALIGN: right
+}
+#divRefreshComments {
+	FONT-SIZE: 12px; MARGIN-BOTTOM: 5px; MARGIN-RIGHT: 10px; TEXT-ALIGN: right
+}
+.commentTextBox {
+	WIDTH: 480px; HEIGHT: 220px
+}
+.commenttb {
+	WIDTH: 320px
+}
+#MyIng {
+	MARGIN-TOP: 5px
+}
+.ing_title {
+	FONT-WEIGHT: bold; TEXT-ALIGN: center
+}
+.ing_body {
+	MARGIN-TOP: 5px; MARGIN-BOTTOM: 5px; WORD-BREAK: break-all
+}
+.ing_date {
+	FONT-SIZE: 11px; COLOR: gray; TEXT-ALIGN: center
+}
+.ing_footer {
+	MARGIN-RIGHT: 5px; TEXT-ALIGN: right
+}
+#divNewMsg {
+	MARGIN-TOP: 2px; TEXT-ALIGN: center
+}
+#divSendMsg {
+	
+}
+.commentform TABLE TD INPUT {
+	MARGIN: 2px auto
+}
+.sendMsg2This:link {
+	FONT-SIZE: 12px; BACKGROUND: url(/images/icoMsg.gif) no-repeat left top; TEXT-DECORATION: none
+}
+.sendMsg2This:visited {
+	FONT-SIZE: 12px; BACKGROUND: url(/images/icoMsg.gif) no-repeat left top; TEXT-DECORATION: none
+}
+.sendMsg2This:active {
+	FONT-SIZE: 12px; BACKGROUND: url(/images/icoMsg.gif) no-repeat left top; TEXT-DECORATION: none
+}
+.sendMsg2This:hover {
+	BACKGROUND: url(/images/icoMsg.gif) no-repeat left bottom
+}
+.RecentComment {
+	OVERFLOW: hidden
+}

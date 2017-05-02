@@ -1,0 +1,742 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0039)http://www.gridteam.com/grid/pkica.html -->
+<HTML><HEAD><TITLE>基本概念：数字证书、安全协议、PKI_网格工场|gridteam.com</TITLE>
+<STYLE type=text/css>@import url( ../tenpoint.css );
+</STYLE>
+
+<STYLE type=text/css>A {
+	COLOR: #999900; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: black; POSITION: relative; TOP: 1px
+}
+BODY {
+	FONT-SIZE: 10pt; FONT-FAMILY: "Verdana", "Arial", "宋体"
+}
+TD {
+	FONT-SIZE: 10pt
+}
+INPUT.buttonface {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; FONT-WEIGHT: normal; FONT-SIZE: 9pt; BACKGROUND: #ff9900; BORDER-LEFT: black 1px solid; COLOR: #ffffff; LINE-HEIGHT: normal; BORDER-BOTTOM: black 1px solid; FONT-STYLE: normal; HEIGHT: 18px; FONT-VARIANT: normal
+}
+INPUT.smallInput {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; FONT-WEIGHT: normal; FONT-SIZE: 9pt; BORDER-LEFT: black 1px solid; LINE-HEIGHT: normal; BORDER-BOTTOM: black 1px solid; FONT-STYLE: normal; HEIGHT: 18px; FONT-VARIANT: normal
+}
+.b1 {
+	FONT-SIZE: 12pt; FONT-FAMILY: "Verdana", "Arial", "宋体"
+}
+.b2 {
+	FONT-SIZE: 7pt; FONT-FAMILY: "Verdana", "Arial", "宋体"
+}
+</STYLE>
+
+<SCRIPT language=javascript>function openw(url){window.open(url,'','width=450,height=500,resizable=1,scrollbars=1,left=200');}</SCRIPT>
+
+<META http-equiv=Content-Type content="text/html; charset=gb2312">
+<STYLE type=text/css></STYLE>
+
+<STYLE type=text/css></STYLE>
+
+<STYLE type=text/css></STYLE>
+
+<STYLE type=text/css></STYLE>
+
+<STYLE type=text/css>.style2 {
+	COLOR: #666666
+}
+</STYLE>
+<LINK href="基本概念：数字证书、安全协议、PKI_网格工场gridteam_com_files/nav.css" type=text/css 
+rel=stylesheet><LINK href="基本概念：数字证书、安全协议、PKI_网格工场gridteam_com_files/text.css" 
+type=text/css rel=stylesheet>
+<META content="MSHTML 6.00.3790.2541" name=GENERATOR></HEAD>
+<BODY text=#000000 vLink=#990066 bgColor=#cccccc leftMargin=0 topMargin=0 
+marginheight="0" marginwidth="0">
+<TABLE class=index height=40 cellSpacing=0 cellPadding=0 width=766 align=center 
+bgColor=#acd683 border=0>
+  <TBODY>
+  <TR class=t borderColor=#cc9900>
+    <TD vAlign=bottom width=160 bgColor=#ffffff height=40>
+      <DIV align=center><FONT color=#ffffff><A 
+      href="http://www.gridteam.com/index.html" target=_blank><IMG height=40 
+      alt=网格工场首页 src="基本概念：数字证书、安全协议、PKI_网格工场gridteam_com_files/001.gif" 
+      width=160 border=0></A></FONT> </DIV></TD>
+    <TD vAlign=bottom width=606 bgColor=#ffffff>
+      <TABLE class=text cellSpacing=0 cellPadding=0 width="100%" align=center 
+      border=0>
+        <TBODY>
+        <TR>
+          <TD width="63%" height=27>
+            <TABLE class=nav height=19 cellSpacing=0 cellPadding=0 width="98%" 
+            align=left border=0>
+              <TBODY>
+              <TR class=nav>
+                <TD width="70%" height=19>
+                  <DIV align=right><FONT color=#ffffff>
+                  <SCRIPT language=JavaScript>
+<!--
+function CalConv()
+ {
+	FIRSTYEAR = 1998;
+	LASTYEAR = 2031;
+
+	today = new Date();
+	SolarYear = today.getFullYear();
+	SolarMonth = today.getMonth() + 1;
+	SolarDate = today.getDate();
+	Weekday = today.getDay();
+	LunarCal = [
+  new tagLunarCal( 27,  5, 3, 43, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1 ),
+  new tagLunarCal( 46,  0, 4, 48, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1 ), /* 88 */
+  new tagLunarCal( 35,  0, 5, 53, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1 ), /* 89 */
+  new tagLunarCal( 23,  4, 0, 59, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 42,  0, 1,  4, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 31,  0, 2,  9, 1, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0 ),
+  new tagLunarCal( 21,  2, 3, 14, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1 ), /* 93 */
+  new tagLunarCal( 39,  0, 5, 20, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 28,  7, 6, 25, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1 ),
+  new tagLunarCal( 48,  0, 0, 30, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1 ),
+  new tagLunarCal( 37,  0, 1, 35, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1 ), /* 97 */
+  new tagLunarCal( 25,  5, 3, 41, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1 ),
+  new tagLunarCal( 44,  0, 4, 46, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1 ),
+  new tagLunarCal( 33,  0, 5, 51, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 22,  4, 6, 56, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0 ), /* 101 */
+  new tagLunarCal( 40,  0, 1,  2, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0 ),
+  new tagLunarCal( 30,  9, 2,  7, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 49,  0, 3, 12, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 38,  0, 4, 17, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0 ), /* 105 */
+  new tagLunarCal( 27,  6, 6, 23, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1 ),
+  new tagLunarCal( 46,  0, 0, 28, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0 ),
+  new tagLunarCal( 35,  0, 1, 33, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0 ),
+  new tagLunarCal( 24,  4, 2, 38, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ), /* 109 */
+  new tagLunarCal( 42,  0, 4, 44, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 31,  0, 5, 49, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0 ),
+  new tagLunarCal( 21,  2, 6, 54, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1 ),
+  new tagLunarCal( 40,  0, 0, 59, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1 ), /* 113 */
+  new tagLunarCal( 28,  6, 2,  5, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0 ),
+  new tagLunarCal( 47,  0, 3, 10, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1 ),
+  new tagLunarCal( 36,  0, 4, 15, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1 ),
+  new tagLunarCal( 25,  5, 5, 20, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0 ), /* 117 */
+  new tagLunarCal( 43,  0, 0, 26, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1 ),
+  new tagLunarCal( 32,  0, 1, 31, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0 ),
+  new tagLunarCal( 22,  3, 2, 36, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0 ) ];
+ /* 每月之日數 */
+ SolarCal = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
+
+ /* 每月之累積日數, 平年與閏年 */ 
+SolarDays = [  0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365, 396,  0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366, 397 ];
+	AnimalIdx = ["马", "羊", "猴", "鸡", "狗", "猪", "鼠", "牛", "虎", "兔", "龙", "蛇" ];
+	LocationIdx = [ "南", "东", "北", "西" ];
+	if ( SolarYear <= FIRSTYEAR || SolarYear > LASTYEAR ) return 1;
+	sm = SolarMonth - 1;
+		if ( sm < 0 || sm > 11 ) return 2;
+		leap = GetLeap( SolarYear );
+	if ( sm == 1 )
+		d = leap + 28;
+	else
+		d = SolarCal[sm];
+	if ( SolarDate < 1 || SolarDate > d ) return 3;
+	y = SolarYear - FIRSTYEAR;
+	acc = SolarDays[ leap*14 + sm ] + SolarDate;
+	kc = acc + LunarCal[y].BaseKanChih;
+	Kan = kc % 10;
+	Chih = kc % 12;
+	Location = LocationIdx[kc % 4];
+	Age = kc % 60;
+	if ( Age < 22 )
+		Age = 22 - Age;
+	else
+		Age = 82 - Age;
+	Animal = AnimalIdx[ Chih ];
+	if ( acc <= LunarCal[y].BaseDays ) {
+		y--;
+		LunarYear = SolarYear - 1;
+		leap = GetLeap( LunarYear );
+		sm += 12;
+		acc = SolarDays[leap*14 + sm] + SolarDate;
+	 }
+	else
+		LunarYear = SolarYear;
+			l1 = LunarCal[y].BaseDays;
+	for ( i=0; i<13; i++ ) {
+		l2 = l1 + LunarCal[y].MonthDays[i] + 29;
+		if ( acc <= l2 ) break;
+		l1 = l2;
+	 }
+	LunarMonth = i + 1;
+	LunarDate = acc - l1;
+	im = LunarCal[y].Intercalation;
+	if ( im != 0 && LunarMonth > im ) {
+		LunarMonth--;
+		if ( LunarMonth == im ) LunarMonth = -im;
+	 }
+	if ( LunarMonth > 12 ) LunarMonth -= 12;
+ today=new Date();
+        function initArray(){
+                         this.length=initArray.arguments.length
+                         for(var i=0;i<this.length;i++)
+                         this[i+1]=initArray.arguments[i]  }
+       var d=new initArray("星期日","星期一","星期二","星期三","星期四","星期五","星期六");
+             document.write("<span class=\"text\"> ", today.getYear(),"年",today.getMonth()+1,"月",today.getDate(),"日 ",d[today.getDay()+1],"");
+	  document.write( "<span class=\"text\"> 农历 " + LunarMonth + "月" + LunarDate + "日");
+
+                                  return 0; 
+}
+ /* 求此是否為閏年, 返回 0 為平年, 1 為閏年 */
+function GetLeap( year )
+ {
+   if ( year % 400 == 0 )
+     return 1;
+   else if ( year % 100 == 0 )
+     return 0;
+   else if ( year % 4 == 0 )
+     return 1;
+   else
+     return 0;
+ }
+function tagLunarCal( d, i, w, k, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13) {
+ this.BaseDays = d;         /* 到 1 月 1 日到農曆正月初一的累積日數 */
+ this.Intercalation = i;    /* 閏月月份. 0==此年沒有閏月 */
+ this.BaseWeekday = w;      /* 此年 1 月 1 日為星期幾再減 1 */
+ this.BaseKanChih = k;      /* 此年 1 月 1 日之干支序號減 1 */
+ this.MonthDays = [ m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13 ]; /* 此農曆年每月之大小, 0==小月(29日), 1==大月(30日) */
+}
+//-->
+
+CalConv();
+
+</SCRIPT>
+                  </FONT></DIV></TD></TR></TBODY></TABLE></TD>
+          <TD width="12%">
+            <DIV align=center><FONT color=#0033cc><A 
+            href="http://www.gridteam.com/map.html" 
+            target=_blank>·网格地图</A></FONT></DIV></TD>
+          <TD width="13%">
+            <DIV align=center><FONT color=#0033cc><A 
+            href="http://www.gridteam.com/grid/dictionary.html" 
+            target=_blank>·网格词典</A></FONT></DIV></TD>
+          <TD width="12%">
+            <DIV align=center><FONT color=#0033cc><A 
+            href="http://www.gridteam.com/en/index.html" 
+            target=_blank>·English</A></FONT></DIV></SPAN></TD></TR></TBODY></TABLE>
+      <TABLE height=22 cellSpacing=0 cellPadding=0 width="100%" align=center 
+      bgColor=#ff9900 border=0>
+        <TBODY>
+        <TR>
+          <TD>
+            <TABLE class=text height=0 cellSpacing=0 cellPadding=0 width=606 
+            align=center border=0>
+              <TBODY>
+              <TR borderColor=#ffffff>
+                <TD class=h width=66>
+                  <DIV align=center><A class=nav 
+                  href="http://www.gridteam.com/index.html" target=_blank><FONT 
+                  color=#000000>网格首页</FONT></A></DIV></TD>
+                <TD class=h width=66>
+                  <DIV align=center><A href="http://www.gridteam.com/grid.html" 
+                  target=_blank><FONT color=#000000>网格计算</FONT></A></DIV></TD>
+                <TD class=h width=66 height=17>
+                  <DIV align=center><A href="http://www.gridteam.com/team.html" 
+                  target=_blank><FONT color=#000000>网格工场</FONT></A></DIV></TD>
+                <TD class=h width=67>
+                  <DIV align=center><A href="http://www.gridteam.com/web.html" 
+                  target=_blank><FONT color=#000000>网格建设</FONT></A></DIV></TD>
+                <TD class=h width=67>
+                  <DIV align=center><A href="http://www.gridteam.com/seo.html" 
+                  target=_blank><FONT color=#000000>网格推广</FONT></A></DIV></TD>
+                <TD class=h width=67>
+                  <DIV align=center><A href="http://www.gridteam.com/ad.html" 
+                  target=_blank><FONT color=#000000>网格广告</FONT></A></DIV></TD>
+                <TD class=h width=67>
+                  <DIV align=center><A href="http://www.gridteam.com/ec.html" 
+                  target=_blank><FONT color=#000000>网格商务</FONT></A></DIV></TD>
+                <TD class=h width=67>
+                  <DIV align=center><A href="http://www.gridteam.com/gov.html" 
+                  target=_blank><FONT color=#000000>网格政务</FONT></A></DIV></TD>
+                <TD width=73>
+                  <DIV align=center><A href="http://www.gridteam.com/union.html" 
+                  target=_blank><FONT 
+              color=#000000>网格联盟</FONT></A></DIV></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<TABLE height=38 cellSpacing=0 cellPadding=0 width=766 align=center border=0>
+  <TBODY>
+  <TR>
+    <TD bgColor=#ebebeb height=18>
+      <OBJECT 
+      codeBase=http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0 
+      height=18 width=780 classid=clsid:D27CDB6E-AE6D-11cf-96B8-444553540000><PARAM NAME="movie" VALUE="../pic/clock.swf"><PARAM NAME="quality" VALUE="high">
+                        <embed src="../pic/clock.swf" quality="high" 
+      pluginspage="http://www.macromedia.com/go/getflashplayer" 
+      type="application/x-shockwave-flash" width="780" height="18"></embed>    
+      </OBJECT></TD></TR>
+  <TR>
+    <TD bgColor=#ebebeb height=8>
+      <SCRIPT type=text/javascript><!--
+google_ad_client = "pub-4554370534520901";
+google_ad_width = 728;
+google_ad_height = 15;
+google_ad_format = "728x15_0ads_al";
+google_ad_channel ="7706507260";
+google_color_border = "CCCCCC";
+google_color_bg = "FFFFFF";
+google_color_link = "000000";
+google_color_url = "666666";
+google_color_text = "333333";
+//--></SCRIPT>
+
+      <SCRIPT src="基本概念：数字证书、安全协议、PKI_网格工场gridteam_com_files/show_ads.js" 
+      type=text/javascript>
+</SCRIPT>
+    </TD></TR></TBODY></TABLE>
+<TABLE class=index height=0% cellSpacing=0 cellPadding=0 width=766 align=center 
+bgColor=#efefef border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top width=563 height="100%">
+      <TABLE 
+      style="BORDER-RIGHT: gray 1px solid; BORDER-TOP: gray 1px solid; BORDER-LEFT: gray 1px solid; BORDER-BOTTOM: gray 1px solid" 
+      height=105 cellSpacing=0 cellPadding=0 width="97%" align=center 
+        border=0><TBODY>
+        <TR>
+          <TD height=105>
+            <TABLE class=bg height=51 cellSpacing=0 cellPadding=0 width="95%" 
+            align=center border=0>
+              <TBODY>
+              <TR>
+                <TD height=51>
+                  <DIV align=center><FONT color=#336600>
+                  <SCRIPT type=text/javascript><!--
+google_ad_client = "pub-4554370534520901";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as_rimg";
+google_cpa_choice = "CAAQycb8zwEaCNrmdvgKt1bFKJnA93M";
+//--></SCRIPT>
+
+                  <SCRIPT 
+                  src="基本概念：数字证书、安全协议、PKI_网格工场gridteam_com_files/show_ads.js" 
+                  type=text/javascript>
+</SCRIPT>
+
+                  <P>基本概念：数字证书、安全协议、PKI</FONT></P></DIV></TD></TR></TBODY></TABLE>
+            <TABLE class=sm height=17 cellSpacing=0 cellPadding=0 width="100%" 
+            align=center border=0>
+              <TBODY>
+              <TR>
+                <TD bgColor=#d5d5d5 height=17>
+                  <DIV align=center><A href="http://www.gridteam.com/index.html" 
+                  target=_blank><FONT 
+                  color=#666666>http://www.GridTeam.com&nbsp;&nbsp; 
+                  </FONT></A><FONT color=#666666><FONT 
+                  color=#666666>2005-2-26&nbsp;&nbsp; 
+来源：网格工场</FONT></FONT></DIV>
+                  <DIV align=right></DIV></TD></TR></TBODY></TABLE>
+            <TABLE class=text height=71 cellSpacing=0 cellPadding=0 width="100%" 
+            align=center border=0>
+              <TBODY>
+              <TR>
+                <TD>
+                  <TABLE cellSpacing=0 cellPadding=0>
+                    <TBODY>
+                    <TR></TR></TBODY></TABLE>基本概念：数字证书、安全协议、PKI<BR>数字证书：也许您对"数字证书"这一概念还很陌生，其实，数字证书就是标志网络用户身份信息的一系列数据，用来在网络通讯中识别通讯各方的身份，即要在Internet上解决"我是谁"的问题，就如同现实中我们每一个人都要拥有一张证明个人身份的身份证或驾驶执照一样，以表明我们的身份或某种资格。 
+
+                  <P></P>
+                  <P>　　数字证书是由权威公正的第三方机构即CA中心签发的，以数字证书为核心的加密技术可以对网络上传输的信息进行加密和解密、数字签名和签名验证，确保网上传递信息的机密性、完整性，以及交易实体身份的真实性，签名信息的不可否认性，从而保障网络应用的安全性。</P>
+                  <P>　　数字证书采用公钥密码体制，即利用一对互相匹配的密钥进行加密、解密。每个用户拥有一把仅为本人所掌握的私有密钥（私钥），用它进行解密和签名；同时拥有一把公共密钥（公钥）并可以对外公开，用于加密和验证签名。当发送一份保密文件时，发送方使用接收方的公钥对数据加密，而接收方则使用自己的私钥解密，这样，信息就可以安全无误地到达目的地了，即使被第三方截获，由于没有相应的私钥，也无法进行解密。通过数字的手段保证加密过程是一个不可逆过程，即只有用私有密钥才能解密。在公开密钥密码体制中，常用的一种是RSA体制。</P>
+                  <P>　　用户也可以采用自己的私钥对信息加以处理，由于密钥仅为本人所有，这样就产生了别人无法生成的文件，也就形成了数字签名。采用数字签名，能够确认以下两点：</P>
+                  <P>　　（1）保证信息是由签名者自己签名发送的，签名者不能否认或难以否认； <BR>　　 
+                  （2）保证信息自签发后到收到为止未曾作过任何修改，签发的文件是真实文件。</P>
+                  <P>　　数字证书可用于：发送安全电子邮件、访问安全站点、网上证券、网上招标采购、网上签约、网上办公、网上缴费、网上税务等网上安全电子事务处理和安全电子交易活动。</P>
+                  <P>　　数字证书的格式一般采用X.509国际标准。目前，北京数字证书认证中心主要签发安全电子邮件证书、个人和企业身份证书、服务器证书以及代码签名证书等几种类型证书。</P>
+                  <P><BR>安全协议</P>
+                  <P>　　SET安全协议：</P>
+                  <P>　　在开放的因特网上处理电子商务，保证买卖双方传输数据的安全成为电子商务的重要的问题。为了克服SSL安全协议的缺点，满足电子交易持续不断地增加的安全要求，为了达到交易安全及合乎成本效益的市场要求，VISA国际组织及其它公司如Master 
+                  Card、Micro Soft、IBM等共同制定了安全电子交易（SET：Secure Electronic 
+                  Transactions）公告。这是一个为在线交易而设立的一个开放的、以电子货币为基础的电子付款系统规范。SET在保留对客户信用卡认证的前提下，又增加了对商家身份的认证，这对于需要支付货币的交易来讲是至关重要的。由于设计合理，SET协议得到了许多大公司和消费者的支持，己成为全球网络的工业标准，其交易形态将成为未来“电子商务”的规范。 
+                  </P>
+                  <P>　　安全电子交易规范，为在因特网上进行安全的电子商务提供了一个开放的标准。SET主要使用电子认证技术，其认证过程使用RSA和DES算法，因此，可以为电子商务提供很强的安全保护。可以说，SET规范是目前电子商务中最重要的协议，它的推出必将大大促进电子商务的繁荣和发展。SET将建立一种能在因特网上安全使用银行卡进行购物的标准。安全电子交易规范是一种为基于信用卡而进行的电子交易提供安全措施的规则，是一种能广泛应用于因特网的安全电子付款协议，它能够将普遍应用的信用卡使用起始点从目前的商店扩展到消费者家里，扩展到消费者的个人计算机中。 
+                  </P>
+                  <P>　　由于安全电子交易规范是由信用卡发卡公司参与制定的，一般认为，安全电子交易规范的认证系统是有效的。当一位供货商在计算机收到一张有SET签证的订单时，供货商就可以确认该订单背后是有一张合法的信用卡支持，这时他就能放心地接下这笔生意，同样，由于有SET作保障，发出订单的客户也会确认自己是在与一个诚实的供货商做买卖，因为该供货商受到万事达或维莎发卡组织的信赖。 
+                  </P>
+                  <P>　　SET协议要达到的的目标主要有五个： </P>
+                  <P>　　（1）保证电子商务参与者信息的相互隔离。客户的资料加密或打包后边过商家到达银行，但是商家不能看到客户的帐户和密码信息； 
+                  </P>
+                  <P>　　（2）保证信息在Intemet上安全传输，防止数据彼黑客或被内部人员窃取； </P>
+                  <P>　　（3）解决多方认证问题，不仅要对消费者的信角卡认证，而且要对在线商店的信誉程度认证，同时还有消费看、在线商店与银行间的认证； 
+                  </P>
+                  <P>　　（4）保证了网上交易的实时性，使所有的支付过程都是在线的； </P>
+                  <P>　　（5）规范协议和消息格式，促使不同厂家开发的软件具有兼容性和互操作功能，并且可以运行在不同的硬件和操作系统平台上。<BR></P>
+                  <P>SSL安全协议：</P>
+                  <P>　　SSL安全协议最初是由Netscape Communication公司设计开发的，又叫“安全套接层（Secure 
+                  Sockets 
+                  Layer）协议”，主要用于提高应用程序之间的数据的安全系数。SSL协议的整个概念可以被总结为：一个保证任何安装了安全套接字的客户和服务器间事务安全的协议，它涉及所有TC/IP应用程序。 
+                  </P>
+                  <P>　　SSL安全协议主要提供三方面的服务： </P>
+                  <P>　　１、用户和服务器的合法性认证 </P>
+                  <P>　　认证用户和服务器的合法性，使得它们能够确信数据将被发送到正确的客户机和服务器上。客户机和服务器都是有各自的识别号，这些识别号由公开密钥进行编号，为了验证用户是否合法，安全套接层协议要求在握手交换数据进行数字认证，以此来确保用户的合法性。</P>
+                  <P>　　</P>
+                  <P>　　２、加密数据以隐藏被传送的数据 </P>
+                  <P>　　安全套接层协议所采用的加密技术既有对称密钥技术，也有公开密钥技术。在客户机与服务器进行数据交换之前，交换SSL初始握手信息，在SSL握手情息中采用了各种加密技术对其加密，以保证其机密性和数据的完整性，并且用数字证书进行鉴别。这样就可以防止非法用户进行破译。 
+                  </P>
+                  <P>　　３、护数据的完整性 </P>
+                  <P>　　安全套接层协议采用Hash函数和机密共享的方法来提供信息的完整性服务，建立客户机与服务器之间的安全通道，使所有经过安全套接层协议处理的业务在传输过程中能全部完整准确无误地到达目的地。 
+                  </P>
+                  <P>　　要说明的是，安全套接层协议是一个保证计算机通信安全的协议，对通信对话过程进行安全保护。例如，一台客户机与一台主机连接上了，首先是要初始化握手协议，然后就建立了一个SSL。对话进段。直到对话结束，安全套接层协议都会对整个通信过程加密，并且检查其完整性。这样一个对话时段算一次握手。而HTTP协议中的每一次连接就是一次握手，因此，与HTTP相比。安全套接层协议的通信效率会高一些。<BR>SSL安全协议：</P>
+                  <P>　　SSL安全协议最初是由Netscape Communication公司设计开发的，又叫“安全套接层（Secure 
+                  Sockets 
+                  Layer）协议”，主要用于提高应用程序之间的数据的安全系数。SSL协议的整个概念可以被总结为：一个保证任何安装了安全套接字的客户和服务器间事务安全的协议，它涉及所有TC/IP应用程序。 
+                  </P>
+                  <P>　　SSL安全协议主要提供三方面的服务： </P>
+                  <P>　　１、用户和服务器的合法性认证 </P>
+                  <P>　　认证用户和服务器的合法性，使得它们能够确信数据将被发送到正确的客户机和服务器上。客户机和服务器都是有各自的识别号，这些识别号由公开密钥进行编号，为了验证用户是否合法，安全套接层协议要求在握手交换数据进行数字认证，以此来确保用户的合法性。</P>
+                  <P>　　</P>
+                  <P>　　２、加密数据以隐藏被传送的数据 </P>
+                  <P>　　安全套接层协议所采用的加密技术既有对称密钥技术，也有公开密钥技术。在客户机与服务器进行数据交换之前，交换SSL初始握手信息，在SSL握手情息中采用了各种加密技术对其加密，以保证其机密性和数据的完整性，并且用数字证书进行鉴别。这样就可以防止非法用户进行破译。 
+                  </P>
+                  <P>　　３、护数据的完整性 </P>
+                  <P>　　安全套接层协议采用Hash函数和机密共享的方法来提供信息的完整性服务，建立客户机与服务器之间的安全通道，使所有经过安全套接层协议处理的业务在传输过程中能全部完整准确无误地到达目的地。 
+                  </P>
+                  <P>　　要说明的是，安全套接层协议是一个保证计算机通信安全的协议，对通信对话过程进行安全保护。例如，一台客户机与一台主机连接上了，首先是要初始化握手协议，然后就建立了一个SSL。对话进段。直到对话结束，安全套接层协议都会对整个通信过程加密，并且检查其完整性。这样一个对话时段算一次握手。而HTTP协议中的每一次连接就是一次握手，因此，与HTTP相比。安全套接层协议的通信效率会高一些。<BR>PKI</P>
+                  <P>　　１、 PKI基本概念 </P>
+                  <P>　　公钥基础设施PKI（Public Key 
+                  Infrastructure），是一种遵循既定标准的密钥管理平台,它能够为所有网络应用提供加密和数字签名等密码服务及所必需的密钥和证书管理体系，简单来说，PKI就是利用公钥理论和技术建立的提供安全服务的基础设施。PKI技术是信息安全技术的核心，也是电子商务的关键和基础技术。</P>
+                  <P>　　原有的单密钥加密技术采用特定加密密钥加密数据，而解密时用于解密的密钥与加密密钥相同，这称之为对称型加密算法。采用此加密技术的理论基础的加密方法如果用于网络传输数据加密，则不可避免地出现安全漏洞。因为在发送加密数据的同时，也需要将密钥通过网络传输通知接收者，第三方在截获加密数据的同时，只需再截取相应密钥即可将数据解密使用或进行非法篡改。 
+                  </P>
+                  <P>　区别于原有的单密钥加密技术，PKI采用非对称的加密算法，即由原文加密成密文的密钥不同于由密文解密为原文的密钥，以避免第三方获取密钥后将密文解密。</P>
+                  <P>　　PKI的基础技术包括加密、数字签名、数据完整性机制、数字信封、双重数字签名等。</P>
+                  <P>２、 PKI的基本组成</P>
+                  <P>　　完整的PKI系统必须具有权威认证机构(CA)、数字证书库、密钥备份及恢复系统、证书作废系统、应用接口（API）等基本构成部分，构建PKI也将围绕着这五大系统来着手构建。</P>
+                  <P>　　认证机构（CA）：即数字证书的申请及签发机关，CA必须具备权威性的特征；</P>
+                  <P>　　数字证书库：用于存储已签发的数字证书及公钥，用户可由此获得所需的其他用户的证书及公钥；密钥备份及恢复系统：如果用户丢失了用于解密数据的密钥，则数据将无法被解密，这将造成合法数据丢失。为避免这种情况，PKI提供备份与恢复密钥的机制。但须注意，密钥的备份与恢复必须由可信的机构来完成。并且，密钥备份与恢复只能针对解密密钥，签名私钥为确保其唯一性而不能够作备份。</P>
+                  <P>　　证书作废系统：证书作废处理系统是PKI的一个必备的组件。与日常生活中的各种身份证件一样,证书有效期以内也可能需要作废，原因可能是密钥介质丢失或用户身份变更等。为实现这一点,PKI必须提供作废证书的一系列机制。</P>
+                  <P>　　应用接口（API）：PKI的价值在于使用户能够方便地使用加密、数字签名等安全服务，因此一个完整的PKI必须提供良好的应用接口系统，使得各种各样的应用能够以安全、一致、可信的方式与PKI交互，确保安全网络环境的完整性和易用性。</P>
+                  <P>　　通常来说，CA是证书的签发机构,它是PKI的核心。众所周知，构建密码服务系统的核心内容是如何实现密钥管理。公钥体制涉及到一对密钥（即私钥和公钥），私钥只由用户独立掌握，无须在网上传输，而公钥则是公开的，需要在网上传送，故公钥体制的密钥管理主要是针对公钥的管理问题，目前较好的解决方案是数字证书机制。</P>
+                  <P>　　数字证书是公开密钥体系的一种密钥管理媒介。它是一种权威性的电子文档，形同网络计算环境中的一种身份证，用于证明某一主体（如人、服务器等）的身份以及其公开密钥的合法性，又称为数字ID。数字证书由一对密钥及用户信息等数据共同组成，并写入一定的存储介质内，确保用户信息不被非法读取及篡改<BR>加密技术</P>
+                  <P>加密技术</P>
+                  <P>　　由于数据在传输过程中有可能遭到侵犯者的窃听而失去保密信息，加密技术是电子商务采取的主要保密安全措施，是最常用的保密安全手段。加密技术也就是利用技术手段把重要的数据变为乱码（加密）传送，到达目的地后再用相同或不同的手段还原（解密）。 
+                  </P>
+                  <P>　　加密包括两个元素：算法和密钥。一个加密算法是将普通的文本（或者可以理解的信息）与一窜数字（密钥）的结合，产生不可理解的密文的步骤。密钥和算法对加密同等重要。 
+                  </P>
+                  <P>　　密钥是用来对数据进行编码和解码的一种算法。在安全保密中，可通过适当的密钥加密技术和管理机制，来保证网络的信息通讯安全。密钥加密技术的密码体制分为对称密钥体制和非对称密钥体制两种。 
+                  <BR></P>
+                  <P>　　相应地，对数据加密的技术分为两类，即对称加密（私人密钥加密）和非对称加密（公开密钥加密）。对称加密以数据加密标准（DNS，Data 
+                  Encryption Standard）算法为典型代表，非对称加密通常以RSA（Rivest Shamir 
+                  Ad1eman）算法为代表。对称加密的加密密钥和解密密钥相同，而非对称加密的加密密钥和解密密钥不同，加密密钥可以公开而解密密钥需要保密。<BR>对称加密技术</P>
+                  <P>　　对称加密采用了对称密码编码技术，它的特点是文件加密和解密使用相同的密钥，即加密密钥也可以用作解密密钥。这种方法在密码学中叫做对称加密算法，对称加密算法使用起来简单快捷，密钥较短，且破译困难，除了数据加密标准（DNS），另一个对称密钥加密系统系统是国际数据加密算法（IDEA），它比DNS的加密性好，而且对计算机功能要求也没有那么高。IDEA加密标准由PGP（Pretty 
+                  Good Privacy）系统使用。 </P>
+                  <P>　　对称加密算法在电子商务交易过程中存在几个问题： </P>
+                  <P>　　（1）要求提供一条安全的渠道使通讯双方在首次通讯时协商一个共同的密钥。直接的面对面协商可能是不现实而且难于实施的，所以双方可能需要借助于邮件和电话等其它相对不够安全的手段来进行协商； 
+                  </P>
+                  <P>　　（2）密钥的数目难于管理。因为对于每一个合作者都需要使用不同的密钥，很难适应开放社会中大量的信息交流； </P>
+                  <P>　　（3）对称加密算法一般不能提供信息完整性的鉴别。它无法验证发送者和接受者的身份； </P>
+                  <P>　　（4）对称密钥的管理和分发工作是一件具有潜在危险的和烦琐的过程。对称加密是基于共同保守秘密来实现的，采用对称加密技术的贸易双方必须保证采用的是相同的密钥，保证彼此密钥的交换是安全可靠的，同时还要设定防止密钥泄密和更改密钥的程序。</P>
+                  <P><BR>非对称加密技术<BR></P>
+                  <P>　　1976年，美国学者Dime和Henman为解决信息公开传送和密钥管理问题，提出一种新的密钥交换协议，允许在不安全的媒体上的通讯双方交换信息，安全地达成一致的密钥，这就是“公开密钥系统”。相对于“对称加密算法”这种方法也叫做“非对称加密算法”。 
+                  </P>
+                  <P>　　与对称加密算法不同，非对称加密算法需要两个密钥：公开密钥（publickey）和私有密钥（privatekey）。公开密钥与私有密钥是一对，如果用公开密钥对数据进行加密，只有用对应的私有密钥才能解密；如果用私有密钥对数据进行加密，那么只有用对应的公开密钥才能解密。因为加密和解密使用的是两个不同的密钥，所以这种算法叫作非对称加密算法。 
+                  </P>
+                  <P>　　贸易方利用该非对称加密算法实现机密信息交换的基本过程是：贸易方甲生成一对密钥并将其中的一把作为公用密钥向其他贸易方公开；得到该公用密钥的贸易方乙使用该密钥对机密信息进行加密后再发送给贸易方甲；贸易方甲再用自己保存的另一把专用密钥对加密后的信息进行解密。贸易方甲只能用其专用密钥解密由其公用密钥加密后的任何信息。 
+                  </P>
+                  <P>　　非对称加密算法的保密性比较好，它消除了最终用户交换密钥的需要，但加密和解密花费时间长、速度慢，它不适合于对文件加密而只适用于对少量数据进行加密。 
+                  </P>
+                  <P>　　在微软的Window 
+                  NT的安全性体系结构中，公开密钥系统主要用于对私有密钥的加密过程。每个用户如果想要对数据进行加密，都需要生成一对自己的密钥对（keypair）。密钥对中的公开密钥和非对称加密解密算法是公开的，但私有密钥则应该由密钥的主人妥善保管。 
+                  </P>
+                  <P>　　使用公开密钥对文件进行加密传输的实际过程包括四步： </P>
+                  <P>　　（1）发送方生成一个自己的私有密钥并用接收方的公开密钥对自己的私有密钥进行加密，然后通过网络传输到接收方； 
+</P>
+                  <P>　　（2）发送方对需要传输的文件用自己的私有密钥进行加密，然后通过网络把加密后的文件传输到接收方； </P>
+                  <P>　　（3）接收方用自己的公开密钥进行解密后得到发送方的私有密钥； </P>
+                  <P>　　（4）接受方用发送方的私有密钥对文件进行解密得到文件的明文形式。 </P>
+                  <P>　　因为只有接收方才拥有自己的公开密钥，所以即使其他人得到了经过加密的发送方的私有密钥，也因为无法进行解密而保证了私有密钥的安全性，从而也保证了传输文件的安全性。实际上，上述在文件传输过程中实现了两个加密解密过程：文件本身的加密和解密与私有密钥的加密解密，这分别通过私有密钥和公开密钥来实现。<BR>数字签名技术、数字时间戳技术</P>
+                  <P>数字签名技术 </P>
+                  <P>　　对文件进行加密只解决了传送信息的保密问题，而防止他人对传输的文件进行破坏，以及如何确定发信人的身份还需要采取其它的手段，这一手段就是数字签名。在电子商务安全保密系统中，数字签名技术有着特别重要的地位，在电子商务安全服务中的源鉴别、完整性服务、不可否认服务中，都要用到数字签名技术。在电子商务中，完善的数字签名应具备签字方不能抵赖、他人不能伪造、在公证人面前能够验证真伪的能力。 
+                  </P>
+                  <P>　　实现数字签名有很多方法，目前数字签名采用较多的是公钥加密技术，如基于RSA Date Security 
+                  公司的PKCS（Public Key Cryptography Standards）、Digital Signature 
+                  Algorithm、x.509、PGP（Pretty Good 
+                  Privacy）。1994年美国标准与技术协会公布了数字签名标准而使公钥加密技术广泛应用。公钥加密系统采用的是非对称加密算法。 
+                  </P>
+                  <P>　　目前的数字签名是建立在公共密钥体制基础上，它是公用密钥加密技术的另一类应用。它的主要方式是，报文的发送方从报文文本中生成一个128位的散列值（或报文摘要）。发送方用自己的私人密钥对这个散列值进行加密来形成发送方的数字签名。然后，这个数字签名将作为报文的附件和报文一起发送给报文的接收方。报文的接收方首先从接收到的原始报文中计算出128位的散列值（或报文摘要），接着再用发送方的公用密钥来对报文附加的数字签名进行解密。如果两个散列值相同、那么接收方就能确认该数字签名是发送方的。通过数字签名能够实现对原始报文的鉴别。 
+                  </P>
+                  <P>　　在书面文件上签名是确认文件的一种手段，其作用有两点：第一，因为自己的签名难以否认，从而确认了文件已签署这一事实；第二，因为签名不易仿冒，从而确定了文件是真的这一事实。 
+                  </P>
+                  <P>　　数字签名与书面文件签名有相同之处，采用数字签名，也能确认以下两点：第一，信息是由签名者发送的；第二，信息自签发后到收到为止未曾作过任何修改。这样数字签名就可用来防止电子信息因易被修改而有人作伪，或冒用别人名义发送信息。或发出（收到）信件后又加以否认等情况发生。 
+                  </P>
+                  <P>　　应用广泛的数字签名方法主要有三种，即：RSA签名、DSS签名和Hash签名。这三种算法可单独使用，也可综合在一起使用。数字签名是通过密码算法对数据进行加、解密变换实现的，用DES算去、RSA算法都可实现数字签名。但三种技术或多或少都有缺陷，或者没有成熟的标准。 
+                  </P>
+                  <P>　　用RSA或其它公开密钥密码算法的最大方便是没有密钥分配问题（网络越复杂、网络用户越多，其优点越明显）。因为公开密钥加密使用两个不同的密钥，其中有一个是公开的，另一个是保密的。公开密钥可以保存在系统目录内、未加密的电子邮件信息中、电话黄页（商业电话）上或公告牌里，网上的任何用户都可获得公开密钥。而私有密钥是用户专用的，由用户本身持有，它可以对由公开密钥加密信息进行解密。 
+                  </P>
+                  <P>　　RSA算法中数字签名技术实际上是通过一个哈希函数来实现的。数字签名的特点是它代表了文件的特征，文件如果发生改变，数字签名的值也将发生变化。不同的文件将得到不同的数字签名。一个最简单的哈希函数是把文件的二进制码相累加，取最后的若干位。哈希函数对发送数据的双方都是公开的。 
+                  </P>
+                  <P>　　DSS数字签名是由美国国家标准化研究院和国家安全局共同开发的。由于它是由美国政府颁布实施的，主要用于与美国政府做生意的公司，其他公司则较少使用，它只是一个签名系统，而且美国政府不提倡使用任何削弱政府窃听能力的加密软件，认为这才符合美国的国家利益。 
+                  </P>
+                  <P>　　Hash签名是最主要的数字签名方法，也称之为数字摘要法（Digital Digest）或数字指纹法（Digital 
+                  Finger 
+                  Print）。它与RSA数字签名是单独的签名不同，该数字签名方法是将数字签名与要发送的信息紧密联系在一起，它更适合于电子商务活动。将一个商务合同的个体内容与签名结合在一起，比合同和签名分开传递，更增加了可信度和安全性。数字摘要（Digital 
+                  Digest）加密方法亦称安全Hash编码法（SHA：Secure Hash Algorithm）或MD5（MD 
+                  Standard For Message 
+                  Digest），由RonRivest所设计。该编码法采用单向Hash函数将需加密的明文“摘要”成一串128bit的密文，这一串密文亦称为数字指纹（Finger 
+                  Print），它有固定的长度，且不同的明文摘要必定一致。这样这串摘要使可成为验证明文是否是“真身”的“指纹”了。 </P>
+                  <P>　　只有加入数字签名及验证才能真正实现在公开网络上的安全传输。加入数字签名和验证的文件传输过程如下： </P>
+                  <P>　　（1）发送方首先用哈希函数从原文得到数字签名，然后采用公开密钥体系用发达方的私有密钥对数字签名进行加密，并把加密后的数字签名附加在要发送的原文后面； 
+                  </P>
+                  <P>　　（2）发送一方选择一个秘密密钥对文件进行加密,并把加密后的文件通过网络传输到接收方； </P>
+                  <P>　　（3）发送方用接收方的公开密钥对密秘密钥进行加密,并通过网络把加密后的秘密密钥传输到接收方； </P>
+                  <P>　　（4）接受方使用自己的私有密钥对密钥信息进行解密，得到秘密密钥的明文； </P>
+                  <P>　　（5）接收方用秘密密钥对文件进行解密，得到经过加密的数字签名； </P>
+                  <P>　　（6）接收方用发送方的公开密钥对数字签名进行解密，得到数字签名的明文； </P>
+                  <P>　　（7）接收方用得到的明文和哈希函数重新计算数字签名，并与解密后的数字签名进行对比。如果两个数字签名是相同的，说明文件在传输过程中没有被破坏。 
+                  </P>
+                  <P>　　如果第三方冒充发送方发出了一个文件，因为接收方在对数字签名进行解密时使用的是发送方的公开密钥，只要第三方不知道发送方的私有密钥，解密出来的数字签名和经过计算的数字签名必然是不相同的。这就提供了一个安全的确认发送方身份的方法。 
+                  </P>
+                  <P>　　安全的数字签名使接收方可以得到保证：文件确实来自声称的发送方。鉴于签名私钥只有发送方自己保存，他人无法做一样的数字签名，因此他不能否认他参与了交易。 
+                  </P>
+                  <P>　　数字签名的加密解密过程和私有密钥的加密解密过程虽然都使用公开密钥体系，但实现的过程正好相反，使用的密钥对也不同。数字签名使用的是发送方的密钥对，发送方用自己的私有密钥进行加密，接收方用发送方的公开密钥进行解密。这是一个一对多的关系：任何拥有发送方公开密钥的人都可以验证数字签名的正确性，而私有密钥的加密解密则使用的是接收方的密钥对，这是多对一的关系：任何知道接收方公开密钥的人都可以向接收方发送加密信息，只有唯一拥有接收方私有密钥的人才能对信息解密。在实用过程中，通常一个用户拥有两个密钥对，一个密钥对用来对数字签名进行加密解密，一个密钥对用来对私有密钥进行加密解密。这种方式提供了更高的安全性。<BR>数字时间戳技术 
+                  </P>
+                  <P>　　在电子商务的发展过程中，数字签名技术也有所发展。数字时间戳技术就是数字签名技术一种变种的应用。 </P>
+                  <P>　　在电子商务交易文件中，时间是十分重要的信息。在书面合同中，文件签署的日期和签名一样均是十分重要的防止文件被伪造和篡改的关键性内容。数字时间戳服务（DTS：digita1 
+                  time stamp 
+                  service）是网上电子商务安全服务项目之一，能提供电子文件的日期和时间信息的安全保护，由专门的机构提供。 </P>
+                  <P>　　如果在签名时加上一个时间标记，即是有数字时间戳（digital time stamp）的数字签名。 </P>
+                  <P>　　时间戳（time-stamp）是一个经加密后形成的凭证文档，它包括三个部分： </P>
+                  <P>　　（1）需加时间戳的文件的摘要（digest）； </P>
+                  <P>　　（2）DTS收到文件的日期和时间； </P>
+                  <P>　　（3）DTS的数字签名。 </P>
+                  <P>　　一般来说，时间戳产生的过程为：用户首先将需要加时间戳的文件用Hash编码加密形成摘要，然后将该摘要发送到DTS，DTS在加入了收到文件摘要的日期和时间信息后再对该文件加密（数字签名），然后送回用户。 
+                  </P>
+                  <P>　　书面签署文件的时间是由签署人自己写上的，而数字时间戳则不然，它是由认证单位DTS来加的，以DTS收到文件的时间为依据<BR>安全控制要求与方法 
+                  <BR>　　 </P>
+                  <P>　　（一）电子商务的安全性要求<BR>　　 
+                  发展的核心和关键问题是交易的安全性。由于Internet本身的开放性，使网上交易面临了种种危险，也由此提出了相应的安全控制要求。<BR>　　 
+                  1.信息保密性<BR>　　 
+                  交易中的商务信息均有保密的要求。如信用卡的账号和用户名被人知悉，就可能被盗用，订货和付款的信息被竞争对手获悉，就可能丧失商机。因此在电子商务的信息传播中一般均有加密的要求。<BR></P>
+                  <P>　　2..交易者身份的确定性<BR>　　 
+                  网上交易的双方很可能素昧平生，相隔千里。要使交易成功，首先要能确认对方的身份，对商家要考虑客户端不能是骗子，而客户也会担心网上的商店不是一个玩弄欺诈的黑店。因此能方便而可靠地确认对方身份是交易的前提。<BR></P>
+                  <P>　　3.不可否认性<BR>　　 
+                  由于商情的千变万化，交易一旦达成是不能被否认的。否则必然会损害一方的利益。例如订购黄金，订货时金价较低，但收到订单后，金价上涨了，如收单方能滞认收到订单的实际时间，甚至否认收到订单的事实，则订货方就会蒙受损失。因此电子交易通信过程的各个环节都必须是不可否认的。<BR></P>
+                  <P>　　4.不可修改性<BR>　　 
+                  交易的文件是不可被修改的，如上例所举的订购黄金。供货单位在收到订单后，发现金价大幅上涨了，如其能改动文件内容，将订购数1吨改为1克，则可大幅受益，那么订货单位可能就会因此而蒙受损失。因此电子交易文件也要能做到不可修改，以保障交易的严肃和公正。<BR>（二）常用的安全电子交易手段<BR>　　 
+                  在近年来发表的多个安全电子交易协议或标准中，均采纳了一些常用的安全电子交易的方法和手段。典型的方法和手段有以下几种：<BR></P>
+                  <P>　　1、密码技术<BR>　　 
+                  采用密码技术对信息加密，是最常用的安全交易手段。在电子商务中获得广泛应用的加密技术有以下两种：<BR></P>
+                  <P>　　公共密钥和私用密钥(public key and private key)： 
+                  这一加密方法亦称为RSA编码法，是由Rivest,Shamir和Adlernan三人所研究发明的。它利用两个很大的质数相乘所产生的乘积来加密。这两个质数无论哪一个先与原文件编码相乘，对文件加密，均可由另一个质数再相乘来解密。但要用一个质数来求出另一个质数，则是十分困难的。因此将这一对质数称为密钥对(KeyPair)。在加密应用时，某个用户总是将一个密钥公开，让需发信的人员将信息用其公共密钥加密后发给该用户，而一旦信息加密后，只有用该用户一个人知道的私用密钥才能解密。具有数字凭证身份的人员的公共密钥可在网上查到，亦可在请对方发信息时主动将公共密钥传给对方，这样保证在Internet上传输信息的保密和安全。<BR></P>
+                  <P>　　数字摘要(digital digest)：这一加密方法亦称安全Hash编码法(SHA:Secure Hash 
+                  Algorithm)或MD5(MD Standards for Message Digest)，由Ron 
+                  Rivest所设计。该编码法采用单向Hash函数将需加密的明文"摘要"成一串128bit的密文，这一串密文亦称为数字指纹(Finger 
+                  Print)，它有固定的长度，且不同的明文摘要成密文，其结果总是不同的，而同样的明文其摘要必定一致。这样这串摘要便可成为验证明文是否是"真身"的"指纹"了。<BR></P>
+                  <P>　　上述两种方法可结合起来使用，数字签名就是上述两法结合使用的实例。<BR></P>
+                  <P>　　2.数字签名(digital signature)</P>
+                  <P>　　在书面文件上签名是确认文件的一种手段，签名的作用有两点，一是因为自己的签名难以否认，从而确认了文件已签署这一事实；二是因为签名不易仿冒，从而确定了文件是真的这一事实。数字签名与书面文件签名有相同之处，采用数字签名，也能确认以下两点：<BR>·信息是由签名者发送的。·信息自签发后到收到为止未曾作过任何修改。这样数字签名就可用来防止电子信息因易被修改而有人作伪；或冒用别人名义发送信息；或发出（收到）信件后又加以否认等情况发生。数字签名并非用"手书签名"类型的图形标志，它采用了双重加密的方法来实现防伪、防赖。其原理为：<BR></P>
+                  <P>　　(1)被发送文件用SHA编码加密产生128bit的数字摘要。<BR>　　 
+                  (2)发送方用自己的私用密钥对摘要再加密，这就形成了数字签名。<BR>　　 
+                  (3)将原文和加密的摘要同时传给对方。<BR>　　 
+                  (4)对方用发送方的公共密钥对摘要解密，同时对收到的文件用SHA编码加密产生又一摘要。<BR>　　 
+                  (5)将解密后的摘要和收到的文件在接收方重新加密产生的摘要相互对比。如两者一致，则说明传送过程中信息没有被破坏或篡改过。否则不然。<BR></P>
+                  <P>　　3.数字时间戳(digital time-stamp)</P>
+                  <P>　　交易文件中，时间是十分重要的信息。在书面合同中，文件签署的日期和签名一样均是十分重要的防止文件被伪造和篡改的关键性内容。在电子交易中，同样需对交易文件的日期和时间信息采取安全措施，而数字时间戳服务(DTS:digital 
+                  time-stamp 
+                  service)就能提供电子文件发表时间的安全保护。数字时间戳服务(DTS)是网上安全服务项目，由专门的机构提供。时间戳(time-stamp)是一个经加密后形成的凭证文档，它包括三个部分：<BR></P>
+                  <P>　　1)需加时间戳的文件的摘要(digest),<BR>　　 2)DTS收到文件的日期和时间，<BR>　　 
+                  3)DTS的数字签名。<BR></P>
+                  <P>　　时间戳产生的过程为：用户首先将需要加时间戳的文件用HASH编码加密形成摘要，然后将该摘要发送到DTS,DTS在加入了收到文件摘要的日期和时间信息后再对该文件加密（数字签名），然后送回用户。由Bellcore创造的DTS采用下的过程：加密时将摘要信息归并到二叉树的数据结构；再将二叉树的根值发表在报纸上，这样更有效地为文件发表时间提供了佐证。注意，书面签署文件的时间是由签署人自己写上的，而数字时间戳则不然，它是由认证单位DTS来加的，以DTS收到文件的时间为依据。因此，时间戳也可作为科学家的科学发明文献的时间认证。<BR></P>
+                  <P>　　4.数字凭证(digital certificate,digital ID)</P>
+                  <P>　　数字凭证又称为数字证书，是用电子手段来证实一个用户的身份和对网络资源的访问的权限。在网上的电子交易中，如双方出示了各自的数字凭证，并用它来进行交易操作，那么双方都可不必为对方身份的真伪担心。数字凭证可用于电子邮件、电子商务、群件、电子基金转移等各种用途。数字凭证的内部格式是由CCITT 
+                  X.509国际标准所规定的，它包含了以下几点：<BR></P>
+                  <P>　　凭证拥有者的姓名，<BR>　　 
+                  凭证拥有者的公共密钥，<BR>·　　公共密钥的有效期，<BR>·　　颁发数字凭证的单位，<BR>·　　数字凭证的序列号(Serial 
+                  number)，<BR></P>
+                  <P>　　数字凭证有三种类型：<BR></P>
+                  <P>　　个人凭证(Personal Digital 
+                  ID)：它仅仅为某一个用户提供凭证，以帮助其个人在网上进行安全交易操作。个人身份的数字凭证通常是安装在客户端的浏览器内的。并通过安全的电子邮件(S/MIME)来进行交易操作。</P>
+                  <P>　　企业（服务器）凭证(Server 
+                  ID)：它通常为网上的某个Web服务器提供凭证，拥有Web服务器的企业就可以用具有凭证的万维网站点(Web 
+                  Site)来进行安全电子交易。有凭证的Web服务器会自动地将其与客户端Web浏览器通信的信息加密。</P>
+                  <P>　　·软件（开发者）凭证(Developer 
+                  ID)：它通常为Internet中被下载的软件提供凭证，该凭证用于和微软公司Authenticode技术（合法化软件）结合的软件，以使用户在下载软件时能获得所需的信息。<BR></P>
+                  <P>　　上述三类凭证中前二类是常用的凭证，第三类则用于较特殊的场合，大部分认证中心提供前两类凭证，能提供各类凭证的认证中心并不普遍。</P>
+                  <P>　　<BR>　　 5.认证中心：(CA:Certification Authority)<BR></P>
+                  <P>　　在电子交易中，无论是数字时间戳服务(DTS)还是数字凭证(Digital 
+                  ID)的发放，都不是靠交易的自己能完成的，而需要有一个具有权威性和公正性的第三方(third 
+                  party)来完成。认证中心(CA)就是承担网上安全电子交易认证服务、能签发数字证书、并能确认用户身份的服务机构。认证中心通常是企业性的服务机构，主要任务是受理数字凭证的申请、签发及对数字凭证的管理。认证中心依据认证操作规定(CPS:Certification 
+                  Practice Statement)来实施服务操作。</P>
+                  <P>　　目前在全球处于领导地位的认证中心是美国的VeriSign公司，创建于1995年4 
+                  月，总部在美国加州的Mountain 
+                  View。该公司所提供的数字凭证的服务已遍及全世界50个国家，接受该公司的服务器数字凭证的Web站点服务器已超过45000个，而使用该公司个人数字凭证的用户已超过200万名<BR></P></TD></TR></TBODY></TABLE>
+            <TABLE class=sm height=17 cellSpacing=0 cellPadding=0 width="98%" 
+            align=center border=0>
+              <TBODY>
+              <TR>
+                <TD align=right height=17><FONT color=#666666><SPAN 
+                  class=sm>作者：gridteam&nbsp;&nbsp;&nbsp;</SPAN></FONT> 
+                  <BR>&nbsp; </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE height=42 cellSpacing=0 cellPadding=0 width="98%" align=center 
+      border=0>
+        <TBODY>
+        <TR>
+          <TD height=42>
+            <TABLE class=tenpoint cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD align=right height=25><IMG height=12 
+                  src="基本概念：数字证书、安全协议、PKI_网格工场gridteam_com_files/delete.gif" 
+                  width=12 align=absMiddle border=0><A 
+                  href="javascript:window.close();" 
+                  target=_self>&nbsp;关闭窗口</A>&nbsp;&nbsp;<A 
+                  href="http://www.gridteam.com/index.html" target=_blank><IMG 
+                  height=12 
+                  src="基本概念：数字证书、安全协议、PKI_网格工场gridteam_com_files/bbstitle.gif" 
+                  width=18 align=absMiddle border=0>网格工场</A>&nbsp;&nbsp;<IMG 
+                  height=14 
+                  src="基本概念：数字证书、安全协议、PKI_网格工场gridteam_com_files/print.gif" 
+                  width=18 align=absMiddle border=0><A 
+                  href="javascript:window.print()">&nbsp;打印本页</A></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE class=text cellSpacing=0 cellPadding=0 width="100%" align=center 
+      border=0>
+        <TBODY>
+        <TR>
+          <TD bgColor=#c8d5e3 height=23><FONT color=#cc9900>&nbsp;</FONT><FONT 
+            color=#cc9900><FONT 
+      color=#ff0000>相关文章</FONT></FONT></TD></TR></TBODY></TABLE>
+      <TABLE class=text 
+      style="BORDER-RIGHT: gray 1px solid; BORDER-TOP: gray 1px solid; BORDER-LEFT: gray 1px solid; BORDER-BOTTOM: gray 1px solid" 
+      cellSpacing=0 cellPadding=0 width="100%" align=center bgColor=#f3f3f3 
+      border=0>
+        <TBODY>
+        <TR>
+          <TD height=253></TD></TR></TBODY></TABLE>
+      <TABLE class=text cellSpacing=0 cellPadding=0 width="100%" align=center 
+      border=0>
+        <TBODY>
+        <TR>
+          <TD bgColor=#c8d5e3 height=23><SPAN 
+          class=style2>网格工场版权及免责声明:</SPAN></TD></TR></TBODY></TABLE>
+      <TABLE class=text 
+      style="BORDER-RIGHT: gray 1px solid; BORDER-TOP: gray 1px solid; BORDER-LEFT: gray 1px solid; BORDER-BOTTOM: gray 1px solid" 
+      cellSpacing=0 cellPadding=0 width="100%" align=center bgColor=#f3f3f3 
+      border=0>
+        <TBODY>
+        <TR>
+          <TD width="3%" height=20></TD>
+          <TD vAlign=top width="97%"><FONT color=#000000>·</FONT><FONT 
+            color=#666666>凡网格工场网注明"稿件来源：网格工场或gridteam.com"的所有文字、图片和音视频稿件，版权均属网格工场（gridteam.com）所有，任何媒体、网站或个人未经本网许可授权均不得转载、链接、转贴或以其他方式复制发表。已经本网许可授权的媒体、网站，在下载使用时必须注明"稿件来源：网格工场—gridteam.com"。</FONT><FONT 
+            color=#999999><BR><FONT color=#000000>·</FONT><FONT 
+            color=#666666>网格工场网内未注明"稿件来源：网格工场或gridteam.com"的文/图等稿件均为转载稿，网格工场转载出于传递更多信息之目的，并不意味着赞同其观点或证实其内容的真实性。如其他媒体、网站或个人从本网下载使用，必须保留网格工场注明的"稿件来源"，并自负版权等法律责任。如对网格工场稿件内容有疑议，请及时与网格工场联系。</FONT><BR><FONT 
+            color=#000000>·</FONT><FONT 
+            color=#666666>如网格工场网内容转载稿涉及版权等问题，请作者直接与</FONT><A 
+            href="mailto:teafans@gmail.com"><FONT 
+            color=#0000cc>网格工场</FONT></A><FONT color=#666666>联系。</FONT><BR><FONT 
+            color=#000000>·</FONT><FONT 
+            color=#666666>如您对网格工场网有任何意见或者建议，请</FONT><A 
+            href="http://www.gridteam.com/ly/index.asp" target=_blank><FONT 
+            color=#0000cc>在此留言</FONT></A>。</FONT></TD></TR></TBODY></TABLE>
+      <TABLE class=text cellSpacing=0 cellPadding=0 width="100%" align=center 
+      border=0>
+        <TBODY>
+        <TR>
+          <TD height=16><FONT 
+    color=#cc9900>&nbsp;</FONT></TD></TR></TBODY></TABLE></TD>
+    <TH vAlign=top width=203>
+      <TABLE class=index cellSpacing=0 cellPadding=0 width="98%" align=center 
+      border=0>
+        <TBODY></TBODY></TABLE>
+      <DIV align=center>
+      <CENTER>
+      <TABLE height=133 cellSpacing=4 cellPadding=0 width="98%" border=0>
+        <TBODY>
+        <TR>
+          <TD align=middle height=21><!-- SiteSearch Google -->
+            <FORM action=http://www.google.com/custom method=get 
+            target=google_window>
+            <TABLE bgColor=#cccccc border=0>
+              <TBODY>
+              <TR>
+                <TD vAlign=top noWrap align=left height=32><A 
+                  href="http://www.google.com/"><IMG alt=Google 
+                  src="基本概念：数字证书、安全协议、PKI_网格工场gridteam_com_files/Logo_25gry.gif" 
+                  align=middle border=0></IMG></A> <BR><INPUT type=hidden 
+                  value=gridteam.com name=domains></INPUT> <INPUT maxLength=255 
+                  size=15 name=q></INPUT> 
+                  <INPUT type=submit value=搜索 name=sa></INPUT> </TD></TR>
+              <TR>
+                <TD noWrap>
+                  <TABLE>
+                    <TBODY>
+                    <TR>
+                      <TD><INPUT type=radio CHECKED value="" 
+                        name=sitesearch></INPUT> <FONT color=#000000 
+                        size=-1>Web</FONT> </TD>
+                      <TD><INPUT type=radio value=gridteam.com 
+                        name=sitesearch></INPUT> <FONT color=#000000 
+                        size=-1>gridteam.com</FONT> </TD></TR></TBODY></TABLE><INPUT 
+                  type=hidden value=pub-4554370534520901 name=client></INPUT> 
+                  <INPUT type=hidden value=1 name=forid></INPUT> <INPUT 
+                  type=hidden value=9526045710 name=channel></INPUT> <INPUT 
+                  type=hidden value=GB2312 name=ie></INPUT> <INPUT type=hidden 
+                  value=GB2312 name=oe></INPUT> <INPUT type=hidden 
+                  value=GALT:#9A2C06;GL:1;DIV:#33FFFF;VLC:D03500;AH:center;BGC:99CCFF;LBGC:FFFFFF;ALC:0033FF;LC:0033FF;T:336699;GFNT:223472;GIMP:223472;LH:65;LW:120;L:http://gridteam.com/pic/001.gif;S:http://gridteam.com;FORID:1; 
+                  name=cof></INPUT> <INPUT type=hidden value=zh-CN 
+                  name=hl></INPUT> </TD></TR></TBODY></TABLE></FORM><!-- SiteSearch Google --></TD></TR>
+        <TR>
+          <TD align=middle height=19>
+            <SCRIPT type=text/javascript><!--
+google_ad_client = "pub-4554370534520901";
+google_ad_width = 160;
+google_ad_height = 600;
+google_ad_format = "160x600_as";
+google_ad_type = "text_image";
+google_ad_channel ="7706507260";
+google_color_border = "CCCCCC";
+google_color_bg = "FFFFFF";
+google_color_link = "000000";
+google_color_url = "666666";
+google_color_text = "333333";
+//--></SCRIPT>
+
+            <SCRIPT src="基本概念：数字证书、安全协议、PKI_网格工场gridteam_com_files/show_ads.js" 
+            type=text/javascript>
+</SCRIPT>
+          </TD></TR></TBODY></TABLE>
+      <TABLE class=text cellSpacing=0 cellPadding=0 width="100%" align=center 
+      border=0>
+        <TBODY>
+        <TR>
+          <TD bgColor=#c8d5e3 height=23><FONT color=#cc9900></FONT><FONT 
+            color=#cc9900><FONT 
+      color=#ff0000>热门文章</FONT></FONT></TD></TR></TBODY></TABLE>
+      <TABLE class=text 
+      style="BORDER-RIGHT: gray 1px solid; BORDER-TOP: gray 1px solid; BORDER-LEFT: gray 1px solid; BORDER-BOTTOM: gray 1px solid" 
+      cellSpacing=0 cellPadding=0 width="100%" align=center bgColor=#f3f3f3 
+      border=0>
+        <TBODY>
+        <TR>
+          <TD height=21></TD></TR>
+        <TR>
+          <TD height=19></TD></TR>
+        <TR>
+          <TD height=15></TD></TR>
+        <TR>
+          <TD height=17></TD></TR>
+        <TR>
+          <TD height=15></TD></TR>
+        <TR>
+          <TD height=19></TD></TR>
+        <TR>
+          <TD height=25></TD></TR>
+        <TR>
+          <TD height=19></TD></TR>
+        <TR>
+          <TD height=17></TD></TR>
+        <TR>
+          <TD 
+  height=21></TD></TR></TBODY></TABLE></CENTER></DIV></FORM></TD></TR></TR></TBODY></TABLE>
+<TABLE class=nav height=25 cellSpacing=0 cellPadding=0 width=766 align=center 
+bgColor=#003399 border=0>
+  <TBODY>
+  <TR>
+    <TD class=nine width=766 height=25>
+      <DIV align=center>
+      <SCRIPT src=""></SCRIPT>
+      Copyright &copy;&nbsp;2005-2006, <A href="mailto:teafans@gmail.com"><FONT 
+      color=#ffff00>GridTeam.com</FONT></A>. All rights reserved. 
+    版权所有：网格工场</DIV></TD></TR></TBODY></TABLE></BODY></HTML>

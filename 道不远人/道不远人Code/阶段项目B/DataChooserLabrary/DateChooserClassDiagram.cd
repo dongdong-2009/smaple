@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Font Name="微软雅黑" Size="9" />
+  <Class Name="DateChooserLibrary.DateChooser">
+    <Position X="3.25" Y="3" Width="2.25" />
+    <TypeIdentifier>
+      <FileName>DateChooser.cs</FileName>
+      <HashCode>ABQEAEAAAAAUARAQABQQCBAACEASIIAACSAEAFQQkKA=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Events" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="DateChooserLibrary.Designer.BaseConverter" Collapsed="true">
+    <Position X="3.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Designer\CssFilePathConverter.cs</FileName>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DateChooserLibrary.Designer.CssFilePathConverter" Collapsed="true">
+    <Position X="4.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Designer\CssFilePathConverter.cs</FileName>
+      <HashCode>AAAAAAAAAAABAAAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DateChooserLibrary.Designer.CssUrlEditor" Collapsed="true">
+    <Position X="6" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Designer\CssUrlEditor.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAABAAAAAACAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DateChooserLibrary.Designer.DateChooserDesigner" Collapsed="true">
+    <Position X="0.75" Y="3.75" Width="2" />
+    <TypeIdentifier>
+      <FileName>Designer\DateChooserDesigner.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAgAAAAAhAAEAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DateChooserLibrary.Designer.DateChooserActionList" Collapsed="true">
+    <Position X="0.75" Y="2.5" Width="2" />
+    <TypeIdentifier>
+      <FileName>Designer\DateChooserDesigner.cs</FileName>
+      <HashCode>AAQAAEAAAAAAQQAAAAQAAQAAAAAAIAAAAAAAAgQAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DateChooserLibrary.Designer.DateConverter" Collapsed="true">
+    <Position X="6" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Designer\DateConverter.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DateChooserLibrary.Designer.DateFormatConverter" Collapsed="true">
+    <Position X="6.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Designer\DateFormatConverter.cs</FileName>
+      <HashCode>AAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DateChooserLibrary.Designer.ShowFxConverter" Collapsed="true">
+    <Position X="0.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Designer\FxConverter.cs</FileName>
+      <HashCode>AAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DateChooserLibrary.Designer.HideFxConverter" Collapsed="true">
+    <Position X="2.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Designer\FxConverter.cs</FileName>
+      <HashCode>AAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+    </TypeIdentifier>
+  </Class>
+</ClassDiagram>

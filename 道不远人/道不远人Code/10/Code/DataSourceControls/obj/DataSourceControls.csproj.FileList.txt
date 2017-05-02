@@ -1,0 +1,6 @@
+obj\Debug\ResolveAssemblyReference.cache
+bin\Debug\DataSourceControls.dll
+bin\Debug\DataSourceControls.pdb
+bin\Debug\RssToolkit.dll
+obj\Debug\DataSourceControls.dll
+obj\Debug\DataSourceControls.pdb
