@@ -1,0 +1,36 @@
+		   declare @s nvarchar(4000),@s2 nvarchar(4000),@s3 nvarchar(4000),@s4 nvarchar(4000)  
+		   select  
+				@s=isnull(@s+',','declare ')+'@'+rtrim(Colid)+' nvarchar(4000)' 
+				, @s2=isnull(@s2+',','select ')+'@'+rtrim(Colid)+'='''+case when @s2 is not null then 'union all select' else ' select ' end+'  [column]='''+quotename(Name,'''')+''''''
+				,@s3=isnull(@s3,'')+'select @'+rtrim(Colid)+'=@'+rtrim(Colid)+'+'',''+quotename([weekofyear])+''=''+quotename('+quotename(Name)+','''''''')  from #result_rlxq '
+				,@s4=isnull(@s4+'+','')+'@'+rtrim(Colid)  
+			from   
+				tempdb..syscolumns   
+			where  
+				id=object_id('tempdb..#result_rlxq')  and Name not in('MBU')  
+			order by Colid
+			exec(@s+' '+@s2+' '+@s3+' exec('+@s4+')') 
+
+
+[FoxconnDB].[dbo].[sp_MES_Shift_Chart_RLXQ_L5]
+
+
+------------------
+if OBJECT_ID('tempdb..#table1') is not null
+drop table #table1
+
+select * into #table1 from(
+select 'a' as col1 , 'b' as col2 ,'c' as col3, '1' as num
+union
+select 'd'  , 'e'   ,'f'  , '2'
+union	    	   		  
+select 'g'  , 'h'   ,'i'  , '3'
+union	    	   		 
+select 'i'  , 'j'   ,'k', '4' ) a
+
+select * from #table1
+
+select * from (
+select *  from #table1
+unpivot(value for name in (col1, col2, col3))temp1)temp2
+pivot (max(value) for num in ([1], [2], [3], [4]))temp3

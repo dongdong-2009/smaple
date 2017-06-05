@@ -1,0 +1,5 @@
+select @@DATEFIRST
+SET DATEFIRST 1
+
+
+--session level.
