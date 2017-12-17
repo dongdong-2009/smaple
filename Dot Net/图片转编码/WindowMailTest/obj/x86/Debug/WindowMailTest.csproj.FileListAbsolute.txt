@@ -1,0 +1,15 @@
+C:\Users\Administrator\Desktop\WindowMailTest\WindowMailTest\bin\Debug\WindowMailTest.exe
+C:\Users\Administrator\Desktop\WindowMailTest\WindowMailTest\bin\Debug\WindowMailTest.pdb
+C:\Users\Administrator\Desktop\WindowMailTest\WindowMailTest\obj\x86\Debug\WindowMailTest.Form1.resources
+C:\Users\Administrator\Desktop\WindowMailTest\WindowMailTest\obj\x86\Debug\WindowMailTest.Properties.Resources.resources
+C:\Users\Administrator\Desktop\WindowMailTest\WindowMailTest\obj\x86\Debug\WindowMailTest.csproj.GenerateResource.Cache
+C:\Users\Administrator\Desktop\WindowMailTest\WindowMailTest\obj\x86\Debug\WindowMailTest.exe
+C:\Users\Administrator\Desktop\WindowMailTest\WindowMailTest\obj\x86\Debug\WindowMailTest.pdb
+C:\Users\zhouming\Desktop\WindowMailTest\WindowMailTest\obj\x86\Debug\WindowMailTest.exe
+C:\Users\zhouming\Desktop\WindowMailTest\WindowMailTest\obj\x86\Debug\WindowMailTest.pdb
+C:\Users\zhouming\Desktop\WindowMailTest\WindowMailTest\bin\Debug\WindowMailTest.exe
+C:\Users\zhouming\Desktop\WindowMailTest\WindowMailTest\bin\Debug\WindowMailTest.pdb
+C:\Users\zhouming\Desktop\WindowMailTest\WindowMailTest\obj\x86\Debug\WindowMailTest.csprojResolveAssemblyReference.cache
+C:\Users\zhouming\Desktop\WindowMailTest\WindowMailTest\obj\x86\Debug\WindowMailTest.Form1.resources
+C:\Users\zhouming\Desktop\WindowMailTest\WindowMailTest\obj\x86\Debug\WindowMailTest.Properties.Resources.resources
+C:\Users\zhouming\Desktop\WindowMailTest\WindowMailTest\obj\x86\Debug\WindowMailTest.csproj.GenerateResource.Cache

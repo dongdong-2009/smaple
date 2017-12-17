@@ -1,0 +1,6 @@
+C:\OneDrive - Hewlett Packard Enterprise\Project\smaple\Dot Net\MyApplication\SendEmail\bin\Debug\SendEmail.exe.config
+C:\OneDrive - Hewlett Packard Enterprise\Project\smaple\Dot Net\MyApplication\SendEmail\bin\Debug\SendEmail.exe
+C:\OneDrive - Hewlett Packard Enterprise\Project\smaple\Dot Net\MyApplication\SendEmail\bin\Debug\SendEmail.pdb
+C:\OneDrive - Hewlett Packard Enterprise\Project\smaple\Dot Net\MyApplication\SendEmail\obj\Debug\SendEmail.csprojResolveAssemblyReference.cache
+C:\OneDrive - Hewlett Packard Enterprise\Project\smaple\Dot Net\MyApplication\SendEmail\obj\Debug\SendEmail.exe
+C:\OneDrive - Hewlett Packard Enterprise\Project\smaple\Dot Net\MyApplication\SendEmail\obj\Debug\SendEmail.pdb
