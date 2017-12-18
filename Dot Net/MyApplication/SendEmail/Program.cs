@@ -64,7 +64,7 @@ namespace SendEmail
 
                 mess.Bcc.Add(new System.Net.Mail.MailAddress(bcc));
 
-                if (mess.Bcc.Count >= 95)
+                if (mess.Bcc.Count >= 75)
                 {
                     try
                     {
