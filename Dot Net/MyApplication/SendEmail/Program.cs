@@ -59,8 +59,8 @@ namespace SendEmail
                 tel = Result.ToString() + "@163.com";
                 tellong += "186" + tel + ";";
 
-                dx = Result.ToString() + "@189.com";
-                dxlong += "189" + dx + ";";
+                dx = Result.ToString() + "@189.cn";
+                dxlong += "153" + dx + ";";
 
                 mess.Bcc.Add(new System.Net.Mail.MailAddress(bcc));
 
