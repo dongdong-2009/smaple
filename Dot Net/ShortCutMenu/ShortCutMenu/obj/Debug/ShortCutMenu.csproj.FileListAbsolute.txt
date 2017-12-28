@@ -1,0 +1,8 @@
+C:\OneDrive - Hewlett Packard Enterprise\Project\smaple\Dot Net\ShortCutMenu\ShortCutMenu\obj\Debug\ShortCutMenu.exe
+C:\OneDrive - Hewlett Packard Enterprise\Project\smaple\Dot Net\ShortCutMenu\ShortCutMenu\obj\Debug\ShortCutMenu.pdb
+C:\OneDrive - Hewlett Packard Enterprise\Project\smaple\Dot Net\ShortCutMenu\ShortCutMenu\bin\Debug\ShortCutMenu.exe
+C:\OneDrive - Hewlett Packard Enterprise\Project\smaple\Dot Net\ShortCutMenu\ShortCutMenu\bin\Debug\ShortCutMenu.pdb
+C:\OneDrive - Hewlett Packard Enterprise\Project\smaple\Dot Net\ShortCutMenu\ShortCutMenu\obj\Debug\ShortCutMenu.csprojResolveAssemblyReference.cache
+C:\OneDrive - Hewlett Packard Enterprise\Project\smaple\Dot Net\ShortCutMenu\ShortCutMenu\obj\Debug\ShortCutMenu.frm.resources
+C:\OneDrive - Hewlett Packard Enterprise\Project\smaple\Dot Net\ShortCutMenu\ShortCutMenu\obj\Debug\ShortCutMenu.Properties.Resources.resources
+C:\OneDrive - Hewlett Packard Enterprise\Project\smaple\Dot Net\ShortCutMenu\ShortCutMenu\obj\Debug\ShortCutMenu.csproj.GenerateResource.Cache
