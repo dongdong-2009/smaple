@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -9,8 +11,38 @@ namespace SendEmail
 {
     class Program
     {
+
+        static void aaa()
+        {
+            String connsql = "server=15.171.208.193;database=abmlighthouse;uid=idqFinRec;pwd=qv123$"; // 数据库连接字符串,database设置为自己的数据库名，以Windows身份验证
+            DataTable dt = new DataTable(); // 实例化数据表
+            try
+            {
+                using (SqlConnection conn = new SqlConnection())
+                {
+                    conn.ConnectionString = connsql;
+                    conn.Open(); // 打开数据库连接
+
+                    String sql = "select top 1 pyr_asset_code from pyramid_assets_current"; // 查询语句
+
+                    SqlDataAdapter myda = new SqlDataAdapter(sql, conn); // 实例化适配器
+                    SqlCommand cmd = new SqlCommand("kill 57", conn);
+                    
+                    
+                   myda.Fill(dt); // 保存数据 
+                    //cmd.ExecuteNonQuery();
+
+                    conn.Close(); // 关闭数据库连接
+                }
+            }
+            catch (Exception ex)
+            {
+ 
+            }
+        }
         static void Main(string[] args)
         {
+            aaa();return;
             //2651934327
             //1930729391
             //971676439

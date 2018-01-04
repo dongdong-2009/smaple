@@ -18,3 +18,7 @@ INNER JOIN sys.dm_exec_connections AS C2
 ON S.session_id = C2.most_recent_session_id
 CROSS APPLY sys.dm_exec_sql_text (C1.most_recent_sql_handle) AS Q1
 CROSS APPLY sys.dm_exec_sql_text (C2.most_recent_sql_handle) AS Q2
+
+   use abmlighthouse
+   select   request_session_id   spid,OBJECT_NAME(resource_associated_entity_id) tableName   
+from   sys.dm_tran_locks where resource_type='OBJECT'
