@@ -1,0 +1,5 @@
+F:\PrisonWatcher\DiskState\DiskManage\obj\Debug\ResolveAssemblyReference.cache
+F:\PrisonWatcher\DiskState\DiskManage\bin\Debug\DiskManage.dll
+F:\PrisonWatcher\DiskState\DiskManage\bin\Debug\DiskManage.pdb
+F:\PrisonWatcher\DiskState\DiskManage\obj\Debug\DiskManage.dll
+F:\PrisonWatcher\DiskState\DiskManage\obj\Debug\DiskManage.pdb

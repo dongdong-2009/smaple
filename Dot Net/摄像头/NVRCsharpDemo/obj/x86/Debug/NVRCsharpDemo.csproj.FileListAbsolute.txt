@@ -1,0 +1,16 @@
+E:\CHCNetSDK\NVRCsharpDemo\bin\NVRCsharpDemo.exe
+E:\CHCNetSDK\NVRCsharpDemo\bin\NVRCsharpDemo.pdb
+E:\CHCNetSDK\NVRCsharpDemo\obj\x86\Debug\NVRCsharpDemo.MainWindow.resources
+E:\CHCNetSDK\NVRCsharpDemo\obj\x86\Debug\NVRCsharpDemo.Properties.Resources.resources
+E:\CHCNetSDK\NVRCsharpDemo\obj\x86\Debug\NVRCsharpDemo.csproj.GenerateResource.Cache
+E:\CHCNetSDK\NVRCsharpDemo\obj\x86\Debug\NVRCsharpDemo.exe
+E:\CHCNetSDK\NVRCsharpDemo\obj\x86\Debug\NVRCsharpDemo.pdb
+E:\CHCNetSDK\NVRCsharpDemo\obj\x86\Debug\NVRCsharpDemo.csprojResolveAssemblyReference.cache
+C:\Users\zhouming\Desktop\NVRCsharpDemo\obj\x86\Debug\NVRCsharpDemo.exe
+C:\Users\zhouming\Desktop\NVRCsharpDemo\obj\x86\Debug\NVRCsharpDemo.pdb
+C:\Users\zhouming\Desktop\NVRCsharpDemo\bin\NVRCsharpDemo.exe
+C:\Users\zhouming\Desktop\NVRCsharpDemo\bin\NVRCsharpDemo.pdb
+C:\Users\zhouming\Desktop\NVRCsharpDemo\obj\x86\Debug\NVRCsharpDemo.csprojResolveAssemblyReference.cache
+C:\Users\zhouming\Desktop\NVRCsharpDemo\obj\x86\Debug\NVRCsharpDemo.MainWindow.resources
+C:\Users\zhouming\Desktop\NVRCsharpDemo\obj\x86\Debug\NVRCsharpDemo.Properties.Resources.resources
+C:\Users\zhouming\Desktop\NVRCsharpDemo\obj\x86\Debug\NVRCsharpDemo.csproj.GenerateResource.Cache

@@ -1,0 +1,32 @@
+C:\QQDownload\LicenseDetectorOfVehicle C#环境的车牌认别系统源代码和30张测试图片；本程序对以上的30汽车 的 定位分割 Special Effects 图形 p\sample\bin\Debug\LiceneLocalizer.exe
+C:\QQDownload\LicenseDetectorOfVehicle C#环境的车牌认别系统源代码和30张测试图片；本程序对以上的30汽车 的 定位分割 Special Effects 图形 p\sample\bin\Debug\LiceneLocalizer.pdb
+C:\QQDownload\LicenseDetectorOfVehicle C#环境的车牌认别系统源代码和30张测试图片；本程序对以上的30汽车 的 定位分割 Special Effects 图形 p\sample\obj\Debug\ResolveAssemblyReference.cache
+C:\QQDownload\LicenseDetectorOfVehicle C#环境的车牌认别系统源代码和30张测试图片；本程序对以上的30汽车 的 定位分割 Special Effects 图形 p\sample\obj\Debug\sample.ImageProcess.resources
+C:\QQDownload\LicenseDetectorOfVehicle C#环境的车牌认别系统源代码和30张测试图片；本程序对以上的30汽车 的 定位分割 Special Effects 图形 p\sample\obj\Debug\sample.UserControl1.resources
+C:\QQDownload\LicenseDetectorOfVehicle C#环境的车牌认别系统源代码和30张测试图片；本程序对以上的30汽车 的 定位分割 Special Effects 图形 p\sample\obj\Debug\sample.csproj.GenerateResource.Cache
+C:\QQDownload\LicenseDetectorOfVehicle C#环境的车牌认别系统源代码和30张测试图片；本程序对以上的30汽车 的 定位分割 Special Effects 图形 p\sample\obj\Debug\LiceneLocalizer.exe
+C:\QQDownload\LicenseDetectorOfVehicle C#环境的车牌认别系统源代码和30张测试图片；本程序对以上的30汽车 的 定位分割 Special Effects 图形 p\sample\obj\Debug\LiceneLocalizer.pdb
+C:\QQDownload\C#车牌认别系统\sample\bin\Debug\LiceneLocalizer.exe
+C:\QQDownload\C#车牌认别系统\sample\bin\Debug\LiceneLocalizer.pdb
+C:\QQDownload\C#车牌认别系统\sample\obj\Debug\ResolveAssemblyReference.cache
+C:\QQDownload\C#车牌认别系统\sample\obj\Debug\sample.ImageProcess.resources
+C:\QQDownload\C#车牌认别系统\sample\obj\Debug\sample.UserControl1.resources
+C:\QQDownload\C#车牌认别系统\sample\obj\Debug\sample.csproj.GenerateResource.Cache
+C:\QQDownload\C#车牌认别系统\sample\obj\Debug\LiceneLocalizer.exe
+C:\QQDownload\C#车牌认别系统\sample\obj\Debug\LiceneLocalizer.pdb
+E:\我的东西\C#系列收藏\C#车牌认别系统\sample\bin\Debug\LiceneLocalizer.exe
+E:\我的东西\C#系列收藏\C#车牌认别系统\sample\bin\Debug\LiceneLocalizer.pdb
+E:\我的东西\C#系列收藏\C#车牌认别系统\sample\obj\Debug\ResolveAssemblyReference.cache
+E:\我的东西\C#系列收藏\C#车牌认别系统\sample\obj\Debug\sample.ImageProcess.resources
+E:\我的东西\C#系列收藏\C#车牌认别系统\sample\obj\Debug\sample.UserControl1.resources
+E:\我的东西\C#系列收藏\C#车牌认别系统\sample\obj\Debug\sample.csproj.GenerateResource.Cache
+E:\我的东西\C#系列收藏\C#车牌认别系统\sample\obj\Debug\LiceneLocalizer.exe
+E:\我的东西\C#系列收藏\C#车牌认别系统\sample\obj\Debug\LiceneLocalizer.pdb
+C:\Users\Administrator\Desktop\C#车牌识别系统\sample\bin\Debug\LiceneLocalizer.exe
+C:\Users\Administrator\Desktop\C#车牌识别系统\sample\bin\Debug\LiceneLocalizer.pdb
+C:\Users\Administrator\Desktop\C#车牌识别系统\sample\obj\Debug\sample.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\C#车牌识别系统\sample\obj\Debug\sample.ImageProcess.resources
+C:\Users\Administrator\Desktop\C#车牌识别系统\sample\obj\Debug\sample.UserControl1.resources
+C:\Users\Administrator\Desktop\C#车牌识别系统\sample\obj\Debug\sample.csproj.GenerateResource.Cache
+C:\Users\Administrator\Desktop\C#车牌识别系统\sample\obj\Debug\LiceneLocalizer.exe
+C:\Users\Administrator\Desktop\C#车牌识别系统\sample\obj\Debug\LiceneLocalizer.pdb

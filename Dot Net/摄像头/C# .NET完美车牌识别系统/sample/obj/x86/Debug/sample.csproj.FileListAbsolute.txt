@@ -1,0 +1,17 @@
+C:\Users\Administrator\Desktop\C#车牌识别系统\sample\bin\x86\Debug\LiceneLocalizer.exe
+C:\Users\Administrator\Desktop\C#车牌识别系统\sample\bin\x86\Debug\LiceneLocalizer.pdb
+C:\Users\Administrator\Desktop\C#车牌识别系统\sample\obj\x86\Debug\sample.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\C#车牌识别系统\sample\obj\x86\Debug\sample.ImageProcess.resources
+C:\Users\Administrator\Desktop\C#车牌识别系统\sample\obj\x86\Debug\sample.UserControl1.resources
+C:\Users\Administrator\Desktop\C#车牌识别系统\sample\obj\x86\Debug\sample.csproj.GenerateResource.Cache
+C:\Users\Administrator\Desktop\C#车牌识别系统\sample\obj\x86\Debug\LiceneLocalizer.exe
+C:\Users\Administrator\Desktop\C#车牌识别系统\sample\obj\x86\Debug\LiceneLocalizer.pdb
+D:\软件\C# .NET完美车牌识别系统\sample\bin\x86\Debug\LiceneLocalizer.exe
+D:\软件\C# .NET完美车牌识别系统\sample\bin\x86\Debug\LiceneLocalizer.pdb
+D:\软件\C# .NET完美车牌识别系统\sample\obj\x86\Debug\sample.csprojResolveAssemblyReference.cache
+D:\软件\C# .NET完美车牌识别系统\sample\obj\x86\Debug\sample.ImageProcess.resources
+D:\软件\C# .NET完美车牌识别系统\sample\obj\x86\Debug\sample.UserControl1.resources
+D:\软件\C# .NET完美车牌识别系统\sample\obj\x86\Debug\sample.csproj.GenerateResource.Cache
+D:\软件\C# .NET完美车牌识别系统\sample\obj\x86\Debug\sample.csproj.CoreCompileInputs.cache
+D:\软件\C# .NET完美车牌识别系统\sample\obj\x86\Debug\LiceneLocalizer.exe
+D:\软件\C# .NET完美车牌识别系统\sample\obj\x86\Debug\LiceneLocalizer.pdb
